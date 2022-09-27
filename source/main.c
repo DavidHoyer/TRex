@@ -3,6 +3,9 @@
 
 int main() {
 	int x =0;
+	x++;
+	//Dave isch a spästu
+
 	// Initialize Hardware
 	CUBEMX_Init();
 	// Initialize Leguan board
