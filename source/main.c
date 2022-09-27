@@ -2,6 +2,7 @@
 #include <cube.h>
 
 int main() {
+	int x =0;
 	// Initialize Hardware
 	CUBEMX_Init();
 	// Initialize Leguan board
