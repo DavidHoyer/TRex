@@ -4,6 +4,7 @@
 int main() {
 	int x =0;
 	x++;
+	x = 1;
 	//Dave isch a spästu
 
 	// Initialize Hardware
