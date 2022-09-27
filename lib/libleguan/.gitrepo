@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://gitlab.ti.bfh.ch/Leguan/libleguan
+	branch = master
+	commit = 087b42937fd8899d9dde64afe5b8b94dc8c538ff
+	parent = 9d178dc3b19c61b3d753834b7078b209ecb48587
+	method = merge
+	cmdver = 0.4.3
