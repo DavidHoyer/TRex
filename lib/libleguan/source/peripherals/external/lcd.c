@@ -115,8 +115,10 @@ result_t LCD_Init(void) {
     /* Start pixel access mode */
     LCD_EnableDrawMode();
 
+    //LCD_SetForegroundColor(ColorWhite);
+    //LCD_SetBackgroundColor(ColorBlack);
     LCD_SetForegroundColor(ColorWhite);
-    LCD_SetBackgroundColor(ColorBlack);
+    LCD_SetBackgroundColor(ColorWhite);
     LCD_Clear();
 
     return RESULT_SUCCESS;
@@ -270,14 +272,18 @@ result_t LCD_Character(uint16_t x, uint16_t y, char c) {
 
 result_t LCD_String(uint16_t start_x, uint16_t start_y, const char *string) {
     uint16_t x = start_x, y = start_y;
-    while (true) {
+    while (true)
+    {
     	char c = *string++;
 
-    	if (c == '\n') {
+    	if (c == '\n')
+    	{
     		x = 0;
     		y += CONSOLE_FONT_CHAR_HEIGHT;
     		continue;
-    	} else if (c == '\x00') {
+    	}
+    	else if (c == '\x00')
+    	{
     		break;
     	}
 
