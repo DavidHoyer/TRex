@@ -2,6 +2,7 @@
 #include <cube.h>
 #include <stdint.h>
 #include <limits.h>
+#include <picture.h>
 
 void DrawInterface(void);
 
