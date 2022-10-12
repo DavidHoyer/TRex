@@ -1,8 +1,10 @@
 #include <leguan.h>
 #include <cube.h>
 #include <stdint.h>
+#include <stdlib.h>
 #include <limits.h>
-#include <picture.h>
+//#include "picture.h"
+#include "Object.h"
 
 void LukiInit(void);
 void LukisFunction(void);
@@ -17,7 +19,7 @@ int main()
 	LCD_Init();
 
 	//--- Declarations
-
+	uint32_t tick = 0;
 
 	// Set logging output destination to be the LCD
 	LOG_SetDestination(LCD_Stream);
@@ -28,7 +30,19 @@ int main()
 	//--- Main loop
 	while (true)
 	{
-		LukisFunction();
+		if(HAL_GetTick() >= tick + 15)
+		{
+			//--- roundabout 60 fps
+			tick = HAL_GetTick();
+
+			//--- FPS anzeige
+			//char *spast;
+			//itoa(100, spast);
+
+
+			LukisFunction();
+		}
+		//LukisFunction();
 	}
 }
 
@@ -40,6 +54,7 @@ void LukiInit(void)
 	//Draw Down Button
 	LCD_SetForegroundColor(ColorRed);
 	LCD_String(0, 0, "Hello");
+
 	//Draw Up Button
 }
 
@@ -66,5 +81,4 @@ void LukisFunction(void)
 			y_old = y_new;
 		}
 	}
-	//CORE_Delay(200);
 }
