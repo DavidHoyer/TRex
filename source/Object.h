@@ -13,15 +13,22 @@
 /****************************************/
 typedef struct
 {
-   int x_pos;
-   int y_pos;
-   int width;
-   int height;
+	unsigned int 	x;		//X Position
+	unsigned int 	y;		//Y Position
 
+	unsigned char 	R;		// Red
+	unsigned char 	G;		// Green
+	unsigned char 	B;		// Blue
+	unsigned char 	T;		// Transparency
+}pixel_t;
 
-
-}button_t;
-
+typedef struct
+{
+	unsigned int	x;		// X Position
+	unsigned int	y;		// Y Position
+	unsigned int	w;		// Width
+	unsigned int 	h;		// Height
+}bmp_t;
 
 
 #endif /* OBJECT_H_ */
