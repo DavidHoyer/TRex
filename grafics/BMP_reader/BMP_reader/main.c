@@ -18,8 +18,8 @@ int main()
     FILE *filepointer_read;
     FILE *filepointer_write;
 
-    filepointer_read = fopen("T_Rex2.bmp", "r");
-    filepointer_write = fopen("T_Rex2.txt","w");
+    filepointer_read = fopen("T_Rex3.bmp", "r");
+    filepointer_write = fopen("T_Rex3.txt","w");
 
     if ((filepointer_read == NULL) || (filepointer_write == NULL)) {
         printf("one of the files could not open");
@@ -65,7 +65,7 @@ int main()
 
     for(int i = 0; i < (myPicture.height*myPicture.with); i++)
     {
-        if(i != 0 && i%10 == 0)                                 //write only 10 pixels per line
+        if(i != 0 && i%5 == 0)                                 //write only 10 pixels per line
             fprintf(filepointer_write,"\n");
                                                    //add the "{" at the beginning of a col
         fprintf(filepointer_write,"{");
