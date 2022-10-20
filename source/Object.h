@@ -11,6 +11,8 @@
 /****************************************/
 /*  Declaration of the global variables */
 /****************************************/
+//unsigned char tRex_pixelData[2900][4];
+
 typedef struct
 {
 	unsigned int 	x;		//X Position
@@ -24,11 +26,13 @@ typedef struct
 
 typedef struct
 {
-	unsigned int	x;		// X Position
-	unsigned int	y;		// Y Position
-	unsigned int	w;		// Width
-	unsigned int 	h;		// Height
-}bmp_t;
+	unsigned char	x;		// X Position
+	unsigned char	y;		// Y Position
+	unsigned char	w;		// Width
+	unsigned char 	h;		// Height
+	unsigned int 	size;	// number of pixels
 
+    unsigned char	pixels[][4];
+}bmp_t;
 
 #endif /* OBJECT_H_ */
