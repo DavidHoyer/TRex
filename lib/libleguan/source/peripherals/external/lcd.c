@@ -139,7 +139,13 @@ void LCD_Stream(const char *string, bool new_line) {
 }
 
 
-void LCD_SetForegroundColor(color_t color) {
+void LCD_SetForegroundColor(color_t color)
+{
+	if(color.a == 0)
+	{
+		m_foreground_color = m_background_color;
+		return;
+	}
 	m_foreground_color.r = color.r;
 	m_foreground_color.g = color.g;
 	m_foreground_color.b = color.b;
@@ -156,7 +162,13 @@ static LEGUAN_ALWAYS_INLINE void LCD_Set(const LCD_Color_t *color) {
     LCD_Data16(*(const uint16_t*)color);
 }
 
-result_t LCD_Pixel(uint16_t x, uint16_t y) {
+result_t LCD_Pixel(uint16_t x, uint16_t y)
+{
+	//---- fu dave u luki hinzuegfüegt
+	//if(m_foreground_color == m_background_color)
+	//	return RESULT_SUCCESS;
+	//----
+
 	if (x > LCD_WIDTH || y > LCD_HEIGHT)
 		return RESULT_INVALID_ARGUMENTS;
 

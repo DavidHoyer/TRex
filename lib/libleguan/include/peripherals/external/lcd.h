@@ -82,6 +82,7 @@ extern "C" {
 #define LCD_COLOR(r, g, b) BGR565_COLOR(r, g, b)
 typedef BGR565_t LCD_Color_t;
 
+
 typedef struct LEGUAN_PACKED {
     volatile reg16_t cmd;
     union {

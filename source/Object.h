@@ -32,7 +32,7 @@ typedef struct
 	unsigned int 	h;		// Height
 	unsigned int 	size;	// number of pixels
 
-    unsigned int	pixels[][4];
+    unsigned int	*pixels[][4];
 }bmp_t;
 
 #endif /* OBJECT_H_ */
