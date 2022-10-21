@@ -13,7 +13,7 @@
 /****************************************/
 //unsigned char tRex_pixelData[2900][4];
 
-typedef struct
+/*typedef struct
 {
 	unsigned int 	x;		//X Position
 	unsigned int 	y;		//Y Position
@@ -22,17 +22,17 @@ typedef struct
 	unsigned char 	G;		// Green
 	unsigned char 	B;		// Blue
 	unsigned char 	T;		// Transparency
-}pixel_t;
+}pixel_t;*/
 
 typedef struct
 {
-	unsigned char	x;		// X Position
-	unsigned char	y;		// Y Position
-	unsigned char	w;		// Width
-	unsigned char 	h;		// Height
+	unsigned int	x;		// X Position
+	unsigned int	y;		// Y Position
+	unsigned int	w;		// Width
+	unsigned int 	h;		// Height
 	unsigned int 	size;	// number of pixels
 
-    unsigned char	pixels[][4];
+    unsigned int	pixels[][4];
 }bmp_t;
 
 #endif /* OBJECT_H_ */
