@@ -8,21 +8,11 @@
 #ifndef OBJECT_H_
 #define OBJECT_H_
 
+#include "pixelData.h"
+
 /****************************************/
 /*  Declaration of the global variables */
 /****************************************/
-//unsigned char tRex_pixelData[2900][4];
-
-/*typedef struct
-{
-	unsigned int 	x;		//X Position
-	unsigned int 	y;		//Y Position
-
-	unsigned char 	R;		// Red
-	unsigned char 	G;		// Green
-	unsigned char 	B;		// Blue
-	unsigned char 	T;		// Transparency
-}pixel_t;*/
 
 typedef struct
 {
@@ -32,7 +22,25 @@ typedef struct
 	unsigned int 	h;		// Height
 	unsigned int 	size;	// number of pixels
 
-    unsigned int	*pixels[][4];
+    unsigned int	(*pixels)[4];	//pointer to pixelData Array
 }bmp_t;
+
+/*BM grafic TRex
+		DataStart: 54
+		With: 135
+		Length: 144
+
+		Bits/Pixel: 32*/
+
+bmp_t tRexBmp = {50, 250, 135, 144, (135*144), tRex_pixelData};
+
+/*BM
+DataStart: 122
+With: 75
+Length: 75
+
+Bits/Pixel: 32*/
+
+bmp_t JumpButtonBMP = {700, 300,  75, 75, (75*75), JumpButton_pixelData};
 
 #endif /* OBJECT_H_ */
