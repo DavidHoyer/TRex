@@ -32,7 +32,7 @@ typedef struct
 
 		Bits/Pixel: 32*/
 
-bmp_t tRexBmp = {50, 250, 135, 144, (135*144), tRex_pixelData};
+bmp_t tRexBmp = {50, 250, 135, 100, (135*100), tRex_pixelData};
 
 /*BM
 DataStart: 122
@@ -41,6 +41,6 @@ Length: 75
 
 Bits/Pixel: 32*/
 
-bmp_t JumpButtonBMP = {700, 300,  75, 75, (75*75), JumpButton_pixelData};
+bmp_t JumpButtonBMP = {0, 0,  100, 60, (100*60), JumpButton_pixelData};
 
 #endif /* OBJECT_H_ */

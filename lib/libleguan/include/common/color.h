@@ -42,6 +42,7 @@ extern "C" {
 #define RGB1_COLOR(r, g, b)   		{ (uint8_t)(r > 0), 		(uint8_t)(g > 0), 	    (uint8_t)(b > 0)    }
 #define BGR1_COLOR(r, g, b)   		{ (uint8_t)(b > 0), 		(uint8_t)(g > 0), 	    (uint8_t)(r > 0)    }
 
+#define BGRA565_COLOR(r, g, b, a) 	{ ((uint8_t)(b)) >> 3, 	    ((uint8_t)(g)) >> 2,    ((uint8_t)(r)) >> 3, ((uint8_t)(a))}
 /* Types */
 
 typedef struct {

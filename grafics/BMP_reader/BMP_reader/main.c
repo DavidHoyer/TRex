@@ -83,28 +83,6 @@ int main()
         fprintf(filepointer_write,"},");
     }
 
-    /*int a = 0;
-    for (int i =0; i < myPicture.height; i++)
-    {
-        fprintf(filepointer_write,"\t");
-        for (int u =0; u< (myPicture.with*4); u++)
-        {
-            if(a == 0)
-                fprintf(filepointer_write,"{");
-
-            fscanf(filepointer_read, "%c", &tempData);          //read color value
-            fprintf(filepointer_write, "%d,", tempData);        //write color value as integer in file
-
-            a++;
-            if(a == 4){
-                a = 0;
-                fprintf(filepointer_write,"} ");
-            }
-        }
-        fprintf(filepointer_write,"\n");                        //making a new line after a row completly read
-    }*/
-
-
     fprintf(filepointer_write, "\n};");                           //close array
 
     //close files

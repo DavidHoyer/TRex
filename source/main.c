@@ -11,7 +11,7 @@
 void LukiInit(void);
 void LukisFunction(void);
 
-void printBMP (bmp_t);
+void printBMP(bmp_t);
 
 void globalInit(void);
 
@@ -41,8 +41,7 @@ int main()
 		}
 
 
-		printBMP(tRexBmp);
-		printBMP(JumpButtonBMP);
+
 
 		LukisFunction();
 	}
@@ -56,6 +55,10 @@ void globalInit(void)
 	LEGUAN_Init();
 	// Initialize LCD
 	LCD_Init();
+
+	//--- Print Bmps on the LCD screen
+	printBMP(tRexBmp);
+	printBMP(JumpButtonBMP);
 }
 
 
@@ -77,7 +80,11 @@ void printBMP (bmp_t Bmp)
 
 			i = y*Bmp.w + x;
 
-			color_t pixelClr = COLOR(	*(*(Bmp.pixels + i) +2),
+			/*color_t pixelClr = COLOR(	*(*(Bmp.pixels + i) +2),
+										*(*(Bmp.pixels + i) +1),
+										*(*(Bmp.pixels + i) +0),
+										*(*(Bmp.pixels + i) +3));*/
+			color_t pixelClr = BGRA565_COLOR(	*(*(Bmp.pixels + i) +2),
 										*(*(Bmp.pixels + i) +1),
 										*(*(Bmp.pixels + i) +0),
 										*(*(Bmp.pixels + i) +3));
