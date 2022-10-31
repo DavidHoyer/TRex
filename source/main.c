@@ -8,6 +8,21 @@
 //include own librarys
 #include "Object.h"
 
+#define MENU		0
+#define GAME		1
+#define GAME_OVER	2
+
+#define TRUE		1
+#define FALSE		0
+
+
+typedef struct {
+	unsigned char EVENT_FLAG;
+	unsigned char posX;
+	unsigned char posY;
+} EVENT_t;
+
+
 void LukiInit(void);
 void LukisFunction(void);
 
@@ -15,8 +30,15 @@ void printBMP(bmp_t);
 
 void globalInit(void);
 
+EVENT_t EVENT_CATCH(EVENT_t);
+
 int main()
 {
+	unsigned char STATE = 0;
+	EVENT_t input;
+	input.EVENT_FLAG = 0;
+
+
 	//initialisation of hardware, leguan and LCD
 	globalInit();
 
@@ -26,6 +48,7 @@ int main()
 	// Set logging output destination to be the LCD
 	LOG_SetDestination(LCD_Stream);
 
+	//printBMP(obstacle_tree_BMP);
 
 	//--- Main loop
 	while (true)
@@ -40,10 +63,44 @@ int main()
 			//itoa(100, spast);
 		}
 
+		input = EVENT_CATCH(input);
+
+		switch(STATE) {
+			case MENU:
+				if (input.EVENT_FLAG == 1)
+				{
+					input.EVENT_FLAG = 0;
+					input.posX =0;
+					input.posY =0;
+
+					STATE = GAME;
+					LCD_Clear();
+					printBMP(tRexBmp);
+				}
+
+				break;
+
+			case GAME:
+
+					if (input.EVENT_FLAG == 1)
+					{
+						input.EVENT_FLAG = 0;
+						input.posX =0;
+						input.posY =0;
+
+						STATE = MENU;
+						LCD_Clear();
+						printBMP(button_START_BMP);
+					}
+				break;
+
+			case GAME_OVER:
+
+				break;
+		}
 
 
-
-		LukisFunction();
+		//LukisFunction();
 	}
 }
 
@@ -57,8 +114,36 @@ void globalInit(void)
 	LCD_Init();
 
 	//--- Print Bmps on the LCD screen
-	printBMP(tRexBmp);
-	printBMP(JumpButtonBMP);
+
+	printBMP(button_START_BMP);
+}
+
+EVENT_t EVENT_CATCH(EVENT_t input)
+{
+
+	static char touch_enable = 1;
+
+	LCD_TouchPosition_t touchPosition = {0, 0};
+
+	if (R_SUCCESS(LCD_TouchGetPosition(&touchPosition)))
+	{
+
+		if ((touchPosition.x != 0 && touchPosition.y != 0) && touch_enable == 1)
+		{
+			touch_enable =0;
+			input.EVENT_FLAG = 1;
+			input.posX = touchPosition.x;
+			input.posY = touchPosition.y;
+
+		}
+		else if(touchPosition.x == 0){
+			input.EVENT_FLAG = 0;
+			input.posX = touchPosition.x;
+			input.posY = touchPosition.y;
+		}
+	}
+
+	return input;
 }
 
 
@@ -84,16 +169,17 @@ void printBMP (bmp_t Bmp)
 										*(*(Bmp.pixels + i) +1),
 										*(*(Bmp.pixels + i) +0),
 										*(*(Bmp.pixels + i) +3));*/
-			color_t pixelClr = BGRA565_COLOR(	*(*(Bmp.pixels + i) +2),
-										*(*(Bmp.pixels + i) +1),
-										*(*(Bmp.pixels + i) +0),
-										*(*(Bmp.pixels + i) +3));
+			color_t pixelClr = BGRA565_COLOR(	*(*(Bmp.pixels + i) +0),
+												*(*(Bmp.pixels + i) +1),
+												*(*(Bmp.pixels + i) +2),
+												*(*(Bmp.pixels + i) +3));
 
 			LCD_SetForegroundColor(pixelClr);
-			LCD_Pixel(Bmp.x + x, Bmp.y + (Bmp.h - y));
+			LCD_Pixel(Bmp.PosX + x, Bmp.PosY + (Bmp.h - y));
 		}
 	}
 }
+
 
 void LukisFunction(void)
 {
