@@ -90,7 +90,7 @@ Y pixel per meter:    3780
 Number of colors:     0
 Important colors:     0*/
 
-//bmp_t obstacle_tree_BMP = { 600, 250, 150, 150, (150*150), TREE_pixelData};
+bmp_t obstacle_tree_BMP = { 600, 250, 150, 150, (150*150), TREE_pixelData};
 
 
 

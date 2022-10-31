@@ -76,6 +76,7 @@ int main()
 					STATE = GAME;
 					LCD_Clear();
 					printBMP(tRexBmp);
+					//printBMP(obstacle_tree_BMP);
 				}
 
 				break;
@@ -128,15 +129,15 @@ EVENT_t EVENT_CATCH(EVENT_t input)
 	if (R_SUCCESS(LCD_TouchGetPosition(&touchPosition)))
 	{
 
-		if ((touchPosition.x != 0 && touchPosition.y != 0) && touch_enable == 1)
+		if ((touchPosition.x != 0 && touchPosition.y != 0))
 		{
-			touch_enable =0;
+			//touch_enable =0;
 			input.EVENT_FLAG = 1;
 			input.posX = touchPosition.x;
 			input.posY = touchPosition.y;
 
 		}
-		else if(touchPosition.x == 0){
+		else {
 			input.EVENT_FLAG = 0;
 			input.posX = touchPosition.x;
 			input.posY = touchPosition.y;
