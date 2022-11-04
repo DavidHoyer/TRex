@@ -20,9 +20,10 @@ typedef struct
 	unsigned int	PosY;		// Y Position
 	unsigned int	w;		// Width
 	unsigned int 	h;		// Height
-	unsigned int 	size;	// number of pixels
 
     unsigned char	(*pixels)[4];	//pointer to pixelData Array
+
+	unsigned char	visible;	// visibility flag
 }bmp_t;
 
 
@@ -46,7 +47,7 @@ Y pixel per meter:    2834
 Number of colors:     0
 Important colors:     0*/
 
-bmp_t tRexBmp = {50, 250, 135, 100, (135*100), tRex_pixelData};
+bmp_t tRexBmp = {50, 250, 135, 100, tRex_pixelData, 0};
 
 /*Bitmap File Header
 File type:        BMbutton_menu_start.txt
@@ -68,7 +69,7 @@ Y pixel per meter:    2834
 Number of colors:     0
 Important colors:     0*/
 
-bmp_t button_START_BMP = {200, 150, 400, 171, (400*171), button_START_pixelData};
+bmp_t button_START_BMP = {200, 150, 400, 171, button_START_pixelData, 0};
 
 /*Bitmap File Header
 File type:        BMtree.txt
@@ -90,7 +91,7 @@ Y pixel per meter:    3780
 Number of colors:     0
 Important colors:     0*/
 
-bmp_t obstacle_tree_BMP = { 600, 250, 150, 150, (150*150), TREE_pixelData};
+bmp_t obstacle_tree_BMP = { 600, 250, 150, 150, TREE_pixelData, 0};
 
 
 

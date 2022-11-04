@@ -17,94 +17,95 @@
 
 
 typedef struct {
-	unsigned char EVENT_FLAG;
-	unsigned char posX;
-	unsigned char posY;
-} EVENT_t;
+	char 		EVENT_FLAG;
+	uint16_t 	posX;
+	uint16_t 	posY;
+}event_T;
 
+void ClearLCD(void){
+	LCD_Clear();
+
+	// chöimer de no mitere liste ersetze!!
+	tRexBmp.visible = 0;
+	button_START_BMP.visible = 0;
+}
 
 void LukiInit(void);
 void LukisFunction(void);
 
-void printBMP(bmp_t);
+void printBMP(bmp_t *Bmp);
 
 void globalInit(void);
 
-EVENT_t EVENT_CATCH(EVENT_t);
+void ShowMenu(int *state){
+	if(*state == MENU)	//Already handled
+		return;
+
+	*state = MENU;
+	ClearLCD();
+
+	printBMP(&button_START_BMP);
+}
+
+void ShowGame(int *state){
+	if(*state == GAME)	//Already handled
+		return;
+
+	*state = GAME;
+	ClearLCD();
+
+	printBMP(&tRexBmp);
+}
+
+void ShowGameOver(int *state){
+	if(*state == GAME_OVER)	//Already handled
+			return;
+
+	*state = GAME_OVER;
+	ClearLCD();
+}
+
+event_T CheckEvent(void);
+char 	CheckEventBmp(bmp_t bmp, event_T event);
 
 int main()
 {
-	unsigned char STATE = 0;
-	EVENT_t input;
-	input.EVENT_FLAG = 0;
-
+	int gameState = -1;
+	event_T event;
 
 	//initialisation of hardware, leguan and LCD
 	globalInit();
 
-	//--- Declarations
-	uint32_t tick = 0;
-
 	// Set logging output destination to be the LCD
 	LOG_SetDestination(LCD_Stream);
 
-	//printBMP(obstacle_tree_BMP);
+	ShowMenu(&gameState);
 
 	//--- Main loop
 	while (true)
 	{
-		if(HAL_GetTick() >= tick + 15)
-		{
-			//--- roundabout 60 fps
-			tick = HAL_GetTick();
+		event = CheckEvent();
 
-			//--- FPS anzeige
-			//char *spast;
-			//itoa(100, spast);
+		//switch(state)
+		//case game:
+		//GameOnTick();
+		//GAmeEventHAndle(event)
+
+		if(event.EVENT_FLAG){
+			//--- Menu Button
+			if(CheckEventBmp(button_START_BMP, event)){
+				ShowGame(&gameState);
+			}
+			else if(CheckEventBmp(tRexBmp, event)){
+				ShowMenu(&gameState);
+			}
 		}
-
-		input = EVENT_CATCH(input);
-
-		switch(STATE) {
-			case MENU:
-				if (input.EVENT_FLAG == 1)
-				{
-					input.EVENT_FLAG = 0;
-					input.posX =0;
-					input.posY =0;
-
-					STATE = GAME;
-					LCD_Clear();
-					printBMP(tRexBmp);
-					//printBMP(obstacle_tree_BMP);
-				}
-
-				break;
-
-			case GAME:
-
-					if (input.EVENT_FLAG == 1)
-					{
-						input.EVENT_FLAG = 0;
-						input.posX =0;
-						input.posY =0;
-
-						STATE = MENU;
-						LCD_Clear();
-						printBMP(button_START_BMP);
-					}
-				break;
-
-			case GAME_OVER:
-
-				break;
-		}
-
-
-		//LukisFunction();
 	}
 }
 
+//*********************************************************************
+//*** Global Init 													***
+//*********************************************************************
 void globalInit(void)
 {
 	// Initialize Hardware
@@ -113,96 +114,79 @@ void globalInit(void)
 	LEGUAN_Init();
 	// Initialize LCD
 	LCD_Init();
-
-	//--- Print Bmps on the LCD screen
-
-	printBMP(button_START_BMP);
 }
 
-EVENT_t EVENT_CATCH(EVENT_t input)
+//*********************************************************************
+//*** Check Event 													***
+//*********************************************************************
+event_T CheckEvent(void)
 {
-
-	static char touch_enable = 1;
-
+	event_T event;
 	LCD_TouchPosition_t touchPosition = {0, 0};
+	static char flag = 0;
 
 	if (R_SUCCESS(LCD_TouchGetPosition(&touchPosition)))
 	{
-
-		if ((touchPosition.x != 0 && touchPosition.y != 0))
-		{
-			//touch_enable =0;
-			input.EVENT_FLAG = 1;
-			input.posX = touchPosition.x;
-			input.posY = touchPosition.y;
-
+		if(touchPosition.x == 0 && touchPosition.y == 480){
+			event.EVENT_FLAG = 0;
+			flag = 0;
+			return event;
 		}
-		else {
-			input.EVENT_FLAG = 0;
-			input.posX = touchPosition.x;
-			input.posY = touchPosition.y;
+
+		if(flag == 1){
+			event.EVENT_FLAG = 0;
+			return event;
 		}
+
+		event.EVENT_FLAG = 1;
+		event.posX = touchPosition.x;
+		event.posY = touchPosition.y;
+		flag = 1;
 	}
 
-	return input;
+	return event;
 }
 
-
-void printBMP (bmp_t Bmp)
+//*********************************************************************
+//*** Print Bmp to LCD												***
+//*********************************************************************
+void printBMP(bmp_t *Bmp)
 {
+	Bmp->visible = 1;
 	unsigned int i;
 
 	//{B, G, R, T}
 	//RGBA16_COLOR(r, g, b, a)
 
-	for(unsigned int y = 0; y < Bmp.h; y++)
+	for(unsigned int y = 0; y < Bmp->h; y++)
 	{
-		for(unsigned int x = 0; x < Bmp.w; x++)
+		for(unsigned int x = 0; x < Bmp->w; x++)
 		{
-			//if(tRex_pixelData[i][3] == 0)
-				//continue;
-			//if(pixelClr.a == 0)
-				//continue;
+			i = y*Bmp->w + x;
 
-			i = y*Bmp.w + x;
-
-			/*color_t pixelClr = COLOR(	*(*(Bmp.pixels + i) +2),
-										*(*(Bmp.pixels + i) +1),
-										*(*(Bmp.pixels + i) +0),
-										*(*(Bmp.pixels + i) +3));*/
-			color_t pixelClr = BGRA565_COLOR(	*(*(Bmp.pixels + i) +0),
-												*(*(Bmp.pixels + i) +1),
-												*(*(Bmp.pixels + i) +2),
-												*(*(Bmp.pixels + i) +3));
+			color_t pixelClr = BGRA565_COLOR(	*(*(Bmp->pixels + i) +0),
+												*(*(Bmp->pixels + i) +1),
+												*(*(Bmp->pixels + i) +2),
+												*(*(Bmp->pixels + i) +3));
 
 			LCD_SetForegroundColor(pixelClr);
-			LCD_Pixel(Bmp.PosX + x, Bmp.PosY + (Bmp.h - y));
+			LCD_Pixel(Bmp->PosX + x, Bmp->PosY + (Bmp->h - y));
 		}
 	}
 }
 
+//*********************************************************************
+//*** Check if event happend to be on teh bmp						***
+//*********************************************************************
+char 	CheckEventBmp(bmp_t bmp, event_T event){
+	if(bmp.visible == 0)
+		return 0;
 
-void LukisFunction(void)
-{
-	static int x_old = 0;
-	static int y_old = 0;
-
-	LCD_TouchPosition_t touchPosition = {0, 0};
-	if (R_SUCCESS(LCD_TouchGetPosition(&touchPosition)))
+	if(	event.posX >= bmp.PosX && event.posX <= bmp.PosX + bmp.w &&
+		event.posY >= bmp.PosY && event.posY <= bmp.PosY + bmp.h)
 	{
-		int x_new = touchPosition.x;
-		int y_new = touchPosition.y;
-
-		if (x_new != 0 || y_new != 480)
-		{
-			LCD_SetForegroundColor(ColorWhite);
-			LCD_Rect(x_old - 5, y_old - 5, 30, 30);
-
-			LCD_SetForegroundColor(ColorRed);
-			LCD_Rect (x_new, y_new, 20, 20);
-
-			x_old = x_new;
-			y_old = y_new;
-		}
+		return 1;
 	}
+
+	return 0;
 }
