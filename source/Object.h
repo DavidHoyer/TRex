@@ -16,8 +16,8 @@
 
 typedef struct
 {
-	unsigned int	PosX;		// X Position
-	unsigned int	PosY;		// Y Position
+	unsigned int	x;		// X Position
+	unsigned int	y;		// Y Position
 	unsigned int	w;		// Width
 	unsigned int 	h;		// Height
 

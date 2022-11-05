@@ -8,94 +8,73 @@
 //include own librarys
 #include "Object.h"
 
-#define MENU		0
-#define GAME		1
-#define GAME_OVER	2
-
+//*********************************************************************
+//*** Defines    													***
+//*********************************************************************
 #define TRUE		1
 #define FALSE		0
 
+//*********************************************************************
+//*** Enums      													***
+//*********************************************************************
+typedef enum {
+	STATE_NONE	= -1,
+	STATE_MENU	= 0,
+	STATE_GAME,
+	STATE_GAME_OVER,
+}ENUM_GAME_STATE;
 
+//*********************************************************************
+//*** Structs 														***
+//*********************************************************************
 typedef struct {
-	char 		EVENT_FLAG;
-	uint16_t 	posX;
-	uint16_t 	posY;
+	char 		eventFlag;
+	uint16_t 	x;
+	uint16_t 	y;
 }event_T;
 
-void ClearLCD(void){
-	LCD_Clear();
+//*********************************************************************
+//*** Functions 													***
+//*********************************************************************
+void 	globalInit(void);
 
-	// chöimer de no mitere liste ersetze!!
-	tRexBmp.visible = 0;
-	button_START_BMP.visible = 0;
-}
+void 	ClearLCD(void);
+void 	printBMP(bmp_t *Bmp);
 
-void LukiInit(void);
-void LukisFunction(void);
-
-void printBMP(bmp_t *Bmp);
-
-void globalInit(void);
-
-void ShowMenu(int *state){
-	if(*state == MENU)	//Already handled
-		return;
-
-	*state = MENU;
-	ClearLCD();
-
-	printBMP(&button_START_BMP);
-}
-
-void ShowGame(int *state){
-	if(*state == GAME)	//Already handled
-		return;
-
-	*state = GAME;
-	ClearLCD();
-
-	printBMP(&tRexBmp);
-}
-
-void ShowGameOver(int *state){
-	if(*state == GAME_OVER)	//Already handled
-			return;
-
-	*state = GAME_OVER;
-	ClearLCD();
-}
+void 	ShowMenu(ENUM_GAME_STATE *state);
+void 	ShowGame(ENUM_GAME_STATE *state);
+void 	ShowGameOver(ENUM_GAME_STATE *state);
 
 event_T CheckEvent(void);
 char 	CheckEventBmp(bmp_t bmp, event_T event);
 
+//*********************************************************************
+//*** Main 															***
+//*********************************************************************
 int main()
 {
-	int gameState = -1;
-	event_T event;
+	ENUM_GAME_STATE gameState = STATE_NONE;		//Current game event
+	event_T event;								//Struct contains current event
 
-	//initialisation of hardware, leguan and LCD
-	globalInit();
-
-	// Set logging output destination to be the LCD
-	LOG_SetDestination(LCD_Stream);
-
-	ShowMenu(&gameState);
+	globalInit();								//initialisation of hardware, leguan and LCD
+	ShowMenu(&gameState);						//Show Menu at beginning
 
 	//--- Main loop
-	while (true)
+	while(TRUE)
 	{
-		event = CheckEvent();
+		event = CheckEvent();					//Check if a new event happend
 
 		//switch(state)
 		//case game:
 		//GameOnTick();
-		//GAmeEventHAndle(event)
+		//GameEventHAndle(event)
 
-		if(event.EVENT_FLAG){
+		if(event.eventFlag){
 			//--- Menu Button
 			if(CheckEventBmp(button_START_BMP, event)){
 				ShowGame(&gameState);
 			}
+			//--- Event on T_Rex
 			else if(CheckEventBmp(tRexBmp, event)){
 				ShowMenu(&gameState);
 			}
@@ -106,14 +85,22 @@ int main()
 //*********************************************************************
 //*** Global Init 													***
 //*********************************************************************
-void globalInit(void)
-{
-	// Initialize Hardware
-	CUBEMX_Init();
-	// Initialize Leguan board
-	LEGUAN_Init();
-	// Initialize LCD
-	LCD_Init();
+void globalInit(void){
+	CUBEMX_Init();							// Initialize Hardware
+	LEGUAN_Init();							// Initialize Leguan board
+	LCD_Init();								// Initialize LCD
+	LOG_SetDestination(LCD_Stream);			// Set logging output destination to be the LCD
+}
+
+//*********************************************************************
+//*** Clear LCD Display												***
+//*********************************************************************
+void ClearLCD(void){
+	LCD_Clear();
+
+	// chöimer de no mitere liste ersetze!!
+	tRexBmp.visible = FALSE;
+	button_START_BMP.visible = FALSE;
 }
 
 //*********************************************************************
@@ -123,25 +110,25 @@ event_T CheckEvent(void)
 {
 	event_T event;
 	LCD_TouchPosition_t touchPosition = {0, 0};
-	static char flag = 0;
+	static char flag = FALSE;
 
 	if (R_SUCCESS(LCD_TouchGetPosition(&touchPosition)))
 	{
 		if(touchPosition.x == 0 && touchPosition.y == 480){
-			event.EVENT_FLAG = 0;
-			flag = 0;
+			event.eventFlag = FALSE;
+			flag = FALSE;
 			return event;
 		}
 
-		if(flag == 1){
-			event.EVENT_FLAG = 0;
+		if(flag == TRUE){
+			event.eventFlag = FALSE;
 			return event;
 		}
 
-		event.EVENT_FLAG = 1;
-		event.posX = touchPosition.x;
-		event.posY = touchPosition.y;
-		flag = 1;
+		event.eventFlag = TRUE;
+		event.x = touchPosition.x;
+		event.y = touchPosition.y;
+		flag = TRUE;
 	}
 
 	return event;
@@ -152,25 +139,19 @@ event_T CheckEvent(void)
 //*********************************************************************
 void printBMP(bmp_t *Bmp)
 {
-	Bmp->visible = 1;
+	Bmp->visible = TRUE;
 	unsigned int i;
 
-	//{B, G, R, T}
-	//RGBA16_COLOR(r, g, b, a)
-
-	for(unsigned int y = 0; y < Bmp->h; y++)
-	{
-		for(unsigned int x = 0; x < Bmp->w; x++)
-		{
+	for(unsigned int y = 0; y < Bmp->h; y++){
+		for(unsigned int x = 0; x < Bmp->w; x++){
 			i = y*Bmp->w + x;
 
 			color_t pixelClr = BGRA565_COLOR(	*(*(Bmp->pixels + i) +0),
 												*(*(Bmp->pixels + i) +1),
 												*(*(Bmp->pixels + i) +2),
 												*(*(Bmp->pixels + i) +3));
-
 			LCD_SetForegroundColor(pixelClr);
-			LCD_Pixel(Bmp->PosX + x, Bmp->PosY + (Bmp->h - y));
+			LCD_Pixel(Bmp->x + x, Bmp->y + (Bmp->h - y));
 		}
 	}
 }
@@ -179,14 +160,52 @@ void printBMP(bmp_t *Bmp)
 //*** Check if event happend to be on teh bmp						***
 //*********************************************************************
 char 	CheckEventBmp(bmp_t bmp, event_T event){
-	if(bmp.visible == 0)
-		return 0;
+	if(bmp.visible == FALSE)
+		return FALSE;
 
-	if(	event.posX >= bmp.PosX && event.posX <= bmp.PosX + bmp.w &&
-		event.posY >= bmp.PosY && event.posY <= bmp.PosY + bmp.h)
+	//--- Check if the event was in the domain of the object
+	if(	event.x >= bmp.x && event.x <= bmp.x + bmp.w &&
+		event.y >= bmp.y && event.y <= bmp.y + bmp.h)
 	{
-		return 1;
+		return FALSE;
 	}
 
-	return 0;
+	return TRUE;
+}
+
+//*********************************************************************
+//*** Show all Menu Objects											***
+//*********************************************************************
+void ShowMenu(ENUM_GAME_STATE *state){
+	if(*state == STATE_MENU)					//Already handled
+		return;
+
+	*state = STATE_MENU;						//Set state to menu
+	ClearLCD();									//Clear LCD Display
+
+	printBMP(&button_START_BMP);				//Draw start button to display
+}
+
+//*********************************************************************
+//*** Show all Game Objects											***
+//*********************************************************************
+void ShowGame(ENUM_GAME_STATE *state){
+	if(*state == STATE_GAME)					//Already handled
+		return;
+
+	*state = STATE_GAME;						//Set state to game
+	ClearLCD();									//Clear LCD Display
+
+	printBMP(&tRexBmp);							//Draw T-Rex to Display
+}
+
+//*********************************************************************
+//*** Show all Gameover Objects										***
+//*********************************************************************
+void ShowGameOver(ENUM_GAME_STATE *state){
+	if(*state == STATE_GAME_OVER)				//Already handled
+			return;
+
+	*state = STATE_GAME_OVER;					//Set state to gameover
+	ClearLCD();									//Clear LCD Display
 }
