@@ -8,6 +8,7 @@
 //include own librarys
 #include "Object.h"
 
+
 //*********************************************************************
 //*** Defines    													***
 //*********************************************************************
@@ -36,10 +37,12 @@ typedef struct {
 //*********************************************************************
 //*** Functions 													***
 //*********************************************************************
-void 	globalInit(void);
+void 	GlobalInit(void);
 
 void 	ClearLCD(void);
-void 	printBMP(bmp_t *Bmp);
+void 	DrawBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y);
+void 	MoveBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y);
+void 	ShiftBmp(bmp_t *Bmp, const uint16_t ix, const uint16_t iy) { MoveBmp(Bmp, Bmp->x + ix, Bmp->y + iy); }
 
 void 	ShowMenu(ENUM_GAME_STATE *state);
 void 	ShowGame(ENUM_GAME_STATE *state);
@@ -56,7 +59,7 @@ int main()
 	ENUM_GAME_STATE gameState = STATE_NONE;		//Current game event
 	event_T event;								//Struct contains current event
 
-	globalInit();								//initialisation of hardware, leguan and LCD
+	GlobalInit();								//initialisation of hardware, leguan and LCD
 	ShowMenu(&gameState);						//Show Menu at beginning
 
 	//--- Main loop
@@ -76,7 +79,7 @@ int main()
 			}
 			//--- Event on T_Rex
 			else if(CheckEventBmp(tRexBmp, event)){
-				ShowMenu(&gameState);
+				ShiftBmp(&tRexBmp, 20, 0);
 			}
 		}
 	}
@@ -85,7 +88,7 @@ int main()
 //*********************************************************************
 //*** Global Init 													***
 //*********************************************************************
-void globalInit(void){
+void GlobalInit(void){
 	CUBEMX_Init();							// Initialize Hardware
 	LEGUAN_Init();							// Initialize Leguan board
 	LCD_Init();								// Initialize LCD
@@ -101,6 +104,61 @@ void ClearLCD(void){
 	// chöimer de no mitere liste ersetze!!
 	tRexBmp.visible = FALSE;
 	button_START_BMP.visible = FALSE;
+}
+
+//*********************************************************************
+//*** Print Bmp to LCD												***
+//*********************************************************************
+void DrawBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
+	Bmp->visible = 1;
+	Bmp->x = x;
+	Bmp->y = y;
+	uint32_t i;
+
+	for(uint16_t yi = 0; yi < Bmp->h; yi++){
+		for(uint16_t xi = 0; xi < Bmp->w; xi++){
+			i = yi*Bmp->w + xi;
+
+			color_t pixelClr = BGRA565_COLOR(	*(*(Bmp->pixels + i) +0),
+												*(*(Bmp->pixels + i) +1),
+												*(*(Bmp->pixels + i) +2),
+												*(*(Bmp->pixels + i) +3));
+
+			if(pixelClr.a == 0)	//Skip transparent pixels
+				continue;
+
+			LCD_SetForegroundColor(pixelClr);
+			LCD_Pixel(Bmp->x + xi, Bmp->y + (Bmp->h - yi));
+		}
+	}
+}
+
+//*********************************************************************
+//*** Move Bmp to (x,y)												***
+//*********************************************************************
+void MoveBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
+	if(Bmp->visible == FALSE)
+		return;
+
+	if (x > LCD_WIDTH || y > LCD_HEIGHT)
+		return;
+
+	//--- Delete the old object.
+	uint32_t i;
+	LCD_SetForegroundColor(ColorWhite);	//BG Color
+
+	for(uint16_t yi = 0; yi < Bmp->h; yi++){
+		for(uint16_t xi = 0; xi < Bmp->w; xi++){
+			i = yi*Bmp->w + xi;
+
+			if(*(*(Bmp->pixels + i) +3) == 0)					//if it's transparent we can skipp it
+				continue;
+
+			LCD_Pixel(Bmp->x + xi, Bmp->y + (Bmp->h - yi));		//reset the pixel to bg
+		}
+	}
+
+	DrawBmp(Bmp, x, y);
 }
 
 //*********************************************************************
@@ -135,28 +193,6 @@ event_T CheckEvent(void)
 }
 
 //*********************************************************************
-//*** Print Bmp to LCD												***
-//*********************************************************************
-void printBMP(bmp_t *Bmp)
-{
-	Bmp->visible = TRUE;
-	unsigned int i;
-
-	for(unsigned int y = 0; y < Bmp->h; y++){
-		for(unsigned int x = 0; x < Bmp->w; x++){
-			i = y*Bmp->w + x;
-
-			color_t pixelClr = BGRA565_COLOR(	*(*(Bmp->pixels + i) +0),
-												*(*(Bmp->pixels + i) +1),
-												*(*(Bmp->pixels + i) +2),
-												*(*(Bmp->pixels + i) +3));
-			LCD_SetForegroundColor(pixelClr);
-			LCD_Pixel(Bmp->x + x, Bmp->y + (Bmp->h - y));
-		}
-	}
-}
-
-//*********************************************************************
 //*** Check if event happend to be on teh bmp						***
 //*********************************************************************
 char 	CheckEventBmp(bmp_t bmp, event_T event){
@@ -167,10 +203,10 @@ char 	CheckEventBmp(bmp_t bmp, event_T event){
 	if(	event.x >= bmp.x && event.x <= bmp.x + bmp.w &&
 		event.y >= bmp.y && event.y <= bmp.y + bmp.h)
 	{
-		return FALSE;
+		return TRUE;
 	}
 
-	return TRUE;
+	return FALSE;
 }
 
 //*********************************************************************
@@ -183,7 +219,7 @@ void ShowMenu(ENUM_GAME_STATE *state){
 	*state = STATE_MENU;						//Set state to menu
 	ClearLCD();									//Clear LCD Display
 
-	printBMP(&button_START_BMP);				//Draw start button to display
+	DrawBmp(&button_START_BMP, 200, 150);		//Draw start button to display
 }
 
 //*********************************************************************
@@ -196,7 +232,7 @@ void ShowGame(ENUM_GAME_STATE *state){
 	*state = STATE_GAME;						//Set state to game
 	ClearLCD();									//Clear LCD Display
 
-	printBMP(&tRexBmp);							//Draw T-Rex to Display
+	DrawBmp(&tRexBmp, 50, 250);					//Draw T-Rex to Display
 }
 
 //*********************************************************************

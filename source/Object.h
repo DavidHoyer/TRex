@@ -13,17 +13,16 @@
 /****************************************/
 /*  Declaration of the global variables */
 /****************************************/
-
 typedef struct
 {
-	unsigned int	x;		// X Position
-	unsigned int	y;		// Y Position
-	unsigned int	w;		// Width
-	unsigned int 	h;		// Height
+	uint16_t		x;				// X Position
+	uint16_t		y;				// Y Position
+	uint16_t		w;				// Width
+	uint16_t 		h;				// Height
 
     unsigned char	(*pixels)[4];	//pointer to pixelData Array
 
-	unsigned char	visible;	// visibility flag
+	unsigned char	visible;		// visibility flag
 }bmp_t;
 
 

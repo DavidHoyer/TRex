@@ -164,10 +164,6 @@ static LEGUAN_ALWAYS_INLINE void LCD_Set(const LCD_Color_t *color) {
 
 result_t LCD_Pixel(uint16_t x, uint16_t y)
 {
-	//---- fu dave u luki hinzuegfüegt
-	//if(m_foreground_color == m_background_color)
-	//	return RESULT_SUCCESS;
-	//----
 
 	if (x > LCD_WIDTH || y > LCD_HEIGHT)
 		return RESULT_INVALID_ARGUMENTS;
