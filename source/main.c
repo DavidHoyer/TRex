@@ -15,6 +15,8 @@
 #define TRUE		1
 #define FALSE		0
 
+#define GROUND_HEIGHT	LCD_HEIGHT - 100
+
 //*********************************************************************
 //*** Enums      													***
 //*********************************************************************
@@ -51,6 +53,8 @@ void 	ShowGameOver(ENUM_GAME_STATE *state);
 event_T CheckEvent(void);
 char 	CheckEventBmp(bmp_t bmp, event_T event);
 
+void 	MoveTree(void);
+
 //*********************************************************************
 //*** Main 															***
 //*********************************************************************
@@ -67,22 +71,42 @@ int main()
 	{
 		event = CheckEvent();					//Check if a new event happend
 
-		//switch(state)
-		//case game:
-		//GameOnTick();
-		//GameEventHAndle(event)
+		switch(gameState)
+		{
+			case STATE_NONE:
+				break;
 
-		if(event.eventFlag){
-			//--- Menu Button
-			if(CheckEventBmp(button_START_BMP, event)){
-				ShowGame(&gameState);
-			}
-			//--- Event on T_Rex
-			else if(CheckEventBmp(tRexBmp, event)){
-				ShiftBmp(&tRexBmp, 20, 0);
-			}
+			case STATE_MENU:
+				//--- Check events
+				if(event.eventFlag){
+					//--- Menu Button
+					if(CheckEventBmp(button_START_BMP, event))
+						ShowGame(&gameState);
+				}
+				break;
+
+			case STATE_GAME:
+				//--- Check events
+				if(event.eventFlag){
+					//--- Event on T_Rex
+					if(CheckEventBmp(tRexBmp, event))
+						ShiftBmp(&tRexBmp, 20, 0);
+					if(CheckEventBmp(obstacle_tree_BMP, event)){
+						ShowMenu(&gameState);
+						break;
+					}
+				}
+
+				MoveTree();
+				break;
+
+			case STATE_GAME_OVER:
+				break;
+
 		}
 	}
+
+	return 0;
 }
 
 //*********************************************************************
@@ -232,7 +256,8 @@ void ShowGame(ENUM_GAME_STATE *state){
 	*state = STATE_GAME;						//Set state to game
 	ClearLCD();									//Clear LCD Display
 
-	DrawBmp(&tRexBmp, 50, 250);					//Draw T-Rex to Display
+	DrawBmp(&tRexBmp, 			 50, GROUND_HEIGHT - tRexBmp.h);			//Draw T-Rex to Display
+	DrawBmp(&obstacle_tree_BMP, 600, GROUND_HEIGHT - obstacle_tree_BMP.h);	//Draw Tree to Display
 }
 
 //*********************************************************************
@@ -244,4 +269,15 @@ void ShowGameOver(ENUM_GAME_STATE *state){
 
 	*state = STATE_GAME_OVER;					//Set state to gameover
 	ClearLCD();									//Clear LCD Display
+}
+
+void MoveTree(void){
+	static uint32_t tickOld = 0;
+	uint32_t tickNew = HAL_GetTick();
+
+	if(tickNew < tickOld + 5)
+		return;
+
+	ShiftBmp(&obstacle_tree_BMP, -1, 0);
+	tickOld = tickNew;
 }

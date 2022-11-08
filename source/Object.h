@@ -71,27 +71,25 @@ Important colors:     0*/
 bmp_t button_START_BMP = {200, 150, 400, 171, button_START_pixelData, 0};
 
 /*Bitmap File Header
-File type:        BMtree.txt
-Bitmap file size: 90122
+File type:        BMC:\Users\lukir\OneDrive\Documents\Studium\Semester_3\BTE5057_Software-Projekte\bmp_Converter\bmp_Converter\tree.txt
+Bitmap file size: 67254
 Reserved 1:       0
 Reserved 2:       0
-Data start:       122
+Data start:       54
 
 Bitmap Info Header
-Size of Header:       108
-Width in pixel:       150
+Size of Header:       40
+Width in pixel:       112
 Height in pixel:      150
 Nr. of clr planes:    1
 Bits per pixel:       32
-Compression method:   3
-Image size:           90122
-X pixel per meter:    3780
-Y pixel per meter:    3780
+Compression method:   0
+Image size:           0
+X pixel per meter:    2834
+Y pixel per meter:    2834
 Number of colors:     0
 Important colors:     0*/
 
-bmp_t obstacle_tree_BMP = { 600, 250, 150, 150, TREE_pixelData, 0};
-
-
+bmp_t obstacle_tree_BMP = { 600, 250, 112, 150, TREE_pixelData, 0};
 
 #endif /* OBJECT_H_ */
