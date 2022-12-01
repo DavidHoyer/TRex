@@ -168,9 +168,12 @@ void MoveBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
 		return;
 
 	//--- Delete the old object.
-	uint32_t i;
+	//uint32_t i;
 	LCD_SetForegroundColor(ColorWhite);	//BG Color
 
+	LCD_Rect((Bmp->x + Bmp->w) , Bmp->y, y, Bmp->h);
+
+	/*
 	for(uint16_t yi = 0; yi < Bmp->h; yi++){
 		for(uint16_t xi = 0; xi < Bmp->w; xi++){
 			i = yi*Bmp->w + xi;
@@ -181,7 +184,7 @@ void MoveBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
 			LCD_Pixel(Bmp->x + xi, Bmp->y + (Bmp->h - yi));		//reset the pixel to bg
 		}
 	}
-
+*/
 	DrawBmp(Bmp, x, y);
 }
 
