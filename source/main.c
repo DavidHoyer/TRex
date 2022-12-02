@@ -95,9 +95,10 @@ int main()
 						ShowMenu(&gameState);
 						break;
 					}
-				}
 
+				}
 				MoveTree();
+
 				break;
 
 			case STATE_GAME_OVER:
@@ -161,30 +162,58 @@ void DrawBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
 //*** Move Bmp to (x,y)												***
 //*********************************************************************
 void MoveBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
+
+	//uint32_t i;
+
 	if(Bmp->visible == FALSE)
 		return;
 
 	if (x > LCD_WIDTH || y > LCD_HEIGHT)
 		return;
+/*
+	if ((Bmp->x - x) > Bmp->w || (Bmp->y - y) > Bmp->h) {
+
+		for(uint16_t yi = 0; yi < Bmp->h; yi++){
+				for(uint16_t xi = 0; xi < Bmp->w; xi++){
+					i = yi*Bmp->w + xi;
+
+					color_t pixelClr = BGRA565_COLOR(	*(*(Bmp->pixels + i) +0),
+														*(*(Bmp->pixels + i) +1),
+														*(*(Bmp->pixels + i) +2),
+														*(*(Bmp->pixels + i) +3));
+
+					if(pixelClr.a == 0)	//Skip transparent pixels
+						continue;
+
+					LCD_SetForegroundColor(ColorWhite);
+					LCD_Pixel(Bmp->x + xi, Bmp->y + (Bmp->h - yi));
+				}
+			}
+
+		return;
+	}
+
+*/
 
 	//--- Delete the old object.
-	//uint32_t i;
+	uint32_t u;
+
 	LCD_SetForegroundColor(ColorWhite);	//BG Color
 
-	LCD_Rect((Bmp->x + Bmp->w) , Bmp->y, y, Bmp->h);
+	//LCD_Rect((Bmp->x + Bmp->w) , Bmp->y, x, Bmp->h);
 
-	/*
+
 	for(uint16_t yi = 0; yi < Bmp->h; yi++){
 		for(uint16_t xi = 0; xi < Bmp->w; xi++){
-			i = yi*Bmp->w + xi;
+			u = yi*Bmp->w + xi;
 
-			if(*(*(Bmp->pixels + i) +3) == 0)					//if it's transparent we can skipp it
+			if(*(*(Bmp->pixels + u) +3) == 0)					//if it's transparent we can skipp it
 				continue;
 
 			LCD_Pixel(Bmp->x + xi, Bmp->y + (Bmp->h - yi));		//reset the pixel to bg
 		}
 	}
-*/
+
 	DrawBmp(Bmp, x, y);
 }
 
@@ -276,7 +305,7 @@ void ShowGameOver(ENUM_GAME_STATE *state){
 
 void MoveTree(void){
 	static uint32_t tickOld = 0;
-	uint32_t tickNew = HAL_GetTick();
+	const uint32_t tickNew = HAL_GetTick();
 
 	if(tickNew < tickOld + 5)
 		return;
