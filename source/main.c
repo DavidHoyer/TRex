@@ -42,6 +42,7 @@ typedef struct {
 void 	GlobalInit(void);
 
 void 	ClearLCD(void);
+void	DrawBackgroundBmp(bmp_t *Bmp);
 void 	DrawBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y);
 void 	MoveBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y);
 void 	ShiftBmp(bmp_t *Bmp, const uint16_t ix, const uint16_t iy) { MoveBmp(Bmp, Bmp->x + ix, Bmp->y + iy); }
@@ -170,31 +171,9 @@ void MoveBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
 
 	if (x > LCD_WIDTH || y > LCD_HEIGHT)
 		return;
+
+	DrawBackgroundBmp(Bmp);
 /*
-	if ((Bmp->x - x) > Bmp->w || (Bmp->y - y) > Bmp->h) {
-
-		for(uint16_t yi = 0; yi < Bmp->h; yi++){
-				for(uint16_t xi = 0; xi < Bmp->w; xi++){
-					i = yi*Bmp->w + xi;
-
-					color_t pixelClr = BGRA565_COLOR(	*(*(Bmp->pixels + i) +0),
-														*(*(Bmp->pixels + i) +1),
-														*(*(Bmp->pixels + i) +2),
-														*(*(Bmp->pixels + i) +3));
-
-					if(pixelClr.a == 0)	//Skip transparent pixels
-						continue;
-
-					LCD_SetForegroundColor(ColorWhite);
-					LCD_Pixel(Bmp->x + xi, Bmp->y + (Bmp->h - yi));
-				}
-			}
-
-		return;
-	}
-
-*/
-
 	//--- Delete the old object.
 	uint32_t u;
 
@@ -205,6 +184,7 @@ void MoveBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
 
 	for(uint16_t yi = 0; yi < Bmp->h; yi++){
 		for(uint16_t xi = 0; xi < Bmp->w; xi++){
+
 			u = yi*Bmp->w + xi;
 
 			if(*(*(Bmp->pixels + u) +3) == 0)					//if it's transparent we can skipp it
@@ -213,7 +193,7 @@ void MoveBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
 			LCD_Pixel(Bmp->x + xi, Bmp->y + (Bmp->h - yi));		//reset the pixel to bg
 		}
 	}
-
+*/
 	DrawBmp(Bmp, x, y);
 }
 
@@ -312,4 +292,12 @@ void MoveTree(void){
 
 	ShiftBmp(&obstacle_tree_BMP, -1, 0);
 	tickOld = tickNew;
+}
+
+void DrawBackgroundBmp(bmp_t *Bmp) {
+
+	LCD_SetForegroundColor(ColorWhite);
+
+	LCD_Rect(Bmp->x-5, Bmp->y-5, Bmp->w+5, Bmp->h +10);
+
 }
