@@ -23,6 +23,8 @@ typedef struct
     unsigned char	(*pixels)[4];	//pointer to pixelData Array
 
 	unsigned char	visible;		// visibility flag
+
+	unsigned char	velocity;
 }bmp_t;
 
 
@@ -46,7 +48,7 @@ Y pixel per meter:    2834
 Number of colors:     0
 Important colors:     0*/
 
-bmp_t tRexBmp = {50, 250, 135, 100, tRex_pixelData, 0};
+bmp_t tRexBmp = {50, 250, 135, 100, tRex_pixelData, 0,0};
 
 /*Bitmap File Header
 File type:        BMbutton_menu_start.txt
@@ -68,7 +70,7 @@ Y pixel per meter:    2834
 Number of colors:     0
 Important colors:     0*/
 
-bmp_t button_START_BMP = {200, 150, 400, 171, button_START_pixelData, 0};
+bmp_t button_START_BMP = {200, 150, 400, 171, button_START_pixelData, 0,0};
 
 /*Bitmap File Header
 File type:        BMC:\Users\lukir\OneDrive\Documents\Studium\Semester_3\BTE5057_Software-Projekte\bmp_Converter\bmp_Converter\tree.txt
@@ -90,6 +92,6 @@ Y pixel per meter:    2834
 Number of colors:     0
 Important colors:     0*/
 
-bmp_t obstacle_tree_BMP = { 600, 250, 112, 150, TREE_pixelData, 0};
+bmp_t obstacle_tree_BMP = { 600, 250, 112, 150, TREE_pixelData, 0,0};
 
 #endif /* OBJECT_H_ */

@@ -54,7 +54,9 @@ void 	ShowGameOver(ENUM_GAME_STATE *state);
 event_T CheckEvent(void);
 char 	CheckEventBmp(bmp_t bmp, event_T event);
 
-void 	MoveTree(void);
+void MoveObject(bmp_t *Bmp, short int x, short int y);
+void JumpTRex(void);
+
 
 //*********************************************************************
 //*** Main 															***
@@ -90,15 +92,16 @@ int main()
 				//--- Check events
 				if(event.eventFlag){
 					//--- Event on T_Rex
-					if(CheckEventBmp(tRexBmp, event))
+					if(CheckEventBmp(tRexBmp, event)){
 						ShiftBmp(&tRexBmp, 20, 0);
+					}
 					if(CheckEventBmp(obstacle_tree_BMP, event)){
 						ShowMenu(&gameState);
 						break;
 					}
 
 				}
-				MoveTree();
+				MoveObject(&obstacle_tree_BMP, -1, 0);
 
 				break;
 
@@ -141,6 +144,36 @@ void DrawBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
 	Bmp->y = y;
 	uint32_t i;
 
+
+
+	for(short int yi = 0; yi < Bmp->h ; yi++){
+		for(short int xi = -2; xi < Bmp->w +2; xi++){
+
+			if ( yi<0 || yi > Bmp->h || xi<0 || xi > Bmp->w) {
+				LCD_SetForegroundColor(ColorWhite);
+				LCD_Pixel(Bmp->x + xi, Bmp->y + (Bmp->h - yi));
+				continue;
+			}
+
+			i = yi*Bmp->w + xi;
+
+			color_t pixelClr = BGRA565_COLOR(	*(*(Bmp->pixels + i) +0),
+												*(*(Bmp->pixels + i) +1),
+												*(*(Bmp->pixels + i) +2),
+												*(*(Bmp->pixels + i) +3));
+
+			if(pixelClr.a == 0){ 	//Skip transparent pixels
+				LCD_SetForegroundColor(ColorWhite);
+				LCD_Pixel(Bmp->x + xi, Bmp->y + (Bmp->h - yi));
+				continue;
+			}
+
+			LCD_SetForegroundColor(pixelClr);
+			LCD_Pixel(Bmp->x + xi, Bmp->y + (Bmp->h - yi));
+		}
+	}
+
+	/*
 	for(uint16_t yi = 0; yi < Bmp->h; yi++){
 		for(uint16_t xi = 0; xi < Bmp->w; xi++){
 			i = yi*Bmp->w + xi;
@@ -157,6 +190,8 @@ void DrawBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
 			LCD_Pixel(Bmp->x + xi, Bmp->y + (Bmp->h - yi));
 		}
 	}
+*/
+
 }
 
 //*********************************************************************
@@ -172,7 +207,6 @@ void MoveBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
 	if (x > LCD_WIDTH || y > LCD_HEIGHT)
 		return;
 
-	DrawBackgroundBmp(Bmp);
 /*
 	//--- Delete the old object.
 	uint32_t u;
@@ -283,21 +317,35 @@ void ShowGameOver(ENUM_GAME_STATE *state){
 	ClearLCD();									//Clear LCD Display
 }
 
-void MoveTree(void){
+//*********************************************************************
+//*** Move gameobject										***
+//*********************************************************************
+
+void MoveObject(bmp_t *Bmp, short int x, short int y){
+
 	static uint32_t tickOld = 0;
 	const uint32_t tickNew = HAL_GetTick();
 
 	if(tickNew < tickOld + 5)
 		return;
 
-	ShiftBmp(&obstacle_tree_BMP, -1, 0);
+	ShiftBmp(Bmp, x, y);
 	tickOld = tickNew;
 }
 
-void DrawBackgroundBmp(bmp_t *Bmp) {
+void JumpTRex(/*bmp_t tRexBmp*/void) {
 
-	LCD_SetForegroundColor(ColorWhite);
+	if(tRexBmp.velocity == 0)
+		return;
 
-	LCD_Rect(Bmp->x-5, Bmp->y-5, Bmp->w+5, Bmp->h +10);
+	static uint32_t tickOld_trex = 0;
+	const uint32_t tickNew_trex = HAL_GetTick();
+
+	if(tickNew_trex < tickOld_trex + 5)
+		return;
+
+	ShiftBmp(&tRexBmp, 0, tRexBmp.velocity);
+	tickOld_trex = tickNew_trex;
+	tRexBmp.velocity -=1;
 
 }
