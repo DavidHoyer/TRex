@@ -24,8 +24,16 @@ typedef struct
 
 	unsigned char	visible;		// visibility flag
 
-	unsigned char	velocity;
+	struct border *head;
 }bmp_t;
+
+struct border
+{
+	uint16_t		x;
+	uint16_t		y;
+
+	struct	border	*next;
+};
 
 
 /*Bitmap File Header

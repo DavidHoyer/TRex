@@ -57,6 +57,8 @@ char 	CheckEventBmp(bmp_t bmp, event_T event);
 void MoveObject(bmp_t *Bmp, short int x, short int y);
 void JumpTRex(void);
 
+struct border *GetBoarder (bmp_t *Bmp);
+void PrintBorder (bmp_t *Bmp);
 
 //*********************************************************************
 //*** Main 															***
@@ -68,6 +70,9 @@ int main()
 
 	GlobalInit();								//initialisation of hardware, leguan and LCD
 	ShowMenu(&gameState);						//Show Menu at beginning
+
+	//tRexBmp.head = GetBoarder(&tRexBmp);
+	//PrintBorder(&tRexBmp);
 
 	//--- Main loop
 	while(TRUE)
@@ -101,7 +106,7 @@ int main()
 					}
 
 				}
-				//MoveObject(&obstacle_tree_BMP, -1, 0);
+				MoveObject(&obstacle_tree_BMP, -1, -1);
 				//MoveObject(&tRexBmp, 0, -1);
 
 				break;
@@ -123,6 +128,7 @@ void GlobalInit(void){
 	LEGUAN_Init();							// Initialize Leguan board
 	LCD_Init();								// Initialize LCD
 	LOG_SetDestination(LCD_Stream);			// Set logging output destination to be the LCD
+
 }
 
 //*********************************************************************
@@ -135,6 +141,75 @@ void ClearLCD(void){
 	tRexBmp.visible = FALSE;
 	button_START_BMP.visible = FALSE;
 }
+
+//*********************************************************************
+//*** Get boarder of bmp											***
+//*********************************************************************
+
+struct border *GetBoarder (bmp_t *Bmp) {
+
+	struct border *head;
+	head = NULL;
+
+
+	uint32_t i;
+
+
+	for(uint16_t yi = 0; yi < Bmp->h; yi++){
+		for(uint16_t xi = 0; xi < Bmp->w; xi++){
+
+			i = yi*Bmp->w + xi;
+
+			if ( *(*(Bmp->pixels + i) +3) != *(*(Bmp->pixels + i + 1) +3)
+				|| *(*(Bmp->pixels + i) +3) != *(*(Bmp->pixels + i - 1) +3)){
+
+				struct border *pixel = malloc(sizeof(struct border));
+				pixel->x = xi;
+				pixel->y = yi;
+				pixel->next = head;
+				head = pixel;
+
+				continue;
+			}
+
+			else if (((*(*(Bmp->pixels + i) +3) != *(*(Bmp->pixels + i +Bmp->w) +3)
+				|| *(*(Bmp->pixels + i) +3) != *(*(Bmp->pixels + i - Bmp->w) +3)))
+				&& (yi > 0 && yi < (Bmp->h-1)))
+			{
+				struct border *pixel = malloc(sizeof(struct border));
+				pixel->x = xi;
+				pixel->y = yi;
+				pixel->next = head;
+				head = pixel;
+
+				continue;
+
+			}
+
+		}
+	}
+	return head;
+}
+
+//*********************************************************************
+//*** Print border to LCD												***
+//*********************************************************************
+
+void PrintBorder (bmp_t *Bmp) {
+
+	struct border *ptr = Bmp->head;
+
+	LCD_SetForegroundColor(ColorBlue);
+
+	while(ptr != NULL){
+		LCD_Pixel(Bmp->x + ptr->x, Bmp->y + (Bmp->h - ptr->y));
+		ptr = ptr->next;
+	}
+
+}
+
+
+
 
 //*********************************************************************
 //*** Print Bmp to LCD												***
@@ -160,7 +235,7 @@ void DrawBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
 				LCD_Pixel(Bmp->x + xi, Bmp->y + (Bmp->h - yi));
 				continue;
 			}
-
+/*
 
 			if (((*(*(Bmp->pixels + i) +3) != *(*(Bmp->pixels + i +Bmp->w) +3)
 				|| *(*(Bmp->pixels + i) +3) != *(*(Bmp->pixels + i - Bmp->w) +3)))
@@ -170,7 +245,7 @@ void DrawBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
 				LCD_Pixel(Bmp->x + xi, Bmp->y + (Bmp->h - yi));
 				continue;
 			}
-
+*/
 			color_t pixelClr = BGRA565_COLOR(	*(*(Bmp->pixels + i) +0),
 												*(*(Bmp->pixels + i) +1),
 												*(*(Bmp->pixels + i) +2),
@@ -346,8 +421,8 @@ void MoveObject(bmp_t *Bmp, short int x, short int y){
 	ShiftBmp(Bmp, x, y);
 	tickOld = tickNew;
 }
-
-void JumpTRex(/*bmp_t tRexBmp*/void) {
+/*
+void JumpTRex(void) {
 
 	if(tRexBmp.velocity == 0)
 		return;
@@ -363,3 +438,4 @@ void JumpTRex(/*bmp_t tRexBmp*/void) {
 	tRexBmp.velocity -=1;
 
 }
+*/
