@@ -101,7 +101,8 @@ int main()
 					}
 
 				}
-				MoveObject(&obstacle_tree_BMP, -1, 0);
+				//MoveObject(&obstacle_tree_BMP, -1, 0);
+				//MoveObject(&tRexBmp, 0, -1);
 
 				break;
 
@@ -146,16 +147,29 @@ void DrawBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
 
 
 
-	for(short int yi = 0; yi < Bmp->h ; yi++){
-		for(short int xi = -2; xi < Bmp->w +2; xi++){
+	for(uint16_t yi = 0; yi < Bmp->h; yi++){
+		for(uint16_t xi = 0; xi < Bmp->w; xi++){
 
-			if ( yi<0 || yi > Bmp->h || xi<0 || xi > Bmp->w) {
+
+			i = yi*Bmp->w + xi;
+
+			if ( *(*(Bmp->pixels + i) +3) != *(*(Bmp->pixels + i + 1) +3)
+				|| *(*(Bmp->pixels + i) +3) != *(*(Bmp->pixels + i - 1) +3)){
+
 				LCD_SetForegroundColor(ColorWhite);
 				LCD_Pixel(Bmp->x + xi, Bmp->y + (Bmp->h - yi));
 				continue;
 			}
 
-			i = yi*Bmp->w + xi;
+
+			if (((*(*(Bmp->pixels + i) +3) != *(*(Bmp->pixels + i +Bmp->w) +3)
+				|| *(*(Bmp->pixels + i) +3) != *(*(Bmp->pixels + i - Bmp->w) +3)))
+				&& (yi > 0 && yi < (Bmp->h-1))) {
+
+				LCD_SetForegroundColor(ColorWhite);
+				LCD_Pixel(Bmp->x + xi, Bmp->y + (Bmp->h - yi));
+				continue;
+			}
 
 			color_t pixelClr = BGRA565_COLOR(	*(*(Bmp->pixels + i) +0),
 												*(*(Bmp->pixels + i) +1),
@@ -163,8 +177,7 @@ void DrawBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
 												*(*(Bmp->pixels + i) +3));
 
 			if(pixelClr.a == 0){ 	//Skip transparent pixels
-				LCD_SetForegroundColor(ColorWhite);
-				LCD_Pixel(Bmp->x + xi, Bmp->y + (Bmp->h - yi));
+
 				continue;
 			}
 
@@ -172,32 +185,14 @@ void DrawBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
 			LCD_Pixel(Bmp->x + xi, Bmp->y + (Bmp->h - yi));
 		}
 	}
-
-	/*
-	for(uint16_t yi = 0; yi < Bmp->h; yi++){
-		for(uint16_t xi = 0; xi < Bmp->w; xi++){
-			i = yi*Bmp->w + xi;
-
-			color_t pixelClr = BGRA565_COLOR(	*(*(Bmp->pixels + i) +0),
-												*(*(Bmp->pixels + i) +1),
-												*(*(Bmp->pixels + i) +2),
-												*(*(Bmp->pixels + i) +3));
-
-			if(pixelClr.a == 0)	//Skip transparent pixels
-				continue;
-
-			LCD_SetForegroundColor(pixelClr);
-			LCD_Pixel(Bmp->x + xi, Bmp->y + (Bmp->h - yi));
-		}
-	}
-*/
-
 }
 
 //*********************************************************************
 //*** Move Bmp to (x,y)												***
 //*********************************************************************
 void MoveBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
+
+	//uint8_t boarder[Bmp->w][Bmp->h];
 
 	//uint32_t i;
 
@@ -206,6 +201,25 @@ void MoveBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
 
 	if (x > LCD_WIDTH || y > LCD_HEIGHT)
 		return;
+/*
+	LCD_SetForegroundColor(ColorWhite);
+
+	for (uint16_t xi = 0; xi < Bmp->w; xi++){
+		for (uint16_t yi = 0; yi < Bmp->h; yi++) {
+
+			i = yi*Bmp->w + xi;
+
+			if ( *(*(Bmp->pixels + i) +3) != *(*(Bmp->pixels + i + 1) +3)
+				|| *(*(Bmp->pixels + i) +3) != *(*(Bmp->pixels + i - 1) +3)){
+				LCD_Pixel(Bmp->x + xi, Bmp->y + (Bmp->h -yi));
+			}
+
+		}
+
+	}
+*/
+	DrawBmp(Bmp, x, y);
+
 
 /*
 	//--- Delete the old object.
@@ -228,7 +242,6 @@ void MoveBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
 		}
 	}
 */
-	DrawBmp(Bmp, x, y);
 }
 
 //*********************************************************************
@@ -290,6 +303,7 @@ void ShowMenu(ENUM_GAME_STATE *state){
 	ClearLCD();									//Clear LCD Display
 
 	DrawBmp(&button_START_BMP, 200, 150);		//Draw start button to display
+	DrawBmp(&tRexBmp, 			 50, GROUND_HEIGHT - tRexBmp.h);
 }
 
 //*********************************************************************
