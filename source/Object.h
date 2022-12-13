@@ -13,6 +13,15 @@
 /****************************************/
 /*  Declaration of the global variables */
 /****************************************/
+
+typedef struct node
+{
+	uint16_t		x;
+	uint16_t		y;
+
+	struct node	*next;
+}node_t;
+
 typedef struct
 {
 	uint16_t		x;				// X Position
@@ -24,16 +33,8 @@ typedef struct
 
 	unsigned char	visible;		// visibility flag
 
-	struct border *head;
+	node_t			*head;
 }bmp_t;
-
-struct border
-{
-	uint16_t		x;
-	uint16_t		y;
-
-	struct	border	*next;
-};
 
 
 /*Bitmap File Header

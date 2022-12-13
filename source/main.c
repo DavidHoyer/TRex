@@ -57,7 +57,7 @@ char 	CheckEventBmp(bmp_t bmp, event_T event);
 void MoveObject(bmp_t *Bmp, short int x, short int y);
 void JumpTRex(void);
 
-struct border *GetBoarder (bmp_t *Bmp);
+node_t *GetBoarder (bmp_t *Bmp);
 void PrintBorder (bmp_t *Bmp);
 
 //*********************************************************************
@@ -70,7 +70,6 @@ int main()
 
 	GlobalInit();								//initialisation of hardware, leguan and LCD
 	ShowMenu(&gameState);						//Show Menu at beginning
-
 	//tRexBmp.head = GetBoarder(&tRexBmp);
 	//PrintBorder(&tRexBmp);
 
@@ -98,7 +97,8 @@ int main()
 				if(event.eventFlag){
 					//--- Event on T_Rex
 					if(CheckEventBmp(tRexBmp, event)){
-						ShiftBmp(&tRexBmp, 20, 0);
+						//ShiftBmp(&tRexBmp, 20, 0);
+
 					}
 					if(CheckEventBmp(obstacle_tree_BMP, event)){
 						ShowMenu(&gameState);
@@ -106,8 +106,7 @@ int main()
 					}
 
 				}
-				MoveObject(&obstacle_tree_BMP, -1, -1);
-				//MoveObject(&tRexBmp, 0, -1);
+				MoveObject(&obstacle_tree_BMP, -1, 0);
 
 				break;
 
@@ -129,6 +128,8 @@ void GlobalInit(void){
 	LCD_Init();								// Initialize LCD
 	LOG_SetDestination(LCD_Stream);			// Set logging output destination to be the LCD
 
+	tRexBmp.head = GetBoarder(&tRexBmp);						//generating pixel list for picture border
+	obstacle_tree_BMP.head = GetBoarder(&obstacle_tree_BMP);	//generating pixel list for picture border
 }
 
 //*********************************************************************
@@ -146,24 +147,24 @@ void ClearLCD(void){
 //*** Get boarder of bmp											***
 //*********************************************************************
 
-struct border *GetBoarder (bmp_t *Bmp) {
+node_t *GetBoarder (bmp_t *Bmp) {
 
-	struct border *head;
-	head = NULL;
+	node_t *head = NULL;
 
 
 	uint32_t i;
 
 
-	for(uint16_t yi = 0; yi < Bmp->h; yi++){
-		for(uint16_t xi = 0; xi < Bmp->w; xi++){
+	for(uint16_t yi = 1; yi < Bmp->h-1; yi++){
+		for(uint16_t xi = 1; xi < Bmp->w-1; xi++){
+
 
 			i = yi*Bmp->w + xi;
 
 			if ( *(*(Bmp->pixels + i) +3) != *(*(Bmp->pixels + i + 1) +3)
 				|| *(*(Bmp->pixels + i) +3) != *(*(Bmp->pixels + i - 1) +3)){
 
-				struct border *pixel = malloc(sizeof(struct border));
+				node_t *pixel = malloc(sizeof(node_t));
 				pixel->x = xi;
 				pixel->y = yi;
 				pixel->next = head;
@@ -172,20 +173,18 @@ struct border *GetBoarder (bmp_t *Bmp) {
 				continue;
 			}
 
-			else if (((*(*(Bmp->pixels + i) +3) != *(*(Bmp->pixels + i +Bmp->w) +3)
-				|| *(*(Bmp->pixels + i) +3) != *(*(Bmp->pixels + i - Bmp->w) +3)))
-				&& (yi > 0 && yi < (Bmp->h-1)))
-			{
-				struct border *pixel = malloc(sizeof(struct border));
+
+			if (*(*(Bmp->pixels + i) +3) != *(*(Bmp->pixels + i +Bmp->w) +3)
+				|| *(*(Bmp->pixels + i) +3) != *(*(Bmp->pixels + i - Bmp->w) +3)) {
+
+				node_t *pixel = malloc(sizeof(node_t));
 				pixel->x = xi;
 				pixel->y = yi;
 				pixel->next = head;
 				head = pixel;
 
 				continue;
-
 			}
-
 		}
 	}
 	return head;
@@ -197,15 +196,14 @@ struct border *GetBoarder (bmp_t *Bmp) {
 
 void PrintBorder (bmp_t *Bmp) {
 
-	struct border *ptr = Bmp->head;
+	node_t *ptr = Bmp->head;
 
-	LCD_SetForegroundColor(ColorBlue);
+	LCD_SetForegroundColor(ColorWhite);
 
 	while(ptr != NULL){
 		LCD_Pixel(Bmp->x + ptr->x, Bmp->y + (Bmp->h - ptr->y));
 		ptr = ptr->next;
 	}
-
 }
 
 
@@ -220,14 +218,12 @@ void DrawBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
 	Bmp->y = y;
 	uint32_t i;
 
-
-
-	for(uint16_t yi = 0; yi < Bmp->h; yi++){
-		for(uint16_t xi = 0; xi < Bmp->w; xi++){
+	for(uint16_t yi = 1; yi < Bmp->h-1; yi++){
+		for(uint16_t xi = 1; xi < Bmp->w-1; xi++){
 
 
 			i = yi*Bmp->w + xi;
-
+/*
 			if ( *(*(Bmp->pixels + i) +3) != *(*(Bmp->pixels + i + 1) +3)
 				|| *(*(Bmp->pixels + i) +3) != *(*(Bmp->pixels + i - 1) +3)){
 
@@ -235,11 +231,10 @@ void DrawBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
 				LCD_Pixel(Bmp->x + xi, Bmp->y + (Bmp->h - yi));
 				continue;
 			}
-/*
 
-			if (((*(*(Bmp->pixels + i) +3) != *(*(Bmp->pixels + i +Bmp->w) +3)
-				|| *(*(Bmp->pixels + i) +3) != *(*(Bmp->pixels + i - Bmp->w) +3)))
-				&& (yi > 0 && yi < (Bmp->h-1))) {
+
+			if (*(*(Bmp->pixels + i) +3) != *(*(Bmp->pixels + i +Bmp->w) +3)
+				|| *(*(Bmp->pixels + i) +3) != *(*(Bmp->pixels + i - Bmp->w) +3)) {
 
 				LCD_SetForegroundColor(ColorWhite);
 				LCD_Pixel(Bmp->x + xi, Bmp->y + (Bmp->h - yi));
@@ -276,6 +271,16 @@ void MoveBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
 
 	if (x > LCD_WIDTH || y > LCD_HEIGHT)
 		return;
+
+	if (Bmp->x - x != 1 && Bmp->x - x != -1 && Bmp->y - y != 1 && Bmp->y - y != -1) {
+		LCD_SetForegroundColor(ColorWhite);
+		LCD_Rect(Bmp->x, Bmp->y, Bmp->w, Bmp->h);
+	}
+	else {
+		PrintBorder(Bmp);
+	}
+
+
 /*
 	LCD_SetForegroundColor(ColorWhite);
 
@@ -378,7 +383,6 @@ void ShowMenu(ENUM_GAME_STATE *state){
 	ClearLCD();									//Clear LCD Display
 
 	DrawBmp(&button_START_BMP, 200, 150);		//Draw start button to display
-	DrawBmp(&tRexBmp, 			 50, GROUND_HEIGHT - tRexBmp.h);
 }
 
 //*********************************************************************
