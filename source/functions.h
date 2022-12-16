@@ -9,7 +9,7 @@
 
 #ifndef FUNCTIONS_H_
 #define FUNCTIONS_H_
-
+/*
 //include general librarys
 #include <leguan.h>
 #include <cube.h>
@@ -19,7 +19,7 @@
 
 
 #include "Object.h"
-
+*/
 //*********************************************************************
 //*** Defines    													***
 //*********************************************************************
@@ -32,6 +32,38 @@
 //*********************************************************************
 //*** Print Bmp to LCD												***
 //*********************************************************************
+/*
+void DrawBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
+	Bmp->visible = 1;
+	Bmp->x = x;
+	Bmp->y = y;
+	uint32_t i;
+
+	 //R_TRY(LCD_SetDrawArea(x, y, x + Bmp->w, y + Bmp->h));
+	 LCD_EnableDrawMode();
+
+	for(uint16_t yi = 1; yi < Bmp->h-1; yi++){
+		for(uint16_t xi = 1; xi < Bmp->w-1; xi++){
+
+
+			i = yi*Bmp->w + xi;
+
+			color_t pixelClr = BGRA565_COLOR(	*(*(Bmp->pixels + i) +0),
+												*(*(Bmp->pixels + i) +1),
+												*(*(Bmp->pixels + i) +2),
+												*(*(Bmp->pixels + i) +3));
+
+			if(pixelClr.a == 0){ 	//Skip transparent pixels
+
+				continue;
+			}
+
+			//LCD_Set(&pixelClr);
+			//LCD_Pixel(Bmp->x + xi, Bmp->y + (Bmp->h - yi));
+		}
+	}
+}
+*/
 
 void DrawBmp(bmp_t *Bmp, const uint16_t x, const uint16_t y){
 	Bmp->visible = 1;

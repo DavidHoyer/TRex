@@ -12,11 +12,11 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <limits.h>
-*/
+
 //include own librarys
 //#include "functions.h"
-//#include "Object.h"
-
+#include "Object.h"
+*/
 //*********************************************************************
 //*** Print Bmp to LCD												***
 //*********************************************************************
