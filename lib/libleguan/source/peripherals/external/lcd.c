@@ -115,10 +115,8 @@ result_t LCD_Init(void) {
     /* Start pixel access mode */
     LCD_EnableDrawMode();
 
-    //LCD_SetForegroundColor(ColorWhite);
-    //LCD_SetBackgroundColor(ColorBlack);
     LCD_SetForegroundColor(ColorWhite);
-    LCD_SetBackgroundColor(ColorWhite);
+    LCD_SetBackgroundColor(ColorBlack);
     LCD_Clear();
 
     return RESULT_SUCCESS;
@@ -139,13 +137,7 @@ void LCD_Stream(const char *string, bool new_line) {
 }
 
 
-void LCD_SetForegroundColor(color_t color)
-{
-	if(color.a == 0)
-	{
-		m_foreground_color = m_background_color;
-		return;
-	}
+void LCD_SetForegroundColor(color_t color) {
 	m_foreground_color.r = color.r;
 	m_foreground_color.g = color.g;
 	m_foreground_color.b = color.b;
@@ -158,13 +150,16 @@ void LCD_SetBackgroundColor(color_t color) {
 }
 
 
-static LEGUAN_ALWAYS_INLINE void LCD_Set(const LCD_Color_t *color) {
+//static LEGUAN_ALWAYS_INLINE void LCD_Set(const LCD_Color_t *color) {
+ //   LCD_Data16(*(const uint16_t*)color);
+//}
+//can not be static as I need it in objects.c
+
+void LCD_Set(const LCD_Color_t *color) {
     LCD_Data16(*(const uint16_t*)color);
 }
 
-result_t LCD_Pixel(uint16_t x, uint16_t y)
-{
-
+result_t LCD_Pixel(uint16_t x, uint16_t y) {
 	if (x > LCD_WIDTH || y > LCD_HEIGHT)
 		return RESULT_INVALID_ARGUMENTS;
 
@@ -280,18 +275,14 @@ result_t LCD_Character(uint16_t x, uint16_t y, char c) {
 
 result_t LCD_String(uint16_t start_x, uint16_t start_y, const char *string) {
     uint16_t x = start_x, y = start_y;
-    while (true)
-    {
+    while (true) {
     	char c = *string++;
 
-    	if (c == '\n')
-    	{
+    	if (c == '\n') {
     		x = 0;
     		y += CONSOLE_FONT_CHAR_HEIGHT;
     		continue;
-    	}
-    	else if (c == '\x00')
-    	{
+    	} else if (c == '\x00') {
     		break;
     	}
 
