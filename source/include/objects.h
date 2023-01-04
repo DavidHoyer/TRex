@@ -13,7 +13,7 @@
 
 #define TRUE		1
 #define FALSE		0
-#define BGRA565_COLOR(r, g, b, a) 	{ ((uint8_t)(b)) >> 3, ((uint8_t)(g)) >> 2, ((uint8_t)(r)) >> 3, ((uint8_t)(a))}
+#define BGRA565_COLOR(r, g, b, a) 	{ ((uint8_t)(b)) >> 3, ((uint8_t)(g)) >> 2, ((uint8_t)(r)) >> 3, ((uint8_t)(a)) }
 
 //*******************************************************************
 //*** BMP Struct

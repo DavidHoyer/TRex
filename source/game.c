@@ -140,7 +140,7 @@ void MoveObstacles(void){
 	static uint32_t tickOld = 0;
 	const uint32_t tickNew = HAL_GetTick();
 
-	if(tickNew < tickOld + 10)
+	if(tickNew < tickOld + 15)
 		return;
 
 	tickOld = tickNew;
@@ -156,7 +156,7 @@ void MoveObstacles(void){
 			}
 			else{
 				//--- shift obstacle
-				ShiftBmp(&obstacleBmp[i], -4, 0);
+				ShiftBmp(&obstacleBmp[i], -5, 0);
 			}
 		}
 		else{

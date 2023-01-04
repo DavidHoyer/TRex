@@ -89,6 +89,7 @@ typedef struct LEGUAN_PACKED {
         volatile uint16_t data16;
     };
 } LCD_MemoryMap_t;
+
 static_assert(sizeof(LCD_MemoryMap_t) == 4, "LCDMemoryMap type definition invalid!");
 
 typedef void (*LCD_TouchCallback_t)(void);

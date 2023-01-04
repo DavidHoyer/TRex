@@ -53,7 +53,11 @@ static LEGUAN_ALWAYS_INLINE void LCD_Data8(uint8_t data) {
     LCD->data8 = data;
 }
 
-static LEGUAN_ALWAYS_INLINE void LCD_Data16(uint16_t data) {
+//static LEGUAN_ALWAYS_INLINE void LCD_Data16(uint16_t data) {
+//    LCD->data16 = data;
+//}
+
+void LCD_Data16(uint16_t data) {
     LCD->data16 = data;
 }
 

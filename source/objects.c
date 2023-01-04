@@ -22,22 +22,31 @@ void DrawBmp(bmp_t *bmp, const uint16_t x, const uint16_t y)
 	uint32_t i;
 	const uint32_t size = bmp->w * bmp->h;
 
+	//color_t 	pixelClr = {0,0,0,0};
+	LCD_Color_t lcdColor = {0,0,0};
+
 	for(uint16_t yi = 0; yi < bmp->h; yi++){
 		for(uint16_t xi = bmp->w; xi >= 1; --xi){
 			i = size - yi*bmp->w - xi; //FUCK HET MI DE SCHEISS VERARSCHT!!!!!
 
-			color_t pixelClr = BGRA565_COLOR(	*(*(bmp->pixels + i) +0),
-												*(*(bmp->pixels + i) +1),
-												*(*(bmp->pixels + i) +2),
-												*(*(bmp->pixels + i) +3));
-
-			if(pixelClr.a == 0){
+			if(*(*(bmp->pixels + i) +3) == 0){
 				LCD_Set(&bgColor);
+				continue;
 			}
-			else{
-				const LCD_Color_t lcdColor = {pixelClr.b, pixelClr.g, pixelClr.r};
-				LCD_Set(&lcdColor);
-			}
+
+			//pixelClr = BGRA565_COLOR(	*(*(bmp->pixels + i) +0),
+									//	*(*(bmp->pixels + i) +1),
+									//	*(*(bmp->pixels + i) +2),
+									//	*(*(bmp->pixels + i) +3));
+
+			//lcdColor = {pixelClr.b, pixelClr.g, pixelClr.r};
+			lcdColor.b = ((uint8_t)(*(*(bmp->pixels + i) + 0))) >> 3;
+			lcdColor.g = ((uint8_t)(*(*(bmp->pixels + i) + 1))) >> 2;
+			lcdColor.r = ((uint8_t)(*(*(bmp->pixels + i) + 2))) >> 3;
+
+			LCD_Set(&lcdColor);
+
+			//LCD_Data16( (const uint16_t)BGR565_COLOR(*(*(bmp->pixels + i) +0), *(*(bmp->pixels + i) +1), *(*(bmp->pixels + i) +2)));
 		}
 	}
 }
