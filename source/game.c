@@ -191,7 +191,15 @@ void MoveTRex(void){
 			tRexDirection = MOVE_DOWN;
 		}
 		else{
-			ShiftBmp(&tRexBmp, 0, -4);
+			if(tRexBmp.y <130)
+				ShiftBmp(&tRexBmp, 0, -1);
+			else if(tRexBmp.y <110)
+				ShiftBmp(&tRexBmp, 0, -2);
+			else if(tRexBmp.y <90)
+				ShiftBmp(&tRexBmp, 0, -3);
+			else {
+					ShiftBmp(&tRexBmp, 0, -4);
+				 }
 		}
 	}
 	else if(tRexDirection == MOVE_DOWN){
@@ -200,7 +208,15 @@ void MoveTRex(void){
 			MoveBmp(&tRexBmp, TREX_X_POS, LCD_HEIGHT - GROUND_HEIGHT - tRexBmp.h);
 		}
 		else{
-			ShiftBmp(&tRexBmp, 0, 4);
+			if(tRexBmp.y <130)
+				ShiftBmp(&tRexBmp, 0, 1);
+			else if(tRexBmp.y <110)
+				ShiftBmp(&tRexBmp, 0, 2);
+			else if(tRexBmp.y <90)
+				ShiftBmp(&tRexBmp, 0, 3);
+			else {
+				ShiftBmp(&tRexBmp, 0, 4);
+			}
 		}
 	}
 }
