@@ -11,8 +11,6 @@
 //*** Functions    													***
 //*********************************************************************
 char OnTimer(uint16_t miliseconds);
-void ScoreCount (void);
-
 
 //*********************************************************************
 //*** Main      													***
@@ -25,6 +23,7 @@ int main()
 	LEGUAN_Init();							// Initialize Leguan board
 	LOG_SetDestination(LCD_Stream);			// Set logging output destination to be the LCD
 	GameInit();								// Initialize Game
+
 
 	// Main loop
 	while(TRUE){
@@ -65,32 +64,4 @@ char OnTimer(uint16_t miliseconds){
 
 	tickOld = tickNew;
 	return TRUE;
-}
-
-void ScoreCount (void) {
-
-	static uint32_t GameScore =0;			//Variable for GameScore counting
-	char score_string [4];					//String for Score to Print on LCD
-
-	//Timing variables
-	static uint32_t tickOld = 0;
-	const uint32_t tickNew = HAL_GetTick();
-
-	if (GetGameState() == STATE_GAME) {
-
-		if(tickNew > tickOld + 100) {					//if 100ms passed
-
-			tickOld = tickNew;
-			GameScore+=1;								//increment score
-
-			//convert score to string and print on LCD
-			itoa(GameScore, score_string, 10);
-			LCD_SetForegroundColor(ColorRed);
-			LCD_String(640, 25, "Your Score is: ");
-			LCD_String(750, 25, score_string);
-		}
-	}
-	else {
-		GameScore =0;
-	}
 }

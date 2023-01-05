@@ -4,7 +4,8 @@
  *  Created on: 30.12.2022
  *      Author: lukir
  */
-
+#include <stdio.h>
+#include <stdlib.h>
 #include "include/game.h"
 #include "include/resource.h"		//Only include ones! contains all pixel information of BMPs
 
@@ -163,7 +164,7 @@ void MoveObstacles(void){
 			uint16_t j = i == 0 ? OBSTACLES_NUMBER - 1 : i - 1;
 			if(obstacleBmp[j].visible == TRUE){
 				//--- previous obstacle is visible
-				if(obstacleBmp[j].x < LCD_WIDTH - 500){
+				if(obstacleBmp[j].x < LCD_WIDTH - (400 + ((rand() %20) *10))){
 					//--- previous obstacle moved more than 350 pixel
 					DrawBmp(&obstacleBmp[i], LCD_WIDTH - obstacleBmp[i].w, LCD_HEIGHT - GROUND_HEIGHT - obstacleBmp[i].h);
 				}
@@ -191,14 +192,14 @@ void MoveTRex(void){
 			tRexDirection = MOVE_DOWN;
 		}
 		else{
-			if(tRexBmp.y <130)
-				ShiftBmp(&tRexBmp, 0, -1);
-			else if(tRexBmp.y <110)
+			if(tRexBmp.y <160)
 				ShiftBmp(&tRexBmp, 0, -2);
-			else if(tRexBmp.y <90)
+			else if(tRexBmp.y <180)
 				ShiftBmp(&tRexBmp, 0, -3);
+			else if(tRexBmp.y <210)
+				ShiftBmp(&tRexBmp, 0, -4);
 			else {
-					ShiftBmp(&tRexBmp, 0, -4);
+					ShiftBmp(&tRexBmp, 0, -5);
 				 }
 		}
 	}
@@ -208,15 +209,16 @@ void MoveTRex(void){
 			MoveBmp(&tRexBmp, TREX_X_POS, LCD_HEIGHT - GROUND_HEIGHT - tRexBmp.h);
 		}
 		else{
-			if(tRexBmp.y <130)
-				ShiftBmp(&tRexBmp, 0, 1);
-			else if(tRexBmp.y <110)
+			if(tRexBmp.y <160)
 				ShiftBmp(&tRexBmp, 0, 2);
-			else if(tRexBmp.y <90)
+			else if(tRexBmp.y <180)
 				ShiftBmp(&tRexBmp, 0, 3);
-			else {
+			else if(tRexBmp.y <210)
 				ShiftBmp(&tRexBmp, 0, 4);
-			}
+			else
+				{
+					ShiftBmp(&tRexBmp, 0, 5);
+				}
 		}
 	}
 }
@@ -240,3 +242,34 @@ char CheckCollision(void){
 	return FALSE;
 }
 
+//*********************************************************************
+//*** Game score counting and display on LCD						***
+//*********************************************************************
+
+void ScoreCount (void) {
+
+	static uint32_t GameScore =0;			//Variable for GameScore counting
+	char score_string [4];					//String for Score to Print on LCD
+
+	//Timing variables
+	static uint32_t tickOld = 0;
+	const uint32_t tickNew = HAL_GetTick();
+
+	if (GetGameState() == STATE_GAME) {
+
+		if(tickNew > tickOld + 100) {					//if 100ms passed
+
+			tickOld = tickNew;
+			GameScore+=1;								//increment score
+
+			//convert score to string and print on LCD
+			itoa(GameScore, score_string, 10);
+			LCD_SetForegroundColor(ColorRed);
+			LCD_String(640, 25, "Your Score is: ");
+			LCD_String(750, 25, score_string);
+		}
+	}
+	else {
+		GameScore =0;
+	}
+}

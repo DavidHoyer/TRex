@@ -48,4 +48,6 @@ void	MoveTRex(void);
 void	InitTRexJump(void);
 char 	CheckCollision(void);
 
+void ScoreCount (void);
+
 #endif /* INCLUDE_GAME_H_ */
