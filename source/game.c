@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include "include/game.h"
 #include "include/resource.h"		//Only include ones! contains all pixel information of BMPs
+#include "include/objects.h"
 
 //--- they can defined in .c as they are only needed here
 #define GROUND_HEIGHT 		50
@@ -15,12 +16,12 @@
 #define TREX_X_POS			50
 #define OBSTACLES_NUMBER	3
 
-bmp_t tRexBmp 			= {0, 0, 77, 90, tRex_pixelData, 0};
-bmp_t startButtonBmp 	= {0, 0, 248, 101, startButton_pixelData, 0};
-bmp_t jumpButtonBmp 	= {0, 0, 80, 80, jumpButton_pixelData, 0};
-bmp_t obstacleBmp[3]	= { {0, 0, 59, 80, cactus_pixelData, 0},
-							{0, 0, 59, 80, cactus_pixelData, 0},
-							{0, 0, 59, 80, cactus_pixelData, 0} };
+bmp_t tRexBmp 			= {0, 0, 77, 90, tRex_pixelData, 0,0};
+bmp_t startButtonBmp 	= {0, 0, 248, 101, startButton_pixelData, 0,0};
+bmp_t jumpButtonBmp 	= {0, 0, 80, 80, jumpButton_pixelData, 0,0};
+bmp_t obstacleBmp[3]	= { {0, 0, 59, 80, cactus_pixelData, 0,0},
+							{0, 0, 59, 80, cactus_pixelData, 0,0},
+							{0, 0, 59, 80, cactus_pixelData, 0,0} };
 
 GameState_t gameState = STATE_NONE;
 
@@ -38,6 +39,13 @@ Move_t tRexDirection = MOVE_NONE;				//Müessemer no luege wie ds nid global mac
 void GameInit(void){
 	LCD_SetBackgroundColor(ColorWhite);
 	ShowStartMenu();
+
+	tRexBmp.head = GetBoarderTRex();
+	obstacleBmp[0].head = GetBoarderCactus();
+	obstacleBmp[1].head = GetBoarderCactus();
+	obstacleBmp[2].head = GetBoarderCactus();
+	//PrintBorderTRex();
+	//PrintBorderCactus();
 }
 
 GameState_t GetGameState(void) { return(gameState); }
@@ -228,19 +236,162 @@ void InitTRexJump(void){
 	}
 }
 
+//*********************************************************************
+//*** Funktions for Collision Check									***
+//*********************************************************************
+
 char CheckCollision(void){
+
+	node_t *ptrTRex = tRexBmp.head;
+	node_t *ptrCactus = NULL;
+
+
+	/*
+	bmp 0 punmkt oben links
+	array von unten links
+	lcd 0 punkt oben links
+	 */
+
 	for(uint16_t i = 0; i < OBSTACLES_NUMBER; i++){
-		if(	obstacleBmp[i].visible == TRUE &&
+
+		ptrCactus = obstacleBmp[i].head;
+
+		while(ptrCactus != NULL){
+			while(ptrTRex != NULL){
+
+				if (obstacleBmp[i].visible == TRUE &&
+					obstacleBmp[i].x + ptrCactus->x == tRexBmp.x + ptrTRex->x &&
+					obstacleBmp[i].y + obstacleBmp[i].h - ptrCactus->y == tRexBmp.y + tRexBmp.h - ptrTRex->y)
+				{
+					return TRUE;
+				}
+				ptrTRex = ptrTRex->next;
+			}
+			ptrCactus = ptrCactus->next;
+		}
+
+		/*if(	obstacleBmp[i].visible == TRUE &&
 			obstacleBmp[i].x < tRexBmp.x + tRexBmp.w &&
 			obstacleBmp[i].x + obstacleBmp[i].w > tRexBmp.x &&
 			tRexBmp.y + tRexBmp.h >= obstacleBmp[i].y)
 		{
 			return TRUE;
-		}
+		}*/
 	}
 
 	return FALSE;
 }
+
+void PrintBorderTRex (void) {
+
+	node_t *ptr = tRexBmp.head;
+
+	LCD_SetForegroundColor(ColorBlue);
+
+	while(ptr != NULL){
+		LCD_Pixel(tRexBmp.x + ptr->x, tRexBmp.y + (tRexBmp.h - ptr->y));
+		ptr = ptr->next;
+	}
+}
+
+void PrintBorderCactus (void) {
+
+	node_t *ptr = obstacleBmp[0].head;
+
+	LCD_SetForegroundColor(ColorBlue);
+
+	while(ptr != NULL){
+		LCD_Pixel(obstacleBmp[0].x + ptr->x, obstacleBmp[0].y + (obstacleBmp[0].h - ptr->y));
+		ptr = ptr->next;
+	}
+}
+
+node_t *GetBoarderTRex (void) {
+
+	node_t *head = NULL;
+
+
+	uint32_t i;
+
+
+	for(uint16_t yi = 1; yi < tRexBmp.h-1; yi++){
+		for(uint16_t xi = 1; xi < tRexBmp.w-1; xi++){
+
+
+			i = yi*tRexBmp.w + xi;
+
+			if ( *(*(tRexBmp.pixels + i) +3) != *(*(tRexBmp.pixels + i + 1) +3)
+				|| *(*(tRexBmp.pixels + i) +3) != *(*(tRexBmp.pixels + i - 1) +3)){
+
+				node_t *pixel = malloc(sizeof(node_t));
+				pixel->x = xi+1;
+				pixel->y = yi+1;
+				pixel->next = head;
+				head = pixel;
+
+				continue;
+			}
+
+
+			if (*(*(tRexBmp.pixels + i) +3) != *(*(tRexBmp.pixels + i +tRexBmp.w) +3)
+				|| *(*(tRexBmp.pixels + i) +3) != *(*(tRexBmp.pixels + i - tRexBmp.w) +3)) {
+
+				node_t *pixel = malloc(sizeof(node_t));
+				pixel->x = xi+1;
+				pixel->y = yi+1;
+				pixel->next = head;
+				head = pixel;
+
+				continue;
+			}
+		}
+	}
+	return head;
+}
+
+node_t *GetBoarderCactus (void) {
+
+	node_t *head = NULL;
+
+
+	uint32_t i;
+
+
+	for(uint16_t yi = 1; yi < obstacleBmp[0].h-1; yi++){
+		for(uint16_t xi = 1; xi < obstacleBmp[0].w-1; xi++){
+
+
+			i = yi*obstacleBmp[0].w + xi;
+
+			if ( *(*(obstacleBmp[0].pixels + i) +3) != *(*(obstacleBmp[0].pixels + i + 1) +3)
+				|| *(*(obstacleBmp[0].pixels + i) +3) != *(*(obstacleBmp[0].pixels + i - 1) +3)){
+
+				node_t *pixel = malloc(sizeof(node_t));
+				pixel->x = xi+1;
+				pixel->y = yi+1;
+				pixel->next = head;
+				head = pixel;
+
+				continue;
+			}
+
+
+			if (*(*(obstacleBmp[0].pixels + i) +3) != *(*(obstacleBmp[0].pixels + i +obstacleBmp[0].w) +3)
+				|| *(*(obstacleBmp[0].pixels + i) +3) != *(*(obstacleBmp[0].pixels + i - obstacleBmp[0].w) +3)) {
+
+				node_t *pixel = malloc(sizeof(node_t));
+				pixel->x = xi+1;
+				pixel->y = yi+1;
+				pixel->next = head;
+				head = pixel;
+
+				continue;
+			}
+		}
+	}
+	return head;
+}
+
 
 //*********************************************************************
 //*** Game score counting and display on LCD						***

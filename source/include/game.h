@@ -46,6 +46,13 @@ char 	OnClickJumpButton(event_T event);
 void	MoveObstacles(void);
 void	MoveTRex(void);
 void	InitTRexJump(void);
+
+node_t *GetBoarderTRex (void);
+node_t *GetBoarderCactus (void);
+
+void PrintBorderTRex (void);
+void PrintBorderCactus (void);
+
 char 	CheckCollision(void);
 
 void ScoreCount (void);

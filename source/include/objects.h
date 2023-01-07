@@ -18,6 +18,15 @@
 //*******************************************************************
 //*** BMP Struct
 //*******************************************************************
+
+typedef struct node
+{
+	uint16_t		x;
+	uint16_t		y;
+
+	struct node	*next;
+}node_t;
+
 typedef struct
 {
 	uint16_t		x;				// X Position
@@ -28,6 +37,7 @@ typedef struct
 	unsigned char	(*pixels)[4];	//pointer to pixelData Array
 
 	unsigned char	visible;		// visibility flag
+	node_t			*head;
 }bmp_t;
 
 void DrawBmp(bmp_t *bmp, const uint16_t x, const uint16_t y);

@@ -25,6 +25,7 @@ int main()
 	GameInit();								// Initialize Game
 
 
+
 	// Main loop
 	while(TRUE){
 
