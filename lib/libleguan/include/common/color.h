@@ -35,14 +35,13 @@ extern "C" {
 /* Macros */
 
 #define RGB8_COLOR(r, g, b)   		{ (uint8_t)(r), 			(uint8_t)(g), 		    (uint8_t)(b)        }
-#define RGBA16_COLOR(r, g, b, a)  	{ (uint16_t)(r), 		    (uint16_t)(g), 		    (uint16_t)(b),(uint16_t)(a)      }
+#define RGBA16_COLOR(r, g, b, a)  	{ (uint16_t)(r), 		    (uint16_t)(g), 		    (uint16_t)(b)       }
 #define BGR8_COLOR(r, g, b)   		{ (uint8_t)(b), 			(uint8_t)(g), 		    (uint8_t)(r)        }
 #define RGB565_COLOR(r, g, b) 		{ ((uint8_t)(r)) >> 3, 	    ((uint8_t)(g)) >> 2,    ((uint8_t)(b)) >> 3 }
 #define BGR565_COLOR(r, g, b) 		{ ((uint8_t)(b)) >> 3, 	    ((uint8_t)(g)) >> 2,    ((uint8_t)(r)) >> 3 }
 #define RGB1_COLOR(r, g, b)   		{ (uint8_t)(r > 0), 		(uint8_t)(g > 0), 	    (uint8_t)(b > 0)    }
 #define BGR1_COLOR(r, g, b)   		{ (uint8_t)(b > 0), 		(uint8_t)(g > 0), 	    (uint8_t)(r > 0)    }
 
-#define BGRA565_COLOR(r, g, b, a) 	{ ((uint8_t)(b)) >> 3, 	    ((uint8_t)(g)) >> 2,    ((uint8_t)(r)) >> 3, ((uint8_t)(a))}
 /* Types */
 
 typedef struct {
