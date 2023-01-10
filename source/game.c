@@ -44,8 +44,6 @@ void GameInit(void){
 	obstacleBmp[0].head = GetBoarderCactus();
 	obstacleBmp[1].head = GetBoarderCactus();
 	obstacleBmp[2].head = GetBoarderCactus();
-	//PrintBorderTRex();
-	//PrintBorderCactus();
 }
 
 GameState_t GetGameState(void) { return(gameState); }
@@ -243,8 +241,7 @@ void InitTRexJump(void){
 char CheckCollision(void){
 
 	node_t *ptrTRex = tRexBmp.head;
-	node_t *ptrCactus = NULL;
-
+	node_t *ptrCactus = obstacleBmp[0].head;
 
 	/*
 	bmp 0 punmkt oben links
@@ -254,31 +251,28 @@ char CheckCollision(void){
 
 	for(uint16_t i = 0; i < OBSTACLES_NUMBER; i++){
 
-		ptrCactus = obstacleBmp[i].head;
-
-		while(ptrCactus != NULL){
-			while(ptrTRex != NULL){
-
-				if (obstacleBmp[i].visible == TRUE &&
-					obstacleBmp[i].x + ptrCactus->x == tRexBmp.x + ptrTRex->x &&
-					obstacleBmp[i].y + obstacleBmp[i].h - ptrCactus->y == tRexBmp.y + tRexBmp.h - ptrTRex->y)
-				{
-					return TRUE;
-				}
-				ptrTRex = ptrTRex->next;
-			}
-			ptrCactus = ptrCactus->next;
-		}
-
-		/*if(	obstacleBmp[i].visible == TRUE &&
+		if(	obstacleBmp[i].visible == TRUE &&
 			obstacleBmp[i].x < tRexBmp.x + tRexBmp.w &&
 			obstacleBmp[i].x + obstacleBmp[i].w > tRexBmp.x &&
 			tRexBmp.y + tRexBmp.h >= obstacleBmp[i].y)
 		{
-			return TRUE;
-		}*/
-	}
+			while(ptrCactus != NULL){
+				while(ptrTRex != NULL){
 
+					if (obstacleBmp[i].visible == TRUE &&
+						obstacleBmp[i].x + ptrCactus->x == tRexBmp.x + ptrTRex->x  &&
+						obstacleBmp[i].y + obstacleBmp[i].h - ptrCactus->y == tRexBmp.y + tRexBmp.h - ptrTRex->y)
+					{
+						return TRUE;
+					}
+					ptrTRex = ptrTRex->next;
+				}
+				ptrTRex = tRexBmp.head;
+				ptrCactus = ptrCactus->next;
+
+			}
+		}
+	}
 	return FALSE;
 }
 
@@ -324,8 +318,8 @@ node_t *GetBoarderTRex (void) {
 				|| *(*(tRexBmp.pixels + i) +3) != *(*(tRexBmp.pixels + i - 1) +3)){
 
 				node_t *pixel = malloc(sizeof(node_t));
-				pixel->x = xi+1;
-				pixel->y = yi+1;
+				pixel->x = xi;
+				pixel->y = yi;
 				pixel->next = head;
 				head = pixel;
 
@@ -337,8 +331,8 @@ node_t *GetBoarderTRex (void) {
 				|| *(*(tRexBmp.pixels + i) +3) != *(*(tRexBmp.pixels + i - tRexBmp.w) +3)) {
 
 				node_t *pixel = malloc(sizeof(node_t));
-				pixel->x = xi+1;
-				pixel->y = yi+1;
+				pixel->x = xi;
+				pixel->y = yi;
 				pixel->next = head;
 				head = pixel;
 
@@ -353,7 +347,6 @@ node_t *GetBoarderCactus (void) {
 
 	node_t *head = NULL;
 
-
 	uint32_t i;
 
 
@@ -367,8 +360,8 @@ node_t *GetBoarderCactus (void) {
 				|| *(*(obstacleBmp[0].pixels + i) +3) != *(*(obstacleBmp[0].pixels + i - 1) +3)){
 
 				node_t *pixel = malloc(sizeof(node_t));
-				pixel->x = xi+1;
-				pixel->y = yi+1;
+				pixel->x = xi;
+				pixel->y = yi;
 				pixel->next = head;
 				head = pixel;
 
@@ -380,8 +373,8 @@ node_t *GetBoarderCactus (void) {
 				|| *(*(obstacleBmp[0].pixels + i) +3) != *(*(obstacleBmp[0].pixels + i - obstacleBmp[0].w) +3)) {
 
 				node_t *pixel = malloc(sizeof(node_t));
-				pixel->x = xi+1;
-				pixel->y = yi+1;
+				pixel->x = xi;
+				pixel->y = yi;
 				pixel->next = head;
 				head = pixel;
 
