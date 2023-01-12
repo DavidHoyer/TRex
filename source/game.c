@@ -310,7 +310,6 @@ node_t *GetBoarderTRex (void) {
 
 	node_t *head = NULL;
 
-
 	uint32_t i;
 
 
@@ -322,7 +321,6 @@ node_t *GetBoarderTRex (void) {
 
 			if ( *(*(tRexBmp.pixels + i) +3) != *(*(tRexBmp.pixels + i + 1) +3)
 				|| *(*(tRexBmp.pixels + i) +3) != *(*(tRexBmp.pixels + i - 1) +3)){
-
 				node_t *pixel = malloc(sizeof(node_t));
 				pixel->x = xi+1;
 				pixel->y = yi+1;
@@ -335,7 +333,6 @@ node_t *GetBoarderTRex (void) {
 
 			if (*(*(tRexBmp.pixels + i) +3) != *(*(tRexBmp.pixels + i +tRexBmp.w) +3)
 				|| *(*(tRexBmp.pixels + i) +3) != *(*(tRexBmp.pixels + i - tRexBmp.w) +3)) {
-
 				node_t *pixel = malloc(sizeof(node_t));
 				pixel->x = xi+1;
 				pixel->y = yi+1;
@@ -352,7 +349,6 @@ node_t *GetBoarderTRex (void) {
 node_t *GetBoarderCactus (void) {
 
 	node_t *head = NULL;
-
 
 	uint32_t i;
 
