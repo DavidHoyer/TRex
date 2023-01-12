@@ -26,22 +26,19 @@ void DrawBmp(bmp_t *bmp, const uint16_t x, const uint16_t y)
 
 	for(uint16_t yi = 0; yi < bmp->h; yi++){
 		for(uint16_t xi = bmp->w; xi >= 1; --xi){
-			i = size - yi*bmp->w - xi;
+			i = size - yi * bmp->w - xi;
 
 			if(*(*(bmp->pixels + i) +3) == 0){
 				LCD_Set(&bgColor);
 				continue;
 			}
 
-			//lcdColor.b = ((uint8_t)(*(*(bmp->pixels + i) + 0))) >> 3;
-			//lcdColor.g = ((uint8_t)(*(*(bmp->pixels + i) + 1))) >> 2;
-			//lcdColor.r = ((uint8_t)(*(*(bmp->pixels + i) + 2))) >> 3;
-
 			lcdColor.b = (uint8_t)(*(*(bmp->pixels + i) + 0));
 			lcdColor.g = (uint8_t)(*(*(bmp->pixels + i) + 1));
 			lcdColor.r = (uint8_t)(*(*(bmp->pixels + i) + 2));
 
 			LCD_Set(&lcdColor);
+
 		}
 	}
 }
@@ -74,14 +71,6 @@ void MoveBmp(bmp_t *bmp, const uint16_t x, const uint16_t y){
 	else if(yOld < y && y < yOld + bmp->h){
 		LcdClearArea(xOld, yOld, xOld + bmp->w, y);						//-- Clear y top side
 	}
-
-	/*
-	LCD_SetDrawArea(bmp->x, bmp->y, bmp->x + bmp->w - 1, bmp->y + bmp->h - 1);
-	LCD_EnableDrawMode();
-
-	for (uint32_t pixel = 0; pixel < LCD_WIDTH * LCD_HEIGHT; pixel++) {
-		LCD_Set(&bgColor);
-	}*/
 }
 
 void ShiftBmp(bmp_t *bmp, const uint16_t ix, const uint16_t iy){
@@ -142,14 +131,68 @@ node_t *GetBoarder (bmp_t bmp) {
 			}
 		}
 	}
+	//head = SortBoarder(head);
 	return head;
 }
 
-void PrintBorder (bmp_t bmp) {
+//*********************************************************************
+//*** SortBoarder
+//*** This function will sort the border pixels so that they are in a line and
+//*** each pixel in the list is a neighbour of the next pixel in the list.
+//*********************************************************************
+node_t *SortBoarder(node_t *head) {
+    if (head == NULL) return NULL;
+    node_t *sorted = NULL;
+    node_t *current = head;
+    node_t *start = current;
+    node_t *prev = NULL;
+    while (current != NULL) {
+        node_t *next = current->next;
+        if (next != NULL) {
+            int dx = next->x - current->x;
+            int dy = next->y - current->y;
+            if (dx != 0 && dy != 0 && abs(dx) != abs(dy)) {
+                start = next;
+                if (prev != NULL) {
+                    prev->next = next;
+                }
+            }
+        }
+        if (sorted == NULL) {
+            current->next = start;
+            sorted = current;
+        }
+        else {
+            current->next = sorted;
+            sorted = current;
+        }
+        prev = current;
+        current = next;
+    }
+    return sorted;
+}
+
+// only leaves the edges of the border
+node_t *CreateEdges(node_t *head) {
+    node_t *prev = head, *current = head->next;
+    while (current != NULL) {
+        if (current->x == prev->x || current->y == prev->y) {
+            prev->next = current->next;
+            free(current);
+            current = prev->next;
+        } else {
+            prev = current;
+            current = current->next;
+        }
+    }
+    return head;
+}
+
+void PrintBorder (bmp_t bmp, color_t clr) {
 
 	node_t *ptr = bmp.head;
 
-	LCD_SetForegroundColor(ColorBlue);
+	LCD_SetForegroundColor(clr);
 
 	while(ptr != NULL){
 		LCD_Pixel(bmp.x + ptr->x, bmp.y + (bmp.h - ptr->y));

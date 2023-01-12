@@ -16,10 +16,10 @@
 #define TREX_X_POS			50
 #define OBSTACLES_NUMBER	3
 
-bmp_t tRexBmp 			= {0, 0, 77, 90, tRex_pixelData, 0,0};
+bmp_t tRexBmp 			= {10, 10, 77, 90, tRex_pixelData, 0,0};
 bmp_t startButtonBmp 	= {0, 0, 248, 101, startButton_pixelData, 0,0};
 bmp_t jumpButtonBmp 	= {0, 0, 80, 80, jumpButton_pixelData, 0,0};
-bmp_t obstacleBmp[3]	= { {0, 0, 59, 80, cactus_pixelData, 0,0},
+bmp_t obstacleBmp[3]	= { {10, 10, 59, 80, cactus_pixelData, 0,0},
 							{0, 0, 59, 80, cactus_pixelData, 0,0},
 							{0, 0, 59, 80, cactus_pixelData, 0,0} };
 
@@ -50,6 +50,12 @@ void GameInit(void){
 	for(int i = 0; i < OBSTACLES_NUMBER; i++){
 		obstacleBmp[i].head = GetBoarder(obstacleBmp[i]);
 	}
+
+	PrintBorder(tRexBmp, ColorRed);
+	tRexBmp.head = SortBoarder(tRexBmp.head);
+	PrintBorder(tRexBmp, ColorGreen);
+	//tRexBmp.head = CreateEdges(tRexBmp.head);
+	//PrintBorder(tRexBmp, ColorBlue);
 }
 
 GameState_t GetGameState(void) { return(gameState); }
@@ -246,8 +252,11 @@ void InitTRexJump(void){
 
 char CheckCollision(void){
 
-	node_t *ptrTRex = tRexBmp.head;
-	node_t *ptrCactus = obstacleBmp[0].head;
+	if(tRexBmp.visible == FALSE)
+		return FALSE;
+
+	node_t *ptrTRex   = NULL;
+	node_t *ptrCactus = NULL;
 
 	/*
 	bmp 0 punmkt oben links
@@ -257,26 +266,32 @@ char CheckCollision(void){
 
 	for(uint16_t i = 0; i < OBSTACLES_NUMBER; i++){
 
-		if(	obstacleBmp[i].visible == TRUE &&
-			obstacleBmp[i].x < tRexBmp.x + tRexBmp.w &&
-			obstacleBmp[i].x + obstacleBmp[i].w > tRexBmp.x &&
-			tRexBmp.y + tRexBmp.h >= obstacleBmp[i].y)
+		if(obstacleBmp[i].visible == FALSE)
+			continue;
+
+		if (tRexBmp.x + tRexBmp.w < obstacleBmp[i].x ||
+			tRexBmp.x > obstacleBmp[i].x + obstacleBmp[i].w ||
+			tRexBmp.y + tRexBmp.h < obstacleBmp[i].y ||
+			tRexBmp.y > obstacleBmp[i].y + obstacleBmp[i].h)
 		{
-			while(ptrCactus != NULL){
-				while(ptrTRex != NULL){
+			//The image border (rectangle) of the TRex and the obstacle are not colliding
+			continue;
+		}
 
-					if (obstacleBmp[i].visible == TRUE &&
-						obstacleBmp[i].x + ptrCactus->x == tRexBmp.x + ptrTRex->x  &&
-						obstacleBmp[i].y + obstacleBmp[i].h - ptrCactus->y == tRexBmp.y + tRexBmp.h - ptrTRex->y)
-					{
-						return TRUE;
-					}
-					ptrTRex = ptrTRex->next;
+		ptrTRex   = tRexBmp.head;
+		ptrCactus = obstacleBmp[0].head;
+
+		while(ptrCactus != NULL){
+			while(ptrTRex != NULL){
+				if (obstacleBmp[i].x + ptrCactus->x == tRexBmp.x + ptrTRex->x  &&
+					obstacleBmp[i].y + obstacleBmp[i].h - ptrCactus->y == tRexBmp.y + tRexBmp.h - ptrTRex->y)
+				{
+					return TRUE;
 				}
-				ptrTRex = tRexBmp.head;
-				ptrCactus = ptrCactus->next;
-
+				ptrTRex = ptrTRex->next;
 			}
+			ptrTRex   = tRexBmp.head;
+			ptrCactus = ptrCactus->next;
 		}
 	}
 	return FALSE;

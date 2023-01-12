@@ -24,14 +24,11 @@ int main()
 	LOG_SetDestination(LCD_Stream);			// Set logging output destination to be the LCD
 	GameInit();								// Initialize Game
 
-
-
 	// Main loop
 	while(TRUE){
 
 		event = CheckEvent();				//Check for incomming Touch event
 		ScoreCount();						//Counting GameScore when running
-
 
 		if(event.eventFlag){
 			//--- Start Button pressed
