@@ -47,6 +47,8 @@ int main()
 		if(GetGameState() == STATE_GAME){
 			MoveObstacles();
 			MoveTRex();
+			//PrintBorderTRex();
+			//PrintBorderCactus();
 
 			if(CheckCollision() == TRUE){
 				HAL_Delay(3000);
