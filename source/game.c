@@ -270,6 +270,7 @@ char CheckCollision(void){
 			ptrCactus = ptrCactus->next;
 		}
 
+
 		/*if(	obstacleBmp[i].visible == TRUE &&
 			obstacleBmp[i].x < tRexBmp.x + tRexBmp.w &&
 			obstacleBmp[i].x + obstacleBmp[i].w > tRexBmp.x &&
@@ -309,6 +310,7 @@ void PrintBorderCactus (void) {
 node_t *GetBoarderTRex (void) {
 
 	node_t *head = NULL;
+	uint32_t test = 0;
 
 	uint32_t i;
 
@@ -321,6 +323,7 @@ node_t *GetBoarderTRex (void) {
 
 			if ( *(*(tRexBmp.pixels + i) +3) != *(*(tRexBmp.pixels + i + 1) +3)
 				|| *(*(tRexBmp.pixels + i) +3) != *(*(tRexBmp.pixels + i - 1) +3)){
+				test++;
 				node_t *pixel = malloc(sizeof(node_t));
 				pixel->x = xi+1;
 				pixel->y = yi+1;
@@ -333,6 +336,7 @@ node_t *GetBoarderTRex (void) {
 
 			if (*(*(tRexBmp.pixels + i) +3) != *(*(tRexBmp.pixels + i +tRexBmp.w) +3)
 				|| *(*(tRexBmp.pixels + i) +3) != *(*(tRexBmp.pixels + i - tRexBmp.w) +3)) {
+				test++;
 				node_t *pixel = malloc(sizeof(node_t));
 				pixel->x = xi+1;
 				pixel->y = yi+1;
@@ -343,12 +347,14 @@ node_t *GetBoarderTRex (void) {
 			}
 		}
 	}
+	test = 0;
 	return head;
 }
 
 node_t *GetBoarderCactus (void) {
 
 	node_t *head = NULL;
+	uint32_t test = 0;
 
 	uint32_t i;
 
@@ -361,7 +367,7 @@ node_t *GetBoarderCactus (void) {
 
 			if ( *(*(obstacleBmp[0].pixels + i) +3) != *(*(obstacleBmp[0].pixels + i + 1) +3)
 				|| *(*(obstacleBmp[0].pixels + i) +3) != *(*(obstacleBmp[0].pixels + i - 1) +3)){
-
+				test++;
 				node_t *pixel = malloc(sizeof(node_t));
 				pixel->x = xi+1;
 				pixel->y = yi+1;
@@ -374,7 +380,7 @@ node_t *GetBoarderCactus (void) {
 
 			if (*(*(obstacleBmp[0].pixels + i) +3) != *(*(obstacleBmp[0].pixels + i +obstacleBmp[0].w) +3)
 				|| *(*(obstacleBmp[0].pixels + i) +3) != *(*(obstacleBmp[0].pixels + i - obstacleBmp[0].w) +3)) {
-
+				test++;
 				node_t *pixel = malloc(sizeof(node_t));
 				pixel->x = xi+1;
 				pixel->y = yi+1;
@@ -385,6 +391,7 @@ node_t *GetBoarderCactus (void) {
 			}
 		}
 	}
+	test = 0;
 	return head;
 }
 
