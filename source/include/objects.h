@@ -45,6 +45,8 @@ void MoveBmp(bmp_t *bmp, const uint16_t x, const uint16_t y);
 void ShiftBmp(bmp_t *bmp, const uint16_t ix, const uint16_t iy);
 void DeleteBmp(bmp_t *bmp);
 void LcdClearArea(const uint16_t x1, const uint16_t y1, const uint16_t x2, const uint16_t y2);
-
+node_t *GetBoarder (bmp_t bmp);
+void PrintBorder (bmp_t bmp);
+void ConvertArray(unsigned char pixelData[][4], const uint16_t w, const uint16_t h);
 
 #endif /* INCLUDE_OBJECTS_H_ */
