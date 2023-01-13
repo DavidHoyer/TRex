@@ -82,7 +82,6 @@ extern "C" {
 #define LCD_COLOR(r, g, b) BGR565_COLOR(r, g, b)
 typedef BGR565_t LCD_Color_t;
 
-
 typedef struct LEGUAN_PACKED {
     volatile reg16_t cmd;
     union {
@@ -90,6 +89,7 @@ typedef struct LEGUAN_PACKED {
         volatile uint16_t data16;
     };
 } LCD_MemoryMap_t;
+
 static_assert(sizeof(LCD_MemoryMap_t) == 4, "LCDMemoryMap type definition invalid!");
 
 typedef void (*LCD_TouchCallback_t)(void);
@@ -245,6 +245,8 @@ void LCD_TouchSetTouchCallback(LCD_TouchCallback_t callback);
  */
 result_t LCD_TouchGetPosition(LCD_TouchPosition_t *position);
 
+//NEU:
+void LCD_Set(const LCD_Color_t *color);
 
 #if defined(__cplusplus)
 }
