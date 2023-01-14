@@ -16,9 +16,14 @@
 #define TREX_X_POS			50
 #define OBSTACLES_NUMBER	3
 
-bmp_t tRexBmp 			= {10, 10, 77, 90, tRex_pixelData, 0,0};
+bmp_t tRexBmp 			= {10, 10, 77, 90, tRex_pixelDataGoogle, 0, 0, 0};
+bmp_t tRexBmpGoogle 	= {0, 0, 77, 90, tRex_pixelDataGoogle, 0, 1, 0};
+bmp_t tRexBmpGreen		= {0, 0, 135, 100, tRex_pixelDataGreen, 0, 0, 0};
+
+
 bmp_t startButtonBmp 	= {0, 0, 248, 101, startButton_pixelData, 0,0};
 bmp_t jumpButtonBmp 	= {0, 0, 80, 80, jumpButton_pixelData, 0,0};
+bmp_t pauseButtonBmp	= {0, 0, 75, 75, pauseButton_pixelData, 0, 0};
 bmp_t obstacleBmp[3]	= { {10, 10, 59, 80, cactus_pixelData, 0,0},
 							{0, 0, 59, 80, cactus_pixelData, 0,0},
 							{0, 0, 59, 80, cactus_pixelData, 0,0} };
@@ -37,23 +42,30 @@ typedef enum {
 Move_t tRexDirection = MOVE_NONE;				//Müessemer no luege wie ds nid global mache
 
 void GameInit(void){
-	ConvertArray(tRex_pixelData, tRexBmp.w, tRexBmp.h);
+	ConvertArray(tRex_pixelDataGoogle, tRexBmpGoogle.w, tRexBmpGoogle.h);
+	ConvertArray(tRex_pixelDataGreen, tRexBmpGreen.w, tRexBmpGreen.h);
+
 	ConvertArray(startButton_pixelData, startButtonBmp.w, startButtonBmp.h);
 	ConvertArray(jumpButton_pixelData, jumpButtonBmp.w, jumpButtonBmp.h);
+	ConvertArray(pauseButton_pixelData, 75, 75);
 	ConvertArray(cactus_pixelData, obstacleBmp[0].w, obstacleBmp[0].h);
 
 	LCD_SetBackgroundColor(ColorWhite);
 	ShowStartMenu();
 
 	//--- Detect Border of BMP files
-	tRexBmp.head = GetBoarder(tRexBmp);
+	tRexBmpGoogle.head = GetBoarder(tRexBmpGoogle);
+	tRexBmpGreen.head = GetBoarder(tRexBmpGreen);
+
+	tRexBmp = tRexBmpGoogle;
+
 	for(int i = 0; i < OBSTACLES_NUMBER; i++){
 		obstacleBmp[i].head = GetBoarder(obstacleBmp[i]);
 	}
 
-	PrintBorder(tRexBmp, ColorRed);
-	tRexBmp.head = SortBoarder(tRexBmp.head);
-	PrintBorder(tRexBmp, ColorGreen);
+	//PrintBorder(tRexBmp, ColorRed);
+	//tRexBmp.head = SortBoarder(tRexBmp.head);
+	//PrintBorder(tRexBmp, ColorGreen);
 	//tRexBmp.head = CreateEdges(tRexBmp.head);
 	//PrintBorder(tRexBmp, ColorBlue);
 }
@@ -72,8 +84,16 @@ void ShowStartMenu(void){
 	}
 
 	uint16_t x = (LCD_WIDTH - startButtonBmp.w)/2;
-	uint16_t y = (LCD_HEIGHT - startButtonBmp.h)/2;
+	uint16_t y = (LCD_HEIGHT - startButtonBmp.h)/2 -50;
 	DrawBmp(&startButtonBmp, x, y);
+
+	DrawBmp(&tRexBmpGoogle, 270,300);
+	DrawBmp(&tRexBmpGreen, 400, 300);
+
+	if (tRexBmpGoogle.selected)
+		SelectTrexGoogle();
+	if (tRexBmpGreen.selected)
+		SelectTrexGreen();
 }
 
 void StartGame(void){
@@ -84,6 +104,7 @@ void StartGame(void){
 	DrawBmp(&tRexBmp, TREX_X_POS, LCD_HEIGHT - GROUND_HEIGHT - tRexBmp.h); //Weis ni werum +1
 	DrawBmp(&jumpButtonBmp, LCD_WIDTH - jumpButtonBmp.w - 50, 100);
 	DrawBmp(&obstacleBmp[0], LCD_WIDTH - obstacleBmp[0].w, LCD_HEIGHT - GROUND_HEIGHT - obstacleBmp[0].h);
+	DrawBmp(&pauseButtonBmp, 20,20);
 
 	//--- Draw Ground
 	const LCD_Color_t clrGround = {0, 0, 0};
@@ -96,6 +117,48 @@ void StartGame(void){
 	for (uint32_t pixel = 0; pixel < LCD_WIDTH * GROUND_LINE_WIDTH; pixel++) {
 		LCD_Set(&clrGround);
 	}
+}
+
+event_T PauseGame (event_T event)
+{
+	gameState = STATE_PAUSE;
+	event.eventFlag = FALSE;
+	return event;
+}
+
+event_T ContinueGame (event_T event)
+{
+	gameState = STATE_GAME;
+	event.eventFlag = FALSE;
+	return event;
+}
+
+void SelectTrexGoogle (void)
+{
+	tRexBmp = tRexBmpGoogle;
+	tRexBmpGoogle.selected = TRUE;
+	tRexBmpGreen.selected = FALSE;
+	LCD_SetForegroundColor(ColorWhite);
+	LCD_Rect(tRexBmpGreen.x-10, tRexBmpGreen.y-10, tRexBmpGreen.w+20, tRexBmpGreen.h+20);
+	DrawBmp(&tRexBmpGreen, tRexBmpGreen.x, tRexBmpGreen.y);
+
+	LCD_SetForegroundColor(ColorRed);
+	LCD_Rect(tRexBmp.x-10, tRexBmp.y-10, tRexBmp.w+20, tRexBmp.h+20);
+	DrawBmp(&tRexBmp, tRexBmp.x, tRexBmp.y);
+}
+
+void SelectTrexGreen (void)
+{
+	tRexBmp = tRexBmpGreen;
+	tRexBmpGoogle.selected = FALSE;
+	tRexBmpGreen.selected = TRUE;
+	LCD_SetForegroundColor(ColorWhite);
+	LCD_Rect(tRexBmpGoogle.x-10, tRexBmpGoogle.y-10, tRexBmpGoogle.w+20, tRexBmpGoogle.h+20);
+	DrawBmp(&tRexBmpGoogle, tRexBmpGoogle.x, tRexBmpGoogle.y);
+
+	LCD_SetForegroundColor(ColorRed);
+	LCD_Rect(tRexBmp.x-10, tRexBmp.y-10, tRexBmp.w+20, tRexBmp.h+20);
+	DrawBmp(&tRexBmp, tRexBmp.x, tRexBmp.y);
 }
 
 //*********************************************************************
@@ -136,6 +199,9 @@ static char CheckEventBmp(bmp_t bmp, event_T event){
 	if(bmp.visible == FALSE)
 		return FALSE;
 
+	if (!event.eventFlag)
+		return FALSE;
+
 	//--- Check if the event was in the domain of the object
 	if(	event.x >= bmp.x && event.x <= bmp.x + bmp.w &&
 		event.y >= bmp.y && event.y <= bmp.y + bmp.h)
@@ -152,6 +218,18 @@ char OnClickStartButton(event_T event){
 
 char OnClickJumpButton(event_T event){
 	return(CheckEventBmp(jumpButtonBmp, event));
+}
+
+char OnClickPauseButton(event_T event){
+	return(CheckEventBmp(pauseButtonBmp, event));
+}
+
+char OnClickTRexGoogle(event_T event){
+	return(CheckEventBmp(tRexBmpGoogle, event));
+}
+
+char OnClickTRexGreen(event_T event){
+	return(CheckEventBmp(tRexBmpGreen, event));
 }
 
 void MoveObstacles(void){
