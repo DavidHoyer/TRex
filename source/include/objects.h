@@ -37,6 +37,7 @@ typedef struct
 	unsigned char	(*pixels)[4];	//pointer to pixelData Array
 
 	unsigned char	visible;		// visibility flag
+	unsigned char	selected;
 	node_t			*head;
 }bmp_t;
 
@@ -51,5 +52,8 @@ void PrintBorder (bmp_t bmp, color_t clr);
 node_t *SortBoarder(node_t *head);
 node_t *CreateEdges(node_t *head);
 void ConvertArray(unsigned char pixelData[][4], const uint16_t w, const uint16_t h);
+
+
+
 
 #endif /* INCLUDE_OBJECTS_H_ */

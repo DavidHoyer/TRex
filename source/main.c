@@ -30,9 +30,28 @@ int main()
 		ScoreCount();						//Counting GameScore when running
 
 		if(event.eventFlag){
+
+			//--- Pause Button pressed
+			if(GetGameState() == STATE_PAUSE && OnClickPauseButton(event) == TRUE){
+				event = ContinueGame(event);
+			}
+
 			//--- Start Button pressed
 			if(GetGameState() == STATE_MENU && OnClickStartButton(event) == TRUE){
 				StartGame();
+			}
+			//--- Start Button pressed
+			if(GetGameState() == STATE_MENU && OnClickTRexGoogle(event) == TRUE){
+				SelectTrexGoogle();
+			}
+			//--- Start Button pressed
+			if(GetGameState() == STATE_MENU && OnClickTRexGreen(event) == TRUE){
+				SelectTrexGreen();
+			}
+
+			//--- Pause Button pressed
+			if(GetGameState() == STATE_GAME && OnClickPauseButton(event) == TRUE){
+				event = PauseGame(event);
 			}
 			//--- Jump Button pressed
 			if(GetGameState() == STATE_GAME && OnClickJumpButton(event) == TRUE){

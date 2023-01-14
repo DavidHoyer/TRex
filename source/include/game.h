@@ -17,6 +17,7 @@ typedef enum {
 	STATE_NONE	= -1,
 	STATE_MENU	= 0,
 	STATE_GAME,
+	STATE_PAUSE,
 	STATE_GAME_OVER,
 }GameState_t;
 
@@ -35,6 +36,13 @@ typedef struct {
 void GameInit(void);
 void ShowStartMenu(void);
 void StartGame(void);
+event_T PauseGame (event_T);
+event_T ContinueGame (event_T);
+
+
+void SelectTrexGoogle (void);
+void SelectTrexGreen (void);
+
 void DisplayGameOver(void);
 
 GameState_t GetGameState(void);
@@ -43,6 +51,9 @@ event_T CheckEvent(void);
 //char 	CheckEventBmp(bmp_t bmp, event_T event);
 char 	OnClickStartButton(event_T event);
 char 	OnClickJumpButton(event_T event);
+char 	OnClickPauseButton(event_T event);
+char 	OnClickTRexGoogle(event_T event);
+char 	OnClickTRexGreen(event_T event);
 
 void	MoveObstacles(void);
 void	MoveTRex(void);
