@@ -35,6 +35,7 @@ typedef struct {
 void GameInit(void);
 void ShowStartMenu(void);
 void StartGame(void);
+void DisplayGameOver(void);
 
 GameState_t GetGameState(void);
 
@@ -47,13 +48,12 @@ void	MoveObstacles(void);
 void	MoveTRex(void);
 void	InitTRexJump(void);
 
-node_t *GetBoarderTRex (void);
-node_t *GetBoarderCactus (void);
-
 void PrintBorderTRex (void);
 void PrintBorderCactus (void);
 
 char 	CheckCollision(void);
+int CheckLineCollision(uint16_t A1_x, uint16_t A1_y, uint16_t A2_x, uint16_t A2_y,
+					   uint16_t B1_x, uint16_t B1_y, uint16_t B2_x, uint16_t B2_y);
 
 void ScoreCount (void);
 

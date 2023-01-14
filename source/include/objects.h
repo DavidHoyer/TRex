@@ -41,6 +41,7 @@ typedef struct
 }bmp_t;
 
 void DrawBmp(bmp_t *bmp, const uint16_t x, const uint16_t y);
+void DrawBmpWithout_A(bmp_t *bmp, const uint16_t x, const uint16_t y);
 void MoveBmp(bmp_t *bmp, const uint16_t x, const uint16_t y);
 void ShiftBmp(bmp_t *bmp, const uint16_t ix, const uint16_t iy);
 void DeleteBmp(bmp_t *bmp);

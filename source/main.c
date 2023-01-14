@@ -2,7 +2,6 @@
 //*** Includes     													***
 //*********************************************************************
 #include "include/game.h"
-//#include <leguan.h>
 #include <cube.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -44,11 +43,9 @@ int main()
 		if(GetGameState() == STATE_GAME){
 			MoveObstacles();
 			MoveTRex();
-			//PrintBorderTRex();
-			//PrintBorderCactus();
 
 			if(CheckCollision() == TRUE){
-				HAL_Delay(3000);
+				DisplayGameOver();
 				ShowStartMenu();
 			}
 		}

@@ -19,7 +19,7 @@
 bmp_t tRexBmp 			= {10, 10, 77, 90, tRex_pixelData, 0,0};
 bmp_t startButtonBmp 	= {0, 0, 248, 101, startButton_pixelData, 0,0};
 bmp_t jumpButtonBmp 	= {0, 0, 80, 80, jumpButton_pixelData, 0,0};
-bmp_t obstacleBmp[3]	= { {10, 10, 59, 80, cactus_pixelData, 0,0},
+bmp_t obstacleBmp[3]	= { {200, 10, 59, 80, cactus_pixelData, 0,0},
 							{0, 0, 59, 80, cactus_pixelData, 0,0},
 							{0, 0, 59, 80, cactus_pixelData, 0,0} };
 
@@ -37,6 +37,10 @@ typedef enum {
 Move_t tRexDirection = MOVE_NONE;				//Müessemer no luege wie ds nid global mache
 
 void GameInit(void){
+	int result = CheckLineCollision(0,480,126+2,350+27,50+76,300+88,50+75,300+65);
+	result = result + 1;
+
+	//--- Convert Array to BGRA_5658
 	ConvertArray(tRex_pixelData, tRexBmp.w, tRexBmp.h);
 	ConvertArray(startButton_pixelData, startButtonBmp.w, startButtonBmp.h);
 	ConvertArray(jumpButton_pixelData, jumpButtonBmp.w, jumpButtonBmp.h);
@@ -47,15 +51,23 @@ void GameInit(void){
 
 	//--- Detect Border of BMP files
 	tRexBmp.head = GetBoarder(tRexBmp);
-	for(int i = 0; i < OBSTACLES_NUMBER; i++){
-		obstacleBmp[i].head = GetBoarder(obstacleBmp[i]);
-	}
+	obstacleBmp[0].head = GetBoarder(obstacleBmp[0]);
 
 	PrintBorder(tRexBmp, ColorRed);
 	tRexBmp.head = SortBoarder(tRexBmp.head);
 	PrintBorder(tRexBmp, ColorGreen);
-	//tRexBmp.head = CreateEdges(tRexBmp.head);
-	//PrintBorder(tRexBmp, ColorBlue);
+	tRexBmp.head = CreateEdges(tRexBmp.head);
+	PrintBorder(tRexBmp, ColorBlue);
+
+	PrintBorder(obstacleBmp[0], ColorRed);
+	obstacleBmp[0].head = SortBoarder(obstacleBmp[0].head);
+	PrintBorder(obstacleBmp[0], ColorGreen);
+	obstacleBmp[0].head = CreateEdges(obstacleBmp[0].head);
+	PrintBorder(obstacleBmp[0], ColorBlue);
+
+	for(int i = 1; i < OBSTACLES_NUMBER; i++){
+		obstacleBmp[i].head = obstacleBmp[0].head;
+	}
 }
 
 GameState_t GetGameState(void) { return(gameState); }
@@ -74,6 +86,15 @@ void ShowStartMenu(void){
 	uint16_t x = (LCD_WIDTH - startButtonBmp.w)/2;
 	uint16_t y = (LCD_HEIGHT - startButtonBmp.h)/2;
 	DrawBmp(&startButtonBmp, x, y);
+}
+
+void DisplayGameOver(void){
+	for(int i = 0; i < 5; i++){
+		//DeleteBmp(&tRexBmp);
+		//HAL_Delay(200);
+		DrawBmpWithout_A(&tRexBmp, tRexBmp.x, tRexBmp.y);
+		HAL_Delay(1000);
+	}
 }
 
 void StartGame(void){
@@ -249,8 +270,66 @@ void InitTRexJump(void){
 //*********************************************************************
 //*** Funktions for Collision Check									***
 //*********************************************************************
-
 char CheckCollision(void){
+	if(tRexBmp.visible == FALSE)
+		return FALSE;
+
+	for(uint16_t i = 0; i < OBSTACLES_NUMBER; i++){
+		if(obstacleBmp[i].visible == FALSE)
+			continue;
+
+		if (tRexBmp.x + tRexBmp.w < obstacleBmp[i].x 		||
+			tRexBmp.x > obstacleBmp[i].x + obstacleBmp[i].w ||
+			tRexBmp.y + tRexBmp.h < obstacleBmp[i].y 		||
+			tRexBmp.y > obstacleBmp[i].y + obstacleBmp[i].h)
+		{
+			//The image border (rectangle) of the TRex and the obstacle are not colliding
+			continue;
+		}
+
+		node_t *TRexPixel1   = tRexBmp.head;			//Pixel 1 and 2 create a line
+		node_t *TRexPixel2   = TRexPixel1->next;
+		node_t *ObstPixel 	 = obstacleBmp[0].head;		//pixel of obstacle
+		node_t pixel = {0, LCD_HEIGHT, NULL};					//a pixel which is definitely not in the TRex shape
+
+		int collisions = 0;								//Number of collisions
+
+		while(ObstPixel != NULL){
+			while(TRexPixel1 != NULL && TRexPixel2){
+				//check for a collision between Lines
+				if( CheckLineCollision(	pixel.x, pixel.y, 													//Line 1 Pos A
+										ObstPixel->x + obstacleBmp[i].x, ObstPixel->y + obstacleBmp[i].y, 	//Line 1 Pos B
+										TRexPixel1->x + tRexBmp.x, TRexPixel1->y + tRexBmp.y,				//Line 2 Pos A
+										TRexPixel2->x + tRexBmp.x, TRexPixel2->y + tRexBmp.y) == 1)				//Line 2 Pos B
+				{
+					collisions++;
+				}
+
+				//--- next line of the Obstacle border
+				node_t *tmp = TRexPixel2->next;
+				TRexPixel1 = TRexPixel2;
+				TRexPixel2 = tmp;
+			}
+
+			//--- if there were an odd number of collisions, the point was in the TRex Shape
+			if(collisions != 0 && collisions % 2 != 0){
+				DrawBmp(&obstacleBmp[i], obstacleBmp[i].x, obstacleBmp[i].y);	//redraw osbtacle (as maybe the TRex Border deleted some parts of the obstacle)
+				PrintBorder(tRexBmp, ColorBlue);
+				PrintBorder(obstacleBmp[i], ColorBlue);
+				LCD_SetForegroundColor(ColorRed);
+				LCD_Rect(ObstPixel->x + obstacleBmp[i].x - 1, ObstPixel->y + obstacleBmp[i].y - 1, 3, 3);
+				return TRUE;
+			}
+
+			TRexPixel1 = tRexBmp.head;
+			TRexPixel2 = TRexPixel1->next;
+			ObstPixel  = ObstPixel->next;
+			collisions = 0;
+		}
+	}
+	return FALSE;
+}
+/*char CheckCollision(void){
 
 	if(tRexBmp.visible == FALSE)
 		return FALSE;
@@ -258,11 +337,10 @@ char CheckCollision(void){
 	node_t *ptrTRex   = NULL;
 	node_t *ptrCactus = NULL;
 
-	/*
-	bmp 0 punmkt oben links
-	array von unten links
-	lcd 0 punkt oben links
-	 */
+	//bmp 0 punmkt oben links
+	//array von unten links
+	//lcd 0 punkt oben links
+
 
 	for(uint16_t i = 0; i < OBSTACLES_NUMBER; i++){
 
@@ -295,7 +373,7 @@ char CheckCollision(void){
 		}
 	}
 	return FALSE;
-}
+}*/
 
 //*********************************************************************
 //*** Game score counting and display on LCD						***
@@ -328,3 +406,10 @@ void ScoreCount (void) {
 		GameScore =0;
 	}
 }
+
+int CheckLineCollision(uint16_t A1_x, uint16_t A1_y, uint16_t B1_x, uint16_t B1_y,
+                       uint16_t A2_x, uint16_t A2_y, uint16_t B2_x, uint16_t B2_y) {
+
+	//Please do it for me i ma nüm
+}
+

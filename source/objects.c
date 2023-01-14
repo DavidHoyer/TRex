@@ -43,6 +43,36 @@ void DrawBmp(bmp_t *bmp, const uint16_t x, const uint16_t y)
 	}
 }
 
+void DrawBmpWithout_A(bmp_t *bmp, const uint16_t x, const uint16_t y)
+{
+	bmp->visible = 1;
+	bmp->x = x;
+	bmp->y = y;
+
+	uint32_t i;
+	const uint32_t size = bmp->w * bmp->h;
+
+	LCD_Color_t lcdColor = {0,0,0};
+
+	for(uint16_t yi = 0; yi < bmp->h; yi++){
+		for(uint16_t xi = bmp->w; xi >= 1; --xi){
+			i = size - yi * bmp->w - xi;
+
+			if(*(*(bmp->pixels + i) +3) == 0){
+				continue;
+			}
+
+			lcdColor.b = (uint8_t)(*(*(bmp->pixels + i) + 0));
+			lcdColor.g = (uint8_t)(*(*(bmp->pixels + i) + 1));
+			lcdColor.r = (uint8_t)(*(*(bmp->pixels + i) + 2));
+
+			LCD_SetDrawArea(x + bmp->w - xi, y + yi, x + bmp->w - xi, y + yi);
+			LCD_EnableDrawMode();
+			LCD_Set(&lcdColor);
+		}
+	}
+}
+
 void MoveBmp(bmp_t *bmp, const uint16_t x, const uint16_t y){
 	if(bmp->visible == 0)
 		return;
@@ -140,12 +170,71 @@ node_t *GetBoarder (bmp_t bmp) {
 //*** This function will sort the border pixels so that they are in a line and
 //*** each pixel in the list is a neighbour of the next pixel in the list.
 //*********************************************************************
-node_t *SortBoarder(node_t *head) {
-    if (head == NULL) return NULL;
-    node_t *sorted = NULL;
+node_t *SortBoarder(node_t *head)
+{
+    if (head == NULL)
+        return NULL;
+
     node_t *current = head;
-    node_t *start = current;
-    node_t *prev = NULL;
+    node_t *min = current;
+
+    // find the first pixel in the list that has the smallest distance to the next pixel
+    while (current->next != NULL) {
+        if (abs(current->x - current->next->x) + abs(current->y - current->next->y) < abs(min->x - min->next->x) + abs(min->y - min->next->y)) {
+            min = current;
+        }
+        current = current->next;
+    }
+
+    // change the head of the list to the pixel with the smallest distance
+    if (min != head) {
+        current = head;
+        while (current->next != min) {
+            current = current->next;
+        }
+        current->next = min->next;
+        min->next = head;
+        head = min;
+    }
+
+    // sort the rest of the list
+    current = head;
+    while (current->next != NULL) {
+        min = current->next;
+        node_t *temp = current;
+        while (temp->next != NULL) {
+            if (abs(temp->next->x - current->x) + abs(temp->next->y - current->y) == 1) {
+                if (min == current->next || abs(temp->next->x - current->x) + abs(temp->next->y - current->y) < abs(min->x - current->x) + abs(min->y - current->y)) {
+                    min = temp->next;
+                }
+            }
+            temp = temp->next;
+        }
+        if (min != current->next) {
+            temp = current;
+            while (temp->next != min) {
+                temp = temp->next;
+            }
+            temp->next = min->next;
+            min->next = current->next;
+            current->next = min;
+        }
+        current = current->next;
+    }
+
+    return head;
+}
+
+/*node_t *SortBoarder(node_t *head)
+{
+    if (head == NULL)
+    	return NULL;
+
+    node_t *sorted 	= NULL;
+    node_t *current = head;
+    node_t *start 	= head;
+    node_t *prev 	= NULL;
+
     while (current != NULL) {
         node_t *next = current->next;
         if (next != NULL) {
@@ -170,7 +259,7 @@ node_t *SortBoarder(node_t *head) {
         current = next;
     }
     return sorted;
-}
+}*/
 
 // only leaves the edges of the border
 node_t *CreateEdges(node_t *head) {
@@ -207,3 +296,4 @@ void ConvertArray(unsigned char pixelData[][4], const uint16_t w, const uint16_t
 		pixelData[i][2] = pixelData[i][2] >> 3;
 	}
 }
+
