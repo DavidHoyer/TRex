@@ -156,48 +156,9 @@ node_t *GetBoarder (bmp_t bmp) {
 		}
 	}
 
-	return SortBoarder(head);
+	return head;
 }
 
-/*node_t *GetBoarder (bmp_t bmp) {
-	node_t *head = NULL;	// Head of the border pixel linked list
-	int isBorder = 0;		// Indicates if the pixel is a border
-
-	// Iterate through the entire image
-	for (uint16_t y = 0; y < bmp.h; y++) {
-		for (uint16_t x = 0; x < bmp.w; x++) {
-			// Check if the pixel is on the border of the image
-			if (x == 0 || x == bmp.w-1 || y == 0 || y == bmp.h-1) {
-				if ((*(bmp.pixels + y*bmp.w + x))[3] != 0 )
-				{
-					isBorder = 1;
-				}
-			}
-			// Check if the pixel is non-transparent and its neighbours are transparent
-			else {
-				if ((*(bmp.pixels + y*bmp.w + x))[3] != 0 &&
-					((x > 0 && (*(bmp.pixels + y*bmp.w + x - 1))[3] == 0) ||
-					(x < bmp.w - 1 && (*(bmp.pixels + y*bmp.w + x + 1))[3] == 0) ||
-					(y > 0 && (*(bmp.pixels + (y-1)*bmp.w + x))[3] == 0) ||
-					(y < bmp.h - 1 && (*(bmp.pixels + (y+1)*bmp.w + x))[3] == 0)))
-				{
-					isBorder = 1;
-				}
-			}
-
-			if(isBorder == 1){
-				isBorder = 0;
-				node_t *pixel = malloc(sizeof(node_t));
-				pixel->x = x;
-				pixel->y = y;
-				pixel->next = head;
-				head = pixel;
-			}
-		}
-	}
-	//head = SortBoarder(head);
-	return head;
-}*/
 
 //*********************************************************************
 //*** SortBoarder
@@ -286,6 +247,7 @@ void PrintBorder (bmp_t bmp, color_t clr) {
 		ptr = ptr->next;
 	}
 }
+
 
 void ConvertArray(unsigned char pixelData[][4], const uint16_t w, const uint16_t h){
 	for (uint16_t i = 0; i < h * w; i++) {

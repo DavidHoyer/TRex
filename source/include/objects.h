@@ -52,7 +52,7 @@ void PrintBorder (bmp_t bmp, color_t clr);
 node_t *SortBoarder(node_t *head);
 node_t *CreateEdges(node_t *head);
 void ConvertArray(unsigned char pixelData[][4], const uint16_t w, const uint16_t h);
-
+void AssignBorderDinoGoogle(void);
 
 
 

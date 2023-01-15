@@ -65,6 +65,8 @@ void PrintBorderCactus (void);
 char 	CheckCollision(void);
 int CheckLineCollision(uint16_t A1_x, uint16_t A1_y, uint16_t A2_x, uint16_t A2_y,
 					   uint16_t B1_x, uint16_t B1_y, uint16_t B2_x, uint16_t B2_y);
+int doIntersect(uint16_t A1_x, uint16_t A1_y, uint16_t B1_x, uint16_t B1_y,
+        		uint16_t A2_x, uint16_t A2_y, uint16_t B2_x, uint16_t B2_y);
 
 void ScoreCount (void);
 

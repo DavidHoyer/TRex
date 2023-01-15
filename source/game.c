@@ -45,12 +45,12 @@ void GameInit(void){
 	LCD_SetBackgroundColor(ColorWhite);			//BG Color to White
 
 	//--- tests wege line collision
-	int result = CheckLineCollision(0,480,126+2,350+27,50+76,300+88,50+75,300+65);
-	result = CheckLineCollision(0,0,10,10,0,5,10,0);
-	result = result + 1;
+	//int result = doIntersect(10,10,0,0,1,0,2,1);
+	//result = result + 1;
 
 	//--- Detect Border of BMP files (Must be done before Array conversion)
-	tRexBmpGoogle.head  = GetBoarder(tRexBmpGoogle);
+	//tRexBmpGoogle.head  = GetBoarder(tRexBmpGoogle);
+	AssignBorderDinoGoogle();
 	tRexBmpGreen.head   = GetBoarder(tRexBmpGreen);
 	obstacleBmp[0].head = GetBoarder(obstacleBmp[0]);
 	for(int i = 1; i < OBSTACLES_NUMBER; i++)
@@ -364,13 +364,15 @@ char CheckCollision(void){
 		int collisions = 0;								//Number of collisions
 
 		while(ObstPixel != NULL){
-			while(TRexPixel1 != NULL && TRexPixel2){
+			while(TRexPixel1 != NULL && TRexPixel2 != NULL){
 				//check for a collision between Lines
-				if( CheckLineCollision(	pixel.x, pixel.y, 													//Line 1 Pos A
-										ObstPixel->x + obstacleBmp[i].x, ObstPixel->y + obstacleBmp[i].y, 	//Line 1 Pos B
-										TRexPixel1->x + tRexBmp.x, TRexPixel1->y + tRexBmp.y,				//Line 2 Pos A
-										TRexPixel2->x + tRexBmp.x, TRexPixel2->y + tRexBmp.y) == 1)				//Line 2 Pos B
+
+				if( doIntersect( pixel.x, pixel.y, 													//Line 1 Pos A
+								ObstPixel->x + obstacleBmp[i].x, ObstPixel->y + obstacleBmp[i].h - obstacleBmp[i].y, 	//Line 1 Pos B
+								TRexPixel1->x + tRexBmp.x, TRexPixel1->y + tRexBmp.h - tRexBmp.y,				//Line 2 Pos A
+								TRexPixel2->x + tRexBmp.x, TRexPixel2->y + tRexBmp.h - tRexBmp.y) == true)				//Line 2 Pos B
 				{
+					//LCD_Pixel(bmp.x + ptr->x, bmp.y + (bmp.h - ptr->y));
 					collisions++;
 				}
 
@@ -383,10 +385,8 @@ char CheckCollision(void){
 			//--- if there were an odd number of collisions, the point was in the TRex Shape
 			if(collisions != 0 && collisions % 2 != 0){
 				DrawBmp(&obstacleBmp[i], obstacleBmp[i].x, obstacleBmp[i].y);	//redraw osbtacle (as maybe the TRex Border deleted some parts of the obstacle)
-				PrintBorder(tRexBmp, ColorBlue);
+				PrintBorder(tRexBmp, ColorRed);
 				PrintBorder(obstacleBmp[i], ColorBlue);
-				LCD_SetForegroundColor(ColorRed);
-				LCD_Rect(ObstPixel->x + obstacleBmp[i].x - 1, ObstPixel->y + obstacleBmp[i].y - 1, 3, 3);
 				return TRUE;
 			}
 
@@ -482,6 +482,72 @@ typedef struct Point {
     double y;
 } Point;
 
+// Given three collinear points p, q, r, the function checks if
+// point q lies on line segment 'pr'
+bool onSegment(Point p, Point q, Point r)
+{
+    if (q.x <= fmax(p.x, r.x) && q.x >= fmin(p.x, r.x) &&
+        q.y <= fmax(p.y, r.y) && q.y >= fmin(p.y, r.y))
+       return true;
+
+    return false;
+}
+
+// To find orientation of ordered triplet (p, q, r).
+// The function returns following values
+// 0 --> p, q and r are collinear
+// 1 --> Clockwise
+// 2 --> Counterclockwise
+int orientation(Point p, Point q, Point r)
+{
+    // See https://www.geeksforgeeks.org/orientation-3-ordered-points/
+    // for details of below formula.
+    int val = (q.y - p.y) * (r.x - q.x) -
+              (q.x - p.x) * (r.y - q.y);
+
+    if (val == 0) return 0;  // collinear
+
+    return (val > 0)? 1: 2; // clock or counterclock wise
+}
+
+// The main function that returns true if line segment 'p1q1'
+// and 'p2q2' intersect.
+//bool doIntersect(Point p1, Point q1, Point p2, Point q2)
+int doIntersect(uint16_t A1_x, uint16_t A1_y, uint16_t B1_x, uint16_t B1_y,
+        		uint16_t A2_x, uint16_t A2_y, uint16_t B2_x, uint16_t B2_y)
+{
+	Point p1 = {A1_x, A1_y};
+	Point q1 = {B1_x, B1_y};
+	Point p2 = {A2_x, A2_y};
+	Point q2 = {B2_x, B2_y};
+
+    // Find the four orientations needed for general and
+    // special cases
+    int o1 = orientation(p1, q1, p2);
+    int o2 = orientation(p1, q1, q2);
+    int o3 = orientation(p2, q2, p1);
+    int o4 = orientation(p2, q2, q1);
+
+    // General case
+    if (o1 != o2 && o3 != o4)
+        return true;
+
+    // Special Cases
+    // p1, q1 and p2 are collinear and p2 lies on segment p1q1
+    if (o1 == 0 && onSegment(p1, p2, q1)) return true;
+
+    // p1, q1 and q2 are collinear and q2 lies on segment p1q1
+    if (o2 == 0 && onSegment(p1, q2, q1)) return true;
+
+    // p2, q2 and p1 are collinear and p1 lies on segment p2q2
+    if (o3 == 0 && onSegment(p2, p1, q2)) return true;
+
+     // p2, q2 and q1 are collinear and q1 lies on segment p2q2
+    if (o4 == 0 && onSegment(p2, q1, q2)) return true;
+
+    return false; // Doesn't fall in any of the above cases
+}
+
 //*********************************************************************
 //*** Funktions for Collision Check									***
 //*********************************************************************
@@ -532,4 +598,24 @@ int CheckLineCollision(uint16_t A1_x, uint16_t A1_y, uint16_t B1_x, uint16_t B1_
     } else {
         return 0; // Lines do not intersect
     }
+}
+
+//Temporary function will be replaced in the future
+void AssignBorderDinoGoogle(void){
+	uint16_t pixels[19][2] = { 	{34,90}, {76,90}, {76,66}, {66,66}, {66,56},
+								{56,56}, {56,38}, {37,19}, {37,4 }, {42,4 },
+								{42,1 }, {33,1 }, {33,8 }, {27,8 }, {18,8 },
+								{18,15}, {0,33},  {0,54},  {34,54} };
+
+	node_t *head = NULL;	// Head of the border pixel linked list
+
+	for(int i = 0; i < 19; i++){
+		node_t *pixel = malloc(sizeof(node_t));
+		pixel->x = pixels[i][0];
+		pixel->y = pixels[i][1];
+		pixel->next = head;
+		head = pixel;
+	}
+
+	tRexBmpGoogle.head = head;
 }
