@@ -28,10 +28,21 @@ void DrawBmp(bmp_t *bmp, const uint16_t x, const uint16_t y)
 		for(uint16_t xi = bmp->w; xi >= 1; --xi){
 			i = size - yi * bmp->w - xi;
 
+			//--- skip transparent pixels
 			if(*(*(bmp->pixels + i) +3) == 0){
 				LCD_Set(&bgColor);
 				continue;
 			}
+
+			//--- skip border points
+			/*if( (*(bmp->pixels + i))[0] == 252 	&&
+				(*(bmp->pixels + i))[1] == 2		&&
+				(*(bmp->pixels + i))[2] == 1		&&
+				(*(bmp->pixels + i))[3] == 255 )
+			{
+				LCD_Set(&bgColor);
+				continue;
+			}*/
 
 			lcdColor.b = (uint8_t)(*(*(bmp->pixels + i) + 0));
 			lcdColor.g = (uint8_t)(*(*(bmp->pixels + i) + 1));
@@ -127,6 +138,29 @@ void LcdClearArea(const uint16_t x1, const uint16_t y1, const uint16_t x2, const
 
 node_t *GetBoarder (bmp_t bmp) {
 	node_t *head = NULL;	// Head of the border pixel linked list
+	// Iterate through the entire image
+	for (uint16_t y = 0; y < bmp.h; y++) {
+		for (uint16_t x = 0; x < bmp.w; x++) {
+			// Check if the pixel is marked as a border edge {252, 2, 1, 255}
+			if( (*(bmp.pixels + y*bmp.w + x))[0] == 252 &&
+				(*(bmp.pixels + y*bmp.w + x))[1] == 2	&&
+				(*(bmp.pixels + y*bmp.w + x))[2] == 1	&&
+				(*(bmp.pixels + y*bmp.w + x))[3] == 255 )
+			{
+				node_t *pixel = malloc(sizeof(node_t));
+				pixel->x = x;
+				pixel->y = y + 1;
+				pixel->next = head;
+				head = pixel;
+			}
+		}
+	}
+
+	return SortBoarder(head);
+}
+
+/*node_t *GetBoarder (bmp_t bmp) {
+	node_t *head = NULL;	// Head of the border pixel linked list
 	int isBorder = 0;		// Indicates if the pixel is a border
 
 	// Iterate through the entire image
@@ -163,7 +197,7 @@ node_t *GetBoarder (bmp_t bmp) {
 	}
 	//head = SortBoarder(head);
 	return head;
-}
+}*/
 
 //*********************************************************************
 //*** SortBoarder
@@ -225,42 +259,6 @@ node_t *SortBoarder(node_t *head)
     return head;
 }
 
-/*node_t *SortBoarder(node_t *head)
-{
-    if (head == NULL)
-    	return NULL;
-
-    node_t *sorted 	= NULL;
-    node_t *current = head;
-    node_t *start 	= head;
-    node_t *prev 	= NULL;
-
-    while (current != NULL) {
-        node_t *next = current->next;
-        if (next != NULL) {
-            int dx = next->x - current->x;
-            int dy = next->y - current->y;
-            if (dx != 0 && dy != 0 && abs(dx) != abs(dy)) {
-                start = next;
-                if (prev != NULL) {
-                    prev->next = next;
-                }
-            }
-        }
-        if (sorted == NULL) {
-            current->next = start;
-            sorted = current;
-        }
-        else {
-            current->next = sorted;
-            sorted = current;
-        }
-        prev = current;
-        current = next;
-    }
-    return sorted;
-}*/
-
 // only leaves the edges of the border
 node_t *CreateEdges(node_t *head) {
     node_t *prev = head, *current = head->next;
@@ -291,6 +289,21 @@ void PrintBorder (bmp_t bmp, color_t clr) {
 
 void ConvertArray(unsigned char pixelData[][4], const uint16_t w, const uint16_t h){
 	for (uint16_t i = 0; i < h * w; i++) {
+
+		//--- border edges
+		if( pixelData[i][0] == 252 	&&
+			pixelData[i][1] == 2	&&
+			pixelData[i][2] == 1	&&
+			pixelData[i][3] == 255 )
+		{
+			pixelData[i][0] = 0;
+			pixelData[i][1] = 0;
+			pixelData[i][2] = 0;
+			pixelData[i][3] = 0;
+			continue;
+		}
+
+		//--- convert BGRA_8888 to BGRA_5658
 		pixelData[i][0] = pixelData[i][0] >> 3;
 		pixelData[i][1] = pixelData[i][1] >> 2;
 		pixelData[i][2] = pixelData[i][2] >> 3;

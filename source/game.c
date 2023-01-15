@@ -16,9 +16,9 @@
 #define TREX_X_POS			50
 #define OBSTACLES_NUMBER	3
 
-bmp_t tRexBmp 			= {10, 10, 77, 90, tRex_pixelDataGoogle, 0, 0, 0};
-bmp_t tRexBmpGoogle 	= {0, 0, 77, 90, tRex_pixelDataGoogle, 0, 1, 0};
-bmp_t tRexBmpGreen		= {0, 0, 135, 100, tRex_pixelDataGreen, 0, 0, 0};
+bmp_t tRexBmp;			//
+bmp_t tRexBmpGoogle 	= {10, 10, 77, 90, tRex_pixelDataGoogle, 0, 1, 0};
+bmp_t tRexBmpGreen		= {0, 0, 122, 90, tRex_pixelDataGreen, 0, 0, 0};
 
 
 bmp_t startButtonBmp 	= {0, 0, 248, 101, startButton_pixelData, 0,0};
@@ -42,42 +42,35 @@ typedef enum {
 Move_t tRexDirection = MOVE_NONE;				//Müessemer no luege wie ds nid global mache
 
 void GameInit(void){
-	ConvertArray(tRex_pixelDataGoogle, tRexBmpGoogle.w, tRexBmpGoogle.h);
+	LCD_SetBackgroundColor(ColorWhite);			//BG Color to White
+
+	//--- tests wege line collision
 	int result = CheckLineCollision(0,480,126+2,350+27,50+76,300+88,50+75,300+65);
+	result = CheckLineCollision(0,0,10,10,0,5,10,0);
 	result = result + 1;
+
+	//--- Detect Border of BMP files (Must be done before Array conversion)
+	tRexBmpGoogle.head  = GetBoarder(tRexBmpGoogle);
+	tRexBmpGreen.head   = GetBoarder(tRexBmpGreen);
+	obstacleBmp[0].head = GetBoarder(obstacleBmp[0]);
+	for(int i = 1; i < OBSTACLES_NUMBER; i++)
+		obstacleBmp[i].head = obstacleBmp[0].head;
 
 	//--- Convert Array to BGRA_5658
 	ConvertArray(tRex_pixelDataGreen, tRexBmpGreen.w, tRexBmpGreen.h);
-
+	ConvertArray(tRex_pixelDataGoogle, tRexBmpGoogle.w, tRexBmpGoogle.h);
 	ConvertArray(startButton_pixelData, startButtonBmp.w, startButtonBmp.h);
 	ConvertArray(jumpButton_pixelData, jumpButtonBmp.w, jumpButtonBmp.h);
 	ConvertArray(pauseButton_pixelData, 75, 75);
 	ConvertArray(cactus_pixelData, obstacleBmp[0].w, obstacleBmp[0].h);
 
-	LCD_SetBackgroundColor(ColorWhite);
+	//--- show the start menu to begin
 	ShowStartMenu();
 
-	//--- Detect Border of BMP files
-	tRexBmpGoogle.head = GetBoarder(tRexBmpGoogle);
-	tRexBmpGreen.head = GetBoarder(tRexBmpGreen);
-
-	obstacleBmp[0].head = GetBoarder(obstacleBmp[0]);
-
-	PrintBorder(tRexBmp, ColorRed);
-	tRexBmp.head = SortBoarder(tRexBmp.head);
-	PrintBorder(tRexBmp, ColorGreen);
-	tRexBmp.head = CreateEdges(tRexBmp.head);
-	PrintBorder(tRexBmp, ColorBlue);
-
+	//-- Tests fürd border detection
 	PrintBorder(obstacleBmp[0], ColorRed);
-	obstacleBmp[0].head = SortBoarder(obstacleBmp[0].head);
-	PrintBorder(obstacleBmp[0], ColorGreen);
-	obstacleBmp[0].head = CreateEdges(obstacleBmp[0].head);
-	PrintBorder(obstacleBmp[0], ColorBlue);
-
-	for(int i = 1; i < OBSTACLES_NUMBER; i++){
-		obstacleBmp[i].head = obstacleBmp[0].head;
-	}
+	PrintBorder(tRexBmpGoogle, ColorRed);
+	PrintBorder(tRexBmpGreen, ColorRed);
 }
 
 GameState_t GetGameState(void) { return(gameState); }
@@ -104,15 +97,6 @@ void ShowStartMenu(void){
 		SelectTrexGoogle();
 	if (tRexBmpGreen.selected)
 		SelectTrexGreen();
-}
-
-void DisplayGameOver(void){
-	for(int i = 0; i < 5; i++){
-		//DeleteBmp(&tRexBmp);
-		//HAL_Delay(200);
-		DrawBmpWithout_A(&tRexBmp, tRexBmp.x, tRexBmp.y);
-		HAL_Delay(1000);
-	}
 }
 
 void DisplayGameOver(void){
@@ -414,6 +398,7 @@ char CheckCollision(void){
 	}
 	return FALSE;
 }
+
 /*char CheckCollision(void){
 
 	if(tRexBmp.visible == FALSE)
@@ -492,9 +477,59 @@ void ScoreCount (void) {
 	}
 }
 
+typedef struct Point {
+    double x;
+    double y;
+} Point;
+
+//*********************************************************************
+//*** Funktions for Collision Check									***
+//*********************************************************************
 int CheckLineCollision(uint16_t A1_x, uint16_t A1_y, uint16_t B1_x, uint16_t B1_y,
-                       uint16_t A2_x, uint16_t A2_y, uint16_t B2_x, uint16_t B2_y) {
+                       uint16_t A2_x, uint16_t A2_y, uint16_t B2_x, uint16_t B2_y)
+{
+	node_t A1,A2,B1,B2;
 
-	//Please do it for me i ma nüm
+	if (A1_x < B1_x) {
+		A1.x = A1_x;	A1.y = A1_y;
+		B1.x = B1_x;	B1.y = B1_y;
+	}
+	else{
+		A1.x = B1_x;	A1.y = B1_y;
+		B1.x = A1_x;	B1.y = A1_y;
+	}
+	if (A2_x < B2_x) {
+		A2.x = A2_x;	A2.y = A2_y;
+		B2.x = B2_x;	B2.y = B2_y;
+	}
+	else{
+		A2.x = B2_x;	A2.y = B2_y;
+		B2.x = A2_x;	B2.y = A2_y;
+	}
+
+	double slope1 = (B1.y - A1.y) / (B1.x - A1.x);
+    double slope2 = (B2.y - A2.y) / (B2.x - A2.x);
+    double y_intercept1 = A1.y - (slope1 * A1.x);
+    double y_intercept2 = A2.y - (slope2 * A2.x);
+    double x, y;
+
+    if (slope1 == slope2) {
+        if (y_intercept1 == y_intercept2) {
+            return 1; // Lines are identical
+        } else {
+            return 0; // Lines are parallel
+        }
+    }
+
+    x = (y_intercept2 - y_intercept1) / (slope1 - slope2);
+    y = slope1 * x + y_intercept1;
+
+    if (((A1.x <= x && x <= B1.x) || (B1.x <= x && x <= A1.x)) &&
+        ((A1.y <= y && y <= B1.y) || (B1.y <= y && y <= A1.y)) &&
+        ((A2.x <= x && x <= B2.x) || (B2.x <= x && x <= A2.x)) &&
+        ((A2.y <= y && y <= B2.y) || (B2.y <= y && y <= A2.y))) {
+        return 1; // Lines intersect
+    } else {
+        return 0; // Lines do not intersect
+    }
 }
-
