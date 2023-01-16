@@ -25,14 +25,14 @@ typedef enum {
 //*** Structs 														***
 //*********************************************************************
 typedef struct {
-	char 		eventFlag;
-	uint16_t 	x;
-	uint16_t 	y;
+	uint8_t		eventFlag;		// 1 = event happened, 0 = nothing happened
+	uint16_t 	x;				// Event position x
+	uint16_t 	y;				// Event position y
 }event_T;
 
 //*********************************************************************
 //*** Functions														***
-//*********************************************************************
+//****************D*****************************************************
 void GameInit(void);
 void ShowStartMenu(void);
 void StartGame(void);
