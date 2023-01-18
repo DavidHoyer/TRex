@@ -138,6 +138,139 @@ void LcdClearArea(const uint16_t x1, const uint16_t y1, const uint16_t x2, const
 
 node_t *GetBoarder (bmp_t bmp) {
 	node_t *head = NULL;	// Head of the border pixel linked list
+	node_t *start = NULL;
+	node_t *current = NULL;
+	node_t *last = NULL;
+
+	uint16_t x_first =0;
+	uint16_t y_first =0;
+	unsigned char DONE =0;
+	unsigned char found =0;
+
+	//find first boarder pixel from top to bottom and left to right
+	for (uint16_t y = bmp.h; y > 0; y--) {
+		for (uint16_t x = 0; x < bmp.w; x++) {
+
+			if ( (*(bmp.pixels + y*bmp.w + x))[3] != 0 )
+			{
+				node_t *pixel = malloc(sizeof(node_t));
+				pixel->x = x;
+				pixel->y = y + 1;
+				current = pixel;
+				current->next = NULL;
+				last = current;
+				last->x -= 1;
+				last->next = NULL;
+				y = 0;
+				x = bmp.w;
+			}
+		}
+	}
+
+	do
+	{
+		//calculate direction from which pixel was enterd
+		int dirx = current->x - last->x;
+		int diry = current->y - last->y;
+
+		//enterd from left side
+		if (dirx = 1 && diry == 0) {
+
+			//top left pixel transparent?
+			if ( (*(bmp.pixels + (last->y+1)*bmp.w + last->x))[3] == 0 ){
+				last->x +=1;
+				last->y +=1;
+			}
+			else {
+				//save new boarder pixel
+				current->x = last->x -1;
+				current->y = last->y +1;
+
+				//ask if its edge pixel
+				if ( 	(*(bmp.pixels + (last->y+1)*bmp.w + last->x -1))[0] == 252 &&
+						(*(bmp.pixels + (last->y+1)*bmp.w + last->x -1))[1] == 2 &&
+						(*(bmp.pixels + (last->y+1)*bmp.w + last->x -1))[2] == 1)
+				{
+					//create new node for edges
+					node_t *pixel = malloc(sizeof(node_t));
+					pixel->x = x;
+					pixel->y = y + 1;
+					pixel->next = head;
+					head = pixel;
+				}
+				continue;
+			}
+
+			//top middle pixel transparent?
+			if ( (*(bmp.pixels + last->y*bmp.w + last->x))[3] == 0 ) {
+				last->x += 1;
+			}
+			else {
+				current->x = last->x +1;
+				current->y = last->y;
+			}
+
+			//top right pixel transparent
+			if ( (*(bmp.pixels + last->y*bmp.w + last->x))[3] == 0 ) {
+				last->y -= 1;
+			}
+			else {
+				current->x = last->x +1;
+				current->y = last->y;
+			}
+
+			if ( (*(bmp.pixels + last->y*bmp.w + last->x))[3] == 0 ) {
+				last->y -= 1;
+			}
+			else {
+				current->x = last->x +1;
+				current->y = last->y;
+			}
+
+			if ( (*(bmp.pixels + last->y*bmp.w + last->x))[3] == 0 ) {
+				last->x -= 1;
+			}
+			else {
+				current->x = last->x +1;
+				current->y = last->y;
+			}
+
+			if ( (*(bmp.pixels + last->y*bmp.w + last->x))[3] == 0 ) {
+				last->x -= 1;
+			}
+			else {
+				current->x = last->x +1;
+				current->y = last->y;
+			}
+			if ( (*(bmp.pixels + last->y*bmp.w + last->x))[3] == 0 ) {
+				return NULL;
+			}
+			else {
+				current->x = last->x +1;
+				current->y = last->y;
+			}
+		}
+
+
+
+		if ( (*(bmp.pixels + last->y*bmp.w + last->x))[3] != 0 ){
+
+		}
+		else {
+
+		}
+
+
+	}while (current->x != start->x && current->y != start->y);
+
+
+
+
+
+
+
+
+
 	// Iterate through the entire image
 	for (uint16_t y = 0; y < bmp.h; y++) {
 		for (uint16_t x = 0; x < bmp.w; x++) {
