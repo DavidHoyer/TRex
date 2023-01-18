@@ -258,9 +258,9 @@ void ConvertArray(unsigned char pixelData[][4], const uint16_t w, const uint16_t
 			pixelData[i][2] == 1	&&
 			pixelData[i][3] == 255 )
 		{
-			pixelData[i][0] = 0;
-			pixelData[i][1] = 0;
-			pixelData[i][2] = 0;
+			//pixelData[i][0] = 0;
+			//pixelData[i][1] = 0;
+			//pixelData[i][2] = 0;
 			pixelData[i][3] = 0;
 			continue;
 		}
