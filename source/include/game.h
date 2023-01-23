@@ -59,9 +59,6 @@ void	MoveObstacles(void);
 void	MoveTRex(void);
 void	InitTRexJump(void);
 
-void PrintBorderTRex (void);
-void PrintBorderCactus (void);
-
 char 	CheckCollision(void);
 int CheckLineCollision(uint16_t A1_x, uint16_t A1_y, uint16_t A2_x, uint16_t A2_y,
 					   uint16_t B1_x, uint16_t B1_y, uint16_t B2_x, uint16_t B2_y);

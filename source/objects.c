@@ -25,24 +25,14 @@ void DrawBmp(bmp_t *bmp, const uint16_t x, const uint16_t y)
 	LCD_Color_t lcdColor = {0,0,0};
 
 	for(uint16_t yi = 0; yi < bmp->h; yi++){
-		for(uint16_t xi = bmp->w; xi >= 1; --xi){
-			i = size - yi * bmp->w - xi;
+			for(uint16_t xi = 0; xi < bmp->w; xi++){
+				i = size - yi * bmp->w - bmp->w + xi;
 
 			//--- skip transparent pixels
 			if(*(*(bmp->pixels + i) +3) == 0){
 				LCD_Set(&bgColor);
 				continue;
 			}
-
-			//--- skip border points
-			/*if( (*(bmp->pixels + i))[0] == 252 	&&
-				(*(bmp->pixels + i))[1] == 2		&&
-				(*(bmp->pixels + i))[2] == 1		&&
-				(*(bmp->pixels + i))[3] == 255 )
-			{
-				LCD_Set(&bgColor);
-				continue;
-			}*/
 
 			lcdColor.b = (uint8_t)(*(*(bmp->pixels + i) + 0));
 			lcdColor.g = (uint8_t)(*(*(bmp->pixels + i) + 1));
@@ -136,154 +126,116 @@ void LcdClearArea(const uint16_t x1, const uint16_t y1, const uint16_t x2, const
 	}
 }
 
+//in order that this border function workes, it is important that the border are markes and they are all
+//on the border of the object.
 node_t *GetBoarder (bmp_t bmp) {
-	node_t *head = NULL;	// Head of the border pixel linked list
-	node_t *start = NULL;
+
+	node_t *head = NULL;
 	node_t *current = NULL;
-	node_t *last = NULL;
 
-	uint16_t x_first =0;
-	uint16_t y_first =0;
-	unsigned char DONE =0;
-	unsigned char found =0;
+	uint32_t i;
+	const uint32_t size = bmp.w * bmp.h;
 
-	//find first boarder pixel from top to bottom and left to right
-	for (uint16_t y = bmp.h; y > 0; y--) {
-		for (uint16_t x = 0; x < bmp.w; x++) {
-
-			for (int dy = -1; dy<=1, dy++) {
-				for (int dx = -1; dx<= 1; dx++){
-					if (dx == 0 && dy == 0)
-					{
-						continue;
-					}
-				}
-			}
-
-
-			if ( (*(bmp.pixels + y*bmp.w + x))[3] != 0 )
+	//--- search for first not transparent pixel (left to right)
+	for(uint16_t yi = 0; yi < bmp.h; yi++){
+		for(uint16_t xi = 0; xi < bmp.w; xi++){
+			i = size - yi * bmp.w - bmp.w + xi;
+			if((*(bmp.pixels + i))[3] != 0)
 			{
 				node_t *pixel = malloc(sizeof(node_t));
-				pixel->x = x;
-				pixel->y = y + 1;
+				pixel->x = xi;
+				pixel->y = yi;
+				pixel->next = NULL;
 				current = pixel;
-				current->next = NULL;
-				last = current;
-				last->x -= 1;
-				last->next = NULL;
-				y = 0;
-				x = bmp.w;
+				break;
 			}
 		}
+		if(current != NULL)
+			break;
 	}
 
-	/*
+	//--- safe start position.
+	uint16_t x_start = current->x;
+	uint16_t y_start = current->y;
 
-	do
-	{
-		//calculate direction from which pixel was enterd
-		int dirx = current->x - last->x;
-		int diry = current->y - last->y;
+	//--- more neighbor algorithm
+	uint8_t mooreLast = 8;		// 1 - 8 Moore neighborhood pixel (more info in report)
+	uint8_t mooreNew  = mooreLast;
 
-		//enterd from left side
-		if (dirx = 1 && diry == 0) {
+	int x_next;
+	int y_next;
 
-			//top left pixel transparent?
-			if ( (*(bmp.pixels + (last->y+1)*bmp.w + last->x))[3] == 0 ){
-				last->x +=1;
-				last->y +=1;
+	while(current != NULL){
+
+		for(int notUsed = 0; notUsed < 8; notUsed++){
+
+			//---Get next moore neighbor pixel
+			mooreNew++;
+			if(mooreNew >= 9)
+				mooreNew = 1;
+
+			//--- Get next position based on moore pixel
+			x_next = current->x;
+			y_next = current->y;
+
+			switch(mooreNew){
+				case 1:	x_next --;	y_next --;	break;
+				case 2:				y_next --;	break;
+				case 3:	x_next ++;	y_next --;	break;
+				case 4:	x_next ++;				break;
+				case 5:	x_next ++;	y_next ++;	break;
+				case 6:				y_next ++;	break;
+				case 7:	x_next --;	y_next ++;	break;
+				case 8:	x_next --;				break;
 			}
-			else {
-				//save new boarder pixel
-				current->x = last->x -1;
-				current->y = last->y +1;
 
-				//ask if its edge pixel
-				if ( 	(*(bmp.pixels + (last->y+1)*bmp.w + last->x -1))[0] == 252 &&
-						(*(bmp.pixels + (last->y+1)*bmp.w + last->x -1))[1] == 2 &&
-						(*(bmp.pixels + (last->y+1)*bmp.w + last->x -1))[2] == 1)
-				{
-					//create new node for edges
-					node_t *pixel = malloc(sizeof(node_t));
-					pixel->x = x;
-					pixel->y = y + 1;
-					pixel->next = head;
-					head = pixel;
-				}
+			//--- check border
+			if(x_next < 0 || y_next < 0 || x_next >= bmp.w || y_next >= bmp.h)
 				continue;
+
+			//--- check transparency
+			i = size - y_next * bmp.w - bmp.w + x_next;	//Get array index
+			if((*(bmp.pixels + i))[3] == 0)						//If its transparent conitnue
+				continue;
+
+			// Check if the pixel is marked as a border edge {252, 2, 1, 255}
+			if( (*(bmp.pixels + i))[0] == 252 &&
+				(*(bmp.pixels + i))[1] == 2	&&
+				(*(bmp.pixels + i))[2] == 1	&&
+				(*(bmp.pixels + i))[3] == 255 )
+			{
+				node_t *pixel = malloc(sizeof(node_t));
+				pixel->x = x_next;
+				pixel->y = y_next;
+				pixel->next = head;
+				head = pixel;
 			}
 
-			//top middle pixel transparent?
-			if ( (*(bmp.pixels + last->y*bmp.w + last->x))[3] == 0 ) {
-				last->x += 1;
-			}
-			else {
-				current->x = last->x +1;
-				current->y = last->y;
-			}
+			current->x = x_next;
+			current->y = y_next;
 
-			//top right pixel transparent
-			if ( (*(bmp.pixels + last->y*bmp.w + last->x))[3] == 0 ) {
-				last->y -= 1;
-			}
-			else {
-				current->x = last->x +1;
-				current->y = last->y;
-			}
+			//get next moore
+			if(mooreNew <= 4)
+				mooreLast = mooreNew + 4;
+			else
+				mooreLast = mooreNew - 4;
 
-			if ( (*(bmp.pixels + last->y*bmp.w + last->x))[3] == 0 ) {
-				last->y -= 1;
-			}
-			else {
-				current->x = last->x +1;
-				current->y = last->y;
-			}
-
-			if ( (*(bmp.pixels + last->y*bmp.w + last->x))[3] == 0 ) {
-				last->x -= 1;
-			}
-			else {
-				current->x = last->x +1;
-				current->y = last->y;
-			}
-
-			if ( (*(bmp.pixels + last->y*bmp.w + last->x))[3] == 0 ) {
-				last->x -= 1;
-			}
-			else {
-				current->x = last->x +1;
-				current->y = last->y;
-			}
-			if ( (*(bmp.pixels + last->y*bmp.w + last->x))[3] == 0 ) {
-				return NULL;
-			}
-			else {
-				current->x = last->x +1;
-				current->y = last->y;
-			}
+			mooreNew = mooreLast;
+			break;
 		}
 
-
-
-		if ( (*(bmp.pixels + last->y*bmp.w + last->x))[3] != 0 ){
-
-		}
-		else {
-
-		}
-
-
-	}while (current->x != start->x && current->y != start->y);
-
-*/
+		//--- check if we are again at the beginning
+		if( current->x == x_start && current->y == y_start)
+			break;
+	}
+	return head;
 
 
 
 
 
 
-
-	// Iterate through the entire image
+	/*// Iterate through the entire image
 	for (uint16_t y = 0; y < bmp.h; y++) {
 		for (uint16_t x = 0; x < bmp.w; x++) {
 			// Check if the pixel is marked as a border edge {252, 2, 1, 255}
@@ -301,7 +253,7 @@ node_t *GetBoarder (bmp_t bmp) {
 		}
 	}
 
-	return head;
+	return head;*/
 }
 
 
@@ -388,7 +340,7 @@ void PrintBorder (bmp_t bmp, color_t clr) {
 	LCD_SetForegroundColor(clr);
 
 	while(ptr != NULL){
-		LCD_Pixel(bmp.x + ptr->x, bmp.y + (bmp.h - ptr->y));
+		LCD_Pixel(bmp.x + ptr->x, bmp.y + ptr->y);
 		ptr = ptr->next;
 	}
 }
@@ -415,6 +367,55 @@ void ConvertArray(unsigned char pixelData[][4], const uint16_t w, const uint16_t
 		pixelData[i][1] = pixelData[i][1] >> 2;
 		pixelData[i][2] = pixelData[i][2] >> 3;
 	}
+}
+
+void LCD_Rect_Gradient(uint16_t x, uint16_t y, uint16_t width, uint16_t height, LCD_Color_t clr1, LCD_Color_t clr2) {
+    /* Set working region */
+    LCD_SetDrawArea(x, y, x + width -1, y + height - 1);
+    LCD_EnableDrawMode();
+
+    LCD_Color_t clr = clr1;
+
+    const double diff_r = abs(clr1.r - clr2.r);
+    const double diff_g = abs(clr1.g - clr2.g);
+    const double diff_b = abs(clr1.b - clr2.b);
+
+    const double factor_r = diff_r != 0 ? diff_r / width : 0.00;
+    const double factor_g = diff_g != 0 ? diff_g / width : 0.00;
+    const double factor_b = diff_b != 0 ? diff_b / width : 0.00;
+
+    /* Fill working region with color */
+    for (uint32_t y = 0; y < height; y++){
+    	for (uint32_t x = 0; x < width ; x++){
+
+    		//--- Red
+    		if(diff_r != 0){
+				if(clr1.r < clr2.r)
+					clr.r = clr1.r + (uint16_t)round(factor_r * x);
+				else
+					clr.r = clr1.r - (uint16_t)round(factor_r * x);
+    		}
+
+    		//--- Green
+			if(diff_g != 0){
+				if(clr1.g < clr2.g)
+					clr.g = clr1.g + (uint16_t)round(factor_g * x);
+				else
+					clr.g = clr1.g - (uint16_t)round(factor_g * x);
+			}
+
+			//--- Blue
+			if(diff_b != 0){
+				if(clr1.b < clr2.b)
+					clr.b = clr1.b + (uint16_t)round(factor_b * x);
+				else
+					clr.b = clr1.b - (uint16_t)round(factor_b * x);
+			}
+
+    		LCD_Set(&clr);
+    	}
+    }
+
 }
 
 

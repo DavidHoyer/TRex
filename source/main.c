@@ -7,11 +7,6 @@
 #include <stdlib.h>
 
 //*********************************************************************
-//*** Functions    													***
-//*********************************************************************
-char OnTimer(uint16_t miliseconds);
-
-//*********************************************************************
 //*** Main      													***
 //*********************************************************************
 int main()
@@ -63,6 +58,7 @@ int main()
 			MoveObstacles();
 			MoveTRex();
 
+			//check if the T-Rex collided with one of the obstacles
 			if(CheckCollision() == TRUE){
 				DisplayGameOver();
 				ShowStartMenu();
@@ -70,14 +66,3 @@ int main()
 		}
 	}
 };
-
-char OnTimer(uint16_t miliseconds){
-	static uint32_t tickOld = 0;
-	const uint32_t tickNew = HAL_GetTick();
-
-	if(tickNew < tickOld + miliseconds)
-		return FALSE;
-
-	tickOld = tickNew;
-	return TRUE;
-}

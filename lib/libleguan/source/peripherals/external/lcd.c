@@ -177,7 +177,7 @@ result_t LCD_Pixel(uint16_t x, uint16_t y) {
 
 result_t LCD_Rect(uint16_t x, uint16_t y, uint16_t width, uint16_t height) {
     /* Set working region */
-    R_TRY(LCD_SetDrawArea(x, y, x + width, y + height));
+    R_TRY(LCD_SetDrawArea(x, y, x + width -1, y + height-1));
     LCD_EnableDrawMode();
 
     /* Fill working region with color */
