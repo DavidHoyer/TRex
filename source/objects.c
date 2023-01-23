@@ -151,6 +151,16 @@ node_t *GetBoarder (bmp_t bmp) {
 	for (uint16_t y = bmp.h; y > 0; y--) {
 		for (uint16_t x = 0; x < bmp.w; x++) {
 
+			for (int dy = -1; dy<=1, dy++) {
+				for (int dx = -1; dx<= 1; dx++){
+					if (dx == 0 && dy == 0)
+					{
+						continue;
+					}
+				}
+			}
+
+
 			if ( (*(bmp.pixels + y*bmp.w + x))[3] != 0 )
 			{
 				node_t *pixel = malloc(sizeof(node_t));
@@ -166,6 +176,8 @@ node_t *GetBoarder (bmp_t bmp) {
 			}
 		}
 	}
+
+	/*
 
 	do
 	{
@@ -263,7 +275,7 @@ node_t *GetBoarder (bmp_t bmp) {
 
 	}while (current->x != start->x && current->y != start->y);
 
-
+*/
 
 
 
