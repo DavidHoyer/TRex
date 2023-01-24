@@ -233,25 +233,11 @@ static char CheckEventBmp(bmp_t bmp, event_T event){
 	return FALSE;
 }
 
-char OnClickStartButton(event_T event){
-	return(CheckEventBmp(startButtonBmp, event));
-}
-
-char OnClickJumpButton(event_T event){
-	return(CheckEventBmp(jumpButtonBmp, event));
-}
-
-char OnClickPauseButton(event_T event){
-	return(CheckEventBmp(pauseButtonBmp, event));
-}
-
-char OnClickTRexGoogle(event_T event){
-	return(CheckEventBmp(tRexBmpGoogle, event));
-}
-
-char OnClickTRexGreen(event_T event){
-	return(CheckEventBmp(tRexBmpGreen, event));
-}
+char OnClickStartButton(event_T event)	{ return(CheckEventBmp(startButtonBmp, event));	}
+char OnClickJumpButton(event_T event)	{ return(CheckEventBmp(jumpButtonBmp, event));	}
+char OnClickPauseButton(event_T event)	{ return(CheckEventBmp(pauseButtonBmp, event));	}
+char OnClickTRexGoogle(event_T event)	{ return(CheckEventBmp(tRexBmpGoogle, event));	}
+char OnClickTRexGreen(event_T event)	{ return(CheckEventBmp(tRexBmpGreen, event));	}
 
 void MoveObstacles(void){
 	//--- Timer for Obtscales
