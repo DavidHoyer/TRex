@@ -229,34 +229,7 @@ node_t *GetBoarder (bmp_t bmp) {
 			break;
 	}
 	return head;
-
-
-
-
-
-
-	/*// Iterate through the entire image
-	for (uint16_t y = 0; y < bmp.h; y++) {
-		for (uint16_t x = 0; x < bmp.w; x++) {
-			// Check if the pixel is marked as a border edge {252, 2, 1, 255}
-			if( (*(bmp.pixels + y*bmp.w + x))[0] == 252 &&
-				(*(bmp.pixels + y*bmp.w + x))[1] == 2	&&
-				(*(bmp.pixels + y*bmp.w + x))[2] == 1	&&
-				(*(bmp.pixels + y*bmp.w + x))[3] == 255 )
-			{
-				node_t *pixel = malloc(sizeof(node_t));
-				pixel->x = x;
-				pixel->y = y + 1;
-				pixel->next = head;
-				head = pixel;
-			}
-		}
-	}
-
-	return head;*/
 }
-
-
 //*********************************************************************
 //*** SortBoarder
 //*** This function will sort the border pixels so that they are in a line and
