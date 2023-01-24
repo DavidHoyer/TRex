@@ -66,10 +66,11 @@ int main()
 			MoveTRex();
 
 			//check if the T-Rex collided with one of the obstacles
-			if(CheckCollision() == TRUE){
+			if(CheckCollision()){
 				DisplayGameOver();
 				ShowStartMenu();
 			}
 		}
-	}
+
+	}//-- End while
 };
