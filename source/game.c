@@ -23,7 +23,7 @@ bmp_t tRexBmpGreen		= {400, 300, 122, 90, tRex_pixelDataGreen, 0, 0, 0};
 
 bmp_t startButtonBmp 	= {0, 0, 248, 101, startButton_pixelData, 0,0};
 bmp_t jumpButtonBmp 	= {0, 0, 80, 80, jumpButton_pixelData, 0,0};
-bmp_t pauseButtonBmp	= {0, 0, 75, 75, pauseButton_pixelData, 0, 0};
+bmp_t pauseButtonBmp	= {0, 0, 80, 80, pauseButton_pixelData, 0, 0};
 bmp_t obstacleBmp[3]	= { {200, 10, 59, 80, cactus_pixelData, 0,0},
 							{0, 0, 59, 80, cactus_pixelData, 0,0},
 							{0, 0, 59, 80, cactus_pixelData, 0,0} };
@@ -57,7 +57,8 @@ void GameInit(void){
 	ConvertArray(tRex_pixelDataGoogle, tRexBmpGoogle.w, tRexBmpGoogle.h);
 	ConvertArray(startButton_pixelData, startButtonBmp.w, startButtonBmp.h);
 	ConvertArray(jumpButton_pixelData, jumpButtonBmp.w, jumpButtonBmp.h);
-	ConvertArray(pauseButton_pixelData, 75, 75);
+	ConvertArray(pauseButton_pixelData, pauseButtonBmp.w, pauseButtonBmp.h);
+	ConvertArray(playButton_pixelData, pauseButtonBmp.w, pauseButtonBmp.h);
 	ConvertArray(cactus_pixelData, obstacleBmp[0].w, obstacleBmp[0].h);
 
 	//--- show the start menu to begin
@@ -88,14 +89,9 @@ void ShowStartMenu(void){
 }
 
 void DisplayGameOver(void){
-	for(int i = 0; i < 5; i++){
-		//DeleteBmp(&tRexBmp);
-		//HAL_Delay(200);
-		DrawBmpWithout_A(&tRexBmp, tRexBmp.x, tRexBmp.y);
-		PrintBorder(obstacleBmp[0], ColorBlue);
-		PrintBorder(tRexBmp, ColorRed);
-		HAL_Delay(1000);
-	}
+	DrawBmpWithout_A(&tRexBmp, tRexBmp.x, tRexBmp.y);
+	DeleteBmp(&pauseButtonBmp);
+	HAL_Delay(5000);
 }
 
 void StartGame(void){
@@ -123,6 +119,9 @@ void StartGame(void){
 
 event_T PauseGame (event_T event)
 {
+	pauseButtonBmp.pixels = playButton_pixelData;
+	DrawBmp(&pauseButtonBmp, pauseButtonBmp.x, pauseButtonBmp.y);
+
 	gameState = STATE_PAUSE;
 	event.eventFlag = FALSE;
 	return event;
@@ -130,6 +129,9 @@ event_T PauseGame (event_T event)
 
 event_T ContinueGame (event_T event)
 {
+	pauseButtonBmp.pixels = pauseButton_pixelData;
+	DrawBmp(&pauseButtonBmp, pauseButtonBmp.x, pauseButtonBmp.y);
+
 	gameState = STATE_GAME;
 	event.eventFlag = FALSE;
 	return event;

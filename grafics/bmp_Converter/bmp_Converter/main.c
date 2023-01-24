@@ -4,8 +4,8 @@
 int main()
 {
     //file names
-    char filename[]     = "C:\\ST\\Workspace\\TRex\\grafics\\Players\\Dino_Green_border.bmp";   //input bmp file
-    char txtFilename[]  = "C:\\ST\\Workspace\\TRex\\grafics\\Players\\Dino_Green_border.txt"; //output txt file
+    char filename[]     = "C:\\ST\\Workspace\\TRex\\grafics\\bmp_Converter\\bmp_Converter\\Resum_Button.bmp";   //input bmp file
+    char txtFilename[]  = "C:\\ST\\Workspace\\TRex\\grafics\\bmp_Converter\\bmp_Converter\\Resum_Button.txt"; //output txt file
 
     short int bfType;  //specifies the file type
     typedef struct tagBITMAPFILEHEADER
