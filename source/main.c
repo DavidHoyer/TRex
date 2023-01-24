@@ -21,8 +21,8 @@ int main()
 	// Main loop
 	while(TRUE){
 
-		event = CheckEvent();				//Check for incomming Touch event
 		ScoreCount();						//Counting GameScore when running
+		event = CheckEvent();				//Check for incomming Touch event
 
 		//--- Handle Touch Events on the LCD Screen
 		if(event.eventFlag){
