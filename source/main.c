@@ -24,33 +24,40 @@ int main()
 		event = CheckEvent();				//Check for incomming Touch event
 		ScoreCount();						//Counting GameScore when running
 
+		//--- Handle Touch Events on the LCD Screen
 		if(event.eventFlag){
 
-			//--- Pause Button pressed
-			if(GetGameState() == STATE_PAUSE && OnClickPauseButton(event) == TRUE){
-				event = ContinueGame(event);
-			}
+			switch(GetGameState())
+			{
+				case STATE_PAUSE:
+					//--- Pause Button pressed
+					if(OnClickPauseButton(event))
+						event = ContinueGame(event);
+					break;
+				case STATE_MENU:
+					//--- Start Button pressed
+					if(OnClickStartButton(event))
+						StartGame();
+					//--- Touch on T-Rex
+					else if(OnClickTRexGoogle(event))
+						SelectTrexGoogle();
+					//--- Touch on T-Rex
+					else if(OnClickTRexGreen(event))
+						SelectTrexGreen();
+					break;
 
-			//--- Start Button pressed
-			if(GetGameState() == STATE_MENU && OnClickStartButton(event) == TRUE){
-				StartGame();
-			}
-			//--- Start Button pressed
-			if(GetGameState() == STATE_MENU && OnClickTRexGoogle(event) == TRUE){
-				SelectTrexGoogle();
-			}
-			//--- Start Button pressed
-			if(GetGameState() == STATE_MENU && OnClickTRexGreen(event) == TRUE){
-				SelectTrexGreen();
-			}
+				case STATE_GAME:
+					//--- Pause Button pressed
+					if(OnClickPauseButton(event))
+						PauseGame(event);
+					//--- Jump Button pressed
+					else if(OnClickJumpButton(event))
+						InitTRexJump();
+					break;
 
-			//--- Pause Button pressed
-			if(GetGameState() == STATE_GAME && OnClickPauseButton(event) == TRUE){
-				event = PauseGame(event);
-			}
-			//--- Jump Button pressed
-			if(GetGameState() == STATE_GAME && OnClickJumpButton(event) == TRUE){
-				InitTRexJump();
+				default:
+					break;
+
 			}
 		}
 
