@@ -15,7 +15,6 @@
 //*********************************************************************
 //*** Variables    													***
 //*********************************************************************
-
 const LCD_Color_t bgColor = {31, 63, 31};	//--- set background color
 
 
@@ -25,7 +24,6 @@ const LCD_Color_t bgColor = {31, 63, 31};	//--- set background color
 //*** uses LCD_SetDrawArea and LCD_Set								***
 //***	-so it can't draw transparent pixels						***
 //*********************************************************************
-
 void DrawBmp(bmp_t *bmp, const uint16_t x, const uint16_t y)
 {
 	//--- enable object
@@ -278,8 +276,8 @@ pixel_t *GetBoarder (bmp_t bmp) {
 				continue;
 
 			//--- check transparency
-			i = size - y_next * bmp.w - bmp.w + x_next;	//Get array index
-			if((*(bmp.pixels + i))[3] == 0)						//--- If its transparent conitnue
+			i = size - y_next * bmp.w - bmp.w + x_next;			// Get array index
+			if((*(bmp.pixels + i))[3] == 0)						// If its transparent conitnue
 				continue;
 
 			//--- Check if the pixel is marked as a border edge {252, 2, 1, 255}
@@ -298,7 +296,7 @@ pixel_t *GetBoarder (bmp_t bmp) {
 			current->x = x_next;
 			current->y = y_next;
 
-			//--- get next moore
+			//--- get next moore neighborhood starting pixel
 			if(mooreNew <= 4)
 				mooreLast = mooreNew + 4;
 			else
@@ -321,7 +319,6 @@ pixel_t *GetBoarder (bmp_t bmp) {
 //*** input parameters:															***
 //*** 	-head of pixel list														***
 //*********************************************************************************
-
 pixel_t *SortBoarder(pixel_t *head)
 {
     if (head == NULL)
@@ -376,7 +373,6 @@ pixel_t *SortBoarder(pixel_t *head)
 
     return head;
 }
-
 
 //*********************************************************************************
 //*** only leaves the edges of the border										***
