@@ -9,49 +9,140 @@
 #ifndef INCLUDE_OBJECTS_H_
 #define INCLUDE_OBJECTS_H_
 
-//#include <peripherals/external/lcd.c>
+//*********************************************************************
+//*** Includes     													***
+//*********************************************************************
+
 #include <leguan.h>
+
+//*********************************************************************
+//*** Defines     													***
+//*********************************************************************
 
 #define TRUE		1
 #define FALSE		0
 #define BGRA565_COLOR(r, g, b, a) 	{ ((uint8_t)(b)) >> 3, ((uint8_t)(g)) >> 2, ((uint8_t)(r)) >> 3, ((uint8_t)(a)) }
 
-//*******************************************************************
-//*** BMP Struct
-//*******************************************************************
+//*********************************************************************
+//*** Structs														***
+//*********************************************************************
 
+/** @struct pixel
+ * 	@brief This struct is used to creat a linked list of boarder pixel
+ */
 typedef struct pixel
 {
+	/** X Position of boarder pixel*/
 	uint16_t		x;
+	/** Y Position of boarder pixel*/
 	uint16_t		y;
+	/** pointer to next boarder pixel*/
 	struct pixel    *next;
 }pixel_t;
 
+
+
+/** @struct bmp_t
+ * 	@brief This struct is used to save all the important data of a game object
+ */
 typedef struct
 {
-	uint16_t		x;				// X Position
-	uint16_t		y;				// Y Position
-	uint16_t		w;				// Width
-	uint16_t 		h;				// Height
-
-	unsigned char	(*pixels)[4];	//pointer to pixelData Array
-
-	unsigned char	visible;		// visibility flag
+	/** X Position of BMP*/
+	uint16_t		x;
+	/** Y Position of BMP*/
+	uint16_t		y;
+	/** Width of BMP*/
+	uint16_t		w;
+	/** Height of BMP*/
+	uint16_t 		h;
+	/** pointer to pixelData Array*/
+	unsigned char	(*pixels)[4];
+	/** visibility flag*/
+	unsigned char	visible;
+	/** selected flag*/
 	unsigned char	selected;
+	/** pointer to head of boarder pixel list*/
 	pixel_t			*head;
 }bmp_t;
 
+
+
+/**
+ * @brief Draw funktion for BMP on LCD without transparent pixels
+ * @param bmp : Struct with all information about the bmp
+ * @param x, y : coordinates where to draw the bmp
+ */
 void DrawBmp(bmp_t *bmp, const uint16_t x, const uint16_t y);
+
+/**
+ * @brief Draw funktion for BMP on LCD with transparent pixels
+ * @param bmp : Struct with all information about the bmp
+ * @param x,y : coordinates where to draw the bmp
+ */
 void DrawBmpWithout_A(bmp_t *bmp, const uint16_t x, const uint16_t y);
+
+/**
+ * @brief moves an object to a given position
+ * @param bmp : Struct with all information about the bmp
+ * @param x, y : coordinates where to move the bmp to
+ */
 void MoveBmp(bmp_t *bmp, const uint16_t x, const uint16_t y);
+
+/**
+ * @brief shifts bmp for a given amount of pixels
+ * @param bmp : Struct with all information about the bmp
+ * @param x, y : amounts of pixels to be moved
+ */
 void ShiftBmp(bmp_t *bmp, const uint16_t ix, const uint16_t iy);
+
+/**
+ * @brief Deletes bmp from LCD, means clear the are of the bmp
+ * @param bmp : Struct with all information about the bmp
+ */
 void DeleteBmp(bmp_t *bmp);
+
+/**
+ * @brief clears given area on LCD
+ * @param x1, y1 : start coordinates of area
+ * @param x2, y2 : end coordinates of area
+ */
 void LcdClearArea(const uint16_t x1, const uint16_t y1, const uint16_t x2, const uint16_t y2);
+
+/**
+ * @brief creates a list of boarder pixels, using the moore-edgefinding algorithm
+ * @param bmp : Struct with all information about the bmp
+ * @return head of boarder pixel list
+ */
 pixel_t *GetBoarder (bmp_t bmp);
-void PrintBorder (bmp_t bmp, color_t clr);
+
+/**
+ * @brief sorts the list of boarder pixel, so they go along the boarder in one direction
+ * @param head : head of boarder pixel list
+ * @return head of sorted boarder pixel list
+ */
 pixel_t *SortBoarder(pixel_t *head);
+
+/**
+ * @brief go's along the boarder and checks for edge pixels
+ * @param head : head of sorted boarder pixel list
+ * @return head of edge pixel list
+ */
 pixel_t *CreateEdges(pixel_t *head);
+
+/**
+ * @brief converts BGRA_8888 to BGRA_5658 color code
+ * @param pixelData :  pixel array with color values
+ * @param w, h : with and hight of bmp
+ */
 void ConvertArray(unsigned char pixelData[][4], const uint16_t w, const uint16_t h);
+
+/**
+ * @brief creates gradient boarder for T-Rex selection
+ * @param x, y :  x and y coordinates of rectangle
+ * @param width, height : with and hight of rectangle
+ * @param clr1, clr 2: start and end color of gradient color
+ *
+ */
 void LCD_Rect_Gradient(uint16_t x, uint16_t y, uint16_t width, uint16_t height, LCD_Color_t clr1, LCD_Color_t clr2);
 
 

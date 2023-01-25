@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "include/game.h"
-#include "include/resource.h"		//Only include ones! contains all pixel information of BMPs
+#include "include/resource.h"		//Only include once! contains all pixel information of BMPs
 #include "include/objects.h"
 
 //*********************************************************************
@@ -26,7 +26,7 @@
 //*********************************************************************
 //*** Enums      													***
 //*********************************************************************
-typedef enum {
+typedef enum {						// enum with values for T-Rex jumping direction
 	MOVE_NONE	= 0,
 	MOVE_UP		= 1,
 	MOVE_DOWN 	= -1,
@@ -35,27 +35,28 @@ typedef enum {
 //*********************************************************************
 //*** Variables    													***
 //*********************************************************************
-bmp_t tRexBmp;			//
-bmp_t tRexBmpGoogle 	= {270, 300, 77, 90, tRex_pixelDataGoogle, 0, 1, 0};
-bmp_t tRexBmpGreen		= {400, 300, 122, 90, tRex_pixelDataGreen, 0, 0, 0};
+bmp_t tRexBmp;																		// struct used while playing
+bmp_t tRexBmpGoogle 	= {270, 300, 77, 90, tRex_pixelDataGoogle, 0, 1, 0};		// struct with Google T-Rex data
+bmp_t tRexBmpGreen		= {400, 300, 122, 90, tRex_pixelDataGreen, 0, 0, 0};		// struct with Green Dino data
 
 
-bmp_t startButtonBmp 	= {0, 0, 248, 101, startButton_pixelData, 0,0};
-bmp_t jumpButtonBmp 	= {0, 0, 80, 80, jumpButton_pixelData, 0,0};
-bmp_t pauseButtonBmp	= {0, 0, 80, 80, pauseButton_pixelData, 0, 0};
-bmp_t obstacleBmp[3]	= { {200, 10, 59, 80, cactus_pixelData, 0,0},
+bmp_t startButtonBmp 	= {0, 0, 248, 101, startButton_pixelData, 0,0};				// struct with start Button data
+bmp_t jumpButtonBmp 	= {0, 0, 80, 80, jumpButton_pixelData, 0,0};				// struct with jump Button data
+bmp_t pauseButtonBmp	= {0, 0, 80, 80, pauseButton_pixelData, 0, 0};				// strict with pause Button data
+bmp_t obstacleBmp[3]	= { {200, 10, 59, 80, cactus_pixelData, 0,0},				// array with 3 obstacles and data
 							{0, 0, 59, 80, cactus_pixelData, 0,0},
 							{0, 0, 59, 80, cactus_pixelData, 0,0} };
 
-GameState_t gameState = STATE_NONE;				// Current stat of the game
-Move_t tRexDirection = MOVE_NONE;				// Müessemer no luege wie ds nid global mache
+GameState_t gameState = STATE_NONE;													// Current stat of the game
+Move_t tRexDirection = MOVE_NONE;													// Current jumping direction of T-Rex
 
 //*********************************************************************
 //*** Game Init    													***
 //*********************************************************************
 void GameInit(void)
 {
-	LCD_SetBackgroundColor(ColorWhite);			//BG Color to White
+	//--- BG Color to White
+	LCD_SetBackgroundColor(ColorWhite);
 
 	//--- Detect Border of BMP files (Must be done before Array conversion)
 	tRexBmpGoogle.head  = GetBoarder(tRexBmpGoogle);
@@ -81,7 +82,11 @@ void GameInit(void)
 //*** Show the start menu											***
 //*********************************************************************
 void ShowStartMenu(void){
+
+	//--- Clear LCD display
 	LCD_Clear();
+
+	//--- disable all game objects
 	gameState = STATE_MENU;
 	tRexBmp.visible = FALSE;
 	jumpButtonBmp.visible = FALSE;
@@ -91,10 +96,12 @@ void ShowStartMenu(void){
 		obstacleBmp[i].visible = FALSE;
 	}
 
+	//--- Draw start button
 	uint16_t x = (LCD_WIDTH - startButtonBmp.w)/2;
 	uint16_t y = (LCD_HEIGHT - startButtonBmp.h)/2 -50;
 	DrawBmp(&startButtonBmp, x, y);
 
+	//--- Draw T-Rex selection
 	if (tRexBmpGoogle.selected)
 		SelectTrexGoogle();
 	if (tRexBmpGreen.selected)
@@ -106,11 +113,14 @@ void ShowStartMenu(void){
 //*********************************************************************
 void StartGame(void)
 {
+	//--- clear LCD display
 	LCD_Clear();
+	//--- Set game State and disable menu objects
 	gameState = STATE_GAME;
 	startButtonBmp.visible = FALSE;
 
-	DrawBmp(&tRexBmp, TREX_X_POS, LCD_HEIGHT - GROUND_HEIGHT - tRexBmp.h); //Weis ni werum +1
+	//--- enable all game objects
+	DrawBmp(&tRexBmp, TREX_X_POS, LCD_HEIGHT - GROUND_HEIGHT - tRexBmp.h);
 	DrawBmp(&jumpButtonBmp, LCD_WIDTH - jumpButtonBmp.w - 50, 100);
 	DrawBmp(&obstacleBmp[0], LCD_WIDTH - obstacleBmp[0].w, LCD_HEIGHT - GROUND_HEIGHT - obstacleBmp[0].h);
 	DrawBmp(&pauseButtonBmp, 20,20);
@@ -133,9 +143,9 @@ void StartGame(void)
 //*********************************************************************
 void PauseGame(void)
 {
-	pauseButtonBmp.pixels = playButton_pixelData;
-	DrawBmp(&pauseButtonBmp, pauseButtonBmp.x, pauseButtonBmp.y);
-	gameState = STATE_PAUSE;
+	pauseButtonBmp.pixels = playButton_pixelData;							//--- change pause button to play button
+	DrawBmp(&pauseButtonBmp, pauseButtonBmp.x, pauseButtonBmp.y);			//--- Draw play button
+	gameState = STATE_PAUSE;												//--- set new gamestate (pause game)
 }
 
 //*********************************************************************
@@ -143,18 +153,29 @@ void PauseGame(void)
 //*********************************************************************
 void ContinueGame(void)
 {
-	pauseButtonBmp.pixels = pauseButton_pixelData;
-	DrawBmp(&pauseButtonBmp, pauseButtonBmp.x, pauseButtonBmp.y);
-	gameState = STATE_GAME;
+	pauseButtonBmp.pixels = pauseButton_pixelData;							//--- change play button to pause button
+	DrawBmp(&pauseButtonBmp, pauseButtonBmp.x, pauseButtonBmp.y);			//--- Draw pause button
+	gameState = STATE_GAME;													//--- set new gamestate (continue game)
 }
 
 //*********************************************************************
 //*** Display the game over with a delay							***
 //*********************************************************************
 void DisplayGameOver(void){
-	DrawBmpWithout_A(&tRexBmp, tRexBmp.x, tRexBmp.y);	// Draw T-Rex but without background
-	DeleteBmp(&pauseButtonBmp);							// Delete Pause Button
-	HAL_Delay(5000);									// Wait for 5s
+
+	//--- loop through all obstacles
+	for (uint8_t i = 0; i < 3; i++)
+	{
+		//--- if obstacle is not visible, skip this obstacle
+		if (!obstacleBmp[i].visible)
+			continue;
+		//--- if obstacle is visible, draw new with transparent pixels
+		DrawBmpWithout_A(&obstacleBmp[i], obstacleBmp[i].x, obstacleBmp[i].y);
+	}
+
+	DrawBmpWithout_A(&tRexBmp, tRexBmp.x, tRexBmp.y);						//--- Draw T-Rex but without background
+	DeleteBmp(&pauseButtonBmp);												//--- Delete Pause Button
+	HAL_Delay(3500);														//--- Wait for 3.5s
 }
 
 //*********************************************************************
@@ -162,6 +183,7 @@ void DisplayGameOver(void){
 //*********************************************************************
 void SelectTrexGoogle (void)
 {
+	//--- select Google T-Rex
 	tRexBmp = tRexBmpGoogle;
 	tRexBmpGoogle.selected = TRUE;
 	tRexBmpGreen.selected = FALSE;
@@ -187,6 +209,7 @@ void SelectTrexGoogle (void)
 //*********************************************************************
 void SelectTrexGreen (void)
 {
+	//--- select Green T-Rex
 	tRexBmp = tRexBmpGreen;
 	tRexBmpGoogle.selected = FALSE;
 	tRexBmpGreen.selected = TRUE;
@@ -220,60 +243,68 @@ GameState_t GetGameState(void) { return(gameState); }
 //*********************************************************************
 event_T CheckEvent(void)
 {
+	//--- create event variable and touch input variable
 	event_T event;
 	LCD_TouchPosition_t touchPosition = {0, 0};
 	static char flag = FALSE;
 
+	//--- check for touch input
 	if (R_SUCCESS(LCD_TouchGetPosition(&touchPosition)))
 	{
+		//--- if no touch input
 		if(touchPosition.x == 0 && touchPosition.y == 480){
+			//--- set event Flage to FALSE and return event
 			event.eventFlag = FALSE;
 			flag = FALSE;
 			return event;
 		}
-
+		//--- if flag TRUE from last event
 		if(flag == TRUE){
+			//--- set event Flag to FALSE and return event
 			event.eventFlag = FALSE;
 			return event;
 		}
-
-		event.eventFlag = TRUE;
-		event.x = touchPosition.x;
-		event.y = touchPosition.y;
-		flag = TRUE;
+		//--- if touch input happend
+		event.eventFlag = TRUE;					//--- set event Flag
+		event.x = touchPosition.x;				//--- set event position x
+		event.y = touchPosition.y;				//--- set event position y
+		flag = TRUE;							//--- set Flag for next check
 	}
 
-	return event;
+	return event;								//--- return incoming touch event
 }
 
 //*********************************************************************
 //*** Check if event happend to be on the bmp						***
 //*********************************************************************
 static char CheckEventBmp(bmp_t bmp, event_T event){
-	if(bmp.visible == false)
-		return false;
 
+	//--- if object not visible
+	if(bmp.visible == false)
+		return false;				//--- return false
+
+	//--- if no touch input happend
 	if (!event.eventFlag)
-		return false;
+		return false;				//--- return false
 
 	//--- Check if the event was in the domain of the object
 	if(	event.x >= bmp.x && event.x <= bmp.x + bmp.w &&
 		event.y >= bmp.y && event.y <= bmp.y + bmp.h)
 	{
-		return true;
+		return true;				//--- return true (touch input was on bmp)
 	}
 
-	return false;
+	return false;					//--- return false (touch input was not on bmp)
 }
 
 //*********************************************************************
 //*** Check if event happend a specific bmp							***
 //*********************************************************************
-char OnClickStartButton(event_T event)	{ return(CheckEventBmp(startButtonBmp, event));	}
-char OnClickJumpButton(event_T event)	{ return(CheckEventBmp(jumpButtonBmp, event));	}
-char OnClickPauseButton(event_T event)	{ return(CheckEventBmp(pauseButtonBmp, event));	}
-char OnClickTRexGoogle(event_T event)	{ return(CheckEventBmp(tRexBmpGoogle, event));	}
-char OnClickTRexGreen(event_T event)	{ return(CheckEventBmp(tRexBmpGreen, event));	}
+char OnClickStartButton(event_T event)	{ return(CheckEventBmp(startButtonBmp, event));	}		//--- touch input on Start button?
+char OnClickJumpButton(event_T event)	{ return(CheckEventBmp(jumpButtonBmp, event));	}		//--- touch input on Jump button?
+char OnClickPauseButton(event_T event)	{ return(CheckEventBmp(pauseButtonBmp, event));	}		//--- touch input on Pause button?
+char OnClickTRexGoogle(event_T event)	{ return(CheckEventBmp(tRexBmpGoogle, event));	}		//--- touch input on Google T-Rex?
+char OnClickTRexGreen(event_T event)	{ return(CheckEventBmp(tRexBmpGreen, event));	}		//--- touch input on Green T-Rex?
 
 //*********************************************************************
 //*** Move Obstacles on the display									***
@@ -283,13 +314,13 @@ void MoveObstacles(void){
 	static uint32_t tickOld = 0;
 	const uint32_t tickNew = HAL_GetTick();
 
+	//--- check if 15ms have passed
 	if(tickNew < tickOld + 15)
 		return;
 
-	tickOld = tickNew;
 
-	//--- Move obstacles
-	//No nid random, momänt immer nach 350 pixel
+
+	//--- loop through all obstacles
 	for(uint16_t i = 0; i < OBSTACLES_NUMBER; i++){
 		if(obstacleBmp[i].visible == TRUE){
 			//--- Obstacle is visible
@@ -298,46 +329,58 @@ void MoveObstacles(void){
 				DeleteBmp(&obstacleBmp[i]);
 			}
 			else{
-				//--- shift obstacle
+				//--- if not reached left side, shift obstacle
 				ShiftBmp(&obstacleBmp[i], -4, 0);
 			}
 		}
 		else{
+			//--- Obstacle is not visible
 			uint16_t j = i == 0 ? OBSTACLES_NUMBER - 1 : i - 1;
+			//--- if previous obstacle is visible
 			if(obstacleBmp[j].visible == TRUE){
-				//--- previous obstacle is visible
-				if(obstacleBmp[j].x < LCD_WIDTH - (400 + ((rand() %20) *10))){
-					//--- previous obstacle moved more than 350 pixel
+				//--- give random funktion a seed
+				srand(j*18398/(HAL_GetTick()%1000));
+				//--- if last obstacle moved 300 - 450 pixels (random distance)
+				if(obstacleBmp[j].x < LCD_WIDTH - (400 + ((rand()%3-1) *75))){
+					//--- create new obstacle
 					DrawBmp(&obstacleBmp[i], LCD_WIDTH - obstacleBmp[i].w, LCD_HEIGHT - GROUND_HEIGHT - obstacleBmp[i].h);
 				}
 			}
 		}
 	}
+	//--- reset timer
+	tickOld = tickNew;
 }
 
 //*********************************************************************
 //*** Move T-Rex on the display										***
 //*********************************************************************
 void MoveTRex(void){
-	static uint32_t tickOld = 0;
 
+	// if T-Rex is not jumping, break
 	if(tRexDirection == MOVE_NONE)
 		return;
 
-	//--- Timer for Obtscales
+	//--- Timer for T-Rex
+	static uint32_t tickOld = 0;
 	const uint32_t tickNew = HAL_GetTick();
 
+	//--- check if 10ms have passed
 	if(tickNew < tickOld + 10)
 		return;
 
+	//--- reset timer
 	tickOld = tickNew;
 
 	//--- Move TRex
 	if(tRexDirection == MOVE_UP){
+		//--- check if max hight is reached
 		if(tRexBmp.y <= 150){
+			//--- change direction
 			tRexDirection = MOVE_DOWN;
 		}
 		else{
+			//--- set velocity according to T-Rex hight
 			if(tRexBmp.y <160)
 				ShiftBmp(&tRexBmp, 0, -2);
 			else if(tRexBmp.y <180)
@@ -349,11 +392,14 @@ void MoveTRex(void){
 		}
 	}
 	else if(tRexDirection == MOVE_DOWN){
+		//--- check if ground is reached
 		if(tRexBmp.y >= (LCD_HEIGHT - GROUND_HEIGHT - startButtonBmp.h + 1)){
+			//--- stop jumping motion
 			tRexDirection = MOVE_NONE;
 			MoveBmp(&tRexBmp, TREX_X_POS, LCD_HEIGHT - GROUND_HEIGHT - tRexBmp.h);
 		}
 		else{
+			//--- set velocity according to T-Rex hight
 			if(tRexBmp.y < 160)
 				ShiftBmp(&tRexBmp, 0, 2);
 			else if(tRexBmp.y < 180)
@@ -370,6 +416,7 @@ void MoveTRex(void){
 //*** Initialized the jump for the T-Rex							***
 //*********************************************************************
 void InitTRexJump(void){
+	//--- set jumping direction to Move up
 	if(tRexDirection == MOVE_NONE)
 		tRexDirection = MOVE_UP;
 }
@@ -400,9 +447,9 @@ static int orientation(pixel_t p, pixel_t q, pixel_t r)
     int val = (q.y - p.y) * (r.x - q.x) -
               (q.x - p.x) * (r.y - q.y);
 
-    if (val == 0) return 0;  // collinear
+    if (val == 0) return 0;  	//--- collinear
 
-    return (val > 0)? 1: 2; // clock or counterclock wise
+    return (val > 0)? 1: 2; 	//--- clock or counterclock wise
 }
 
 //*********************************************************************
@@ -418,48 +465,52 @@ static int doIntersect( uint16_t A1_x, uint16_t A1_y, 	//Line 1 Pos A
 	pixel_t p2 = {B1_x, B1_y};
 	pixel_t q2 = {B2_x, B2_y};
 
-    // Find the four orientations needed for general and special cases
+	//--- Find the four orientations needed for general and special cases
     int o1 = orientation(p1, q1, p2);
     int o2 = orientation(p1, q1, q2);
     int o3 = orientation(p2, q2, p1);
     int o4 = orientation(p2, q2, q1);
 
-    // General case
+    //--- General case
     if (o1 != o2 && o3 != o4)
         return true;
 
-    // Special Cases
-    // p1, q1 and p2 are collinear and p2 lies on segment p1q1
+    //--- Special Cases
+    //--- p1, q1 and p2 are collinear and p2 lies on segment p1q1
     if (o1 == 0 && onSegment(p1, p2, q1))
     	return true;
 
-    // p1, q1 and q2 are collinear and q2 lies on segment p1q1
+    //--- p1, q1 and q2 are collinear and q2 lies on segment p1q1
     if (o2 == 0 && onSegment(p1, q2, q1))
     	return true;
 
-    // p2, q2 and p1 are collinear and p1 lies on segment p2q2
+    //--- p2, q2 and p1 are collinear and p1 lies on segment p2q2
     if (o3 == 0 && onSegment(p2, p1, q2))
     	return true;
 
-     // p2, q2 and q1 are collinear and q1 lies on segment p2q2
+    //--- p2, q2 and q1 are collinear and q1 lies on segment p2q2
     if (o4 == 0 && onSegment(p2, q1, q2))
     	return true;
 
-    return false; // Doesn't fall in any of the above cases
+    return false; //--- Doesn't fall in any of the above cases
 }
 
 //*********************************************************************
 //*** Checks if the T-Rex is colliding with one of the obstacles	***
 //*********************************************************************
 char CheckCollision(void){
+
+	//--- if T-Rex is not visible, break
 	if(tRexBmp.visible == FALSE)
 		return FALSE;
 
+	//--- loop through every obstacle
 	for(uint16_t i = 0; i < OBSTACLES_NUMBER; i++){
+		//--- if obstacle is not visible, skip this obstacle
 		if(obstacleBmp[i].visible == FALSE)
 			continue;
 
-		//Check if the image borders of the T-Rex and the obstacles are colliding
+		//--- Check if the image borders of the T-Rex and the obstacles are colliding
 		if (tRexBmp.x + tRexBmp.w < obstacleBmp[i].x 		||
 			tRexBmp.x > obstacleBmp[i].x + obstacleBmp[i].w ||
 			tRexBmp.y + tRexBmp.h < obstacleBmp[i].y 		||
@@ -468,18 +519,18 @@ char CheckCollision(void){
 			continue;
 		}
 
-		pixel_t *TRexPixelA = tRexBmp.head;			//Point 1 of T-Rex Border
-		pixel_t *TRexPixelB = TRexPixelA->next;		//Point 2 of T-Rex Border
-		pixel_t *ObstPixelA = obstacleBmp[0].head;	//Point 1 of Obstacle Border
-		pixel_t *ObstPixelB = ObstPixelA->next;		//Point 2 of Obstacle Border
+		pixel_t *TRexPixelA = tRexBmp.head;			//--- Point 1 of T-Rex Border
+		pixel_t *TRexPixelB = TRexPixelA->next;		//--- Point 2 of T-Rex Border
+		pixel_t *ObstPixelA = obstacleBmp[0].head;	//--- Point 1 of Obstacle Border
+		pixel_t *ObstPixelB = ObstPixelA->next;		//--- Point 2 of Obstacle Border
 
 		while(ObstPixelA != NULL && ObstPixelB != NULL){
 			while(TRexPixelA != NULL && TRexPixelB != NULL){
-				//check for a collision between Lines
-				if(doIntersect(	obstacleBmp[i].x + ObstPixelA->x, obstacleBmp[i].y + ObstPixelA->y,		//Line 1 Pos A
-								obstacleBmp[i].x + ObstPixelB->x, obstacleBmp[i].y + ObstPixelB->y,		//Line 1 Pos B
-								tRexBmp.x 		 + TRexPixelA->x, tRexBmp.y 	   + TRexPixelA->y,		//Line 2 Pos A
-								tRexBmp.x 		 + TRexPixelB->x, tRexBmp.y 	   + TRexPixelB->y		//Line 2 Pos B
+				//--- check for a collision between Lines
+				if(doIntersect(	obstacleBmp[i].x + ObstPixelA->x, obstacleBmp[i].y + ObstPixelA->y,		//--- Line 1 Pos A
+								obstacleBmp[i].x + ObstPixelB->x, obstacleBmp[i].y + ObstPixelB->y,		//--- Line 1 Pos B
+								tRexBmp.x 		 + TRexPixelA->x, tRexBmp.y 	   + TRexPixelA->y,		//--- Line 2 Pos A
+								tRexBmp.x 		 + TRexPixelB->x, tRexBmp.y 	   + TRexPixelB->y		//--- Line 2 Pos B
 							   ) == true)
 				{
 					return true;
@@ -494,7 +545,7 @@ char CheckCollision(void){
 			ObstPixelA = ObstPixelB;
 			ObstPixelB = ObstPixelA->next;
 
-			//Start again on T-Rex border
+			//--- Start again on T-Rex border
 			TRexPixelA   = tRexBmp.head;
 			TRexPixelB   = TRexPixelA->next;
 		}
@@ -507,21 +558,21 @@ char CheckCollision(void){
 //*********************************************************************
 void ScoreCount (void) {
 
-	static uint32_t GameScore =0;			//Variable for GameScore counting
-	char score_string [4];					//String for Score to Print on LCD
+	static uint32_t GameScore =0;			//--- Variable for GameScore counting
+	char score_string [4];					//--- String for Score to Print on LCD
 
-	//Timing variables
+	//---Timing variables
 	static uint32_t tickOld = 0;
 	const uint32_t tickNew = HAL_GetTick();
 
 	if (GetGameState() == STATE_GAME) {
 
-		if(tickNew > tickOld + 100) {					//if 100ms passed
+		if(tickNew > tickOld + 100) {					//--- if 100ms passed
 
-			tickOld = tickNew;
-			GameScore+=1;								//increment score
+			tickOld = tickNew;							//--- reset timer
+			GameScore+=1;								//--- increment score
 
-			//convert score to string and print on LCD
+			//--- convert score to string and print on LCD
 			itoa(GameScore, score_string, 10);
 			LCD_SetForegroundColor(ColorRed);
 			LCD_String(640, 25, "Your Score is: ");
@@ -529,6 +580,7 @@ void ScoreCount (void) {
 		}
 	}
 	else {
+		//--- if not Game-State, reset score
 		GameScore =0;
 	}
 }

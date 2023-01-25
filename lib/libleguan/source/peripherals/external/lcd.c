@@ -258,7 +258,7 @@ result_t LCD_Circle(uint16_t center_x, uint16_t center_y, uint16_t radius) {
 
 result_t LCD_Character(uint16_t x, uint16_t y, char c) {
 	/* Set working region same size as character bitmap */
-    R_TRY(LCD_SetDrawArea(x, y, x + CONSOLE_FONT_CHAR_WIDTH - 1, y + CONSOLE_FONT_CHAR_HEIGHT - 1));
+    R_TRY(LCD_SetDrawArea(x, y, x + CONSOLE_FONT_CHAR_WIDTH, y + CONSOLE_FONT_CHAR_HEIGHT));
     LCD_EnableDrawMode();
 
     /* Draw all 1s in bitmap with foreground color, all 0s with background color */

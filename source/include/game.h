@@ -18,12 +18,19 @@
 //*** Enums      													***
 //*********************************************************************
 
-//--- Enum for all possible game states
+/** @enum GameState_t
+ * 	@brief This enum contains all the States the game can get into
+ */
 typedef enum {
+	/**No state*/
 	STATE_NONE,
+	/**State: MENU*/
 	STATE_MENU,
+	/**State: Game is running*/
 	STATE_GAME,
+	/**State: Game is paused*/
 	STATE_PAUSE,
+	/**State: Game is over*/
 	STATE_GAME_OVER,
 }GameState_t;
 
@@ -31,11 +38,16 @@ typedef enum {
 //*** Structs 														***
 //*********************************************************************
 
-//--- Event Struct
+/** @struct event_T
+ * 	@brief This struct is used to save an incoming touch event
+ */
 typedef struct {
-	uint8_t		eventFlag;		// 1 = event happened, 0 = nothing happened
-	uint16_t 	x;				// Event position x
-	uint16_t 	y;				// Event position y
+	/**1 = event happened, 0 = nothing happened*/
+	uint8_t		eventFlag;
+	/**Event position x*/
+	uint16_t 	x;
+	/**Event position y*/
+	uint16_t 	y;
 }event_T;
 
 //*********************************************************************
@@ -89,43 +101,43 @@ void SelectTrexGreen (void);
 GameState_t GetGameState(void);
 
 /**
- * @brief Checks if an event on teh LCD display occured
+ * @brief Checks if an event on the LCD display occurred
  * @return event
  */
 event_T CheckEvent(void);
 
 /**
  * @brief Checks if the event happend on the start button
- * @param event
- * @return flag
+ * @param event : incoming touch event
+ * @return flag : Start button pressed or not
  */
 char OnClickStartButton(event_T event);
 
 /**
  * @brief Checks if the event happend on the jump button
- * @param event
- * @return flag
+ * @param event : incoming touch event
+ * @return flag : Jump button pressed or not
  */
 char OnClickJumpButton(event_T event);
 
 /**
  * @brief Checks if the event happend on the pause button
- * @param event
- * @return flag
+ * @param event : incoming touch event
+ * @return flag : Pause button pressed or not
  */
 char OnClickPauseButton(event_T event);
 
 /**
  * @brief Checks if the event happend on the Google TRex
- * @param event
- * @return flag
+ * @param event : incoming touch event
+ * @return flag : T-Rex Google pressed or not
  */
 char OnClickTRexGoogle(event_T event);
 
 /**
  * @brief Checks if the event happend on the Green TRex
- * @param event
- * @return flag
+ * @param event : incoming touch event
+ * @return flag : T-Rex Green pressed or not
  */
 char OnClickTRexGreen(event_T event);
 
@@ -146,7 +158,7 @@ void InitTRexJump(void);
 
 /**
  * @brief Checks for a collision between the T-Rex and the obstacles
- * @return flag
+ * @return flag : collision happend or not
  */
 char CheckCollision(void);
 

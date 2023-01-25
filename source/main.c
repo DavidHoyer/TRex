@@ -17,6 +17,7 @@
 //*** Main      													***
 //*********************************************************************
 int main()
+
 {
 	event_T event;							//Event struct for Touch input
 
