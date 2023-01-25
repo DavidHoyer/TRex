@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cactus_5fpixeldata_0',['cactus_pixelData',['../resource_8h.html#a927f43e32d767bd5f86a0bf33e0091f5',1,'resource.h']]]
+  ['bgcolor_0',['bgColor',['../objects_8c.html#ade2205d6d566d96f18004d1d36256e44',1,'objects.c']]]
 ];

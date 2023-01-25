@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['jumpbutton_5fpixeldata_0',['jumpButton_pixelData',['../resource_8h.html#abcdd0f01cae8ad05dc579018eaaa0419',1,'resource.h']]]
+  ['gamestate_0',['gameState',['../game_8c.html#ab18d39e3df54771f59d5e2a2b5d40d2b',1,'game.c']]]
 ];

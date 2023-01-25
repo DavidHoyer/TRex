@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['trex_5fpixeldatagoogle_0',['tRex_pixelDataGoogle',['../resource_8h.html#a80649fed93ffd54db0b367a9cb3a6a64',1,'resource.h']]],
-  ['trex_5fpixeldatagreen_1',['tRex_pixelDataGreen',['../resource_8h.html#a73df7fe803eeff5237dcdbe875cb29b3',1,'resource.h']]]
+  ['obstaclebmp_0',['obstacleBmp',['../game_8c.html#a9da89cd9f9d46ebbd9c861d34838614d',1,'game.c']]]
 ];

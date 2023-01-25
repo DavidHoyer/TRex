@@ -24,9 +24,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
-  <td id="projectlogo"><img alt="Logo" src="Dino_Google.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="Dino.png"/></td>
   <td id="projectalign">
-   <div id="projectname">T-Rex Game
+   <div id="projectname">T-Rex Game<span id="projectnumber">&#160;1.00</span>
    </div>
   </td>
  </tr>
@@ -93,25 +93,26 @@ $(document).ready(function(){initNavTree('globals.html',''); initResizable(); })
 <div class="textblock">Here is a list of all functions, variables, defines, enums, and typedefs with links to the files they belong to:</div>
 
 <h3><a id="index_b" name="index_b"></a>- b -</h3><ul>
+<li>bgColor&#160;:&#160;<a class="el" href="objects_8c.html#ade2205d6d566d96f18004d1d36256e44">objects.c</a></li>
 <li>BGRA565_COLOR&#160;:&#160;<a class="el" href="objects_8h.html#a233b95e49f1419b52922a0b4364b3c73">objects.h</a></li>
 </ul>
 
 
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
 <li>cactus_pixelData&#160;:&#160;<a class="el" href="resource_8h.html#a927f43e32d767bd5f86a0bf33e0091f5">resource.h</a></li>
-<li>CheckCollision()&#160;:&#160;<a class="el" href="game_8h.html#a300fbcb34a17fb955ddca9225e98c73c">game.h</a></li>
-<li>CheckEvent()&#160;:&#160;<a class="el" href="game_8h.html#a42dce4ec0f1c11a18f0249d8e6bba48e">game.h</a></li>
-<li>ContinueGame()&#160;:&#160;<a class="el" href="game_8h.html#af832dcef9efdbe954d6e1098ffa6ad71">game.h</a></li>
-<li>ConvertArray()&#160;:&#160;<a class="el" href="objects_8h.html#a51f4d7975a46122a4b7074b194fbe3fc">objects.h</a></li>
-<li>CreateEdges()&#160;:&#160;<a class="el" href="objects_8h.html#a891b42c97947a47ff0eb8e5fe4f2f12d">objects.h</a></li>
+<li>CheckCollision()&#160;:&#160;<a class="el" href="game_8c.html#a300fbcb34a17fb955ddca9225e98c73c">game.c</a>, <a class="el" href="game_8h.html#a300fbcb34a17fb955ddca9225e98c73c">game.h</a></li>
+<li>CheckEvent()&#160;:&#160;<a class="el" href="game_8c.html#a42dce4ec0f1c11a18f0249d8e6bba48e">game.c</a>, <a class="el" href="game_8h.html#a42dce4ec0f1c11a18f0249d8e6bba48e">game.h</a></li>
+<li>ContinueGame()&#160;:&#160;<a class="el" href="game_8c.html#af832dcef9efdbe954d6e1098ffa6ad71">game.c</a>, <a class="el" href="game_8h.html#af832dcef9efdbe954d6e1098ffa6ad71">game.h</a></li>
+<li>ConvertArray()&#160;:&#160;<a class="el" href="objects_8h.html#a51f4d7975a46122a4b7074b194fbe3fc">objects.h</a>, <a class="el" href="objects_8c.html#a51f4d7975a46122a4b7074b194fbe3fc">objects.c</a></li>
+<li>CreateEdges()&#160;:&#160;<a class="el" href="objects_8h.html#a891b42c97947a47ff0eb8e5fe4f2f12d">objects.h</a>, <a class="el" href="objects_8c.html#a891b42c97947a47ff0eb8e5fe4f2f12d">objects.c</a></li>
 </ul>
 
 
 <h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
-<li>DeleteBmp()&#160;:&#160;<a class="el" href="objects_8h.html#a6c1449df6f92a8d35b7d15cbc99d4084">objects.h</a></li>
-<li>DisplayGameOver()&#160;:&#160;<a class="el" href="game_8h.html#a90f4e8637434246478a35dcd91e97d5d">game.h</a></li>
-<li>DrawBmp()&#160;:&#160;<a class="el" href="objects_8h.html#a1bfc0921cde12f53426cd7b393776668">objects.h</a></li>
-<li>DrawBmpWithout_A()&#160;:&#160;<a class="el" href="objects_8h.html#a57451f74eca71a9eefd5f5a9e97ae467">objects.h</a></li>
+<li>DeleteBmp()&#160;:&#160;<a class="el" href="objects_8h.html#a6c1449df6f92a8d35b7d15cbc99d4084">objects.h</a>, <a class="el" href="objects_8c.html#a6c1449df6f92a8d35b7d15cbc99d4084">objects.c</a></li>
+<li>DisplayGameOver()&#160;:&#160;<a class="el" href="game_8c.html#a90f4e8637434246478a35dcd91e97d5d">game.c</a>, <a class="el" href="game_8h.html#a90f4e8637434246478a35dcd91e97d5d">game.h</a></li>
+<li>DrawBmp()&#160;:&#160;<a class="el" href="objects_8h.html#a1bfc0921cde12f53426cd7b393776668">objects.h</a>, <a class="el" href="objects_8c.html#a1bfc0921cde12f53426cd7b393776668">objects.c</a></li>
+<li>DrawBmpWithout_A()&#160;:&#160;<a class="el" href="objects_8h.html#a57451f74eca71a9eefd5f5a9e97ae467">objects.h</a>, <a class="el" href="objects_8c.html#a57451f74eca71a9eefd5f5a9e97ae467">objects.c</a></li>
 </ul>
 
 
@@ -121,62 +122,75 @@ $(document).ready(function(){initNavTree('globals.html',''); initResizable(); })
 
 
 <h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
-<li>GameInit()&#160;:&#160;<a class="el" href="game_8h.html#a9b4ca96e33c7f10e1074079d05fae8e7">game.h</a></li>
+<li>GameInit()&#160;:&#160;<a class="el" href="game_8c.html#a9b4ca96e33c7f10e1074079d05fae8e7">game.c</a>, <a class="el" href="game_8h.html#a9b4ca96e33c7f10e1074079d05fae8e7">game.h</a></li>
+<li>gameState&#160;:&#160;<a class="el" href="game_8c.html#ab18d39e3df54771f59d5e2a2b5d40d2b">game.c</a></li>
 <li>GameState_t&#160;:&#160;<a class="el" href="game_8h.html#a6678e2a28b2bccb9f0563b3d59e15aa2">game.h</a></li>
-<li>GetBoarder()&#160;:&#160;<a class="el" href="objects_8h.html#ad239208f4f9a6cc2a638e48e0645dd10">objects.h</a></li>
-<li>GetGameState()&#160;:&#160;<a class="el" href="game_8h.html#a0855a5c16d1b49871f145a29263e9dfe">game.h</a></li>
+<li>GetBoarder()&#160;:&#160;<a class="el" href="objects_8h.html#ad239208f4f9a6cc2a638e48e0645dd10">objects.h</a>, <a class="el" href="objects_8c.html#ad239208f4f9a6cc2a638e48e0645dd10">objects.c</a></li>
+<li>GetGameState()&#160;:&#160;<a class="el" href="game_8c.html#a0855a5c16d1b49871f145a29263e9dfe">game.c</a>, <a class="el" href="game_8h.html#a0855a5c16d1b49871f145a29263e9dfe">game.h</a></li>
+<li>GROUND_HEIGHT&#160;:&#160;<a class="el" href="game_8c.html#a8c3c0274ca7222a7204e1eb7ef442ba9">game.c</a></li>
+<li>GROUND_LINE_WIDTH&#160;:&#160;<a class="el" href="game_8c.html#a9c9190eaad1e6a10f2e9ea43c933d522">game.c</a></li>
 </ul>
 
 
 <h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
-<li>InitTRexJump()&#160;:&#160;<a class="el" href="game_8h.html#ada08cfa73c6178ec83feb054879ff720">game.h</a></li>
+<li>InitTRexJump()&#160;:&#160;<a class="el" href="game_8c.html#ada08cfa73c6178ec83feb054879ff720">game.c</a>, <a class="el" href="game_8h.html#ada08cfa73c6178ec83feb054879ff720">game.h</a></li>
 </ul>
 
 
 <h3><a id="index_j" name="index_j"></a>- j -</h3><ul>
 <li>jumpButton_pixelData&#160;:&#160;<a class="el" href="resource_8h.html#abcdd0f01cae8ad05dc579018eaaa0419">resource.h</a></li>
+<li>jumpButtonBmp&#160;:&#160;<a class="el" href="game_8c.html#ad15116e0691d6be1f0973580b3759131">game.c</a></li>
 </ul>
 
 
 <h3><a id="index_l" name="index_l"></a>- l -</h3><ul>
-<li>LCD_Rect_Gradient()&#160;:&#160;<a class="el" href="objects_8h.html#a87ae89e93f293253031ef38e653c8cb2">objects.h</a></li>
-<li>LcdClearArea()&#160;:&#160;<a class="el" href="objects_8h.html#ab66f6d9162af4deedcacd5197026e61d">objects.h</a></li>
+<li>LCD_Rect_Gradient()&#160;:&#160;<a class="el" href="objects_8h.html#a87ae89e93f293253031ef38e653c8cb2">objects.h</a>, <a class="el" href="objects_8c.html#a87ae89e93f293253031ef38e653c8cb2">objects.c</a></li>
+<li>LcdClearArea()&#160;:&#160;<a class="el" href="objects_8h.html#ab66f6d9162af4deedcacd5197026e61d">objects.h</a>, <a class="el" href="objects_8c.html#ab66f6d9162af4deedcacd5197026e61d">objects.c</a></li>
 </ul>
 
 
 <h3><a id="index_m" name="index_m"></a>- m -</h3><ul>
-<li>MoveBmp()&#160;:&#160;<a class="el" href="objects_8h.html#ab979e3c656d76b111007bfe0b70398d3">objects.h</a></li>
-<li>MoveObstacles()&#160;:&#160;<a class="el" href="game_8h.html#ad761fedc3ba80e348131adc7e4e0d1c6">game.h</a></li>
-<li>MoveTRex()&#160;:&#160;<a class="el" href="game_8h.html#afaa3d3ff2e690233acd9da2cfc27784d">game.h</a></li>
+<li>main()&#160;:&#160;<a class="el" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main.c</a></li>
+<li>MOVE_DOWN&#160;:&#160;<a class="el" href="game_8c.html#a64ba115152b11e246be77f1355b56748ac306ffa7a0ee9849d5c7cb1dc9654e96">game.c</a></li>
+<li>MOVE_NONE&#160;:&#160;<a class="el" href="game_8c.html#a64ba115152b11e246be77f1355b56748a8ba866a6738208c73d1c426ae5df6400">game.c</a></li>
+<li>Move_t&#160;:&#160;<a class="el" href="game_8c.html#a64ba115152b11e246be77f1355b56748">game.c</a></li>
+<li>MOVE_UP&#160;:&#160;<a class="el" href="game_8c.html#a64ba115152b11e246be77f1355b56748ad1c2df17d4a2cdc3b734e4554ebbced6">game.c</a></li>
+<li>MoveBmp()&#160;:&#160;<a class="el" href="objects_8h.html#ab979e3c656d76b111007bfe0b70398d3">objects.h</a>, <a class="el" href="objects_8c.html#ab979e3c656d76b111007bfe0b70398d3">objects.c</a></li>
+<li>MoveObstacles()&#160;:&#160;<a class="el" href="game_8c.html#ad761fedc3ba80e348131adc7e4e0d1c6">game.c</a>, <a class="el" href="game_8h.html#ad761fedc3ba80e348131adc7e4e0d1c6">game.h</a></li>
+<li>MoveTRex()&#160;:&#160;<a class="el" href="game_8c.html#afaa3d3ff2e690233acd9da2cfc27784d">game.c</a>, <a class="el" href="game_8h.html#afaa3d3ff2e690233acd9da2cfc27784d">game.h</a></li>
 </ul>
 
 
 <h3><a id="index_o" name="index_o"></a>- o -</h3><ul>
-<li>OnClickJumpButton()&#160;:&#160;<a class="el" href="game_8h.html#a0ef9cdc318d902025d8c326997a32b26">game.h</a></li>
-<li>OnClickPauseButton()&#160;:&#160;<a class="el" href="game_8h.html#a61154fd764f31f79dfeb7b41e4223fb1">game.h</a></li>
-<li>OnClickStartButton()&#160;:&#160;<a class="el" href="game_8h.html#a6bdefb70939e3039e84d738c419156df">game.h</a></li>
-<li>OnClickTRexGoogle()&#160;:&#160;<a class="el" href="game_8h.html#af370fa573c0d5b981a1e01fd9b733074">game.h</a></li>
-<li>OnClickTRexGreen()&#160;:&#160;<a class="el" href="game_8h.html#a2b6d7f26e13d8b7a056d77777d5e42ef">game.h</a></li>
+<li>obstacleBmp&#160;:&#160;<a class="el" href="game_8c.html#a9da89cd9f9d46ebbd9c861d34838614d">game.c</a></li>
+<li>OBSTACLES_NUMBER&#160;:&#160;<a class="el" href="game_8c.html#a76f3e668e3b5a54056ea31999f9c7588">game.c</a></li>
+<li>OnClickJumpButton()&#160;:&#160;<a class="el" href="game_8c.html#a0ef9cdc318d902025d8c326997a32b26">game.c</a>, <a class="el" href="game_8h.html#a0ef9cdc318d902025d8c326997a32b26">game.h</a></li>
+<li>OnClickPauseButton()&#160;:&#160;<a class="el" href="game_8c.html#a61154fd764f31f79dfeb7b41e4223fb1">game.c</a>, <a class="el" href="game_8h.html#a61154fd764f31f79dfeb7b41e4223fb1">game.h</a></li>
+<li>OnClickStartButton()&#160;:&#160;<a class="el" href="game_8c.html#a6bdefb70939e3039e84d738c419156df">game.c</a>, <a class="el" href="game_8h.html#a6bdefb70939e3039e84d738c419156df">game.h</a></li>
+<li>OnClickTRexGoogle()&#160;:&#160;<a class="el" href="game_8c.html#af370fa573c0d5b981a1e01fd9b733074">game.c</a>, <a class="el" href="game_8h.html#af370fa573c0d5b981a1e01fd9b733074">game.h</a></li>
+<li>OnClickTRexGreen()&#160;:&#160;<a class="el" href="game_8c.html#a2b6d7f26e13d8b7a056d77777d5e42ef">game.c</a>, <a class="el" href="game_8h.html#a2b6d7f26e13d8b7a056d77777d5e42ef">game.h</a></li>
 </ul>
 
 
 <h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
 <li>pauseButton_pixelData&#160;:&#160;<a class="el" href="resource_8h.html#a00126e4806eff9044c7ac2355dac65f3">resource.h</a></li>
-<li>PauseGame()&#160;:&#160;<a class="el" href="game_8h.html#a5d9284d1778839fc536b4e99330b47f8">game.h</a></li>
+<li>pauseButtonBmp&#160;:&#160;<a class="el" href="game_8c.html#a5e25c68ba39a525a7bfd3da062908043">game.c</a></li>
+<li>PauseGame()&#160;:&#160;<a class="el" href="game_8c.html#a5d9284d1778839fc536b4e99330b47f8">game.c</a>, <a class="el" href="game_8h.html#a5d9284d1778839fc536b4e99330b47f8">game.h</a></li>
 <li>pixel_t&#160;:&#160;<a class="el" href="objects_8h.html#a2dda454dfd99aacce45902fa05fecf03">objects.h</a></li>
 <li>playButton_pixelData&#160;:&#160;<a class="el" href="resource_8h.html#ac3c67bdef4521d8cb55befea8adc2db9">resource.h</a></li>
 </ul>
 
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
-<li>ScoreCount()&#160;:&#160;<a class="el" href="game_8h.html#a6eb508a46eef9a8fc063e4c81b854d1a">game.h</a></li>
-<li>SelectTrexGoogle()&#160;:&#160;<a class="el" href="game_8h.html#abd3285ce77dcb58203e8f15c7bdbc9a4">game.h</a></li>
-<li>SelectTrexGreen()&#160;:&#160;<a class="el" href="game_8h.html#a0507e5338e4a45f29c15c549d5c2db0a">game.h</a></li>
-<li>ShiftBmp()&#160;:&#160;<a class="el" href="objects_8h.html#a952c22a6dda726ce1a517cb8d5cde5a4">objects.h</a></li>
-<li>ShowStartMenu()&#160;:&#160;<a class="el" href="game_8h.html#a955012c003f998dbe37f8b7a282fa478">game.h</a></li>
-<li>SortBoarder()&#160;:&#160;<a class="el" href="objects_8h.html#a391bb0403481a8dc57ec0427722f00d8">objects.h</a></li>
+<li>ScoreCount()&#160;:&#160;<a class="el" href="game_8c.html#a6eb508a46eef9a8fc063e4c81b854d1a">game.c</a>, <a class="el" href="game_8h.html#a6eb508a46eef9a8fc063e4c81b854d1a">game.h</a></li>
+<li>SelectTrexGoogle()&#160;:&#160;<a class="el" href="game_8c.html#abd3285ce77dcb58203e8f15c7bdbc9a4">game.c</a>, <a class="el" href="game_8h.html#abd3285ce77dcb58203e8f15c7bdbc9a4">game.h</a></li>
+<li>SelectTrexGreen()&#160;:&#160;<a class="el" href="game_8c.html#a0507e5338e4a45f29c15c549d5c2db0a">game.c</a>, <a class="el" href="game_8h.html#a0507e5338e4a45f29c15c549d5c2db0a">game.h</a></li>
+<li>ShiftBmp()&#160;:&#160;<a class="el" href="objects_8h.html#a952c22a6dda726ce1a517cb8d5cde5a4">objects.h</a>, <a class="el" href="objects_8c.html#a952c22a6dda726ce1a517cb8d5cde5a4">objects.c</a></li>
+<li>ShowStartMenu()&#160;:&#160;<a class="el" href="game_8c.html#a955012c003f998dbe37f8b7a282fa478">game.c</a>, <a class="el" href="game_8h.html#a955012c003f998dbe37f8b7a282fa478">game.h</a></li>
+<li>SortBoarder()&#160;:&#160;<a class="el" href="objects_8h.html#a391bb0403481a8dc57ec0427722f00d8">objects.h</a>, <a class="el" href="objects_8c.html#a391bb0403481a8dc57ec0427722f00d8">objects.c</a></li>
 <li>startButton_pixelData&#160;:&#160;<a class="el" href="resource_8h.html#a21a700c101caae15baa7b484f0b464b5">resource.h</a></li>
-<li>StartGame()&#160;:&#160;<a class="el" href="game_8h.html#ae419198eb7bcb4f54ab9aa17ea20e61d">game.h</a></li>
+<li>startButtonBmp&#160;:&#160;<a class="el" href="game_8c.html#af8e30739f50f50950a278a4449810e99">game.c</a></li>
+<li>StartGame()&#160;:&#160;<a class="el" href="game_8c.html#ae419198eb7bcb4f54ab9aa17ea20e61d">game.c</a>, <a class="el" href="game_8h.html#ae419198eb7bcb4f54ab9aa17ea20e61d">game.h</a></li>
 <li>STATE_GAME&#160;:&#160;<a class="el" href="game_8h.html#a6678e2a28b2bccb9f0563b3d59e15aa2add58fbaa83b0bc3973bc4adad84a5d88">game.h</a></li>
 <li>STATE_GAME_OVER&#160;:&#160;<a class="el" href="game_8h.html#a6678e2a28b2bccb9f0563b3d59e15aa2a0f76ed984e8b06e62cddac03843a9544">game.h</a></li>
 <li>STATE_MENU&#160;:&#160;<a class="el" href="game_8h.html#a6678e2a28b2bccb9f0563b3d59e15aa2a8211ee7ceda72b3c0e9b4a547acb471b">game.h</a></li>
@@ -188,6 +202,11 @@ $(document).ready(function(){initNavTree('globals.html',''); initResizable(); })
 <h3><a id="index_t" name="index_t"></a>- t -</h3><ul>
 <li>tRex_pixelDataGoogle&#160;:&#160;<a class="el" href="resource_8h.html#a80649fed93ffd54db0b367a9cb3a6a64">resource.h</a></li>
 <li>tRex_pixelDataGreen&#160;:&#160;<a class="el" href="resource_8h.html#a73df7fe803eeff5237dcdbe875cb29b3">resource.h</a></li>
+<li>TREX_X_POS&#160;:&#160;<a class="el" href="game_8c.html#a6e1304f63e626d4612e6dfd3ad02e3e7">game.c</a></li>
+<li>tRexBmp&#160;:&#160;<a class="el" href="game_8c.html#a78e6de70310d0d0b48277af75ebe324c">game.c</a></li>
+<li>tRexBmpGoogle&#160;:&#160;<a class="el" href="game_8c.html#a8ba692f4ef60933808698e6b0d434767">game.c</a></li>
+<li>tRexBmpGreen&#160;:&#160;<a class="el" href="game_8c.html#a8e716046d70099679c369bbedfbdae38">game.c</a></li>
+<li>tRexDirection&#160;:&#160;<a class="el" href="game_8c.html#a6b22479a04312e2ebcf86907fc3e52c1">game.c</a></li>
 <li>TRUE&#160;:&#160;<a class="el" href="objects_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">objects.h</a></li>
 </ul>
 </div><!-- contents -->
