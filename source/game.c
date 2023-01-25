@@ -95,7 +95,8 @@ void DisplayGameOver(void){
 	HAL_Delay(5000);
 }
 
-void StartGame(void){
+void StartGame(void)
+{
 	LCD_Clear();
 	gameState = STATE_GAME;
 	startButtonBmp.visible = FALSE;
@@ -118,24 +119,18 @@ void StartGame(void){
 	}
 }
 
-event_T PauseGame (event_T event)
+void PauseGame(void)
 {
 	pauseButtonBmp.pixels = playButton_pixelData;
 	DrawBmp(&pauseButtonBmp, pauseButtonBmp.x, pauseButtonBmp.y);
-
 	gameState = STATE_PAUSE;
-	event.eventFlag = FALSE;
-	return event;
 }
 
-event_T ContinueGame (event_T event)
+void ContinueGame(void)
 {
 	pauseButtonBmp.pixels = pauseButton_pixelData;
 	DrawBmp(&pauseButtonBmp, pauseButtonBmp.x, pauseButtonBmp.y);
-
 	gameState = STATE_GAME;
-	event.eventFlag = FALSE;
-	return event;
 }
 
 void SelectTrexGoogle (void)

@@ -31,7 +31,7 @@ int main()
 				case STATE_PAUSE:
 					//--- Pause Button pressed
 					if(OnClickPauseButton(event))
-						event = ContinueGame(event);
+						ContinueGame();
 					break;
 				case STATE_MENU:
 					//--- Start Button pressed
@@ -48,7 +48,7 @@ int main()
 				case STATE_GAME:
 					//--- Pause Button pressed
 					if(OnClickPauseButton(event))
-						PauseGame(event);
+						PauseGame();
 					//--- Jump Button pressed
 					else if(OnClickJumpButton(event))
 						InitTRexJump();

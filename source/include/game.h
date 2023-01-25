@@ -13,9 +13,11 @@
 //*********************************************************************
 //*** Enums      													***
 //*********************************************************************
+
+//--- Enum for all possible game states
 typedef enum {
-	STATE_NONE	= -1,
-	STATE_MENU	= 0,
+	STATE_NONE,
+	STATE_MENU,
 	STATE_GAME,
 	STATE_PAUSE,
 	STATE_GAME_OVER,
@@ -24,6 +26,8 @@ typedef enum {
 //*********************************************************************
 //*** Structs 														***
 //*********************************************************************
+
+//--- Event Struct
 typedef struct {
 	uint8_t		eventFlag;		// 1 = event happened, 0 = nothing happened
 	uint16_t 	x;				// Event position x
@@ -32,18 +36,42 @@ typedef struct {
 
 //*********************************************************************
 //*** Functions														***
-//****************D*****************************************************
-void GameInit(void);
-void ShowStartMenu(void);
-void StartGame(void);
-event_T PauseGame (event_T);
-event_T ContinueGame (event_T);
+//*********************************************************************
 
+/**
+ * @brief Initializes the game
+ */
+void GameInit(void);
+
+/**
+ * @brief displays the start menu
+ */
+void ShowStartMenu(void);
+
+/**
+ * @brief Starts the game, draw T-Rex etc.
+ */
+void StartGame(void);
+
+/**
+ * @brief Stops the movement of the T-Rex aswell as the obstacles
+ */
+void PauseGame(void);
+
+/**
+ * @brief Resumes the movement
+ */
+void ContinueGame(void);
+
+/**
+ * @brief Resumes the movement
+ */
+void DisplayGameOver(void);
 
 void SelectTrexGoogle (void);
 void SelectTrexGreen (void);
 
-void DisplayGameOver(void);
+
 
 GameState_t GetGameState(void);
 
