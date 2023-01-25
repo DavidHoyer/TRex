@@ -1,0 +1,211 @@
+\hypertarget{logger_8c}{}\doxysection{C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.11.0/\+TRex/lib/libleguan/source/common/logger.c File Reference}
+\label{logger_8c}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/source/common/logger.c@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/source/common/logger.c}}
+
+
+Logger implementation.  
+
+
+{\ttfamily \#include \char`\"{}common/logger.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{logger_8c_a561cce946aea9c216f79699ac9cd8cbf}{LOG\+\_\+\+Set\+Destination}} (\mbox{\hyperlink{logger_8h_a85843df0bcaa0ec7485c165784daa61d}{LOG\+\_\+\+Stream\+\_\+t}} stream)
+\begin{DoxyCompactList}\small\item\em Sets the new destination where log output should go to. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{logger_8h_a85843df0bcaa0ec7485c165784daa61d}{LOG\+\_\+\+Stream\+\_\+t}} \mbox{\hyperlink{logger_8c_a2a48ce748df12d8a012cdc9a0f8fd01f}{LOG\+\_\+\+Get\+Destination}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the currently set logging destination. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{logger_8c_aaa93cd311f264dbd724ac71d4773e1bf}{LOG\+\_\+\+Print}} (bool new\+\_\+line, const char $\ast$fmt,...)
+\begin{DoxyCompactList}\small\item\em Prints a string to the current stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{logger_8c_a96c5986e10d85860c25ee67f1c05eb33}{LOG\+\_\+\+Debug}} (const char $\ast$fmt,...)
+\begin{DoxyCompactList}\small\item\em Prints a debug string to the current stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{logger_8c_a82b693d783d51d5a61f3d7f8e76449d4}{LOG\+\_\+\+Info}} (const char $\ast$fmt,...)
+\begin{DoxyCompactList}\small\item\em Prints a info string to the current stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{logger_8c_af8d952eada7b51a67abcf43df9320532}{LOG\+\_\+\+Warn}} (const char $\ast$fmt,...)
+\begin{DoxyCompactList}\small\item\em Prints a warning string to the current stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{logger_8c_a7764edf70b13df3d7037452f87b53bba}{LOG\+\_\+\+Error}} (const char $\ast$fmt,...)
+\begin{DoxyCompactList}\small\item\em Prints a error string to the current stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{logger_8c_a841f17f311ca14a75750adc54444afb2}{LOG\+\_\+\+Fatal}} (const char $\ast$fmt,...)
+\begin{DoxyCompactList}\small\item\em Prints a fatal error string to the current stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Logger implementation. 
+
+\begin{DoxyAuthor}{Author}
+Nikolaij Saegesser 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{logger_8c_source}{logger.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{logger_8c_a96c5986e10d85860c25ee67f1c05eb33}\label{logger_8c_a96c5986e10d85860c25ee67f1c05eb33}} 
+\index{logger.c@{logger.c}!LOG\_Debug@{LOG\_Debug}}
+\index{LOG\_Debug@{LOG\_Debug}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{LOG\_Debug()}{LOG\_Debug()}}
+{\footnotesize\ttfamily void LOG\+\_\+\+Debug (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Prints a debug string to the current stream. 
+
+\begin{DoxyNote}{Note}
+Only prints in debug mode 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em fmt} & printf format string \\
+\hline
+{\em ...} & Format arguments \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{logger_8c_source_l00059}{59}} of file \mbox{\hyperlink{logger_8c_source}{logger.\+c}}.
+
+\mbox{\Hypertarget{logger_8c_a7764edf70b13df3d7037452f87b53bba}\label{logger_8c_a7764edf70b13df3d7037452f87b53bba}} 
+\index{logger.c@{logger.c}!LOG\_Error@{LOG\_Error}}
+\index{LOG\_Error@{LOG\_Error}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{LOG\_Error()}{LOG\_Error()}}
+{\footnotesize\ttfamily void LOG\+\_\+\+Error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Prints a error string to the current stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fmt} & printf format string \\
+\hline
+{\em ...} & Format arguments \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{logger_8c_source_l00087}{87}} of file \mbox{\hyperlink{logger_8c_source}{logger.\+c}}.
+
+\mbox{\Hypertarget{logger_8c_a841f17f311ca14a75750adc54444afb2}\label{logger_8c_a841f17f311ca14a75750adc54444afb2}} 
+\index{logger.c@{logger.c}!LOG\_Fatal@{LOG\_Fatal}}
+\index{LOG\_Fatal@{LOG\_Fatal}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{LOG\_Fatal()}{LOG\_Fatal()}}
+{\footnotesize\ttfamily void LOG\+\_\+\+Fatal (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Prints a fatal error string to the current stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fmt} & printf format string \\
+\hline
+{\em ...} & Format arguments \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{logger_8c_source_l00095}{95}} of file \mbox{\hyperlink{logger_8c_source}{logger.\+c}}.
+
+\mbox{\Hypertarget{logger_8c_a2a48ce748df12d8a012cdc9a0f8fd01f}\label{logger_8c_a2a48ce748df12d8a012cdc9a0f8fd01f}} 
+\index{logger.c@{logger.c}!LOG\_GetDestination@{LOG\_GetDestination}}
+\index{LOG\_GetDestination@{LOG\_GetDestination}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{LOG\_GetDestination()}{LOG\_GetDestination()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{logger_8h_a85843df0bcaa0ec7485c165784daa61d}{LOG\+\_\+\+Stream\+\_\+t}} LOG\+\_\+\+Get\+Destination (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Gets the currently set logging destination. 
+
+\begin{DoxyReturn}{Returns}
+Logging stream 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{logger_8c_source_l00039}{39}} of file \mbox{\hyperlink{logger_8c_source}{logger.\+c}}.
+
+\mbox{\Hypertarget{logger_8c_a82b693d783d51d5a61f3d7f8e76449d4}\label{logger_8c_a82b693d783d51d5a61f3d7f8e76449d4}} 
+\index{logger.c@{logger.c}!LOG\_Info@{LOG\_Info}}
+\index{LOG\_Info@{LOG\_Info}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{LOG\_Info()}{LOG\_Info()}}
+{\footnotesize\ttfamily void LOG\+\_\+\+Info (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Prints a info string to the current stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fmt} & printf format string \\
+\hline
+{\em ...} & Format arguments \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{logger_8c_source_l00071}{71}} of file \mbox{\hyperlink{logger_8c_source}{logger.\+c}}.
+
+\mbox{\Hypertarget{logger_8c_aaa93cd311f264dbd724ac71d4773e1bf}\label{logger_8c_aaa93cd311f264dbd724ac71d4773e1bf}} 
+\index{logger.c@{logger.c}!LOG\_Print@{LOG\_Print}}
+\index{LOG\_Print@{LOG\_Print}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{LOG\_Print()}{LOG\_Print()}}
+{\footnotesize\ttfamily void LOG\+\_\+\+Print (\begin{DoxyParamCaption}\item[{bool}]{new\+\_\+line,  }\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Prints a string to the current stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+line} & Print a new line after this string \\
+\hline
+{\em fmt} & printf format string \\
+\hline
+{\em ...} & Format arguments \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{logger_8c_source_l00052}{52}} of file \mbox{\hyperlink{logger_8c_source}{logger.\+c}}.
+
+\mbox{\Hypertarget{logger_8c_a561cce946aea9c216f79699ac9cd8cbf}\label{logger_8c_a561cce946aea9c216f79699ac9cd8cbf}} 
+\index{logger.c@{logger.c}!LOG\_SetDestination@{LOG\_SetDestination}}
+\index{LOG\_SetDestination@{LOG\_SetDestination}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{LOG\_SetDestination()}{LOG\_SetDestination()}}
+{\footnotesize\ttfamily void LOG\+\_\+\+Set\+Destination (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{logger_8h_a85843df0bcaa0ec7485c165784daa61d}{LOG\+\_\+\+Stream\+\_\+t}}}]{stream }\end{DoxyParamCaption})}
+
+
+
+Sets the new destination where log output should go to. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Stream function of destination \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{logger_8c_source_l00035}{35}} of file \mbox{\hyperlink{logger_8c_source}{logger.\+c}}.
+
+\mbox{\Hypertarget{logger_8c_af8d952eada7b51a67abcf43df9320532}\label{logger_8c_af8d952eada7b51a67abcf43df9320532}} 
+\index{logger.c@{logger.c}!LOG\_Warn@{LOG\_Warn}}
+\index{LOG\_Warn@{LOG\_Warn}!logger.c@{logger.c}}
+\doxysubsubsection{\texorpdfstring{LOG\_Warn()}{LOG\_Warn()}}
+{\footnotesize\ttfamily void LOG\+\_\+\+Warn (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Prints a warning string to the current stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fmt} & printf format string \\
+\hline
+{\em ...} & Format arguments \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{logger_8c_source_l00079}{79}} of file \mbox{\hyperlink{logger_8c_source}{logger.\+c}}.
+

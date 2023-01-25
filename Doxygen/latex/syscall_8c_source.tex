@@ -1,0 +1,167 @@
+\hypertarget{syscall_8c_source}{}\doxysection{syscall.\+c}
+\label{syscall_8c_source}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Middlewares/Third\_Party/FatFs/src/option/syscall.c@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Middlewares/Third\_Party/FatFs/src/option/syscall.c}}
+\mbox{\hyperlink{syscall_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00001}00001\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00002}00002\ \textcolor{comment}{/*\ Sample\ code\ of\ OS\ dependent\ controls\ for\ FatFs\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00003}00003\ \textcolor{comment}{/*\ (C)ChaN,\ 2014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00004}00004\ \textcolor{comment}{/*\ \ \ Portions\ COPYRIGHT\ 2017\ STMicroelectronics\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00005}00005\ \textcolor{comment}{/*\ \ \ Portions\ Copyright\ (C)\ 2014,\ ChaN,\ all\ right\ reserved\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00006}00006\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}../ff.h"{}}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00027}00027\ \textcolor{preprocessor}{\#if\ \_FS\_REENTRANT}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00028}00028\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00029}00029\ \textcolor{comment}{/*\ Create\ a\ Synchronization\ Object\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00030}00030\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00031}00031\ \textcolor{comment}{/*\ This\ function\ is\ called\ in\ f\_mount()\ function\ to\ create\ a\ new}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00032}00032\ \textcolor{comment}{/\ \ synchronization\ object,\ such\ as\ semaphore\ and\ mutex.\ When\ a\ 0\ is\ returned,}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00033}00033\ \textcolor{comment}{/\ \ the\ f\_mount()\ function\ fails\ with\ FR\_INT\_ERR.}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00034}00034\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00036}00036\ \textcolor{keywordtype}{int}\ ff\_cre\_syncobj\ (\ \ \ \ \textcolor{comment}{/*\ 1:Function\ succeeded,\ 0:Could\ not\ create\ the\ sync\ object\ */}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{integer_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}\ vol,\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Corresponding\ volume\ (logical\ drive\ number)\ */}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{ffconf_8h_a9a3f0670343e51652dd12b18fa90a9eb}{\_SYNC\_t}}\ *sobj\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Pointer\ to\ return\ the\ created\ sync\ object\ */}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00039}00039\ )}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00040}00040\ \{}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{int}\ ret;}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00043}00043\ \textcolor{preprocessor}{\#if\ \_USE\_MUTEX}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00045}00045\ \textcolor{preprocessor}{\#if\ (osCMSIS\ <\ 0x20000U)}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00046}00046\ \ \ \ \ osMutexDef(MTX);}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00047}00047\ \ \ \ \ *sobj\ =\ osMutexCreate(osMutex(MTX));}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00048}00048\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00049}00049\ \ \ \ \ *sobj\ =\ osMutexNew(\mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}});}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00050}00050\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00052}00052\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00054}00054\ \textcolor{preprocessor}{\#if\ (osCMSIS\ <\ 0x20000U)}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00055}00055\ \ \ \ \ osSemaphoreDef(SEM);}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00056}00056\ \ \ \ \ *sobj\ =\ osSemaphoreCreate(osSemaphore(SEM),\ 1);}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00057}00057\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00058}00058\ \ \ \ \ *sobj\ =\ osSemaphoreNew(1,\ 1,\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}});}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00059}00059\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00061}00061\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00062}00062\ \ \ \ \ ret\ =\ (*sobj\ !=\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}});}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00065}00065\ \}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00069}00069\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00070}00070\ \textcolor{comment}{/*\ Delete\ a\ Synchronization\ Object\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00071}00071\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00072}00072\ \textcolor{comment}{/*\ This\ function\ is\ called\ in\ f\_mount()\ function\ to\ delete\ a\ synchronization}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00073}00073\ \textcolor{comment}{/\ \ object\ that\ created\ with\ ff\_cre\_syncobj()\ function.\ When\ a\ 0\ is\ returned,}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00074}00074\ \textcolor{comment}{/\ \ the\ f\_mount()\ function\ fails\ with\ FR\_INT\_ERR.}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00075}00075\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00077}00077\ \textcolor{keywordtype}{int}\ ff\_del\_syncobj\ (\ \ \ \ \textcolor{comment}{/*\ 1:Function\ succeeded,\ 0:Could\ not\ delete\ due\ to\ any\ error\ */}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00078}00078\ \ \ \ \ \mbox{\hyperlink{ffconf_8h_a9a3f0670343e51652dd12b18fa90a9eb}{\_SYNC\_t}}\ sobj\ \ \ \ \ \textcolor{comment}{/*\ Sync\ object\ tied\ to\ the\ logical\ drive\ to\ be\ deleted\ */}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00079}00079\ )}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00080}00080\ \{}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00081}00081\ \textcolor{preprocessor}{\#if\ \_USE\_MUTEX}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00082}00082\ \ \ \ \ osMutexDelete\ (sobj);}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00083}00083\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00084}00084\ \ \ \ \ osSemaphoreDelete\ (sobj);}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00085}00085\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00086}00086\ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00087}00087\ \}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00091}00091\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00092}00092\ \textcolor{comment}{/*\ Request\ Grant\ to\ Access\ the\ Volume\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00093}00093\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00094}00094\ \textcolor{comment}{/*\ This\ function\ is\ called\ on\ entering\ file\ functions\ to\ lock\ the\ volume.}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00095}00095\ \textcolor{comment}{/\ \ When\ a\ 0\ is\ returned,\ the\ file\ function\ fails\ with\ FR\_TIMEOUT.}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00096}00096\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00098}00098\ \textcolor{keywordtype}{int}\ ff\_req\_grant\ (\ \ \textcolor{comment}{/*\ 1:Got\ a\ grant\ to\ access\ the\ volume,\ 0:Could\ not\ get\ a\ grant\ */}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00099}00099\ \ \ \ \ \mbox{\hyperlink{ffconf_8h_a9a3f0670343e51652dd12b18fa90a9eb}{\_SYNC\_t}}\ sobj\ \textcolor{comment}{/*\ Sync\ object\ to\ wait\ */}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00100}00100\ )}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00101}00101\ \{}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00102}00102\ \ \ \textcolor{keywordtype}{int}\ ret\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00103}00103\ \textcolor{preprocessor}{\#if\ (osCMSIS\ <\ 0x20000U)}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00105}00105\ \textcolor{preprocessor}{\#if\ \_USE\_MUTEX}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00106}00106\ \ \ \textcolor{keywordflow}{if}(osMutexWait(sobj,\ \mbox{\hyperlink{ffconf_8h_a526e3cac667f53cc9a48507873348e60}{\_FS\_TIMEOUT}})\ ==\ osOK)}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00107}00107\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00108}00108\ \ \ \textcolor{keywordflow}{if}(osSemaphoreWait(sobj,\ \mbox{\hyperlink{ffconf_8h_a526e3cac667f53cc9a48507873348e60}{\_FS\_TIMEOUT}})\ ==\ osOK)}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00109}00109\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00111}00111\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00113}00113\ \textcolor{preprocessor}{\#if\ \_USE\_MUTEX}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00114}00114\ \ \ \ \textcolor{keywordflow}{if}(osMutexAcquire(sobj,\ \mbox{\hyperlink{ffconf_8h_a526e3cac667f53cc9a48507873348e60}{\_FS\_TIMEOUT}})\ ==\ osOK)}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00115}00115\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00116}00116\ \ \ \ \textcolor{keywordflow}{if}(osSemaphoreAcquire(sobj,\ \mbox{\hyperlink{ffconf_8h_a526e3cac667f53cc9a48507873348e60}{\_FS\_TIMEOUT}})\ ==\ osOK)}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00117}00117\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00119}00119\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00120}00120\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00121}00121\ \ \ \ \ ret\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00122}00122\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00124}00124\ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00125}00125\ \}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00129}00129\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00130}00130\ \textcolor{comment}{/*\ Release\ Grant\ to\ Access\ the\ Volume\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00131}00131\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00132}00132\ \textcolor{comment}{/*\ This\ function\ is\ called\ on\ leaving\ file\ functions\ to\ unlock\ the\ volume.}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00133}00133\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00135}00135\ \textcolor{keywordtype}{void}\ ff\_rel\_grant\ (}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00136}00136\ \ \ \ \ \mbox{\hyperlink{ffconf_8h_a9a3f0670343e51652dd12b18fa90a9eb}{\_SYNC\_t}}\ sobj\ \textcolor{comment}{/*\ Sync\ object\ to\ be\ signaled\ */}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00137}00137\ )}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00138}00138\ \{}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00139}00139\ \textcolor{preprocessor}{\#if\ \_USE\_MUTEX}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00140}00140\ \ \ osMutexRelease(sobj);}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00141}00141\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00142}00142\ \ \ osSemaphoreRelease(sobj);}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00143}00143\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00144}00144\ \}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00146}00146\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00151}00151\ \textcolor{preprocessor}{\#if\ \_USE\_LFN\ ==\ 3\ \ \ }\textcolor{comment}{/*\ LFN\ with\ a\ working\ buffer\ on\ the\ heap\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00152}00152\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00153}00153\ \textcolor{comment}{/*\ Allocate\ a\ memory\ block\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00154}00154\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00155}00155\ \textcolor{comment}{/*\ If\ a\ NULL\ is\ returned,\ the\ file\ function\ fails\ with\ FR\_NOT\_ENOUGH\_CORE.}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00156}00156\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00158}00158\ \textcolor{keywordtype}{void}*\ ff\_memalloc\ (\ \textcolor{comment}{/*\ Returns\ pointer\ to\ the\ allocated\ memory\ block\ */}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00159}00159\ \ \ \ \ \mbox{\hyperlink{integer_8h_a36cb3b01d81ffd844bbbfb54003e06ec}{UINT}}\ msize\ \ \ \ \ \ \textcolor{comment}{/*\ Number\ of\ bytes\ to\ allocate\ */}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00160}00160\ )}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00161}00161\ \{}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00162}00162\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{ffconf_8h_a1eee011a3d69ab8a3d199b985fe2ad36}{ff\_malloc}}(msize);\ \ \ \textcolor{comment}{/*\ Allocate\ a\ new\ memory\ block\ with\ POSIX\ API\ */}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00163}00163\ \}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00166}00166\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00167}00167\ \textcolor{comment}{/*\ Free\ a\ memory\ block\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00168}00168\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00170}00170\ \textcolor{keywordtype}{void}\ ff\_memfree\ (}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00171}00171\ \ \ \ \ \textcolor{keywordtype}{void}*\ mblock\ \ \ \ \textcolor{comment}{/*\ Pointer\ to\ the\ memory\ block\ to\ free\ */}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00172}00172\ )}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00173}00173\ \{}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00174}00174\ \ \ \ \ \mbox{\hyperlink{ffconf_8h_ac7b5118894bfc43cc0d19f7290a7be0c}{ff\_free}}(mblock);\ \textcolor{comment}{/*\ Discard\ the\ memory\ block\ with\ POSIX\ API\ */}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00175}00175\ \}}
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{syscall_8c_source_l00177}00177\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,94 @@
+\hypertarget{struct_s_d_m_m_c___cmd_init_type_def}{}\doxysection{SDMMC\+\_\+\+Cmd\+Init\+Type\+Def Struct Reference}
+\label{struct_s_d_m_m_c___cmd_init_type_def}\index{SDMMC\_CmdInitTypeDef@{SDMMC\_CmdInitTypeDef}}
+
+
+SDMMC Command Control structure.  
+
+
+
+
+{\ttfamily \#include $<$stm32h7xx\+\_\+ll\+\_\+sdmmc.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_d_m_m_c___cmd_init_type_def_afa6635c2ff94756b33097676d91356a4}{Argument}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_d_m_m_c___cmd_init_type_def_ab84004187fbb4eea106067813227c0f4}{Cmd\+Index}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_d_m_m_c___cmd_init_type_def_a06a91c388ef5069ed2f3e32f7c053074}{Response}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_d_m_m_c___cmd_init_type_def_ac37d56d54ca6d7fefeaafb8e545252df}{Wait\+For\+Interrupt}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_d_m_m_c___cmd_init_type_def_a5ad3eeff3271020673d95019e57089ca}{CPSM}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SDMMC Command Control structure. 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__ll__sdmmc_8h_source_l00075}{75}} of file \mbox{\hyperlink{stm32h7xx__ll__sdmmc_8h_source}{stm32h7xx\+\_\+ll\+\_\+sdmmc.\+h}}.
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{struct_s_d_m_m_c___cmd_init_type_def_afa6635c2ff94756b33097676d91356a4}\label{struct_s_d_m_m_c___cmd_init_type_def_afa6635c2ff94756b33097676d91356a4}} 
+\index{SDMMC\_CmdInitTypeDef@{SDMMC\_CmdInitTypeDef}!Argument@{Argument}}
+\index{Argument@{Argument}!SDMMC\_CmdInitTypeDef@{SDMMC\_CmdInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{Argument}{Argument}}
+{\footnotesize\ttfamily uint32\+\_\+t Argument}
+
+Specifies the SDMMC command argument which is sent to a card as part of a command message. If a command contains an argument, it must be loaded into this register before writing the command to the command register. ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__ll__sdmmc_8h_source_l00077}{77}} of file \mbox{\hyperlink{stm32h7xx__ll__sdmmc_8h_source}{stm32h7xx\+\_\+ll\+\_\+sdmmc.\+h}}.
+
+\mbox{\Hypertarget{struct_s_d_m_m_c___cmd_init_type_def_ab84004187fbb4eea106067813227c0f4}\label{struct_s_d_m_m_c___cmd_init_type_def_ab84004187fbb4eea106067813227c0f4}} 
+\index{SDMMC\_CmdInitTypeDef@{SDMMC\_CmdInitTypeDef}!CmdIndex@{CmdIndex}}
+\index{CmdIndex@{CmdIndex}!SDMMC\_CmdInitTypeDef@{SDMMC\_CmdInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{CmdIndex}{CmdIndex}}
+{\footnotesize\ttfamily uint32\+\_\+t Cmd\+Index}
+
+Specifies the SDMMC command index. It must be Min\+\_\+\+Data = 0 and Max\+\_\+\+Data = 64 ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__ll__sdmmc_8h_source_l00082}{82}} of file \mbox{\hyperlink{stm32h7xx__ll__sdmmc_8h_source}{stm32h7xx\+\_\+ll\+\_\+sdmmc.\+h}}.
+
+\mbox{\Hypertarget{struct_s_d_m_m_c___cmd_init_type_def_a5ad3eeff3271020673d95019e57089ca}\label{struct_s_d_m_m_c___cmd_init_type_def_a5ad3eeff3271020673d95019e57089ca}} 
+\index{SDMMC\_CmdInitTypeDef@{SDMMC\_CmdInitTypeDef}!CPSM@{CPSM}}
+\index{CPSM@{CPSM}!SDMMC\_CmdInitTypeDef@{SDMMC\_CmdInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{CPSM}{CPSM}}
+{\footnotesize\ttfamily uint32\+\_\+t CPSM}
+
+Specifies whether SDMMC Command path state machine (CPSM) is enabled or disabled. This parameter can be a value of \mbox{\hyperlink{group___s_d_m_m_c___l_l___c_p_s_m___state}{CPSM State}} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__ll__sdmmc_8h_source_l00092}{92}} of file \mbox{\hyperlink{stm32h7xx__ll__sdmmc_8h_source}{stm32h7xx\+\_\+ll\+\_\+sdmmc.\+h}}.
+
+\mbox{\Hypertarget{struct_s_d_m_m_c___cmd_init_type_def_a06a91c388ef5069ed2f3e32f7c053074}\label{struct_s_d_m_m_c___cmd_init_type_def_a06a91c388ef5069ed2f3e32f7c053074}} 
+\index{SDMMC\_CmdInitTypeDef@{SDMMC\_CmdInitTypeDef}!Response@{Response}}
+\index{Response@{Response}!SDMMC\_CmdInitTypeDef@{SDMMC\_CmdInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{Response}{Response}}
+{\footnotesize\ttfamily uint32\+\_\+t Response}
+
+Specifies the SDMMC response type. This parameter can be a value of \mbox{\hyperlink{group___s_d_m_m_c___l_l___response___type}{Response Type}} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__ll__sdmmc_8h_source_l00085}{85}} of file \mbox{\hyperlink{stm32h7xx__ll__sdmmc_8h_source}{stm32h7xx\+\_\+ll\+\_\+sdmmc.\+h}}.
+
+\mbox{\Hypertarget{struct_s_d_m_m_c___cmd_init_type_def_ac37d56d54ca6d7fefeaafb8e545252df}\label{struct_s_d_m_m_c___cmd_init_type_def_ac37d56d54ca6d7fefeaafb8e545252df}} 
+\index{SDMMC\_CmdInitTypeDef@{SDMMC\_CmdInitTypeDef}!WaitForInterrupt@{WaitForInterrupt}}
+\index{WaitForInterrupt@{WaitForInterrupt}!SDMMC\_CmdInitTypeDef@{SDMMC\_CmdInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{WaitForInterrupt}{WaitForInterrupt}}
+{\footnotesize\ttfamily uint32\+\_\+t Wait\+For\+Interrupt}
+
+Specifies whether SDMMC wait for interrupt request is enabled or disabled. This parameter can be a value of \mbox{\hyperlink{group___s_d_m_m_c___l_l___wait___interrupt___state}{Wait Interrupt}} ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__ll__sdmmc_8h_source_l00088}{88}} of file \mbox{\hyperlink{stm32h7xx__ll__sdmmc_8h_source}{stm32h7xx\+\_\+ll\+\_\+sdmmc.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.\+11.\+0/\+TRex/lib/hal/\+Drivers/\+STM32\+H7xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/\mbox{\hyperlink{stm32h7xx__ll__sdmmc_8h}{stm32h7xx\+\_\+ll\+\_\+sdmmc.\+h}}\end{DoxyCompactItemize}

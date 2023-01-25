@@ -1,0 +1,360 @@
+\hypertarget{icm42605_8h}{}\doxysection{C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.11.0/\+TRex/lib/libleguan/include/peripherals/external/sensors/icm42605.h File Reference}
+\label{icm42605_8h}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/peripherals/external/sensors/icm42605.h@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/peripherals/external/sensors/icm42605.h}}
+
+
+ICM-\/42605 Sensor Abstraction.  
+
+
+{\ttfamily \#include \char`\"{}common/types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/attributes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/mmio.\+h\char`\"{}}\newline
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{icm42605_8h_aa8c5ff7a2a187e3f9524f50bb1507c5a}{ICM42605\+\_\+\+Accel\+Full\+Scale\+Range}} \{ \mbox{\hyperlink{icm42605_8h_aa8c5ff7a2a187e3f9524f50bb1507c5aac4436a4713c76f94b88a4964c529dc99}{ICM42605\+\_\+\+Accel\+Full\+Scale\+Range\+\_\+2G}} = 0x03
+, \mbox{\hyperlink{icm42605_8h_aa8c5ff7a2a187e3f9524f50bb1507c5aaac275b5657080f086ad9a119d84e2f10}{ICM42605\+\_\+\+Accel\+Full\+Scale\+Range\+\_\+4G}} = 0x02
+, \mbox{\hyperlink{icm42605_8h_aa8c5ff7a2a187e3f9524f50bb1507c5aaa5e2afed96c98676bc7d6f219cd8ea70}{ICM42605\+\_\+\+Accel\+Full\+Scale\+Range\+\_\+8G}} = 0x01
+, \mbox{\hyperlink{icm42605_8h_aa8c5ff7a2a187e3f9524f50bb1507c5aaa51a9827800fb43d666fb0fbf55ed80b}{ICM42605\+\_\+\+Accel\+Full\+Scale\+Range\+\_\+16G}} = 0x00
+ \}
+\begin{DoxyCompactList}\small\item\em Accelerometer range. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049}{ICM42605\+\_\+\+Gyro\+Full\+Scale\+Range}} \{ \newline
+\mbox{\hyperlink{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049a749d597069908b56f0c494741204f54f}{ICM42605\+\_\+\+Gyro\+Full\+Scale\+Range\+\_\+2000\+DPS}} = 0x00
+, \mbox{\hyperlink{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049ae15f60f236d797c4b434cf4148c20451}{ICM42605\+\_\+\+Gyro\+Full\+Scale\+Range\+\_\+1000\+DPS}} = 0x01
+, \mbox{\hyperlink{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049abac0d4ad5a08ec1b8efaf395c7824ee8}{ICM42605\+\_\+\+Gyro\+Full\+Scale\+Range\+\_\+500\+DPS}} = 0x02
+, \mbox{\hyperlink{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049a69989a539ed410c8ad15402eb5448964}{ICM42605\+\_\+\+Gyro\+Full\+Scale\+Range\+\_\+250\+DPS}} = 0x03
+, \newline
+\mbox{\hyperlink{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049a1c5042773652db4e40ea050ee4ba3ea8}{ICM42605\+\_\+\+Gyro\+Full\+Scale\+Range\+\_\+125\+DPS}} = 0x04
+, \mbox{\hyperlink{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049aafe61f71fdba74822d5804952e508ceb}{ICM42605\+\_\+\+Gyro\+Full\+Scale\+Range\+\_\+62\+\_\+5\+DPS}} = 0x05
+, \mbox{\hyperlink{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049ad31d0999202744e60588b21c2eacd059}{ICM42605\+\_\+\+Gyro\+Full\+Scale\+Range\+\_\+31\+\_\+25\+DPS}} = 0x06
+, \mbox{\hyperlink{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049ad2057cad0445f398425bd5104243ca9b}{ICM42605\+\_\+\+Gyro\+Full\+Scale\+Range\+\_\+15\+\_\+125\+DPS}} = 0x07
+ \}
+\begin{DoxyCompactList}\small\item\em Gyroscope range. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{icm42605_8h_ae4f21c499f796305083fcbb21c93f282}{ICM42605\+\_\+\+Accel\+Output\+Data\+Range}} \{ \newline
+\mbox{\hyperlink{icm42605_8h_ae4f21c499f796305083fcbb21c93f282a0fb0d1c9ddd1d9e1c5e656a824902dfc}{ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+8000\+Hz}} = 0x03
+, \mbox{\hyperlink{icm42605_8h_ae4f21c499f796305083fcbb21c93f282af6c6c451b1fb1b9fd511a53b101d35e3}{ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+4000\+Hz}} = 0x04
+, \mbox{\hyperlink{icm42605_8h_ae4f21c499f796305083fcbb21c93f282a10dce9058d93a0e32846a08942b8b4fa}{ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+2000\+Hz}} = 0x05
+, \mbox{\hyperlink{icm42605_8h_ae4f21c499f796305083fcbb21c93f282a8d8850740a75fd68dc5e5956bdff733e}{ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+1000\+Hz}} = 0x06
+, \newline
+\mbox{\hyperlink{icm42605_8h_ae4f21c499f796305083fcbb21c93f282a0aca620a87585a6e8c1592d047f70b06}{ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+500\+Hz}} = 0x0F
+, \mbox{\hyperlink{icm42605_8h_ae4f21c499f796305083fcbb21c93f282a2861d01f791b5f008119320598da3432}{ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+200\+Hz}} = 0x07
+, \mbox{\hyperlink{icm42605_8h_ae4f21c499f796305083fcbb21c93f282ae417f6a968adfa4106cb35286fb23419}{ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+100\+Hz}} = 0x08
+, \mbox{\hyperlink{icm42605_8h_ae4f21c499f796305083fcbb21c93f282ac2bec770e882f24035a3fe833e224e76}{ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+50\+Hz}} = 0x09
+, \newline
+\mbox{\hyperlink{icm42605_8h_ae4f21c499f796305083fcbb21c93f282a86d81b26aeb5dac6a09c8c4a053e8516}{ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+25\+Hz}} = 0x0A
+, \mbox{\hyperlink{icm42605_8h_ae4f21c499f796305083fcbb21c93f282adc51cc9b1d39c57bb995a5802871583d}{ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+12\+\_\+5\+Hz}} = 0x0B
+, \mbox{\hyperlink{icm42605_8h_ae4f21c499f796305083fcbb21c93f282ab231cc40f0420d001a4115a5fe95e134}{ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+6\+\_\+25\+Hz}} = 0x0C
+, \mbox{\hyperlink{icm42605_8h_ae4f21c499f796305083fcbb21c93f282aa17761308a9d198599d2b4a2f98cfdbc}{ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+3\+\_\+125\+Hz}} = 0x0D
+, \newline
+\mbox{\hyperlink{icm42605_8h_ae4f21c499f796305083fcbb21c93f282a2c0b1fd4cc458d723682fa665e8daedf}{ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+1\+\_\+5625\+Hz}} = 0x0E
+ \}
+\begin{DoxyCompactList}\small\item\em Accelerometer data rate. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5}{ICM42605\+\_\+\+Gyro\+Output\+Data\+Range}} \{ \newline
+\mbox{\hyperlink{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5afae313aa65cdcb47776ff9ff3161bef9}{ICM42605\+\_\+\+Gyro\+Output\+Data\+Range\+\_\+8000\+Hz}} = 0x03
+, \mbox{\hyperlink{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5a2ae8b87036ead80db20b757e6944c018}{ICM42605\+\_\+\+Gyro\+Output\+Data\+Range\+\_\+4000\+Hz}} = 0x04
+, \mbox{\hyperlink{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5abfdaa024317a47641e7cd0aace05df92}{ICM42605\+\_\+\+Gyro\+Output\+Data\+Range\+\_\+2000\+Hz}} = 0x05
+, \mbox{\hyperlink{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5a795df93822afead8228e7e1776bd50eb}{ICM42605\+\_\+\+Gyro\+Output\+Data\+Range\+\_\+1000\+Hz}} = 0x06
+, \newline
+\mbox{\hyperlink{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5ae34c6c21d1124e2d142462a345889da0}{ICM42605\+\_\+\+Gyro\+Output\+Data\+Range\+\_\+500\+Hz}} = 0x0F
+, \mbox{\hyperlink{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5af519574edd6f65a7fa5dfcd9f6e3a153}{ICM42605\+\_\+\+Gyro\+Output\+Data\+Range\+\_\+200\+Hz}} = 0x07
+, \mbox{\hyperlink{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5a37f3c9de246020dc5a645abfd3f50b78}{ICM42605\+\_\+\+Gyro\+Output\+Data\+Range\+\_\+100\+Hz}} = 0x08
+, \mbox{\hyperlink{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5a3ea8ca1fbdecebab065539e52f237789}{ICM42605\+\_\+\+Gyro\+Output\+Data\+Range\+\_\+50\+Hz}} = 0x09
+, \newline
+\mbox{\hyperlink{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5af486ff13343aa4b6b41520418820276a}{ICM42605\+\_\+\+Gyro\+Output\+Data\+Range\+\_\+25\+Hz}} = 0x0A
+, \mbox{\hyperlink{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5ab3a9e13164e9d31e674ef6c4a007cf64}{ICM42605\+\_\+\+Gyro\+Output\+Data\+Range\+\_\+12\+\_\+5\+Hz}} = 0x0B
+ \}
+\begin{DoxyCompactList}\small\item\em Gyroscope data rate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{icm42605_8h_ad0d58c2b8d0b6bbcb48bd745525f0c82}{ICM42605\+\_\+\+Init}} (\mbox{\hyperlink{icm42605_8h_aa8c5ff7a2a187e3f9524f50bb1507c5a}{ICM42605\+\_\+\+Accel\+Full\+Scale\+Range}} accel\+Scale\+Range, \mbox{\hyperlink{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049}{ICM42605\+\_\+\+Gyro\+Full\+Scale\+Range}} gyro\+Scale\+Range, \mbox{\hyperlink{icm42605_8h_ae4f21c499f796305083fcbb21c93f282}{ICM42605\+\_\+\+Accel\+Output\+Data\+Range}} accel\+Output\+Data\+Range, \mbox{\hyperlink{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5}{ICM42605\+\_\+\+Gyro\+Output\+Data\+Range}} gyro\+Output\+Data\+Range)
+\begin{DoxyCompactList}\small\item\em Initializes the ICM42605 6-\/Axis Sensor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{icm42605_8h_ab94990e35787fdfe51f9e702264a45ae}{ICM42605\+\_\+\+Get\+Rotation}} (\mbox{\hyperlink{structvector3f__t}{vector3f\+\_\+t}} $\ast$value)
+\begin{DoxyCompactList}\small\item\em Gets the board rotation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{icm42605_8h_a4aa79e1e4e25637a55aca0345daed5ae}{ICM42605\+\_\+\+Get\+Acceleration}} (\mbox{\hyperlink{structvector3f__t}{vector3f\+\_\+t}} $\ast$value)
+\begin{DoxyCompactList}\small\item\em Gets the board acceleration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ICM-\/42605 Sensor Abstraction. 
+
+\begin{DoxyAuthor}{Author}
+Nikolaij Saegesser 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{icm42605_8h_source}{icm42605.\+h}}.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{icm42605_8h_aa8c5ff7a2a187e3f9524f50bb1507c5a}\label{icm42605_8h_aa8c5ff7a2a187e3f9524f50bb1507c5a}} 
+\index{icm42605.h@{icm42605.h}!ICM42605\_AccelFullScaleRange@{ICM42605\_AccelFullScaleRange}}
+\index{ICM42605\_AccelFullScaleRange@{ICM42605\_AccelFullScaleRange}!icm42605.h@{icm42605.h}}
+\doxysubsubsection{\texorpdfstring{ICM42605\_AccelFullScaleRange}{ICM42605\_AccelFullScaleRange}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{icm42605_8h_aa8c5ff7a2a187e3f9524f50bb1507c5a}{ICM42605\+\_\+\+Accel\+Full\+Scale\+Range}}}
+
+
+
+Accelerometer range. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_AccelFullScaleRange\_2G@{ICM42605\_AccelFullScaleRange\_2G}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_AccelFullScaleRange\_2G@{ICM42605\_AccelFullScaleRange\_2G}}}\mbox{\Hypertarget{icm42605_8h_aa8c5ff7a2a187e3f9524f50bb1507c5aac4436a4713c76f94b88a4964c529dc99}\label{icm42605_8h_aa8c5ff7a2a187e3f9524f50bb1507c5aac4436a4713c76f94b88a4964c529dc99}} 
+ICM42605\+\_\+\+Accel\+Full\+Scale\+Range\+\_\+2G&Range from -\/2G to 2G with highest precision. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_AccelFullScaleRange\_4G@{ICM42605\_AccelFullScaleRange\_4G}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_AccelFullScaleRange\_4G@{ICM42605\_AccelFullScaleRange\_4G}}}\mbox{\Hypertarget{icm42605_8h_aa8c5ff7a2a187e3f9524f50bb1507c5aaac275b5657080f086ad9a119d84e2f10}\label{icm42605_8h_aa8c5ff7a2a187e3f9524f50bb1507c5aaac275b5657080f086ad9a119d84e2f10}} 
+ICM42605\+\_\+\+Accel\+Full\+Scale\+Range\+\_\+4G&Range from -\/4G to 4G. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_AccelFullScaleRange\_8G@{ICM42605\_AccelFullScaleRange\_8G}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_AccelFullScaleRange\_8G@{ICM42605\_AccelFullScaleRange\_8G}}}\mbox{\Hypertarget{icm42605_8h_aa8c5ff7a2a187e3f9524f50bb1507c5aaa5e2afed96c98676bc7d6f219cd8ea70}\label{icm42605_8h_aa8c5ff7a2a187e3f9524f50bb1507c5aaa5e2afed96c98676bc7d6f219cd8ea70}} 
+ICM42605\+\_\+\+Accel\+Full\+Scale\+Range\+\_\+8G&Range from -\/8G to 8G. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_AccelFullScaleRange\_16G@{ICM42605\_AccelFullScaleRange\_16G}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_AccelFullScaleRange\_16G@{ICM42605\_AccelFullScaleRange\_16G}}}\mbox{\Hypertarget{icm42605_8h_aa8c5ff7a2a187e3f9524f50bb1507c5aaa51a9827800fb43d666fb0fbf55ed80b}\label{icm42605_8h_aa8c5ff7a2a187e3f9524f50bb1507c5aaa51a9827800fb43d666fb0fbf55ed80b}} 
+ICM42605\+\_\+\+Accel\+Full\+Scale\+Range\+\_\+16G&Range from -\/16G to 16G with lowest precision. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{icm42605_8h_source_l00045}{45}} of file \mbox{\hyperlink{icm42605_8h_source}{icm42605.\+h}}.
+
+\mbox{\Hypertarget{icm42605_8h_ae4f21c499f796305083fcbb21c93f282}\label{icm42605_8h_ae4f21c499f796305083fcbb21c93f282}} 
+\index{icm42605.h@{icm42605.h}!ICM42605\_AccelOutputDataRange@{ICM42605\_AccelOutputDataRange}}
+\index{ICM42605\_AccelOutputDataRange@{ICM42605\_AccelOutputDataRange}!icm42605.h@{icm42605.h}}
+\doxysubsubsection{\texorpdfstring{ICM42605\_AccelOutputDataRange}{ICM42605\_AccelOutputDataRange}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{icm42605_8h_ae4f21c499f796305083fcbb21c93f282}{ICM42605\+\_\+\+Accel\+Output\+Data\+Range}}}
+
+
+
+Accelerometer data rate. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_AccelOutputDataRange\_8000Hz@{ICM42605\_AccelOutputDataRange\_8000Hz}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_AccelOutputDataRange\_8000Hz@{ICM42605\_AccelOutputDataRange\_8000Hz}}}\mbox{\Hypertarget{icm42605_8h_ae4f21c499f796305083fcbb21c93f282a0fb0d1c9ddd1d9e1c5e656a824902dfc}\label{icm42605_8h_ae4f21c499f796305083fcbb21c93f282a0fb0d1c9ddd1d9e1c5e656a824902dfc}} 
+ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+8000\+Hz&8000 measurements per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_AccelOutputDataRange\_4000Hz@{ICM42605\_AccelOutputDataRange\_4000Hz}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_AccelOutputDataRange\_4000Hz@{ICM42605\_AccelOutputDataRange\_4000Hz}}}\mbox{\Hypertarget{icm42605_8h_ae4f21c499f796305083fcbb21c93f282af6c6c451b1fb1b9fd511a53b101d35e3}\label{icm42605_8h_ae4f21c499f796305083fcbb21c93f282af6c6c451b1fb1b9fd511a53b101d35e3}} 
+ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+4000\+Hz&4000 measurements per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_AccelOutputDataRange\_2000Hz@{ICM42605\_AccelOutputDataRange\_2000Hz}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_AccelOutputDataRange\_2000Hz@{ICM42605\_AccelOutputDataRange\_2000Hz}}}\mbox{\Hypertarget{icm42605_8h_ae4f21c499f796305083fcbb21c93f282a10dce9058d93a0e32846a08942b8b4fa}\label{icm42605_8h_ae4f21c499f796305083fcbb21c93f282a10dce9058d93a0e32846a08942b8b4fa}} 
+ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+2000\+Hz&2000 measurements per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_AccelOutputDataRange\_1000Hz@{ICM42605\_AccelOutputDataRange\_1000Hz}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_AccelOutputDataRange\_1000Hz@{ICM42605\_AccelOutputDataRange\_1000Hz}}}\mbox{\Hypertarget{icm42605_8h_ae4f21c499f796305083fcbb21c93f282a8d8850740a75fd68dc5e5956bdff733e}\label{icm42605_8h_ae4f21c499f796305083fcbb21c93f282a8d8850740a75fd68dc5e5956bdff733e}} 
+ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+1000\+Hz&1000 measurements per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_AccelOutputDataRange\_500Hz@{ICM42605\_AccelOutputDataRange\_500Hz}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_AccelOutputDataRange\_500Hz@{ICM42605\_AccelOutputDataRange\_500Hz}}}\mbox{\Hypertarget{icm42605_8h_ae4f21c499f796305083fcbb21c93f282a0aca620a87585a6e8c1592d047f70b06}\label{icm42605_8h_ae4f21c499f796305083fcbb21c93f282a0aca620a87585a6e8c1592d047f70b06}} 
+ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+500\+Hz&500 measurements per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_AccelOutputDataRange\_200Hz@{ICM42605\_AccelOutputDataRange\_200Hz}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_AccelOutputDataRange\_200Hz@{ICM42605\_AccelOutputDataRange\_200Hz}}}\mbox{\Hypertarget{icm42605_8h_ae4f21c499f796305083fcbb21c93f282a2861d01f791b5f008119320598da3432}\label{icm42605_8h_ae4f21c499f796305083fcbb21c93f282a2861d01f791b5f008119320598da3432}} 
+ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+200\+Hz&200 measurements per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_AccelOutputDataRange\_100Hz@{ICM42605\_AccelOutputDataRange\_100Hz}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_AccelOutputDataRange\_100Hz@{ICM42605\_AccelOutputDataRange\_100Hz}}}\mbox{\Hypertarget{icm42605_8h_ae4f21c499f796305083fcbb21c93f282ae417f6a968adfa4106cb35286fb23419}\label{icm42605_8h_ae4f21c499f796305083fcbb21c93f282ae417f6a968adfa4106cb35286fb23419}} 
+ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+100\+Hz&100 measurements per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_AccelOutputDataRange\_50Hz@{ICM42605\_AccelOutputDataRange\_50Hz}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_AccelOutputDataRange\_50Hz@{ICM42605\_AccelOutputDataRange\_50Hz}}}\mbox{\Hypertarget{icm42605_8h_ae4f21c499f796305083fcbb21c93f282ac2bec770e882f24035a3fe833e224e76}\label{icm42605_8h_ae4f21c499f796305083fcbb21c93f282ac2bec770e882f24035a3fe833e224e76}} 
+ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+50\+Hz&50 measurements per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_AccelOutputDataRange\_25Hz@{ICM42605\_AccelOutputDataRange\_25Hz}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_AccelOutputDataRange\_25Hz@{ICM42605\_AccelOutputDataRange\_25Hz}}}\mbox{\Hypertarget{icm42605_8h_ae4f21c499f796305083fcbb21c93f282a86d81b26aeb5dac6a09c8c4a053e8516}\label{icm42605_8h_ae4f21c499f796305083fcbb21c93f282a86d81b26aeb5dac6a09c8c4a053e8516}} 
+ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+25\+Hz&25 measurements per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_AccelOutputDataRange\_12\_5Hz@{ICM42605\_AccelOutputDataRange\_12\_5Hz}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_AccelOutputDataRange\_12\_5Hz@{ICM42605\_AccelOutputDataRange\_12\_5Hz}}}\mbox{\Hypertarget{icm42605_8h_ae4f21c499f796305083fcbb21c93f282adc51cc9b1d39c57bb995a5802871583d}\label{icm42605_8h_ae4f21c499f796305083fcbb21c93f282adc51cc9b1d39c57bb995a5802871583d}} 
+ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+12\+\_\+5\+Hz&12.\+5 measurements per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_AccelOutputDataRange\_6\_25Hz@{ICM42605\_AccelOutputDataRange\_6\_25Hz}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_AccelOutputDataRange\_6\_25Hz@{ICM42605\_AccelOutputDataRange\_6\_25Hz}}}\mbox{\Hypertarget{icm42605_8h_ae4f21c499f796305083fcbb21c93f282ab231cc40f0420d001a4115a5fe95e134}\label{icm42605_8h_ae4f21c499f796305083fcbb21c93f282ab231cc40f0420d001a4115a5fe95e134}} 
+ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+6\+\_\+25\+Hz&6.\+25 measurements per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_AccelOutputDataRange\_3\_125Hz@{ICM42605\_AccelOutputDataRange\_3\_125Hz}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_AccelOutputDataRange\_3\_125Hz@{ICM42605\_AccelOutputDataRange\_3\_125Hz}}}\mbox{\Hypertarget{icm42605_8h_ae4f21c499f796305083fcbb21c93f282aa17761308a9d198599d2b4a2f98cfdbc}\label{icm42605_8h_ae4f21c499f796305083fcbb21c93f282aa17761308a9d198599d2b4a2f98cfdbc}} 
+ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+3\+\_\+125\+Hz&3.\+125 measurements per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_AccelOutputDataRange\_1\_5625Hz@{ICM42605\_AccelOutputDataRange\_1\_5625Hz}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_AccelOutputDataRange\_1\_5625Hz@{ICM42605\_AccelOutputDataRange\_1\_5625Hz}}}\mbox{\Hypertarget{icm42605_8h_ae4f21c499f796305083fcbb21c93f282a2c0b1fd4cc458d723682fa665e8daedf}\label{icm42605_8h_ae4f21c499f796305083fcbb21c93f282a2c0b1fd4cc458d723682fa665e8daedf}} 
+ICM42605\+\_\+\+Accel\+Output\+Data\+Range\+\_\+1\+\_\+5625\+Hz&1.\+5625 measurements per second \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{icm42605_8h_source_l00070}{70}} of file \mbox{\hyperlink{icm42605_8h_source}{icm42605.\+h}}.
+
+\mbox{\Hypertarget{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049}\label{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049}} 
+\index{icm42605.h@{icm42605.h}!ICM42605\_GyroFullScaleRange@{ICM42605\_GyroFullScaleRange}}
+\index{ICM42605\_GyroFullScaleRange@{ICM42605\_GyroFullScaleRange}!icm42605.h@{icm42605.h}}
+\doxysubsubsection{\texorpdfstring{ICM42605\_GyroFullScaleRange}{ICM42605\_GyroFullScaleRange}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049}{ICM42605\+\_\+\+Gyro\+Full\+Scale\+Range}}}
+
+
+
+Gyroscope range. 
+
+\begin{DoxyNote}{Note}
+DPS = degree per second 
+\end{DoxyNote}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_GyroFullScaleRange\_2000DPS@{ICM42605\_GyroFullScaleRange\_2000DPS}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_GyroFullScaleRange\_2000DPS@{ICM42605\_GyroFullScaleRange\_2000DPS}}}\mbox{\Hypertarget{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049a749d597069908b56f0c494741204f54f}\label{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049a749d597069908b56f0c494741204f54f}} 
+ICM42605\+\_\+\+Gyro\+Full\+Scale\+Range\+\_\+2000\+DPS&Range from -\/2000DPS to 2000DPS with lowest precision. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_GyroFullScaleRange\_1000DPS@{ICM42605\_GyroFullScaleRange\_1000DPS}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_GyroFullScaleRange\_1000DPS@{ICM42605\_GyroFullScaleRange\_1000DPS}}}\mbox{\Hypertarget{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049ae15f60f236d797c4b434cf4148c20451}\label{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049ae15f60f236d797c4b434cf4148c20451}} 
+ICM42605\+\_\+\+Gyro\+Full\+Scale\+Range\+\_\+1000\+DPS&Range from -\/1000DPS to 1000DPS. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_GyroFullScaleRange\_500DPS@{ICM42605\_GyroFullScaleRange\_500DPS}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_GyroFullScaleRange\_500DPS@{ICM42605\_GyroFullScaleRange\_500DPS}}}\mbox{\Hypertarget{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049abac0d4ad5a08ec1b8efaf395c7824ee8}\label{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049abac0d4ad5a08ec1b8efaf395c7824ee8}} 
+ICM42605\+\_\+\+Gyro\+Full\+Scale\+Range\+\_\+500\+DPS&Range from -\/500DPS to 500DPS. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_GyroFullScaleRange\_250DPS@{ICM42605\_GyroFullScaleRange\_250DPS}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_GyroFullScaleRange\_250DPS@{ICM42605\_GyroFullScaleRange\_250DPS}}}\mbox{\Hypertarget{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049a69989a539ed410c8ad15402eb5448964}\label{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049a69989a539ed410c8ad15402eb5448964}} 
+ICM42605\+\_\+\+Gyro\+Full\+Scale\+Range\+\_\+250\+DPS&Range from -\/250DPS to 250DPS. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_GyroFullScaleRange\_125DPS@{ICM42605\_GyroFullScaleRange\_125DPS}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_GyroFullScaleRange\_125DPS@{ICM42605\_GyroFullScaleRange\_125DPS}}}\mbox{\Hypertarget{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049a1c5042773652db4e40ea050ee4ba3ea8}\label{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049a1c5042773652db4e40ea050ee4ba3ea8}} 
+ICM42605\+\_\+\+Gyro\+Full\+Scale\+Range\+\_\+125\+DPS&Range from -\/125DPS to 125DPS. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_GyroFullScaleRange\_62\_5DPS@{ICM42605\_GyroFullScaleRange\_62\_5DPS}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_GyroFullScaleRange\_62\_5DPS@{ICM42605\_GyroFullScaleRange\_62\_5DPS}}}\mbox{\Hypertarget{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049aafe61f71fdba74822d5804952e508ceb}\label{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049aafe61f71fdba74822d5804952e508ceb}} 
+ICM42605\+\_\+\+Gyro\+Full\+Scale\+Range\+\_\+62\+\_\+5\+DPS&Range from -\/62.\+5\+DPS to 65.\+5\+DPS. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_GyroFullScaleRange\_31\_25DPS@{ICM42605\_GyroFullScaleRange\_31\_25DPS}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_GyroFullScaleRange\_31\_25DPS@{ICM42605\_GyroFullScaleRange\_31\_25DPS}}}\mbox{\Hypertarget{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049ad31d0999202744e60588b21c2eacd059}\label{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049ad31d0999202744e60588b21c2eacd059}} 
+ICM42605\+\_\+\+Gyro\+Full\+Scale\+Range\+\_\+31\+\_\+25\+DPS&Range from -\/31.\+25\+DPS to 31.\+25\+DPS. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_GyroFullScaleRange\_15\_125DPS@{ICM42605\_GyroFullScaleRange\_15\_125DPS}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_GyroFullScaleRange\_15\_125DPS@{ICM42605\_GyroFullScaleRange\_15\_125DPS}}}\mbox{\Hypertarget{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049ad2057cad0445f398425bd5104243ca9b}\label{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049ad2057cad0445f398425bd5104243ca9b}} 
+ICM42605\+\_\+\+Gyro\+Full\+Scale\+Range\+\_\+15\+\_\+125\+DPS&Range from -\/15.\+125\+DPS to 15.\+125\+DPS with highest precision. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{icm42605_8h_source_l00056}{56}} of file \mbox{\hyperlink{icm42605_8h_source}{icm42605.\+h}}.
+
+\mbox{\Hypertarget{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5}\label{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5}} 
+\index{icm42605.h@{icm42605.h}!ICM42605\_GyroOutputDataRange@{ICM42605\_GyroOutputDataRange}}
+\index{ICM42605\_GyroOutputDataRange@{ICM42605\_GyroOutputDataRange}!icm42605.h@{icm42605.h}}
+\doxysubsubsection{\texorpdfstring{ICM42605\_GyroOutputDataRange}{ICM42605\_GyroOutputDataRange}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5}{ICM42605\+\_\+\+Gyro\+Output\+Data\+Range}}}
+
+
+
+Gyroscope data rate. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_GyroOutputDataRange\_8000Hz@{ICM42605\_GyroOutputDataRange\_8000Hz}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_GyroOutputDataRange\_8000Hz@{ICM42605\_GyroOutputDataRange\_8000Hz}}}\mbox{\Hypertarget{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5afae313aa65cdcb47776ff9ff3161bef9}\label{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5afae313aa65cdcb47776ff9ff3161bef9}} 
+ICM42605\+\_\+\+Gyro\+Output\+Data\+Range\+\_\+8000\+Hz&8000 measurements per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_GyroOutputDataRange\_4000Hz@{ICM42605\_GyroOutputDataRange\_4000Hz}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_GyroOutputDataRange\_4000Hz@{ICM42605\_GyroOutputDataRange\_4000Hz}}}\mbox{\Hypertarget{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5a2ae8b87036ead80db20b757e6944c018}\label{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5a2ae8b87036ead80db20b757e6944c018}} 
+ICM42605\+\_\+\+Gyro\+Output\+Data\+Range\+\_\+4000\+Hz&4000 measurements per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_GyroOutputDataRange\_2000Hz@{ICM42605\_GyroOutputDataRange\_2000Hz}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_GyroOutputDataRange\_2000Hz@{ICM42605\_GyroOutputDataRange\_2000Hz}}}\mbox{\Hypertarget{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5abfdaa024317a47641e7cd0aace05df92}\label{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5abfdaa024317a47641e7cd0aace05df92}} 
+ICM42605\+\_\+\+Gyro\+Output\+Data\+Range\+\_\+2000\+Hz&2000 measurements per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_GyroOutputDataRange\_1000Hz@{ICM42605\_GyroOutputDataRange\_1000Hz}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_GyroOutputDataRange\_1000Hz@{ICM42605\_GyroOutputDataRange\_1000Hz}}}\mbox{\Hypertarget{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5a795df93822afead8228e7e1776bd50eb}\label{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5a795df93822afead8228e7e1776bd50eb}} 
+ICM42605\+\_\+\+Gyro\+Output\+Data\+Range\+\_\+1000\+Hz&1000 measurements per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_GyroOutputDataRange\_500Hz@{ICM42605\_GyroOutputDataRange\_500Hz}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_GyroOutputDataRange\_500Hz@{ICM42605\_GyroOutputDataRange\_500Hz}}}\mbox{\Hypertarget{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5ae34c6c21d1124e2d142462a345889da0}\label{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5ae34c6c21d1124e2d142462a345889da0}} 
+ICM42605\+\_\+\+Gyro\+Output\+Data\+Range\+\_\+500\+Hz&500 measurements per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_GyroOutputDataRange\_200Hz@{ICM42605\_GyroOutputDataRange\_200Hz}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_GyroOutputDataRange\_200Hz@{ICM42605\_GyroOutputDataRange\_200Hz}}}\mbox{\Hypertarget{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5af519574edd6f65a7fa5dfcd9f6e3a153}\label{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5af519574edd6f65a7fa5dfcd9f6e3a153}} 
+ICM42605\+\_\+\+Gyro\+Output\+Data\+Range\+\_\+200\+Hz&200 measurements per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_GyroOutputDataRange\_100Hz@{ICM42605\_GyroOutputDataRange\_100Hz}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_GyroOutputDataRange\_100Hz@{ICM42605\_GyroOutputDataRange\_100Hz}}}\mbox{\Hypertarget{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5a37f3c9de246020dc5a645abfd3f50b78}\label{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5a37f3c9de246020dc5a645abfd3f50b78}} 
+ICM42605\+\_\+\+Gyro\+Output\+Data\+Range\+\_\+100\+Hz&100 measurements per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_GyroOutputDataRange\_50Hz@{ICM42605\_GyroOutputDataRange\_50Hz}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_GyroOutputDataRange\_50Hz@{ICM42605\_GyroOutputDataRange\_50Hz}}}\mbox{\Hypertarget{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5a3ea8ca1fbdecebab065539e52f237789}\label{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5a3ea8ca1fbdecebab065539e52f237789}} 
+ICM42605\+\_\+\+Gyro\+Output\+Data\+Range\+\_\+50\+Hz&50 measurements per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_GyroOutputDataRange\_25Hz@{ICM42605\_GyroOutputDataRange\_25Hz}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_GyroOutputDataRange\_25Hz@{ICM42605\_GyroOutputDataRange\_25Hz}}}\mbox{\Hypertarget{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5af486ff13343aa4b6b41520418820276a}\label{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5af486ff13343aa4b6b41520418820276a}} 
+ICM42605\+\_\+\+Gyro\+Output\+Data\+Range\+\_\+25\+Hz&25 measurements per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ICM42605\_GyroOutputDataRange\_12\_5Hz@{ICM42605\_GyroOutputDataRange\_12\_5Hz}!icm42605.h@{icm42605.h}}\index{icm42605.h@{icm42605.h}!ICM42605\_GyroOutputDataRange\_12\_5Hz@{ICM42605\_GyroOutputDataRange\_12\_5Hz}}}\mbox{\Hypertarget{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5ab3a9e13164e9d31e674ef6c4a007cf64}\label{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5ab3a9e13164e9d31e674ef6c4a007cf64}} 
+ICM42605\+\_\+\+Gyro\+Output\+Data\+Range\+\_\+12\+\_\+5\+Hz&12.\+5 measurements per second \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{icm42605_8h_source_l00089}{89}} of file \mbox{\hyperlink{icm42605_8h_source}{icm42605.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{icm42605_8h_a4aa79e1e4e25637a55aca0345daed5ae}\label{icm42605_8h_a4aa79e1e4e25637a55aca0345daed5ae}} 
+\index{icm42605.h@{icm42605.h}!ICM42605\_GetAcceleration@{ICM42605\_GetAcceleration}}
+\index{ICM42605\_GetAcceleration@{ICM42605\_GetAcceleration}!icm42605.h@{icm42605.h}}
+\doxysubsubsection{\texorpdfstring{ICM42605\_GetAcceleration()}{ICM42605\_GetAcceleration()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} ICM42605\+\_\+\+Get\+Acceleration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector3f__t}{vector3f\+\_\+t}} $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Gets the board acceleration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Pointer} & to where acceleration should be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status result 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{icm42605_8c_source_l00360}{360}} of file \mbox{\hyperlink{icm42605_8c_source}{icm42605.\+c}}.
+
+\mbox{\Hypertarget{icm42605_8h_ab94990e35787fdfe51f9e702264a45ae}\label{icm42605_8h_ab94990e35787fdfe51f9e702264a45ae}} 
+\index{icm42605.h@{icm42605.h}!ICM42605\_GetRotation@{ICM42605\_GetRotation}}
+\index{ICM42605\_GetRotation@{ICM42605\_GetRotation}!icm42605.h@{icm42605.h}}
+\doxysubsubsection{\texorpdfstring{ICM42605\_GetRotation()}{ICM42605\_GetRotation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} ICM42605\+\_\+\+Get\+Rotation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector3f__t}{vector3f\+\_\+t}} $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Gets the board rotation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Pointer} & to where rotation should be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status result 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{icm42605_8c_source_l00344}{344}} of file \mbox{\hyperlink{icm42605_8c_source}{icm42605.\+c}}.
+
+\mbox{\Hypertarget{icm42605_8h_ad0d58c2b8d0b6bbcb48bd745525f0c82}\label{icm42605_8h_ad0d58c2b8d0b6bbcb48bd745525f0c82}} 
+\index{icm42605.h@{icm42605.h}!ICM42605\_Init@{ICM42605\_Init}}
+\index{ICM42605\_Init@{ICM42605\_Init}!icm42605.h@{icm42605.h}}
+\doxysubsubsection{\texorpdfstring{ICM42605\_Init()}{ICM42605\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} ICM42605\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{icm42605_8h_aa8c5ff7a2a187e3f9524f50bb1507c5a}{ICM42605\+\_\+\+Accel\+Full\+Scale\+Range}}}]{accel\+Scale\+Range,  }\item[{\mbox{\hyperlink{icm42605_8h_a26c5594d6a3a0de1de9f4fafe9183049}{ICM42605\+\_\+\+Gyro\+Full\+Scale\+Range}}}]{gyro\+Scale\+Range,  }\item[{\mbox{\hyperlink{icm42605_8h_ae4f21c499f796305083fcbb21c93f282}{ICM42605\+\_\+\+Accel\+Output\+Data\+Range}}}]{accel\+Output\+Data\+Range,  }\item[{\mbox{\hyperlink{icm42605_8h_aef22abffd1415fbb846c5d03f9e733e5}{ICM42605\+\_\+\+Gyro\+Output\+Data\+Range}}}]{gyro\+Output\+Data\+Range }\end{DoxyParamCaption})}
+
+
+
+Initializes the ICM42605 6-\/Axis Sensor. 
+
+\begin{DoxyReturn}{Returns}
+Status result 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{icm42605_8c_source_l00197}{197}} of file \mbox{\hyperlink{icm42605_8c_source}{icm42605.\+c}}.
+

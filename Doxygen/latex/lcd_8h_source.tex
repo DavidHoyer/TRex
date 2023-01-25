@@ -1,0 +1,144 @@
+\hypertarget{lcd_8h_source}{}\doxysection{lcd.\+h}
+\label{lcd_8h_source}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/peripherals/external/lcd.h@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/peripherals/external/lcd.h}}
+\mbox{\hyperlink{lcd_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00001}00001\ \ \textcolor{comment}{/*\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00002}00002\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00003}00003\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00004}00004\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\ \ \ \ \ \_\_\_\ \ \_\_\ \_\ \_\ \ \ \_\ \ \_\_\ \_\ \_\ \_\_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00005}00005\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\ \ \ \ /\ \_\ \(\backslash\)/\ \_`\ |\ |\ |\ |/\ \_`\ |\ '\_\ \(\backslash\)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00006}00006\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\_\_\_|\ \ \_\_/\ (\_|\ |\ |\_|\ |\ (\_|\ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00007}00007\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \(\backslash\)\_\_\_\_\_/\(\backslash\)\_\_\_|\(\backslash\)\_\_,\ |\(\backslash\)\_\_,\_|\(\backslash\)\_\_,\_|\_|\ |\_|\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00008}00008\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ =============\ \_\_/\ |\ ==================\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00009}00009\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\_\_\_/\ \ \ \ \ \ \ \ \ \ \ BFH\ 2021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00010}00010\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00011}00011\ \textcolor{comment}{\ \ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00012}00012\ \textcolor{comment}{\ \ *\ This\ software\ can\ be\ used\ by\ students\ and\ other\ personal\ of\ the\ *}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00013}00013\ \textcolor{comment}{\ \ *\ Bern\ University\ of\ Applied\ Sciences\ under\ the\ terms\ of\ the\ MIT\ \ *}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00014}00014\ \textcolor{comment}{\ \ *\ license.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00015}00015\ \textcolor{comment}{\ \ *\ For\ other\ persons\ this\ software\ is\ under\ the\ terms\ of\ the\ GNU\ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00016}00016\ \textcolor{comment}{\ \ *\ General\ Public\ License\ version\ 2.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00017}00017\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00018}00018\ \textcolor{comment}{\ \ *\ Copyright\ \&copy;\ 2021,\ Bern\ University\ of\ Applied\ Sciences.\ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00019}00019\ \textcolor{comment}{\ \ *\ All\ rights\ reserved.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00020}00020\ \textcolor{comment}{\ \ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ */}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00028}00028\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00030}00030\ \textcolor{preprocessor}{\#if\ defined(\_\_cplusplus)}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00031}00031\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00032}00032\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00035}00035\ \textcolor{comment}{/*\ Includes\ */}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00036}00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{types_8h}{common/types.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00037}00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{attributes_8h}{common/attributes.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00038}00038\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mmio_8h}{common/mmio.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00039}00039\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{color_8h}{common/color.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00041}00041\ \textcolor{comment}{/*\ Macros\ */}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00042}\mbox{\hyperlink{lcd_8h_a35a282f21b83c74204808ba7dea83fb8}{00042}}\ \textcolor{preprocessor}{\#define\ LCD\_BASE\_ADDRESS\ \ \ \ 0xC0000000ULL}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00044}\mbox{\hyperlink{lcd_8h_a19693eac3018d3e7800fde141921b812}{00044}}\ \textcolor{preprocessor}{\#define\ LCD\_WIDTH\ \ \ \ \ \ \ \ \ \ \ 800UL}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00045}\mbox{\hyperlink{lcd_8h_a53a8b2a971de4b88047192655a48b651}{00045}}\ \textcolor{preprocessor}{\#define\ LCD\_HEIGHT\ \ \ \ \ \ \ \ \ \ 480UL}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00047}\mbox{\hyperlink{lcd_8h_abf2d80992dcfabfd1668184c3dff2733}{00047}}\ \textcolor{preprocessor}{\#define\ LCD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MMIO\_MAP(LCD\_BASE\_ADDRESS,\ LCD\_MemoryMap\_t)}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00050}\mbox{\hyperlink{lcd_8h_ae2b4136259bff545acb84e1aa6464be8}{00050}}\ \textcolor{preprocessor}{\#define\ LCD\_CMD\_SET\_DISPLAY\_OFF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x28}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00051}\mbox{\hyperlink{lcd_8h_a61f3f5e362cf34dc97cbe34e34b8dcc1}{00051}}\ \textcolor{preprocessor}{\#define\ LCD\_CMD\_SET\_DISPLAY\_ON\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x29}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00052}\mbox{\hyperlink{lcd_8h_a11e61846ae51be2918b56bade51d31ba}{00052}}\ \textcolor{preprocessor}{\#define\ LCD\_CMD\_SET\_ADDRESS\_MODE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x36}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00053}\mbox{\hyperlink{lcd_8h_a6ca6d182ff5f82b21ed2837308420e6a}{00053}}\ \textcolor{preprocessor}{\#define\ LCD\_CMD\_SET\_PIXEL\_DATA\_INTERFACE\ \ \ \ \ \ \ \ \ \ \ \ 0xF0}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00054}\mbox{\hyperlink{lcd_8h_a06dcd2184fde60214826f5e990ceb819}{00054}}\ \textcolor{preprocessor}{\#define\ LCD\_CMD\_SET\_COLUMN\_ADDRESS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2A}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00055}\mbox{\hyperlink{lcd_8h_a07651c138e7e8494dcb9896ba99febc5}{00055}}\ \textcolor{preprocessor}{\#define\ LCD\_CMD\_SET\_PAGE\_ADDRESS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2B}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00056}\mbox{\hyperlink{lcd_8h_a9f11c5e7133d5595087a58ef3c2ed589}{00056}}\ \textcolor{preprocessor}{\#define\ LCD\_CMD\_WRITE\_MEMORY\_START\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2C}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00057}\mbox{\hyperlink{lcd_8h_a43d1eaf7205503eda7e0e4089af9c113}{00057}}\ \textcolor{preprocessor}{\#define\ LCD\_CMD\_READ\_MEMORY\_START\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2E}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00058}\mbox{\hyperlink{lcd_8h_ac3f1bec99921c9e09902460d605a163c}{00058}}\ \textcolor{preprocessor}{\#define\ LCD\_CMD\_WRITE\_MEMORY\_CONTINUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3C}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00059}\mbox{\hyperlink{lcd_8h_af6eed009e68482a1c4f9797b9691f111}{00059}}\ \textcolor{preprocessor}{\#define\ LCD\_CMD\_READ\_MEMORY\_CONTINUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3E}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00060}\mbox{\hyperlink{lcd_8h_a4d1b9956c38abfc0481aa4b37cecd3ec}{00060}}\ \textcolor{preprocessor}{\#define\ LCD\_CMD\_SET\_SCROLL\_AREA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x33}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00061}\mbox{\hyperlink{lcd_8h_a39ddffdcb6eb165f7148b46fa273d50a}{00061}}\ \textcolor{preprocessor}{\#define\ LCD\_CMD\_SET\_SCROLL\_START\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x37}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00064}\mbox{\hyperlink{lcd_8h_af3aa9bbe232de59008e93f7965efdac8}{00064}}\ \textcolor{preprocessor}{\#define\ LCD\_TOUCH\_REG\_GENERAL\_STATUS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00065}\mbox{\hyperlink{lcd_8h_a1c3e7fdbfcca2156e740c332fe79c682}{00065}}\ \textcolor{preprocessor}{\#define\ LCD\_TOUCH\_REG\_GENERAL\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00066}\mbox{\hyperlink{lcd_8h_a7c372df4cbd8f21da817c6bdb6416318}{00066}}\ \textcolor{preprocessor}{\#define\ LCD\_TOUCH\_REG\_MEASURE\_RES\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ 0x02}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00067}\mbox{\hyperlink{lcd_8h_a092858bb00d64a0b5b7010d484c7eae3}{00067}}\ \textcolor{preprocessor}{\#define\ LCD\_TOUCH\_REG\_MEASURE\_AVERAGE\_CONFIG\ \ \ \ \ \ \ \ 0x03}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00068}\mbox{\hyperlink{lcd_8h_a01cb1064367ca49b8e23bc12057f9d85}{00068}}\ \textcolor{preprocessor}{\#define\ LCD\_TOUCH\_REG\_ADC\_SAMPLE\_TIME\_CONFIG\ \ \ \ \ \ \ \ 0x04}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00069}\mbox{\hyperlink{lcd_8h_a77555dd4c351f95f4933107e699e4e54}{00069}}\ \textcolor{preprocessor}{\#define\ LCD\_TOUCH\_REG\_PANEL\_SETUP\_TIME\_CONFIG\ \ \ \ \ \ \ 0x05}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00070}\mbox{\hyperlink{lcd_8h_aadb06c5ec240bdcec965ad7eb7731b41}{00070}}\ \textcolor{preprocessor}{\#define\ LCD\_TOUCH\_REG\_DELAY\_CONVERSION\_CONFIG\ \ \ \ \ \ \ 0x06}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00071}\mbox{\hyperlink{lcd_8h_ad3872f042751e567d8b38492f4a7589b}{00071}}\ \textcolor{preprocessor}{\#define\ LCD\_TOUCH\_REG\_TOUCH\_DETECT\_PULLUP\_CONFIG\ \ \ \ 0x07}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00072}\mbox{\hyperlink{lcd_8h_a37e98de082fcb29fafd1ebea01192a3a}{00072}}\ \textcolor{preprocessor}{\#define\ LCD\_TOUCH\_REG\_AUX\_MEASURE\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ 0x0A}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00073}\mbox{\hyperlink{lcd_8h_a0dbeb58b75e90bcbe8427eb367ff357a}{00073}}\ \textcolor{preprocessor}{\#define\ LCD\_TOUCH\_REG\_OP\_MODE\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0B}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00076}\mbox{\hyperlink{lcd_8h_ad6589cc9058c0ee8ed102a112527962a}{00076}}\ \textcolor{preprocessor}{\#define\ LCD\_TOUCH\_CMD\_MEASURE\_X\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x52}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00077}\mbox{\hyperlink{lcd_8h_afe6f49021ae8f7f50a07fb6e70cd2c17}{00077}}\ \textcolor{preprocessor}{\#define\ LCD\_TOUCH\_CMD\_MEASURE\_XY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x70}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00080}00080\ \textcolor{comment}{/*\ Types\ */}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00082}\mbox{\hyperlink{lcd_8h_ae2d3ef9fe9bafec54b4e98b993adffd4}{00082}}\ \textcolor{preprocessor}{\#define\ LCD\_COLOR(r,\ g,\ b)\ BGR565\_COLOR(r,\ g,\ b)}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00083}\mbox{\hyperlink{lcd_8h_abb736e338ad478e1e029d6e92d7c0dcb}{00083}}\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{struct_b_g_r565__t}{BGR565\_t}}\ \mbox{\hyperlink{lcd_8h_abb736e338ad478e1e029d6e92d7c0dcb}{LCD\_Color\_t}};}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00085}00085\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_l_e_g_u_a_n___p_a_c_k_e_d}{LEGUAN\_PACKED}}\ \{}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00086}\mbox{\hyperlink{struct_l_e_g_u_a_n___p_a_c_k_e_d_afc09d3b4303b185ada75cefa05e5d120}{00086}}\ \ \ \ \ \textcolor{keyword}{volatile}\ \mbox{\hyperlink{types_8h_a1daf700d608b9b747dd2ed7ab3966fd9}{reg16\_t}}\ \mbox{\hyperlink{struct_l_e_g_u_a_n___p_a_c_k_e_d_afc09d3b4303b185ada75cefa05e5d120}{cmd}};}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00087}00087\ \ \ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00088}\mbox{\hyperlink{struct_l_e_g_u_a_n___p_a_c_k_e_d_a580e96a6fb10cea2aca1368f93571205}{00088}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{volatile}\ uint8\_t\ \mbox{\hyperlink{struct_l_e_g_u_a_n___p_a_c_k_e_d_a580e96a6fb10cea2aca1368f93571205}{data8}};}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00089}\mbox{\hyperlink{struct_l_e_g_u_a_n___p_a_c_k_e_d_a9f272f5e00a1b86ee5fcee12f567ffeb}{00089}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{volatile}\ uint16\_t\ \mbox{\hyperlink{struct_l_e_g_u_a_n___p_a_c_k_e_d_a9f272f5e00a1b86ee5fcee12f567ffeb}{data16}};}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00090}00090\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00091}\mbox{\hyperlink{lcd_8h_aef494cd40a47eff0d2714e46f6d3977a}{00091}}\ \}\ \mbox{\hyperlink{lcd_8h_aef494cd40a47eff0d2714e46f6d3977a}{LCD\_MemoryMap\_t}};}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00093}00093\ \textcolor{keyword}{static\_assert}(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{lcd_8h_aef494cd40a47eff0d2714e46f6d3977a}{LCD\_MemoryMap\_t}})\ ==\ 4,\ \textcolor{stringliteral}{"{}LCDMemoryMap\ type\ definition\ invalid!"{}});}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00095}\mbox{\hyperlink{lcd_8h_a7703a228f008e6c09c3d0067229af7f3}{00095}}\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{lcd_8h_a7703a228f008e6c09c3d0067229af7f3}{LCD\_TouchCallback\_t}})(void);}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00097}\mbox{\hyperlink{struct_l_c_d___touch_position__t}{00097}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00098}\mbox{\hyperlink{struct_l_c_d___touch_position__t_a4dde988b1b2adba65ae3efa69f65d960}{00098}}\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{struct_l_c_d___touch_position__t_a4dde988b1b2adba65ae3efa69f65d960}{x}},\ y;}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00099}00099\ \}\ \mbox{\hyperlink{struct_l_c_d___touch_position__t}{LCD\_TouchPosition\_t}};}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00101}00101\ \textcolor{comment}{/*\ Functions\ */}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00109}00109\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{lcd_8h_a06dc74b5787c925fa78d0227ab9c39a9}{LCD\_Init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00116}00116\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lcd_8h_a53e12e1ed98109f17026a6fc57db911f}{LCD\_Stream}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keywordtype}{string},\ \textcolor{keywordtype}{bool}\ new\_line);}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00123}00123\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lcd_8h_afdac1008f1add8b3166d36bbfb72792d}{LCD\_SetForegroundColor}}(\mbox{\hyperlink{struct_r_g_b_a16__t}{color\_t}}\ color);}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00129}00129\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lcd_8h_a149f962c11c903a0b5e3b4a2db994cb6}{LCD\_SetBackgroundColor}}(\mbox{\hyperlink{struct_r_g_b_a16__t}{color\_t}}\ color);}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00135}00135\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lcd_8h_ae60d0b62d7eb3fa31266c095d7b3c245}{LCD\_Clear}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00143}00143\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{lcd_8h_adea5b6567853e2d003b188ccb99b3542}{LCD\_Pixel}}(uint16\_t\ x,\ uint16\_t\ y);}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00153}00153\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{lcd_8h_a262ac1b1eb22b4863f58d38d1c3d12ab}{LCD\_Rect}}(uint16\_t\ x,\ uint16\_t\ y,\ uint16\_t\ width,\ uint16\_t\ height);}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00163}00163\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{lcd_8h_a9a3c0265e7e314d45a87e5f92e76c56e}{LCD\_Line}}(uint16\_t\ x1,\ uint16\_t\ y1,\ uint16\_t\ x2,\ uint16\_t\ y2);}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00172}00172\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{lcd_8h_a46183fe6fb2f6321c24677fb3f973046}{LCD\_Circle}}(uint16\_t\ center\_x,\ uint16\_t\ center\_y,\ uint16\_t\ radius);}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00181}00181\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{lcd_8h_a474dc3a52e5be7c6ba12f1b1162174ba}{LCD\_Character}}(uint16\_t\ x,\ uint16\_t\ y,\ \textcolor{keywordtype}{char}\ c);}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00190}00190\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{lcd_8h_a8acdacdb4188f3a803f409c59948c13e}{LCD\_String}}(uint16\_t\ start\_x,\ uint16\_t\ start\_y,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keywordtype}{string});}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00197}00197\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{lcd_8h_a2a993e3b71f3fabd93bb16ccbde3fdec}{LCD\_StringContinue}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keywordtype}{string});}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00207}00207\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{lcd_8h_afdb1d421adb513aa15f9c835ae74709e}{LCD\_SetDrawArea}}(uint16\_t\ x1,\ uint16\_t\ y1,\ uint16\_t\ x2,\ uint16\_t\ y2);}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00212}00212\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lcd_8h_a174b611c37b8da9186253a7c76816690}{LCD\_EnableDrawMode}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00213}00213\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00220}00220\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{lcd_8h_ac31642692eaf3bb1b3d908fe4d74d86f}{LCD\_DrawBuffer}}(\mbox{\hyperlink{struct_b_g_r565__t}{LCD\_Color\_t}}\ *buffer,\ \textcolor{keywordtype}{size\_t}\ size);}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00228}00228\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{lcd_8h_a56bd391e963669e956744993c8c116b6}{LCD\_TouchInit}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00229}00229\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00233}00233\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lcd_8h_a1df7e73e98f181cf5536b8a7dc71aaae}{LCD\_TouchStartMeasurement}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00234}00234\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00239}00239\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lcd_8h_acaeddce91d7be4cfabb719dcae9abc92}{LCD\_TouchSetTouchCallback}}(\mbox{\hyperlink{lcd_8h_a7703a228f008e6c09c3d0067229af7f3}{LCD\_TouchCallback\_t}}\ callback);}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00240}00240\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00246}00246\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{lcd_8h_a7025b83fb04f4a85cc6f4f457b4fc1e7}{LCD\_TouchGetPosition}}(\mbox{\hyperlink{struct_l_c_d___touch_position__t}{LCD\_TouchPosition\_t}}\ *position);}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00247}00247\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00248}00248\ \textcolor{comment}{//NEU:}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00249}00249\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lcd_8h_a71476d1fde578e9f04ab006b966629dc}{LCD\_Set}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_b_g_r565__t}{LCD\_Color\_t}}\ *color);}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00250}00250\ }
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00251}00251\ \textcolor{preprocessor}{\#if\ defined(\_\_cplusplus)}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00252}00252\ \}}
+\DoxyCodeLine{\Hypertarget{lcd_8h_source_l00253}00253\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

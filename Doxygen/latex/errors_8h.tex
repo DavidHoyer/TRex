@@ -1,0 +1,140 @@
+\hypertarget{errors_8h}{}\doxysection{C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.11.0/\+TRex/lib/libleguan/include/common/errors.h File Reference}
+\label{errors_8h}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/common/errors.h@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/common/errors.h}}
+
+
+Error definitions.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{errors_8h_ac1c62eb0ddf16e51b0e72bbe9e72a442}{R\+\_\+\+SUCCESS}}(x)~((x) == 0)
+\item 
+\#define \mbox{\hyperlink{errors_8h_a4b83d7dde1cd52c38ebefd624a81f098}{R\+\_\+\+FAILURE}}(x)~((x) != 0)
+\item 
+\#define \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\+\_\+\+TRY}}(x)~if (\mbox{\hyperlink{errors_8h_a4b83d7dde1cd52c38ebefd624a81f098}{R\+\_\+\+FAILURE}}(x)) return x
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \{ \newline
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3af3d0d72febdcc6491554576ed31f686e}{RESULT\+\_\+\+SUCCESS}} = 0
+, \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3abaf29a23e022b24b9bf59bf384b2e29d}{RESULT\+\_\+\+INITIALIZATION\+\_\+\+ERROR}} = 1
+, \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a452818d0c5041b006773bf786538eea2}{RESULT\+\_\+\+INVALID\+\_\+\+ARGUMENTS}} = 2
+, \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a6eba643a2f16d19fb47f17e956e770f1}{RESULT\+\_\+\+ADC\+\_\+\+MEASUREMENT\+\_\+\+ERROR}} = 100
+, \newline
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3afbf63a09d7a01e587d4e2f8715e71844}{RESULT\+\_\+\+ADC\+\_\+\+INVALID\+\_\+\+VALUE}} = 101
+, \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3aef84e3c65541332595813112a7302340}{RESULT\+\_\+\+I2\+C\+\_\+\+READ\+\_\+\+ERROR}} = 200
+, \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a3d178297108e61d99fb25bbfc171bba4}{RESULT\+\_\+\+I2\+C\+\_\+\+WRITE\+\_\+\+ERROR}} = 201
+, \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3af5940e12e72296c224886a47db9f1aa8}{RESULT\+\_\+\+SERIAL\+\_\+\+READ\+\_\+\+ERROR}} = 300
+, \newline
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a7c253361ed64cbc4d00707d766445007}{RESULT\+\_\+\+SERIAL\+\_\+\+WRITE\+\_\+\+ERROR}} = 301
+, \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a3b0993618f06295dd115f6f9c94c8498}{RESULT\+\_\+\+SPI\+\_\+\+READ\+\_\+\+ERROR}} = 400
+, \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a32e86d5de3dc8dbf8d042e6fc9e280e5}{RESULT\+\_\+\+SPI\+\_\+\+WRITE\+\_\+\+ERROR}} = 401
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Error definitions. 
+
+\begin{DoxyAuthor}{Author}
+Nikolaij Saegesser 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{errors_8h_source}{errors.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{errors_8h_a4b83d7dde1cd52c38ebefd624a81f098}\label{errors_8h_a4b83d7dde1cd52c38ebefd624a81f098}} 
+\index{errors.h@{errors.h}!R\_FAILURE@{R\_FAILURE}}
+\index{R\_FAILURE@{R\_FAILURE}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{R\_FAILURE}{R\_FAILURE}}
+{\footnotesize\ttfamily \#define R\+\_\+\+FAILURE(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((x) != 0)}
+
+
+
+Definition at line \mbox{\hyperlink{errors_8h_source_l00060}{60}} of file \mbox{\hyperlink{errors_8h_source}{errors.\+h}}.
+
+\mbox{\Hypertarget{errors_8h_ac1c62eb0ddf16e51b0e72bbe9e72a442}\label{errors_8h_ac1c62eb0ddf16e51b0e72bbe9e72a442}} 
+\index{errors.h@{errors.h}!R\_SUCCESS@{R\_SUCCESS}}
+\index{R\_SUCCESS@{R\_SUCCESS}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{R\_SUCCESS}{R\_SUCCESS}}
+{\footnotesize\ttfamily \#define R\+\_\+\+SUCCESS(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((x) == 0)}
+
+
+
+Definition at line \mbox{\hyperlink{errors_8h_source_l00059}{59}} of file \mbox{\hyperlink{errors_8h_source}{errors.\+h}}.
+
+\mbox{\Hypertarget{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}\label{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}} 
+\index{errors.h@{errors.h}!R\_TRY@{R\_TRY}}
+\index{R\_TRY@{R\_TRY}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{R\_TRY}{R\_TRY}}
+{\footnotesize\ttfamily \#define R\+\_\+\+TRY(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~if (\mbox{\hyperlink{errors_8h_a4b83d7dde1cd52c38ebefd624a81f098}{R\+\_\+\+FAILURE}}(x)) return x}
+
+
+
+Definition at line \mbox{\hyperlink{errors_8h_source_l00061}{61}} of file \mbox{\hyperlink{errors_8h_source}{errors.\+h}}.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}\label{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}} 
+\index{errors.h@{errors.h}!result\_t@{result\_t}}
+\index{result\_t@{result\_t}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{result\_t}{result\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RESULT\_SUCCESS@{RESULT\_SUCCESS}!errors.h@{errors.h}}\index{errors.h@{errors.h}!RESULT\_SUCCESS@{RESULT\_SUCCESS}}}\mbox{\Hypertarget{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3af3d0d72febdcc6491554576ed31f686e}\label{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3af3d0d72febdcc6491554576ed31f686e}} 
+RESULT\+\_\+\+SUCCESS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RESULT\_INITIALIZATION\_ERROR@{RESULT\_INITIALIZATION\_ERROR}!errors.h@{errors.h}}\index{errors.h@{errors.h}!RESULT\_INITIALIZATION\_ERROR@{RESULT\_INITIALIZATION\_ERROR}}}\mbox{\Hypertarget{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3abaf29a23e022b24b9bf59bf384b2e29d}\label{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3abaf29a23e022b24b9bf59bf384b2e29d}} 
+RESULT\+\_\+\+INITIALIZATION\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RESULT\_INVALID\_ARGUMENTS@{RESULT\_INVALID\_ARGUMENTS}!errors.h@{errors.h}}\index{errors.h@{errors.h}!RESULT\_INVALID\_ARGUMENTS@{RESULT\_INVALID\_ARGUMENTS}}}\mbox{\Hypertarget{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a452818d0c5041b006773bf786538eea2}\label{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a452818d0c5041b006773bf786538eea2}} 
+RESULT\+\_\+\+INVALID\+\_\+\+ARGUMENTS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RESULT\_ADC\_MEASUREMENT\_ERROR@{RESULT\_ADC\_MEASUREMENT\_ERROR}!errors.h@{errors.h}}\index{errors.h@{errors.h}!RESULT\_ADC\_MEASUREMENT\_ERROR@{RESULT\_ADC\_MEASUREMENT\_ERROR}}}\mbox{\Hypertarget{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a6eba643a2f16d19fb47f17e956e770f1}\label{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a6eba643a2f16d19fb47f17e956e770f1}} 
+RESULT\+\_\+\+ADC\+\_\+\+MEASUREMENT\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RESULT\_ADC\_INVALID\_VALUE@{RESULT\_ADC\_INVALID\_VALUE}!errors.h@{errors.h}}\index{errors.h@{errors.h}!RESULT\_ADC\_INVALID\_VALUE@{RESULT\_ADC\_INVALID\_VALUE}}}\mbox{\Hypertarget{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3afbf63a09d7a01e587d4e2f8715e71844}\label{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3afbf63a09d7a01e587d4e2f8715e71844}} 
+RESULT\+\_\+\+ADC\+\_\+\+INVALID\+\_\+\+VALUE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RESULT\_I2C\_READ\_ERROR@{RESULT\_I2C\_READ\_ERROR}!errors.h@{errors.h}}\index{errors.h@{errors.h}!RESULT\_I2C\_READ\_ERROR@{RESULT\_I2C\_READ\_ERROR}}}\mbox{\Hypertarget{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3aef84e3c65541332595813112a7302340}\label{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3aef84e3c65541332595813112a7302340}} 
+RESULT\+\_\+\+I2\+C\+\_\+\+READ\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RESULT\_I2C\_WRITE\_ERROR@{RESULT\_I2C\_WRITE\_ERROR}!errors.h@{errors.h}}\index{errors.h@{errors.h}!RESULT\_I2C\_WRITE\_ERROR@{RESULT\_I2C\_WRITE\_ERROR}}}\mbox{\Hypertarget{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a3d178297108e61d99fb25bbfc171bba4}\label{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a3d178297108e61d99fb25bbfc171bba4}} 
+RESULT\+\_\+\+I2\+C\+\_\+\+WRITE\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RESULT\_SERIAL\_READ\_ERROR@{RESULT\_SERIAL\_READ\_ERROR}!errors.h@{errors.h}}\index{errors.h@{errors.h}!RESULT\_SERIAL\_READ\_ERROR@{RESULT\_SERIAL\_READ\_ERROR}}}\mbox{\Hypertarget{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3af5940e12e72296c224886a47db9f1aa8}\label{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3af5940e12e72296c224886a47db9f1aa8}} 
+RESULT\+\_\+\+SERIAL\+\_\+\+READ\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RESULT\_SERIAL\_WRITE\_ERROR@{RESULT\_SERIAL\_WRITE\_ERROR}!errors.h@{errors.h}}\index{errors.h@{errors.h}!RESULT\_SERIAL\_WRITE\_ERROR@{RESULT\_SERIAL\_WRITE\_ERROR}}}\mbox{\Hypertarget{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a7c253361ed64cbc4d00707d766445007}\label{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a7c253361ed64cbc4d00707d766445007}} 
+RESULT\+\_\+\+SERIAL\+\_\+\+WRITE\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RESULT\_SPI\_READ\_ERROR@{RESULT\_SPI\_READ\_ERROR}!errors.h@{errors.h}}\index{errors.h@{errors.h}!RESULT\_SPI\_READ\_ERROR@{RESULT\_SPI\_READ\_ERROR}}}\mbox{\Hypertarget{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a3b0993618f06295dd115f6f9c94c8498}\label{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a3b0993618f06295dd115f6f9c94c8498}} 
+RESULT\+\_\+\+SPI\+\_\+\+READ\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RESULT\_SPI\_WRITE\_ERROR@{RESULT\_SPI\_WRITE\_ERROR}!errors.h@{errors.h}}\index{errors.h@{errors.h}!RESULT\_SPI\_WRITE\_ERROR@{RESULT\_SPI\_WRITE\_ERROR}}}\mbox{\Hypertarget{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a32e86d5de3dc8dbf8d042e6fc9e280e5}\label{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a32e86d5de3dc8dbf8d042e6fc9e280e5}} 
+RESULT\+\_\+\+SPI\+\_\+\+WRITE\+\_\+\+ERROR&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{errors_8h_source_l00038}{38}} of file \mbox{\hyperlink{errors_8h_source}{errors.\+h}}.
+

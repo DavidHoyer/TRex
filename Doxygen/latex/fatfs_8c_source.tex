@@ -1,0 +1,40 @@
+\hypertarget{fatfs_8c_source}{}\doxysection{fatfs.\+c}
+\label{fatfs_8c_source}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/FATFS/App/fatfs.c@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/FATFS/App/fatfs.c}}
+\mbox{\hyperlink{fatfs_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00019}00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{fatfs_8h}{fatfs.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00021}\mbox{\hyperlink{fatfs_8c_ab5eb61c3cf0ce65bdb6f8973d2ddaca5}{00021}}\ uint8\_t\ \mbox{\hyperlink{fatfs_8c_ab5eb61c3cf0ce65bdb6f8973d2ddaca5}{retSD}};\ \ \ \ \textcolor{comment}{/*\ Return\ value\ for\ SD\ */}}
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00022}\mbox{\hyperlink{fatfs_8c_afe5c7eca20c5b43d6d1a3bda215941bb}{00022}}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{fatfs_8c_afe5c7eca20c5b43d6d1a3bda215941bb}{SDPath}}[4];\ \ \ \textcolor{comment}{/*\ SD\ logical\ drive\ path\ */}}
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00023}\mbox{\hyperlink{fatfs_8c_a23b38dea75a427fda6997c2a56014e95}{00023}}\ \mbox{\hyperlink{struct_f_a_t_f_s}{FATFS}}\ \mbox{\hyperlink{fatfs_8c_a23b38dea75a427fda6997c2a56014e95}{SDFatFS}};\ \ \ \ \textcolor{comment}{/*\ File\ system\ object\ for\ SD\ logical\ drive\ */}}
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00024}\mbox{\hyperlink{fatfs_8c_ac80bcdc112ce2f3eb3aea1e1e78f97d4}{00024}}\ \mbox{\hyperlink{struct_f_i_l}{FIL}}\ \mbox{\hyperlink{fatfs_8c_ac80bcdc112ce2f3eb3aea1e1e78f97d4}{SDFile}};\ \ \ \ \ \ \ \textcolor{comment}{/*\ File\ object\ for\ SD\ */}}
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00026}00026\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ Variables\ */}}
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00028}00028\ \textcolor{comment}{/*\ USER\ CODE\ END\ Variables\ */}}
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00030}\mbox{\hyperlink{fatfs_8c_a3712bd1d3043334cf9343acc30bd2604}{00030}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{fatfs_8c_a3712bd1d3043334cf9343acc30bd2604}{MX\_FATFS\_Init}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00031}00031\ \{}
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00032}00032\ \ \ \textcolor{comment}{/*\#\#\ FatFS:\ Link\ the\ SD\ driver\ \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#*/}}
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00033}00033\ \ \ \mbox{\hyperlink{fatfs_8c_ab5eb61c3cf0ce65bdb6f8973d2ddaca5}{retSD}}\ =\ \mbox{\hyperlink{ff__gen__drv_8c_a95dad42ba07bb7d48cb5fb5fd3c8ef6f}{FATFS\_LinkDriver}}(\&\mbox{\hyperlink{sd__diskio_8c_a1a12762eb7b74c246045197fa41f1296}{SD\_Driver}},\ \mbox{\hyperlink{fatfs_8c_afe5c7eca20c5b43d6d1a3bda215941bb}{SDPath}});}
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00035}00035\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ Init\ */}}
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00036}00036\ \ \ \textcolor{comment}{/*\ additional\ user\ code\ for\ init\ */}}
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00037}00037\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ Init\ */}}
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00045}\mbox{\hyperlink{fatfs_8c_af58b536abfd30f77213f4ecaf2ac52f5}{00045}}\ \mbox{\hyperlink{integer_8h_ad342ac907eb044443153a22f964bf0af}{DWORD}}\ \mbox{\hyperlink{fatfs_8c_af58b536abfd30f77213f4ecaf2ac52f5}{get\_fattime}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00046}00046\ \{}
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00047}00047\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ get\_fattime\ */}}
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00048}00048\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00049}00049\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ get\_fattime\ */}}
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00052}00052\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ Application\ */}}
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00054}00054\ \textcolor{comment}{/*\ USER\ CODE\ END\ Application\ */}}
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{fatfs_8c_source_l00056}00056\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

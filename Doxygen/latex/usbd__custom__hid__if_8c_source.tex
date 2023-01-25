@@ -1,0 +1,109 @@
+\hypertarget{usbd__custom__hid__if_8c_source}{}\doxysection{usbd\+\_\+custom\+\_\+hid\+\_\+if.\+c}
+\label{usbd__custom__hid__if_8c_source}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/USB\_DEVICE/App/usbd\_custom\_hid\_if.c@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/USB\_DEVICE/App/usbd\_custom\_hid\_if.c}}
+\mbox{\hyperlink{usbd__custom__hid__if_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00001}00001\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ Header\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00020}00020\ \textcolor{comment}{/*\ USER\ CODE\ END\ Header\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00022}00022\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{usbd__custom__hid__if_8h}{usbd\_custom\_hid\_if.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00025}00025\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ INCLUDE\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00027}00027\ \textcolor{comment}{/*\ USER\ CODE\ END\ INCLUDE\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00029}00029\ \textcolor{comment}{/*\ Private\ typedef\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00030}00030\ \textcolor{comment}{/*\ Private\ define\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00031}00031\ \textcolor{comment}{/*\ Private\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00033}00033\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ PV\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00034}00034\ \textcolor{comment}{/*\ Private\ variables\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00036}00036\ \textcolor{comment}{/*\ USER\ CODE\ END\ PV\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00052}00052\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ PRIVATE\_TYPES\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00054}00054\ \textcolor{comment}{/*\ USER\ CODE\ END\ PRIVATE\_TYPES\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00065}00065\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ PRIVATE\_DEFINES\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00067}00067\ \textcolor{comment}{/*\ USER\ CODE\ END\ PRIVATE\_DEFINES\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00078}00078\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ PRIVATE\_MACRO\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00080}00080\ \textcolor{comment}{/*\ USER\ CODE\ END\ PRIVATE\_MACRO\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00092}00092\ \_\_ALIGN\_BEGIN\ \textcolor{keyword}{static}\ uint8\_t\ CUSTOM\_HID\_ReportDesc\_FS[\mbox{\hyperlink{group___u_s_b_d___c_u_s_t_o_m___h_i_d___exported___defines_ga662e60c2bbe142d171a04515a90b8b60}{USBD\_CUSTOM\_HID\_REPORT\_DESC\_SIZE}}]\ \mbox{\hyperlink{stm32h7xx__hal__def_8h_aaa12b03c58e2eb296bd7aa915ee540f3}{\_\_ALIGN\_END}}\ =}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00093}00093\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00094}00094\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00095}00095\ \ \ 0x00,}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00096}00096\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00097}00097\ \ \ 0xC0\ \ \ \ \textcolor{comment}{/*\ \ \ \ \ END\_COLLECTION\ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00098}00098\ \};}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00100}00100\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ PRIVATE\_VARIABLES\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00102}00102\ \textcolor{comment}{/*\ USER\ CODE\ END\ PRIVATE\_VARIABLES\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00112}00112\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___c_u_s_t_o_m___h_i_d___exported___variables_gafe8a2d9e10b33d5e7906f9f04f95358e}{hUsbDeviceFS}};}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00114}00114\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ EXPORTED\_VARIABLES\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00116}00116\ \textcolor{comment}{/*\ USER\ CODE\ END\ EXPORTED\_VARIABLES\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00126}00126\ \textcolor{keyword}{static}\ int8\_t\ CUSTOM\_HID\_Init\_FS(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00127}00127\ \textcolor{keyword}{static}\ int8\_t\ CUSTOM\_HID\_DeInit\_FS(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00128}00128\ \textcolor{keyword}{static}\ int8\_t\ CUSTOM\_HID\_OutEvent\_FS(uint8\_t\ event\_idx,\ uint8\_t\ state);}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00134}\mbox{\hyperlink{group___u_s_b_d___c_u_s_t_o_m___h_i_d_gaf2e06e617708f53f7e62645be96ea107}{00134}}\ \mbox{\hyperlink{struct___u_s_b_d___c_u_s_t_o_m___h_i_d___itf}{USBD\_CUSTOM\_HID\_ItfTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___c_u_s_t_o_m___h_i_d_gaf2e06e617708f53f7e62645be96ea107}{USBD\_CustomHID\_fops\_FS}}\ =}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00135}00135\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00136}00136\ \ \ CUSTOM\_HID\_ReportDesc\_FS,}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00137}00137\ \ \ CUSTOM\_HID\_Init\_FS,}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00138}00138\ \ \ CUSTOM\_HID\_DeInit\_FS,}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00139}00139\ \ \ CUSTOM\_HID\_OutEvent\_FS}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00140}00140\ \};}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00147}00147\ \textcolor{comment}{/*\ Private\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00153}00153\ \textcolor{keyword}{static}\ int8\_t\ CUSTOM\_HID\_Init\_FS(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00154}00154\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00155}00155\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ 4\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00156}00156\ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a82f83a0537693d71dd31a4ae9960d737}{USBD\_OK}});}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00157}00157\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ 4\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00158}00158\ \}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00164}00164\ \textcolor{keyword}{static}\ int8\_t\ CUSTOM\_HID\_DeInit\_FS(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00165}00165\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00166}00166\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ 5\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00167}00167\ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a82f83a0537693d71dd31a4ae9960d737}{USBD\_OK}});}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00168}00168\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ 5\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00169}00169\ \}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00177}00177\ \textcolor{keyword}{static}\ int8\_t\ CUSTOM\_HID\_OutEvent\_FS(uint8\_t\ event\_idx,\ uint8\_t\ state)}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00178}00178\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00179}00179\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ 6\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00180}00180\ \ \ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a86d500a34c624c2cae56bc25a31b12f3}{UNUSED}}(event\_idx);}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00181}00181\ \ \ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a86d500a34c624c2cae56bc25a31b12f3}{UNUSED}}(state);}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00183}00183\ \ \ \textcolor{comment}{/*\ Start\ next\ USB\ packet\ transfer\ once\ data\ processing\ is\ completed\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00184}00184\ \ \ \mbox{\hyperlink{group___u_s_b___c_o_r_e___exported___functions_gab63ac79f0250fd6243f51d6d22917135}{USBD\_CUSTOM\_HID\_ReceivePacket}}(\&\mbox{\hyperlink{group___u_s_b_d___c_u_s_t_o_m___h_i_d___exported___variables_gafe8a2d9e10b33d5e7906f9f04f95358e}{hUsbDeviceFS}});}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00186}00186\ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a82f83a0537693d71dd31a4ae9960d737}{USBD\_OK}});}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00187}00187\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ 6\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00188}00188\ \}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00190}00190\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ 7\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00197}00197\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00198}00198\ \textcolor{comment}{static\ int8\_t\ USBD\_CUSTOM\_HID\_SendReport\_FS(uint8\_t\ *report,\ uint16\_t\ len)}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00199}00199\ \textcolor{comment}{\{}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00200}00200\ \textcolor{comment}{\ \ return\ USBD\_CUSTOM\_HID\_SendReport(\&hUsbDeviceFS,\ report,\ len);}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00201}00201\ \textcolor{comment}{\}}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00202}00202\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00203}00203\ \textcolor{comment}{/*\ USER\ CODE\ END\ 7\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00205}00205\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ PRIVATE\_FUNCTIONS\_IMPLEMENTATION\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00207}00207\ \textcolor{comment}{/*\ USER\ CODE\ END\ PRIVATE\_FUNCTIONS\_IMPLEMENTATION\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00220}00220\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+\DoxyCodeLine{\Hypertarget{usbd__custom__hid__if_8c_source_l00221}00221\ }
+
+\end{DoxyCode}

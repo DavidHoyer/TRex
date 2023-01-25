@@ -1,0 +1,477 @@
+\hypertarget{usbd__core_8c_source}{}\doxysection{usbd\+\_\+core.\+c}
+\label{usbd__core_8c_source}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Middlewares/ST/STM32\_USB\_Device\_Library/Core/Src/usbd\_core.c@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Middlewares/ST/STM32\_USB\_Device\_Library/Core/Src/usbd\_core.c}}
+\mbox{\hyperlink{usbd__core_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00020}00020\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{usbd__core_8h}{usbd\_core.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00089}\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_gad35f19488381872e83fa7b23d96589e7}{00089}}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___c_o_r_e___private___functions_gad35f19488381872e83fa7b23d96589e7}{USBD\_Init}}(\mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ *pdev,}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_u_s_b_d___descriptors_type_def}{USBD\_DescriptorsTypeDef}}\ *pdesc,\ uint8\_t\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00091}00091\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00092}00092\ \ \ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ ret;}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00094}00094\ \ \ \textcolor{comment}{/*\ Check\ whether\ the\ USB\ Host\ handle\ is\ valid\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00095}00095\ \ \ \textcolor{keywordflow}{if}\ (pdev\ ==\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00096}00096\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00097}00097\ \textcolor{preprocessor}{\#if\ (USBD\_DEBUG\_LEVEL\ >\ 1U)}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00098}00098\ \ \ \ \ \mbox{\hyperlink{group___u_s_b_d___c_o_n_f___exported___macros_ga077a76b66987212e70c3c4db2ca73a8b}{USBD\_ErrLog}}(\textcolor{stringliteral}{"{}Invalid\ Device\ handle"{}});}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00099}00099\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00100}00100\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a05db9cbdbff7d5bb866a9d9f3dcdbe8e}{USBD\_FAIL}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00101}00101\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00103}00103\ \ \ \textcolor{comment}{/*\ Unlink\ previous\ class\ resources\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00104}00104\ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}\ =\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00105}00105\ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a8d75dbe9027a94780bc2f31670400613}{pUserData}}\ =\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00106}00106\ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_af50e3332f9c930a5dc8bfbc7e603d896}{pConfDesc}}\ =\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00108}00108\ \ \ \textcolor{comment}{/*\ Assign\ USBD\ Descriptors\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00109}00109\ \ \ \textcolor{keywordflow}{if}\ (pdesc\ !=\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00110}00110\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00111}00111\ \ \ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a7ea3b83f920f5193c33fe62b3db394bd}{pDesc}}\ =\ pdesc;}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00112}00112\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00114}00114\ \ \ \textcolor{comment}{/*\ Set\ Device\ initial\ State\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00115}00115\ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a874b75463e24982ac9ca5c54ed18b32a}{dev\_state}}\ =\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga423cf90a532bc936797b17a49ae6848e}{USBD\_STATE\_DEFAULT}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00116}00116\ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a1e6927fa1486224044e568f9c370519b}{id}}\ =\ id;}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00118}00118\ \ \ \textcolor{comment}{/*\ Initialize\ low\ level\ driver\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00119}00119\ \ \ ret\ =\ \mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_ga24b61e95db7e4c7ad30a835e8d905943}{USBD\_LL\_Init}}(pdev);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00121}00121\ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00122}00122\ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00130}\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_ga9d0ee86f2309eef71d3233080752dea2}{00130}}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___c_o_r_e___private___functions_ga9d0ee86f2309eef71d3233080752dea2}{USBD\_DeInit}}(\mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ *pdev)}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00131}00131\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00132}00132\ \ \ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ ret;}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00134}00134\ \ \ \textcolor{comment}{/*\ Disconnect\ the\ USB\ Device\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00135}00135\ \ \ (void)\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_gac522b28139c1868a2e24d044fc8288fd}{USBD\_LL\_Stop}}(pdev);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00137}00137\ \ \ \textcolor{comment}{/*\ Set\ Default\ State\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00138}00138\ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a874b75463e24982ac9ca5c54ed18b32a}{dev\_state}}\ =\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga423cf90a532bc936797b17a49ae6848e}{USBD\_STATE\_DEFAULT}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00140}00140\ \ \ \textcolor{comment}{/*\ Free\ Class\ Resources\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00141}00141\ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}\ !=\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00142}00142\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00143}00143\ \ \ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_a0c3e05262fdf4d85c4efaf53491887b0}{DeInit}}(pdev,\ (uint8\_t)pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a3fcae06c2c0b8dfdb1db931cf1a4be56}{dev\_config}});}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00144}00144\ \ \ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}\ =\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00145}00145\ \ \ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a8d75dbe9027a94780bc2f31670400613}{pUserData}}\ =\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00146}00146\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00148}00148\ \ \ \textcolor{comment}{/*\ Free\ Device\ descriptors\ resources\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00149}00149\ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a7ea3b83f920f5193c33fe62b3db394bd}{pDesc}}\ =\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00150}00150\ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_af50e3332f9c930a5dc8bfbc7e603d896}{pConfDesc}}\ =\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00152}00152\ \ \ \textcolor{comment}{/*\ DeInitialize\ low\ level\ driver\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00153}00153\ \ \ ret\ =\ \mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_gaae9bfb6a27b11f232fc55a1d1b28be24}{USBD\_LL\_DeInit}}(pdev);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00155}00155\ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00156}00156\ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00165}\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_ga392f73829f6127b9f42f03dd1401a1ef}{00165}}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___c_o_r_e___private___functions_ga392f73829f6127b9f42f03dd1401a1ef}{USBD\_RegisterClass}}(\mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ *pdev,\ \mbox{\hyperlink{struct___device__cb}{USBD\_ClassTypeDef}}\ *pclass)}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00166}00166\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00167}00167\ \ \ uint16\_t\ len\ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00169}00169\ \ \ \textcolor{keywordflow}{if}\ (pclass\ ==\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00170}00170\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00171}00171\ \textcolor{preprocessor}{\#if\ (USBD\_DEBUG\_LEVEL\ >\ 1U)}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00172}00172\ \ \ \ \ \mbox{\hyperlink{group___u_s_b_d___c_o_n_f___exported___macros_ga077a76b66987212e70c3c4db2ca73a8b}{USBD\_ErrLog}}(\textcolor{stringliteral}{"{}Invalid\ Class\ handle"{}});}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00173}00173\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00174}00174\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a05db9cbdbff7d5bb866a9d9f3dcdbe8e}{USBD\_FAIL}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00175}00175\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00177}00177\ \ \ \textcolor{comment}{/*\ link\ the\ class\ to\ the\ USB\ Device\ handle\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00178}00178\ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}\ =\ pclass;}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00180}00180\ \ \ \textcolor{comment}{/*\ Get\ Device\ Configuration\ Descriptor\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00181}00181\ \textcolor{preprocessor}{\#ifdef\ USE\_USB\_HS}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00182}00182\ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_aa2767bf8230684e1416241ef5c593498}{GetHSConfigDescriptor}}\ !=\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00183}00183\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00184}00184\ \ \ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_af50e3332f9c930a5dc8bfbc7e603d896}{pConfDesc}}\ =\ (\textcolor{keywordtype}{void}\ *)pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_aa2767bf8230684e1416241ef5c593498}{GetHSConfigDescriptor}}(\&len);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00185}00185\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00186}00186\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{/*\ Default\ USE\_USB\_FS\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00187}00187\ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_a225f00cdd8133b12d9c7424b75397e77}{GetFSConfigDescriptor}}\ !=\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00188}00188\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00189}00189\ \ \ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_af50e3332f9c930a5dc8bfbc7e603d896}{pConfDesc}}\ =\ (\textcolor{keywordtype}{void}\ *)pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_a225f00cdd8133b12d9c7424b75397e77}{GetFSConfigDescriptor}}(\&len);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00190}00190\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00191}00191\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ USE\_USB\_FS\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00193}00193\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a82f83a0537693d71dd31a4ae9960d737}{USBD\_OK}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00194}00194\ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00202}\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_ga47396105b10467da14d07d21b60cc5f9}{00202}}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___c_o_r_e___private___functions_ga47396105b10467da14d07d21b60cc5f9}{USBD\_Start}}(\mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ *pdev)}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00203}00203\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00204}00204\ \ \ \textcolor{comment}{/*\ Start\ the\ low\ level\ driver\ \ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00205}00205\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_ga43e53e424e9850d8261e1f9a1be53348}{USBD\_LL\_Start}}(pdev);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00206}00206\ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00214}\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_ga589cc62baf6dcff5612ec1f51422d28e}{00214}}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___c_o_r_e___private___functions_ga589cc62baf6dcff5612ec1f51422d28e}{USBD\_Stop}}(\mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ *pdev)}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00215}00215\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00216}00216\ \ \ \textcolor{comment}{/*\ Disconnect\ USB\ Device\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00217}00217\ \ \ (void)\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_gac522b28139c1868a2e24d044fc8288fd}{USBD\_LL\_Stop}}(pdev);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00219}00219\ \ \ \textcolor{comment}{/*\ Free\ Class\ Resources\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00220}00220\ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}\ !=\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00221}00221\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00222}00222\ \ \ \ \ (void)pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_a0c3e05262fdf4d85c4efaf53491887b0}{DeInit}}(pdev,\ (uint8\_t)pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a3fcae06c2c0b8dfdb1db931cf1a4be56}{dev\_config}});}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00223}00223\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00224}00224\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00225}00225\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a82f83a0537693d71dd31a4ae9960d737}{USBD\_OK}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00226}00226\ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00234}\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_ga35f08f4623530af369ab0c326a814512}{00234}}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___c_o_r_e___private___functions_ga35f08f4623530af369ab0c326a814512}{USBD\_RunTestMode}}(\mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ \ *pdev)}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00235}00235\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00236}00236\ \ \ \textcolor{comment}{/*\ Prevent\ unused\ argument\ compilation\ warning\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00237}00237\ \ \ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a86d500a34c624c2cae56bc25a31b12f3}{UNUSED}}(pdev);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00238}00238\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00239}00239\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a82f83a0537693d71dd31a4ae9960d737}{USBD\_OK}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00240}00240\ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00241}00241\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00250}\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_ga0b525aaf2f49fd59eadfb62ceaf4c65c}{00250}}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___c_o_r_e___private___functions_ga0b525aaf2f49fd59eadfb62ceaf4c65c}{USBD\_SetClassConfig}}(\mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ *pdev,\ uint8\_t\ cfgidx)}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00251}00251\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00252}00252\ \ \ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ ret\ =\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a05db9cbdbff7d5bb866a9d9f3dcdbe8e}{USBD\_FAIL}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00253}00253\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00254}00254\ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}\ !=\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00255}00255\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00256}00256\ \ \ \ \ \textcolor{comment}{/*\ Set\ configuration\ and\ Start\ the\ Class\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00257}00257\ \ \ \ \ ret\ =\ (\mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}})pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_a6766e3508b1115ff28f972cd38ca685e}{Init}}(pdev,\ cfgidx);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00258}00258\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00260}00260\ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00261}00261\ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00270}\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_ga0a67d4cc64a52a0562f601e7d8467bd1}{00270}}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___c_o_r_e___private___functions_ga0a67d4cc64a52a0562f601e7d8467bd1}{USBD\_ClrClassConfig}}(\mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ *pdev,\ uint8\_t\ cfgidx)}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00271}00271\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00272}00272\ \ \ \textcolor{comment}{/*\ Clear\ configuration\ and\ De-\/initialize\ the\ Class\ process\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00273}00273\ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}\ !=\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00274}00274\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00275}00275\ \ \ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_a0c3e05262fdf4d85c4efaf53491887b0}{DeInit}}(pdev,\ cfgidx);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00276}00276\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00277}00277\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00278}00278\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a82f83a0537693d71dd31a4ae9960d737}{USBD\_OK}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00279}00279\ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00280}00280\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00281}00281\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00288}\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_gabdcdfefaffa1651c77a38d08eb3a82ce}{00288}}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___c_o_r_e___private___functions_gabdcdfefaffa1651c77a38d08eb3a82ce}{USBD\_LL\_SetupStage}}(\mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ *pdev,\ uint8\_t\ *psetup)}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00289}00289\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00290}00290\ \ \ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ ret;}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00291}00291\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00292}00292\ \ \ \mbox{\hyperlink{group___u_s_b_d___r_e_q___exported___functions_prototype_ga54a17c9993f3422dce6dce7e9d8614b9}{USBD\_ParseSetupRequest}}(\&pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a09d13105dd91665d0f55c9f71ffc3802}{request}},\ psetup);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00293}00293\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00294}00294\ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_ac6c60ab6ada181a2bca1aea925bd1931}{ep0\_state}}\ =\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_gaab5c8345e55b545413c7c6d0da6787e6}{USBD\_EP0\_SETUP}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00295}00295\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00296}00296\ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a970d5cabc332f92d40e77197792794e7}{ep0\_data\_len}}\ =\ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a09d13105dd91665d0f55c9f71ffc3802}{request}}.\mbox{\hyperlink{structusb__setup__req_a496c03443b177fd2e6c93616064d2934}{wLength}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00297}00297\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00298}00298\ \ \ \textcolor{keywordflow}{switch}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a09d13105dd91665d0f55c9f71ffc3802}{request}}.\mbox{\hyperlink{structusb__setup__req_ae9d47c1f5d3b81fa2f00e3177c02f8ba}{bmRequest}}\ \&\ 0x1FU)}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00299}00299\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00300}00300\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_gaa3981956837e183c8d5036b8d4eecfc2}{USB\_REQ\_RECIPIENT\_DEVICE}}:}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00301}00301\ \ \ \ \ \ \ ret\ =\ \mbox{\hyperlink{group___u_s_b_d___r_e_q___exported___functions_prototype_gac40d4171a55983d25bbbb7b8c3fce95e}{USBD\_StdDevReq}}(pdev,\ \&pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a09d13105dd91665d0f55c9f71ffc3802}{request}});}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00302}00302\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00303}00303\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00304}00304\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_gafc23203bff82c847330ff2780404cf02}{USB\_REQ\_RECIPIENT\_INTERFACE}}:}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00305}00305\ \ \ \ \ \ \ ret\ =\ \mbox{\hyperlink{group___u_s_b_d___r_e_q___exported___functions_prototype_gac1c8cd8a59f1c99887f131a4299f31b1}{USBD\_StdItfReq}}(pdev,\ \&pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a09d13105dd91665d0f55c9f71ffc3802}{request}});}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00306}00306\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00307}00307\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00308}00308\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_gaf0829f3adbba727214bee58d5914cda1}{USB\_REQ\_RECIPIENT\_ENDPOINT}}:}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00309}00309\ \ \ \ \ \ \ ret\ =\ \mbox{\hyperlink{group___u_s_b_d___r_e_q___exported___functions_prototype_ga46d1a0a4e23e1e8c80167dcdc59b2538}{USBD\_StdEPReq}}(pdev,\ \&pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a09d13105dd91665d0f55c9f71ffc3802}{request}});}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00310}00310\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00311}00311\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00312}00312\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00313}00313\ \ \ \ \ \ \ ret\ =\ \mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_gabc2b4a7c8307e04955b015fd32057ec7}{USBD\_LL\_StallEP}}(pdev,\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a09d13105dd91665d0f55c9f71ffc3802}{request}}.\mbox{\hyperlink{structusb__setup__req_ae9d47c1f5d3b81fa2f00e3177c02f8ba}{bmRequest}}\ \&\ 0x80U));}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00314}00314\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00315}00315\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00316}00316\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00317}00317\ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00318}00318\ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00319}00319\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00328}\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_ga1ab0439714328647692719a2b1c9e689}{00328}}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___c_o_r_e___private___functions_ga1ab0439714328647692719a2b1c9e689}{USBD\_LL\_DataOutStage}}(\mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ *pdev,}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ epnum,\ uint8\_t\ *pdata)}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00330}00330\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00331}00331\ \ \ \mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def}{USBD\_EndpointTypeDef}}\ *pep;}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00332}00332\ \ \ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ ret;}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00333}00333\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00334}00334\ \ \ \textcolor{keywordflow}{if}\ (epnum\ ==\ 0U)}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00335}00335\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00336}00336\ \ \ \ \ pep\ =\ \&pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a1cdfed3112c9a40bf8e432a1b94fe9ef}{ep\_out}}[0];}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00337}00337\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00338}00338\ \ \ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_ac6c60ab6ada181a2bca1aea925bd1931}{ep0\_state}}\ ==\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga8858f76b538f81298e51118955df8b26}{USBD\_EP0\_DATA\_OUT}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00339}00339\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00340}00340\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pep-\/>\mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def_a524922b82186642f14ab03e3157e426d}{rem\_length}}\ >\ pep-\/>\mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def_a876f0bbf157a6bceb63630c99da8b077}{maxpacket}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00341}00341\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00342}00342\ \ \ \ \ \ \ \ \ pep-\/>\mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def_a524922b82186642f14ab03e3157e426d}{rem\_length}}\ -\/=\ pep-\/>\mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def_a876f0bbf157a6bceb63630c99da8b077}{maxpacket}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00343}00343\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00344}00344\ \ \ \ \ \ \ \ \ (void)\mbox{\hyperlink{group___u_s_b_d___i_o_r_e_q___exported___functions_prototype_ga7a4099056d182f80c67cd92f63322e55}{USBD\_CtlContinueRx}}(pdev,\ pdata,\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___macros_ga3acffbd305ee72dcd4593c0d8af64a4f}{MIN}}(pep-\/>\mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def_a524922b82186642f14ab03e3157e426d}{rem\_length}},\ pep-\/>\mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def_a876f0bbf157a6bceb63630c99da8b077}{maxpacket}}));}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00345}00345\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00346}00346\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00347}00347\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00348}00348\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a874b75463e24982ac9ca5c54ed18b32a}{dev\_state}}\ ==\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga4d1e58829e5878c4d2c23eac1f192358}{USBD\_STATE\_CONFIGURED}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00349}00349\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_ae4486c709f99410000a62641d12be2c1}{EP0\_RxReady}}\ !=\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_ae4486c709f99410000a62641d12be2c1}{EP0\_RxReady}}(pdev);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00354}00354\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00355}00355\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00356}00356\ \ \ \ \ \ \ \ \ (void)\mbox{\hyperlink{group___u_s_b_d___i_o_r_e_q___exported___functions_prototype_ga19e53947fc912c43bcee2c7d7429e8ee}{USBD\_CtlSendStatus}}(pdev);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00357}00357\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00358}00358\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00359}00359\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00360}00360\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00361}00361\ \textcolor{preprocessor}{\#if\ 0}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00362}00362\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_ac6c60ab6ada181a2bca1aea925bd1931}{ep0\_state}}\ ==\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga3193c3361fc6fc697a84a43d58cc8789}{USBD\_EP0\_STATUS\_OUT}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00363}00363\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00364}00364\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00365}00365\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ *\ STATUS\ PHASE\ completed,\ update\ ep0\_state\ to\ idle}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00366}00366\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00367}00367\ \ \ \ \ \ \ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_ac6c60ab6ada181a2bca1aea925bd1931}{ep0\_state}}\ =\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga00b51e0aec63bf5d4e6e85241b74a320}{USBD\_EP0\_IDLE}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00368}00368\ \ \ \ \ \ \ \ \ (void)\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_gabc2b4a7c8307e04955b015fd32057ec7}{USBD\_LL\_StallEP}}(pdev,\ 0U);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00369}00369\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00370}00370\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00371}00371\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00372}00372\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00373}00373\ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00374}00374\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00375}00375\ \ \ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a874b75463e24982ac9ca5c54ed18b32a}{dev\_state}}\ ==\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga4d1e58829e5878c4d2c23eac1f192358}{USBD\_STATE\_CONFIGURED}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00376}00376\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00377}00377\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_a247be006602782de0a36d0bfb8403e3c}{DataOut}}\ !=\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00378}00378\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00379}00379\ \ \ \ \ \ \ \ \ ret\ =\ (\mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}})pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_a247be006602782de0a36d0bfb8403e3c}{DataOut}}(pdev,\ epnum);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00380}00380\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00381}00381\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ret\ !=\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a82f83a0537693d71dd31a4ae9960d737}{USBD\_OK}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00382}00382\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00384}00384\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00385}00385\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00386}00386\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00387}00387\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00388}00388\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00389}00389\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a82f83a0537693d71dd31a4ae9960d737}{USBD\_OK}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00390}00390\ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00391}00391\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00399}\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_ga09597f0a303e0148d9f291477f7c4439}{00399}}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___c_o_r_e___private___functions_ga09597f0a303e0148d9f291477f7c4439}{USBD\_LL\_DataInStage}}(\mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ *pdev,}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ epnum,\ uint8\_t\ *pdata)}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00401}00401\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00402}00402\ \ \ \mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def}{USBD\_EndpointTypeDef}}\ *pep;}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00403}00403\ \ \ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ ret;}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00404}00404\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00405}00405\ \ \ \textcolor{keywordflow}{if}\ (epnum\ ==\ 0U)}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00406}00406\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00407}00407\ \ \ \ \ pep\ =\ \&pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a4274d52d9287db59aa87d1e31e0e7e47}{ep\_in}}[0];}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00408}00408\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00409}00409\ \ \ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_ac6c60ab6ada181a2bca1aea925bd1931}{ep0\_state}}\ ==\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga16deac9117aa164a6fd3757ad177d0d6}{USBD\_EP0\_DATA\_IN}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00410}00410\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00411}00411\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pep-\/>\mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def_a524922b82186642f14ab03e3157e426d}{rem\_length}}\ >\ pep-\/>\mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def_a876f0bbf157a6bceb63630c99da8b077}{maxpacket}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00412}00412\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00413}00413\ \ \ \ \ \ \ \ \ pep-\/>\mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def_a524922b82186642f14ab03e3157e426d}{rem\_length}}\ -\/=\ pep-\/>\mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def_a876f0bbf157a6bceb63630c99da8b077}{maxpacket}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00414}00414\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00415}00415\ \ \ \ \ \ \ \ \ (void)\mbox{\hyperlink{group___u_s_b_d___i_o_r_e_q___exported___functions_prototype_ga366c4d7f3e4c3f6011564131cc44b8e2}{USBD\_CtlContinueSendData}}(pdev,\ pdata,\ pep-\/>\mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def_a524922b82186642f14ab03e3157e426d}{rem\_length}});}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00416}00416\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00417}00417\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Prepare\ endpoint\ for\ premature\ end\ of\ transfer\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00418}00418\ \ \ \ \ \ \ \ \ (void)\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_ga7018483ecc085a931fd7bf5353030b99}{USBD\_LL\_PrepareReceive}}(pdev,\ 0U,\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},\ 0U);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00419}00419\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00420}00420\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00421}00421\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00422}00422\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ last\ packet\ is\ MPS\ multiple,\ so\ send\ ZLP\ packet\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00423}00423\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((pep-\/>\mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def_a876f0bbf157a6bceb63630c99da8b077}{maxpacket}}\ ==\ pep-\/>\mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def_a524922b82186642f14ab03e3157e426d}{rem\_length}})\ \&\&}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00424}00424\ \ \ \ \ \ \ \ \ \ \ \ \ (pep-\/>\mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def_a8965ead14800d063ec5ed4fdab7b78a3}{total\_length}}\ >=\ pep-\/>\mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def_a876f0bbf157a6bceb63630c99da8b077}{maxpacket}})\ \&\&}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00425}00425\ \ \ \ \ \ \ \ \ \ \ \ \ (pep-\/>\mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def_a8965ead14800d063ec5ed4fdab7b78a3}{total\_length}}\ <\ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a970d5cabc332f92d40e77197792794e7}{ep0\_data\_len}}))}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00426}00426\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00427}00427\ \ \ \ \ \ \ \ \ \ \ (void)\mbox{\hyperlink{group___u_s_b_d___i_o_r_e_q___exported___functions_prototype_ga366c4d7f3e4c3f6011564131cc44b8e2}{USBD\_CtlContinueSendData}}(pdev,\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},\ 0U);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00428}00428\ \ \ \ \ \ \ \ \ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a970d5cabc332f92d40e77197792794e7}{ep0\_data\_len}}\ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00429}00429\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00430}00430\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Prepare\ endpoint\ for\ premature\ end\ of\ transfer\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00431}00431\ \ \ \ \ \ \ \ \ \ \ (void)\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_ga7018483ecc085a931fd7bf5353030b99}{USBD\_LL\_PrepareReceive}}(pdev,\ 0U,\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},\ 0U);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00432}00432\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00433}00433\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00434}00434\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00435}00435\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a874b75463e24982ac9ca5c54ed18b32a}{dev\_state}}\ ==\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga4d1e58829e5878c4d2c23eac1f192358}{USBD\_STATE\_CONFIGURED}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00436}00436\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00437}00437\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_ad1104933798bae825247d5c03e5694d0}{EP0\_TxSent}}\ !=\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00438}00438\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00439}00439\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_ad1104933798bae825247d5c03e5694d0}{EP0\_TxSent}}(pdev);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00440}00440\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00441}00441\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00442}00442\ \ \ \ \ \ \ \ \ \ \ (void)\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_gabc2b4a7c8307e04955b015fd32057ec7}{USBD\_LL\_StallEP}}(pdev,\ 0x80U);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00443}00443\ \ \ \ \ \ \ \ \ \ \ (void)\mbox{\hyperlink{group___u_s_b_d___i_o_r_e_q___exported___functions_prototype_gad5e847f89ca67a6b2154a72d0aa25e9a}{USBD\_CtlReceiveStatus}}(pdev);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00444}00444\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00445}00445\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00446}00446\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00447}00447\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00448}00448\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00449}00449\ \textcolor{preprocessor}{\#if\ 0}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00450}00450\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_ac6c60ab6ada181a2bca1aea925bd1931}{ep0\_state}}\ ==\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga8c7250413b575970d97a4c3be52f1c69}{USBD\_EP0\_STATUS\_IN}})\ ||}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00451}00451\ \ \ \ \ \ \ \ \ \ \ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_ac6c60ab6ada181a2bca1aea925bd1931}{ep0\_state}}\ ==\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga00b51e0aec63bf5d4e6e85241b74a320}{USBD\_EP0\_IDLE}}))}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00452}00452\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00453}00453\ \ \ \ \ \ \ \ \ (void)\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_gabc2b4a7c8307e04955b015fd32057ec7}{USBD\_LL\_StallEP}}(pdev,\ 0x80U);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00454}00454\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00455}00455\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00456}00456\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00457}00457\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00458}00458\ \ \ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_afac9640f1ff1fd1f8663b5793bb18a32}{dev\_test\_mode}}\ ==\ 1U)}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00459}00459\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00460}00460\ \ \ \ \ \ \ (void)\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___private___functions_ga35f08f4623530af369ab0c326a814512}{USBD\_RunTestMode}}(pdev);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00461}00461\ \ \ \ \ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_afac9640f1ff1fd1f8663b5793bb18a32}{dev\_test\_mode}}\ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00462}00462\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00463}00463\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00464}00464\ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00465}00465\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00466}00466\ \ \ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a874b75463e24982ac9ca5c54ed18b32a}{dev\_state}}\ ==\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga4d1e58829e5878c4d2c23eac1f192358}{USBD\_STATE\_CONFIGURED}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00467}00467\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00468}00468\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_a3200c47f98ebcea09202bd24e6cbe76a}{DataIn}}\ !=\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00469}00469\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00470}00470\ \ \ \ \ \ \ \ \ ret\ =\ (\mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}})pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_a3200c47f98ebcea09202bd24e6cbe76a}{DataIn}}(pdev,\ epnum);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00471}00471\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00472}00472\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ret\ !=\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a82f83a0537693d71dd31a4ae9960d737}{USBD\_OK}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00473}00473\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00474}00474\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00475}00475\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00476}00476\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00477}00477\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00478}00478\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00479}00479\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00480}00480\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a82f83a0537693d71dd31a4ae9960d737}{USBD\_OK}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00481}00481\ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00482}00482\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00490}\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_ga9cd02ae070a18ea3395346c56639412b}{00490}}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___c_o_r_e___private___functions_ga9cd02ae070a18ea3395346c56639412b}{USBD\_LL\_Reset}}(\mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ *pdev)}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00491}00491\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00492}00492\ \ \ \textcolor{comment}{/*\ Upon\ Reset\ call\ user\ call\ back\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00493}00493\ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a874b75463e24982ac9ca5c54ed18b32a}{dev\_state}}\ =\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga423cf90a532bc936797b17a49ae6848e}{USBD\_STATE\_DEFAULT}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00494}00494\ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_ac6c60ab6ada181a2bca1aea925bd1931}{ep0\_state}}\ =\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga00b51e0aec63bf5d4e6e85241b74a320}{USBD\_EP0\_IDLE}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00495}00495\ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a3fcae06c2c0b8dfdb1db931cf1a4be56}{dev\_config}}\ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00496}00496\ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_abebe8f6cfbce2c35857de1ffc5d3ef84}{dev\_remote\_wakeup}}\ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00497}00497\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00498}00498\ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}\ ==\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00499}00499\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00500}00500\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a05db9cbdbff7d5bb866a9d9f3dcdbe8e}{USBD\_FAIL}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00501}00501\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00502}00502\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00503}00503\ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a8e5b83148c3cb343113947c7655dd7df}{pClassData}}\ !=\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00504}00504\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00505}00505\ \ \ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_a0c3e05262fdf4d85c4efaf53491887b0}{DeInit}}\ !=\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00506}00506\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00507}00507\ \ \ \ \ \ \ (void)pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_a0c3e05262fdf4d85c4efaf53491887b0}{DeInit}}(pdev,\ (uint8\_t)pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a3fcae06c2c0b8dfdb1db931cf1a4be56}{dev\_config}});}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00508}00508\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00509}00509\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00510}00510\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00511}00511\ \ \ \textcolor{comment}{/*\ Open\ EP0\ OUT\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00512}00512\ \ \ (void)\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_gad96254d74d95496ffb5f6f2248585cb0}{USBD\_LL\_OpenEP}}(pdev,\ 0x00U,\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga42b9a7322f30c602f509d8f3bf0182a7}{USBD\_EP\_TYPE\_CTRL}},\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga3264e2e9975f8ed890bb134a47b9942a}{USB\_MAX\_EP0\_SIZE}});}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00513}00513\ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a1cdfed3112c9a40bf8e432a1b94fe9ef}{ep\_out}}[0x00U\ \&\ 0xFU].\mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def_a9610e04e472c96aba5180bc35e467dbf}{is\_used}}\ =\ 1U;}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00514}00514\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00515}00515\ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a1cdfed3112c9a40bf8e432a1b94fe9ef}{ep\_out}}[0].\mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def_a876f0bbf157a6bceb63630c99da8b077}{maxpacket}}\ =\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga3264e2e9975f8ed890bb134a47b9942a}{USB\_MAX\_EP0\_SIZE}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00516}00516\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00517}00517\ \ \ \textcolor{comment}{/*\ Open\ EP0\ IN\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00518}00518\ \ \ (void)\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_gad96254d74d95496ffb5f6f2248585cb0}{USBD\_LL\_OpenEP}}(pdev,\ 0x80U,\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga42b9a7322f30c602f509d8f3bf0182a7}{USBD\_EP\_TYPE\_CTRL}},\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga3264e2e9975f8ed890bb134a47b9942a}{USB\_MAX\_EP0\_SIZE}});}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00519}00519\ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a4274d52d9287db59aa87d1e31e0e7e47}{ep\_in}}[0x80U\ \&\ 0xFU].\mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def_a9610e04e472c96aba5180bc35e467dbf}{is\_used}}\ =\ 1U;}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00520}00520\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00521}00521\ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a4274d52d9287db59aa87d1e31e0e7e47}{ep\_in}}[0].\mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def_a876f0bbf157a6bceb63630c99da8b077}{maxpacket}}\ =\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga3264e2e9975f8ed890bb134a47b9942a}{USB\_MAX\_EP0\_SIZE}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00522}00522\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00523}00523\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a82f83a0537693d71dd31a4ae9960d737}{USBD\_OK}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00524}00524\ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00525}00525\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00532}\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_gaaf2f9695af26bad9d0f66746fcca3243}{00532}}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___c_o_r_e___private___functions_gaaf2f9695af26bad9d0f66746fcca3243}{USBD\_LL\_SetSpeed}}(\mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ *pdev,}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00533}00533\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaa62cd3d2fb69a537ae7a5a94bdd6ae93}{USBD\_SpeedTypeDef}}\ speed)}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00534}00534\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00535}00535\ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_af05af4e4045fb40caa4ac12d60c04cb2}{dev\_speed}}\ =\ speed;}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00536}00536\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00537}00537\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a82f83a0537693d71dd31a4ae9960d737}{USBD\_OK}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00538}00538\ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00539}00539\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00547}\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_ga907b2335773fcc0856e4ab6972c04020}{00547}}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___c_o_r_e___private___functions_ga907b2335773fcc0856e4ab6972c04020}{USBD\_LL\_Suspend}}(\mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ *pdev)}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00548}00548\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00549}00549\ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a8c98622835a7728de36b36d9fd1c2f33}{dev\_old\_state}}\ =\ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a874b75463e24982ac9ca5c54ed18b32a}{dev\_state}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00550}00550\ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a874b75463e24982ac9ca5c54ed18b32a}{dev\_state}}\ =\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_gae2b41659195da2defd648d00d4e51a40}{USBD\_STATE\_SUSPENDED}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00551}00551\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00552}00552\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a82f83a0537693d71dd31a4ae9960d737}{USBD\_OK}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00553}00553\ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00554}00554\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00562}\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_gacfd270cf295f13943dd6a591b366246c}{00562}}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___c_o_r_e___private___functions_gacfd270cf295f13943dd6a591b366246c}{USBD\_LL\_Resume}}(\mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ *pdev)}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00563}00563\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00564}00564\ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a874b75463e24982ac9ca5c54ed18b32a}{dev\_state}}\ ==\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_gae2b41659195da2defd648d00d4e51a40}{USBD\_STATE\_SUSPENDED}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00565}00565\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00566}00566\ \ \ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a874b75463e24982ac9ca5c54ed18b32a}{dev\_state}}\ =\ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a8c98622835a7728de36b36d9fd1c2f33}{dev\_old\_state}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00567}00567\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00568}00568\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00569}00569\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a82f83a0537693d71dd31a4ae9960d737}{USBD\_OK}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00570}00570\ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00571}00571\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00579}\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_gacf5d847096b6b8d9b1880dab9cd1726d}{00579}}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___c_o_r_e___private___functions_gacf5d847096b6b8d9b1880dab9cd1726d}{USBD\_LL\_SOF}}(\mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ *pdev)}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00580}00580\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00581}00581\ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}\ ==\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00582}00582\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00583}00583\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a05db9cbdbff7d5bb866a9d9f3dcdbe8e}{USBD\_FAIL}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00584}00584\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00585}00585\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00586}00586\ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a874b75463e24982ac9ca5c54ed18b32a}{dev\_state}}\ ==\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga4d1e58829e5878c4d2c23eac1f192358}{USBD\_STATE\_CONFIGURED}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00587}00587\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00588}00588\ \ \ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_a7d7ea8a83453087520c85e0fad187a9a}{SOF}}\ !=\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00589}00589\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00590}00590\ \ \ \ \ \ \ (void)pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_a7d7ea8a83453087520c85e0fad187a9a}{SOF}}(pdev);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00591}00591\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00592}00592\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00593}00593\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00594}00594\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a82f83a0537693d71dd31a4ae9960d737}{USBD\_OK}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00595}00595\ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00596}00596\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00603}\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_ga8f70c097aa7377ec6841d2581bccfa7e}{00603}}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___c_o_r_e___private___functions_ga8f70c097aa7377ec6841d2581bccfa7e}{USBD\_LL\_IsoINIncomplete}}(\mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ *pdev,}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00604}00604\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ epnum)}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00605}00605\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00606}00606\ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}\ ==\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00607}00607\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00608}00608\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a05db9cbdbff7d5bb866a9d9f3dcdbe8e}{USBD\_FAIL}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00609}00609\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00610}00610\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00611}00611\ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a874b75463e24982ac9ca5c54ed18b32a}{dev\_state}}\ ==\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga4d1e58829e5878c4d2c23eac1f192358}{USBD\_STATE\_CONFIGURED}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00612}00612\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00613}00613\ \ \ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_a794a6133ea44bef1be7735de3bb0d140}{IsoINIncomplete}}\ !=\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00614}00614\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00615}00615\ \ \ \ \ \ \ (void)pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_a794a6133ea44bef1be7735de3bb0d140}{IsoINIncomplete}}(pdev,\ epnum);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00616}00616\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00617}00617\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00618}00618\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00619}00619\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a82f83a0537693d71dd31a4ae9960d737}{USBD\_OK}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00620}00620\ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00621}00621\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00628}\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_ga1b6905ac966d81f6a2ce165e57dacd80}{00628}}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___c_o_r_e___private___functions_ga1b6905ac966d81f6a2ce165e57dacd80}{USBD\_LL\_IsoOUTIncomplete}}(\mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ *pdev,}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00629}00629\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ epnum)}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00630}00630\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00631}00631\ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}\ ==\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00632}00632\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00633}00633\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a05db9cbdbff7d5bb866a9d9f3dcdbe8e}{USBD\_FAIL}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00634}00634\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00635}00635\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00636}00636\ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a874b75463e24982ac9ca5c54ed18b32a}{dev\_state}}\ ==\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga4d1e58829e5878c4d2c23eac1f192358}{USBD\_STATE\_CONFIGURED}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00637}00637\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00638}00638\ \ \ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_a26c067fe2f7b53408542f7451a2f8f0d}{IsoOUTIncomplete}}\ !=\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00639}00639\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00640}00640\ \ \ \ \ \ \ (void)pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_a26c067fe2f7b53408542f7451a2f8f0d}{IsoOUTIncomplete}}(pdev,\ epnum);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00641}00641\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00642}00642\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00643}00643\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00644}00644\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a82f83a0537693d71dd31a4ae9960d737}{USBD\_OK}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00645}00645\ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00646}00646\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00653}\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_gaaf76b06413044241868c6828ec7fc51c}{00653}}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___c_o_r_e___private___functions_gaaf76b06413044241868c6828ec7fc51c}{USBD\_LL\_DevConnected}}(\mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ *pdev)}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00654}00654\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00655}00655\ \ \ \textcolor{comment}{/*\ Prevent\ unused\ argument\ compilation\ warning\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00656}00656\ \ \ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a86d500a34c624c2cae56bc25a31b12f3}{UNUSED}}(pdev);}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00657}00657\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00658}00658\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a82f83a0537693d71dd31a4ae9960d737}{USBD\_OK}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00659}00659\ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00660}00660\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00667}\mbox{\hyperlink{group___u_s_b_d___c_o_r_e___exported___functions_prototype_ga07b5fe60c6f1cf9f485e0191a605b9a1}{00667}}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___c_o_r_e___private___functions_ga07b5fe60c6f1cf9f485e0191a605b9a1}{USBD\_LL\_DevDisconnected}}(\mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ *pdev)}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00668}00668\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00669}00669\ \ \ \textcolor{comment}{/*\ Free\ Class\ Resources\ */}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00670}00670\ \ \ pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a874b75463e24982ac9ca5c54ed18b32a}{dev\_state}}\ =\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga423cf90a532bc936797b17a49ae6848e}{USBD\_STATE\_DEFAULT}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00671}00671\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00672}00672\ \ \ \textcolor{keywordflow}{if}\ (pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}\ !=\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00673}00673\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00674}00674\ \ \ \ \ (void)pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{pClass}}-\/>\mbox{\hyperlink{struct___device__cb_a0c3e05262fdf4d85c4efaf53491887b0}{DeInit}}(pdev,\ (uint8\_t)pdev-\/>\mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a3fcae06c2c0b8dfdb1db931cf1a4be56}{dev\_config}});}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00675}00675\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00676}00676\ }
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00677}00677\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ggaebc658c200e50399361e7901f0a57e95a82f83a0537693d71dd31a4ae9960d737}{USBD\_OK}};}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00678}00678\ \}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00693}00693\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+\DoxyCodeLine{\Hypertarget{usbd__core_8c_source_l00694}00694\ }
+
+\end{DoxyCode}

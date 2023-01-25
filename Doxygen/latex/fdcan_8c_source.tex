@@ -1,0 +1,120 @@
+\hypertarget{fdcan_8c_source}{}\doxysection{fdcan.\+c}
+\label{fdcan_8c_source}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Core/Src/fdcan.c@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Core/Src/fdcan.c}}
+\mbox{\hyperlink{fdcan_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00020}00020\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{fdcan_8h}{fdcan.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00023}00023\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00025}00025\ \textcolor{comment}{/*\ USER\ CODE\ END\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00027}\mbox{\hyperlink{fdcan_8h_a7e870132380038c7b0e226a8c78d3461}{00027}}\ FDCAN\_HandleTypeDef\ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}};}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00029}00029\ \textcolor{comment}{/*\ FDCAN1\ init\ function\ */}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00030}\mbox{\hyperlink{fdcan_8h_af122e1c28b11c5b8771e82328e10fa2c}{00030}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{fdcan_8c_af122e1c28b11c5b8771e82328e10fa2c}{MX\_FDCAN1\_Init}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00031}00031\ \{}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00033}00033\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ FDCAN1\_Init\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00035}00035\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ FDCAN1\_Init\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00037}00037\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ FDCAN1\_Init\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00039}00039\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ FDCAN1\_Init\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00040}00040\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Instance\ =\ \mbox{\hyperlink{group___peripheral__declaration_ga9b57881b72f2f70e874d6dc0cd289202}{FDCAN1}};}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00041}00041\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.FrameFormat\ =\ FDCAN\_FRAME\_CLASSIC;}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00042}00042\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.Mode\ =\ FDCAN\_MODE\_NORMAL;}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00043}00043\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.AutoRetransmission\ =\ \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1ad3a9df141be0ccf10389b640f492b26d}{DISABLE}};}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00044}00044\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.TransmitPause\ =\ \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1ad3a9df141be0ccf10389b640f492b26d}{DISABLE}};}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00045}00045\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.ProtocolException\ =\ \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1a7d46875fa3ebd2c34d2756950eda83bf}{ENABLE}};}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00046}00046\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.NominalPrescaler\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00047}00047\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.NominalSyncJumpWidth\ =\ 8;}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00048}00048\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.NominalTimeSeg1\ =\ 0x1f;}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00049}00049\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.NominalTimeSeg2\ =\ 8;}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00050}00050\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.DataPrescaler\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00051}00051\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.DataSyncJumpWidth\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00052}00052\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.DataTimeSeg1\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00053}00053\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.DataTimeSeg2\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00054}00054\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.MessageRAMOffset\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00055}00055\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.StdFiltersNbr\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00056}00056\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.ExtFiltersNbr\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00057}00057\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.RxFifo0ElmtsNbr\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00058}00058\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.RxFifo0ElmtSize\ =\ FDCAN\_DATA\_BYTES\_8;}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00059}00059\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.RxFifo1ElmtsNbr\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00060}00060\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.RxFifo1ElmtSize\ =\ FDCAN\_DATA\_BYTES\_8;}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00061}00061\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.RxBuffersNbr\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00062}00062\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.RxBufferSize\ =\ FDCAN\_DATA\_BYTES\_8;}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00063}00063\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.TxEventsNbr\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00064}00064\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.TxBuffersNbr\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00065}00065\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.TxFifoQueueElmtsNbr\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00066}00066\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.TxFifoQueueMode\ =\ FDCAN\_TX\_FIFO\_OPERATION;}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00067}00067\ \ \ \mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}}.Init.TxElmtSize\ =\ FDCAN\_DATA\_BYTES\_8;}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00068}00068\ \ \ \textcolor{keywordflow}{if}\ (HAL\_FDCAN\_Init(\&\mbox{\hyperlink{fdcan_8c_a7e870132380038c7b0e226a8c78d3461}{hfdcan1}})\ !=\ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}})}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00069}00069\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00070}00070\ \ \ \ \ \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\_Handler}}();}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00071}00071\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00072}00072\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ FDCAN1\_Init\ 2\ */}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00074}00074\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ FDCAN1\_Init\ 2\ */}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00076}00076\ \}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00078}\mbox{\hyperlink{fdcan_8c_a93a2756cf80884d125eecad39c785c5d}{00078}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{fdcan_8c_a93a2756cf80884d125eecad39c785c5d}{HAL\_FDCAN\_MspInit}}(FDCAN\_HandleTypeDef*\ fdcanHandle)}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00079}00079\ \{}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00081}00081\ \ \ \mbox{\hyperlink{struct_g_p_i_o___init_type_def}{GPIO\_InitTypeDef}}\ GPIO\_InitStruct\ =\ \{0\};}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00082}00082\ \ \ \textcolor{keywordflow}{if}(fdcanHandle-\/>Instance==\mbox{\hyperlink{group___peripheral__declaration_ga9b57881b72f2f70e874d6dc0cd289202}{FDCAN1}})}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00083}00083\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00084}00084\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ FDCAN1\_MspInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00086}00086\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ FDCAN1\_MspInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00087}00087\ \ \ \ \ \textcolor{comment}{/*\ FDCAN1\ clock\ enable\ */}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00088}00088\ \ \ \ \ \mbox{\hyperlink{group___r_c_c___exported___macros_ga214e3b2bdfcfde732b66cee97b45ae7c}{\_\_HAL\_RCC\_FDCAN\_CLK\_ENABLE}}();}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00090}00090\ \ \ \ \ \mbox{\hyperlink{group___r_c_c___exported___macros_ga5ad43f3f4d8163d40f7d402ef75d27c5}{\_\_HAL\_RCC\_GPIOB\_CLK\_ENABLE}}();}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00095}00095\ \ \ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_a871d0ab74071724e96b7cc9ae2a7532b}{Pin}}\ =\ \mbox{\hyperlink{group___g_p_i_o__pins__define_gaf5eb6a42a4428e236bd4fd08ade71e7a}{GPIO\_PIN\_8}}|\mbox{\hyperlink{group___g_p_i_o__pins__define_ga4c503cb4a0dc0d18261080051d9c2daf}{GPIO\_PIN\_9}};}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00096}00096\ \ \ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_a0ffc93ec511ed9cf1663f6939bd3e839}{Mode}}\ =\ \mbox{\hyperlink{group___g_p_i_o__mode__define_ga526c72c5264316fc05c775b6cad4aa6a}{GPIO\_MODE\_AF\_PP}};}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00097}00097\ \ \ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_a6cdde08eb507b710f8179a4326548e26}{Pull}}\ =\ \mbox{\hyperlink{group___g_p_i_o__pull__define_ga5c2862579882c1cc64e36d38fbd07a4c}{GPIO\_NOPULL}};}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00098}00098\ \ \ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_ad04b2041f59d32492ec36a891418f3fd}{Speed}}\ =\ \mbox{\hyperlink{group___g_p_i_o__speed__define_gab7916c4265bfa1b26a5205ea9c1caa4e}{GPIO\_SPEED\_FREQ\_LOW}};}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00099}00099\ \ \ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_a9a352764836bb14ec56a94f77697b52d}{Alternate}}\ =\ \mbox{\hyperlink{group___g_p_i_o___alternate__function__selection_gaf913dd9d2d9d68c96a36b723f156aaf1}{GPIO\_AF9\_FDCAN1}};}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00100}00100\ \ \ \ \ \mbox{\hyperlink{group___g_p_i_o___exported___functions___group1_ga41bda93b6dd639e4905fdb1454eff98e}{HAL\_GPIO\_Init}}(\mbox{\hyperlink{group___peripheral__declaration_ga68b66ac73be4c836db878a42e1fea3cd}{GPIOB}},\ \&GPIO\_InitStruct);}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00102}00102\ \ \ \ \ \textcolor{comment}{/*\ FDCAN1\ interrupt\ Init\ */}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00103}00103\ \ \ \ \ \mbox{\hyperlink{group___c_o_r_t_e_x___exported___functions___group1_ga8581a82025a4780efd00876a66e3e91b}{HAL\_NVIC\_SetPriority}}(\mbox{\hyperlink{group___peripheral__interrupt__number__definition_gga7e1129cd8a196f4284d41db3e82ad5c8a3e202b560a588551c0b02f4b2577d256}{FDCAN1\_IT0\_IRQn}},\ 0,\ 0);}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00104}00104\ \ \ \ \ \mbox{\hyperlink{group___c_o_r_t_e_x___exported___functions___group1_gaaad4492c1b25e006d69948a15790352a}{HAL\_NVIC\_EnableIRQ}}(\mbox{\hyperlink{group___peripheral__interrupt__number__definition_gga7e1129cd8a196f4284d41db3e82ad5c8a3e202b560a588551c0b02f4b2577d256}{FDCAN1\_IT0\_IRQn}});}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00105}00105\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ FDCAN1\_MspInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00107}00107\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ FDCAN1\_MspInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00108}00108\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00109}00109\ \}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00111}\mbox{\hyperlink{fdcan_8c_a7c1e54efb942c6aa706dbfc9f35914f9}{00111}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{fdcan_8c_a7c1e54efb942c6aa706dbfc9f35914f9}{HAL\_FDCAN\_MspDeInit}}(FDCAN\_HandleTypeDef*\ fdcanHandle)}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00112}00112\ \{}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00114}00114\ \ \ \textcolor{keywordflow}{if}(fdcanHandle-\/>Instance==\mbox{\hyperlink{group___peripheral__declaration_ga9b57881b72f2f70e874d6dc0cd289202}{FDCAN1}})}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00115}00115\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00116}00116\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ FDCAN1\_MspDeInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00118}00118\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ FDCAN1\_MspDeInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00119}00119\ \ \ \ \ \textcolor{comment}{/*\ Peripheral\ clock\ disable\ */}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00120}00120\ \ \ \ \ \mbox{\hyperlink{group___r_c_c___exported___macros_gadc1b2ba58e8fc70fa34826d92ba75253}{\_\_HAL\_RCC\_FDCAN\_CLK\_DISABLE}}();}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00126}00126\ \ \ \ \ \mbox{\hyperlink{group___g_p_i_o___exported___functions___group1_gafe9c756b5aa18961032a3f8aa572959b}{HAL\_GPIO\_DeInit}}(\mbox{\hyperlink{group___peripheral__declaration_ga68b66ac73be4c836db878a42e1fea3cd}{GPIOB}},\ \mbox{\hyperlink{group___g_p_i_o__pins__define_gaf5eb6a42a4428e236bd4fd08ade71e7a}{GPIO\_PIN\_8}}|\mbox{\hyperlink{group___g_p_i_o__pins__define_ga4c503cb4a0dc0d18261080051d9c2daf}{GPIO\_PIN\_9}});}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00128}00128\ \ \ \ \ \textcolor{comment}{/*\ FDCAN1\ interrupt\ Deinit\ */}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00129}00129\ \ \ \ \ \mbox{\hyperlink{group___c_o_r_t_e_x___exported___functions___group1_ga50ca6290e068821cb84aa168f3e13967}{HAL\_NVIC\_DisableIRQ}}(\mbox{\hyperlink{group___peripheral__interrupt__number__definition_gga7e1129cd8a196f4284d41db3e82ad5c8a3e202b560a588551c0b02f4b2577d256}{FDCAN1\_IT0\_IRQn}});}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00130}00130\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ FDCAN1\_MspDeInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00132}00132\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ FDCAN1\_MspDeInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00133}00133\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00134}00134\ \}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00136}00136\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00138}00138\ \textcolor{comment}{/*\ USER\ CODE\ END\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{fdcan_8c_source_l00140}00140\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

@@ -1,0 +1,86 @@
+\hypertarget{group___f_m_c___l_l___n_o_r___macros}{}\doxysection{FMC NOR/\+SRAM Macros}
+\label{group___f_m_c___l_l___n_o_r___macros}\index{FMC NOR/SRAM Macros@{FMC NOR/SRAM Macros}}
+
+
+macros to handle NOR device enable/disable and read/write operations  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___n_o_r___macros_ga3439ff665bae18ccd6442c12ec0f608b}{\+\_\+\+\_\+\+FMC\+\_\+\+NORSRAM\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+BANK\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Enable the NORSRAM device access. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___n_o_r___macros_gafca44410b72dec386bf717bd0a5b878f}{\+\_\+\+\_\+\+FMC\+\_\+\+NORSRAM\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+BANK\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Disable the NORSRAM device access. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+macros to handle NOR device enable/disable and read/write operations 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___f_m_c___l_l___n_o_r___macros_gafca44410b72dec386bf717bd0a5b878f}\label{group___f_m_c___l_l___n_o_r___macros_gafca44410b72dec386bf717bd0a5b878f}} 
+\index{FMC NOR/SRAM Macros@{FMC NOR/SRAM Macros}!\_\_FMC\_NORSRAM\_DISABLE@{\_\_FMC\_NORSRAM\_DISABLE}}
+\index{\_\_FMC\_NORSRAM\_DISABLE@{\_\_FMC\_NORSRAM\_DISABLE}!FMC NOR/SRAM Macros@{FMC NOR/SRAM Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_FMC\_NORSRAM\_DISABLE}{\_\_FMC\_NORSRAM\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+FMC\+\_\+\+NORSRAM\+\_\+\+DISABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+BANK\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INSTANCE\_\_)-\/>BTCR[(\_\_BANK\_\_)]\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&=\ \string~FMC\_BCRx\_MBKEN)}
+
+\end{DoxyCode}
+
+
+Disable the NORSRAM device access. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+} & FMC\+\_\+\+NORSRAM Instance \\
+\hline
+{\em \+\_\+\+\_\+\+BANK\+\_\+\+\_\+} & FMC\+\_\+\+NORSRAM Bank \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__ll__fmc_8h_source_l00896}{896}} of file \mbox{\hyperlink{stm32h7xx__ll__fmc_8h_source}{stm32h7xx\+\_\+ll\+\_\+fmc.\+h}}.
+
+\mbox{\Hypertarget{group___f_m_c___l_l___n_o_r___macros_ga3439ff665bae18ccd6442c12ec0f608b}\label{group___f_m_c___l_l___n_o_r___macros_ga3439ff665bae18ccd6442c12ec0f608b}} 
+\index{FMC NOR/SRAM Macros@{FMC NOR/SRAM Macros}!\_\_FMC\_NORSRAM\_ENABLE@{\_\_FMC\_NORSRAM\_ENABLE}}
+\index{\_\_FMC\_NORSRAM\_ENABLE@{\_\_FMC\_NORSRAM\_ENABLE}!FMC NOR/SRAM Macros@{FMC NOR/SRAM Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_FMC\_NORSRAM\_ENABLE}{\_\_FMC\_NORSRAM\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+FMC\+\_\+\+NORSRAM\+\_\+\+ENABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+BANK\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_INSTANCE\_\_)-\/>BTCR[(\_\_BANK\_\_)]\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |=\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1e6aaaf5c3a78550ae8226963624489b}{FMC\_BCRx\_MBKEN}})}
+
+\end{DoxyCode}
+
+
+Enable the NORSRAM device access. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+} & FMC\+\_\+\+NORSRAM Instance \\
+\hline
+{\em \+\_\+\+\_\+\+BANK\+\_\+\+\_\+} & FMC\+\_\+\+NORSRAM Bank \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__ll__fmc_8h_source_l00887}{887}} of file \mbox{\hyperlink{stm32h7xx__ll__fmc_8h_source}{stm32h7xx\+\_\+ll\+\_\+fmc.\+h}}.
+

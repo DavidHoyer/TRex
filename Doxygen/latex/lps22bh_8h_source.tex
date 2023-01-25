@@ -1,0 +1,50 @@
+\hypertarget{lps22bh_8h_source}{}\doxysection{lps22bh.\+h}
+\label{lps22bh_8h_source}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/peripherals/external/sensors/lps22bh.h@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/peripherals/external/sensors/lps22bh.h}}
+\mbox{\hyperlink{lps22bh_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00001}00001\ \ \textcolor{comment}{/*\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00002}00002\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00003}00003\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00004}00004\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\ \ \ \ \ \_\_\_\ \ \_\_\ \_\ \_\ \ \ \_\ \ \_\_\ \_\ \_\ \_\_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00005}00005\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\ \ \ \ /\ \_\ \(\backslash\)/\ \_`\ |\ |\ |\ |/\ \_`\ |\ '\_\ \(\backslash\)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00006}00006\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\_\_\_|\ \ \_\_/\ (\_|\ |\ |\_|\ |\ (\_|\ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00007}00007\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \(\backslash\)\_\_\_\_\_/\(\backslash\)\_\_\_|\(\backslash\)\_\_,\ |\(\backslash\)\_\_,\_|\(\backslash\)\_\_,\_|\_|\ |\_|\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00008}00008\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ =============\ \_\_/\ |\ ==================\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00009}00009\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\_\_\_/\ \ \ \ \ \ \ \ \ \ \ BFH\ 2021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00010}00010\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00011}00011\ \textcolor{comment}{\ \ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00012}00012\ \textcolor{comment}{\ \ *\ This\ software\ can\ be\ used\ by\ students\ and\ other\ personal\ of\ the\ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00013}00013\ \textcolor{comment}{\ \ *\ Bern\ University\ of\ Applied\ Sciences\ under\ the\ terms\ of\ the\ MIT\ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00014}00014\ \textcolor{comment}{\ \ *\ license.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00015}00015\ \textcolor{comment}{\ \ *\ For\ other\ persons\ this\ software\ is\ under\ the\ terms\ of\ the\ GNU\ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00016}00016\ \textcolor{comment}{\ \ *\ General\ Public\ License\ version\ 2.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00017}00017\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00018}00018\ \textcolor{comment}{\ \ *\ Copyright\ \&copy;\ 2021,\ Bern\ University\ of\ Applied\ Sciences.\ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00019}00019\ \textcolor{comment}{\ \ *\ All\ rights\ reserved.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00020}00020\ \textcolor{comment}{\ \ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ */}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00028}00028\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00030}00030\ \textcolor{preprocessor}{\#if\ defined(\_\_cplusplus)}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00031}00031\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00032}00032\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00035}00035\ \textcolor{comment}{/*\ Includes\ */}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00036}00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{types_8h}{common/types.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00037}00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{attributes_8h}{common/attributes.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00038}00038\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mmio_8h}{common/mmio.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00040}00040\ \textcolor{comment}{/*\ Functions\ */}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00046}00046\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{lps22bh_8h_ae671cb50f73e55b21c182689dadbbeaa}{LPS22BH\_Init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00053}00053\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{lps22bh_8h_a1d7988b4e48c0f58f58b5b80a3e80b5f}{LPS22BH\_GetTemperature}}(\mbox{\hyperlink{types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\_t}}\ *value);}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00060}00060\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{lps22bh_8h_af24d5e661b67659b7a309efb65b99606}{LPS22BH\_GetPressure}}(\mbox{\hyperlink{types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\_t}}\ *value);}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00063}00063\ \textcolor{preprocessor}{\#if\ defined(\_\_cplusplus)}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00064}00064\ \}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8h_source_l00065}00065\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

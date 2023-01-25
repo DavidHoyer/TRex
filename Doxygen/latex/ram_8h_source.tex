@@ -1,0 +1,55 @@
+\hypertarget{ram_8h_source}{}\doxysection{ram.\+h}
+\label{ram_8h_source}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/peripherals/internal/ram.h@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/peripherals/internal/ram.h}}
+\mbox{\hyperlink{ram_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00001}00001\ \ \textcolor{comment}{/*\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00002}00002\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00003}00003\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00004}00004\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\ \ \ \ \ \_\_\_\ \ \_\_\ \_\ \_\ \ \ \_\ \ \_\_\ \_\ \_\ \_\_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00005}00005\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\ \ \ \ /\ \_\ \(\backslash\)/\ \_`\ |\ |\ |\ |/\ \_`\ |\ '\_\ \(\backslash\)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00006}00006\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\_\_\_|\ \ \_\_/\ (\_|\ |\ |\_|\ |\ (\_|\ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00007}00007\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \(\backslash\)\_\_\_\_\_/\(\backslash\)\_\_\_|\(\backslash\)\_\_,\ |\(\backslash\)\_\_,\_|\(\backslash\)\_\_,\_|\_|\ |\_|\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00008}00008\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ =============\ \_\_/\ |\ ==================\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00009}00009\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\_\_\_/\ \ \ \ \ \ \ \ \ \ \ BFH\ 2021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00010}00010\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00011}00011\ \textcolor{comment}{\ \ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00012}00012\ \textcolor{comment}{\ \ *\ This\ software\ can\ be\ used\ by\ students\ and\ other\ personal\ of\ the\ *}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00013}00013\ \textcolor{comment}{\ \ *\ Bern\ University\ of\ Applied\ Sciences\ under\ the\ terms\ of\ the\ MIT\ \ *}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00014}00014\ \textcolor{comment}{\ \ *\ license.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00015}00015\ \textcolor{comment}{\ \ *\ For\ other\ persons\ this\ software\ is\ under\ the\ terms\ of\ the\ GNU\ \ \ *}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00016}00016\ \textcolor{comment}{\ \ *\ General\ Public\ License\ version\ 2.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00017}00017\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00018}00018\ \textcolor{comment}{\ \ *\ Copyright\ \&copy;\ 2021,\ Bern\ University\ of\ Applied\ Sciences.\ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00019}00019\ \textcolor{comment}{\ \ *\ All\ rights\ reserved.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00020}00020\ \textcolor{comment}{\ \ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ */}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00028}00028\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00030}00030\ \textcolor{preprocessor}{\#if\ defined(\_\_cplusplus)}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00031}00031\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00032}00032\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00035}00035\ \textcolor{comment}{/*\ Includes\ */}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00036}00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{types_8h}{common/types.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00037}00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{attributes_8h}{common/attributes.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00038}00038\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mmio_8h}{common/mmio.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00040}00040\ \textcolor{comment}{/*\ Macros\ */}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00041}\mbox{\hyperlink{ram_8h_af77eeb32bdc6cde3300d5b5936956623}{00041}}\ \textcolor{preprocessor}{\#define\ RAM\_DTCMRAM\_BASE\ \ \ \ 0x20000000}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00042}\mbox{\hyperlink{ram_8h_af71a3825235e67b5f9be7824b4257410}{00042}}\ \textcolor{preprocessor}{\#define\ RAM\_D1\_BASE\ \ \ \ \ \ \ \ \ 0x24000000}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00043}\mbox{\hyperlink{ram_8h_a59afee5bd23628c429b2bc66b6acf2a4}{00043}}\ \textcolor{preprocessor}{\#define\ RAM\_D2\_BASE\ \ \ \ \ \ \ \ \ 0x30000000}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00044}\mbox{\hyperlink{ram_8h_a5967f3d58554a53497b87e5c97e6d1bb}{00044}}\ \textcolor{preprocessor}{\#define\ RAM\_D3\_BASE\ \ \ \ \ \ \ \ \ 0x38000000}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00045}\mbox{\hyperlink{ram_8h_a238c2ecd29a6d509ded38e891a08bd41}{00045}}\ \textcolor{preprocessor}{\#define\ RAM\_ITCMRAM\_BASE\ \ \ \ 0x00000000}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00047}\mbox{\hyperlink{ram_8h_a24104b9c34bef134a2761d69ee929bc0}{00047}}\ \textcolor{preprocessor}{\#define\ RAM\_DTCMRAM\ \ \ \ \ \ \ \ \ MAP(u8,\ DTCMRAM\_BASE)}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00048}\mbox{\hyperlink{ram_8h_af7d285f9cc82dde1cfb5ceb24adf7764}{00048}}\ \textcolor{preprocessor}{\#define\ RAM\_D1\ \ \ \ \ \ \ \ \ \ \ \ \ \ MAP(u8,\ RAM\_D1\_BASE)}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00049}\mbox{\hyperlink{ram_8h_af22c90d4802216f6dc0f083c752ab1c9}{00049}}\ \textcolor{preprocessor}{\#define\ RAM\_D2\ \ \ \ \ \ \ \ \ \ \ \ \ \ MAP(u8,\ RAM\_D2\_BASE)}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00050}\mbox{\hyperlink{ram_8h_a799432b331ba26f9e7cac24d276e778c}{00050}}\ \textcolor{preprocessor}{\#define\ RAM\_D3\ \ \ \ \ \ \ \ \ \ \ \ \ \ MAP(u8,\ RAM\_D3\_BASE)}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00051}\mbox{\hyperlink{ram_8h_a6f51aee01f833a65b7b1b373afb081da}{00051}}\ \textcolor{preprocessor}{\#define\ RAM\_ITCMRAM\ \ \ \ \ \ \ \ \ MAP(u8,\ ITCMRAM\_BASE)}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00054}00054\ \textcolor{preprocessor}{\#if\ defined(\_\_cplusplus)}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00055}00055\ \}}
+\DoxyCodeLine{\Hypertarget{ram_8h_source_l00056}00056\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

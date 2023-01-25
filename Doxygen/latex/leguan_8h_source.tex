@@ -1,0 +1,77 @@
+\hypertarget{leguan_8h_source}{}\doxysection{leguan.\+h}
+\label{leguan_8h_source}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/leguan.h@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/leguan.h}}
+\mbox{\hyperlink{leguan_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00001}00001\ \ \textcolor{comment}{/*\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00002}00002\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00003}00003\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00004}00004\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\ \ \ \ \ \_\_\_\ \ \_\_\ \_\ \_\ \ \ \_\ \ \_\_\ \_\ \_\ \_\_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00005}00005\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\ \ \ \ /\ \_\ \(\backslash\)/\ \_`\ |\ |\ |\ |/\ \_`\ |\ '\_\ \(\backslash\)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00006}00006\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\_\_\_|\ \ \_\_/\ (\_|\ |\ |\_|\ |\ (\_|\ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00007}00007\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \(\backslash\)\_\_\_\_\_/\(\backslash\)\_\_\_|\(\backslash\)\_\_,\ |\(\backslash\)\_\_,\_|\(\backslash\)\_\_,\_|\_|\ |\_|\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00008}00008\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ =============\ \_\_/\ |\ ==================\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00009}00009\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\_\_\_/\ \ \ \ \ \ \ \ \ \ \ BFH\ 2021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00010}00010\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00011}00011\ \textcolor{comment}{\ \ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00012}00012\ \textcolor{comment}{\ \ *\ This\ software\ can\ be\ used\ by\ students\ and\ other\ personal\ of\ the\ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00013}00013\ \textcolor{comment}{\ \ *\ Bern\ University\ of\ Applied\ Sciences\ under\ the\ terms\ of\ the\ MIT\ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00014}00014\ \textcolor{comment}{\ \ *\ license.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00015}00015\ \textcolor{comment}{\ \ *\ For\ other\ persons\ this\ software\ is\ under\ the\ terms\ of\ the\ GNU\ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00016}00016\ \textcolor{comment}{\ \ *\ General\ Public\ License\ version\ 2.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00017}00017\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00018}00018\ \textcolor{comment}{\ \ *\ Copyright\ \&copy;\ 2021,\ Bern\ University\ of\ Applied\ Sciences.\ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00019}00019\ \textcolor{comment}{\ \ *\ All\ rights\ reserved.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00020}00020\ \textcolor{comment}{\ \ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ */}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00028}00028\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00030}00030\ \textcolor{preprocessor}{\#if\ defined(\_\_cplusplus)}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00031}00031\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00032}00032\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00034}00034\ \textcolor{comment}{/*\ Includes\ */}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00035}00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{core_8h}{common/core.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00036}00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{types_8h}{common/types.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00037}00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{errors_8h}{common/errors.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00038}00038\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{attributes_8h}{common/attributes.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00039}00039\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{intrinsics_8h}{common/intrinsics.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00040}00040\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mmio_8h}{common/mmio.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00041}00041\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{logger_8h}{common/logger.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00043}00043\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h}{peripherals/internal/adc.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00044}00044\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2dac_8h}{peripherals/internal/dac.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00045}00045\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2gpio_8h}{peripherals/internal/gpio.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00046}00046\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{serial_8h}{peripherals/internal/serial.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00047}00047\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2i2c_8h}{peripherals/internal/i2c.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00048}00048\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2spi_8h}{peripherals/internal/spi.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00049}00049\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ram_8h}{peripherals/internal/ram.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00051}00051\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{fpga_8h}{peripherals/external/fpga.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00052}00052\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{lcd_8h}{peripherals/external/lcd.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00053}00053\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sensors_8h}{peripherals/external/sensors.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00055}00055\ \textcolor{comment}{/*\ Macros\ */}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00060}\mbox{\hyperlink{leguan_8h_a732b60b685f0d86fabd1308ece18cd80}{00060}}\ \textcolor{preprocessor}{\#define\ LIBLEGUAN}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00066}\mbox{\hyperlink{leguan_8h_adf3441830393b6f703130aa61aeae29b}{00066}}\ \textcolor{preprocessor}{\#define\ LIBLEGUAN\_VERSION\_MAJOR\ \ 1}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00067}\mbox{\hyperlink{leguan_8h_af10624201a2f0d14fa6f607c718166a8}{00067}}\ \textcolor{preprocessor}{\#define\ LIBLEGUAN\_VERSION\_MINOR\ \ 0}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00068}\mbox{\hyperlink{leguan_8h_ae2c86a33dbaa9d5cf2a77cca76419ab1}{00068}}\ \textcolor{preprocessor}{\#define\ LIBLEGUAN\_VERSION\_PATCH\ \ 0}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00069}00069\ \textcolor{comment}{//\#define\ LIBLEGUAN\_VERSION\_FLAVOR\ RC1}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00071}00071\ \textcolor{preprocessor}{\#if\ defined(LIBLEGUAN\_VERSION\_FLAVOR)}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00072}00072\ \textcolor{preprocessor}{\ \ \ \ \#define\ LIBLEGUAN\_VERSION\_STRING\ \#LIBLEGUAN\_VERSION\_MAJOR\ "{}."{}}\ \#LIBLEGUAN\_VERSION\_MINOR\ "{}."{}\ \#LIBLEGUAN\_VERSION\_PATCH\ "{}-\/"{}\ \#LIBLEGUAN\_VERSION\_FLAVOR}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00073}00073\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00074}\mbox{\hyperlink{leguan_8h_a38e43c6d9de28fa831010c01d919c805}{00074}}\ \textcolor{preprocessor}{\ \ \ \ \#define\ LIBLEGUAN\_VERSION\_STRING\ \#LIBLEGUAN\_VERSION\_MAJOR\ "{}."{}}\ \#LIBLEGUAN\_VERSION\_MINOR\ "{}."{}\ \#LIBLEGUAN\_VERSION\_PATCH}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00075}00075\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00078}00078\ \textcolor{comment}{/*\ Functions\ */}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00084}00084\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{leguan_8h_a5a4e3429355b1f0c150e5e533efdc918}{LEGUAN\_Init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00087}00087\ \textcolor{preprocessor}{\#if\ defined(\_\_cplusplus)}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00088}00088\ \}}
+\DoxyCodeLine{\Hypertarget{leguan_8h_source_l00089}00089\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

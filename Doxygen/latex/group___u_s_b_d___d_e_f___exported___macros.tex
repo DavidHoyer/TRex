@@ -1,0 +1,89 @@
+\hypertarget{group___u_s_b_d___d_e_f___exported___macros}{}\doxysection{USBD\+\_\+\+DEF\+\_\+\+Exported\+\_\+\+Macros}
+\label{group___u_s_b_d___d_e_f___exported___macros}\index{USBD\_DEF\_Exported\_Macros@{USBD\_DEF\_Exported\_Macros}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___macros_ga373c90214222e94d07424e7a8d41b92b}{LOBYTE}}(x)~((uint8\+\_\+t)((x) \& 0x00\+FFU))
+\item 
+\#define \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___macros_gaa1ba73e45dd29eeb526a52d9a3336f35}{HIBYTE}}(x)~((uint8\+\_\+t)(((x) \& 0x\+FF00U) $>$$>$ 8U))
+\item 
+\#define \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___macros_ga3acffbd305ee72dcd4593c0d8af64a4f}{MIN}}(a,  b)~(((a) $<$ (b)) ? (a) \+: (b))
+\item 
+\#define \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___macros_gafa99ec4acc4ecb2dc3c2d05da15d0e3f}{MAX}}(a,  b)~(((a) $>$ (b)) ? (a) \+: (b))
+\item 
+\#define \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___macros_gaaa12b03c58e2eb296bd7aa915ee540f3}{\+\_\+\+\_\+\+ALIGN\+\_\+\+END}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE}} uint16\+\_\+t \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___macros_ga827954883dfac4d648316134e757be4e}{SWAPBYTE}} (uint8\+\_\+t $\ast$addr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___u_s_b_d___d_e_f___exported___macros_gaaa12b03c58e2eb296bd7aa915ee540f3}\label{group___u_s_b_d___d_e_f___exported___macros_gaaa12b03c58e2eb296bd7aa915ee540f3}} 
+\index{USBD\_DEF\_Exported\_Macros@{USBD\_DEF\_Exported\_Macros}!\_\_ALIGN\_END@{\_\_ALIGN\_END}}
+\index{\_\_ALIGN\_END@{\_\_ALIGN\_END}!USBD\_DEF\_Exported\_Macros@{USBD\_DEF\_Exported\_Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_ALIGN\_END}{\_\_ALIGN\_END}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+ALIGN\+\_\+\+END}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00375}{375}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{group___u_s_b_d___d_e_f___exported___macros_gaa1ba73e45dd29eeb526a52d9a3336f35}\label{group___u_s_b_d___d_e_f___exported___macros_gaa1ba73e45dd29eeb526a52d9a3336f35}} 
+\index{USBD\_DEF\_Exported\_Macros@{USBD\_DEF\_Exported\_Macros}!HIBYTE@{HIBYTE}}
+\index{HIBYTE@{HIBYTE}!USBD\_DEF\_Exported\_Macros@{USBD\_DEF\_Exported\_Macros}}
+\doxysubsubsection{\texorpdfstring{HIBYTE}{HIBYTE}}
+{\footnotesize\ttfamily \#define HIBYTE(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((uint8\+\_\+t)(((x) \& 0x\+FF00U) $>$$>$ 8U))}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00342}{342}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{group___u_s_b_d___d_e_f___exported___macros_ga373c90214222e94d07424e7a8d41b92b}\label{group___u_s_b_d___d_e_f___exported___macros_ga373c90214222e94d07424e7a8d41b92b}} 
+\index{USBD\_DEF\_Exported\_Macros@{USBD\_DEF\_Exported\_Macros}!LOBYTE@{LOBYTE}}
+\index{LOBYTE@{LOBYTE}!USBD\_DEF\_Exported\_Macros@{USBD\_DEF\_Exported\_Macros}}
+\doxysubsubsection{\texorpdfstring{LOBYTE}{LOBYTE}}
+{\footnotesize\ttfamily \#define LOBYTE(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((uint8\+\_\+t)((x) \& 0x00\+FFU))}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00338}{338}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{group___u_s_b_d___d_e_f___exported___macros_gafa99ec4acc4ecb2dc3c2d05da15d0e3f}\label{group___u_s_b_d___d_e_f___exported___macros_gafa99ec4acc4ecb2dc3c2d05da15d0e3f}} 
+\index{USBD\_DEF\_Exported\_Macros@{USBD\_DEF\_Exported\_Macros}!MAX@{MAX}}
+\index{MAX@{MAX}!USBD\_DEF\_Exported\_Macros@{USBD\_DEF\_Exported\_Macros}}
+\doxysubsubsection{\texorpdfstring{MAX}{MAX}}
+{\footnotesize\ttfamily \#define MAX(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~(((a) $>$ (b)) ? (a) \+: (b))}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00350}{350}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{group___u_s_b_d___d_e_f___exported___macros_ga3acffbd305ee72dcd4593c0d8af64a4f}\label{group___u_s_b_d___d_e_f___exported___macros_ga3acffbd305ee72dcd4593c0d8af64a4f}} 
+\index{USBD\_DEF\_Exported\_Macros@{USBD\_DEF\_Exported\_Macros}!MIN@{MIN}}
+\index{MIN@{MIN}!USBD\_DEF\_Exported\_Macros@{USBD\_DEF\_Exported\_Macros}}
+\doxysubsubsection{\texorpdfstring{MIN}{MIN}}
+{\footnotesize\ttfamily \#define MIN(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~(((a) $<$ (b)) ? (a) \+: (b))}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00346}{346}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___u_s_b_d___d_e_f___exported___macros_ga827954883dfac4d648316134e757be4e}\label{group___u_s_b_d___d_e_f___exported___macros_ga827954883dfac4d648316134e757be4e}} 
+\index{USBD\_DEF\_Exported\_Macros@{USBD\_DEF\_Exported\_Macros}!SWAPBYTE@{SWAPBYTE}}
+\index{SWAPBYTE@{SWAPBYTE}!USBD\_DEF\_Exported\_Macros@{USBD\_DEF\_Exported\_Macros}}
+\doxysubsubsection{\texorpdfstring{SWAPBYTE()}{SWAPBYTE()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE}} uint16\+\_\+t SWAPBYTE (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{addr }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00323}{323}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+

@@ -1,0 +1,71 @@
+\hypertarget{group___s_d_r_a_m___exported___types}{}\doxysection{SDRAM Exported Types}
+\label{group___s_d_r_a_m___exported___types}\index{SDRAM Exported Types@{SDRAM Exported Types}}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_d_r_a_m___handle_type_def}{SDRAM\+\_\+\+Handle\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em SDRAM handle Structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___s_d_r_a_m___exported___types_ga92ac85154226aa980fe2d37db7d8f7bc}{HAL\+\_\+\+SDRAM\+\_\+\+State\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bcabf18c1848d59dd697ed30f9b3c000246}{HAL\+\_\+\+SDRAM\+\_\+\+STATE\+\_\+\+RESET}} = 0x00U
+, \mbox{\hyperlink{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bca0bb70c1c3b23d2a2a7e22bd9723cdb04}{HAL\+\_\+\+SDRAM\+\_\+\+STATE\+\_\+\+READY}} = 0x01U
+, \mbox{\hyperlink{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bcae2b3f18b2aba6c460a31caec2b330255}{HAL\+\_\+\+SDRAM\+\_\+\+STATE\+\_\+\+BUSY}} = 0x02U
+, \mbox{\hyperlink{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bca07b6f15c5b80007f9c91395b969ea041}{HAL\+\_\+\+SDRAM\+\_\+\+STATE\+\_\+\+ERROR}} = 0x03U
+, \newline
+\mbox{\hyperlink{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bcab9a47e39962fc355d17b5bbc3cd8e00b}{HAL\+\_\+\+SDRAM\+\_\+\+STATE\+\_\+\+WRITE\+\_\+\+PROTECTED}} = 0x04U
+, \mbox{\hyperlink{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bcad5d7951e99258494e70cc6284d87c72a}{HAL\+\_\+\+SDRAM\+\_\+\+STATE\+\_\+\+PRECHARGED}} = 0x05U
+ \}
+\begin{DoxyCompactList}\small\item\em HAL SDRAM State structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group___s_d_r_a_m___exported___types_ga92ac85154226aa980fe2d37db7d8f7bc}\label{group___s_d_r_a_m___exported___types_ga92ac85154226aa980fe2d37db7d8f7bc}} 
+\index{SDRAM Exported Types@{SDRAM Exported Types}!HAL\_SDRAM\_StateTypeDef@{HAL\_SDRAM\_StateTypeDef}}
+\index{HAL\_SDRAM\_StateTypeDef@{HAL\_SDRAM\_StateTypeDef}!SDRAM Exported Types@{SDRAM Exported Types}}
+\doxysubsubsection{\texorpdfstring{HAL\_SDRAM\_StateTypeDef}{HAL\_SDRAM\_StateTypeDef}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___s_d_r_a_m___exported___types_ga92ac85154226aa980fe2d37db7d8f7bc}{HAL\+\_\+\+SDRAM\+\_\+\+State\+Type\+Def}}}
+
+
+
+HAL SDRAM State structure definition. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_SDRAM\_STATE\_RESET@{HAL\_SDRAM\_STATE\_RESET}!SDRAM Exported Types@{SDRAM Exported Types}}\index{SDRAM Exported Types@{SDRAM Exported Types}!HAL\_SDRAM\_STATE\_RESET@{HAL\_SDRAM\_STATE\_RESET}}}\mbox{\Hypertarget{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bcabf18c1848d59dd697ed30f9b3c000246}\label{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bcabf18c1848d59dd697ed30f9b3c000246}} 
+HAL\+\_\+\+SDRAM\+\_\+\+STATE\+\_\+\+RESET&SDRAM not yet initialized or disabled \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_SDRAM\_STATE\_READY@{HAL\_SDRAM\_STATE\_READY}!SDRAM Exported Types@{SDRAM Exported Types}}\index{SDRAM Exported Types@{SDRAM Exported Types}!HAL\_SDRAM\_STATE\_READY@{HAL\_SDRAM\_STATE\_READY}}}\mbox{\Hypertarget{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bca0bb70c1c3b23d2a2a7e22bd9723cdb04}\label{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bca0bb70c1c3b23d2a2a7e22bd9723cdb04}} 
+HAL\+\_\+\+SDRAM\+\_\+\+STATE\+\_\+\+READY&SDRAM initialized and ready for use ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_SDRAM\_STATE\_BUSY@{HAL\_SDRAM\_STATE\_BUSY}!SDRAM Exported Types@{SDRAM Exported Types}}\index{SDRAM Exported Types@{SDRAM Exported Types}!HAL\_SDRAM\_STATE\_BUSY@{HAL\_SDRAM\_STATE\_BUSY}}}\mbox{\Hypertarget{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bcae2b3f18b2aba6c460a31caec2b330255}\label{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bcae2b3f18b2aba6c460a31caec2b330255}} 
+HAL\+\_\+\+SDRAM\+\_\+\+STATE\+\_\+\+BUSY&SDRAM internal process is ongoing ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_SDRAM\_STATE\_ERROR@{HAL\_SDRAM\_STATE\_ERROR}!SDRAM Exported Types@{SDRAM Exported Types}}\index{SDRAM Exported Types@{SDRAM Exported Types}!HAL\_SDRAM\_STATE\_ERROR@{HAL\_SDRAM\_STATE\_ERROR}}}\mbox{\Hypertarget{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bca07b6f15c5b80007f9c91395b969ea041}\label{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bca07b6f15c5b80007f9c91395b969ea041}} 
+HAL\+\_\+\+SDRAM\+\_\+\+STATE\+\_\+\+ERROR&SDRAM error state ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_SDRAM\_STATE\_WRITE\_PROTECTED@{HAL\_SDRAM\_STATE\_WRITE\_PROTECTED}!SDRAM Exported Types@{SDRAM Exported Types}}\index{SDRAM Exported Types@{SDRAM Exported Types}!HAL\_SDRAM\_STATE\_WRITE\_PROTECTED@{HAL\_SDRAM\_STATE\_WRITE\_PROTECTED}}}\mbox{\Hypertarget{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bcab9a47e39962fc355d17b5bbc3cd8e00b}\label{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bcab9a47e39962fc355d17b5bbc3cd8e00b}} 
+HAL\+\_\+\+SDRAM\+\_\+\+STATE\+\_\+\+WRITE\+\_\+\+PROTECTED&SDRAM device write protected ~\newline
+ \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAL\_SDRAM\_STATE\_PRECHARGED@{HAL\_SDRAM\_STATE\_PRECHARGED}!SDRAM Exported Types@{SDRAM Exported Types}}\index{SDRAM Exported Types@{SDRAM Exported Types}!HAL\_SDRAM\_STATE\_PRECHARGED@{HAL\_SDRAM\_STATE\_PRECHARGED}}}\mbox{\Hypertarget{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bcad5d7951e99258494e70cc6284d87c72a}\label{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bcad5d7951e99258494e70cc6284d87c72a}} 
+HAL\+\_\+\+SDRAM\+\_\+\+STATE\+\_\+\+PRECHARGED&SDRAM device precharged ~\newline
+ \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__sdram_8h_source_l00049}{49}} of file \mbox{\hyperlink{stm32h7xx__hal__sdram_8h_source}{stm32h7xx\+\_\+hal\+\_\+sdram.\+h}}.
+

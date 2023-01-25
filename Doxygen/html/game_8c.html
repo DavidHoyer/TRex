@@ -75,15 +75,16 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">game.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Game control functions.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="game_8h_source.html">include/game.h</a>&quot;</code><br />
@@ -92,11 +93,6 @@ $(function() {
 </div>
 <p><a href="game_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_point.html">Point</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a8c3c0274ca7222a7204e1eb7ef442ba9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a8c3c0274ca7222a7204e1eb7ef442ba9">GROUND_HEIGHT</a>&#160;&#160;&#160;50</td></tr>
@@ -107,11 +103,6 @@ Macros</h2></td></tr>
 <tr class="separator:a6e1304f63e626d4612e6dfd3ad02e3e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76f3e668e3b5a54056ea31999f9c7588"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a76f3e668e3b5a54056ea31999f9c7588">OBSTACLES_NUMBER</a>&#160;&#160;&#160;3</td></tr>
 <tr class="separator:a76f3e668e3b5a54056ea31999f9c7588"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a332e649c40b7d806629d2cfa046f3ee0"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_point.html">Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a332e649c40b7d806629d2cfa046f3ee0">Point</a></td></tr>
-<tr class="separator:a332e649c40b7d806629d2cfa046f3ee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -126,15 +117,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a9b4ca96e33c7f10e1074079d05fae8e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a9b4ca96e33c7f10e1074079d05fae8e7">GameInit</a> (void)</td></tr>
 <tr class="memdesc:a9b4ca96e33c7f10e1074079d05fae8e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the game.  <br /></td></tr>
 <tr class="separator:a9b4ca96e33c7f10e1074079d05fae8e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0855a5c16d1b49871f145a29263e9dfe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="game_8h.html#a6678e2a28b2bccb9f0563b3d59e15aa2">GameState_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a0855a5c16d1b49871f145a29263e9dfe">GetGameState</a> (void)</td></tr>
-<tr class="memdesc:a0855a5c16d1b49871f145a29263e9dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current game state.  <br /></td></tr>
-<tr class="separator:a0855a5c16d1b49871f145a29263e9dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a955012c003f998dbe37f8b7a282fa478"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a955012c003f998dbe37f8b7a282fa478">ShowStartMenu</a> (void)</td></tr>
 <tr class="memdesc:a955012c003f998dbe37f8b7a282fa478"><td class="mdescLeft">&#160;</td><td class="mdescRight">displays the start menu  <br /></td></tr>
 <tr class="separator:a955012c003f998dbe37f8b7a282fa478"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90f4e8637434246478a35dcd91e97d5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a90f4e8637434246478a35dcd91e97d5d">DisplayGameOver</a> (void)</td></tr>
-<tr class="memdesc:a90f4e8637434246478a35dcd91e97d5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">displays the GameOver state and inits a delay  <br /></td></tr>
-<tr class="separator:a90f4e8637434246478a35dcd91e97d5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae419198eb7bcb4f54ab9aa17ea20e61d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#ae419198eb7bcb4f54ab9aa17ea20e61d">StartGame</a> (void)</td></tr>
 <tr class="memdesc:ae419198eb7bcb4f54ab9aa17ea20e61d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the game, draw T-Rex etc.  <br /></td></tr>
 <tr class="separator:ae419198eb7bcb4f54ab9aa17ea20e61d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,12 +129,18 @@ Functions</h2></td></tr>
 <tr class="memitem:af832dcef9efdbe954d6e1098ffa6ad71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#af832dcef9efdbe954d6e1098ffa6ad71">ContinueGame</a> (void)</td></tr>
 <tr class="memdesc:af832dcef9efdbe954d6e1098ffa6ad71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resumes the movement.  <br /></td></tr>
 <tr class="separator:af832dcef9efdbe954d6e1098ffa6ad71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90f4e8637434246478a35dcd91e97d5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a90f4e8637434246478a35dcd91e97d5d">DisplayGameOver</a> (void)</td></tr>
+<tr class="memdesc:a90f4e8637434246478a35dcd91e97d5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">displays the GameOver state and inits a delay  <br /></td></tr>
+<tr class="separator:a90f4e8637434246478a35dcd91e97d5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd3285ce77dcb58203e8f15c7bdbc9a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#abd3285ce77dcb58203e8f15c7bdbc9a4">SelectTrexGoogle</a> (void)</td></tr>
 <tr class="memdesc:abd3285ce77dcb58203e8f15c7bdbc9a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selects the Google T-Rex as player character.  <br /></td></tr>
 <tr class="separator:abd3285ce77dcb58203e8f15c7bdbc9a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0507e5338e4a45f29c15c549d5c2db0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a0507e5338e4a45f29c15c549d5c2db0a">SelectTrexGreen</a> (void)</td></tr>
 <tr class="memdesc:a0507e5338e4a45f29c15c549d5c2db0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selects the green T-Rex as player character.  <br /></td></tr>
 <tr class="separator:a0507e5338e4a45f29c15c549d5c2db0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0855a5c16d1b49871f145a29263e9dfe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="game_8h.html#a6678e2a28b2bccb9f0563b3d59e15aa2">GameState_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a0855a5c16d1b49871f145a29263e9dfe">GetGameState</a> (void)</td></tr>
+<tr class="memdesc:a0855a5c16d1b49871f145a29263e9dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current game state.  <br /></td></tr>
+<tr class="separator:a0855a5c16d1b49871f145a29263e9dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42dce4ec0f1c11a18f0249d8e6bba48e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structevent___t.html">event_T</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a42dce4ec0f1c11a18f0249d8e6bba48e">CheckEvent</a> (void)</td></tr>
 <tr class="memdesc:a42dce4ec0f1c11a18f0249d8e6bba48e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if an event on teh LCD display occured.  <br /></td></tr>
 <tr class="separator:a42dce4ec0f1c11a18f0249d8e6bba48e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,12 +168,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ada08cfa73c6178ec83feb054879ff720"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#ada08cfa73c6178ec83feb054879ff720">InitTRexJump</a> (void)</td></tr>
 <tr class="memdesc:ada08cfa73c6178ec83feb054879ff720"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the jump of the T-Rex.  <br /></td></tr>
 <tr class="separator:ada08cfa73c6178ec83feb054879ff720"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6eb508a46eef9a8fc063e4c81b854d1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a6eb508a46eef9a8fc063e4c81b854d1a">ScoreCount</a> (void)</td></tr>
-<tr class="memdesc:a6eb508a46eef9a8fc063e4c81b854d1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts the current score for the player.  <br /></td></tr>
-<tr class="separator:a6eb508a46eef9a8fc063e4c81b854d1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a300fbcb34a17fb955ddca9225e98c73c"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a300fbcb34a17fb955ddca9225e98c73c">CheckCollision</a> (void)</td></tr>
 <tr class="memdesc:a300fbcb34a17fb955ddca9225e98c73c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks for a collision between the T-Rex and the obstacles.  <br /></td></tr>
 <tr class="separator:a300fbcb34a17fb955ddca9225e98c73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6eb508a46eef9a8fc063e4c81b854d1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a6eb508a46eef9a8fc063e4c81b854d1a">ScoreCount</a> (void)</td></tr>
+<tr class="memdesc:a6eb508a46eef9a8fc063e4c81b854d1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts the current score for the player.  <br /></td></tr>
+<tr class="separator:a6eb508a46eef9a8fc063e4c81b854d1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -205,7 +196,13 @@ Variables</h2></td></tr>
 <tr class="memitem:a6b22479a04312e2ebcf86907fc3e52c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="game_8c.html#a64ba115152b11e246be77f1355b56748">Move_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a6b22479a04312e2ebcf86907fc3e52c1">tRexDirection</a> = <a class="el" href="game_8c.html#a64ba115152b11e246be77f1355b56748a8ba866a6738208c73d1c426ae5df6400">MOVE_NONE</a></td></tr>
 <tr class="separator:a6b22479a04312e2ebcf86907fc3e52c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Game control functions. </p>
+<dl class="section date"><dt>Date</dt><dd>30.12.2022 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Lukas Roth </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a8c3c0274ca7222a7204e1eb7ef442ba9" name="a8c3c0274ca7222a7204e1eb7ef442ba9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8c3c0274ca7222a7204e1eb7ef442ba9">&#9670;&#160;</a></span>GROUND_HEIGHT</h2>
 
@@ -218,7 +215,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00015">15</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00021">21</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -234,7 +231,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00016">16</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00022">22</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -250,7 +247,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00018">18</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00024">24</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -266,22 +263,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00017">17</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="a332e649c40b7d806629d2cfa046f3ee0" name="a332e649c40b7d806629d2cfa046f3ee0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a332e649c40b7d806629d2cfa046f3ee0">&#9670;&#160;</a></span>Point</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="struct_point.html">Point</a> <a class="el" href="struct_point.html">Point</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00023">23</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -303,7 +285,7 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a64ba115152b11e246be77f1355b56748ac306ffa7a0ee9849d5c7cb1dc9654e96" name="a64ba115152b11e246be77f1355b56748ac306ffa7a0ee9849d5c7cb1dc9654e96"></a>MOVE_DOWN&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00037">37</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00029">29</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -327,7 +309,7 @@ Variables</h2></td></tr>
 <p>Checks for a collision between the T-Rex and the obstacles. </p>
 <dl class="section return"><dt>Returns</dt><dd>flag </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00444">444</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00454">454</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -350,7 +332,7 @@ Variables</h2></td></tr>
 <p>Checks if an event on teh LCD display occured. </p>
 <dl class="section return"><dt>Returns</dt><dd>event </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00186">186</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00221">221</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -372,7 +354,7 @@ Variables</h2></td></tr>
 
 <p>Resumes the movement. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00129">129</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00144">144</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -394,7 +376,7 @@ Variables</h2></td></tr>
 
 <p>displays the GameOver state and inits a delay </p>
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00092">92</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00154">154</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -416,7 +398,7 @@ Variables</h2></td></tr>
 
 <p>Initializes the game. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00045">45</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00056">56</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -439,7 +421,7 @@ Variables</h2></td></tr>
 <p>Returns the current game state. </p>
 <dl class="section return"><dt>Returns</dt><dd>Game state </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00069">69</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00216">216</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -461,7 +443,7 @@ Variables</h2></td></tr>
 
 <p>Initializes the jump of the T-Rex. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00330">330</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00372">372</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -483,7 +465,7 @@ Variables</h2></td></tr>
 
 <p>Moves the obstacles on the LCD. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00240">240</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00281">281</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -505,7 +487,7 @@ Variables</h2></td></tr>
 
 <p>Moves the T-Rex on the LCD. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00276">276</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00321">321</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -534,7 +516,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>flag </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00235">235</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00273">273</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -563,7 +545,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>flag </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00236">236</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00274">274</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -592,7 +574,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>flag </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00234">234</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00272">272</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -621,7 +603,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>flag </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00237">237</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00275">275</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -650,7 +632,7 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>flag </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00238">238</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00276">276</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -672,7 +654,7 @@ Variables</h2></td></tr>
 
 <p>Stops the movement of the T-Rex aswell as the obstacles. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00122">122</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00134">134</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -694,7 +676,7 @@ Variables</h2></td></tr>
 
 <p>Counts the current score for the player. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00338">338</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00508">508</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -716,7 +698,7 @@ Variables</h2></td></tr>
 
 <p>Selects the Google T-Rex as player character. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00136">136</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00163">163</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -738,7 +720,7 @@ Variables</h2></td></tr>
 
 <p>Selects the green T-Rex as player character. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00158">158</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00188">188</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -760,7 +742,7 @@ Variables</h2></td></tr>
 
 <p>displays the start menu </p>
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00071">71</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00083">83</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -782,7 +764,7 @@ Variables</h2></td></tr>
 
 <p>Starts the game, draw T-Rex etc. </p>
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00098">98</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00107">107</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -799,7 +781,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00032">32</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00050">50</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -815,7 +797,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00026">26</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00044">44</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -833,9 +815,9 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= { {200, 10, 59, 80, <a class="code hl_variable" href="resource_8h.html#a927f43e32d767bd5f86a0bf33e0091f5">cactus_pixelData</a>, 0,0},</div>
 <div class="line">                            {0, 0, 59, 80, <a class="code hl_variable" href="resource_8h.html#a927f43e32d767bd5f86a0bf33e0091f5">cactus_pixelData</a>, 0,0},</div>
 <div class="line">                            {0, 0, 59, 80, <a class="code hl_variable" href="resource_8h.html#a927f43e32d767bd5f86a0bf33e0091f5">cactus_pixelData</a>, 0,0} }</div>
-<div class="ttc" id="aresource_8h_html_a927f43e32d767bd5f86a0bf33e0091f5"><div class="ttname"><a href="resource_8h.html#a927f43e32d767bd5f86a0bf33e0091f5">cactus_pixelData</a></div><div class="ttdeci">uint8_t cactus_pixelData[4720][4]</div><div class="ttdef"><b>Definition:</b> <a href="resource_8h_source.html#l00057">resource.h:57</a></div></div>
+<div class="ttc" id="aresource_8h_html_a927f43e32d767bd5f86a0bf33e0091f5"><div class="ttname"><a href="resource_8h.html#a927f43e32d767bd5f86a0bf33e0091f5">cactus_pixelData</a></div><div class="ttdeci">uint8_t cactus_pixelData[4720][4]</div><div class="ttdef"><b>Definition:</b> <a href="resource_8h_source.html#l00058">resource.h:58</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00028">28</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00046">46</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -851,7 +833,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00027">27</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00045">45</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -867,7 +849,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00025">25</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00043">43</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -883,7 +865,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00020">20</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00038">38</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -899,7 +881,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00021">21</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00039">39</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -915,7 +897,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00022">22</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00040">40</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>
@@ -931,7 +913,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00043">43</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="game_8c_source.html#l00051">51</a> of file <a class="el" href="game_8c_source.html">game.c</a>.</p>
 
 </div>
 </div>

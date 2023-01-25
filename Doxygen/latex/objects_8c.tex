@@ -1,5 +1,10 @@
 \hypertarget{objects_8c}{}\doxysection{C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.11.0/\+TRex/source/objects.c File Reference}
 \label{objects_8c}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/source/objects.c@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/source/objects.c}}
+
+
+Working with objects on the LCD.  
+
+
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}include/objects.\+h\char`\"{}}\newline
 \doxysubsection*{Functions}
@@ -17,11 +22,11 @@ void \mbox{\hyperlink{objects_8c_a6c1449df6f92a8d35b7d15cbc99d4084}{Delete\+Bmp}
 \item 
 void \mbox{\hyperlink{objects_8c_ab66f6d9162af4deedcacd5197026e61d}{Lcd\+Clear\+Area}} (const uint16\+\_\+t x1, const uint16\+\_\+t y1, const uint16\+\_\+t x2, const uint16\+\_\+t y2)
 \item 
-\mbox{\hyperlink{objects_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$ \mbox{\hyperlink{objects_8c_a5a84842ec55ac42009be9061784a5a42}{Get\+Boarder}} (\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} bmp)
+\mbox{\hyperlink{objects_8h_a2dda454dfd99aacce45902fa05fecf03}{pixel\+\_\+t}} $\ast$ \mbox{\hyperlink{objects_8c_ad239208f4f9a6cc2a638e48e0645dd10}{Get\+Boarder}} (\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} bmp)
 \item 
-\mbox{\hyperlink{objects_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$ \mbox{\hyperlink{objects_8c_a543a8f085ebb943d665db811f66590a9}{Sort\+Boarder}} (\mbox{\hyperlink{objects_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$head)
+\mbox{\hyperlink{objects_8h_a2dda454dfd99aacce45902fa05fecf03}{pixel\+\_\+t}} $\ast$ \mbox{\hyperlink{objects_8c_a391bb0403481a8dc57ec0427722f00d8}{Sort\+Boarder}} (\mbox{\hyperlink{objects_8h_a2dda454dfd99aacce45902fa05fecf03}{pixel\+\_\+t}} $\ast$head)
 \item 
-\mbox{\hyperlink{objects_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$ \mbox{\hyperlink{objects_8c_a4a63b507e18f476ccf5d2d4a4052a106}{Create\+Edges}} (\mbox{\hyperlink{objects_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$head)
+\mbox{\hyperlink{objects_8h_a2dda454dfd99aacce45902fa05fecf03}{pixel\+\_\+t}} $\ast$ \mbox{\hyperlink{objects_8c_a891b42c97947a47ff0eb8e5fe4f2f12d}{Create\+Edges}} (\mbox{\hyperlink{objects_8h_a2dda454dfd99aacce45902fa05fecf03}{pixel\+\_\+t}} $\ast$head)
 \item 
 void \mbox{\hyperlink{objects_8c_abef95ae0d5429750d0a26a2e676baa7c}{Print\+Border}} (\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} bmp, color\+\_\+t clr)
 \item 
@@ -36,6 +41,21 @@ const LCD\+\_\+\+Color\+\_\+t \mbox{\hyperlink{objects_8c_ade2205d6d566d96f18004
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Working with objects on the LCD. 
+
+\begin{DoxyDate}{Date}
+30.\+12.\+2022 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Lukas Roth 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+
+
+
 \doxysubsection{Function Documentation}
 \mbox{\Hypertarget{objects_8c_a51f4d7975a46122a4b7074b194fbe3fc}\label{objects_8c_a51f4d7975a46122a4b7074b194fbe3fc}} 
 \index{objects.c@{objects.c}!ConvertArray@{ConvertArray}}
@@ -45,17 +65,17 @@ const LCD\+\_\+\+Color\+\_\+t \mbox{\hyperlink{objects_8c_ade2205d6d566d96f18004
 
 
 
-Definition at line \mbox{\hyperlink{objects_8c_source_l00322}{322}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+Definition at line \mbox{\hyperlink{objects_8c_source_l00325}{325}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
 
-\mbox{\Hypertarget{objects_8c_a4a63b507e18f476ccf5d2d4a4052a106}\label{objects_8c_a4a63b507e18f476ccf5d2d4a4052a106}} 
+\mbox{\Hypertarget{objects_8c_a891b42c97947a47ff0eb8e5fe4f2f12d}\label{objects_8c_a891b42c97947a47ff0eb8e5fe4f2f12d}} 
 \index{objects.c@{objects.c}!CreateEdges@{CreateEdges}}
 \index{CreateEdges@{CreateEdges}!objects.c@{objects.c}}
 \doxysubsubsection{\texorpdfstring{CreateEdges()}{CreateEdges()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{objects_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$ Create\+Edges (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{objects_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$}]{head }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{objects_8h_a2dda454dfd99aacce45902fa05fecf03}{pixel\+\_\+t}} $\ast$ Create\+Edges (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{objects_8h_a2dda454dfd99aacce45902fa05fecf03}{pixel\+\_\+t}} $\ast$}]{head }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{objects_8c_source_l00294}{294}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+Definition at line \mbox{\hyperlink{objects_8c_source_l00295}{295}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
 
 \mbox{\Hypertarget{objects_8c_a6c1449df6f92a8d35b7d15cbc99d4084}\label{objects_8c_a6c1449df6f92a8d35b7d15cbc99d4084}} 
 \index{objects.c@{objects.c}!DeleteBmp@{DeleteBmp}}
@@ -65,7 +85,7 @@ Definition at line \mbox{\hyperlink{objects_8c_source_l00294}{294}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{objects_8c_source_l00111}{111}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+Definition at line \mbox{\hyperlink{objects_8c_source_l00112}{112}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
 
 \mbox{\Hypertarget{objects_8c_a1bfc0921cde12f53426cd7b393776668}\label{objects_8c_a1bfc0921cde12f53426cd7b393776668}} 
 \index{objects.c@{objects.c}!DrawBmp@{DrawBmp}}
@@ -75,7 +95,7 @@ Definition at line \mbox{\hyperlink{objects_8c_source_l00111}{111}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{objects_8c_source_l00013}{13}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+Definition at line \mbox{\hyperlink{objects_8c_source_l00014}{14}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
 
 \mbox{\Hypertarget{objects_8c_a57451f74eca71a9eefd5f5a9e97ae467}\label{objects_8c_a57451f74eca71a9eefd5f5a9e97ae467}} 
 \index{objects.c@{objects.c}!DrawBmpWithout\_A@{DrawBmpWithout\_A}}
@@ -85,17 +105,17 @@ Definition at line \mbox{\hyperlink{objects_8c_source_l00013}{13}} of file \mbox
 
 
 
-Definition at line \mbox{\hyperlink{objects_8c_source_l00047}{47}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+Definition at line \mbox{\hyperlink{objects_8c_source_l00048}{48}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
 
-\mbox{\Hypertarget{objects_8c_a5a84842ec55ac42009be9061784a5a42}\label{objects_8c_a5a84842ec55ac42009be9061784a5a42}} 
+\mbox{\Hypertarget{objects_8c_ad239208f4f9a6cc2a638e48e0645dd10}\label{objects_8c_ad239208f4f9a6cc2a638e48e0645dd10}} 
 \index{objects.c@{objects.c}!GetBoarder@{GetBoarder}}
 \index{GetBoarder@{GetBoarder}!objects.c@{objects.c}}
 \doxysubsubsection{\texorpdfstring{GetBoarder()}{GetBoarder()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{objects_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$ Get\+Boarder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}}}]{bmp }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{objects_8h_a2dda454dfd99aacce45902fa05fecf03}{pixel\+\_\+t}} $\ast$ Get\+Boarder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}}}]{bmp }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{objects_8c_source_l00131}{131}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+Definition at line \mbox{\hyperlink{objects_8c_source_l00132}{132}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
 
 \mbox{\Hypertarget{objects_8c_a87ae89e93f293253031ef38e653c8cb2}\label{objects_8c_a87ae89e93f293253031ef38e653c8cb2}} 
 \index{objects.c@{objects.c}!LCD\_Rect\_Gradient@{LCD\_Rect\_Gradient}}
@@ -115,7 +135,7 @@ Definition at line \mbox{\hyperlink{objects_8c_source_l00345}{345}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{objects_8c_source_l00116}{116}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+Definition at line \mbox{\hyperlink{objects_8c_source_l00117}{117}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
 
 \mbox{\Hypertarget{objects_8c_ab979e3c656d76b111007bfe0b70398d3}\label{objects_8c_ab979e3c656d76b111007bfe0b70398d3}} 
 \index{objects.c@{objects.c}!MoveBmp@{MoveBmp}}
@@ -125,7 +145,7 @@ Definition at line \mbox{\hyperlink{objects_8c_source_l00116}{116}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{objects_8c_source_l00077}{77}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+Definition at line \mbox{\hyperlink{objects_8c_source_l00078}{78}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
 
 \mbox{\Hypertarget{objects_8c_abef95ae0d5429750d0a26a2e676baa7c}\label{objects_8c_abef95ae0d5429750d0a26a2e676baa7c}} 
 \index{objects.c@{objects.c}!PrintBorder@{PrintBorder}}
@@ -135,7 +155,7 @@ Definition at line \mbox{\hyperlink{objects_8c_source_l00077}{77}} of file \mbox
 
 
 
-Definition at line \mbox{\hyperlink{objects_8c_source_l00309}{309}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+Definition at line \mbox{\hyperlink{objects_8c_source_l00312}{312}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
 
 \mbox{\Hypertarget{objects_8c_a952c22a6dda726ce1a517cb8d5cde5a4}\label{objects_8c_a952c22a6dda726ce1a517cb8d5cde5a4}} 
 \index{objects.c@{objects.c}!ShiftBmp@{ShiftBmp}}
@@ -145,17 +165,17 @@ Definition at line \mbox{\hyperlink{objects_8c_source_l00309}{309}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{objects_8c_source_l00107}{107}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+Definition at line \mbox{\hyperlink{objects_8c_source_l00108}{108}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
 
-\mbox{\Hypertarget{objects_8c_a543a8f085ebb943d665db811f66590a9}\label{objects_8c_a543a8f085ebb943d665db811f66590a9}} 
+\mbox{\Hypertarget{objects_8c_a391bb0403481a8dc57ec0427722f00d8}\label{objects_8c_a391bb0403481a8dc57ec0427722f00d8}} 
 \index{objects.c@{objects.c}!SortBoarder@{SortBoarder}}
 \index{SortBoarder@{SortBoarder}!objects.c@{objects.c}}
 \doxysubsubsection{\texorpdfstring{SortBoarder()}{SortBoarder()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{objects_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$ Sort\+Boarder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{objects_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$}]{head }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{objects_8h_a2dda454dfd99aacce45902fa05fecf03}{pixel\+\_\+t}} $\ast$ Sort\+Boarder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{objects_8h_a2dda454dfd99aacce45902fa05fecf03}{pixel\+\_\+t}} $\ast$}]{head }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{objects_8c_source_l00238}{238}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+Definition at line \mbox{\hyperlink{objects_8c_source_l00239}{239}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
 
 
 
@@ -168,5 +188,5 @@ Definition at line \mbox{\hyperlink{objects_8c_source_l00238}{238}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{objects_8c_source_l00011}{11}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+Definition at line \mbox{\hyperlink{objects_8c_source_l00012}{12}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
 

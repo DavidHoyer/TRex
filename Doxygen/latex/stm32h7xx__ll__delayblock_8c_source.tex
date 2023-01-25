@@ -1,0 +1,107 @@
+\hypertarget{stm32h7xx__ll__delayblock_8c_source}{}\doxysection{stm32h7xx\+\_\+ll\+\_\+delayblock.\+c}
+\label{stm32h7xx__ll__delayblock_8c_source}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Drivers/STM32H7xx\_HAL\_Driver/Src/stm32h7xx\_ll\_delayblock.c@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Drivers/STM32H7xx\_HAL\_Driver/Src/stm32h7xx\_ll\_delayblock.c}}
+\mbox{\hyperlink{stm32h7xx__ll__delayblock_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00051}00051\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00052}00052\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32h7xx__hal_8h}{stm32h7xx\_hal.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00063}00063\ \textcolor{preprocessor}{\#if\ defined(HAL\_SD\_MODULE\_ENABLED)\ ||\ defined(HAL\_QSPI\_MODULE\_ENABLED)}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00065}00065\ \textcolor{comment}{/*\ Private\ typedef\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00066}00066\ \textcolor{comment}{/*\ Private\ define\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00067}00067\ \textcolor{preprocessor}{\#define\ DLYB\_TIMEOUT\ 0xFFU}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00068}00068\ \textcolor{comment}{/*\ Private\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00069}00069\ \textcolor{comment}{/*\ Private\ variables\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00070}00070\ \textcolor{comment}{/*\ Private\ function\ prototypes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00071}00071\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00096}00096\ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___h_a_l___d_e_l_a_y_b_l_o_c_k___l_l___group3_ga57ff5d47e104bbe716a7e363f36db01e}{DelayBlock\_Enable}}(\mbox{\hyperlink{struct_d_l_y_b___type_def}{DLYB\_TypeDef}}\ *DLYBx)}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00097}00097\ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00098}00098\ \ \ uint32\_t\ unit\ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00099}00099\ \ \ uint32\_t\ sel\ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00100}00100\ \ \ uint32\_t\ sel\_current;}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00101}00101\ \ \ uint32\_t\ unit\_current;}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00102}00102\ \ \ uint32\_t\ tuning;}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00103}00103\ \ \ uint32\_t\ lng\_mask;}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00104}00104\ \ \ uint32\_t\ tickstart;}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00106}00106\ \ \ DLYBx-\/>\mbox{\hyperlink{struct_d_l_y_b___type_def_ab40c89c59391aaa9d9a8ec011dd0907a}{CR}}\ =\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga591d50345b0a24a6a8304bb0c47265bc}{DLYB\_CR\_DEN}}\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1a85d55e95dbc675b9f2e41a31c85441}{DLYB\_CR\_SEN}};}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00108}00108\ \ \ \textcolor{keywordflow}{for}\ (sel\_current\ =\ 0U;\ sel\_current\ <\ \mbox{\hyperlink{group___d_l_y_b___exported___constants_gacc736e6f22cfdb4e4b0d3b6be2f74d52}{DLYB\_MAX\_SELECT}};\ sel\_current++)}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00109}00109\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00110}00110\ \ \ \ \ \textcolor{comment}{/*\ lng\_mask\ is\ the\ mask\ bit\ for\ the\ LNG\ field\ to\ check\ the\ output\ of\ the\ UNITx*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00111}00111\ \ \ \ \ lng\_mask\ =\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga770fb1296fcbf46edc06e8fabdf06b56}{DLYB\_CFGR\_LNG\_0}}\ <<\ sel\_current;}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00112}00112\ \ \ \ \ tuning\ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00113}00113\ \ \ \ \ \textcolor{keywordflow}{for}\ (unit\_current\ =\ 0U;\ unit\_current\ <\ \mbox{\hyperlink{group___d_l_y_b___exported___constants_ga23e814c5409392d461706691d983a648}{DLYB\_MAX\_UNIT}};\ unit\_current++)}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00114}00114\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00115}00115\ \ \ \ \ \ \ \textcolor{comment}{/*\ Set\ the\ Delay\ of\ the\ UNIT(s)*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00116}00116\ \ \ \ \ \ \ DLYBx-\/>\mbox{\hyperlink{struct_d_l_y_b___type_def_a26f1e746ccbf9c9f67e7c60e61085ec1}{CFGR}}\ =\ \mbox{\hyperlink{group___d_l_y_b___exported___constants_gacc736e6f22cfdb4e4b0d3b6be2f74d52}{DLYB\_MAX\_SELECT}}\ |\ (unit\_current\ <<\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5e4f90a3450e31b4731e43ecb00dce94}{DLYB\_CFGR\_UNIT\_Pos}});}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00118}00118\ \ \ \ \ \ \ \textcolor{comment}{/*\ Waiting\ for\ a\ LNG\ valid\ value\ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00119}00119\ \ \ \ \ \ \ tickstart\ =\ \ \mbox{\hyperlink{group___h_a_l_gaf2c4f03d53e997a54e1fd5e80daa55c4}{HAL\_GetTick}}();}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00120}00120\ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ ((DLYBx-\/>\mbox{\hyperlink{struct_d_l_y_b___type_def_a26f1e746ccbf9c9f67e7c60e61085ec1}{CFGR}}\ \&\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf58de4ad7d082f0f165ba8284bac5627}{DLYB\_CFGR\_LNGF}})\ ==\ 0U)}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00121}00121\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00122}00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((\mbox{\hyperlink{group___h_a_l_gaf2c4f03d53e997a54e1fd5e80daa55c4}{HAL\_GetTick}}()\ -\/\ tickstart)\ >=\ \ DLYB\_TIMEOUT)}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00123}00123\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa00c89549bc881c35e8e4cd9e718337e5}{HAL\_TIMEOUT}};}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00125}00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00126}00126\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00127}00127\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tuning\ ==\ 0U)}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00128}00128\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((DLYBx-\/>\mbox{\hyperlink{struct_d_l_y_b___type_def_a26f1e746ccbf9c9f67e7c60e61085ec1}{CFGR}}\ \&\ lng\_mask)\ !=\ 0U)}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00130}00130\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 1/2\ period\ HIGH\ is\ detected\ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ tuning\ =\ 1U;}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00133}00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00134}00134\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00135}00135\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00136}00136\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ 1/2\ period\ LOW\ detected\ after\ the\ HIGH\ 1/2\ period\ =>\ FULL\ PERIOD\ passed*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((DLYBx-\/>\mbox{\hyperlink{struct_d_l_y_b___type_def_a26f1e746ccbf9c9f67e7c60e61085ec1}{CFGR}}\ \&\ lng\_mask\ )\ ==\ 0U)}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00139}00139\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Save\ the\ first\ result\ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\ unit\ ==\ 0U\ )}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ unit\ =\ unit\_current;}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ sel\ \ =\ sel\_current\ +\ 1U;}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00147}00147\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00148}00148\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00149}00149\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00150}00150\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00152}00152\ \ \ \textcolor{comment}{/*\ Apply\ the\ Tuning\ settings\ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00153}00153\ \ \ DLYBx-\/>\mbox{\hyperlink{struct_d_l_y_b___type_def_ab40c89c59391aaa9d9a8ec011dd0907a}{CR}}\ \ \ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00154}00154\ \ \ DLYBx-\/>\mbox{\hyperlink{struct_d_l_y_b___type_def_ab40c89c59391aaa9d9a8ec011dd0907a}{CR}}\ \ \ =\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga591d50345b0a24a6a8304bb0c47265bc}{DLYB\_CR\_DEN}}\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1a85d55e95dbc675b9f2e41a31c85441}{DLYB\_CR\_SEN}};}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00155}00155\ \ \ DLYBx-\/>\mbox{\hyperlink{struct_d_l_y_b___type_def_a26f1e746ccbf9c9f67e7c60e61085ec1}{CFGR}}\ =\ sel\ |\ (unit\ <<\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5e4f90a3450e31b4731e43ecb00dce94}{DLYB\_CFGR\_UNIT\_Pos}});}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00156}00156\ \ \ DLYBx-\/>\mbox{\hyperlink{struct_d_l_y_b___type_def_ab40c89c59391aaa9d9a8ec011dd0907a}{CR}}\ \ \ =\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga591d50345b0a24a6a8304bb0c47265bc}{DLYB\_CR\_DEN}};}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00158}00158\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00159}00159\ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00166}00166\ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___h_a_l___d_e_l_a_y_b_l_o_c_k___l_l___group3_ga5c36753e728a67c0ce95fe3c0f17272f}{DelayBlock\_Disable}}(\mbox{\hyperlink{struct_d_l_y_b___type_def}{DLYB\_TypeDef}}\ *DLYBx)}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00167}00167\ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00168}00168\ \ \ \textcolor{comment}{/*\ Disable\ DLYB\ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00169}00169\ \ \ DLYBx-\/>\mbox{\hyperlink{struct_d_l_y_b___type_def_ab40c89c59391aaa9d9a8ec011dd0907a}{CR}}\ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00170}00170\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00171}00171\ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00180}00180\ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___h_a_l___d_e_l_a_y_b_l_o_c_k___l_l___group3_gabdbdb160fa390132013bc49b321e7356}{DelayBlock\_Configure}}(\mbox{\hyperlink{struct_d_l_y_b___type_def}{DLYB\_TypeDef}}\ *DLYBx,uint32\_t\ PhaseSel,\ uint32\_t\ Units\ )}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00181}00181\ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00182}00182\ \ \ \textcolor{comment}{/*\ Apply\ the\ delay\ settings\ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00184}00184\ \ \ DLYBx-\/>\mbox{\hyperlink{struct_d_l_y_b___type_def_ab40c89c59391aaa9d9a8ec011dd0907a}{CR}}\ \ \ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00185}00185\ \ \ DLYBx-\/>\mbox{\hyperlink{struct_d_l_y_b___type_def_ab40c89c59391aaa9d9a8ec011dd0907a}{CR}}\ \ \ =\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga591d50345b0a24a6a8304bb0c47265bc}{DLYB\_CR\_DEN}}\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1a85d55e95dbc675b9f2e41a31c85441}{DLYB\_CR\_SEN}};}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00186}00186\ \ \ DLYBx-\/>\mbox{\hyperlink{struct_d_l_y_b___type_def_a26f1e746ccbf9c9f67e7c60e61085ec1}{CFGR}}\ =\ PhaseSel\ |\ (Units\ <<\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5e4f90a3450e31b4731e43ecb00dce94}{DLYB\_CFGR\_UNIT\_Pos}});}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00187}00187\ \ \ DLYBx-\/>\mbox{\hyperlink{struct_d_l_y_b___type_def_ab40c89c59391aaa9d9a8ec011dd0907a}{CR}}\ \ \ =\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga591d50345b0a24a6a8304bb0c47265bc}{DLYB\_CR\_DEN}};}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00189}00189\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00190}00190\ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00201}00201\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ (HAL\_SD\_MODULE\_ENABLED)\ \&\ (HAL\_QSPI\_MODULE\_ENABLED)*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__ll__delayblock_8c_source_l00210}00210\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

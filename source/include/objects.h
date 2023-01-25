@@ -1,9 +1,10 @@
-/*
- * Objects.h
- *
- *  Created on: 30.12.2022
- *      Author: lukir
- */
+/**
+  *  @file objects.h
+  *  @ingroup include
+  *  @date 30.12.2022
+  *  @author Lukas Roth
+  *  @brief Working with objects on the LCD
+  */
 
 #ifndef INCLUDE_OBJECTS_H_
 #define INCLUDE_OBJECTS_H_
@@ -19,13 +20,12 @@
 //*** BMP Struct
 //*******************************************************************
 
-typedef struct node
+typedef struct pixel
 {
 	uint16_t		x;
 	uint16_t		y;
-
-	struct node	*next;
-}node_t;
+	struct pixel    *next;
+}pixel_t;
 
 typedef struct
 {
@@ -38,7 +38,7 @@ typedef struct
 
 	unsigned char	visible;		// visibility flag
 	unsigned char	selected;
-	node_t			*head;
+	pixel_t			*head;
 }bmp_t;
 
 void DrawBmp(bmp_t *bmp, const uint16_t x, const uint16_t y);
@@ -47,10 +47,10 @@ void MoveBmp(bmp_t *bmp, const uint16_t x, const uint16_t y);
 void ShiftBmp(bmp_t *bmp, const uint16_t ix, const uint16_t iy);
 void DeleteBmp(bmp_t *bmp);
 void LcdClearArea(const uint16_t x1, const uint16_t y1, const uint16_t x2, const uint16_t y2);
-node_t *GetBoarder (bmp_t bmp);
+pixel_t *GetBoarder (bmp_t bmp);
 void PrintBorder (bmp_t bmp, color_t clr);
-node_t *SortBoarder(node_t *head);
-node_t *CreateEdges(node_t *head);
+pixel_t *SortBoarder(pixel_t *head);
+pixel_t *CreateEdges(pixel_t *head);
 void ConvertArray(unsigned char pixelData[][4], const uint16_t w, const uint16_t h);
 void LCD_Rect_Gradient(uint16_t x, uint16_t y, uint16_t width, uint16_t height, LCD_Color_t clr1, LCD_Color_t clr2);
 

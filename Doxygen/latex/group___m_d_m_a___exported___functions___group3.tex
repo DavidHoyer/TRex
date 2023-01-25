@@ -1,0 +1,74 @@
+\hypertarget{group___m_d_m_a___exported___functions___group3}{}\doxysection{I/O operation functions}
+\label{group___m_d_m_a___exported___functions___group3}\index{I/O operation functions@{I/O operation functions}}
+
+
+I/O operation functions.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___m_d_m_a___exported___functions___group3_gadfcf9e77ddd7aa6391b76f25951f962d}{HAL\+\_\+\+MDMA\+\_\+\+Start}} (\mbox{\hyperlink{group___m_d_m_a___exported___types_gae8e2befd2f94de51db90261afd6bf701}{MDMA\+\_\+\+Handle\+Type\+Def}} $\ast$hmdma, uint32\+\_\+t Src\+Address, uint32\+\_\+t Dst\+Address, uint32\+\_\+t Block\+Data\+Length, uint32\+\_\+t Block\+Count)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___m_d_m_a___exported___functions___group3_ga6ea18614da09a150f0eb53a3144efb33}{HAL\+\_\+\+MDMA\+\_\+\+Start\+\_\+\+IT}} (\mbox{\hyperlink{group___m_d_m_a___exported___types_gae8e2befd2f94de51db90261afd6bf701}{MDMA\+\_\+\+Handle\+Type\+Def}} $\ast$hmdma, uint32\+\_\+t Src\+Address, uint32\+\_\+t Dst\+Address, uint32\+\_\+t Block\+Data\+Length, uint32\+\_\+t Block\+Count)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___m_d_m_a___exported___functions___group3_ga6ddd9aad9b205e3ed52225399e8a6a19}{HAL\+\_\+\+MDMA\+\_\+\+Abort}} (\mbox{\hyperlink{group___m_d_m_a___exported___types_gae8e2befd2f94de51db90261afd6bf701}{MDMA\+\_\+\+Handle\+Type\+Def}} $\ast$hmdma)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___m_d_m_a___exported___functions___group3_ga430bcc3c5dc87c9f2a9ac3973063094b}{HAL\+\_\+\+MDMA\+\_\+\+Abort\+\_\+\+IT}} (\mbox{\hyperlink{group___m_d_m_a___exported___types_gae8e2befd2f94de51db90261afd6bf701}{MDMA\+\_\+\+Handle\+Type\+Def}} $\ast$hmdma)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___m_d_m_a___exported___functions___group3_gaa34eb70d804ebbb977109ae2caf07646}{HAL\+\_\+\+MDMA\+\_\+\+Poll\+For\+Transfer}} (\mbox{\hyperlink{group___m_d_m_a___exported___types_gae8e2befd2f94de51db90261afd6bf701}{MDMA\+\_\+\+Handle\+Type\+Def}} $\ast$hmdma, \mbox{\hyperlink{group___m_d_m_a___exported___types_ga589cfedecc29440bc12c96a872c967d9}{HAL\+\_\+\+MDMA\+\_\+\+Level\+Complete\+Type\+Def}} Complete\+Level, uint32\+\_\+t Timeout)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___m_d_m_a___exported___functions___group3_gac0b3aa06775adc97522ea406423644ae}{HAL\+\_\+\+MDMA\+\_\+\+Generate\+SWRequest}} (\mbox{\hyperlink{group___m_d_m_a___exported___types_gae8e2befd2f94de51db90261afd6bf701}{MDMA\+\_\+\+Handle\+Type\+Def}} $\ast$hmdma)
+\item 
+void \mbox{\hyperlink{group___m_d_m_a___exported___functions___group3_gaeef53ea97337ffafa29e5f5e5ac3ea80}{HAL\+\_\+\+MDMA\+\_\+\+IRQHandler}} (\mbox{\hyperlink{group___m_d_m_a___exported___types_gae8e2befd2f94de51db90261afd6bf701}{MDMA\+\_\+\+Handle\+Type\+Def}} $\ast$hmdma)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+I/O operation functions. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___m_d_m_a___exported___functions___group3_ga6ddd9aad9b205e3ed52225399e8a6a19}\label{group___m_d_m_a___exported___functions___group3_ga6ddd9aad9b205e3ed52225399e8a6a19}} 
+\index{I/O operation functions@{I/O operation functions}!HAL\_MDMA\_Abort@{HAL\_MDMA\_Abort}}
+\index{HAL\_MDMA\_Abort@{HAL\_MDMA\_Abort}!I/O operation functions@{I/O operation functions}}
+\doxysubsubsection{\texorpdfstring{HAL\_MDMA\_Abort()}{HAL\_MDMA\_Abort()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+MDMA\+\_\+\+Abort (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___m_d_m_a___exported___types_gae8e2befd2f94de51db90261afd6bf701}{MDMA\+\_\+\+Handle\+Type\+Def}} $\ast$}]{hmdma }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group___m_d_m_a___exported___functions___group3_ga430bcc3c5dc87c9f2a9ac3973063094b}\label{group___m_d_m_a___exported___functions___group3_ga430bcc3c5dc87c9f2a9ac3973063094b}} 
+\index{I/O operation functions@{I/O operation functions}!HAL\_MDMA\_Abort\_IT@{HAL\_MDMA\_Abort\_IT}}
+\index{HAL\_MDMA\_Abort\_IT@{HAL\_MDMA\_Abort\_IT}!I/O operation functions@{I/O operation functions}}
+\doxysubsubsection{\texorpdfstring{HAL\_MDMA\_Abort\_IT()}{HAL\_MDMA\_Abort\_IT()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+MDMA\+\_\+\+Abort\+\_\+\+IT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___m_d_m_a___exported___types_gae8e2befd2f94de51db90261afd6bf701}{MDMA\+\_\+\+Handle\+Type\+Def}} $\ast$}]{hmdma }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group___m_d_m_a___exported___functions___group3_gac0b3aa06775adc97522ea406423644ae}\label{group___m_d_m_a___exported___functions___group3_gac0b3aa06775adc97522ea406423644ae}} 
+\index{I/O operation functions@{I/O operation functions}!HAL\_MDMA\_GenerateSWRequest@{HAL\_MDMA\_GenerateSWRequest}}
+\index{HAL\_MDMA\_GenerateSWRequest@{HAL\_MDMA\_GenerateSWRequest}!I/O operation functions@{I/O operation functions}}
+\doxysubsubsection{\texorpdfstring{HAL\_MDMA\_GenerateSWRequest()}{HAL\_MDMA\_GenerateSWRequest()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+MDMA\+\_\+\+Generate\+SWRequest (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___m_d_m_a___exported___types_gae8e2befd2f94de51db90261afd6bf701}{MDMA\+\_\+\+Handle\+Type\+Def}} $\ast$}]{hmdma }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group___m_d_m_a___exported___functions___group3_gaeef53ea97337ffafa29e5f5e5ac3ea80}\label{group___m_d_m_a___exported___functions___group3_gaeef53ea97337ffafa29e5f5e5ac3ea80}} 
+\index{I/O operation functions@{I/O operation functions}!HAL\_MDMA\_IRQHandler@{HAL\_MDMA\_IRQHandler}}
+\index{HAL\_MDMA\_IRQHandler@{HAL\_MDMA\_IRQHandler}!I/O operation functions@{I/O operation functions}}
+\doxysubsubsection{\texorpdfstring{HAL\_MDMA\_IRQHandler()}{HAL\_MDMA\_IRQHandler()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+MDMA\+\_\+\+IRQHandler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___m_d_m_a___exported___types_gae8e2befd2f94de51db90261afd6bf701}{MDMA\+\_\+\+Handle\+Type\+Def}} $\ast$}]{hmdma }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group___m_d_m_a___exported___functions___group3_gaa34eb70d804ebbb977109ae2caf07646}\label{group___m_d_m_a___exported___functions___group3_gaa34eb70d804ebbb977109ae2caf07646}} 
+\index{I/O operation functions@{I/O operation functions}!HAL\_MDMA\_PollForTransfer@{HAL\_MDMA\_PollForTransfer}}
+\index{HAL\_MDMA\_PollForTransfer@{HAL\_MDMA\_PollForTransfer}!I/O operation functions@{I/O operation functions}}
+\doxysubsubsection{\texorpdfstring{HAL\_MDMA\_PollForTransfer()}{HAL\_MDMA\_PollForTransfer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+MDMA\+\_\+\+Poll\+For\+Transfer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___m_d_m_a___exported___types_gae8e2befd2f94de51db90261afd6bf701}{MDMA\+\_\+\+Handle\+Type\+Def}} $\ast$}]{hmdma,  }\item[{\mbox{\hyperlink{group___m_d_m_a___exported___types_ga589cfedecc29440bc12c96a872c967d9}{HAL\+\_\+\+MDMA\+\_\+\+Level\+Complete\+Type\+Def}}}]{Complete\+Level,  }\item[{uint32\+\_\+t}]{Timeout }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group___m_d_m_a___exported___functions___group3_gadfcf9e77ddd7aa6391b76f25951f962d}\label{group___m_d_m_a___exported___functions___group3_gadfcf9e77ddd7aa6391b76f25951f962d}} 
+\index{I/O operation functions@{I/O operation functions}!HAL\_MDMA\_Start@{HAL\_MDMA\_Start}}
+\index{HAL\_MDMA\_Start@{HAL\_MDMA\_Start}!I/O operation functions@{I/O operation functions}}
+\doxysubsubsection{\texorpdfstring{HAL\_MDMA\_Start()}{HAL\_MDMA\_Start()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+MDMA\+\_\+\+Start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___m_d_m_a___exported___types_gae8e2befd2f94de51db90261afd6bf701}{MDMA\+\_\+\+Handle\+Type\+Def}} $\ast$}]{hmdma,  }\item[{uint32\+\_\+t}]{Src\+Address,  }\item[{uint32\+\_\+t}]{Dst\+Address,  }\item[{uint32\+\_\+t}]{Block\+Data\+Length,  }\item[{uint32\+\_\+t}]{Block\+Count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group___m_d_m_a___exported___functions___group3_ga6ea18614da09a150f0eb53a3144efb33}\label{group___m_d_m_a___exported___functions___group3_ga6ea18614da09a150f0eb53a3144efb33}} 
+\index{I/O operation functions@{I/O operation functions}!HAL\_MDMA\_Start\_IT@{HAL\_MDMA\_Start\_IT}}
+\index{HAL\_MDMA\_Start\_IT@{HAL\_MDMA\_Start\_IT}!I/O operation functions@{I/O operation functions}}
+\doxysubsubsection{\texorpdfstring{HAL\_MDMA\_Start\_IT()}{HAL\_MDMA\_Start\_IT()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+MDMA\+\_\+\+Start\+\_\+\+IT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___m_d_m_a___exported___types_gae8e2befd2f94de51db90261afd6bf701}{MDMA\+\_\+\+Handle\+Type\+Def}} $\ast$}]{hmdma,  }\item[{uint32\+\_\+t}]{Src\+Address,  }\item[{uint32\+\_\+t}]{Dst\+Address,  }\item[{uint32\+\_\+t}]{Block\+Data\+Length,  }\item[{uint32\+\_\+t}]{Block\+Count }\end{DoxyParamCaption})}
+

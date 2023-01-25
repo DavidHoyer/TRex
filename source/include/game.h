@@ -1,13 +1,17 @@
-/*
- * Game.h
- *
- *  Created on: 30.12.2022
- *      Author: lukir
- */
+/**
+  *  @file game.h
+  *  @ingroup include
+  *  @date 30.12.2022
+  *  @author Lukas Roth
+  *  @brief Game control functions
+  */
 
 #ifndef INCLUDE_GAME_H_
 #define INCLUDE_GAME_H_
 
+//*********************************************************************
+//*** Includes     													***
+//*********************************************************************
 #include "objects.h"
 
 //*********************************************************************

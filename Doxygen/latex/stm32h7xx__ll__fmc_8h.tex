@@ -1,0 +1,472 @@
+\hypertarget{stm32h7xx__ll__fmc_8h}{}\doxysection{C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.11.0/\+TRex/lib/hal/\+Drivers/\+STM32\+H7xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/stm32h7xx\+\_\+ll\+\_\+fmc.h File Reference}
+\label{stm32h7xx__ll__fmc_8h}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Drivers/STM32H7xx\_HAL\_Driver/Inc/stm32h7xx\_ll\_fmc.h@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Drivers/STM32H7xx\_HAL\_Driver/Inc/stm32h7xx\_ll\_fmc.h}}
+
+
+Header file of FMC HAL module.  
+
+
+{\ttfamily \#include \char`\"{}stm32h7xx\+\_\+hal\+\_\+def.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_f_m_c___n_o_r_s_r_a_m___init_type_def}{FMC\+\_\+\+NORSRAM\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em FMC NORSRAM Configuration Structure definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_f_m_c___n_o_r_s_r_a_m___timing_type_def}{FMC\+\_\+\+NORSRAM\+\_\+\+Timing\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em FMC NORSRAM Timing parameters structure definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_f_m_c___n_a_n_d___init_type_def}{FMC\+\_\+\+NAND\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em FMC NAND Configuration Structure definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_f_m_c___n_a_n_d___p_c_c___timing_type_def}{FMC\+\_\+\+NAND\+\_\+\+PCC\+\_\+\+Timing\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em FMC NAND Timing parameters structure definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_f_m_c___s_d_r_a_m___init_type_def}{FMC\+\_\+\+SDRAM\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em FMC SDRAM Configuration Structure definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_f_m_c___s_d_r_a_m___timing_type_def}{FMC\+\_\+\+SDRAM\+\_\+\+Timing\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em FMC SDRAM Timing parameters structure definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_f_m_c___s_d_r_a_m___command_type_def}{FMC\+\_\+\+SDRAM\+\_\+\+Command\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em SDRAM command parameters structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga2344b23ef5debdfbb2f00b61c1547c14}{IS\+\_\+\+FMC\+\_\+\+NORSRAM\+\_\+\+BANK}}(\+\_\+\+\_\+\+BANK\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gad87f37e2727d76c5ae4db83123968694}{IS\+\_\+\+FMC\+\_\+\+MUX}}(\+\_\+\+\_\+\+MUX\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga65201c4e5988afaf4c14d8c3d451458a}{IS\+\_\+\+FMC\+\_\+\+MEMORY}}(\+\_\+\+\_\+\+MEMORY\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga2ebc54cd97fd88ad6286338fce3ffe48}{IS\+\_\+\+FMC\+\_\+\+NORSRAM\+\_\+\+MEMORY\+\_\+\+WIDTH}}(\+\_\+\+\_\+\+WIDTH\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga0aea060c641910bdadc1f48044f2ed8f}{IS\+\_\+\+FMC\+\_\+\+PAGESIZE}}(\+\_\+\+\_\+\+SIZE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga507a7489e5416486f92a2edf841ad915}{IS\+\_\+\+FMC\+\_\+\+WRITE\+\_\+\+FIFO}}(\+\_\+\+\_\+\+FIFO\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gab45579566f53756a93ae84d15922db5f}{IS\+\_\+\+FMC\+\_\+\+ACCESS\+\_\+\+MODE}}(\+\_\+\+\_\+\+MODE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga8ee4ea72b19ce42032042ef40d71d8a0}{IS\+\_\+\+FMC\+\_\+\+BURSTMODE}}(\+\_\+\+\_\+\+STATE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga3e45c42296be40252db7166cab9c2957}{IS\+\_\+\+FMC\+\_\+\+WAIT\+\_\+\+POLARITY}}(\+\_\+\+\_\+\+POLARITY\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga60a02187e4d7ea8c535150859180bfac}{IS\+\_\+\+FMC\+\_\+\+WAIT\+\_\+\+SIGNAL\+\_\+\+ACTIVE}}(\+\_\+\+\_\+\+ACTIVE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga441e854710b80b55470e998a3040a452}{IS\+\_\+\+FMC\+\_\+\+WRITE\+\_\+\+OPERATION}}(\+\_\+\+\_\+\+OPERATION\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gac78f27571ace17ee6b78dfa8142a31be}{IS\+\_\+\+FMC\+\_\+\+WAITE\+\_\+\+SIGNAL}}(\+\_\+\+\_\+\+SIGNAL\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga4f2d212064380f3558a355a35d502129}{IS\+\_\+\+FMC\+\_\+\+EXTENDED\+\_\+\+MODE}}(\+\_\+\+\_\+\+MODE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga41a6c6b8e61711609c2b1c7092af5b4c}{IS\+\_\+\+FMC\+\_\+\+ASYNWAIT}}(\+\_\+\+\_\+\+STATE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gaff7bf46d90db1e9fc9960e25728d7524}{IS\+\_\+\+FMC\+\_\+\+DATA\+\_\+\+LATENCY}}(\+\_\+\+\_\+\+LATENCY\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+LATENCY\+\_\+\+\_\+) $>$ 1U) \&\& ((\+\_\+\+\_\+\+LATENCY\+\_\+\+\_\+) $<$= 17U))
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gaa086b431bbb5a722303649cacdf5963f}{IS\+\_\+\+FMC\+\_\+\+WRITE\+\_\+\+BURST}}(\+\_\+\+\_\+\+BURST\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gae947eea7c54e01b5e96f9152dc3f0e90}{IS\+\_\+\+FMC\+\_\+\+CONTINOUS\+\_\+\+CLOCK}}(\+\_\+\+\_\+\+CCLOCK\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga4fadec8f0a31f6bdf492741ab05d0320}{IS\+\_\+\+FMC\+\_\+\+ADDRESS\+\_\+\+SETUP\+\_\+\+TIME}}(\+\_\+\+\_\+\+TIME\+\_\+\+\_\+)~((\+\_\+\+\_\+\+TIME\+\_\+\+\_\+) $<$= 15U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga6fb34ef685df279f1cbde9cf83601edd}{IS\+\_\+\+FMC\+\_\+\+ADDRESS\+\_\+\+HOLD\+\_\+\+TIME}}(\+\_\+\+\_\+\+TIME\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+TIME\+\_\+\+\_\+) $>$ 0U) \&\& ((\+\_\+\+\_\+\+TIME\+\_\+\+\_\+) $<$= 15U))
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga84ceccc7ed460666c05db824b8f12f4f}{IS\+\_\+\+FMC\+\_\+\+DATASETUP\+\_\+\+TIME}}(\+\_\+\+\_\+\+TIME\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+TIME\+\_\+\+\_\+) $>$ 0U) \&\& ((\+\_\+\+\_\+\+TIME\+\_\+\+\_\+) $<$= 255U))
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga7f7a1486197d2b81f60828bc43a90264}{IS\+\_\+\+FMC\+\_\+\+DATAHOLD\+\_\+\+DURATION}}(\+\_\+\+\_\+\+DATAHOLD\+\_\+\+\_\+)~((\+\_\+\+\_\+\+DATAHOLD\+\_\+\+\_\+) $<$= 3U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga552d2f02f418cd96d3a16b743b7b0098}{IS\+\_\+\+FMC\+\_\+\+TURNAROUND\+\_\+\+TIME}}(\+\_\+\+\_\+\+TIME\+\_\+\+\_\+)~((\+\_\+\+\_\+\+TIME\+\_\+\+\_\+) $<$= 15U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gae5a73bdee17f71e21e502c1dfe1d9f9e}{IS\+\_\+\+FMC\+\_\+\+CLK\+\_\+\+DIV}}(\+\_\+\+\_\+\+DIV\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+DIV\+\_\+\+\_\+) $>$ 1U) \&\& ((\+\_\+\+\_\+\+DIV\+\_\+\+\_\+) $<$= 16U))
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gafc79ec87631dad2edba9be9334bf100d}{IS\+\_\+\+FMC\+\_\+\+NORSRAM\+\_\+\+DEVICE}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+) == \mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga9c2af2ebad5bc8404a246fa7b2f0b926}{FMC\+\_\+\+NORSRAM\+\_\+\+DEVICE}})
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gaa2787b85b3e1e61eb35f81c941b61907}{IS\+\_\+\+FMC\+\_\+\+NORSRAM\+\_\+\+EXTENDED\+\_\+\+DEVICE}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+) == \mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga3c82a799431ec0d711161bb1277c9a0b}{FMC\+\_\+\+NORSRAM\+\_\+\+EXTENDED\+\_\+\+DEVICE}})
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga85e8dee1f3363e5a020887cb9ba73fec}{IS\+\_\+\+FMC\+\_\+\+NAND\+\_\+\+BANK}}(\+\_\+\+\_\+\+BANK\+\_\+\+\_\+)~((\+\_\+\+\_\+\+BANK\+\_\+\+\_\+) == \mbox{\hyperlink{group___f_m_c___n_a_n_d___bank_gaaabc5218c166c52562406f42a7a116d6}{FMC\+\_\+\+NAND\+\_\+\+BANK3}})
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga742fdeaeb9643171c25bb0db3a08aead}{IS\+\_\+\+FMC\+\_\+\+WAIT\+\_\+\+FEATURE}}(\+\_\+\+\_\+\+FEATURE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga91d26a1d2a469d32f98c940341219274}{IS\+\_\+\+FMC\+\_\+\+NAND\+\_\+\+MEMORY\+\_\+\+WIDTH}}(\+\_\+\+\_\+\+WIDTH\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga5f44655899c2a891ee14631279421313}{IS\+\_\+\+FMC\+\_\+\+ECC\+\_\+\+STATE}}(\+\_\+\+\_\+\+STATE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga8be3779dd2458ffabe6d801927ca37b9}{IS\+\_\+\+FMC\+\_\+\+ECCPAGE\+\_\+\+SIZE}}(\+\_\+\+\_\+\+SIZE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga677da7875fd938d22b61ea6b6d3f600d}{IS\+\_\+\+FMC\+\_\+\+TCLR\+\_\+\+TIME}}(\+\_\+\+\_\+\+TIME\+\_\+\+\_\+)~((\+\_\+\+\_\+\+TIME\+\_\+\+\_\+) $<$= 255U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gaeb0b1c09b58da7c5b94e492d004c3d8a}{IS\+\_\+\+FMC\+\_\+\+TAR\+\_\+\+TIME}}(\+\_\+\+\_\+\+TIME\+\_\+\+\_\+)~((\+\_\+\+\_\+\+TIME\+\_\+\+\_\+) $<$= 255U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gaafd6756c6bf870d89b1b876e26ceb70e}{IS\+\_\+\+FMC\+\_\+\+SETUP\+\_\+\+TIME}}(\+\_\+\+\_\+\+TIME\+\_\+\+\_\+)~((\+\_\+\+\_\+\+TIME\+\_\+\+\_\+) $<$= 254U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga54f7f362ab35efe816f13738e357c8f7}{IS\+\_\+\+FMC\+\_\+\+WAIT\+\_\+\+TIME}}(\+\_\+\+\_\+\+TIME\+\_\+\+\_\+)~((\+\_\+\+\_\+\+TIME\+\_\+\+\_\+) $<$= 254U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga350b471e546bc646fa90b67747cc3127}{IS\+\_\+\+FMC\+\_\+\+HOLD\+\_\+\+TIME}}(\+\_\+\+\_\+\+TIME\+\_\+\+\_\+)~((\+\_\+\+\_\+\+TIME\+\_\+\+\_\+) $<$= 254U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga8570ab8f8973ac56682f213254d57a37}{IS\+\_\+\+FMC\+\_\+\+HIZ\+\_\+\+TIME}}(\+\_\+\+\_\+\+TIME\+\_\+\+\_\+)~((\+\_\+\+\_\+\+TIME\+\_\+\+\_\+) $<$= 254U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gad89e84c79ff91fd8f9f6ed5243321484}{IS\+\_\+\+FMC\+\_\+\+NAND\+\_\+\+DEVICE}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+) == \mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga5cff4bb2c897afc003cc45726e1e959f}{FMC\+\_\+\+NAND\+\_\+\+DEVICE}})
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga7977874b28d1914847e3e9b6315bdd50}{IS\+\_\+\+FMC\+\_\+\+SDMEMORY\+\_\+\+WIDTH}}(\+\_\+\+\_\+\+WIDTH\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga56ef3ab18901d4fa2b33ebd3ffe0cac8}{IS\+\_\+\+FMC\+\_\+\+WRITE\+\_\+\+PROTECTION}}(\+\_\+\+\_\+\+WRITE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gab8da2c2718d93e50fa8069ae0026da71}{IS\+\_\+\+FMC\+\_\+\+SDCLOCK\+\_\+\+PERIOD}}(\+\_\+\+\_\+\+PERIOD\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gafda7de8481c742b3f11b368abf37037c}{IS\+\_\+\+FMC\+\_\+\+READ\+\_\+\+BURST}}(\+\_\+\+\_\+\+RBURST\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga782b8f96953251d1ad51f0e04821f2ad}{IS\+\_\+\+FMC\+\_\+\+READPIPE\+\_\+\+DELAY}}(\+\_\+\+\_\+\+DELAY\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gaa6729b1267d2487bcb3c0766394ee3ad}{IS\+\_\+\+FMC\+\_\+\+COMMAND\+\_\+\+MODE}}(\+\_\+\+\_\+\+COMMAND\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga69cadb51fb2b16bfed4c1867f6a38a76}{IS\+\_\+\+FMC\+\_\+\+COMMAND\+\_\+\+TARGET}}(\+\_\+\+\_\+\+TARGET\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga6be3859bec5de9f6a63ce388b9ad8be4}{IS\+\_\+\+FMC\+\_\+\+LOADTOACTIVE\+\_\+\+DELAY}}(\+\_\+\+\_\+\+DELAY\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+DELAY\+\_\+\+\_\+) $>$ 0U) \&\& ((\+\_\+\+\_\+\+DELAY\+\_\+\+\_\+) $<$= 16U))
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga27027c0cb683f8076f5234b4090f5017}{IS\+\_\+\+FMC\+\_\+\+EXITSELFREFRESH\+\_\+\+DELAY}}(\+\_\+\+\_\+\+DELAY\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+DELAY\+\_\+\+\_\+) $>$ 0U) \&\& ((\+\_\+\+\_\+\+DELAY\+\_\+\+\_\+) $<$= 16U))
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga7f10e7cf9422fdc7c49a28439f28f7ba}{IS\+\_\+\+FMC\+\_\+\+SELFREFRESH\+\_\+\+TIME}}(\+\_\+\+\_\+\+TIME\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+TIME\+\_\+\+\_\+) $>$ 0U) \&\& ((\+\_\+\+\_\+\+TIME\+\_\+\+\_\+) $<$= 16U))
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gabaab80aee88f3edea630198a603b9ed6}{IS\+\_\+\+FMC\+\_\+\+ROWCYCLE\+\_\+\+DELAY}}(\+\_\+\+\_\+\+DELAY\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+DELAY\+\_\+\+\_\+) $>$ 0U) \&\& ((\+\_\+\+\_\+\+DELAY\+\_\+\+\_\+) $<$= 16U))
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga3de73eb610365a7ee8b54227f3e60b1c}{IS\+\_\+\+FMC\+\_\+\+WRITE\+\_\+\+RECOVERY\+\_\+\+TIME}}(\+\_\+\+\_\+\+TIME\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+TIME\+\_\+\+\_\+) $>$ 0U) \&\& ((\+\_\+\+\_\+\+TIME\+\_\+\+\_\+) $<$= 16U))
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga6772c6d22dda7439f0afb800bd6f68f6}{IS\+\_\+\+FMC\+\_\+\+RP\+\_\+\+DELAY}}(\+\_\+\+\_\+\+DELAY\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+DELAY\+\_\+\+\_\+) $>$ 0U) \&\& ((\+\_\+\+\_\+\+DELAY\+\_\+\+\_\+) $<$= 16U))
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gad113c5a105839c2257f7fe8a1e6ad018}{IS\+\_\+\+FMC\+\_\+\+RCD\+\_\+\+DELAY}}(\+\_\+\+\_\+\+DELAY\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+DELAY\+\_\+\+\_\+) $>$ 0U) \&\& ((\+\_\+\+\_\+\+DELAY\+\_\+\+\_\+) $<$= 16U))
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gabe4be7d09ec5f9c2ed328b0219db4960}{IS\+\_\+\+FMC\+\_\+\+AUTOREFRESH\+\_\+\+NUMBER}}(\+\_\+\+\_\+\+NUMBER\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+NUMBER\+\_\+\+\_\+) $>$ 0U) \&\& ((\+\_\+\+\_\+\+NUMBER\+\_\+\+\_\+) $<$= 15U))
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga707f535d97d59f32e72842b9a905de64}{IS\+\_\+\+FMC\+\_\+\+MODE\+\_\+\+REGISTER}}(\+\_\+\+\_\+\+CONTENT\+\_\+\+\_\+)~((\+\_\+\+\_\+\+CONTENT\+\_\+\+\_\+) $<$= 8191U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga7c1256453227d10256142f1b5d15fcfc}{IS\+\_\+\+FMC\+\_\+\+REFRESH\+\_\+\+RATE}}(\+\_\+\+\_\+\+RATE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+RATE\+\_\+\+\_\+) $<$= 8191U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_ga8cc715bd3b1dbcc55c9f5f080649b226}{IS\+\_\+\+FMC\+\_\+\+SDRAM\+\_\+\+DEVICE}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+) == \mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga1071d01ea617b4dc4823a095e3670260}{FMC\+\_\+\+SDRAM\+\_\+\+DEVICE}})
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gad453f7aca1266cec4356666b275b2415}{IS\+\_\+\+FMC\+\_\+\+SDRAM\+\_\+\+BANK}}(\+\_\+\+\_\+\+BANK\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gabb01c64da09cf165970746dcc232406f}{IS\+\_\+\+FMC\+\_\+\+COLUMNBITS\+\_\+\+NUMBER}}(\+\_\+\+\_\+\+COLUMN\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gaf456ae17edbf51e0ab9a961f81eab335}{IS\+\_\+\+FMC\+\_\+\+ROWBITS\+\_\+\+NUMBER}}(\+\_\+\+\_\+\+ROW\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gabb6c4f17d25c769b8092373aa511cbaf}{IS\+\_\+\+FMC\+\_\+\+INTERNALBANK\+\_\+\+NUMBER}}(\+\_\+\+\_\+\+NUMBER\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gac2fb8438e2864c275694bc4c3629bc71}{IS\+\_\+\+FMC\+\_\+\+CAS\+\_\+\+LATENCY}}(\+\_\+\+\_\+\+LATENCY\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga3c2be18a99209a78da8e80b28cf2f5b7}{FMC\+\_\+\+NORSRAM\+\_\+\+Type\+Def}}~\mbox{\hyperlink{struct_f_m_c___bank1___type_def}{FMC\+\_\+\+Bank1\+\_\+\+Type\+Def}}
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga622edd64de89d4a45a09947818be1082}{FMC\+\_\+\+NORSRAM\+\_\+\+EXTENDED\+\_\+\+Type\+Def}}~\mbox{\hyperlink{struct_f_m_c___bank1_e___type_def}{FMC\+\_\+\+Bank1\+E\+\_\+\+Type\+Def}}
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga6d8a647bc5306f6eed892982ffc88158}{FMC\+\_\+\+NAND\+\_\+\+Type\+Def}}~\mbox{\hyperlink{struct_f_m_c___bank3___type_def}{FMC\+\_\+\+Bank3\+\_\+\+Type\+Def}}
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_gaba1c548ce7fd2d0d4da284ad845ab6f5}{FMC\+\_\+\+SDRAM\+\_\+\+Type\+Def}}~\mbox{\hyperlink{struct_f_m_c___bank5__6___type_def}{FMC\+\_\+\+Bank5\+\_\+6\+\_\+\+Type\+Def}}
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga9c2af2ebad5bc8404a246fa7b2f0b926}{FMC\+\_\+\+NORSRAM\+\_\+\+DEVICE}}~\mbox{\hyperlink{group___peripheral__declaration_ga409771490258e51aa189077b63e2711b}{FMC\+\_\+\+Bank1\+\_\+R}}
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga3c82a799431ec0d711161bb1277c9a0b}{FMC\+\_\+\+NORSRAM\+\_\+\+EXTENDED\+\_\+\+DEVICE}}~\mbox{\hyperlink{group___peripheral__declaration_ga5cdcf9fcfd0b117ba4b6c204bda5f092}{FMC\+\_\+\+Bank1\+E\+\_\+R}}
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga5cff4bb2c897afc003cc45726e1e959f}{FMC\+\_\+\+NAND\+\_\+\+DEVICE}}~\mbox{\hyperlink{group___peripheral__declaration_ga4fdf310e0faefc84189f27f4186c6712}{FMC\+\_\+\+Bank3\+\_\+R}}
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga1071d01ea617b4dc4823a095e3670260}{FMC\+\_\+\+SDRAM\+\_\+\+DEVICE}}~\mbox{\hyperlink{group___peripheral__declaration_ga93cb69a454aa0da5150c7864260f1e14}{FMC\+\_\+\+Bank5\+\_\+6\+\_\+R}}
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___n_o_r_s_r_a_m___bank_gae21fc4cb32bdf66a091f9b07542128c0}{FMC\+\_\+\+NORSRAM\+\_\+\+BANK1}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___n_o_r_s_r_a_m___bank_ga62300a734aa0e396592f6f7635b634e9}{FMC\+\_\+\+NORSRAM\+\_\+\+BANK2}}~(0x00000002U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___n_o_r_s_r_a_m___bank_ga6f7b4268d1fd3acb923f92b8907968fe}{FMC\+\_\+\+NORSRAM\+\_\+\+BANK3}}~(0x00000004U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___n_o_r_s_r_a_m___bank_ga3213b481ce2e43f7cfffc9d903060b97}{FMC\+\_\+\+NORSRAM\+\_\+\+BANK4}}~(0x00000006U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___data___address___bus___multiplexing_ga1419fde4656962a8a279ad72a0e6f57c}{FMC\+\_\+\+DATA\+\_\+\+ADDRESS\+\_\+\+MUX\+\_\+\+DISABLE}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___data___address___bus___multiplexing_ga725254689d3e6d669c5cf71466d30958}{FMC\+\_\+\+DATA\+\_\+\+ADDRESS\+\_\+\+MUX\+\_\+\+ENABLE}}~(0x00000002U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___memory___type_gadfa4983431ac691268cdb7c639d2b3af}{FMC\+\_\+\+MEMORY\+\_\+\+TYPE\+\_\+\+SRAM}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___memory___type_ga0da8ea1853bd5ef7e3adf05f12741ef2}{FMC\+\_\+\+MEMORY\+\_\+\+TYPE\+\_\+\+PSRAM}}~(0x00000004U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___memory___type_ga09cccfa7eb21563c0573214113a64ab5}{FMC\+\_\+\+MEMORY\+\_\+\+TYPE\+\_\+\+NOR}}~(0x00000008U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___n_o_r_s_r_a_m___data___width_gabfc59a8d291d1cc049e657d021ead97c}{FMC\+\_\+\+NORSRAM\+\_\+\+MEM\+\_\+\+BUS\+\_\+\+WIDTH\+\_\+8}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___n_o_r_s_r_a_m___data___width_gab170b7221689e0db870c4173331ead46}{FMC\+\_\+\+NORSRAM\+\_\+\+MEM\+\_\+\+BUS\+\_\+\+WIDTH\+\_\+16}}~(0x00000010U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___n_o_r_s_r_a_m___data___width_ga705a55384cfbc4ff4492708a4efad6a3}{FMC\+\_\+\+NORSRAM\+\_\+\+MEM\+\_\+\+BUS\+\_\+\+WIDTH\+\_\+32}}~(0x00000020U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___n_o_r_s_r_a_m___flash___access_ga6d3f3cbae61452a085ff8dbe2b3ae7c9}{FMC\+\_\+\+NORSRAM\+\_\+\+FLASH\+\_\+\+ACCESS\+\_\+\+ENABLE}}~(0x00000040U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___n_o_r_s_r_a_m___flash___access_gada21371f712db11ebd92f152f712a2bf}{FMC\+\_\+\+NORSRAM\+\_\+\+FLASH\+\_\+\+ACCESS\+\_\+\+DISABLE}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___burst___access___mode_ga7d07740e2e5b8bae56f9f78e07354bb9}{FMC\+\_\+\+BURST\+\_\+\+ACCESS\+\_\+\+MODE\+\_\+\+DISABLE}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___burst___access___mode_gace7c535743e9e59f821645f923966b82}{FMC\+\_\+\+BURST\+\_\+\+ACCESS\+\_\+\+MODE\+\_\+\+ENABLE}}~(0x00000100U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___wait___signal___polarity_gac34b12eb54afdd02abeb853c09dfd6b2}{FMC\+\_\+\+WAIT\+\_\+\+SIGNAL\+\_\+\+POLARITY\+\_\+\+LOW}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___wait___signal___polarity_gaca059707d16adc2986cf4716daf45d6a}{FMC\+\_\+\+WAIT\+\_\+\+SIGNAL\+\_\+\+POLARITY\+\_\+\+HIGH}}~(0x00000200U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___wait___timing_ga80ca167409942de2aff833b8c6675a14}{FMC\+\_\+\+WAIT\+\_\+\+TIMING\+\_\+\+BEFORE\+\_\+\+WS}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___wait___timing_ga28a9487a32e1fa577ccc30af040807a1}{FMC\+\_\+\+WAIT\+\_\+\+TIMING\+\_\+\+DURING\+\_\+\+WS}}~(0x00000800U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___write___operation_ga092a1fcc2e841ea9b3498a5a10aa014d}{FMC\+\_\+\+WRITE\+\_\+\+OPERATION\+\_\+\+DISABLE}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___write___operation_ga80e96126e1aa1194164504b1e76b5fb6}{FMC\+\_\+\+WRITE\+\_\+\+OPERATION\+\_\+\+ENABLE}}~(0x00001000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___wait___signal_ga31b172a3d02efb7051cbdf65c0534ffb}{FMC\+\_\+\+WAIT\+\_\+\+SIGNAL\+\_\+\+DISABLE}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___wait___signal_ga36e1d48524ff618121a8ef7781d526dc}{FMC\+\_\+\+WAIT\+\_\+\+SIGNAL\+\_\+\+ENABLE}}~(0x00002000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___extended___mode_ga68365a3a44310b097eaa8e81fa38fa8d}{FMC\+\_\+\+EXTENDED\+\_\+\+MODE\+\_\+\+DISABLE}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___extended___mode_ga9239a72c8a1a58ee12189743905b8e29}{FMC\+\_\+\+EXTENDED\+\_\+\+MODE\+\_\+\+ENABLE}}~(0x00004000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___asynchronous_wait_ga1aa2d6b730db6e64217a0b1873af113e}{FMC\+\_\+\+ASYNCHRONOUS\+\_\+\+WAIT\+\_\+\+DISABLE}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___asynchronous_wait_gaa96144188a5b15be4095c33952c6371d}{FMC\+\_\+\+ASYNCHRONOUS\+\_\+\+WAIT\+\_\+\+ENABLE}}~(0x00008000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___page___size_gaa310b7443b738052ae4b44515d0127cf}{FMC\+\_\+\+PAGE\+\_\+\+SIZE\+\_\+\+NONE}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___page___size_ga011ea57ad1e735287a8f39f0c05f5ccf}{FMC\+\_\+\+PAGE\+\_\+\+SIZE\+\_\+128}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaef4b0ec70fe034432e3658f659b866ce}{FMC\+\_\+\+BCRx\+\_\+\+CPSIZE\+\_\+0}}
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___page___size_ga8544fe7cee2b7e53c6f29f2d2812e9cb}{FMC\+\_\+\+PAGE\+\_\+\+SIZE\+\_\+256}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3b75528c786afa4234c58a1078fb77c8}{FMC\+\_\+\+BCRx\+\_\+\+CPSIZE\+\_\+1}}
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___page___size_gade2059599b45251f081a5612a6211f1b}{FMC\+\_\+\+PAGE\+\_\+\+SIZE\+\_\+512}}
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___page___size_gae360b96ac0493b3a8f4a29187a7f3848}{FMC\+\_\+\+PAGE\+\_\+\+SIZE\+\_\+1024}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga79b915089298515b977423b514ba470f}{FMC\+\_\+\+BCRx\+\_\+\+CPSIZE\+\_\+2}}
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___write___burst_ga7e1852380a805bd6bf4fbea04c4a337a}{FMC\+\_\+\+WRITE\+\_\+\+BURST\+\_\+\+DISABLE}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___write___burst_ga64927bd92465fbab6bcae780ebdf62ad}{FMC\+\_\+\+WRITE\+\_\+\+BURST\+\_\+\+ENABLE}}~(0x00080000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___continous___clock_ga8d5f2f11df52b83013b7a49703ce9ebf}{FMC\+\_\+\+CONTINUOUS\+\_\+\+CLOCK\+\_\+\+SYNC\+\_\+\+ONLY}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___continous___clock_gaa8893acc7cf9c703518f8182926679ed}{FMC\+\_\+\+CONTINUOUS\+\_\+\+CLOCK\+\_\+\+SYNC\+\_\+\+ASYNC}}~(0x00100000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___write___f_i_f_o_ga396c155e0f664f909a2bff7e68f20aa1}{FMC\+\_\+\+WRITE\+\_\+\+FIFO\+\_\+\+DISABLE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga9126627358994c4a4957d22187bb173d}{FMC\+\_\+\+BCR1\+\_\+\+WFDIS}}
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___write___f_i_f_o_gaeb5fd2f03bcdf1bbdd63cfdfe2b4088b}{FMC\+\_\+\+WRITE\+\_\+\+FIFO\+\_\+\+ENABLE}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___access___mode_ga721ad1bb7db9ca6669b214c87cfcc803}{FMC\+\_\+\+ACCESS\+\_\+\+MODE\+\_\+A}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___access___mode_gadee1873c02d935d656de66cc998ff9c5}{FMC\+\_\+\+ACCESS\+\_\+\+MODE\+\_\+B}}~(0x10000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___access___mode_ga22f235a332eabeb673cb05b931e6e30b}{FMC\+\_\+\+ACCESS\+\_\+\+MODE\+\_\+C}}~(0x20000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___access___mode_gaa98f7809223f4d9c5f8dec47fb5ad590}{FMC\+\_\+\+ACCESS\+\_\+\+MODE\+\_\+D}}~(0x30000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___n_a_n_d___bank_gaaabc5218c166c52562406f42a7a116d6}{FMC\+\_\+\+NAND\+\_\+\+BANK3}}~(0x00000100U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___wait__feature_ga786f6ec5018f08a63751db49c5a6e504}{FMC\+\_\+\+NAND\+\_\+\+WAIT\+\_\+\+FEATURE\+\_\+\+DISABLE}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___wait__feature_gabec9b7be17eabb7a382b7980d41341de}{FMC\+\_\+\+NAND\+\_\+\+WAIT\+\_\+\+FEATURE\+\_\+\+ENABLE}}~(0x00000002U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___p_c_r___memory___type_ga5c234a89c5d925a16c55eeee5d5173b2}{FMC\+\_\+\+PCR\+\_\+\+MEMORY\+\_\+\+TYPE\+\_\+\+NAND}}~(0x00000008U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___n_a_n_d___data___width_gaa469bab7e7c2618c993f702561913781}{FMC\+\_\+\+NAND\+\_\+\+MEM\+\_\+\+BUS\+\_\+\+WIDTH\+\_\+8}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___n_a_n_d___data___width_ga68c3dba3bf2f3af66f9f510d5a3f7253}{FMC\+\_\+\+NAND\+\_\+\+MEM\+\_\+\+BUS\+\_\+\+WIDTH\+\_\+16}}~(0x00000010U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___e_c_c_gaca6a47995e466cc4c4cf35fd6e3ded15}{FMC\+\_\+\+NAND\+\_\+\+ECC\+\_\+\+DISABLE}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___e_c_c_gae9dfe41aa7796772271738ee8f21bdf8}{FMC\+\_\+\+NAND\+\_\+\+ECC\+\_\+\+ENABLE}}~(0x00000040U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___e_c_c___page___size_ga0f375c640fad597b2dfdda35e1c61e82}{FMC\+\_\+\+NAND\+\_\+\+ECC\+\_\+\+PAGE\+\_\+\+SIZE\+\_\+256\+BYTE}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___e_c_c___page___size_gadd336e72d48c0d3c2f16d1e1a1c8e490}{FMC\+\_\+\+NAND\+\_\+\+ECC\+\_\+\+PAGE\+\_\+\+SIZE\+\_\+512\+BYTE}}~(0x00020000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___e_c_c___page___size_ga8863e3415ae19dda54daa82f9ce1ed22}{FMC\+\_\+\+NAND\+\_\+\+ECC\+\_\+\+PAGE\+\_\+\+SIZE\+\_\+1024\+BYTE}}~(0x00040000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___e_c_c___page___size_ga2875548ae2b5cd2f7545307561d550d9}{FMC\+\_\+\+NAND\+\_\+\+ECC\+\_\+\+PAGE\+\_\+\+SIZE\+\_\+2048\+BYTE}}~(0x00060000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___e_c_c___page___size_gaa2e34fa611baf547461b930e6fae9c8a}{FMC\+\_\+\+NAND\+\_\+\+ECC\+\_\+\+PAGE\+\_\+\+SIZE\+\_\+4096\+BYTE}}~(0x00080000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___e_c_c___page___size_ga8f7f54eaa946e9e35001cb2566def05a}{FMC\+\_\+\+NAND\+\_\+\+ECC\+\_\+\+PAGE\+\_\+\+SIZE\+\_\+8192\+BYTE}}~(0x000\+A0000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___bank_ga16cd8f57889d0d38ab07a21e7a0075a8}{FMC\+\_\+\+SDRAM\+\_\+\+BANK1}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___bank_ga8006b2913c143929ed0e5bd4c38aa7e9}{FMC\+\_\+\+SDRAM\+\_\+\+BANK2}}~(0x00000001U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___column___bits__number_gacff6ecebd16a4dcc371c8cf3d46ca35c}{FMC\+\_\+\+SDRAM\+\_\+\+COLUMN\+\_\+\+BITS\+\_\+\+NUM\+\_\+8}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___column___bits__number_gaa7b5ef2abd57e77c54328f3e378bcf61}{FMC\+\_\+\+SDRAM\+\_\+\+COLUMN\+\_\+\+BITS\+\_\+\+NUM\+\_\+9}}~(0x00000001U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___column___bits__number_ga6e8ebd8ef747f00d4004056da4f4fac2}{FMC\+\_\+\+SDRAM\+\_\+\+COLUMN\+\_\+\+BITS\+\_\+\+NUM\+\_\+10}}~(0x00000002U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___column___bits__number_ga1aff72b3751e633d64343bd265527294}{FMC\+\_\+\+SDRAM\+\_\+\+COLUMN\+\_\+\+BITS\+\_\+\+NUM\+\_\+11}}~(0x00000003U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___row___bits__number_ga5c80f75ce6d6c0e68b8e28485490497e}{FMC\+\_\+\+SDRAM\+\_\+\+ROW\+\_\+\+BITS\+\_\+\+NUM\+\_\+11}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___row___bits__number_ga52c8df2a362f49cf52c215af794e5215}{FMC\+\_\+\+SDRAM\+\_\+\+ROW\+\_\+\+BITS\+\_\+\+NUM\+\_\+12}}~(0x00000004U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___row___bits__number_gab254c8d54ab0702f69db399465f060b5}{FMC\+\_\+\+SDRAM\+\_\+\+ROW\+\_\+\+BITS\+\_\+\+NUM\+\_\+13}}~(0x00000008U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___memory___bus___width_ga851dfc858c936259fc165d9819830a17}{FMC\+\_\+\+SDRAM\+\_\+\+MEM\+\_\+\+BUS\+\_\+\+WIDTH\+\_\+8}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___memory___bus___width_gaf43c45a557d1dc59ecd807ba07111cbf}{FMC\+\_\+\+SDRAM\+\_\+\+MEM\+\_\+\+BUS\+\_\+\+WIDTH\+\_\+16}}~(0x00000010U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___memory___bus___width_gae450977a4eadfe2e4d6d0a1aaa9990fa}{FMC\+\_\+\+SDRAM\+\_\+\+MEM\+\_\+\+BUS\+\_\+\+WIDTH\+\_\+32}}~(0x00000020U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___internal___banks___number_ga0adbd4c172efd2a3cf66dd6274f901c4}{FMC\+\_\+\+SDRAM\+\_\+\+INTERN\+\_\+\+BANKS\+\_\+\+NUM\+\_\+2}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___internal___banks___number_gaa7eda2b73174811f3a8a00ad924b020e}{FMC\+\_\+\+SDRAM\+\_\+\+INTERN\+\_\+\+BANKS\+\_\+\+NUM\+\_\+4}}~(0x00000040U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___c_a_s___latency_ga21331e86a5b3fc0a722576393b345658}{FMC\+\_\+\+SDRAM\+\_\+\+CAS\+\_\+\+LATENCY\+\_\+1}}~(0x00000080U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___c_a_s___latency_gac8d25370782fd7f6403cc50c7a326654}{FMC\+\_\+\+SDRAM\+\_\+\+CAS\+\_\+\+LATENCY\+\_\+2}}~(0x00000100U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___c_a_s___latency_ga71368a9ab24ffc182e56c39173f409b9}{FMC\+\_\+\+SDRAM\+\_\+\+CAS\+\_\+\+LATENCY\+\_\+3}}~(0x00000180U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___write___protection_gac6012236dcde15a636bcff6a8361d081}{FMC\+\_\+\+SDRAM\+\_\+\+WRITE\+\_\+\+PROTECTION\+\_\+\+DISABLE}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___write___protection_ga6ea4cf7132de5ff229c48cafd6998545}{FMC\+\_\+\+SDRAM\+\_\+\+WRITE\+\_\+\+PROTECTION\+\_\+\+ENABLE}}~(0x00000200U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___clock___period_ga7f461258f347622159b9e7ccb9d5b727}{FMC\+\_\+\+SDRAM\+\_\+\+CLOCK\+\_\+\+DISABLE}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___clock___period_gad245ddc6c69736fd6dcfc5a9ca922e73}{FMC\+\_\+\+SDRAM\+\_\+\+CLOCK\+\_\+\+PERIOD\+\_\+2}}~(0x00000800U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___clock___period_ga0ba047762065d7a39f1f979c48c19c2b}{FMC\+\_\+\+SDRAM\+\_\+\+CLOCK\+\_\+\+PERIOD\+\_\+3}}~(0x00000\+C00U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___read___burst_ga8e364aed581a0c376a24e61201f1174d}{FMC\+\_\+\+SDRAM\+\_\+\+RBURST\+\_\+\+DISABLE}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___read___burst_ga1cdc6394b8810cf1643f2745bb4799b3}{FMC\+\_\+\+SDRAM\+\_\+\+RBURST\+\_\+\+ENABLE}}~(0x00001000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___read___pipe___delay_gad9a15d936c86ced1dea32d8b11a484c5}{FMC\+\_\+\+SDRAM\+\_\+\+RPIPE\+\_\+\+DELAY\+\_\+0}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___read___pipe___delay_ga096bcdebed749e90e8e35d2627503f7a}{FMC\+\_\+\+SDRAM\+\_\+\+RPIPE\+\_\+\+DELAY\+\_\+1}}~(0x00002000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___read___pipe___delay_gac26caa2b462887e9f7fa0c5f90298a83}{FMC\+\_\+\+SDRAM\+\_\+\+RPIPE\+\_\+\+DELAY\+\_\+2}}~(0x00004000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___command___mode_gae77f3f49da601862158427a2d0928f28}{FMC\+\_\+\+SDRAM\+\_\+\+CMD\+\_\+\+NORMAL\+\_\+\+MODE}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___command___mode_gaf2f6a589a8110f2545385bcba6f9c80b}{FMC\+\_\+\+SDRAM\+\_\+\+CMD\+\_\+\+CLK\+\_\+\+ENABLE}}~(0x00000001U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___command___mode_ga4609ad4c2f2b7080f2b60af54fb25e77}{FMC\+\_\+\+SDRAM\+\_\+\+CMD\+\_\+\+PALL}}~(0x00000002U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___command___mode_ga8b389b643c0f9345b66d501048e9f999}{FMC\+\_\+\+SDRAM\+\_\+\+CMD\+\_\+\+AUTOREFRESH\+\_\+\+MODE}}~(0x00000003U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___command___mode_gac06c7b73b2b0453b0c6fa8e863bbc698}{FMC\+\_\+\+SDRAM\+\_\+\+CMD\+\_\+\+LOAD\+\_\+\+MODE}}~(0x00000004U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___command___mode_ga52f01a3065f042e64ab20b2162a78f69}{FMC\+\_\+\+SDRAM\+\_\+\+CMD\+\_\+\+SELFREFRESH\+\_\+\+MODE}}~(0x00000005U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___command___mode_gaded954e404bf8d89b5a3ee6b76664101}{FMC\+\_\+\+SDRAM\+\_\+\+CMD\+\_\+\+POWERDOWN\+\_\+\+MODE}}~(0x00000006U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___command___target_gae0394622e1c2e7abb15825a4c1941f59}{FMC\+\_\+\+SDRAM\+\_\+\+CMD\+\_\+\+TARGET\+\_\+\+BANK2}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga87be0a3520cec2885d2fc16589b97ba0}{FMC\+\_\+\+SDCMR\+\_\+\+CTB2}}
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___command___target_ga6b78f8593d1fd620f659406d5fc72a4c}{FMC\+\_\+\+SDRAM\+\_\+\+CMD\+\_\+\+TARGET\+\_\+\+BANK1}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4e5ca0bd4982c8354c021b53ef8e65e9}{FMC\+\_\+\+SDCMR\+\_\+\+CTB1}}
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___command___target_gac837eb624920f03c2849021b387306c3}{FMC\+\_\+\+SDRAM\+\_\+\+CMD\+\_\+\+TARGET\+\_\+\+BANK1\+\_\+2}}~(0x00000018U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___mode___status_gab9ee9b57cae6b0db11b17d9ac798d741}{FMC\+\_\+\+SDRAM\+\_\+\+NORMAL\+\_\+\+MODE}}~(0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___mode___status_ga52e55ef672c1038b560927fffc99d87d}{FMC\+\_\+\+SDRAM\+\_\+\+SELF\+\_\+\+REFRESH\+\_\+\+MODE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3cfebd747cc0903d32a7e34e498ae665}{FMC\+\_\+\+SDSR\+\_\+\+MODES1\+\_\+0}}
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___mode___status_gaddad58a9df73cd00b183cd1e55d179ee}{FMC\+\_\+\+SDRAM\+\_\+\+POWER\+\_\+\+DOWN\+\_\+\+MODE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3fd27fa69758aa02dec28e01b79ffc2e}{FMC\+\_\+\+SDSR\+\_\+\+MODES1\+\_\+1}}
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___interrupt__definition_ga6a73f7db63d0a0c1295916101954cfca}{FMC\+\_\+\+IT\+\_\+\+RISING\+\_\+\+EDGE}}~(0x00000008U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___interrupt__definition_ga6b575231b100951258acaebd3408101b}{FMC\+\_\+\+IT\+\_\+\+LEVEL}}~(0x00000010U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___interrupt__definition_gabb1de5c7521639d0f954aa8d7899d696}{FMC\+\_\+\+IT\+\_\+\+FALLING\+\_\+\+EDGE}}~(0x00000020U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___interrupt__definition_gad80be6ea9a033869214a46a0a92f223d}{FMC\+\_\+\+IT\+\_\+\+REFRESH\+\_\+\+ERROR}}~(0x00004000U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___flag__definition_ga697cdef648bd297ceb4d0f381661f9b0}{FMC\+\_\+\+FLAG\+\_\+\+RISING\+\_\+\+EDGE}}~(0x00000001U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___flag__definition_gab2638c082cb1f005a12aaac211c2bca3}{FMC\+\_\+\+FLAG\+\_\+\+LEVEL}}~(0x00000002U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___flag__definition_gadade0d8bc3889dee0e5cdb5c35ccb46c}{FMC\+\_\+\+FLAG\+\_\+\+FALLING\+\_\+\+EDGE}}~(0x00000004U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___flag__definition_gaea0e27112081804b8a00a6d1d51e3787}{FMC\+\_\+\+FLAG\+\_\+\+FEMPT}}~(0x00000040U)
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___flag__definition_ga38dced18d685dc07368db56c22fd25a7}{FMC\+\_\+\+SDRAM\+\_\+\+FLAG\+\_\+\+REFRESH\+\_\+\+IT}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga6122b8dc3cac5ac09342b843b36ae36d}{FMC\+\_\+\+SDSR\+\_\+\+RE}}
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___flag__definition_gaad4d11c914b1d4ac4190cab2a88cab3d}{FMC\+\_\+\+SDRAM\+\_\+\+FLAG\+\_\+\+BUSY}}~FMC\+\_\+\+SDSR\+\_\+\+BUSY
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___flag__definition_ga0717e85128c2258f73881c815d4ee59f}{FMC\+\_\+\+SDRAM\+\_\+\+FLAG\+\_\+\+REFRESH\+\_\+\+ERROR}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga81edf1f7343fe344297dd376cd46fc22}{FMC\+\_\+\+SDRTR\+\_\+\+CRE}}
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gaa70dc1be5acd3447f3a3cdb385825e0d}{\+\_\+\+\_\+\+FMC\+\_\+\+ENABLE}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga409771490258e51aa189077b63e2711b}{FMC\+\_\+\+Bank1\+\_\+R}}-\/$>$BTCR\mbox{[}0\mbox{]} $\vert$= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2f9c22af381198062efcd53e97f977dc}{FMC\+\_\+\+BCR1\+\_\+\+FMCEN}})
+\begin{DoxyCompactList}\small\item\em Enable the FMC Peripheral. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___private___macros_gab86bfe948592db88d70151d910e46efb}{\+\_\+\+\_\+\+FMC\+\_\+\+DISABLE}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga409771490258e51aa189077b63e2711b}{FMC\+\_\+\+Bank1\+\_\+R}}-\/$>$BTCR\mbox{[}0\mbox{]} \&= $\sim$\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2f9c22af381198062efcd53e97f977dc}{FMC\+\_\+\+BCR1\+\_\+\+FMCEN}})
+\begin{DoxyCompactList}\small\item\em Disable the FMC Peripheral. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___n_o_r___macros_ga3439ff665bae18ccd6442c12ec0f608b}{\+\_\+\+\_\+\+FMC\+\_\+\+NORSRAM\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+BANK\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Enable the NORSRAM device access. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___n_o_r___macros_gafca44410b72dec386bf717bd0a5b878f}{\+\_\+\+\_\+\+FMC\+\_\+\+NORSRAM\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+BANK\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Disable the NORSRAM device access. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___n_a_n_d___macros_gacfd211f7ce45b8c81994e933027634dd}{\+\_\+\+\_\+\+FMC\+\_\+\+NAND\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$PCR $\vert$= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4062c4c6a263064cc1f042bde7f86ecc}{FMC\+\_\+\+PCR\+\_\+\+PBKEN}})
+\begin{DoxyCompactList}\small\item\em Enable the NAND device access. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___n_a_n_d___macros_ga0acd69e4346d06332021a4dea5e16666}{\+\_\+\+\_\+\+FMC\+\_\+\+NAND\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+BANK\+\_\+\+\_\+)~\mbox{\hyperlink{group___exported__macros_ga133aae6fc0d41bffab39ab223a7001de}{CLEAR\+\_\+\+BIT}}((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$PCR, \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4062c4c6a263064cc1f042bde7f86ecc}{FMC\+\_\+\+PCR\+\_\+\+PBKEN}})
+\begin{DoxyCompactList}\small\item\em Disable the NAND device access. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___n_a_n_d___interrupt_gac987a19c7472bde0a1ab73b7beaa720c}{\+\_\+\+\_\+\+FMC\+\_\+\+NAND\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$SR $\vert$= (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Enable the NAND device interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___n_a_n_d___interrupt_ga1dd78a5561099971ebd2385e878ece44}{\+\_\+\+\_\+\+FMC\+\_\+\+NAND\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$SR \&= $\sim$(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Disable the NAND device interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___n_a_n_d___interrupt_ga2d5410e74f47125ccd059b590c250aaa}{\+\_\+\+\_\+\+FMC\+\_\+\+NAND\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+BANK\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$SR \&(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Get flag status of the NAND device. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___n_a_n_d___interrupt_gac30546913de02eafcf354a95fc04407d}{\+\_\+\+\_\+\+FMC\+\_\+\+NAND\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$SR \&= $\sim$(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Clear flag status of the NAND device. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___s_d_r_a_m___interrupt_gad1855e98b4d5300dc74042fa65f248be}{\+\_\+\+\_\+\+FMC\+\_\+\+SDRAM\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$SDRTR $\vert$= (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Enable the SDRAM device interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___s_d_r_a_m___interrupt_ga61bc780f3e521a19d21dcb581c7e8fb8}{\+\_\+\+\_\+\+FMC\+\_\+\+SDRAM\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$SDRTR \&= $\sim$(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Disable the SDRAM device interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___s_d_r_a_m___interrupt_gabc8c6163b78fd62615941cb42cb731fc}{\+\_\+\+\_\+\+FMC\+\_\+\+SDRAM\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$SDSR \&(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Get flag status of the SDRAM device. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___s_d_r_a_m___interrupt_ga86544f5ed4b78b20e59121e9f7c75d2d}{\+\_\+\+\_\+\+FMC\+\_\+\+SDRAM\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$SDRTR $\vert$= (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Clear flag status of the SDRAM device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_m_c___l_l___n_o_r_s_r_a_m___private___functions___group1_ga69f71e9189dab5f8b384065a9165b8bd}{FMC\+\_\+\+NORSRAM\+\_\+\+Init}} (\mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga3c2be18a99209a78da8e80b28cf2f5b7}{FMC\+\_\+\+NORSRAM\+\_\+\+Type\+Def}} $\ast$Device, \mbox{\hyperlink{struct_f_m_c___n_o_r_s_r_a_m___init_type_def}{FMC\+\_\+\+NORSRAM\+\_\+\+Init\+Type\+Def}} $\ast$Init)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_m_c___l_l___n_o_r_s_r_a_m___private___functions___group1_ga95dcf37fab03f8995bbacca99f7092ff}{FMC\+\_\+\+NORSRAM\+\_\+\+Timing\+\_\+\+Init}} (\mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga3c2be18a99209a78da8e80b28cf2f5b7}{FMC\+\_\+\+NORSRAM\+\_\+\+Type\+Def}} $\ast$Device, \mbox{\hyperlink{struct_f_m_c___n_o_r_s_r_a_m___timing_type_def}{FMC\+\_\+\+NORSRAM\+\_\+\+Timing\+Type\+Def}} $\ast$Timing, uint32\+\_\+t Bank)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_m_c___l_l___n_o_r_s_r_a_m___private___functions___group1_gaf59154ca6a3208092f248fe25cd421c5}{FMC\+\_\+\+NORSRAM\+\_\+\+Extended\+\_\+\+Timing\+\_\+\+Init}} (\mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga622edd64de89d4a45a09947818be1082}{FMC\+\_\+\+NORSRAM\+\_\+\+EXTENDED\+\_\+\+Type\+Def}} $\ast$Device, \mbox{\hyperlink{struct_f_m_c___n_o_r_s_r_a_m___timing_type_def}{FMC\+\_\+\+NORSRAM\+\_\+\+Timing\+Type\+Def}} $\ast$Timing, uint32\+\_\+t Bank, uint32\+\_\+t Extended\+Mode)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_m_c___l_l___n_o_r_s_r_a_m___private___functions___group1_ga5bdfef91b866a10a7c91385018db5618}{FMC\+\_\+\+NORSRAM\+\_\+\+De\+Init}} (\mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga3c2be18a99209a78da8e80b28cf2f5b7}{FMC\+\_\+\+NORSRAM\+\_\+\+Type\+Def}} $\ast$Device, \mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga622edd64de89d4a45a09947818be1082}{FMC\+\_\+\+NORSRAM\+\_\+\+EXTENDED\+\_\+\+Type\+Def}} $\ast$Ex\+Device, uint32\+\_\+t Bank)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_m_c___l_l___n_o_r_s_r_a_m___private___functions___group2_gaf65abd6e124e49bf83af3c80b27ad332}{FMC\+\_\+\+NORSRAM\+\_\+\+Write\+Operation\+\_\+\+Enable}} (\mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga3c2be18a99209a78da8e80b28cf2f5b7}{FMC\+\_\+\+NORSRAM\+\_\+\+Type\+Def}} $\ast$Device, uint32\+\_\+t Bank)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_m_c___l_l___n_o_r_s_r_a_m___private___functions___group2_ga5db03521d17c15b98685cc34540d638d}{FMC\+\_\+\+NORSRAM\+\_\+\+Write\+Operation\+\_\+\+Disable}} (\mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga3c2be18a99209a78da8e80b28cf2f5b7}{FMC\+\_\+\+NORSRAM\+\_\+\+Type\+Def}} $\ast$Device, uint32\+\_\+t Bank)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_m_c___l_l___n_a_n_d___private___functions___group1_ga350a12b485a4873077c17ea33e8135e6}{FMC\+\_\+\+NAND\+\_\+\+Init}} (\mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga6d8a647bc5306f6eed892982ffc88158}{FMC\+\_\+\+NAND\+\_\+\+Type\+Def}} $\ast$Device, \mbox{\hyperlink{struct_f_m_c___n_a_n_d___init_type_def}{FMC\+\_\+\+NAND\+\_\+\+Init\+Type\+Def}} $\ast$Init)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_m_c___l_l___n_a_n_d___private___functions___group1_ga1d4a635307ee611e2367ca2cba97d9d6}{FMC\+\_\+\+NAND\+\_\+\+Common\+Space\+\_\+\+Timing\+\_\+\+Init}} (\mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga6d8a647bc5306f6eed892982ffc88158}{FMC\+\_\+\+NAND\+\_\+\+Type\+Def}} $\ast$Device, \mbox{\hyperlink{struct_f_m_c___n_a_n_d___p_c_c___timing_type_def}{FMC\+\_\+\+NAND\+\_\+\+PCC\+\_\+\+Timing\+Type\+Def}} $\ast$Timing, uint32\+\_\+t Bank)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_m_c___l_l___n_a_n_d___private___functions___group1_ga4466e188ee95374ab26afffaae8dd496}{FMC\+\_\+\+NAND\+\_\+\+Attribute\+Space\+\_\+\+Timing\+\_\+\+Init}} (\mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga6d8a647bc5306f6eed892982ffc88158}{FMC\+\_\+\+NAND\+\_\+\+Type\+Def}} $\ast$Device, \mbox{\hyperlink{struct_f_m_c___n_a_n_d___p_c_c___timing_type_def}{FMC\+\_\+\+NAND\+\_\+\+PCC\+\_\+\+Timing\+Type\+Def}} $\ast$Timing, uint32\+\_\+t Bank)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_m_c___l_l___n_a_n_d___private___functions___group1_gaa08341e94ce1b34d8008ca45b162c8b8}{FMC\+\_\+\+NAND\+\_\+\+De\+Init}} (\mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga6d8a647bc5306f6eed892982ffc88158}{FMC\+\_\+\+NAND\+\_\+\+Type\+Def}} $\ast$Device, uint32\+\_\+t Bank)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_m_c___l_l___n_a_n_d___private___functions___group2_ga9f4f2bd5aac7047be227344b99b371a1}{FMC\+\_\+\+NAND\+\_\+\+ECC\+\_\+\+Enable}} (\mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga6d8a647bc5306f6eed892982ffc88158}{FMC\+\_\+\+NAND\+\_\+\+Type\+Def}} $\ast$Device, uint32\+\_\+t Bank)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_m_c___l_l___n_a_n_d___private___functions___group2_ga567e17faf0dd3db7148be9dd1dc1da4b}{FMC\+\_\+\+NAND\+\_\+\+ECC\+\_\+\+Disable}} (\mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga6d8a647bc5306f6eed892982ffc88158}{FMC\+\_\+\+NAND\+\_\+\+Type\+Def}} $\ast$Device, uint32\+\_\+t Bank)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_m_c___l_l___n_a_n_d___private___functions___group2_gad992995f2c9337ca28d4fad0de69a8d3}{FMC\+\_\+\+NAND\+\_\+\+Get\+ECC}} (\mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_ga6d8a647bc5306f6eed892982ffc88158}{FMC\+\_\+\+NAND\+\_\+\+Type\+Def}} $\ast$Device, uint32\+\_\+t $\ast$ECCval, uint32\+\_\+t Bank, uint32\+\_\+t Timeout)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_m_c___l_l___s_d_r_a_m___private___functions___group1_gac31e934f1ffb131dccc62b6fe6844560}{FMC\+\_\+\+SDRAM\+\_\+\+Init}} (\mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_gaba1c548ce7fd2d0d4da284ad845ab6f5}{FMC\+\_\+\+SDRAM\+\_\+\+Type\+Def}} $\ast$Device, \mbox{\hyperlink{struct_f_m_c___s_d_r_a_m___init_type_def}{FMC\+\_\+\+SDRAM\+\_\+\+Init\+Type\+Def}} $\ast$Init)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_m_c___l_l___s_d_r_a_m___private___functions___group1_ga7c28889074955caf3b854e8c99dced73}{FMC\+\_\+\+SDRAM\+\_\+\+Timing\+\_\+\+Init}} (\mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_gaba1c548ce7fd2d0d4da284ad845ab6f5}{FMC\+\_\+\+SDRAM\+\_\+\+Type\+Def}} $\ast$Device, \mbox{\hyperlink{struct_f_m_c___s_d_r_a_m___timing_type_def}{FMC\+\_\+\+SDRAM\+\_\+\+Timing\+Type\+Def}} $\ast$Timing, uint32\+\_\+t Bank)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_m_c___l_l___s_d_r_a_m___private___functions___group1_ga893cc61d8d10a5f828937665c32ae6a3}{FMC\+\_\+\+SDRAM\+\_\+\+De\+Init}} (\mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_gaba1c548ce7fd2d0d4da284ad845ab6f5}{FMC\+\_\+\+SDRAM\+\_\+\+Type\+Def}} $\ast$Device, uint32\+\_\+t Bank)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_m_c___l_l___s_d_r_a_m___private___functions___group2_gae479dff64b562136b1630ece63af9e98}{FMC\+\_\+\+SDRAM\+\_\+\+Write\+Protection\+\_\+\+Enable}} (\mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_gaba1c548ce7fd2d0d4da284ad845ab6f5}{FMC\+\_\+\+SDRAM\+\_\+\+Type\+Def}} $\ast$Device, uint32\+\_\+t Bank)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_m_c___l_l___s_d_r_a_m___private___functions___group2_ga277d3d1a938a9482d66a14cd45ed1305}{FMC\+\_\+\+SDRAM\+\_\+\+Write\+Protection\+\_\+\+Disable}} (\mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_gaba1c548ce7fd2d0d4da284ad845ab6f5}{FMC\+\_\+\+SDRAM\+\_\+\+Type\+Def}} $\ast$Device, uint32\+\_\+t Bank)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_m_c___l_l___s_d_r_a_m___private___functions___group2_gad35de253de4db9128388a51e4ba56e8f}{FMC\+\_\+\+SDRAM\+\_\+\+Send\+Command}} (\mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_gaba1c548ce7fd2d0d4da284ad845ab6f5}{FMC\+\_\+\+SDRAM\+\_\+\+Type\+Def}} $\ast$Device, \mbox{\hyperlink{struct_f_m_c___s_d_r_a_m___command_type_def}{FMC\+\_\+\+SDRAM\+\_\+\+Command\+Type\+Def}} $\ast$Command, uint32\+\_\+t Timeout)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_m_c___l_l___s_d_r_a_m___private___functions___group2_gaf8704a78ec9ae7b0fa92dd5ae5df95e0}{FMC\+\_\+\+SDRAM\+\_\+\+Program\+Refresh\+Rate}} (\mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_gaba1c548ce7fd2d0d4da284ad845ab6f5}{FMC\+\_\+\+SDRAM\+\_\+\+Type\+Def}} $\ast$Device, uint32\+\_\+t Refresh\+Rate)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_m_c___l_l___s_d_r_a_m___private___functions___group2_ga4f18f59507119e129bfdea88f25ca896}{FMC\+\_\+\+SDRAM\+\_\+\+Set\+Auto\+Refresh\+Number}} (\mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_gaba1c548ce7fd2d0d4da284ad845ab6f5}{FMC\+\_\+\+SDRAM\+\_\+\+Type\+Def}} $\ast$Device, uint32\+\_\+t Auto\+Refresh\+Number)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group___f_m_c___l_l___s_d_r_a_m___private___functions___group2_gacc01c14afaa0f4c1685a8ad52e0c9eeb}{FMC\+\_\+\+SDRAM\+\_\+\+Get\+Mode\+Status}} (\mbox{\hyperlink{group___f_m_c___l_l___exported__typedef_gaba1c548ce7fd2d0d4da284ad845ab6f5}{FMC\+\_\+\+SDRAM\+\_\+\+Type\+Def}} $\ast$Device, uint32\+\_\+t Bank)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of FMC HAL module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2017 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under BSD 3-\/Clause license, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: opensource.\+org/licenses/\+BSD-\/3-\/\+Clause 
+
+Definition in file \mbox{\hyperlink{stm32h7xx__ll__fmc_8h_source}{stm32h7xx\+\_\+ll\+\_\+fmc.\+h}}.
+

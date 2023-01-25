@@ -1,0 +1,81 @@
+\hypertarget{struct_f_m_c___s_d_r_a_m___command_type_def}{}\doxysection{FMC\+\_\+\+SDRAM\+\_\+\+Command\+Type\+Def Struct Reference}
+\label{struct_f_m_c___s_d_r_a_m___command_type_def}\index{FMC\_SDRAM\_CommandTypeDef@{FMC\_SDRAM\_CommandTypeDef}}
+
+
+SDRAM command parameters structure definition.  
+
+
+
+
+{\ttfamily \#include $<$stm32h7xx\+\_\+ll\+\_\+fmc.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_f_m_c___s_d_r_a_m___command_type_def_a18d8074e29522d689a7b9d05d8ca6239}{Command\+Mode}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_f_m_c___s_d_r_a_m___command_type_def_a850837fdc643c233c69634e6f4669417}{Command\+Target}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_f_m_c___s_d_r_a_m___command_type_def_a3fb350812607ba38594ec98c1db594d1}{Auto\+Refresh\+Number}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_f_m_c___s_d_r_a_m___command_type_def_af50b3abf0250e42eb7014d164761cfa4}{Mode\+Register\+Definition}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SDRAM command parameters structure definition. 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__ll__fmc_8h_source_l00431}{431}} of file \mbox{\hyperlink{stm32h7xx__ll__fmc_8h_source}{stm32h7xx\+\_\+ll\+\_\+fmc.\+h}}.
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{struct_f_m_c___s_d_r_a_m___command_type_def_a3fb350812607ba38594ec98c1db594d1}\label{struct_f_m_c___s_d_r_a_m___command_type_def_a3fb350812607ba38594ec98c1db594d1}} 
+\index{FMC\_SDRAM\_CommandTypeDef@{FMC\_SDRAM\_CommandTypeDef}!AutoRefreshNumber@{AutoRefreshNumber}}
+\index{AutoRefreshNumber@{AutoRefreshNumber}!FMC\_SDRAM\_CommandTypeDef@{FMC\_SDRAM\_CommandTypeDef}}
+\doxysubsubsection{\texorpdfstring{AutoRefreshNumber}{AutoRefreshNumber}}
+{\footnotesize\ttfamily uint32\+\_\+t Auto\+Refresh\+Number}
+
+Defines the number of consecutive auto refresh command issued in auto refresh mode. This parameter can be a value between Min\+\_\+\+Data = 1 and Max\+\_\+\+Data = 15 ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__ll__fmc_8h_source_l00439}{439}} of file \mbox{\hyperlink{stm32h7xx__ll__fmc_8h_source}{stm32h7xx\+\_\+ll\+\_\+fmc.\+h}}.
+
+\mbox{\Hypertarget{struct_f_m_c___s_d_r_a_m___command_type_def_a18d8074e29522d689a7b9d05d8ca6239}\label{struct_f_m_c___s_d_r_a_m___command_type_def_a18d8074e29522d689a7b9d05d8ca6239}} 
+\index{FMC\_SDRAM\_CommandTypeDef@{FMC\_SDRAM\_CommandTypeDef}!CommandMode@{CommandMode}}
+\index{CommandMode@{CommandMode}!FMC\_SDRAM\_CommandTypeDef@{FMC\_SDRAM\_CommandTypeDef}}
+\doxysubsubsection{\texorpdfstring{CommandMode}{CommandMode}}
+{\footnotesize\ttfamily uint32\+\_\+t Command\+Mode}
+
+Defines the command issued to the SDRAM device. This parameter can be a value of \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___command___mode}{FMC SDRAM Command Mode}}. ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__ll__fmc_8h_source_l00433}{433}} of file \mbox{\hyperlink{stm32h7xx__ll__fmc_8h_source}{stm32h7xx\+\_\+ll\+\_\+fmc.\+h}}.
+
+\mbox{\Hypertarget{struct_f_m_c___s_d_r_a_m___command_type_def_a850837fdc643c233c69634e6f4669417}\label{struct_f_m_c___s_d_r_a_m___command_type_def_a850837fdc643c233c69634e6f4669417}} 
+\index{FMC\_SDRAM\_CommandTypeDef@{FMC\_SDRAM\_CommandTypeDef}!CommandTarget@{CommandTarget}}
+\index{CommandTarget@{CommandTarget}!FMC\_SDRAM\_CommandTypeDef@{FMC\_SDRAM\_CommandTypeDef}}
+\doxysubsubsection{\texorpdfstring{CommandTarget}{CommandTarget}}
+{\footnotesize\ttfamily uint32\+\_\+t Command\+Target}
+
+Defines which device (1 or 2) the command will be issued to. This parameter can be a value of \mbox{\hyperlink{group___f_m_c___s_d_r_a_m___command___target}{FMC SDRAM Command Target}}. ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__ll__fmc_8h_source_l00436}{436}} of file \mbox{\hyperlink{stm32h7xx__ll__fmc_8h_source}{stm32h7xx\+\_\+ll\+\_\+fmc.\+h}}.
+
+\mbox{\Hypertarget{struct_f_m_c___s_d_r_a_m___command_type_def_af50b3abf0250e42eb7014d164761cfa4}\label{struct_f_m_c___s_d_r_a_m___command_type_def_af50b3abf0250e42eb7014d164761cfa4}} 
+\index{FMC\_SDRAM\_CommandTypeDef@{FMC\_SDRAM\_CommandTypeDef}!ModeRegisterDefinition@{ModeRegisterDefinition}}
+\index{ModeRegisterDefinition@{ModeRegisterDefinition}!FMC\_SDRAM\_CommandTypeDef@{FMC\_SDRAM\_CommandTypeDef}}
+\doxysubsubsection{\texorpdfstring{ModeRegisterDefinition}{ModeRegisterDefinition}}
+{\footnotesize\ttfamily uint32\+\_\+t Mode\+Register\+Definition}
+
+Defines the SDRAM Mode register content ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__ll__fmc_8h_source_l00443}{443}} of file \mbox{\hyperlink{stm32h7xx__ll__fmc_8h_source}{stm32h7xx\+\_\+ll\+\_\+fmc.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.\+11.\+0/\+TRex/lib/hal/\+Drivers/\+STM32\+H7xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/\mbox{\hyperlink{stm32h7xx__ll__fmc_8h}{stm32h7xx\+\_\+ll\+\_\+fmc.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,330 @@
+\hypertarget{tcs34725_8c}{}\doxysection{C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.11.0/\+TRex/lib/libleguan/source/peripherals/external/sensors/tcs34725.c File Reference}
+\label{tcs34725_8c}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/source/peripherals/external/sensors/tcs34725.c@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/source/peripherals/external/sensors/tcs34725.c}}
+
+
+TCS34725\+FN Sensor Implementation.  
+
+
+{\ttfamily \#include \char`\"{}peripherals/external/sensors/tcs34725.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}peripherals/internal/i2c.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/core.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/intrinsics.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/color.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_enable_register__t}{Enable\+Register\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{tcs34725_8c_a457be1c5e5fee67ed7d01f5887c2d656}{DEVICE\+\_\+\+ADDRESS}}~0x29
+\item 
+\#define \mbox{\hyperlink{tcs34725_8c_ab0d87e07831e7e4943caef187872123e}{COMMAND}}~0x80
+\item 
+\#define \mbox{\hyperlink{tcs34725_8c_a0b85963cace75e76ae726bcffb04eb70}{DEVICE\+\_\+\+ID}}~0x44
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380}{Register\+\_\+t}} \{ \newline
+\mbox{\hyperlink{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a08abbedba04efb41214496f901134dfb}{EN}} = 0x00
+, \mbox{\hyperlink{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a79b5d309c5f9add49f5de98bb61466d2}{ATIME}} = 0x01
+, \mbox{\hyperlink{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a24f7cf9700fd5ea13821b827ac307f5b}{WTIME}} = 0x02
+, \mbox{\hyperlink{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a28c3af25e3688de53c6e325075719068}{AILTL}} = 0x04
+, \newline
+\mbox{\hyperlink{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a5612572702e7bd0deafd02e37876d294}{AILTH}} = 0x05
+, \mbox{\hyperlink{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a1e38cafc4ac90f1512bafc0f4818fcc3}{AIHTL}} = 0x06
+, \mbox{\hyperlink{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a343977cb15c511d16459a50262719dbd}{AIHTH}} = 0x07
+, \mbox{\hyperlink{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a4956702eee72b08955a47aa19e216b54}{PERS}} = 0x0C
+, \newline
+\mbox{\hyperlink{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a98c89e945795aa99bbbb3f304de3392d}{CNFG}} = 0x0D
+, \mbox{\hyperlink{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a5ea73cf9a3f5928257b1e6bc796d8490}{CTRL}} = 0x0F
+, \mbox{\hyperlink{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a001479a58fb44c39a29b20d565081a68}{ID}} = 0x12
+, \mbox{\hyperlink{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380ab15379688176677d49474245a6178d97}{STATUS}} = 0x13
+, \newline
+\mbox{\hyperlink{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a9e6196d5453d707d8b1e680b9406f009}{CDATA}} = 0x14
+, \mbox{\hyperlink{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a1056f8c0eadea0afeddcd26a8194a551}{CDATAH}} = 0x15
+, \mbox{\hyperlink{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a19179fef8f37317859c38513f1d05416}{RDATA}} = 0x16
+, \mbox{\hyperlink{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a6d12ebb63a19b0bc93c8c5ae19e0e1fc}{RDATAH}} = 0x17
+, \newline
+\mbox{\hyperlink{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a61b76a3ceca2a75441810aa7febee1ba}{GDATA}} = 0x18
+, \mbox{\hyperlink{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380aab6462992d51abfd52754eefae46bf12}{GDATAH}} = 0x19
+, \mbox{\hyperlink{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380aea9a65bf3b61e078ef02c8fda810005d}{BDATA}} = 0x1A
+, \mbox{\hyperlink{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a2430c744fbbf1231d1eaa4859ba24855}{BDATAH}} = 0x1B
+ \}
+\item 
+enum \mbox{\hyperlink{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6}{Integration\+Time\+\_\+t}} \{ \newline
+\mbox{\hyperlink{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6ae92fd4b12e5e0a9adade2d78081ae2ca}{\+\_\+2\+\_\+4ms}} = 0x\+FF
+, \mbox{\hyperlink{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6aa1004a57e1880b059f28826815253a4b}{\+\_\+10ms}} = 0x\+FB
+, \mbox{\hyperlink{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6a6a9bcfe15f21375cb13305dd2360436b}{\+\_\+24ms}} = 0x\+F6
+, \mbox{\hyperlink{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6a01ccd031f2dd30e023f562f74655dc2f}{\+\_\+50ms}} = 0x\+EB
+, \newline
+\mbox{\hyperlink{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6a87717eaf3debb4603e0d8987db510c1d}{\+\_\+101ms}} = 0x\+D5
+, \mbox{\hyperlink{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6a4b016824c1ae136a192e75bcb9ec7375}{\+\_\+154ms}} = 0x\+C0
+, \mbox{\hyperlink{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6a9469e4b4e8e9d5456d939c55d334c037}{\+\_\+700ms}} = 0x00
+ \}
+\item 
+enum \mbox{\hyperlink{tcs34725_8c_afc1a9c8841190916c6c97261e8ce86e2}{Gain\+\_\+t}} \{ \mbox{\hyperlink{tcs34725_8c_afc1a9c8841190916c6c97261e8ce86e2ae701ffe11b0f664b213d2f71abfff3a7}{\+\_\+1x}} = 0x00
+, \mbox{\hyperlink{tcs34725_8c_afc1a9c8841190916c6c97261e8ce86e2a00a6c37bbe56dd9db83d27d102891c01}{\+\_\+4x}} = 0x01
+, \mbox{\hyperlink{tcs34725_8c_afc1a9c8841190916c6c97261e8ce86e2a7669ac9db17a4eaeb55bb55cbb34c28d}{\+\_\+16x}} = 0x02
+, \mbox{\hyperlink{tcs34725_8c_afc1a9c8841190916c6c97261e8ce86e2a23b6eb0da54a5d659f9f97143438f43d}{\+\_\+60x}} = 0x03
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{tcs34725_8c_aaeb0e5e7aebbc6380e165149ec749b6c}{TC3\+A227\+E\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the STC3\+A227E color sensor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{tcs34725_8c_a449e4bf6d7832dcaa5d27aeeac9f56b4}{TC3\+A227\+E\+\_\+\+Get\+Color}} (\mbox{\hyperlink{color_8h_aea9a7472d9d5ba4e6a83791ad629e047}{color\+\_\+t}} $\ast$value)
+\begin{DoxyCompactList}\small\item\em Gets the current color seen by the sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+TCS34725\+FN Sensor Implementation. 
+
+\begin{DoxyAuthor}{Author}
+Nikolaij Saegesser 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{tcs34725_8c_source}{tcs34725.\+c}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{tcs34725_8c_ab0d87e07831e7e4943caef187872123e}\label{tcs34725_8c_ab0d87e07831e7e4943caef187872123e}} 
+\index{tcs34725.c@{tcs34725.c}!COMMAND@{COMMAND}}
+\index{COMMAND@{COMMAND}!tcs34725.c@{tcs34725.c}}
+\doxysubsubsection{\texorpdfstring{COMMAND}{COMMAND}}
+{\footnotesize\ttfamily \#define COMMAND~0x80}
+
+
+
+Definition at line \mbox{\hyperlink{tcs34725_8c_source_l00035}{35}} of file \mbox{\hyperlink{tcs34725_8c_source}{tcs34725.\+c}}.
+
+\mbox{\Hypertarget{tcs34725_8c_a457be1c5e5fee67ed7d01f5887c2d656}\label{tcs34725_8c_a457be1c5e5fee67ed7d01f5887c2d656}} 
+\index{tcs34725.c@{tcs34725.c}!DEVICE\_ADDRESS@{DEVICE\_ADDRESS}}
+\index{DEVICE\_ADDRESS@{DEVICE\_ADDRESS}!tcs34725.c@{tcs34725.c}}
+\doxysubsubsection{\texorpdfstring{DEVICE\_ADDRESS}{DEVICE\_ADDRESS}}
+{\footnotesize\ttfamily \#define DEVICE\+\_\+\+ADDRESS~0x29}
+
+
+
+Definition at line \mbox{\hyperlink{tcs34725_8c_source_l00034}{34}} of file \mbox{\hyperlink{tcs34725_8c_source}{tcs34725.\+c}}.
+
+\mbox{\Hypertarget{tcs34725_8c_a0b85963cace75e76ae726bcffb04eb70}\label{tcs34725_8c_a0b85963cace75e76ae726bcffb04eb70}} 
+\index{tcs34725.c@{tcs34725.c}!DEVICE\_ID@{DEVICE\_ID}}
+\index{DEVICE\_ID@{DEVICE\_ID}!tcs34725.c@{tcs34725.c}}
+\doxysubsubsection{\texorpdfstring{DEVICE\_ID}{DEVICE\_ID}}
+{\footnotesize\ttfamily \#define DEVICE\+\_\+\+ID~0x44}
+
+
+
+Definition at line \mbox{\hyperlink{tcs34725_8c_source_l00036}{36}} of file \mbox{\hyperlink{tcs34725_8c_source}{tcs34725.\+c}}.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{tcs34725_8c_afc1a9c8841190916c6c97261e8ce86e2}\label{tcs34725_8c_afc1a9c8841190916c6c97261e8ce86e2}} 
+\index{tcs34725.c@{tcs34725.c}!Gain\_t@{Gain\_t}}
+\index{Gain\_t@{Gain\_t}!tcs34725.c@{tcs34725.c}}
+\doxysubsubsection{\texorpdfstring{Gain\_t}{Gain\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{tcs34725_8c_afc1a9c8841190916c6c97261e8ce86e2}{Gain\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\_1x@{\_1x}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!\_1x@{\_1x}}}\mbox{\Hypertarget{tcs34725_8c_afc1a9c8841190916c6c97261e8ce86e2ae701ffe11b0f664b213d2f71abfff3a7}\label{tcs34725_8c_afc1a9c8841190916c6c97261e8ce86e2ae701ffe11b0f664b213d2f71abfff3a7}} 
+\+\_\+1x&No gain. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\_4x@{\_4x}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!\_4x@{\_4x}}}\mbox{\Hypertarget{tcs34725_8c_afc1a9c8841190916c6c97261e8ce86e2a00a6c37bbe56dd9db83d27d102891c01}\label{tcs34725_8c_afc1a9c8841190916c6c97261e8ce86e2a00a6c37bbe56dd9db83d27d102891c01}} 
+\+\_\+4x&4x gain \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\_16x@{\_16x}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!\_16x@{\_16x}}}\mbox{\Hypertarget{tcs34725_8c_afc1a9c8841190916c6c97261e8ce86e2a7669ac9db17a4eaeb55bb55cbb34c28d}\label{tcs34725_8c_afc1a9c8841190916c6c97261e8ce86e2a7669ac9db17a4eaeb55bb55cbb34c28d}} 
+\+\_\+16x&16x gain \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\_60x@{\_60x}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!\_60x@{\_60x}}}\mbox{\Hypertarget{tcs34725_8c_afc1a9c8841190916c6c97261e8ce86e2a23b6eb0da54a5d659f9f97143438f43d}\label{tcs34725_8c_afc1a9c8841190916c6c97261e8ce86e2a23b6eb0da54a5d659f9f97143438f43d}} 
+\+\_\+60x&60x gain \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{tcs34725_8c_source_l00081}{81}} of file \mbox{\hyperlink{tcs34725_8c_source}{tcs34725.\+c}}.
+
+\mbox{\Hypertarget{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6}\label{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6}} 
+\index{tcs34725.c@{tcs34725.c}!IntegrationTime\_t@{IntegrationTime\_t}}
+\index{IntegrationTime\_t@{IntegrationTime\_t}!tcs34725.c@{tcs34725.c}}
+\doxysubsubsection{\texorpdfstring{IntegrationTime\_t}{IntegrationTime\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6}{Integration\+Time\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\_2\_4ms@{\_2\_4ms}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!\_2\_4ms@{\_2\_4ms}}}\mbox{\Hypertarget{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6ae92fd4b12e5e0a9adade2d78081ae2ca}\label{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6ae92fd4b12e5e0a9adade2d78081ae2ca}} 
+\+\_\+2\+\_\+4ms&2.\+4ms -\/ 1 cycle \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\_10ms@{\_10ms}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!\_10ms@{\_10ms}}}\mbox{\Hypertarget{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6aa1004a57e1880b059f28826815253a4b}\label{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6aa1004a57e1880b059f28826815253a4b}} 
+\+\_\+10ms&10ms -\/ 4 cycles \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\_24ms@{\_24ms}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!\_24ms@{\_24ms}}}\mbox{\Hypertarget{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6a6a9bcfe15f21375cb13305dd2360436b}\label{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6a6a9bcfe15f21375cb13305dd2360436b}} 
+\+\_\+24ms&24ms -\/ 10 cycles \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\_50ms@{\_50ms}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!\_50ms@{\_50ms}}}\mbox{\Hypertarget{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6a01ccd031f2dd30e023f562f74655dc2f}\label{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6a01ccd031f2dd30e023f562f74655dc2f}} 
+\+\_\+50ms&50ms -\/ 20 cycles \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\_101ms@{\_101ms}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!\_101ms@{\_101ms}}}\mbox{\Hypertarget{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6a87717eaf3debb4603e0d8987db510c1d}\label{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6a87717eaf3debb4603e0d8987db510c1d}} 
+\+\_\+101ms&101ms -\/ 42 cycles \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\_154ms@{\_154ms}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!\_154ms@{\_154ms}}}\mbox{\Hypertarget{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6a4b016824c1ae136a192e75bcb9ec7375}\label{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6a4b016824c1ae136a192e75bcb9ec7375}} 
+\+\_\+154ms&154ms -\/ 64 cycles \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{\_700ms@{\_700ms}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!\_700ms@{\_700ms}}}\mbox{\Hypertarget{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6a9469e4b4e8e9d5456d939c55d334c037}\label{tcs34725_8c_af9f488e0c983c6898d7c82bf37f249c6a9469e4b4e8e9d5456d939c55d334c037}} 
+\+\_\+700ms&700ms -\/ 256 cycles \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{tcs34725_8c_source_l00071}{71}} of file \mbox{\hyperlink{tcs34725_8c_source}{tcs34725.\+c}}.
+
+\mbox{\Hypertarget{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380}\label{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380}} 
+\index{tcs34725.c@{tcs34725.c}!Register\_t@{Register\_t}}
+\index{Register\_t@{Register\_t}!tcs34725.c@{tcs34725.c}}
+\doxysubsubsection{\texorpdfstring{Register\_t}{Register\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380}{Register\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EN@{EN}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!EN@{EN}}}\mbox{\Hypertarget{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a08abbedba04efb41214496f901134dfb}\label{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a08abbedba04efb41214496f901134dfb}} 
+EN&Enable Register. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATIME@{ATIME}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!ATIME@{ATIME}}}\mbox{\Hypertarget{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a79b5d309c5f9add49f5de98bb61466d2}\label{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a79b5d309c5f9add49f5de98bb61466d2}} 
+ATIME&RGBC Timing Register. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WTIME@{WTIME}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!WTIME@{WTIME}}}\mbox{\Hypertarget{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a24f7cf9700fd5ea13821b827ac307f5b}\label{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a24f7cf9700fd5ea13821b827ac307f5b}} 
+WTIME&Wait Time Register. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AILTL@{AILTL}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!AILTL@{AILTL}}}\mbox{\Hypertarget{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a28c3af25e3688de53c6e325075719068}\label{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a28c3af25e3688de53c6e325075719068}} 
+AILTL&RGBC clear channel low threshold lower byte. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AILTH@{AILTH}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!AILTH@{AILTH}}}\mbox{\Hypertarget{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a5612572702e7bd0deafd02e37876d294}\label{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a5612572702e7bd0deafd02e37876d294}} 
+AILTH&RGBC clear channel low threshold upper byte. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AIHTL@{AIHTL}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!AIHTL@{AIHTL}}}\mbox{\Hypertarget{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a1e38cafc4ac90f1512bafc0f4818fcc3}\label{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a1e38cafc4ac90f1512bafc0f4818fcc3}} 
+AIHTL&RGBC clear channel high threshold lower byte. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AIHTH@{AIHTH}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!AIHTH@{AIHTH}}}\mbox{\Hypertarget{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a343977cb15c511d16459a50262719dbd}\label{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a343977cb15c511d16459a50262719dbd}} 
+AIHTH&RGBC clear channel high threshold upper byte. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PERS@{PERS}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!PERS@{PERS}}}\mbox{\Hypertarget{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a4956702eee72b08955a47aa19e216b54}\label{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a4956702eee72b08955a47aa19e216b54}} 
+PERS&Persistence Register. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CNFG@{CNFG}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!CNFG@{CNFG}}}\mbox{\Hypertarget{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a98c89e945795aa99bbbb3f304de3392d}\label{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a98c89e945795aa99bbbb3f304de3392d}} 
+CNFG&Configuration Register. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CTRL@{CTRL}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!CTRL@{CTRL}}}\mbox{\Hypertarget{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a5ea73cf9a3f5928257b1e6bc796d8490}\label{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a5ea73cf9a3f5928257b1e6bc796d8490}} 
+CTRL&Control Register. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ID@{ID}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!ID@{ID}}}\mbox{\Hypertarget{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a001479a58fb44c39a29b20d565081a68}\label{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a001479a58fb44c39a29b20d565081a68}} 
+ID&ID Register. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATUS@{STATUS}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!STATUS@{STATUS}}}\mbox{\Hypertarget{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380ab15379688176677d49474245a6178d97}\label{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380ab15379688176677d49474245a6178d97}} 
+STATUS&Status Register. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CDATA@{CDATA}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!CDATA@{CDATA}}}\mbox{\Hypertarget{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a9e6196d5453d707d8b1e680b9406f009}\label{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a9e6196d5453d707d8b1e680b9406f009}} 
+CDATA&Clear data low byte. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CDATAH@{CDATAH}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!CDATAH@{CDATAH}}}\mbox{\Hypertarget{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a1056f8c0eadea0afeddcd26a8194a551}\label{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a1056f8c0eadea0afeddcd26a8194a551}} 
+CDATAH&Clear data high byte. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RDATA@{RDATA}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!RDATA@{RDATA}}}\mbox{\Hypertarget{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a19179fef8f37317859c38513f1d05416}\label{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a19179fef8f37317859c38513f1d05416}} 
+RDATA&Red data low byte. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RDATAH@{RDATAH}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!RDATAH@{RDATAH}}}\mbox{\Hypertarget{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a6d12ebb63a19b0bc93c8c5ae19e0e1fc}\label{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a6d12ebb63a19b0bc93c8c5ae19e0e1fc}} 
+RDATAH&Red data high byte. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GDATA@{GDATA}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!GDATA@{GDATA}}}\mbox{\Hypertarget{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a61b76a3ceca2a75441810aa7febee1ba}\label{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a61b76a3ceca2a75441810aa7febee1ba}} 
+GDATA&Green data low byte. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GDATAH@{GDATAH}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!GDATAH@{GDATAH}}}\mbox{\Hypertarget{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380aab6462992d51abfd52754eefae46bf12}\label{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380aab6462992d51abfd52754eefae46bf12}} 
+GDATAH&Green data high byte. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BDATA@{BDATA}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!BDATA@{BDATA}}}\mbox{\Hypertarget{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380aea9a65bf3b61e078ef02c8fda810005d}\label{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380aea9a65bf3b61e078ef02c8fda810005d}} 
+BDATA&Blue data low byte. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BDATAH@{BDATAH}!tcs34725.c@{tcs34725.c}}\index{tcs34725.c@{tcs34725.c}!BDATAH@{BDATAH}}}\mbox{\Hypertarget{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a2430c744fbbf1231d1eaa4859ba24855}\label{tcs34725_8c_a4f290d91264bf6dfe479061e00d27380a2430c744fbbf1231d1eaa4859ba24855}} 
+BDATAH&Blue data high byte. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{tcs34725_8c_source_l00048}{48}} of file \mbox{\hyperlink{tcs34725_8c_source}{tcs34725.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{tcs34725_8c_a449e4bf6d7832dcaa5d27aeeac9f56b4}\label{tcs34725_8c_a449e4bf6d7832dcaa5d27aeeac9f56b4}} 
+\index{tcs34725.c@{tcs34725.c}!TC3A227E\_GetColor@{TC3A227E\_GetColor}}
+\index{TC3A227E\_GetColor@{TC3A227E\_GetColor}!tcs34725.c@{tcs34725.c}}
+\doxysubsubsection{\texorpdfstring{TC3A227E\_GetColor()}{TC3A227E\_GetColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} TC3\+A227\+E\+\_\+\+Get\+Color (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{color_8h_aea9a7472d9d5ba4e6a83791ad629e047}{color\+\_\+t}} $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Gets the current color seen by the sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Pointer where color should be stored at \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status result 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{tcs34725_8c_source_l00148}{148}} of file \mbox{\hyperlink{tcs34725_8c_source}{tcs34725.\+c}}.
+
+\mbox{\Hypertarget{tcs34725_8c_aaeb0e5e7aebbc6380e165149ec749b6c}\label{tcs34725_8c_aaeb0e5e7aebbc6380e165149ec749b6c}} 
+\index{tcs34725.c@{tcs34725.c}!TC3A227E\_Init@{TC3A227E\_Init}}
+\index{TC3A227E\_Init@{TC3A227E\_Init}!tcs34725.c@{tcs34725.c}}
+\doxysubsubsection{\texorpdfstring{TC3A227E\_Init()}{TC3A227E\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} TC3\+A227\+E\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the STC3\+A227E color sensor. 
+
+\begin{DoxyReturn}{Returns}
+Status result 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{tcs34725_8c_source_l00138}{138}} of file \mbox{\hyperlink{tcs34725_8c_source}{tcs34725.\+c}}.
+

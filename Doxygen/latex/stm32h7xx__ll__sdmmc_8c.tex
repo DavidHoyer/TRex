@@ -1,0 +1,154 @@
+\hypertarget{stm32h7xx__ll__sdmmc_8c}{}\doxysection{C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.11.0/\+TRex/lib/hal/\+Drivers/\+STM32\+H7xx\+\_\+\+HAL\+\_\+\+Driver/\+Src/stm32h7xx\+\_\+ll\+\_\+sdmmc.c File Reference}
+\label{stm32h7xx__ll__sdmmc_8c}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Drivers/STM32H7xx\_HAL\_Driver/Src/stm32h7xx\_ll\_sdmmc.c@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Drivers/STM32H7xx\_HAL\_Driver/Src/stm32h7xx\_ll\_sdmmc.c}}
+
+
+SDMMC Low Layer HAL module driver.  
+
+
+{\ttfamily \#include \char`\"{}stm32h7xx\+\_\+hal.\+h\char`\"{}}\newline
+
+
+\doxysubsection{Detailed Description}
+SDMMC Low Layer HAL module driver. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team \begin{DoxyVerb}     This file provides firmware functions to manage the following
+     functionalities of the SDMMC peripheral:
+      + Initialization/de-initialization functions
+      + I/O operation functions
+      + Peripheral Control functions
+      + Peripheral State functions
+\end{DoxyVerb}
+ \begin{DoxyVerb}==============================================================================
+                     ##### SDMMC peripheral features #####
+==============================================================================
+  [..] The SD/SDMMC MMC card host interface (SDMMC) provides an interface between the AHB
+       peripheral bus and MultiMedia cards (MMCs), SD memory cards, SDMMC cards and CE-ATA
+       devices.
+
+  [..] The SDMMC features include the following:
+       (+) Full compliance with MultiMediaCard System Specification Version 4.51. Card support
+           for three different databus modes: 1-bit (default), 4-bit and 8-bit.
+       (+) Full compatibility with previous versions of MultiMediaCards (backward compatibility).
+       (+) Full compliance with SD memory card specifications version 4.1.
+           (SDR104 SDMMC_CK speed limited to maximum allowed IO speed, SPI mode and
+            UHS-II mode not supported).
+       (+) Full compliance with SDIO card specification version 4.0. Card support
+           for two different databus modes: 1-bit (default) and 4-bit.
+           (SDR104 SDMMC_CK speed limited to maximum allowed IO speed, SPI mode and
+            UHS-II mode not supported).
+       (+) Data transfer up to 208 Mbyte/s for the 8 bit mode. (depending maximum allowed IO speed).
+       (+) Data and command output enable signals to control external bidirectional drivers
+
+                         ##### How to use this driver #####
+==============================================================================
+  [..]
+    This driver is a considered as a driver of service for external devices drivers
+    that interfaces with the SDMMC peripheral.
+    According to the device used (SD card/ MMC card / SDMMC card ...), a set of APIs
+    is used in the device's driver to perform SDMMC operations and functionalities.
+
+    This driver is almost transparent for the final user, it is only used to implement other
+    functionalities of the external device.
+
+  [..]
+    (+) The SDMMC clock is coming from output of PLL1_Q or PLL2_R.
+     Before start working with SDMMC peripheral make sure that the PLL is well configured.
+        The SDMMC peripheral uses two clock signals:
+        (++) PLL1_Q bus clock (default after reset)
+        (++) PLL2_R bus clock
+
+    (+) Enable/Disable peripheral clock using RCC peripheral macros related to SDMMC
+        peripheral.
+
+    (+) Enable the Power ON State using the SDMMC_PowerState_ON(SDMMCx)
+        function and disable it using the function SDMMC_PowerState_OFF(SDMMCx).
+
+    (+) Enable/Disable the peripheral interrupts using the macros __SDMMC_ENABLE_IT(hSDMMC, IT)
+        and __SDMMC_DISABLE_IT(hSDMMC, IT) if you need to use interrupt mode.
+
+    (+) When using the DMA mode
+        (++) Configure the IDMA mode (Single buffer or double)
+        (++) Configure the buffer address
+        (++) Configure Data Path State Machine
+
+    (+) To control the CPSM (Command Path State Machine) and send
+        commands to the card use the SDMMC_SendCommand(SDMMCx),
+        SDMMC_GetCommandResponse() and SDMMC_GetResponse() functions. First, user has
+        to fill the command structure (pointer to SDMMC_CmdInitTypeDef) according
+        to the selected command to be sent.
+        The parameters that should be filled are:
+         (++) Command Argument
+         (++) Command Index
+         (++) Command Response type
+         (++) Command Wait
+         (++) CPSM Status (Enable or Disable).
+
+        -@@- To check if the command is well received, read the SDMMC_CMDRESP
+            register using the SDMMC_GetCommandResponse().
+            The SDMMC responses registers (SDMMC_RESP1 to SDMMC_RESP2), use the
+            SDMMC_GetResponse() function.
+
+    (+) To control the DPSM (Data Path State Machine) and send/receive
+         data to/from the card use the SDMMC_DataConfig(), SDMMC_GetDataCounter(),
+        SDMMC_ReadFIFO(), SDMMC_WriteFIFO() and SDMMC_GetFIFOCount() functions.
+
+  *** Read Operations ***
+  =======================
+  [..]
+    (#) First, user has to fill the data structure (pointer to
+        SDMMC_DataInitTypeDef) according to the selected data type to be received.
+        The parameters that should be filled are:
+         (++) Data TimeOut
+         (++) Data Length
+         (++) Data Block size
+         (++) Data Transfer direction: should be from card (To SDMMC)
+         (++) Data Transfer mode
+         (++) DPSM Status (Enable or Disable)
+
+    (#) Configure the SDMMC resources to receive the data from the card
+        according to selected transfer mode (Refer to Step 8, 9 and 10).
+
+    (#) Send the selected Read command (refer to step 11).
+
+    (#) Use the SDMMC flags/interrupts to check the transfer status.
+
+  *** Write Operations ***
+  ========================
+  [..]
+   (#) First, user has to fill the data structure (pointer to
+       SDMMC_DataInitTypeDef) according to the selected data type to be received.
+       The parameters that should be filled are:
+        (++) Data TimeOut
+        (++) Data Length
+        (++) Data Block size
+        (++) Data Transfer direction:  should be to card (To CARD)
+        (++) Data Transfer mode
+        (++) DPSM Status (Enable or Disable)
+
+   (#) Configure the SDMMC resources to send the data to the card according to
+       selected transfer mode.
+
+   (#) Send the selected Write command.
+
+   (#) Use the SDMMC flags/interrupts to check the transfer status.
+
+  *** Command management operations ***
+  =====================================
+  [..]
+   (#) The commands used for Read/Write/Erase operations are managed in
+       separate functions.
+       Each function allows to send the needed command with the related argument,
+       then check the response.
+       By the same approach, you could implement a command and check the response.\end{DoxyVerb}
+
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2017 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under BSD 3-\/Clause license, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: opensource.\+org/licenses/\+BSD-\/3-\/\+Clause 
+
+Definition in file \mbox{\hyperlink{stm32h7xx__ll__sdmmc_8c_source}{stm32h7xx\+\_\+ll\+\_\+sdmmc.\+c}}.
+

@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['r_5ffailure_0',['R_FAILURE',['../errors_8h.html#a4b83d7dde1cd52c38ebefd624a81f098',1,'errors.h']]],
+  ['r_5fsuccess_1',['R_SUCCESS',['../errors_8h.html#ac1c62eb0ddf16e51b0e72bbe9e72a442',1,'errors.h']]],
+  ['r_5ftry_2',['R_TRY',['../errors_8h.html#af8ae7a4a5f733dc94fc9c3b00bcce3bc',1,'errors.h']]],
+  ['ram_5fd1_3',['RAM_D1',['../ram_8h.html#af7d285f9cc82dde1cfb5ceb24adf7764',1,'ram.h']]],
+  ['ram_5fd1_5fbase_4',['RAM_D1_BASE',['../ram_8h.html#af71a3825235e67b5f9be7824b4257410',1,'ram.h']]],
+  ['ram_5fd2_5',['RAM_D2',['../ram_8h.html#af22c90d4802216f6dc0f083c752ab1c9',1,'ram.h']]],
+  ['ram_5fd2_5fbase_6',['RAM_D2_BASE',['../ram_8h.html#a59afee5bd23628c429b2bc66b6acf2a4',1,'ram.h']]],
+  ['ram_5fd3_7',['RAM_D3',['../ram_8h.html#a799432b331ba26f9e7cac24d276e778c',1,'ram.h']]],
+  ['ram_5fd3_5fbase_8',['RAM_D3_BASE',['../ram_8h.html#a5967f3d58554a53497b87e5c97e6d1bb',1,'ram.h']]],
+  ['ram_5fdtcmram_9',['RAM_DTCMRAM',['../ram_8h.html#a24104b9c34bef134a2761d69ee929bc0',1,'ram.h']]],
+  ['ram_5fdtcmram_5fbase_10',['RAM_DTCMRAM_BASE',['../ram_8h.html#af77eeb32bdc6cde3300d5b5936956623',1,'ram.h']]],
+  ['ram_5fitcmram_11',['RAM_ITCMRAM',['../ram_8h.html#a6f51aee01f833a65b7b1b373afb081da',1,'ram.h']]],
+  ['ram_5fitcmram_5fbase_12',['RAM_ITCMRAM_BASE',['../ram_8h.html#a238c2ecd29a6d509ded38e891a08bd41',1,'ram.h']]],
+  ['rddem_13',['RDDEM',['../ff_8c.html#a24b6bc427cbd37fbe76e087f7f188abb',1,'ff.c']]],
+  ['request_5fresponse_14',['REQUEST_RESPONSE',['../icm42605_8c.html#aacd28a24a86a63bc03e8b17010aee86e',1,'REQUEST_RESPONSE():&#160;icm42605.c'],['../lps22bh_8c.html#aacd28a24a86a63bc03e8b17010aee86e',1,'REQUEST_RESPONSE():&#160;lps22bh.c']]],
+  ['rgb1_5fcolor_15',['RGB1_COLOR',['../color_8h.html#ae54d8aa6540e7c4c438f8d35e4b8863b',1,'color.h']]],
+  ['rgb565_5fcolor_16',['RGB565_COLOR',['../color_8h.html#af4c080f1461e43937ef20270c1211caa',1,'color.h']]],
+  ['rgb8_5fcolor_17',['RGB8_COLOR',['../color_8h.html#a6623b455e8ea71287d83d3f8a0e3af7d',1,'color.h']]],
+  ['rgba16_5fcolor_18',['RGBA16_COLOR',['../color_8h.html#ad7dae6b39bd95e610e4819e7dde82e24',1,'color.h']]]
+];

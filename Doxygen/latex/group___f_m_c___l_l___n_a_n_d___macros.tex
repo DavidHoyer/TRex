@@ -1,0 +1,72 @@
+\hypertarget{group___f_m_c___l_l___n_a_n_d___macros}{}\doxysection{FMC NAND Macros}
+\label{group___f_m_c___l_l___n_a_n_d___macros}\index{FMC NAND Macros@{FMC NAND Macros}}
+
+
+macros to handle NAND device enable/disable  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___n_a_n_d___macros_gacfd211f7ce45b8c81994e933027634dd}{\+\_\+\+\_\+\+FMC\+\_\+\+NAND\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$PCR $\vert$= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4062c4c6a263064cc1f042bde7f86ecc}{FMC\+\_\+\+PCR\+\_\+\+PBKEN}})
+\begin{DoxyCompactList}\small\item\em Enable the NAND device access. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___f_m_c___l_l___n_a_n_d___macros_ga0acd69e4346d06332021a4dea5e16666}{\+\_\+\+\_\+\+FMC\+\_\+\+NAND\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+BANK\+\_\+\+\_\+)~\mbox{\hyperlink{group___exported__macros_ga133aae6fc0d41bffab39ab223a7001de}{CLEAR\+\_\+\+BIT}}((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$PCR, \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4062c4c6a263064cc1f042bde7f86ecc}{FMC\+\_\+\+PCR\+\_\+\+PBKEN}})
+\begin{DoxyCompactList}\small\item\em Disable the NAND device access. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+macros to handle NAND device enable/disable 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___f_m_c___l_l___n_a_n_d___macros_ga0acd69e4346d06332021a4dea5e16666}\label{group___f_m_c___l_l___n_a_n_d___macros_ga0acd69e4346d06332021a4dea5e16666}} 
+\index{FMC NAND Macros@{FMC NAND Macros}!\_\_FMC\_NAND\_DISABLE@{\_\_FMC\_NAND\_DISABLE}}
+\index{\_\_FMC\_NAND\_DISABLE@{\_\_FMC\_NAND\_DISABLE}!FMC NAND Macros@{FMC NAND Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_FMC\_NAND\_DISABLE}{\_\_FMC\_NAND\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+FMC\+\_\+\+NAND\+\_\+\+DISABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+BANK\+\_\+\+\_\+ }\end{DoxyParamCaption})~\mbox{\hyperlink{group___exported__macros_ga133aae6fc0d41bffab39ab223a7001de}{CLEAR\+\_\+\+BIT}}((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$PCR, \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4062c4c6a263064cc1f042bde7f86ecc}{FMC\+\_\+\+PCR\+\_\+\+PBKEN}})}
+
+
+
+Disable the NAND device access. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+} & FMC\+\_\+\+NAND Instance \\
+\hline
+{\em \+\_\+\+\_\+\+BANK\+\_\+\+\_\+} & FMC\+\_\+\+NAND Bank \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__ll__fmc_8h_source_l00921}{921}} of file \mbox{\hyperlink{stm32h7xx__ll__fmc_8h_source}{stm32h7xx\+\_\+ll\+\_\+fmc.\+h}}.
+
+\mbox{\Hypertarget{group___f_m_c___l_l___n_a_n_d___macros_gacfd211f7ce45b8c81994e933027634dd}\label{group___f_m_c___l_l___n_a_n_d___macros_gacfd211f7ce45b8c81994e933027634dd}} 
+\index{FMC NAND Macros@{FMC NAND Macros}!\_\_FMC\_NAND\_ENABLE@{\_\_FMC\_NAND\_ENABLE}}
+\index{\_\_FMC\_NAND\_ENABLE@{\_\_FMC\_NAND\_ENABLE}!FMC NAND Macros@{FMC NAND Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_FMC\_NAND\_ENABLE}{\_\_FMC\_NAND\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+FMC\+\_\+\+NAND\+\_\+\+ENABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+)-\/$>$PCR $\vert$= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4062c4c6a263064cc1f042bde7f86ecc}{FMC\+\_\+\+PCR\+\_\+\+PBKEN}})}
+
+
+
+Enable the NAND device access. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+INSTANCE\+\_\+\+\_\+} & FMC\+\_\+\+NAND Instance \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__ll__fmc_8h_source_l00913}{913}} of file \mbox{\hyperlink{stm32h7xx__ll__fmc_8h_source}{stm32h7xx\+\_\+ll\+\_\+fmc.\+h}}.
+

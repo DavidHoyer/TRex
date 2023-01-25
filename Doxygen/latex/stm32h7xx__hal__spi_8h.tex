@@ -1,0 +1,587 @@
+\hypertarget{stm32h7xx__hal__spi_8h}{}\doxysection{C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.11.0/\+TRex/lib/hal/\+Drivers/\+STM32\+H7xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/stm32h7xx\+\_\+hal\+\_\+spi.h File Reference}
+\label{stm32h7xx__hal__spi_8h}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Drivers/STM32H7xx\_HAL\_Driver/Inc/stm32h7xx\_hal\_spi.h@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Drivers/STM32H7xx\_HAL\_Driver/Inc/stm32h7xx\_hal\_spi.h}}
+
+
+Header file of SPI HAL module.  
+
+
+{\ttfamily \#include \char`\"{}stm32h7xx\+\_\+hal\+\_\+def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32h7xx\+\_\+hal\+\_\+spi\+\_\+ex.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_p_i___init_type_def}{SPI\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em SPI Configuration Structure definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_____s_p_i___handle_type_def}{\+\_\+\+\_\+\+SPI\+\_\+\+Handle\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em SPI handle Structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___f_i_f_o___type_ga713834e556cbf0b498835b76c934726e}{SPI\+\_\+\+LOWEND\+\_\+\+FIFO\+\_\+\+SIZE}}~8UL
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___f_i_f_o___type_ga61e8c28ab72b549b82ee1fbc553bcaec}{SPI\+\_\+\+HIGHEND\+\_\+\+FIFO\+\_\+\+SIZE}}~16UL
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___error___code_gaac0006cdf5670741f8702e55d4bf4601}{HAL\+\_\+\+SPI\+\_\+\+ERROR\+\_\+\+NONE}}~(0x00000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___error___code_ga75f5edd4e2a7a95bc9a994244df52460}{HAL\+\_\+\+SPI\+\_\+\+ERROR\+\_\+\+MODF}}~(0x00000001\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___error___code_gad1163823ec5fa89e4670366565d4ab93}{HAL\+\_\+\+SPI\+\_\+\+ERROR\+\_\+\+CRC}}~(0x00000002\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___error___code_ga9587f998fed196a4f30c38f2da731c0f}{HAL\+\_\+\+SPI\+\_\+\+ERROR\+\_\+\+OVR}}~(0x00000004\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___error___code_gaf03238e57dd0c4d277fef2aa7a083133}{HAL\+\_\+\+SPI\+\_\+\+ERROR\+\_\+\+FRE}}~(0x00000008\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___error___code_gaaf91992131301e3fc7f2ce62fb011f6c}{HAL\+\_\+\+SPI\+\_\+\+ERROR\+\_\+\+DMA}}~(0x00000010\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___error___code_ga777b36b52caf926a384976baf34530a3}{HAL\+\_\+\+SPI\+\_\+\+ERROR\+\_\+\+FLAG}}~(0x00000020\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___error___code_gab7fa15838d5ef9316ed8a0ec1c782fb7}{HAL\+\_\+\+SPI\+\_\+\+ERROR\+\_\+\+ABORT}}~(0x00000040\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___error___code_ga58d86c21484e1d1fe3027ec2771706cc}{HAL\+\_\+\+SPI\+\_\+\+ERROR\+\_\+\+UDR}}~(0x00000080\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___error___code_ga67dd5b4fb30d2e506e5900261eec47ba}{HAL\+\_\+\+SPI\+\_\+\+ERROR\+\_\+\+TIMEOUT}}~(0x00000100\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___error___code_ga81d13d9d60c821fea6f2e993e656f92a}{HAL\+\_\+\+SPI\+\_\+\+ERROR\+\_\+\+UNKNOW}}~(0x00000200\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___error___code_ga4e6d9b12a40b3c6ac209f0e711ba3397}{HAL\+\_\+\+SPI\+\_\+\+ERROR\+\_\+\+NOT\+\_\+\+SUPPORTED}}~(0x00000400\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___mode_ga75f094fee5a9dc10b88401ccd17925d3}{SPI\+\_\+\+MODE\+\_\+\+SLAVE}}~(0x00000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___mode_gaa335c2abdfad9e6f6c2677719d93b64e}{SPI\+\_\+\+MODE\+\_\+\+MASTER}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gae374f7d95b2b790e5741a84932b8c63f}{SPI\+\_\+\+CFG2\+\_\+\+MASTER}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___direction_gaa7cb7f4bf4eebbf91bcfaeb17ebba7f3}{SPI\+\_\+\+DIRECTION\+\_\+2\+LINES}}~(0x00000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___direction_ga0882de57168be019d97078fc9a017414}{SPI\+\_\+\+DIRECTION\+\_\+2\+LINES\+\_\+\+TXONLY}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gab19c27afabbaf50a9e02e2aa0f489383}{SPI\+\_\+\+CFG2\+\_\+\+COMM\+\_\+0}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___direction_ga444826cf94667f75503f54704b2fb391}{SPI\+\_\+\+DIRECTION\+\_\+2\+LINES\+\_\+\+RXONLY}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8577b6cfe88294c5f4326d795338b252}{SPI\+\_\+\+CFG2\+\_\+\+COMM\+\_\+1}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___direction_gab0f684caf5f1d6ac1e73d90a4778ab93}{SPI\+\_\+\+DIRECTION\+\_\+1\+LINE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1b7bf18425d7ade65a2e772fde619bf1}{SPI\+\_\+\+CFG2\+\_\+\+COMM}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_ga333dd776c2e5bd34a62ec2c778e79b31}{SPI\+\_\+\+DATASIZE\+\_\+4\+BIT}}~(0x00000003\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_gac419892f10e003ca1610b02764a9571a}{SPI\+\_\+\+DATASIZE\+\_\+5\+BIT}}~(0x00000004\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_ga4ae84231733c205f5824fd04411f4256}{SPI\+\_\+\+DATASIZE\+\_\+6\+BIT}}~(0x00000005\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_ga255495a4ed0b621c7febc3381cc126a3}{SPI\+\_\+\+DATASIZE\+\_\+7\+BIT}}~(0x00000006\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_ga773e9fc5d44c9661c829361fbd073152}{SPI\+\_\+\+DATASIZE\+\_\+8\+BIT}}~(0x00000007\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_ga5aaa20dba9ccfa33b21b5b0412b3b9a4}{SPI\+\_\+\+DATASIZE\+\_\+9\+BIT}}~(0x00000008\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_ga45f9441b23fa3975e6a66329e3edc540}{SPI\+\_\+\+DATASIZE\+\_\+10\+BIT}}~(0x00000009\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_gac89fef02c2b72a45f0d9bd4b9108464f}{SPI\+\_\+\+DATASIZE\+\_\+11\+BIT}}~(0x0000000\+AUL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_ga6156f3714711c5aa25444cb0db4de48e}{SPI\+\_\+\+DATASIZE\+\_\+12\+BIT}}~(0x0000000\+BUL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_ga99da120c51ef48974fea4a9da210184c}{SPI\+\_\+\+DATASIZE\+\_\+13\+BIT}}~(0x0000000\+CUL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_gac9b8f5abf1d7d31f2d814e5f19546df9}{SPI\+\_\+\+DATASIZE\+\_\+14\+BIT}}~(0x0000000\+DUL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_ga36b5ba62b97fae23c1162a87b256ca45}{SPI\+\_\+\+DATASIZE\+\_\+15\+BIT}}~(0x0000000\+EUL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_ga902147b9ead27cd9333240c72ce74f59}{SPI\+\_\+\+DATASIZE\+\_\+16\+BIT}}~(0x0000000\+FUL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_gaa5b7c0d07ea4c989dcf890f213027069}{SPI\+\_\+\+DATASIZE\+\_\+17\+BIT}}~(0x00000010\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_ga90e8bf9c20f3541edcce58020043251e}{SPI\+\_\+\+DATASIZE\+\_\+18\+BIT}}~(0x00000011\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_ga3ea8fde428541f2f04d7bef222c5cb61}{SPI\+\_\+\+DATASIZE\+\_\+19\+BIT}}~(0x00000012\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_ga45fb19e55af484730cf125cd6b07d01b}{SPI\+\_\+\+DATASIZE\+\_\+20\+BIT}}~(0x00000013\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_ga7b5efe19cefe5db7d97ea2727f0f7556}{SPI\+\_\+\+DATASIZE\+\_\+21\+BIT}}~(0x00000014\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_ga6acc458ac0e424391a7c46af45760342}{SPI\+\_\+\+DATASIZE\+\_\+22\+BIT}}~(0x00000015\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_gad96bf29323a77a7e19e4d5aa9a2ef79c}{SPI\+\_\+\+DATASIZE\+\_\+23\+BIT}}~(0x00000016\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_gaafee8ba14a71379532b56e2d1ef87553}{SPI\+\_\+\+DATASIZE\+\_\+24\+BIT}}~(0x00000017\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_gae71ae631dc989b01d10e8a1cce86f932}{SPI\+\_\+\+DATASIZE\+\_\+25\+BIT}}~(0x00000018\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_ga3e748283a9b23d681197eaa1d00a937c}{SPI\+\_\+\+DATASIZE\+\_\+26\+BIT}}~(0x00000019\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_gaf92dd54a953e20687b3f7d83c85a951c}{SPI\+\_\+\+DATASIZE\+\_\+27\+BIT}}~(0x0000001\+AUL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_ga9efafafe4361af128b1e4d74155005cf}{SPI\+\_\+\+DATASIZE\+\_\+28\+BIT}}~(0x0000001\+BUL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_ga8b9d031b602a90193189482a7db1dffe}{SPI\+\_\+\+DATASIZE\+\_\+29\+BIT}}~(0x0000001\+CUL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_gab46e03d8ef20500b8f1f98a2d669b5bf}{SPI\+\_\+\+DATASIZE\+\_\+30\+BIT}}~(0x0000001\+DUL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_ga6b7f030988d003a5f556def47d6aca93}{SPI\+\_\+\+DATASIZE\+\_\+31\+BIT}}~(0x0000001\+EUL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___data___size_ga308080800ba91a05c117ea93ada4517f}{SPI\+\_\+\+DATASIZE\+\_\+32\+BIT}}~(0x0000001\+FUL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___clock___polarity_gaf61e3c6ec671baef099516265793c8df}{SPI\+\_\+\+POLARITY\+\_\+\+LOW}}~(0x00000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___clock___polarity_ga6910e2527b7511eb3a55946b9b775cff}{SPI\+\_\+\+POLARITY\+\_\+\+HIGH}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf9e5874b94f69e2af8d7fd460ff33460}{SPI\+\_\+\+CFG2\+\_\+\+CPOL}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___clock___phase_ga208be78b79c51df200a495c4d2110b57}{SPI\+\_\+\+PHASE\+\_\+1\+EDGE}}~(0x00000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___clock___phase_ga960275ac1d01d302c48e713399990c36}{SPI\+\_\+\+PHASE\+\_\+2\+EDGE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga268bfe1b80b116394eef88b75cd3bcbd}{SPI\+\_\+\+CFG2\+\_\+\+CPHA}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___slave___select___management_ga0bf14691b9d03eb158f190cefa7ab8fc}{SPI\+\_\+\+NSS\+\_\+\+SOFT}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gad0e7364142f9a7eb6b5c59897dd8b72d}{SPI\+\_\+\+CFG2\+\_\+\+SSM}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___slave___select___management_ga62c42a5e28ce3b0dc92c5186c10accf8}{SPI\+\_\+\+NSS\+\_\+\+HARD\+\_\+\+INPUT}}~(0x00000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___slave___select___management_gab7f2da432661406a37fa2afe4efacd87}{SPI\+\_\+\+NSS\+\_\+\+HARD\+\_\+\+OUTPUT}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga9c9863c4e8e013e090efbe2cc7d82c45}{SPI\+\_\+\+CFG2\+\_\+\+SSOE}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___n_s_s_p___mode_ga34736b4ea038be7723b31a0416a26832}{SPI\+\_\+\+NSS\+\_\+\+PULSE\+\_\+\+DISABLE}}~(0x00000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___n_s_s_p___mode_gac6243661f7fabde22ef936590f88be78}{SPI\+\_\+\+NSS\+\_\+\+PULSE\+\_\+\+ENABLE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gabe0131b6501f637fa0168c031050818d}{SPI\+\_\+\+CFG2\+\_\+\+SSOM}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___baud_rate___prescaler_ga3c1e615518e705b8120f164ff4c1968e}{SPI\+\_\+\+BAUDRATEPRESCALER\+\_\+2}}~(0x00000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___baud_rate___prescaler_ga807568c52b5ba449d7a2b1b85549db24}{SPI\+\_\+\+BAUDRATEPRESCALER\+\_\+4}}~(0x10000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___baud_rate___prescaler_ga2393359eb495f95163206e17194f4847}{SPI\+\_\+\+BAUDRATEPRESCALER\+\_\+8}}~(0x20000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___baud_rate___prescaler_gad6a08d920ad4ee524cf55cd09e4c4d0e}{SPI\+\_\+\+BAUDRATEPRESCALER\+\_\+16}}~(0x30000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___baud_rate___prescaler_ga53fda39d29f04b815f525b7f8c8dd9c2}{SPI\+\_\+\+BAUDRATEPRESCALER\+\_\+32}}~(0x40000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___baud_rate___prescaler_ga64129361cbd23907d14144befe2209f4}{SPI\+\_\+\+BAUDRATEPRESCALER\+\_\+64}}~(0x50000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___baud_rate___prescaler_ga939117a1ff97fbf4f1340cbb3141fb29}{SPI\+\_\+\+BAUDRATEPRESCALER\+\_\+128}}~(0x60000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___baud_rate___prescaler_ga4debd0953aeeb470eae28a42aa8289c2}{SPI\+\_\+\+BAUDRATEPRESCALER\+\_\+256}}~(0x70000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___m_s_b___l_s_b___transmission_ga2280ac1a6ed587b516419b5df6a8ea55}{SPI\+\_\+\+FIRSTBIT\+\_\+\+MSB}}~(0x00000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___m_s_b___l_s_b___transmission_ga8b608690a1adf9df40f271c228a479a3}{SPI\+\_\+\+FIRSTBIT\+\_\+\+LSB}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaaff6b7fae6de0289fd47beb27c3120b9}{SPI\+\_\+\+CFG2\+\_\+\+LSBFRST}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___t_i___mode_gaffbf066ee656a4d56b75fa721a2eabcd}{SPI\+\_\+\+TIMODE\+\_\+\+DISABLE}}~(0x00000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___t_i___mode_ga8b31d4b25f951edd1dfd7cf6d4387517}{SPI\+\_\+\+TIMODE\+\_\+\+ENABLE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa2a319d6039b6cc10375d0100979616b}{SPI\+\_\+\+CFG2\+\_\+\+SP\+\_\+0}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c___calculation_ga9cd586b66473d7f207103a443280820e}{SPI\+\_\+\+CRCCALCULATION\+\_\+\+DISABLE}}~(0x00000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c___calculation_ga431d368997c9c41e8923cbcd41b00123}{SPI\+\_\+\+CRCCALCULATION\+\_\+\+ENABLE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga25e56eef69334cb723e24a8d33fb0ef5}{SPI\+\_\+\+CFG1\+\_\+\+CRCEN}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga2c09210b093323a8e84af832657568ce}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+\+DATASIZE}}~(0x00000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga5896919382c681967077db5989600987}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+4\+BIT}}~(0x00030000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga60abe77aaf271d7405046a573349438c}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+5\+BIT}}~(0x00040000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_gad6a6bca17e89cbdd62ca2109bb3363d0}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+6\+BIT}}~(0x00050000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga4bfa535670ae39d1bd231486de4a7c76}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+7\+BIT}}~(0x00060000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga9340cbde2576d63c53c3ee50d3303886}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+8\+BIT}}~(0x00070000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga45e985743dc6ac6d4f7c95e3d37e77b5}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+9\+BIT}}~(0x00080000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga74a9c6010643c7a1b3e98998191de28b}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+10\+BIT}}~(0x00090000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga20913de644d09499c5f34f970a6b7e7b}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+11\+BIT}}~(0x000\+A0000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga4cea5b3defecec2a324953790d89080a}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+12\+BIT}}~(0x000\+B0000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_gac0f3a6d93387ba39c14bdf7defa17453}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+13\+BIT}}~(0x000\+C0000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga9d68e445a3e83ccda033f49102efd13d}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+14\+BIT}}~(0x000\+D0000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga23e390ec3a1f86caffff1df959fe995d}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+15\+BIT}}~(0x000\+E0000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga780edaa0a72a79c4d0fa9618541aaad8}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+16\+BIT}}~(0x000\+F0000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga603e5f7350646a1a3dd3e5bc07511558}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+17\+BIT}}~(0x00100000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga1f3d15d9135ecec9f86d931978ae08c1}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+18\+BIT}}~(0x00110000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga50e5a97a65d5f37bb5bb43ea41f77b65}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+19\+BIT}}~(0x00120000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga5e775752dfbfe3814938e2f145b051aa}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+20\+BIT}}~(0x00130000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga53164ca307565dd4a7a8d19f480d6905}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+21\+BIT}}~(0x00140000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_gafa637661910cbe222b23d0e9ab895104}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+22\+BIT}}~(0x00150000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga104518dc78f33261d343e2ffabfcfa91}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+23\+BIT}}~(0x00160000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga23206c5e1910b162964a77fda4ddaf42}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+24\+BIT}}~(0x00170000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga874a9846781bf4dfcf51e19aec490ca8}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+25\+BIT}}~(0x00180000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga0c23f85afbf9cf8e85803b89be2de01a}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+26\+BIT}}~(0x00190000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_gad2c651331b806491f615ccdf47236d4f}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+27\+BIT}}~(0x001\+A0000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga727fa0b5450eff21852ddea5619feb5c}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+28\+BIT}}~(0x001\+B0000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga06fbfb6ca55129212d155b5facfb7ff5}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+29\+BIT}}~(0x001\+C0000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga304db958461e34a23b3cd810906e50fd}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+30\+BIT}}~(0x001\+D0000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga45edd7b346f6d5ac6568f5b7f41cd781}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+31\+BIT}}~(0x001\+E0000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c__length_ga8df89ae4fda57e6c9f3d2cd6e4793aee}{SPI\+\_\+\+CRC\+\_\+\+LENGTH\+\_\+32\+BIT}}~(0x001\+F0000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___fifo___threshold_gab7d9ca7b317ea0b8953bdaa3ab98fb25}{SPI\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+01\+DATA}}~(0x00000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___fifo___threshold_gaf280553e1bb7b4f12a51a2868c539b5d}{SPI\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+02\+DATA}}~(0x00000020\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___fifo___threshold_gac4004c7d60886b4b733a6466f4bdbd00}{SPI\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+03\+DATA}}~(0x00000040\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___fifo___threshold_gadb2e232a6b95a4b9720573a92230adfa}{SPI\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+04\+DATA}}~(0x00000060\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___fifo___threshold_gae20c1d4fbc016b9be462dafe2b2520e0}{SPI\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+05\+DATA}}~(0x00000080\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___fifo___threshold_ga339814d9f97978ec90c3a59aef607094}{SPI\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+06\+DATA}}~(0x000000\+A0\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___fifo___threshold_ga93488d4fd4f688475fba29cdf7109b59}{SPI\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+07\+DATA}}~(0x000000\+C0\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___fifo___threshold_ga2ea3e15fd9641d2e379129d264646c93}{SPI\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+08\+DATA}}~(0x000000\+E0\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___fifo___threshold_ga887df02d8abccc6cdc9a1092ccb3402d}{SPI\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+09\+DATA}}~(0x00000100\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___fifo___threshold_ga8f2cc6a174534aae4a2a03587cd054f9}{SPI\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+10\+DATA}}~(0x00000120\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___fifo___threshold_ga52808587f41978015ff3b9801df5a654}{SPI\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+11\+DATA}}~(0x00000140\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___fifo___threshold_ga556d86b7cee3c9e483b1c922071b8cae}{SPI\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+12\+DATA}}~(0x00000160\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___fifo___threshold_gae819e7ef9414e3ab38569e4f70ed081b}{SPI\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+13\+DATA}}~(0x00000180\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___fifo___threshold_ga5a5f658c36df3263d419c66d34e48318}{SPI\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+14\+DATA}}~(0x000001\+A0\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___fifo___threshold_ga63fdb6145b289860592d9624b6476f09}{SPI\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+15\+DATA}}~(0x000001\+C0\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___fifo___threshold_ga23f4641e65a3a7be37d1082180627fab}{SPI\+\_\+\+FIFO\+\_\+\+THRESHOLD\+\_\+16\+DATA}}~(0x000001\+E0\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c___calculation___initialization___pattern_gac3d377a56aa7c69f21a6880f83c314b0}{SPI\+\_\+\+CRC\+\_\+\+INITIALIZATION\+\_\+\+ALL\+\_\+\+ZERO\+\_\+\+PATTERN}}~(0x00000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___c_r_c___calculation___initialization___pattern_gae4cd6ea8bcf65b9f19789e2cabe5e781}{SPI\+\_\+\+CRC\+\_\+\+INITIALIZATION\+\_\+\+ALL\+\_\+\+ONE\+\_\+\+PATTERN}}~(0x00000001\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___n_s_s___polarity_ga1a43e2095f7f608768c348f4ee27efb3}{SPI\+\_\+\+NSS\+\_\+\+POLARITY\+\_\+\+LOW}}~(0x00000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___n_s_s___polarity_ga86ba2010e94d80831c276d037aa097b9}{SPI\+\_\+\+NSS\+\_\+\+POLARITY\+\_\+\+HIGH}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa1829b079924734042d20b1671fecc1d}{SPI\+\_\+\+CFG2\+\_\+\+SSIOP}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___keep___i_o___state_gaf24ff7880e5eed4cf128e508c6e04c2e}{SPI\+\_\+\+MASTER\+\_\+\+KEEP\+\_\+\+IO\+\_\+\+STATE\+\_\+\+DISABLE}}~(0x00000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___keep___i_o___state_ga0004a0ddf766e6d1e5814f0f9b6abcce}{SPI\+\_\+\+MASTER\+\_\+\+KEEP\+\_\+\+IO\+\_\+\+STATE\+\_\+\+ENABLE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf0d90225cbbced8ab5c382605500e6b8}{SPI\+\_\+\+CFG2\+\_\+\+AFCNTR}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___i_o___swap_gadd6423ea72ef07ab2bfb7c932f673a38}{SPI\+\_\+\+IO\+\_\+\+SWAP\+\_\+\+DISABLE}}~(0x00000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___i_o___swap_ga7314b6ab695d88f2ac88b4181e8036bb}{SPI\+\_\+\+IO\+\_\+\+SWAP\+\_\+\+ENABLE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga6a392a021319a1e0fdf422502cfa47f2}{SPI\+\_\+\+CFG2\+\_\+\+IOSWP}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___s_s___idleness_gaebc308a70d2339b90974d34b38dbc43d}{SPI\+\_\+\+MASTER\+\_\+\+SS\+\_\+\+IDLENESS\+\_\+00\+CYCLE}}~(0x00000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___s_s___idleness_gad5fc55ad5a446f9706c3d54476b512f8}{SPI\+\_\+\+MASTER\+\_\+\+SS\+\_\+\+IDLENESS\+\_\+01\+CYCLE}}~(0x00000001\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___s_s___idleness_ga7204156acfb384d6c21e5cf6ea306c45}{SPI\+\_\+\+MASTER\+\_\+\+SS\+\_\+\+IDLENESS\+\_\+02\+CYCLE}}~(0x00000002\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___s_s___idleness_gabfb29d80616ec2405c69aecc17503828}{SPI\+\_\+\+MASTER\+\_\+\+SS\+\_\+\+IDLENESS\+\_\+03\+CYCLE}}~(0x00000003\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___s_s___idleness_gafea666a1d3ba2b2f27f543f3b7cccf7d}{SPI\+\_\+\+MASTER\+\_\+\+SS\+\_\+\+IDLENESS\+\_\+04\+CYCLE}}~(0x00000004\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___s_s___idleness_ga89f368ded90081f16605835aab5bce35}{SPI\+\_\+\+MASTER\+\_\+\+SS\+\_\+\+IDLENESS\+\_\+05\+CYCLE}}~(0x00000005\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___s_s___idleness_ga8a33b27304975649b24696b89cd20f88}{SPI\+\_\+\+MASTER\+\_\+\+SS\+\_\+\+IDLENESS\+\_\+06\+CYCLE}}~(0x00000006\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___s_s___idleness_ga875a2240eeee2ea937bae6ceef0a20af}{SPI\+\_\+\+MASTER\+\_\+\+SS\+\_\+\+IDLENESS\+\_\+07\+CYCLE}}~(0x00000007\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___s_s___idleness_ga1e2f9e70a6ac957aa66f1d0bf536e50e}{SPI\+\_\+\+MASTER\+\_\+\+SS\+\_\+\+IDLENESS\+\_\+08\+CYCLE}}~(0x00000008\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___s_s___idleness_gacb985a4ebc50c344f2b5210a47ff43eb}{SPI\+\_\+\+MASTER\+\_\+\+SS\+\_\+\+IDLENESS\+\_\+09\+CYCLE}}~(0x00000009\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___s_s___idleness_ga8c7263873cc0759366a1c2c54ef3595c}{SPI\+\_\+\+MASTER\+\_\+\+SS\+\_\+\+IDLENESS\+\_\+10\+CYCLE}}~(0x0000000\+AUL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___s_s___idleness_ga8eef34fb226a312f808e0fa953a6c6da}{SPI\+\_\+\+MASTER\+\_\+\+SS\+\_\+\+IDLENESS\+\_\+11\+CYCLE}}~(0x0000000\+BUL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___s_s___idleness_ga4e7db53c89ade412a7f3a2c2ad0bbb18}{SPI\+\_\+\+MASTER\+\_\+\+SS\+\_\+\+IDLENESS\+\_\+12\+CYCLE}}~(0x0000000\+CUL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___s_s___idleness_ga2cc6bd6c72cb7794559a79f82aad6f28}{SPI\+\_\+\+MASTER\+\_\+\+SS\+\_\+\+IDLENESS\+\_\+13\+CYCLE}}~(0x0000000\+DUL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___s_s___idleness_gaa66a617b833b5174f7bfe0599b071d71}{SPI\+\_\+\+MASTER\+\_\+\+SS\+\_\+\+IDLENESS\+\_\+14\+CYCLE}}~(0x0000000\+EUL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___s_s___idleness_gad8e9ae667259021b9d99e695ec931c78}{SPI\+\_\+\+MASTER\+\_\+\+SS\+\_\+\+IDLENESS\+\_\+15\+CYCLE}}~(0x0000000\+FUL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___inter_data___idleness_ga4853acf2ce1d0d05c1c24cc8fded40f1}{SPI\+\_\+\+MASTER\+\_\+\+INTERDATA\+\_\+\+IDLENESS\+\_\+00\+CYCLE}}~(0x00000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___inter_data___idleness_ga9a7722df8332f6577cfd9b62122b6dba}{SPI\+\_\+\+MASTER\+\_\+\+INTERDATA\+\_\+\+IDLENESS\+\_\+01\+CYCLE}}~(0x00000010\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___inter_data___idleness_gac5584efbd235b7e5b51fdefdbcae9726}{SPI\+\_\+\+MASTER\+\_\+\+INTERDATA\+\_\+\+IDLENESS\+\_\+02\+CYCLE}}~(0x00000020\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___inter_data___idleness_ga1dbbbaeb1a4f4f2552986ef8a007e542}{SPI\+\_\+\+MASTER\+\_\+\+INTERDATA\+\_\+\+IDLENESS\+\_\+03\+CYCLE}}~(0x00000030\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___inter_data___idleness_gada3ca38ef15650b0751970b95df97fff}{SPI\+\_\+\+MASTER\+\_\+\+INTERDATA\+\_\+\+IDLENESS\+\_\+04\+CYCLE}}~(0x00000040\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___inter_data___idleness_gadac5c3d4e15cefabb3e3157b05539d73}{SPI\+\_\+\+MASTER\+\_\+\+INTERDATA\+\_\+\+IDLENESS\+\_\+05\+CYCLE}}~(0x00000050\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___inter_data___idleness_gaf878b5baff1f6f5e77e939908b08d8b0}{SPI\+\_\+\+MASTER\+\_\+\+INTERDATA\+\_\+\+IDLENESS\+\_\+06\+CYCLE}}~(0x00000060\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___inter_data___idleness_ga79489f8c8e7c26d3dc9938feb9a7fc06}{SPI\+\_\+\+MASTER\+\_\+\+INTERDATA\+\_\+\+IDLENESS\+\_\+07\+CYCLE}}~(0x00000070\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___inter_data___idleness_ga9944e2e6ec91bf019a75eabacad10b13}{SPI\+\_\+\+MASTER\+\_\+\+INTERDATA\+\_\+\+IDLENESS\+\_\+08\+CYCLE}}~(0x00000080\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___inter_data___idleness_ga6b0a1aae31aa185a16a8c9b82fcab832}{SPI\+\_\+\+MASTER\+\_\+\+INTERDATA\+\_\+\+IDLENESS\+\_\+09\+CYCLE}}~(0x00000090\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___inter_data___idleness_gaa8d7ef1738423c941ce170773adef684}{SPI\+\_\+\+MASTER\+\_\+\+INTERDATA\+\_\+\+IDLENESS\+\_\+10\+CYCLE}}~(0x000000\+A0\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___inter_data___idleness_ga9919558b939858382990caae904d3333}{SPI\+\_\+\+MASTER\+\_\+\+INTERDATA\+\_\+\+IDLENESS\+\_\+11\+CYCLE}}~(0x000000\+B0\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___inter_data___idleness_ga35e94b1a9d874b18e7e9e7ba6f56dbec}{SPI\+\_\+\+MASTER\+\_\+\+INTERDATA\+\_\+\+IDLENESS\+\_\+12\+CYCLE}}~(0x000000\+C0\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___inter_data___idleness_ga5737924e39436d92b2bd2aafeaa39ded}{SPI\+\_\+\+MASTER\+\_\+\+INTERDATA\+\_\+\+IDLENESS\+\_\+13\+CYCLE}}~(0x000000\+D0\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___inter_data___idleness_ga9984eea55812f477cf919460fd222ff3}{SPI\+\_\+\+MASTER\+\_\+\+INTERDATA\+\_\+\+IDLENESS\+\_\+14\+CYCLE}}~(0x000000\+E0\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___inter_data___idleness_gad46552fc29844cfa12319a7d6fc21d0d}{SPI\+\_\+\+MASTER\+\_\+\+INTERDATA\+\_\+\+IDLENESS\+\_\+15\+CYCLE}}~(0x000000\+F0\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___r_x___auto_suspend_gabb61d71ba4bbab92eebdb44a49fbe104}{SPI\+\_\+\+MASTER\+\_\+\+RX\+\_\+\+AUTOSUSP\+\_\+\+DISABLE}}~(0x00000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___master___r_x___auto_suspend_gad5ed38df1f0eabbcbca154e84d392a80}{SPI\+\_\+\+MASTER\+\_\+\+RX\+\_\+\+AUTOSUSP\+\_\+\+ENABLE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gae7d399759fc0606d8ef44845004a9faf}{SPI\+\_\+\+CR1\+\_\+\+MASRX}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___underrun___detection_gae4c0607921a6cb1ffb06f69c39610725}{SPI\+\_\+\+UNDERRUN\+\_\+\+DETECT\+\_\+\+BEGIN\+\_\+\+DATA\+\_\+\+FRAME}}~(0x00000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___underrun___detection_ga01e2b7f6968e6435f6e837d6657f5310}{SPI\+\_\+\+UNDERRUN\+\_\+\+DETECT\+\_\+\+END\+\_\+\+DATA\+\_\+\+FRAME}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7fbc8512d964f194d96bba1e5dd7582f}{SPI\+\_\+\+CFG1\+\_\+\+UDRDET\+\_\+0}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___underrun___detection_ga7e490521724455f9829722c4114d9325}{SPI\+\_\+\+UNDERRUN\+\_\+\+DETECT\+\_\+\+BEGIN\+\_\+\+ACTIVE\+\_\+\+NSS}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaced6f95340b0146aa0f172f766f1b92c}{SPI\+\_\+\+CFG1\+\_\+\+UDRDET\+\_\+1}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___underrun___behaviour_ga0c404920cb066c09e68cda6d77623c8c}{SPI\+\_\+\+UNDERRUN\+\_\+\+BEHAV\+\_\+\+REGISTER\+\_\+\+PATTERN}}~(0x00000000\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___underrun___behaviour_ga649197985c765c0444b0c23317dcae66}{SPI\+\_\+\+UNDERRUN\+\_\+\+BEHAV\+\_\+\+LAST\+\_\+\+RECEIVED}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa77dbb8777fc83d62910a7775b26870b}{SPI\+\_\+\+CFG1\+\_\+\+UDRCFG\+\_\+0}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___underrun___behaviour_ga805e0687bf914dbce3a5a8c5ed13a7a6}{SPI\+\_\+\+UNDERRUN\+\_\+\+BEHAV\+\_\+\+LAST\+\_\+\+TRANSMITTED}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa2ef84d2d59adad7d35f91769218fcd5}{SPI\+\_\+\+CFG1\+\_\+\+UDRCFG\+\_\+1}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___interrupt__definition_ga2ac4437f5e914d2a67cc2defcfc602fd}{SPI\+\_\+\+IT\+\_\+\+RXP}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga87b292843107573ae82aa13d88916646}{SPI\+\_\+\+IER\+\_\+\+RXPIE}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___interrupt__definition_ga85330ea17907191083c4abe2c1ee2bdd}{SPI\+\_\+\+IT\+\_\+\+TXP}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga40ad06dce5bd7f4f2d1db25e8ecd33a4}{SPI\+\_\+\+IER\+\_\+\+TXPIE}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___interrupt__definition_ga4ab7780c881917c14b466ff5b51612dd}{SPI\+\_\+\+IT\+\_\+\+DXP}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5fde811db0bae41847c2c56d20e1983b}{SPI\+\_\+\+IER\+\_\+\+DXPIE}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___interrupt__definition_gad10d2d33d7ca00b9e7f1ebe49b6e2680}{SPI\+\_\+\+IT\+\_\+\+EOT}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gadd814e85e0f2cc9fd5fbedbd1db232c1}{SPI\+\_\+\+IER\+\_\+\+EOTIE}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___interrupt__definition_ga7b9bb233a930cf959574a8e56ebf0518}{SPI\+\_\+\+IT\+\_\+\+TXTF}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf329c2e8fb5112c4efdcac4c69bf95fb}{SPI\+\_\+\+IER\+\_\+\+TXTFIE}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___interrupt__definition_ga0ec21034e2bbe05a2ece43cadc2ed012}{SPI\+\_\+\+IT\+\_\+\+UDR}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga33d0436c4b553cc357b52b9ecaaf542f}{SPI\+\_\+\+IER\+\_\+\+UDRIE}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___interrupt__definition_gae99166c2b214fd7a9800a15eda36e4a0}{SPI\+\_\+\+IT\+\_\+\+OVR}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga6ba53086c19a3260e0555ace5d700c42}{SPI\+\_\+\+IER\+\_\+\+OVRIE}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___interrupt__definition_ga9aa97a5ce8d3500dc14ca4e30eada199}{SPI\+\_\+\+IT\+\_\+\+CRCERR}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga298b617fdd0e3d18562509839aa72fa3}{SPI\+\_\+\+IER\+\_\+\+CRCEIE}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___interrupt__definition_ga8500faddb159725ac374a8f761310bf7}{SPI\+\_\+\+IT\+\_\+\+FRE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga07f63f1611444f70daf6b08fc18490ee}{SPI\+\_\+\+IER\+\_\+\+TIFREIE}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___interrupt__definition_ga0b9780d5f31fd80f4d0fa7d6860041e9}{SPI\+\_\+\+IT\+\_\+\+MODF}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga6d05af6bd42d7191edec2763928dee98}{SPI\+\_\+\+IER\+\_\+\+MODFIE}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___interrupt__definition_ga48eaa446953bfa4b550764ada3499999}{SPI\+\_\+\+IT\+\_\+\+TSERF}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1a4844bc9d90e49ba0dcacf7787f2e16}{SPI\+\_\+\+IER\+\_\+\+TSERFIE}}
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___interrupt__definition_gace6a9377da7f18ea8b5c73163c2278d6}{SPI\+\_\+\+IT\+\_\+\+ERR}}~(\mbox{\hyperlink{group___s_p_i___interrupt__definition_ga0ec21034e2bbe05a2ece43cadc2ed012}{SPI\+\_\+\+IT\+\_\+\+UDR}} $\vert$ \mbox{\hyperlink{group___s_p_i___interrupt__definition_gae99166c2b214fd7a9800a15eda36e4a0}{SPI\+\_\+\+IT\+\_\+\+OVR}} $\vert$ \mbox{\hyperlink{group___s_p_i___interrupt__definition_ga8500faddb159725ac374a8f761310bf7}{SPI\+\_\+\+IT\+\_\+\+FRE}} $\vert$ \mbox{\hyperlink{group___s_p_i___interrupt__definition_ga0b9780d5f31fd80f4d0fa7d6860041e9}{SPI\+\_\+\+IT\+\_\+\+MODF}} $\vert$ \mbox{\hyperlink{group___s_p_i___interrupt__definition_ga9aa97a5ce8d3500dc14ca4e30eada199}{SPI\+\_\+\+IT\+\_\+\+CRCERR}})
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___flags__definition_ga9ba64b3cfed2459e105a1dd92dd52804}{SPI\+\_\+\+FLAG\+\_\+\+RXP}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga95289b0733d92829f9f0189574dc1d54}{SPI\+\_\+\+SR\+\_\+\+RXP}}     /$\ast$ SPI status flag \+: Rx-\/Packet available flag                 $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___flags__definition_gaee1560c53486464ea55f6404d1e4e31e}{SPI\+\_\+\+FLAG\+\_\+\+TXP}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga9f7199bbdd797f0238aaaf9cc42e4f64}{SPI\+\_\+\+SR\+\_\+\+TXP}}     /$\ast$ SPI status flag \+: Tx-\/Packet space available flag           $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___flags__definition_ga1fea08c99d7432f2179ed6eed7628df2}{SPI\+\_\+\+FLAG\+\_\+\+DXP}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga73f785111c63d6e951018ebc0fffacf6}{SPI\+\_\+\+SR\+\_\+\+DXP}}     /$\ast$ SPI status flag \+: Duplex Packet flag                       $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___flags__definition_ga1b76cc528b950514ee2432c456c73713}{SPI\+\_\+\+FLAG\+\_\+\+EOT}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gadf6af11782cace2048e20c18d4d63e1a}{SPI\+\_\+\+SR\+\_\+\+EOT}}     /$\ast$ SPI status flag \+: End of transfer flag                     $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___flags__definition_gaeba0c8020ffece1fc9f6ca27e2035935}{SPI\+\_\+\+FLAG\+\_\+\+TXTF}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gac0e93a296bc722bab78d526bf1cc2f7d}{SPI\+\_\+\+SR\+\_\+\+TXTF}}    /$\ast$ SPI status flag \+: Transmission Transfer Filled flag        $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___flags__definition_gabb6a58ae2fd5025950cab3d3a07e68af}{SPI\+\_\+\+FLAG\+\_\+\+UDR}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga13d3292e963499c0e9a36869909229e6}{SPI\+\_\+\+SR\+\_\+\+UDR}}     /$\ast$ SPI Error flag  \+: Underrun flag                            $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___flags__definition_gab45264da2296c75495a7437a045513ea}{SPI\+\_\+\+FLAG\+\_\+\+OVR}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa8d902302c5eb81ce4a57029de281232}{SPI\+\_\+\+SR\+\_\+\+OVR}}     /$\ast$ SPI Error flag  \+: Overrun flag                             $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___flags__definition_ga30fb6af50e1f3c61cb9de76b0101c889}{SPI\+\_\+\+FLAG\+\_\+\+CRCERR}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4c0cf2db0d5d372242e66e6d7da50b39}{SPI\+\_\+\+SR\+\_\+\+CRCE}}    /$\ast$ SPI Error flag  \+: \mbox{\hyperlink{group___peripheral__declaration_ga4381bb54c2dbc34500521165aa7b89b1}{CRC}} error flag                           $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___flags__definition_ga27dd114d8adc70f1439c054289f9313a}{SPI\+\_\+\+FLAG\+\_\+\+FRE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf3e3c940fb46d8b32456c59819e615be}{SPI\+\_\+\+SR\+\_\+\+TIFRE}}   /$\ast$ SPI Error flag  \+: TI mode frame format error flag          $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___flags__definition_gac7d3525ab98cc18f02270a4dba685897}{SPI\+\_\+\+FLAG\+\_\+\+MODF}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gabaa043349833dc7b8138969c64f63adf}{SPI\+\_\+\+SR\+\_\+\+MODF}}    /$\ast$ SPI Error flag  \+: Mode fault flag                          $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___flags__definition_gaa28a29f609dbcef512f258e5c72d84b0}{SPI\+\_\+\+FLAG\+\_\+\+TSERF}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5332b248a3daf660df7f13098e75da46}{SPI\+\_\+\+SR\+\_\+\+TSERF}}   /$\ast$ SPI status flag \+: Additional number of data reloaded flag  $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___flags__definition_ga6a4b56fbf17d58ff9805441c5ab8a928}{SPI\+\_\+\+FLAG\+\_\+\+SUSP}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3294b6597873bd2c0f2acb9e722e18cc}{SPI\+\_\+\+SR\+\_\+\+SUSP}}    /$\ast$ SPI status flag \+: Transfer suspend complete flag           $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___flags__definition_ga1646c5ebd8e683ff26afdf029fb57cf8}{SPI\+\_\+\+FLAG\+\_\+\+TXC}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1695e2f6e8d042aeae4d9f07e96dfe1a}{SPI\+\_\+\+SR\+\_\+\+TXC}}     /$\ast$ SPI status flag \+: Tx\+FIFO transmission complete flag        $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___flags__definition_ga4406c904711e73f41bfbc930bfc92d58}{SPI\+\_\+\+FLAG\+\_\+\+FRLVL}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga09c4e3cd9a199757d6f3ac06e5bc110f}{SPI\+\_\+\+SR\+\_\+\+RXPLVL}}  /$\ast$ SPI status flag \+: Fifo reception level flag                $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___flags__definition_gad87f2b93de239ba67ad4bfdc2774defb}{SPI\+\_\+\+FLAG\+\_\+\+RXWNE}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gab6334377efffc8f2733962c827a4bf03}{SPI\+\_\+\+SR\+\_\+\+RXWNE}}   /$\ast$ SPI status flag \+: Rx\+FIFO word not empty flag               $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___s_p_i__reception__fifo__status__level_gae6af55d98ad99eb4657a8c209a91e3ad}{SPI\+\_\+\+RX\+\_\+\+FIFO\+\_\+0\+PACKET}}~(0x00000000\+UL)                      /$\ast$ 0 or multiple of 4 packets available in the Rx\+FIFO $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___s_p_i__reception__fifo__status__level_ga256694027539fe571c57602573150cbf}{SPI\+\_\+\+RX\+\_\+\+FIFO\+\_\+1\+PACKET}}~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga927d85d0857d7a63232e1668f30957b2}{SPI\+\_\+\+SR\+\_\+\+RXPLVL\+\_\+0}})
+\item 
+\#define \mbox{\hyperlink{group___s_p_i__reception__fifo__status__level_gaa31f8bf709d8a7b8b17ca44f261abc7e}{SPI\+\_\+\+RX\+\_\+\+FIFO\+\_\+2\+PACKET}}~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga06d2c44cda484d3ac4dc9d81cf056183}{SPI\+\_\+\+SR\+\_\+\+RXPLVL\+\_\+1}})
+\item 
+\#define \mbox{\hyperlink{group___s_p_i__reception__fifo__status__level_ga0ad493fbe3f6dffa865bfb3bbac55bed}{SPI\+\_\+\+RX\+\_\+\+FIFO\+\_\+3\+PACKET}}~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga06d2c44cda484d3ac4dc9d81cf056183}{SPI\+\_\+\+SR\+\_\+\+RXPLVL\+\_\+1}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga927d85d0857d7a63232e1668f30957b2}{SPI\+\_\+\+SR\+\_\+\+RXPLVL\+\_\+0}})
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_ga0d846f9517715960873e854b4a0790b0}{\+\_\+\+\_\+\+HAL\+\_\+\+SPI\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___s_p_i___exported___types_gga8891cb64e76198a860172d94c638c9b4adbc218df2c9841b561282b40b3ded69d}{HAL\+\_\+\+SPI\+\_\+\+STATE\+\_\+\+RESET}})
+\begin{DoxyCompactList}\small\item\em Reset SPI handle state. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_ga76064652f6f56d8868720b5541e854f5}{\+\_\+\+\_\+\+HAL\+\_\+\+SPI\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$IER $\vert$= (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Enable the specified SPI interrupts. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_ga47fa7321c5755bfbff1a7229fbe5b21c}{\+\_\+\+\_\+\+HAL\+\_\+\+SPI\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$IER \&= ($\sim$(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)))
+\begin{DoxyCompactList}\small\item\em Disable the specified SPI interrupts. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_gabdaab061e4603331a0ec4b9d651df0b5}{\+\_\+\+\_\+\+HAL\+\_\+\+SPI\+\_\+\+GET\+\_\+\+IT\+\_\+\+SOURCE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$IER \& (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)) ? \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffab44c8101cc294c074709ec1b14211792}{SET}} \+: \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})
+\begin{DoxyCompactList}\small\item\em Check whether the specified SPI interrupt source is enabled or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_gaa0bbe5fb55f93fd277ddb6acf58cec53}{\+\_\+\+\_\+\+HAL\+\_\+\+SPI\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR) \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Check whether the specified SPI flag is set or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_gad1cb4100b67726531ad426d300f4cd26}{\+\_\+\+\_\+\+HAL\+\_\+\+SPI\+\_\+\+CLEAR\+\_\+\+CRCERRFLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~\mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\+\_\+\+BIT}}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$IFCR , \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa776b437fb542da2298b25f64d2b4820}{SPI\+\_\+\+IFCR\+\_\+\+CRCEC}})
+\begin{DoxyCompactList}\small\item\em Clear the SPI CRCERR pending flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_ga6c88becbe528c542156bc201622efba2}{\+\_\+\+\_\+\+HAL\+\_\+\+SPI\+\_\+\+CLEAR\+\_\+\+MODFFLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~\mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\+\_\+\+BIT}}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$IFCR , (uint32\+\_\+t)(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga33f5f7e482ff62448df98ed1bef9d62b}{SPI\+\_\+\+IFCR\+\_\+\+MODFC}}));
+\begin{DoxyCompactList}\small\item\em Clear the SPI MODF pending flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_gaf6af33b1c5d334b9fe7bb778c5b6442e}{\+\_\+\+\_\+\+HAL\+\_\+\+SPI\+\_\+\+CLEAR\+\_\+\+OVRFLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~\mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\+\_\+\+BIT}}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$IFCR , \mbox{\hyperlink{group___peripheral___registers___bits___definition_gafe909f94add018dc698a1057b6e174da}{SPI\+\_\+\+IFCR\+\_\+\+OVRC}})
+\begin{DoxyCompactList}\small\item\em Clear the SPI OVR pending flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_ga7ff182f5cf6c731318c882351d6d7ac2}{\+\_\+\+\_\+\+HAL\+\_\+\+SPI\+\_\+\+CLEAR\+\_\+\+FREFLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~\mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\+\_\+\+BIT}}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$IFCR , \mbox{\hyperlink{group___peripheral___registers___bits___definition_gadec3e1c72d5f45f6b9a2681d8275ffb5}{SPI\+\_\+\+IFCR\+\_\+\+TIFREC}})
+\begin{DoxyCompactList}\small\item\em Clear the SPI FRE pending flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_ga788e7e6782849d79499064b05050627e}{\+\_\+\+\_\+\+HAL\+\_\+\+SPI\+\_\+\+CLEAR\+\_\+\+UDRFLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~\mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\+\_\+\+BIT}}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$IFCR , \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga13b510c8ba08f0e130469ab6a94c844a}{SPI\+\_\+\+IFCR\+\_\+\+UDRC}})
+\begin{DoxyCompactList}\small\item\em Clear the SPI UDR pending flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_ga82b82dd74c0fe69c823e92323fde890a}{\+\_\+\+\_\+\+HAL\+\_\+\+SPI\+\_\+\+CLEAR\+\_\+\+EOTFLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~\mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\+\_\+\+BIT}}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$IFCR , \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga0a13f7af7ba888d7dbbbf016ccac324b}{SPI\+\_\+\+IFCR\+\_\+\+EOTC}})
+\begin{DoxyCompactList}\small\item\em Clear the SPI EOT pending flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_gac4e14a47b0110348bb2edf1eb6023a50}{\+\_\+\+\_\+\+HAL\+\_\+\+SPI\+\_\+\+CLEAR\+\_\+\+TXTFFLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~\mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\+\_\+\+BIT}}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$IFCR , \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga45f2b0107d9e8789831c616c984088e0}{SPI\+\_\+\+IFCR\+\_\+\+TXTFC}})
+\begin{DoxyCompactList}\small\item\em Clear the SPI UDR pending flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_ga76cb5dc888df5c6d19675e4d076b750d}{\+\_\+\+\_\+\+HAL\+\_\+\+SPI\+\_\+\+CLEAR\+\_\+\+SUSPFLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~\mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\+\_\+\+BIT}}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$IFCR , \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga63d88f8a3205e7c27d73e90df3d57a34}{SPI\+\_\+\+IFCR\+\_\+\+SUSPC}})
+\begin{DoxyCompactList}\small\item\em Clear the SPI SUSP pending flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_ga9a45859eee2e15a4a6367cc4a5066c8b}{\+\_\+\+\_\+\+HAL\+\_\+\+SPI\+\_\+\+CLEAR\+\_\+\+TSERFFLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~\mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\+\_\+\+BIT}}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$IFCR , \mbox{\hyperlink{group___peripheral___registers___bits___definition_gad058d0a0046d7de998d9d73635009c9e}{SPI\+\_\+\+IFCR\+\_\+\+TSERFC}})
+\begin{DoxyCompactList}\small\item\em Clear the SPI TSERF pending flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_ga16d2d73c2b16004499ae8d492e71fd4e}{\+\_\+\+\_\+\+HAL\+\_\+\+SPI\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~\mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\+\_\+\+BIT}}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR1 , \mbox{\hyperlink{group___peripheral___registers___bits___definition_gac5a646d978d3b98eb7c6a5d95d75c3f9}{SPI\+\_\+\+CR1\+\_\+\+SPE}})
+\begin{DoxyCompactList}\small\item\em Enable the SPI peripheral. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___exported___macros_gaa10d88f87d16de53bd81dfb33bd56959}{\+\_\+\+\_\+\+HAL\+\_\+\+SPI\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~\mbox{\hyperlink{group___exported__macros_ga133aae6fc0d41bffab39ab223a7001de}{CLEAR\+\_\+\+BIT}}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR1 , \mbox{\hyperlink{group___peripheral___registers___bits___definition_gac5a646d978d3b98eb7c6a5d95d75c3f9}{SPI\+\_\+\+CR1\+\_\+\+SPE}})
+\begin{DoxyCompactList}\small\item\em Disable the SPI peripheral. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_gae3b2eb5e818e58b66474d42dedac5523}{SPI\+\_\+1\+LINE\+\_\+\+TX}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~\mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\+\_\+\+BIT}}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR1 , \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga71105846351660951df077c563a0a437}{SPI\+\_\+\+CR1\+\_\+\+HDDIR}})
+\begin{DoxyCompactList}\small\item\em Set the SPI transmit-\/only mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_gaa8d58cef91c1874d5a4dde4014cf6269}{SPI\+\_\+1\+LINE\+\_\+\+RX}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~\mbox{\hyperlink{group___exported__macros_ga133aae6fc0d41bffab39ab223a7001de}{CLEAR\+\_\+\+BIT}}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR1 ,\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga71105846351660951df077c563a0a437}{SPI\+\_\+\+CR1\+\_\+\+HDDIR}})
+\begin{DoxyCompactList}\small\item\em Set the SPI receive-\/only mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_gad5135300763c75dbb446861536359f12}{IS\+\_\+\+SPI\+\_\+\+MODE}}(MODE)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_ga8ce4827db741ff965ea0cb1c105b00d5}{IS\+\_\+\+SPI\+\_\+\+DIRECTION}}(MODE)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_ga79454622381b22d02c8cdd3346c80f78}{IS\+\_\+\+SPI\+\_\+\+DIRECTION\+\_\+2\+LINES}}(MODE)~((MODE) == \mbox{\hyperlink{group___s_p_i___direction_gaa7cb7f4bf4eebbf91bcfaeb17ebba7f3}{SPI\+\_\+\+DIRECTION\+\_\+2\+LINES}})
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_ga28006c88236f1a94f4e69d9d868f21fe}{IS\+\_\+\+SPI\+\_\+\+DIRECTION\+\_\+2\+LINES\+\_\+\+OR\+\_\+1\+LINE\+\_\+2\+LINES\+\_\+\+TXONLY}}(MODE)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_gad0d8a45ecf7ef088463d1b818bd09826}{IS\+\_\+\+SPI\+\_\+\+DIRECTION\+\_\+2\+LINES\+\_\+\+OR\+\_\+1\+LINE\+\_\+2\+LINES\+\_\+\+RXONLY}}(MODE)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_gab6f9f528f7eb70373b9caf3548e44e67}{IS\+\_\+\+SPI\+\_\+\+DATASIZE}}(DATASIZE)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_ga3f1e514b528933ad992018edcf97e23b}{IS\+\_\+\+SPI\+\_\+\+FIFOTHRESHOLD}}(THRESHOLD)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_gafc1cc5b1ff7e801a409a7a1e6047acf9}{IS\+\_\+\+SPI\+\_\+\+CPOL}}(CPOL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_ga6441f08edf79dd5b243c54b888d3cbf7}{IS\+\_\+\+SPI\+\_\+\+CPHA}}(CPHA)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_gabbeedf42eccef1bae4f88c606fc3b261}{IS\+\_\+\+SPI\+\_\+\+NSS}}(NSS)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_ga9bbb9935c81663db6b96a2cb08ef6006}{IS\+\_\+\+SPI\+\_\+\+NSSP}}(NSSP)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_gae79f46ed9f91e39dc1f6912cb25fc716}{IS\+\_\+\+SPI\+\_\+\+BAUDRATE\+\_\+\+PRESCALER}}(PRESCALER)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_gabee8e0302741f4a5c41b96af640c63ad}{IS\+\_\+\+SPI\+\_\+\+FIRST\+\_\+\+BIT}}(BIT)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_ga812f7bf5919bc6e45727d6ac05c60b49}{IS\+\_\+\+SPI\+\_\+\+TIMODE}}(MODE)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_ga96e66460d09a553fd9996c53dcc4b252}{IS\+\_\+\+SPI\+\_\+\+CRC\+\_\+\+CALCULATION}}(CALCULATION)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_gad39542cb3b654effe9c4e3d8079884ba}{IS\+\_\+\+SPI\+\_\+\+CRC\+\_\+\+INITIALIZATION\+\_\+\+PATTERN}}(PATTERN)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_ga393003a5b035758f07c7243738c5f463}{IS\+\_\+\+SPI\+\_\+\+CRC\+\_\+\+LENGTH}}(LENGTH)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_ga76eec5bbb44c873aa52966a9cb6c8f8c}{IS\+\_\+\+SPI\+\_\+\+CRC\+\_\+\+POLYNOMIAL}}(POLYNOMIAL)~((POLYNOMIAL) $>$= 0x1\+UL)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_ga17f299bb0d8e36dbeb43457a7c521328}{IS\+\_\+\+SPI\+\_\+\+UNDERRUN\+\_\+\+DETECTION}}(MODE)
+\item 
+\#define \mbox{\hyperlink{group___s_p_i___private___macros_gaa3d1fe42e2147532ac110d26904ebd32}{IS\+\_\+\+SPI\+\_\+\+UNDERRUN\+\_\+\+BEHAVIOUR}}(MODE)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_____s_p_i___handle_type_def}{\+\_\+\+\_\+\+SPI\+\_\+\+Handle\+Type\+Def}} \mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em SPI handle Structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___s_p_i___exported___types_ga8891cb64e76198a860172d94c638c9b4}{HAL\+\_\+\+SPI\+\_\+\+State\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___s_p_i___exported___types_gga8891cb64e76198a860172d94c638c9b4adbc218df2c9841b561282b40b3ded69d}{HAL\+\_\+\+SPI\+\_\+\+STATE\+\_\+\+RESET}} = 0x00\+UL
+, \mbox{\hyperlink{group___s_p_i___exported___types_gga8891cb64e76198a860172d94c638c9b4abb3992c67a15c14bd1808ef6b63fa926}{HAL\+\_\+\+SPI\+\_\+\+STATE\+\_\+\+READY}} = 0x01\+UL
+, \mbox{\hyperlink{group___s_p_i___exported___types_gga8891cb64e76198a860172d94c638c9b4a0635e168bc0430253fe8e74cfe9768fd}{HAL\+\_\+\+SPI\+\_\+\+STATE\+\_\+\+BUSY}} = 0x02\+UL
+, \mbox{\hyperlink{group___s_p_i___exported___types_gga8891cb64e76198a860172d94c638c9b4a5d82b644c7ca656ab5fe8a8e3cbc29ab}{HAL\+\_\+\+SPI\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+TX}} = 0x03\+UL
+, \newline
+\mbox{\hyperlink{group___s_p_i___exported___types_gga8891cb64e76198a860172d94c638c9b4afd7e00128aca1feaa099c2595ffb9277}{HAL\+\_\+\+SPI\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+RX}} = 0x04\+UL
+, \mbox{\hyperlink{group___s_p_i___exported___types_gga8891cb64e76198a860172d94c638c9b4a9dae2883ae3e43ca28afc9453a14c938}{HAL\+\_\+\+SPI\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+TX\+\_\+\+RX}} = 0x05\+UL
+, \mbox{\hyperlink{group___s_p_i___exported___types_gga8891cb64e76198a860172d94c638c9b4a3cba266d2346abe3b62fa0acccab4711}{HAL\+\_\+\+SPI\+\_\+\+STATE\+\_\+\+ERROR}} = 0x06\+UL
+, \mbox{\hyperlink{group___s_p_i___exported___types_gga8891cb64e76198a860172d94c638c9b4a34f9231d040d752a034db85e3eb7f782}{HAL\+\_\+\+SPI\+\_\+\+STATE\+\_\+\+ABORT}} = 0x07\+UL
+ \}
+\begin{DoxyCompactList}\small\item\em HAL SPI State structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_p_i___exported___functions___group1_gaadb9d40e710c714d96b2501996658c44}{HAL\+\_\+\+SPI\+\_\+\+Init}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_p_i___exported___functions___group1_gaca2db2a7bbed96ac013c565080fb61f2}{HAL\+\_\+\+SPI\+\_\+\+De\+Init}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi)
+\item 
+void \mbox{\hyperlink{group___s_p_i___exported___functions___group1_ga17f583be14b22caffa6c4e56dcd035ef}{HAL\+\_\+\+SPI\+\_\+\+Msp\+Init}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi)
+\item 
+void \mbox{\hyperlink{group___s_p_i___exported___functions___group1_gabadc4d4974af1afd943e8d13589068e1}{HAL\+\_\+\+SPI\+\_\+\+Msp\+De\+Init}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_p_i___exported___functions___group2_ga02ec86e05d0702387c221f90b6f041a2}{HAL\+\_\+\+SPI\+\_\+\+Transmit}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi, uint8\+\_\+t $\ast$p\+Data, uint16\+\_\+t Size, uint32\+\_\+t Timeout)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_p_i___exported___functions___group2_gafdf43dbe4e5ef225bed6650b6e8c6313}{HAL\+\_\+\+SPI\+\_\+\+Receive}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi, uint8\+\_\+t $\ast$p\+Data, uint16\+\_\+t Size, uint32\+\_\+t Timeout)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_p_i___exported___functions___group2_ga7c3106fe01493a33b08e5c617f45aeb1}{HAL\+\_\+\+SPI\+\_\+\+Transmit\+Receive}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi, uint8\+\_\+t $\ast$p\+Tx\+Data, uint8\+\_\+t $\ast$p\+Rx\+Data, uint16\+\_\+t Size, uint32\+\_\+t Timeout)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_p_i___exported___functions___group2_gafbb309aa738bb3296934fb1a39ffbf40}{HAL\+\_\+\+SPI\+\_\+\+Transmit\+\_\+\+IT}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi, uint8\+\_\+t $\ast$p\+Data, uint16\+\_\+t Size)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_p_i___exported___functions___group2_gaaae0af2e2db7e7549b52b020a18f6168}{HAL\+\_\+\+SPI\+\_\+\+Receive\+\_\+\+IT}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi, uint8\+\_\+t $\ast$p\+Data, uint16\+\_\+t Size)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_p_i___exported___functions___group2_ga518c43d8323499451e7f4782a9dc6e32}{HAL\+\_\+\+SPI\+\_\+\+Transmit\+Receive\+\_\+\+IT}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi, uint8\+\_\+t $\ast$p\+Tx\+Data, uint8\+\_\+t $\ast$p\+Rx\+Data, uint16\+\_\+t Size)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_p_i___exported___functions___group2_ga6aebe304396c3e18b55f926dae0dadcb}{HAL\+\_\+\+SPI\+\_\+\+Transmit\+\_\+\+DMA}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi, uint8\+\_\+t $\ast$p\+Data, uint16\+\_\+t Size)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_p_i___exported___functions___group2_ga626bb2ec54e7b6ff9bd5d807ae6e6e24}{HAL\+\_\+\+SPI\+\_\+\+Receive\+\_\+\+DMA}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi, uint8\+\_\+t $\ast$p\+Data, uint16\+\_\+t Size)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_p_i___exported___functions___group2_ga228553c64b10b8dade9fee525a8a489d}{HAL\+\_\+\+SPI\+\_\+\+Transmit\+Receive\+\_\+\+DMA}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi, uint8\+\_\+t $\ast$p\+Tx\+Data, uint8\+\_\+t $\ast$p\+Rx\+Data, uint16\+\_\+t Size)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_p_i___exported___functions___group2_ga61e4a628d6918ec838736d65ae135031}{HAL\+\_\+\+SPI\+\_\+\+DMAPause}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_p_i___exported___functions___group2_ga7fdd4b7aa5c6bd560a476c833f546d93}{HAL\+\_\+\+SPI\+\_\+\+DMAResume}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_p_i___exported___functions___group2_ga7e01eb529af91fabc950180b927fa355}{HAL\+\_\+\+SPI\+\_\+\+DMAStop}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_p_i___exported___functions___group2_ga11c74b1d91d88ff336f674f6376cc904}{HAL\+\_\+\+SPI\+\_\+\+Abort}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_p_i___exported___functions___group2_ga75d7782876ed13b9f8aebfa8dbba5a1c}{HAL\+\_\+\+SPI\+\_\+\+Abort\+\_\+\+IT}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi)
+\item 
+void \mbox{\hyperlink{group___s_p_i___exported___functions___group2_gaf3da6e0a87468bc039b578c21329df47}{HAL\+\_\+\+SPI\+\_\+\+IRQHandler}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi)
+\item 
+void \mbox{\hyperlink{group___s_p_i___exported___functions___group2_ga0a99ab4f6aa6ee7dc2abca5483910dde}{HAL\+\_\+\+SPI\+\_\+\+Tx\+Cplt\+Callback}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi)
+\item 
+void \mbox{\hyperlink{group___s_p_i___exported___functions___group2_ga3df7021fe24cf874f8b1eec5bd5f4cb3}{HAL\+\_\+\+SPI\+\_\+\+Rx\+Cplt\+Callback}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi)
+\item 
+void \mbox{\hyperlink{group___s_p_i___exported___functions___group2_ga04e63f382f172164c8e7cae4ff5d883c}{HAL\+\_\+\+SPI\+\_\+\+Tx\+Rx\+Cplt\+Callback}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi)
+\item 
+void \mbox{\hyperlink{group___s_p_i___exported___functions___group2_ga931ef2f7fd94ffa16ec431972b1b237f}{HAL\+\_\+\+SPI\+\_\+\+Tx\+Half\+Cplt\+Callback}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi)
+\item 
+void \mbox{\hyperlink{group___s_p_i___exported___functions___group2_gacf622756a3814edfacf449b5749b048a}{HAL\+\_\+\+SPI\+\_\+\+Rx\+Half\+Cplt\+Callback}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi)
+\item 
+void \mbox{\hyperlink{group___s_p_i___exported___functions___group2_gab46e2325b0880d5b5a301792438b151b}{HAL\+\_\+\+SPI\+\_\+\+Tx\+Rx\+Half\+Cplt\+Callback}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi)
+\item 
+void \mbox{\hyperlink{group___s_p_i___exported___functions___group2_ga3db7835e7e7ac335887f62fedf156926}{HAL\+\_\+\+SPI\+\_\+\+Error\+Callback}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi)
+\item 
+void \mbox{\hyperlink{group___s_p_i___exported___functions___group2_ga4a2593ec36fa4def11929e65f631f3cf}{HAL\+\_\+\+SPI\+\_\+\+Abort\+Cplt\+Callback}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi)
+\item 
+\mbox{\hyperlink{group___s_p_i___exported___types_ga8891cb64e76198a860172d94c638c9b4}{HAL\+\_\+\+SPI\+\_\+\+State\+Type\+Def}} \mbox{\hyperlink{group___s_p_i___exported___functions___group3_ga4e599e7fac80bb2eb0fd3f1737e50a5e}{HAL\+\_\+\+SPI\+\_\+\+Get\+State}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group___s_p_i___exported___functions___group3_ga7f4d30dc380760d19ee4c582b91ed7f6}{HAL\+\_\+\+SPI\+\_\+\+Get\+Error}} (\mbox{\hyperlink{group___s_p_i___exported___types_gab633e49dd034de2f3a1fe79853d78d18}{SPI\+\_\+\+Handle\+Type\+Def}} $\ast$hspi)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of SPI HAL module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2017 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under BSD 3-\/Clause license, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: opensource.\+org/licenses/\+BSD-\/3-\/\+Clause 
+
+Definition in file \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}.
+

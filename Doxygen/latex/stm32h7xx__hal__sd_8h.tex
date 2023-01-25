@@ -1,0 +1,255 @@
+\hypertarget{stm32h7xx__hal__sd_8h}{}\doxysection{C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.11.0/\+TRex/lib/hal/\+Drivers/\+STM32\+H7xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/stm32h7xx\+\_\+hal\+\_\+sd.h File Reference}
+\label{stm32h7xx__hal__sd_8h}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Drivers/STM32H7xx\_HAL\_Driver/Inc/stm32h7xx\_hal\_sd.h@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Drivers/STM32H7xx\_HAL\_Driver/Inc/stm32h7xx\_hal\_sd.h}}
+
+
+Header file of SD HAL module.  
+
+
+{\ttfamily \#include \char`\"{}stm32h7xx\+\_\+ll\+\_\+sdmmc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32h7xx\+\_\+hal\+\_\+sd\+\_\+ex.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_h_a_l___s_d___card_info_type_def}{HAL\+\_\+\+SD\+\_\+\+Card\+Info\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em SD Card Information Structure definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em SD handle Structure definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_h_a_l___s_d___card_c_s_d_type_def}{HAL\+\_\+\+SD\+\_\+\+Card\+CSDType\+Def}}
+\item 
+struct \mbox{\hyperlink{struct_h_a_l___s_d___card_c_i_d_type_def}{HAL\+\_\+\+SD\+\_\+\+Card\+CIDType\+Def}}
+\item 
+struct \mbox{\hyperlink{struct_h_a_l___s_d___card_status_type_def}{HAL\+\_\+\+SD\+\_\+\+Card\+Status\+Type\+Def}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___types___group2_gac433dba682be8fc717590877ff801c0c}{HAL\+\_\+\+SD\+\_\+\+CARD\+\_\+\+READY}}~0x00000001U
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___types___group2_ga50e929b44e13a344f20587ef7d235f28}{HAL\+\_\+\+SD\+\_\+\+CARD\+\_\+\+IDENTIFICATION}}~0x00000002U
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___types___group2_ga82e04a8e2a2c42dd86eba3ace53ede2f}{HAL\+\_\+\+SD\+\_\+\+CARD\+\_\+\+STANDBY}}~0x00000003U
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___types___group2_ga90b2baa72e42838f1287ffce0798b748}{HAL\+\_\+\+SD\+\_\+\+CARD\+\_\+\+TRANSFER}}~0x00000004U
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___types___group2_ga865e3bb0a17d2758206cc793d8b414a5}{HAL\+\_\+\+SD\+\_\+\+CARD\+\_\+\+SENDING}}~0x00000005U
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___types___group2_gae61bf85e2ddb7d76b1b1efe932248ffe}{HAL\+\_\+\+SD\+\_\+\+CARD\+\_\+\+RECEIVING}}~0x00000006U
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___types___group2_gac110c7fb65e41e78faed46f0ded1d727}{HAL\+\_\+\+SD\+\_\+\+CARD\+\_\+\+PROGRAMMING}}~0x00000007U
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___types___group2_ga1c6d67d20fdac2b18ce41ca47018dcd8}{HAL\+\_\+\+SD\+\_\+\+CARD\+\_\+\+DISCONNECTED}}~0x00000008U
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___types___group2_ga8e7bad4c0f65b0acd08a635e8b3e415a}{HAL\+\_\+\+SD\+\_\+\+CARD\+\_\+\+ERROR}}~0x000000\+FFU
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___types___group3_ga0e053bc407d4d1001b3f3125f17340f7}{SD\+\_\+\+Init\+Type\+Def}}~\mbox{\hyperlink{struct_s_d_m_m_c___init_type_def}{SDMMC\+\_\+\+Init\+Type\+Def}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___types___group3_gaba823a712a2920fb20f03f74651d0beb}{SD\+\_\+\+Type\+Def}}~\mbox{\hyperlink{struct_s_d_m_m_c___type_def}{SDMMC\+\_\+\+Type\+Def}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constants_gafcf795f5a96fd55561abe69f56224630}{BLOCKSIZE}}~((uint32\+\_\+t)512U)
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_ga028a1a8c6d9bb7c61841f4c4cbbe08ba}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+NONE}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_ga93073e91908c0e8527a4bcb2c3dd95f1}{SDMMC\+\_\+\+ERROR\+\_\+\+NONE}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_gab0cc8b98624e3e438a293dcd3377453e}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+CMD\+\_\+\+CRC\+\_\+\+FAIL}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_ga29339b7153b88dc4eaf4faa7b46ccc4d}{SDMMC\+\_\+\+ERROR\+\_\+\+CMD\+\_\+\+CRC\+\_\+\+FAIL}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_ga0689297eca4477d2ccd181ad065dccaf}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+DATA\+\_\+\+CRC\+\_\+\+FAIL}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_ga6a742a4691747d28e434d78db107e270}{SDMMC\+\_\+\+ERROR\+\_\+\+DATA\+\_\+\+CRC\+\_\+\+FAIL}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_gae4adbdefde74d1858399e45cad414099}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+CMD\+\_\+\+RSP\+\_\+\+TIMEOUT}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_ga9499308f3d28ad8043a9b53c779e23b4}{SDMMC\+\_\+\+ERROR\+\_\+\+CMD\+\_\+\+RSP\+\_\+\+TIMEOUT}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_ga9ad9eaaaaae7377c4c9b14055e656d31}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+DATA\+\_\+\+TIMEOUT}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_gab626df2cece3785818557223caad77d8}{SDMMC\+\_\+\+ERROR\+\_\+\+DATA\+\_\+\+TIMEOUT}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_ga3ad1dc545a461da4f51d1cbb606e590f}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+TX\+\_\+\+UNDERRUN}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_ga3f6e41553c567de7a6cdd411541f3095}{SDMMC\+\_\+\+ERROR\+\_\+\+TX\+\_\+\+UNDERRUN}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_gab96a3612ea5f041a8edd2a48ecf714be}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+RX\+\_\+\+OVERRUN}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_ga644d8cdeaa0f51fd52485d1eef9205c8}{SDMMC\+\_\+\+ERROR\+\_\+\+RX\+\_\+\+OVERRUN}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_ga43d7de63d0e4b974adce4679d586ab1d}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+ADDR\+\_\+\+MISALIGNED}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_gaebcb686c7ca19de6ac32a40107b265f5}{SDMMC\+\_\+\+ERROR\+\_\+\+ADDR\+\_\+\+MISALIGNED}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_ga90f7c7efc64061d73947bdbe38e1dc4b}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+BLOCK\+\_\+\+LEN\+\_\+\+ERR}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_ga45e1b7e2df402602146fe4e362666c1e}{SDMMC\+\_\+\+ERROR\+\_\+\+BLOCK\+\_\+\+LEN\+\_\+\+ERR}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_ga24b684466465a4dbc777baf3b0908198}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+ERASE\+\_\+\+SEQ\+\_\+\+ERR}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_ga23fee50a8501571d2d72e761dd6f42c5}{SDMMC\+\_\+\+ERROR\+\_\+\+ERASE\+\_\+\+SEQ\+\_\+\+ERR}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_ga89cf076092f9e43f96f0ecfb1d9bcbf7}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+BAD\+\_\+\+ERASE\+\_\+\+PARAM}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_ga90484f34f4b2a9c9fcaffb37a2185e3d}{SDMMC\+\_\+\+ERROR\+\_\+\+BAD\+\_\+\+ERASE\+\_\+\+PARAM}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_gaee9a354e9c1e185fa21701b3795cee02}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+WRITE\+\_\+\+PROT\+\_\+\+VIOLATION}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_gaf465a4ac14ab2c5509170f9a9948b03f}{SDMMC\+\_\+\+ERROR\+\_\+\+WRITE\+\_\+\+PROT\+\_\+\+VIOLATION}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_ga77a987dc8ffbdfbf8a647a3f5ef42a22}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+LOCK\+\_\+\+UNLOCK\+\_\+\+FAILED}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_ga36771b073b4605e40d2bb00354df6bc0}{SDMMC\+\_\+\+ERROR\+\_\+\+LOCK\+\_\+\+UNLOCK\+\_\+\+FAILED}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_ga89630158c180dcf0efe16c886d166b45}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+COM\+\_\+\+CRC\+\_\+\+FAILED}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_ga186a3ff3b5bd47d478ddbc58877c8115}{SDMMC\+\_\+\+ERROR\+\_\+\+COM\+\_\+\+CRC\+\_\+\+FAILED}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_ga33c3e036649dd4f0f5df1ac5393f22ca}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+ILLEGAL\+\_\+\+CMD}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_gad28ae2b183432ff4307f6ef736b9ac4e}{SDMMC\+\_\+\+ERROR\+\_\+\+ILLEGAL\+\_\+\+CMD}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_gaa7d19d06e1ee7d7cbbc45187fc1ed6f5}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+CARD\+\_\+\+ECC\+\_\+\+FAILED}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_gacefedcad3eb04c2edc0ef2ddbee00e42}{SDMMC\+\_\+\+ERROR\+\_\+\+CARD\+\_\+\+ECC\+\_\+\+FAILED}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_gab7d095c031dbc2bc694fc266302db647}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+CC\+\_\+\+ERR}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_ga5cbd52e71a9857f01b210e5048da5f44}{SDMMC\+\_\+\+ERROR\+\_\+\+CC\+\_\+\+ERR}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_gaa15e0899614c449700690f588b104957}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+GENERAL\+\_\+\+UNKNOWN\+\_\+\+ERR}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_ga3079b242ec737a24726bc038aaff971f}{SDMMC\+\_\+\+ERROR\+\_\+\+GENERAL\+\_\+\+UNKNOWN\+\_\+\+ERR}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_gad2dd699f0250f515e870bfb6ff078d7b}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+STREAM\+\_\+\+READ\+\_\+\+UNDERRUN}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_ga3c0046058cfbc268556f10866b34966f}{SDMMC\+\_\+\+ERROR\+\_\+\+STREAM\+\_\+\+READ\+\_\+\+UNDERRUN}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_ga01491314d5b6269add32ca3e25fc5c5f}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+STREAM\+\_\+\+WRITE\+\_\+\+OVERRUN}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_ga238c7da3692c3d3c3ff4643aa155a156}{SDMMC\+\_\+\+ERROR\+\_\+\+STREAM\+\_\+\+WRITE\+\_\+\+OVERRUN}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_gab9d1f8ed5911462c74b051993c58c3ff}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+CID\+\_\+\+CSD\+\_\+\+OVERWRITE}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_gac9a9ffbca738f96faaee2ec338a9b96a}{SDMMC\+\_\+\+ERROR\+\_\+\+CID\+\_\+\+CSD\+\_\+\+OVERWRITE}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_gab21af51bc5b3b58494ae7aa182d24490}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+WP\+\_\+\+ERASE\+\_\+\+SKIP}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_gaacd0740259204c9afa80cdb6d0dda218}{SDMMC\+\_\+\+ERROR\+\_\+\+WP\+\_\+\+ERASE\+\_\+\+SKIP}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_ga4c2c40d28d862d81cea272f5d934f6a0}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+CARD\+\_\+\+ECC\+\_\+\+DISABLED}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_ga60306ac146417b86487463d354d2a7cb}{SDMMC\+\_\+\+ERROR\+\_\+\+CARD\+\_\+\+ECC\+\_\+\+DISABLED}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_ga19b2efa8dd5dc56e216a4a46333fa263}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+ERASE\+\_\+\+RESET}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_gaf208ed8aeffac72703c252a9b9cfd5c1}{SDMMC\+\_\+\+ERROR\+\_\+\+ERASE\+\_\+\+RESET}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_ga46e577fe48a24134d0d29361f9879e0a}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+AKE\+\_\+\+SEQ\+\_\+\+ERR}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_gad7c5bc576a069a41207c7e89b556f1c7}{SDMMC\+\_\+\+ERROR\+\_\+\+AKE\+\_\+\+SEQ\+\_\+\+ERR}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_ga1e0173ebad6cf2b4cc72894c0756e2ff}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+INVALID\+\_\+\+VOLTRANGE}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_ga885fc3b11e0689bd43fecc74bc6b30ad}{SDMMC\+\_\+\+ERROR\+\_\+\+INVALID\+\_\+\+VOLTRANGE}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_gaaf094e174892c74040b0c0251703fe53}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+ADDR\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_gad0ef815d3f30eedca8e0c024f6f86726}{SDMMC\+\_\+\+ERROR\+\_\+\+ADDR\+\_\+\+OUT\+\_\+\+OF\+\_\+\+RANGE}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_gad2441fc74676cb382d9b1c37f9d39eab}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+REQUEST\+\_\+\+NOT\+\_\+\+APPLICABLE}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_gab601fdfd912c272721bec53d91269447}{SDMMC\+\_\+\+ERROR\+\_\+\+REQUEST\+\_\+\+NOT\+\_\+\+APPLICABLE}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_ga543eabd6783013497dc7036cabc34b68}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+PARAM}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_gad2596da9045aa0fdd81330548c4e4ff4}{SDMMC\+\_\+\+ERROR\+\_\+\+INVALID\+\_\+\+PARAMETER}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_ga362a78a40fc94cecdc9b3a6f09eb8d62}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+UNSUPPORTED\+\_\+\+FEATURE}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_ga069b2ed51212ad872174262cc49a48e8}{SDMMC\+\_\+\+ERROR\+\_\+\+UNSUPPORTED\+\_\+\+FEATURE}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_ga2c66eda7262fefbae29e403f13432baa}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+BUSY}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_gaaea1bf5ab746268b578c341c2de5dbe1}{SDMMC\+\_\+\+ERROR\+\_\+\+BUSY}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_gac36505ad032b1ef786571bae5d5c4745}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+DMA}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_ga2b572322b71e5f4c9002a88d25d0f61e}{SDMMC\+\_\+\+ERROR\+\_\+\+DMA}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group1_gaf41713485da46adb0cc93a279de59349}{HAL\+\_\+\+SD\+\_\+\+ERROR\+\_\+\+TIMEOUT}}~\mbox{\hyperlink{group___s_d_m_m_c___l_l___exported___constants_ga7adade4abd724bab3cc60349bef6732d}{SDMMC\+\_\+\+ERROR\+\_\+\+TIMEOUT}}
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group2_ga8da25ee0885f5152576a2e30b9a48eec}{SD\+\_\+\+CONTEXT\+\_\+\+NONE}}~((uint32\+\_\+t)0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group2_ga5d3476fe092abf2c581a14c838ff09c8}{SD\+\_\+\+CONTEXT\+\_\+\+READ\+\_\+\+SINGLE\+\_\+\+BLOCK}}~((uint32\+\_\+t)0x00000001U)
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group2_gaa61f28262391d1a93788ced959f6c6e3}{SD\+\_\+\+CONTEXT\+\_\+\+READ\+\_\+\+MULTIPLE\+\_\+\+BLOCK}}~((uint32\+\_\+t)0x00000002U)
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group2_gae5f92c81361f3d0a5327605b7af20300}{SD\+\_\+\+CONTEXT\+\_\+\+WRITE\+\_\+\+SINGLE\+\_\+\+BLOCK}}~((uint32\+\_\+t)0x00000010U)
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group2_ga04380a2580109af986adb8e1f743a957}{SD\+\_\+\+CONTEXT\+\_\+\+WRITE\+\_\+\+MULTIPLE\+\_\+\+BLOCK}}~((uint32\+\_\+t)0x00000020U)
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group2_ga3f02bc5815829679f0462a14bdefbb31}{SD\+\_\+\+CONTEXT\+\_\+\+IT}}~((uint32\+\_\+t)0x00000008U)
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group2_ga67aba0576610377f9d05646d89350761}{SD\+\_\+\+CONTEXT\+\_\+\+DMA}}~((uint32\+\_\+t)0x00000080U)
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group3_ga394af8a03b3f4f2273b86f2e88e95545}{CARD\+\_\+\+NORMAL\+\_\+\+SPEED}}~((uint32\+\_\+t)0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group3_gaa4bd7957a9c4c0ec5eeb9296d2be9048}{CARD\+\_\+\+HIGH\+\_\+\+SPEED}}~((uint32\+\_\+t)0x00000100U)
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group3_gab3090360c354986569caff1c6f8cc6e1}{CARD\+\_\+\+ULTRA\+\_\+\+HIGH\+\_\+\+SPEED}}~((uint32\+\_\+t)0x00000200U)
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group3_ga1e37fb8ed6580c183599703ed2585a10}{CARD\+\_\+\+SDSC}}~((uint32\+\_\+t)0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group3_ga0651bae30a3678dc6b76356f80846ace}{CARD\+\_\+\+SDHC\+\_\+\+SDXC}}~((uint32\+\_\+t)0x00000001U)
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group3_gac39f7eb4fe86233699b8b055e95af9e6}{CARD\+\_\+\+SECURED}}~((uint32\+\_\+t)0x00000003U)
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group4_ga40af3ae2c5afcee316a3841cc214f118}{CARD\+\_\+\+V1\+\_\+X}}~((uint32\+\_\+t)0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported___constansts___group4_gaa4af7e532d46f84fd7bbcb88668e9dff}{CARD\+\_\+\+V2\+\_\+X}}~((uint32\+\_\+t)0x00000001U)
+\item 
+\#define \mbox{\hyperlink{group___s_d___exported__macros_ga2a5557d59e36f15d84d41a4cd3832984}{\+\_\+\+\_\+\+HAL\+\_\+\+SD\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___s_d___exported___types___group1_gga0012126bcdfea270fe367bfaec2692baaa6dd140391c3c9377280e2f262b24343}{HAL\+\_\+\+SD\+\_\+\+STATE\+\_\+\+RESET}})
+\begin{DoxyCompactList}\small\item\em Reset SD handle state. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d___exported__macros_ga69399cf68d9099677b6d13b29da85a3a}{\+\_\+\+\_\+\+HAL\+\_\+\+SD\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~\mbox{\hyperlink{group___s_d_m_m_c___l_l___interrupt___clock_ga086886ffa7d502709c637568ed6e0466}{\+\_\+\+\_\+\+SDMMC\+\_\+\+ENABLE\+\_\+\+IT}}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance, (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Enable the SD device interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d___exported__macros_gade37d2edfef64e867315f90adf574cba}{\+\_\+\+\_\+\+HAL\+\_\+\+SD\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~\mbox{\hyperlink{group___s_d_m_m_c___l_l___interrupt___clock_gadc1f20eee0d4a76c9f416893569ad5d0}{\+\_\+\+\_\+\+SDMMC\+\_\+\+DISABLE\+\_\+\+IT}}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance, (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Disable the SD device interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d___exported__macros_ga879fd87c01188bb86a00355a19bbde46}{\+\_\+\+\_\+\+HAL\+\_\+\+SD\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~\mbox{\hyperlink{group___s_d_m_m_c___l_l___interrupt___clock_gaec3b40ed50180866f4b6329457157166}{\+\_\+\+\_\+\+SDMMC\+\_\+\+GET\+\_\+\+FLAG}}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance, (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Check whether the specified SD flag is set or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d___exported__macros_ga549917d470084bc874ab229d2053727b}{\+\_\+\+\_\+\+HAL\+\_\+\+SD\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~\mbox{\hyperlink{group___s_d_m_m_c___l_l___interrupt___clock_ga1f35f651980bee563bd9c7d00052cdc8}{\+\_\+\+\_\+\+SDMMC\+\_\+\+CLEAR\+\_\+\+FLAG}}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance, (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Clear the SD\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d___exported__macros_gaa190cebf2592d90787e0d1792aa44a46}{\+\_\+\+\_\+\+HAL\+\_\+\+SD\+\_\+\+GET\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~\mbox{\hyperlink{group___s_d_m_m_c___l_l___interrupt___clock_ga4105e1826bc7a99fec7a037924da2560}{\+\_\+\+\_\+\+SDMMC\+\_\+\+GET\+\_\+\+IT}}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance, (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Check whether the specified SD interrupt has occurred or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___s_d___exported__macros_ga80f2ae25047298cbcec8226bd23dc02e}{\+\_\+\+\_\+\+HAL\+\_\+\+SD\+\_\+\+CLEAR\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~\mbox{\hyperlink{group___s_d_m_m_c___l_l___interrupt___clock_ga86db406c85993ed8b12903ca403538f0}{\+\_\+\+\_\+\+SDMMC\+\_\+\+CLEAR\+\_\+\+IT}}((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance, (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Clear the SD\textquotesingle{}s interrupt pending bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint32\+\_\+t \mbox{\hyperlink{group___s_d___exported___types___group2_ga02712698d0b9268ce5dab1e34ca79d99}{HAL\+\_\+\+SD\+\_\+\+Card\+State\+Type\+Def}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___s_d___exported___types___group1_ga0012126bcdfea270fe367bfaec2692ba}{HAL\+\_\+\+SD\+\_\+\+State\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___s_d___exported___types___group1_gga0012126bcdfea270fe367bfaec2692baaa6dd140391c3c9377280e2f262b24343}{HAL\+\_\+\+SD\+\_\+\+STATE\+\_\+\+RESET}} = ((uint32\+\_\+t)0x00000000U)
+, \mbox{\hyperlink{group___s_d___exported___types___group1_gga0012126bcdfea270fe367bfaec2692baa57ef83018586c20a2635517889a8aa9d}{HAL\+\_\+\+SD\+\_\+\+STATE\+\_\+\+READY}} = ((uint32\+\_\+t)0x00000001U)
+, \mbox{\hyperlink{group___s_d___exported___types___group1_gga0012126bcdfea270fe367bfaec2692baa6f546f5dad19b8645baa3a2b6347e890}{HAL\+\_\+\+SD\+\_\+\+STATE\+\_\+\+TIMEOUT}} = ((uint32\+\_\+t)0x00000002U)
+, \mbox{\hyperlink{group___s_d___exported___types___group1_gga0012126bcdfea270fe367bfaec2692baacb6995346a95fee71115415ba08a863e}{HAL\+\_\+\+SD\+\_\+\+STATE\+\_\+\+BUSY}} = ((uint32\+\_\+t)0x00000003U)
+, \newline
+\mbox{\hyperlink{group___s_d___exported___types___group1_gga0012126bcdfea270fe367bfaec2692baa2663656972833933ba62072461a98220}{HAL\+\_\+\+SD\+\_\+\+STATE\+\_\+\+PROGRAMMING}} = ((uint32\+\_\+t)0x00000004U)
+, \mbox{\hyperlink{group___s_d___exported___types___group1_gga0012126bcdfea270fe367bfaec2692baa24177216993afe4a4d3fc584bf2e5820}{HAL\+\_\+\+SD\+\_\+\+STATE\+\_\+\+RECEIVING}} = ((uint32\+\_\+t)0x00000005U)
+, \mbox{\hyperlink{group___s_d___exported___types___group1_gga0012126bcdfea270fe367bfaec2692baa713f5ed88dd34894ee5d97cd6a5b8f66}{HAL\+\_\+\+SD\+\_\+\+STATE\+\_\+\+TRANSFER}} = ((uint32\+\_\+t)0x00000006U)
+, \mbox{\hyperlink{group___s_d___exported___types___group1_gga0012126bcdfea270fe367bfaec2692baa10a36835aa2cd7f1ddf7c72193899abd}{HAL\+\_\+\+SD\+\_\+\+STATE\+\_\+\+ERROR}} = ((uint32\+\_\+t)0x0000000\+FU)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d___exported___functions___group1_gae810ba97b6cdbcb565e09a2bff888540}{HAL\+\_\+\+SD\+\_\+\+Init}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d___exported___functions___group1_ga2e71b088bca019b0a7e44016ca1e1707}{HAL\+\_\+\+SD\+\_\+\+Init\+Card}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d___exported___functions___group1_ga6bba9fce639c7d476dbd443b8c9e3117}{HAL\+\_\+\+SD\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd)
+\item 
+void \mbox{\hyperlink{group___s_d___exported___functions___group1_ga11b692d44079cb65eb037202d627ae96}{HAL\+\_\+\+SD\+\_\+\+Msp\+Init}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd)
+\item 
+void \mbox{\hyperlink{group___s_d___exported___functions___group1_gaad3ad0f8145fca4a29dbe8beef5db085}{HAL\+\_\+\+SD\+\_\+\+Msp\+De\+Init}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d___exported___functions___group2_ga57c9c8243514fc0e9834093b76f299db}{HAL\+\_\+\+SD\+\_\+\+Read\+Blocks}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd, uint8\+\_\+t $\ast$p\+Data, uint32\+\_\+t Block\+Add, uint32\+\_\+t Number\+Of\+Blocks, uint32\+\_\+t Timeout)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d___exported___functions___group2_gab2da788be2f14d72f9cfd4b9a647cf8c}{HAL\+\_\+\+SD\+\_\+\+Write\+Blocks}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd, uint8\+\_\+t $\ast$p\+Data, uint32\+\_\+t Block\+Add, uint32\+\_\+t Number\+Of\+Blocks, uint32\+\_\+t Timeout)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d___exported___functions___group2_gac2173726606e9e3a3ffce50f21fe0c38}{HAL\+\_\+\+SD\+\_\+\+Erase}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd, uint32\+\_\+t Block\+Start\+Add, uint32\+\_\+t Block\+End\+Add)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d___exported___functions___group2_gaabd954880a6d21a0bf9a3c874e0f6a4d}{HAL\+\_\+\+SD\+\_\+\+Read\+Blocks\+\_\+\+IT}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd, uint8\+\_\+t $\ast$p\+Data, uint32\+\_\+t Block\+Add, uint32\+\_\+t Number\+Of\+Blocks)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d___exported___functions___group2_gaeb46f1a16f34cec88b7bd5f429e6c48e}{HAL\+\_\+\+SD\+\_\+\+Write\+Blocks\+\_\+\+IT}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd, uint8\+\_\+t $\ast$p\+Data, uint32\+\_\+t Block\+Add, uint32\+\_\+t Number\+Of\+Blocks)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d___exported___functions___group2_ga28918afbbec3039c3cef5ca52c923eb9}{HAL\+\_\+\+SD\+\_\+\+Read\+Blocks\+\_\+\+DMA}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd, uint8\+\_\+t $\ast$p\+Data, uint32\+\_\+t Block\+Add, uint32\+\_\+t Number\+Of\+Blocks)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d___exported___functions___group2_gaf36737ac0370bcd8872f7c367e675b42}{HAL\+\_\+\+SD\+\_\+\+Write\+Blocks\+\_\+\+DMA}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd, uint8\+\_\+t $\ast$p\+Data, uint32\+\_\+t Block\+Add, uint32\+\_\+t Number\+Of\+Blocks)
+\item 
+void \mbox{\hyperlink{group___s_d___exported___functions___group2_ga78f4def85126ae50eba783a6b237ec0f}{HAL\+\_\+\+SD\+\_\+\+IRQHandler}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd)
+\item 
+void \mbox{\hyperlink{group___s_d___exported___functions___group2_ga7f42b31026c697fea97c132e9aed15e2}{HAL\+\_\+\+SD\+\_\+\+Tx\+Cplt\+Callback}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd)
+\begin{DoxyCompactList}\small\item\em Tx Transfer completed callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_d___exported___functions___group2_ga1720dc3a0e88b26e557ae63fad3a382d}{HAL\+\_\+\+SD\+\_\+\+Rx\+Cplt\+Callback}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd)
+\begin{DoxyCompactList}\small\item\em Rx Transfer completed callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_d___exported___functions___group2_gae1bc0358c9232abc5f3beb338276608b}{HAL\+\_\+\+SD\+\_\+\+Error\+Callback}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd)
+\item 
+void \mbox{\hyperlink{group___s_d___exported___functions___group2_ga52a463063ce8c6f1e8910f30dd4e8376}{HAL\+\_\+\+SD\+\_\+\+Abort\+Callback}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd)
+\begin{DoxyCompactList}\small\item\em SD Abort callbacks. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d___exported___functions___group3_ga8395c55abfa691af95c004d1cb098323}{HAL\+\_\+\+SD\+\_\+\+Config\+Wide\+Bus\+Operation}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd, uint32\+\_\+t Wide\+Mode)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d___exported___functions___group3_gad15bcef902a7c9793bc7389de257a273}{HAL\+\_\+\+SD\+\_\+\+Config\+Speed\+Bus\+Operation}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd, uint32\+\_\+t Speed\+Mode)
+\item 
+\mbox{\hyperlink{group___s_d___exported___types___group2_ga02712698d0b9268ce5dab1e34ca79d99}{HAL\+\_\+\+SD\+\_\+\+Card\+State\+Type\+Def}} \mbox{\hyperlink{group___s_d___exported___functions___group4_ga61f65802034a18141e92ae669fdc844c}{HAL\+\_\+\+SD\+\_\+\+Get\+Card\+State}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d___exported___functions___group4_ga8005b60470ddda128e571a97ce7b798f}{HAL\+\_\+\+SD\+\_\+\+Get\+Card\+CID}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd, \mbox{\hyperlink{struct_h_a_l___s_d___card_c_i_d_type_def}{HAL\+\_\+\+SD\+\_\+\+Card\+CIDType\+Def}} $\ast$p\+CID)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d___exported___functions___group4_gae564ac3dff4eb7a4a325f4678e9fb183}{HAL\+\_\+\+SD\+\_\+\+Get\+Card\+CSD}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd, \mbox{\hyperlink{struct_h_a_l___s_d___card_c_s_d_type_def}{HAL\+\_\+\+SD\+\_\+\+Card\+CSDType\+Def}} $\ast$p\+CSD)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d___exported___functions___group4_ga87f73383fa9b477b920c96ff60645831}{HAL\+\_\+\+SD\+\_\+\+Get\+Card\+Status}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd, \mbox{\hyperlink{struct_h_a_l___s_d___card_status_type_def}{HAL\+\_\+\+SD\+\_\+\+Card\+Status\+Type\+Def}} $\ast$p\+Status)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d___exported___functions___group4_gab783bcbd433b03dd394308ec98e0fb88}{HAL\+\_\+\+SD\+\_\+\+Get\+Card\+Info}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd, \mbox{\hyperlink{struct_h_a_l___s_d___card_info_type_def}{HAL\+\_\+\+SD\+\_\+\+Card\+Info\+Type\+Def}} $\ast$p\+Card\+Info)
+\item 
+\mbox{\hyperlink{group___s_d___exported___types___group1_ga0012126bcdfea270fe367bfaec2692ba}{HAL\+\_\+\+SD\+\_\+\+State\+Type\+Def}} \mbox{\hyperlink{group___s_d___exported___functions___group5_ga903b0a06745cb70903c9c57ee47745ae}{HAL\+\_\+\+SD\+\_\+\+Get\+State}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group___s_d___exported___functions___group5_ga20d0eb80609d0db3c561406e2fb38b2c}{HAL\+\_\+\+SD\+\_\+\+Get\+Error}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d___exported___functions___group6_ga808a1b915df87614d0a4f2c2535791ac}{HAL\+\_\+\+SD\+\_\+\+Abort}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d___exported___functions___group6_ga92fba456be358bb2732075b05d46eead}{HAL\+\_\+\+SD\+\_\+\+Abort\+\_\+\+IT}} (\mbox{\hyperlink{struct_s_d___handle_type_def}{SD\+\_\+\+Handle\+Type\+Def}} $\ast$hsd)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of SD HAL module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2017 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under BSD 3-\/Clause license, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: opensource.\+org/licenses/\+BSD-\/3-\/\+Clause 
+
+Definition in file \mbox{\hyperlink{stm32h7xx__hal__sd_8h_source}{stm32h7xx\+\_\+hal\+\_\+sd.\+h}}.
+

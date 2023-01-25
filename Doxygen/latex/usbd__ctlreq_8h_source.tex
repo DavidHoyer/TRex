@@ -1,0 +1,34 @@
+\hypertarget{usbd__ctlreq_8h_source}{}\doxysection{usbd\+\_\+ctlreq.\+h}
+\label{usbd__ctlreq_8h_source}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Middlewares/ST/STM32\_USB\_Device\_Library/Core/Inc/usbd\_ctlreq.h@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Middlewares/ST/STM32\_USB\_Device\_Library/Core/Inc/usbd\_ctlreq.h}}
+\mbox{\hyperlink{usbd__ctlreq_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00020}00020\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00021}00021\ \textcolor{preprocessor}{\#ifndef\ \_\_USB\_REQUEST\_H}}
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00022}00022\ \textcolor{preprocessor}{\#define\ \_\_USB\_REQUEST\_H}}
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00024}00024\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00025}00025\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00026}00026\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00028}00028\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00029}00029\ \textcolor{preprocessor}{\#include\ \ "{}\mbox{\hyperlink{usbd__def_8h}{usbd\_def.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00076}00076\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___r_e_q___exported___functions_prototype_gac40d4171a55983d25bbbb7b8c3fce95e}{USBD\_StdDevReq}}(\mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ *pdev,\ \mbox{\hyperlink{structusb__setup__req}{USBD\_SetupReqTypedef}}\ *req);}
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00077}00077\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___r_e_q___exported___functions_prototype_gac1c8cd8a59f1c99887f131a4299f31b1}{USBD\_StdItfReq}}(\mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ *pdev,\ \mbox{\hyperlink{structusb__setup__req}{USBD\_SetupReqTypedef}}\ *req);}
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00078}00078\ \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaebc658c200e50399361e7901f0a57e95}{USBD\_StatusTypeDef}}\ \mbox{\hyperlink{group___u_s_b_d___r_e_q___exported___functions_prototype_ga46d1a0a4e23e1e8c80167dcdc59b2538}{USBD\_StdEPReq}}(\mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ *pdev,\ \mbox{\hyperlink{structusb__setup__req}{USBD\_SetupReqTypedef}}\ *req);}
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00080}00080\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___u_s_b_d___r_e_q___exported___functions_prototype_ga48795256b00d45158aa8036e843d300a}{USBD\_CtlError}}(\mbox{\hyperlink{struct___u_s_b_d___handle_type_def}{USBD\_HandleTypeDef}}\ *pdev,\ \mbox{\hyperlink{structusb__setup__req}{USBD\_SetupReqTypedef}}\ *req);}
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00081}00081\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___u_s_b_d___r_e_q___exported___functions_prototype_ga54a17c9993f3422dce6dce7e9d8614b9}{USBD\_ParseSetupRequest}}(\mbox{\hyperlink{structusb__setup__req}{USBD\_SetupReqTypedef}}\ *req,\ uint8\_t\ *pdata);}
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00082}00082\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___u_s_b_d___r_e_q___exported___functions_prototype_ga9ad6afa29382920474120306997d83ee}{USBD\_GetString}}(uint8\_t\ *desc,\ uint8\_t\ *unicode,\ uint16\_t\ *len);}
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00088}00088\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00089}00089\ \}}
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00090}00090\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00092}00092\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_USB\_REQUEST\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{usbd__ctlreq_8h_source_l00103}00103\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

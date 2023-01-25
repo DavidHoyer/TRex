@@ -1,0 +1,67 @@
+\hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source}{}\doxysection{spi.\+h}
+\label{libleguan_2include_2peripherals_2internal_2spi_8h_source}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/peripherals/internal/spi.h@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/peripherals/internal/spi.h}}
+\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2spi_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00001}00001\ \ \textcolor{comment}{/*\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00002}00002\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00003}00003\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00004}00004\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\ \ \ \ \ \_\_\_\ \ \_\_\ \_\ \_\ \ \ \_\ \ \_\_\ \_\ \_\ \_\_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00005}00005\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\ \ \ \ /\ \_\ \(\backslash\)/\ \_`\ |\ |\ |\ |/\ \_`\ |\ '\_\ \(\backslash\)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00006}00006\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\_\_\_|\ \ \_\_/\ (\_|\ |\ |\_|\ |\ (\_|\ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00007}00007\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \(\backslash\)\_\_\_\_\_/\(\backslash\)\_\_\_|\(\backslash\)\_\_,\ |\(\backslash\)\_\_,\_|\(\backslash\)\_\_,\_|\_|\ |\_|\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00008}00008\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ =============\ \_\_/\ |\ ==================\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00009}00009\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\_\_\_/\ \ \ \ \ \ \ \ \ \ \ BFH\ 2021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00010}00010\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00011}00011\ \textcolor{comment}{\ \ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00012}00012\ \textcolor{comment}{\ \ *\ This\ software\ can\ be\ used\ by\ students\ and\ other\ personal\ of\ the\ *}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00013}00013\ \textcolor{comment}{\ \ *\ Bern\ University\ of\ Applied\ Sciences\ under\ the\ terms\ of\ the\ MIT\ \ *}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00014}00014\ \textcolor{comment}{\ \ *\ license.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00015}00015\ \textcolor{comment}{\ \ *\ For\ other\ persons\ this\ software\ is\ under\ the\ terms\ of\ the\ GNU\ \ \ *}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00016}00016\ \textcolor{comment}{\ \ *\ General\ Public\ License\ version\ 2.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00017}00017\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00018}00018\ \textcolor{comment}{\ \ *\ Copyright\ \&copy;\ 2021,\ Bern\ University\ of\ Applied\ Sciences.\ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00019}00019\ \textcolor{comment}{\ \ *\ All\ rights\ reserved.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00020}00020\ \textcolor{comment}{\ \ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ */}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00028}00028\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00030}00030\ \textcolor{preprocessor}{\#if\ defined(\_\_cplusplus)}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00031}00031\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00032}00032\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00035}00035\ \textcolor{comment}{/*\ Includes\ */}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00036}00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{types_8h}{common/types.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00037}00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{attributes_8h}{common/attributes.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00038}00038\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mmio_8h}{common/mmio.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00040}00040\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{stm32h7xx__hal_8h}{stm32h7xx\_hal.h}}>}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00042}00042\ \textcolor{comment}{/*\ Types\ */}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00044}\mbox{\hyperlink{struct_s_p_i___handle__t}{00044}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00045}\mbox{\hyperlink{struct_s_p_i___handle__t_aadac56a4fb5a88af1822093e00e9f5a4}{00045}}\ \ \ \ \ \mbox{\hyperlink{struct_____s_p_i___handle_type_def}{SPI\_HandleTypeDef}}\ *\mbox{\hyperlink{struct_s_p_i___handle__t_aadac56a4fb5a88af1822093e00e9f5a4}{handle}};}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00046}00046\ \}\ \mbox{\hyperlink{struct_s_p_i___handle__t}{SPI\_Handle\_t}};}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00049}00049\ \textcolor{comment}{/*\ Constants\ */}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00051}00051\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct_s_p_i___handle__t}{SPI\_Handle\_t}}\ \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2spi_8h_ab8d129fc0adef97994eb88e6a20d908f}{SPI\_Sensor}};}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00052}00052\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct_s_p_i___handle__t}{SPI\_Handle\_t}}\ \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2spi_8h_a6266b8eebfe0a61c4894367dd00bc720}{SPI\_Touch}};}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00054}00054\ \textcolor{comment}{/*\ Functions\ */}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00060}00060\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2spi_8h_a09fe941b761fa049c7de1943866254fa}{SPI\_Init}}(\mbox{\hyperlink{struct_s_p_i___handle__t}{SPI\_Handle\_t}}\ handle);}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00069}00069\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2spi_8h_ab7897de23710b4b635f77447ecbb9dee}{SPI\_Read}}(\mbox{\hyperlink{struct_s_p_i___handle__t}{SPI\_Handle\_t}}\ handle,\ uint8\_t\ *buffer,\ \textcolor{keywordtype}{size\_t}\ size);}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00077}00077\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2spi_8h_a33d1e322027bdae3cce2f47b0fd436ca}{SPI\_Write}}(\mbox{\hyperlink{struct_s_p_i___handle__t}{SPI\_Handle\_t}}\ handle,\ \textcolor{keyword}{const}\ uint8\_t\ *buffer,\ \textcolor{keywordtype}{size\_t}\ size);}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00086}00086\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2spi_8h_a975a2c7b686e0120f5c26c862426f2a7}{SPI\_WriteRead}}(\mbox{\hyperlink{struct_s_p_i___handle__t}{SPI\_Handle\_t}}\ handle,\ uint8\_t\ *read\_buffer,\ \textcolor{keyword}{const}\ uint8\_t\ *write\_buffer,\ \textcolor{keywordtype}{size\_t}\ size);}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00089}00089\ \textcolor{preprocessor}{\#if\ defined(\_\_cplusplus)}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00090}00090\ \}}
+\DoxyCodeLine{\Hypertarget{libleguan_2include_2peripherals_2internal_2spi_8h_source_l00091}00091\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

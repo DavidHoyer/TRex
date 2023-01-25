@@ -1,0 +1,107 @@
+\hypertarget{sht40_8c_source}{}\doxysection{sht40.\+c}
+\label{sht40_8c_source}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/source/peripherals/external/sensors/sht40.c@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/source/peripherals/external/sensors/sht40.c}}
+\mbox{\hyperlink{sht40_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00001}00001\ \ \textcolor{comment}{/*\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00002}00002\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00003}00003\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00004}00004\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\ \ \ \ \ \_\_\_\ \ \_\_\ \_\ \_\ \ \ \_\ \ \_\_\ \_\ \_\ \_\_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00005}00005\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\ \ \ \ /\ \_\ \(\backslash\)/\ \_`\ |\ |\ |\ |/\ \_`\ |\ '\_\ \(\backslash\)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00006}00006\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\_\_\_|\ \ \_\_/\ (\_|\ |\ |\_|\ |\ (\_|\ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00007}00007\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \(\backslash\)\_\_\_\_\_/\(\backslash\)\_\_\_|\(\backslash\)\_\_,\ |\(\backslash\)\_\_,\_|\(\backslash\)\_\_,\_|\_|\ |\_|\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00008}00008\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ =============\ \_\_/\ |\ ==================\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00009}00009\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\_\_\_/\ \ \ \ \ \ \ \ \ \ \ BFH\ 2021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00010}00010\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00011}00011\ \textcolor{comment}{\ \ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00012}00012\ \textcolor{comment}{\ \ *\ This\ software\ can\ be\ used\ by\ students\ and\ other\ personal\ of\ the\ *}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00013}00013\ \textcolor{comment}{\ \ *\ Bern\ University\ of\ Applied\ Sciences\ under\ the\ terms\ of\ the\ MIT\ \ *}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00014}00014\ \textcolor{comment}{\ \ *\ license.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00015}00015\ \textcolor{comment}{\ \ *\ For\ other\ persons\ this\ software\ is\ under\ the\ terms\ of\ the\ GNU\ \ \ *}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00016}00016\ \textcolor{comment}{\ \ *\ General\ Public\ License\ version\ 2.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00017}00017\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00018}00018\ \textcolor{comment}{\ \ *\ Copyright\ \&copy;\ 2021,\ Bern\ University\ of\ Applied\ Sciences.\ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00019}00019\ \textcolor{comment}{\ \ *\ All\ rights\ reserved.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00020}00020\ \textcolor{comment}{\ \ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ */}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sht40_8h}{peripherals/external/sensors/sht40.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00029}00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2i2c_8h}{peripherals/internal/i2c.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{core_8h}{common/core.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{intrinsics_8h}{common/intrinsics.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00033}\mbox{\hyperlink{sht40_8c_a457be1c5e5fee67ed7d01f5887c2d656}{00033}}\ \textcolor{preprocessor}{\#define\ DEVICE\_ADDRESS\ \ \ \ \ \ 0x44}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00035}\mbox{\hyperlink{sht40_8c_a431e2eb6b21ad040171c74b4e85c111a}{00035}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00036}\mbox{\hyperlink{sht40_8c_a431e2eb6b21ad040171c74b4e85c111aa3a666f6440a930470b5dff09eccd0279}{00036}}\ \ \ \ \ \mbox{\hyperlink{sht40_8c_a431e2eb6b21ad040171c74b4e85c111aa3a666f6440a930470b5dff09eccd0279}{Precision\_High}}\ \ \ \ \ \ \ \ =\ 0xFD,}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00037}\mbox{\hyperlink{sht40_8c_a431e2eb6b21ad040171c74b4e85c111aa888df7b28281a0c88cd94909370a3964}{00037}}\ \ \ \ \ \mbox{\hyperlink{sht40_8c_a431e2eb6b21ad040171c74b4e85c111aa888df7b28281a0c88cd94909370a3964}{Precision\_Medium}}\ \ \ \ =\ 0xF6,}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{sht40_8c_a431e2eb6b21ad040171c74b4e85c111aa341f9f52321e7a6e3476d1f6bdf8ec5f}{Precision\_Low}}\ \ \ \ \ \ =\ 0xE0}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00039}\mbox{\hyperlink{sht40_8c_a431e2eb6b21ad040171c74b4e85c111aa341f9f52321e7a6e3476d1f6bdf8ec5f}{00039}}\ \}\ \mbox{\hyperlink{sht40_8c_a431e2eb6b21ad040171c74b4e85c111a}{Precision\_t}};}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00041}\mbox{\hyperlink{sht40_8c_afe8d33d42ee3ed4867090180ef38afbd}{00041}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00042}\mbox{\hyperlink{sht40_8c_afe8d33d42ee3ed4867090180ef38afbda534a7dd260e3a2b44bf8dc0d3e57f8ff}{00042}}\ \ \ \ \ \mbox{\hyperlink{sht40_8c_afe8d33d42ee3ed4867090180ef38afbda534a7dd260e3a2b44bf8dc0d3e57f8ff}{ReadSerial}}\ =\ 0x89,}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{sht40_8c_afe8d33d42ee3ed4867090180ef38afbdae7b6c8312af62fc946a620a672cd6cc8}{SoftReset}}\ \ =\ 0x94}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00044}\mbox{\hyperlink{sht40_8c_afe8d33d42ee3ed4867090180ef38afbdae7b6c8312af62fc946a620a672cd6cc8}{00044}}\ \}\ \mbox{\hyperlink{sht40_8c_afe8d33d42ee3ed4867090180ef38afbd}{Command\_t}};}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00046}\mbox{\hyperlink{struct_sensor_data__t}{00046}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00047}\mbox{\hyperlink{struct_sensor_data__t_a5a221e2841e91b2f2eb0dd708d6868df}{00047}}\ \ \ \ \ \mbox{\hyperlink{types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\_t}}\ \mbox{\hyperlink{struct_sensor_data__t_a5a221e2841e91b2f2eb0dd708d6868df}{humidity}};}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00048}\mbox{\hyperlink{struct_sensor_data__t_ad0e92f42cd4f174a0cc4ea5c6cdc3162}{00048}}\ \ \ \ \ \mbox{\hyperlink{types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\_t}}\ \mbox{\hyperlink{struct_sensor_data__t_ad0e92f42cd4f174a0cc4ea5c6cdc3162}{temperature}};}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00049}00049\ \}\ \mbox{\hyperlink{struct_sensor_data__t}{SensorData\_t}};}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00051}\mbox{\hyperlink{sht40_8h_a0e4491f7482af8e71d742ebc9c57e614}{00051}}\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{sht40_8c_a0e4491f7482af8e71d742ebc9c57e614}{SHT40\_Init}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00052}00052\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2i2c_8h_aa4f4ea188a7c09f5f48c3cfc2cbe3e3f}{I2C\_Write}}(\mbox{\hyperlink{sht40_8c_a457be1c5e5fee67ed7d01f5887c2d656}{DEVICE\_ADDRESS}},\ \mbox{\hyperlink{sht40_8c_afe8d33d42ee3ed4867090180ef38afbdae7b6c8312af62fc946a620a672cd6cc8}{SoftReset}}));}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00053}00053\ \ \ \ \ \mbox{\hyperlink{core_8h_a3b63353d623556ce4c0f8822b5e366b2}{CORE\_Delay}}(2);}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3af3d0d72febdcc6491554576ed31f686e}{RESULT\_SUCCESS}};}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00056}00056\ \}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00059}00059\ \textcolor{keyword}{static}\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ GetSensorData(\mbox{\hyperlink{struct_sensor_data__t}{SensorData\_t}}\ *sensorData)\ \{}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00060}00060\ \ \ \ \ \textcolor{keywordflow}{if}\ (sensorData\ ==\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a452818d0c5041b006773bf786538eea2}{RESULT\_INVALID\_ARGUMENTS}};}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00063}00063\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2i2c_8h_aa4f4ea188a7c09f5f48c3cfc2cbe3e3f}{I2C\_Write}}(\mbox{\hyperlink{sht40_8c_a457be1c5e5fee67ed7d01f5887c2d656}{DEVICE\_ADDRESS}},\ \mbox{\hyperlink{sht40_8c_a431e2eb6b21ad040171c74b4e85c111aa3a666f6440a930470b5dff09eccd0279}{Precision\_High}}));}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00064}00064\ \ \ \ \ \mbox{\hyperlink{core_8h_a3b63353d623556ce4c0f8822b5e366b2}{CORE\_Delay}}(10);}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00066}00066\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00067}00067\ \ \ \ \ \ \ \ \ uint8\_t\ th;}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00068}00068\ \ \ \ \ \ \ \ \ uint8\_t\ tl;}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00069}00069\ \ \ \ \ \ \ \ \ uint8\_t\ tcrc8;}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00070}00070\ \ \ \ \ \ \ \ \ uint8\_t\ rhh;}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00071}00071\ \ \ \ \ \ \ \ \ uint8\_t\ rhl;}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00072}00072\ \ \ \ \ \ \ \ \ uint8\_t\ rhcrc8;}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00073}00073\ \ \ \ \ \}\ raw\_data\ =\ \{\ 0\ \};}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00075}00075\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2i2c_8h_af3434e0b2ca76539905dd33478db94c2}{I2C\_ReadBuffer}}(\mbox{\hyperlink{sht40_8c_a457be1c5e5fee67ed7d01f5887c2d656}{DEVICE\_ADDRESS}},\ (uint8\_t*)\&raw\_data,\ \textcolor{keyword}{sizeof}(raw\_data)));}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00077}00077\ \ \ \ \ sensorData-\/>\mbox{\hyperlink{struct_sensor_data__t_a5a221e2841e91b2f2eb0dd708d6868df}{humidity}}\ \ \ \ =\ -\/6\ \ +\ 125\ *\ (\mbox{\hyperlink{types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\_t}})((((uint16\_t)raw\_data.rhh)\ <<\ 8)\ |\ raw\_data.rhl)\ /\ 0xFFFF;}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00078}00078\ \ \ \ \ sensorData-\/>\mbox{\hyperlink{struct_sensor_data__t_ad0e92f42cd4f174a0cc4ea5c6cdc3162}{temperature}}\ =\ -\/45\ +\ 175\ *\ (\mbox{\hyperlink{types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\_t}})((((uint16\_t)raw\_data.th)\ \ <<\ 8)\ |\ raw\_data.tl)\ \ /\ 0xFFFF;}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3af3d0d72febdcc6491554576ed31f686e}{RESULT\_SUCCESS}};}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00081}00081\ \}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00083}\mbox{\hyperlink{sht40_8h_a6e10900d1645841f55172021e40598c7}{00083}}\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{sht40_8c_a6e10900d1645841f55172021e40598c7}{SHT40\_GetTemperature}}(\mbox{\hyperlink{types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\_t}}\ *value)\ \{}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00084}00084\ \ \ \ \ \mbox{\hyperlink{struct_sensor_data__t}{SensorData\_t}}\ sensorData;}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00086}00086\ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ ==\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a452818d0c5041b006773bf786538eea2}{RESULT\_INVALID\_ARGUMENTS}};}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00089}00089\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(GetSensorData(\&sensorData));}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00091}00091\ \ \ \ \ *value\ =\ sensorData.\mbox{\hyperlink{struct_sensor_data__t_ad0e92f42cd4f174a0cc4ea5c6cdc3162}{temperature}};}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00093}00093\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3af3d0d72febdcc6491554576ed31f686e}{RESULT\_SUCCESS}};}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00094}00094\ \}}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00097}\mbox{\hyperlink{sht40_8h_ae963a53821987974a6f194612ebdf206}{00097}}\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{sht40_8c_ae963a53821987974a6f194612ebdf206}{SHT40\_GetHumidity}}(\mbox{\hyperlink{types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\_t}}\ *value)\ \{}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00098}00098\ \ \ \ \ \mbox{\hyperlink{struct_sensor_data__t}{SensorData\_t}}\ sensorData;}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00100}00100\ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ ==\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a452818d0c5041b006773bf786538eea2}{RESULT\_INVALID\_ARGUMENTS}};}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00103}00103\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(GetSensorData(\&sensorData));}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00105}00105\ \ \ \ \ *value\ =\ sensorData.\mbox{\hyperlink{struct_sensor_data__t_a5a221e2841e91b2f2eb0dd708d6868df}{humidity}};}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00107}00107\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3af3d0d72febdcc6491554576ed31f686e}{RESULT\_SUCCESS}};}
+\DoxyCodeLine{\Hypertarget{sht40_8c_source_l00108}00108\ \}}
+
+\end{DoxyCode}

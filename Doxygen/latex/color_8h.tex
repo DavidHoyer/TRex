@@ -1,0 +1,156 @@
+\hypertarget{color_8h}{}\doxysection{C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.11.0/\+TRex/lib/libleguan/include/common/color.h File Reference}
+\label{color_8h}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/common/color.h@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/common/color.h}}
+
+
+Color type definitions.  
+
+
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_r_g_b8__t}{RGB8\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_b_g_r8__t}{BGR8\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_r_g_b_a16__t}{RGBA16\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_r_g_b565__t}{RGB565\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_b_g_r565__t}{BGR565\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_r_g_b1__t}{RGB1\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_b_g_r1__t}{BGR1\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{color_8h_a6623b455e8ea71287d83d3f8a0e3af7d}{RGB8\+\_\+\+COLOR}}(r,  g,  b)~\{ (uint8\+\_\+t)(r),    (uint8\+\_\+t)(g),       (uint8\+\_\+t)(b)        \}
+\item 
+\#define \mbox{\hyperlink{color_8h_ad7dae6b39bd95e610e4819e7dde82e24}{RGBA16\+\_\+\+COLOR}}(r,  g,  b,  a)~\{ (uint16\+\_\+t)(r),       (uint16\+\_\+t)(g),       (uint16\+\_\+t)(b)       \}
+\item 
+\#define \mbox{\hyperlink{color_8h_a2a4b648d58c989f2805a7daa27d2a754}{BGR8\+\_\+\+COLOR}}(r,  g,  b)~\{ (uint8\+\_\+t)(b),    (uint8\+\_\+t)(g),       (uint8\+\_\+t)(r)        \}
+\item 
+\#define \mbox{\hyperlink{color_8h_af4c080f1461e43937ef20270c1211caa}{RGB565\+\_\+\+COLOR}}(r,  g,  b)~\{ ((uint8\+\_\+t)(r)) $>$$>$ 3,      ((uint8\+\_\+t)(g)) $>$$>$ 2,    ((uint8\+\_\+t)(b)) $>$$>$ 3 \}
+\item 
+\#define \mbox{\hyperlink{color_8h_a31b9777b2e1c592d449ff82bb0bb99a7}{BGR565\+\_\+\+COLOR}}(r,  g,  b)~\{ ((uint8\+\_\+t)(b)) $>$$>$ 3,      ((uint8\+\_\+t)(g)) $>$$>$ 2,    ((uint8\+\_\+t)(r)) $>$$>$ 3 \}
+\item 
+\#define \mbox{\hyperlink{color_8h_ae54d8aa6540e7c4c438f8d35e4b8863b}{RGB1\+\_\+\+COLOR}}(r,  g,  b)~\{ (uint8\+\_\+t)(r $>$ 0),   (uint8\+\_\+t)(g $>$ 0),      (uint8\+\_\+t)(b $>$ 0)    \}
+\item 
+\#define \mbox{\hyperlink{color_8h_afd7ee404237de97b5dd48b7346370d3c}{BGR1\+\_\+\+COLOR}}(r,  g,  b)~\{ (uint8\+\_\+t)(b $>$ 0),   (uint8\+\_\+t)(g $>$ 0),      (uint8\+\_\+t)(r $>$ 0)    \}
+\item 
+\#define \mbox{\hyperlink{color_8h_a2919dfdef0fee658ac6e3b1063987ce0}{COLOR}}(r,  g,  b,  a)~\mbox{\hyperlink{color_8h_ad7dae6b39bd95e610e4819e7dde82e24}{RGBA16\+\_\+\+COLOR}}(r, g, b, a)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{struct_r_g_b_a16__t}{RGBA16\+\_\+t}} \mbox{\hyperlink{color_8h_aea9a7472d9d5ba4e6a83791ad629e047}{color\+\_\+t}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Color type definitions. 
+
+\begin{DoxyAuthor}{Author}
+Nikolaij Saegesser 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{color_8h_source}{color.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{color_8h_afd7ee404237de97b5dd48b7346370d3c}\label{color_8h_afd7ee404237de97b5dd48b7346370d3c}} 
+\index{color.h@{color.h}!BGR1\_COLOR@{BGR1\_COLOR}}
+\index{BGR1\_COLOR@{BGR1\_COLOR}!color.h@{color.h}}
+\doxysubsubsection{\texorpdfstring{BGR1\_COLOR}{BGR1\_COLOR}}
+{\footnotesize\ttfamily \#define BGR1\+\_\+\+COLOR(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{g,  }\item[{}]{b }\end{DoxyParamCaption})~\{ (uint8\+\_\+t)(b $>$ 0),   (uint8\+\_\+t)(g $>$ 0),      (uint8\+\_\+t)(r $>$ 0)    \}}
+
+
+
+Definition at line \mbox{\hyperlink{color_8h_source_l00043}{43}} of file \mbox{\hyperlink{color_8h_source}{color.\+h}}.
+
+\mbox{\Hypertarget{color_8h_a31b9777b2e1c592d449ff82bb0bb99a7}\label{color_8h_a31b9777b2e1c592d449ff82bb0bb99a7}} 
+\index{color.h@{color.h}!BGR565\_COLOR@{BGR565\_COLOR}}
+\index{BGR565\_COLOR@{BGR565\_COLOR}!color.h@{color.h}}
+\doxysubsubsection{\texorpdfstring{BGR565\_COLOR}{BGR565\_COLOR}}
+{\footnotesize\ttfamily \#define BGR565\+\_\+\+COLOR(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{g,  }\item[{}]{b }\end{DoxyParamCaption})~\{ ((uint8\+\_\+t)(b)) $>$$>$ 3,      ((uint8\+\_\+t)(g)) $>$$>$ 2,    ((uint8\+\_\+t)(r)) $>$$>$ 3 \}}
+
+
+
+Definition at line \mbox{\hyperlink{color_8h_source_l00041}{41}} of file \mbox{\hyperlink{color_8h_source}{color.\+h}}.
+
+\mbox{\Hypertarget{color_8h_a2a4b648d58c989f2805a7daa27d2a754}\label{color_8h_a2a4b648d58c989f2805a7daa27d2a754}} 
+\index{color.h@{color.h}!BGR8\_COLOR@{BGR8\_COLOR}}
+\index{BGR8\_COLOR@{BGR8\_COLOR}!color.h@{color.h}}
+\doxysubsubsection{\texorpdfstring{BGR8\_COLOR}{BGR8\_COLOR}}
+{\footnotesize\ttfamily \#define BGR8\+\_\+\+COLOR(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{g,  }\item[{}]{b }\end{DoxyParamCaption})~\{ (uint8\+\_\+t)(b),    (uint8\+\_\+t)(g),       (uint8\+\_\+t)(r)        \}}
+
+
+
+Definition at line \mbox{\hyperlink{color_8h_source_l00039}{39}} of file \mbox{\hyperlink{color_8h_source}{color.\+h}}.
+
+\mbox{\Hypertarget{color_8h_a2919dfdef0fee658ac6e3b1063987ce0}\label{color_8h_a2919dfdef0fee658ac6e3b1063987ce0}} 
+\index{color.h@{color.h}!COLOR@{COLOR}}
+\index{COLOR@{COLOR}!color.h@{color.h}}
+\doxysubsubsection{\texorpdfstring{COLOR}{COLOR}}
+{\footnotesize\ttfamily \#define COLOR(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{g,  }\item[{}]{b,  }\item[{}]{a }\end{DoxyParamCaption})~\mbox{\hyperlink{color_8h_ad7dae6b39bd95e610e4819e7dde82e24}{RGBA16\+\_\+\+COLOR}}(r, g, b, a)}
+
+
+
+Definition at line \mbox{\hyperlink{color_8h_source_l00086}{86}} of file \mbox{\hyperlink{color_8h_source}{color.\+h}}.
+
+\mbox{\Hypertarget{color_8h_ae54d8aa6540e7c4c438f8d35e4b8863b}\label{color_8h_ae54d8aa6540e7c4c438f8d35e4b8863b}} 
+\index{color.h@{color.h}!RGB1\_COLOR@{RGB1\_COLOR}}
+\index{RGB1\_COLOR@{RGB1\_COLOR}!color.h@{color.h}}
+\doxysubsubsection{\texorpdfstring{RGB1\_COLOR}{RGB1\_COLOR}}
+{\footnotesize\ttfamily \#define RGB1\+\_\+\+COLOR(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{g,  }\item[{}]{b }\end{DoxyParamCaption})~\{ (uint8\+\_\+t)(r $>$ 0),   (uint8\+\_\+t)(g $>$ 0),      (uint8\+\_\+t)(b $>$ 0)    \}}
+
+
+
+Definition at line \mbox{\hyperlink{color_8h_source_l00042}{42}} of file \mbox{\hyperlink{color_8h_source}{color.\+h}}.
+
+\mbox{\Hypertarget{color_8h_af4c080f1461e43937ef20270c1211caa}\label{color_8h_af4c080f1461e43937ef20270c1211caa}} 
+\index{color.h@{color.h}!RGB565\_COLOR@{RGB565\_COLOR}}
+\index{RGB565\_COLOR@{RGB565\_COLOR}!color.h@{color.h}}
+\doxysubsubsection{\texorpdfstring{RGB565\_COLOR}{RGB565\_COLOR}}
+{\footnotesize\ttfamily \#define RGB565\+\_\+\+COLOR(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{g,  }\item[{}]{b }\end{DoxyParamCaption})~\{ ((uint8\+\_\+t)(r)) $>$$>$ 3,      ((uint8\+\_\+t)(g)) $>$$>$ 2,    ((uint8\+\_\+t)(b)) $>$$>$ 3 \}}
+
+
+
+Definition at line \mbox{\hyperlink{color_8h_source_l00040}{40}} of file \mbox{\hyperlink{color_8h_source}{color.\+h}}.
+
+\mbox{\Hypertarget{color_8h_a6623b455e8ea71287d83d3f8a0e3af7d}\label{color_8h_a6623b455e8ea71287d83d3f8a0e3af7d}} 
+\index{color.h@{color.h}!RGB8\_COLOR@{RGB8\_COLOR}}
+\index{RGB8\_COLOR@{RGB8\_COLOR}!color.h@{color.h}}
+\doxysubsubsection{\texorpdfstring{RGB8\_COLOR}{RGB8\_COLOR}}
+{\footnotesize\ttfamily \#define RGB8\+\_\+\+COLOR(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{g,  }\item[{}]{b }\end{DoxyParamCaption})~\{ (uint8\+\_\+t)(r),    (uint8\+\_\+t)(g),       (uint8\+\_\+t)(b)        \}}
+
+
+
+Definition at line \mbox{\hyperlink{color_8h_source_l00037}{37}} of file \mbox{\hyperlink{color_8h_source}{color.\+h}}.
+
+\mbox{\Hypertarget{color_8h_ad7dae6b39bd95e610e4819e7dde82e24}\label{color_8h_ad7dae6b39bd95e610e4819e7dde82e24}} 
+\index{color.h@{color.h}!RGBA16\_COLOR@{RGBA16\_COLOR}}
+\index{RGBA16\_COLOR@{RGBA16\_COLOR}!color.h@{color.h}}
+\doxysubsubsection{\texorpdfstring{RGBA16\_COLOR}{RGBA16\_COLOR}}
+{\footnotesize\ttfamily \#define RGBA16\+\_\+\+COLOR(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{g,  }\item[{}]{b,  }\item[{}]{a }\end{DoxyParamCaption})~\{ (uint16\+\_\+t)(r),       (uint16\+\_\+t)(g),       (uint16\+\_\+t)(b)       \}}
+
+
+
+Definition at line \mbox{\hyperlink{color_8h_source_l00038}{38}} of file \mbox{\hyperlink{color_8h_source}{color.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{color_8h_aea9a7472d9d5ba4e6a83791ad629e047}\label{color_8h_aea9a7472d9d5ba4e6a83791ad629e047}} 
+\index{color.h@{color.h}!color\_t@{color\_t}}
+\index{color\_t@{color\_t}!color.h@{color.h}}
+\doxysubsubsection{\texorpdfstring{color\_t}{color\_t}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{struct_r_g_b_a16__t}{RGBA16\+\_\+t}} \mbox{\hyperlink{color_8h_aea9a7472d9d5ba4e6a83791ad629e047}{color\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{color_8h_source_l00085}{85}} of file \mbox{\hyperlink{color_8h_source}{color.\+h}}.
+

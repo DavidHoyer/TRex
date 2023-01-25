@@ -1,5 +1,10 @@
 \hypertarget{game_8h}{}\doxysection{C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.11.0/\+TRex/source/include/game.h File Reference}
 \label{game_8h}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/source/include/game.h@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/source/include/game.h}}
+
+
+Game control functions.  
+
+
 {\ttfamily \#include \char`\"{}objects.\+h\char`\"{}}\newline
 \doxysubsection*{Data Structures}
 \begin{DoxyCompactItemize}
@@ -63,6 +68,21 @@ void \mbox{\hyperlink{game_8h_a6eb508a46eef9a8fc063e4c81b854d1a}{Score\+Count}} 
 \begin{DoxyCompactList}\small\item\em Counts the current score for the player. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Game control functions. 
+
+\begin{DoxyDate}{Date}
+30.\+12.\+2022 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Lukas Roth 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{game_8h_source}{game.\+h}}.
+
+
+
 \doxysubsection{Enumeration Type Documentation}
 \mbox{\Hypertarget{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2}\label{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2}} 
 \index{game.h@{game.h}!GameState\_t@{GameState\_t}}
@@ -94,7 +114,7 @@ STATE\+\_\+\+GAME\+\_\+\+OVER&\\
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{game_8h_source_l00018}{18}} of file \mbox{\hyperlink{game_8h_source}{game.\+h}}.
+Definition at line \mbox{\hyperlink{game_8h_source_l00022}{22}} of file \mbox{\hyperlink{game_8h_source}{game.\+h}}.
 
 
 
@@ -114,7 +134,7 @@ flag
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{game_8c_source_l00444}{444}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+Definition at line \mbox{\hyperlink{game_8c_source_l00454}{454}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
 
 \mbox{\Hypertarget{game_8h_a42dce4ec0f1c11a18f0249d8e6bba48e}\label{game_8h_a42dce4ec0f1c11a18f0249d8e6bba48e}} 
 \index{game.h@{game.h}!CheckEvent@{CheckEvent}}
@@ -131,7 +151,7 @@ event
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{game_8c_source_l00186}{186}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+Definition at line \mbox{\hyperlink{game_8c_source_l00221}{221}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
 
 \mbox{\Hypertarget{game_8h_af832dcef9efdbe954d6e1098ffa6ad71}\label{game_8h_af832dcef9efdbe954d6e1098ffa6ad71}} 
 \index{game.h@{game.h}!ContinueGame@{ContinueGame}}
@@ -145,7 +165,7 @@ Resumes the movement.
 
 
 
-Definition at line \mbox{\hyperlink{game_8c_source_l00129}{129}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+Definition at line \mbox{\hyperlink{game_8c_source_l00144}{144}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
 
 \mbox{\Hypertarget{game_8h_a90f4e8637434246478a35dcd91e97d5d}\label{game_8h_a90f4e8637434246478a35dcd91e97d5d}} 
 \index{game.h@{game.h}!DisplayGameOver@{DisplayGameOver}}
@@ -159,7 +179,7 @@ displays the Game\+Over state and inits a delay
 
 
 
-Definition at line \mbox{\hyperlink{game_8c_source_l00092}{92}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+Definition at line \mbox{\hyperlink{game_8c_source_l00154}{154}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
 
 \mbox{\Hypertarget{game_8h_a9b4ca96e33c7f10e1074079d05fae8e7}\label{game_8h_a9b4ca96e33c7f10e1074079d05fae8e7}} 
 \index{game.h@{game.h}!GameInit@{GameInit}}
@@ -173,7 +193,7 @@ Initializes the game.
 
 
 
-Definition at line \mbox{\hyperlink{game_8c_source_l00045}{45}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+Definition at line \mbox{\hyperlink{game_8c_source_l00056}{56}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
 
 \mbox{\Hypertarget{game_8h_a0855a5c16d1b49871f145a29263e9dfe}\label{game_8h_a0855a5c16d1b49871f145a29263e9dfe}} 
 \index{game.h@{game.h}!GetGameState@{GetGameState}}
@@ -190,7 +210,7 @@ Game state
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{game_8c_source_l00069}{69}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+Definition at line \mbox{\hyperlink{game_8c_source_l00216}{216}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
 
 \mbox{\Hypertarget{game_8h_ada08cfa73c6178ec83feb054879ff720}\label{game_8h_ada08cfa73c6178ec83feb054879ff720}} 
 \index{game.h@{game.h}!InitTRexJump@{InitTRexJump}}
@@ -204,7 +224,7 @@ Initializes the jump of the T-\/\+Rex.
 
 
 
-Definition at line \mbox{\hyperlink{game_8c_source_l00330}{330}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+Definition at line \mbox{\hyperlink{game_8c_source_l00372}{372}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
 
 \mbox{\Hypertarget{game_8h_ad761fedc3ba80e348131adc7e4e0d1c6}\label{game_8h_ad761fedc3ba80e348131adc7e4e0d1c6}} 
 \index{game.h@{game.h}!MoveObstacles@{MoveObstacles}}
@@ -218,7 +238,7 @@ Moves the obstacles on the LCD.
 
 
 
-Definition at line \mbox{\hyperlink{game_8c_source_l00240}{240}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+Definition at line \mbox{\hyperlink{game_8c_source_l00281}{281}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
 
 \mbox{\Hypertarget{game_8h_afaa3d3ff2e690233acd9da2cfc27784d}\label{game_8h_afaa3d3ff2e690233acd9da2cfc27784d}} 
 \index{game.h@{game.h}!MoveTRex@{MoveTRex}}
@@ -232,7 +252,7 @@ Moves the T-\/\+Rex on the LCD.
 
 
 
-Definition at line \mbox{\hyperlink{game_8c_source_l00276}{276}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+Definition at line \mbox{\hyperlink{game_8c_source_l00321}{321}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
 
 \mbox{\Hypertarget{game_8h_a0ef9cdc318d902025d8c326997a32b26}\label{game_8h_a0ef9cdc318d902025d8c326997a32b26}} 
 \index{game.h@{game.h}!OnClickJumpButton@{OnClickJumpButton}}
@@ -254,7 +274,7 @@ flag
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{game_8c_source_l00235}{235}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+Definition at line \mbox{\hyperlink{game_8c_source_l00273}{273}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
 
 \mbox{\Hypertarget{game_8h_a61154fd764f31f79dfeb7b41e4223fb1}\label{game_8h_a61154fd764f31f79dfeb7b41e4223fb1}} 
 \index{game.h@{game.h}!OnClickPauseButton@{OnClickPauseButton}}
@@ -276,7 +296,7 @@ flag
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{game_8c_source_l00236}{236}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+Definition at line \mbox{\hyperlink{game_8c_source_l00274}{274}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
 
 \mbox{\Hypertarget{game_8h_a6bdefb70939e3039e84d738c419156df}\label{game_8h_a6bdefb70939e3039e84d738c419156df}} 
 \index{game.h@{game.h}!OnClickStartButton@{OnClickStartButton}}
@@ -298,7 +318,7 @@ flag
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{game_8c_source_l00234}{234}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+Definition at line \mbox{\hyperlink{game_8c_source_l00272}{272}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
 
 \mbox{\Hypertarget{game_8h_af370fa573c0d5b981a1e01fd9b733074}\label{game_8h_af370fa573c0d5b981a1e01fd9b733074}} 
 \index{game.h@{game.h}!OnClickTRexGoogle@{OnClickTRexGoogle}}
@@ -320,7 +340,7 @@ flag
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{game_8c_source_l00237}{237}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+Definition at line \mbox{\hyperlink{game_8c_source_l00275}{275}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
 
 \mbox{\Hypertarget{game_8h_a2b6d7f26e13d8b7a056d77777d5e42ef}\label{game_8h_a2b6d7f26e13d8b7a056d77777d5e42ef}} 
 \index{game.h@{game.h}!OnClickTRexGreen@{OnClickTRexGreen}}
@@ -342,7 +362,7 @@ flag
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{game_8c_source_l00238}{238}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+Definition at line \mbox{\hyperlink{game_8c_source_l00276}{276}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
 
 \mbox{\Hypertarget{game_8h_a5d9284d1778839fc536b4e99330b47f8}\label{game_8h_a5d9284d1778839fc536b4e99330b47f8}} 
 \index{game.h@{game.h}!PauseGame@{PauseGame}}
@@ -356,7 +376,7 @@ Stops the movement of the T-\/\+Rex aswell as the obstacles.
 
 
 
-Definition at line \mbox{\hyperlink{game_8c_source_l00122}{122}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+Definition at line \mbox{\hyperlink{game_8c_source_l00134}{134}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
 
 \mbox{\Hypertarget{game_8h_a6eb508a46eef9a8fc063e4c81b854d1a}\label{game_8h_a6eb508a46eef9a8fc063e4c81b854d1a}} 
 \index{game.h@{game.h}!ScoreCount@{ScoreCount}}
@@ -370,7 +390,7 @@ Counts the current score for the player.
 
 
 
-Definition at line \mbox{\hyperlink{game_8c_source_l00338}{338}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+Definition at line \mbox{\hyperlink{game_8c_source_l00508}{508}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
 
 \mbox{\Hypertarget{game_8h_abd3285ce77dcb58203e8f15c7bdbc9a4}\label{game_8h_abd3285ce77dcb58203e8f15c7bdbc9a4}} 
 \index{game.h@{game.h}!SelectTrexGoogle@{SelectTrexGoogle}}
@@ -384,7 +404,7 @@ Selects the Google T-\/\+Rex as player character.
 
 
 
-Definition at line \mbox{\hyperlink{game_8c_source_l00136}{136}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+Definition at line \mbox{\hyperlink{game_8c_source_l00163}{163}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
 
 \mbox{\Hypertarget{game_8h_a0507e5338e4a45f29c15c549d5c2db0a}\label{game_8h_a0507e5338e4a45f29c15c549d5c2db0a}} 
 \index{game.h@{game.h}!SelectTrexGreen@{SelectTrexGreen}}
@@ -398,7 +418,7 @@ Selects the green T-\/\+Rex as player character.
 
 
 
-Definition at line \mbox{\hyperlink{game_8c_source_l00158}{158}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+Definition at line \mbox{\hyperlink{game_8c_source_l00188}{188}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
 
 \mbox{\Hypertarget{game_8h_a955012c003f998dbe37f8b7a282fa478}\label{game_8h_a955012c003f998dbe37f8b7a282fa478}} 
 \index{game.h@{game.h}!ShowStartMenu@{ShowStartMenu}}
@@ -412,7 +432,7 @@ displays the start menu
 
 
 
-Definition at line \mbox{\hyperlink{game_8c_source_l00071}{71}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+Definition at line \mbox{\hyperlink{game_8c_source_l00083}{83}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
 
 \mbox{\Hypertarget{game_8h_ae419198eb7bcb4f54ab9aa17ea20e61d}\label{game_8h_ae419198eb7bcb4f54ab9aa17ea20e61d}} 
 \index{game.h@{game.h}!StartGame@{StartGame}}
@@ -426,5 +446,5 @@ Starts the game, draw T-\/\+Rex etc.
 
 
 
-Definition at line \mbox{\hyperlink{game_8c_source_l00098}{98}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+Definition at line \mbox{\hyperlink{game_8c_source_l00107}{107}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
 

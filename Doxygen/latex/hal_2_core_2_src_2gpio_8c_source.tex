@@ -1,0 +1,85 @@
+\hypertarget{hal_2_core_2_src_2gpio_8c_source}{}\doxysection{gpio.\+c}
+\label{hal_2_core_2_src_2gpio_8c_source}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Core/Src/gpio.c@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Core/Src/gpio.c}}
+\mbox{\hyperlink{hal_2_core_2_src_2gpio_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00020}00020\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}gpio.h"{}}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00023}00023\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00025}00025\ \textcolor{comment}{/*\ USER\ CODE\ END\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00027}00027\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00028}00028\ \textcolor{comment}{/*\ Configure\ GPIO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00029}00029\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00030}00030\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00032}00032\ \textcolor{comment}{/*\ USER\ CODE\ END\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00038}\mbox{\hyperlink{hal_2_core_2_inc_2gpio_8h_ac724e431d2af879252de35615be2bdea}{00038}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{hal_2_core_2_src_2gpio_8c_ac724e431d2af879252de35615be2bdea}{MX\_GPIO\_Init}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00039}00039\ \{}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00041}00041\ \ \ \mbox{\hyperlink{struct_g_p_i_o___init_type_def}{GPIO\_InitTypeDef}}\ GPIO\_InitStruct\ =\ \{0\};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00043}00043\ \ \ \textcolor{comment}{/*\ GPIO\ Ports\ Clock\ Enable\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00044}00044\ \ \ \mbox{\hyperlink{group___r_c_c___exported___macros_ga2cba7d47b6aee57d469f1d8972d442f1}{\_\_HAL\_RCC\_GPIOE\_CLK\_ENABLE}}();}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00045}00045\ \ \ \mbox{\hyperlink{group___r_c_c___exported___macros_ga84098c3c8735d401024a1fb762e9527f}{\_\_HAL\_RCC\_GPIOF\_CLK\_ENABLE}}();}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00046}00046\ \ \ \mbox{\hyperlink{group___r_c_c___exported___macros_ga041e72359b94f19569e774030fc6ebff}{\_\_HAL\_RCC\_GPIOH\_CLK\_ENABLE}}();}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00047}00047\ \ \ \mbox{\hyperlink{group___r_c_c___exported___macros_ga5ebfeb136612f370950f52306d29b6fd}{\_\_HAL\_RCC\_GPIOC\_CLK\_ENABLE}}();}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00048}00048\ \ \ \mbox{\hyperlink{group___r_c_c___exported___macros_ga1fde58d775fd2458002df817a68f486e}{\_\_HAL\_RCC\_GPIOA\_CLK\_ENABLE}}();}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00049}00049\ \ \ \mbox{\hyperlink{group___r_c_c___exported___macros_ga5ad43f3f4d8163d40f7d402ef75d27c5}{\_\_HAL\_RCC\_GPIOB\_CLK\_ENABLE}}();}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00050}00050\ \ \ \mbox{\hyperlink{group___r_c_c___exported___macros_gaf0816a01f8153700ff758c8783e84e9e}{\_\_HAL\_RCC\_GPIOG\_CLK\_ENABLE}}();}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00051}00051\ \ \ \mbox{\hyperlink{group___r_c_c___exported___macros_ga74340ce0f556e370aafc2b8ecdf2dd31}{\_\_HAL\_RCC\_GPIOD\_CLK\_ENABLE}}();}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00053}00053\ \ \ \textcolor{comment}{/*Configure\ GPIO\ pin\ Output\ Level\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00054}00054\ \ \ \mbox{\hyperlink{group___g_p_i_o___exported___functions___group2_gaf4b97bdf533a02f51ef696d43b6da5c4}{HAL\_GPIO\_WritePin}}(\mbox{\hyperlink{main_8h_afb2c36be9b7edba4a89031f3ca9a248b}{MotionnCs\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_ab21f48e36dcbfcb4715d34eeff482ed9}{MotionnCs\_Pin}},\ \mbox{\hyperlink{group___g_p_i_o___exported___types_gga5b3ef0486b179415581eb342e0ea6b43a746c062509db3ad1e47beed7527f9f8a}{GPIO\_PIN\_SET}});}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00056}00056\ \ \ \textcolor{comment}{/*Configure\ GPIO\ pin\ Output\ Level\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00057}00057\ \ \ \mbox{\hyperlink{group___g_p_i_o___exported___functions___group2_gaf4b97bdf533a02f51ef696d43b6da5c4}{HAL\_GPIO\_WritePin}}(\mbox{\hyperlink{main_8h_ad44915d949123fc9d42d06e6fc55b3a1}{SPI4\_nCS\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_aeefdf3a2544f271fbda6a908a4ff4cae}{SPI4\_nCS\_Pin}},\ \mbox{\hyperlink{group___g_p_i_o___exported___types_gga5b3ef0486b179415581eb342e0ea6b43a746c062509db3ad1e47beed7527f9f8a}{GPIO\_PIN\_SET}});}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00059}00059\ \ \ \textcolor{comment}{/*Configure\ GPIO\ pin\ Output\ Level\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00060}00060\ \ \ \mbox{\hyperlink{group___g_p_i_o___exported___functions___group2_gaf4b97bdf533a02f51ef696d43b6da5c4}{HAL\_GPIO\_WritePin}}(\mbox{\hyperlink{main_8h_a913e7014875112afb2a403402fee0591}{SPI6\_nCS\_GPIO\_Port}},\ \mbox{\hyperlink{main_8h_ad48f49afb7a6c44f868dba1518d2edfe}{SPI6\_nCS\_Pin}},\ \mbox{\hyperlink{group___g_p_i_o___exported___types_gga5b3ef0486b179415581eb342e0ea6b43a746c062509db3ad1e47beed7527f9f8a}{GPIO\_PIN\_SET}});}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00062}00062\ \ \ \textcolor{comment}{/*Configure\ GPIO\ pin\ :\ PtPin\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00063}00063\ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_a871d0ab74071724e96b7cc9ae2a7532b}{Pin}}\ =\ \mbox{\hyperlink{main_8h_ab21f48e36dcbfcb4715d34eeff482ed9}{MotionnCs\_Pin}};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00064}00064\ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_a0ffc93ec511ed9cf1663f6939bd3e839}{Mode}}\ =\ \mbox{\hyperlink{group___g_p_i_o__mode__define_ga1013838a64cec2f8c88f079c449d1982}{GPIO\_MODE\_OUTPUT\_PP}};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00065}00065\ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_a6cdde08eb507b710f8179a4326548e26}{Pull}}\ =\ \mbox{\hyperlink{group___g_p_i_o__pull__define_ga5c2862579882c1cc64e36d38fbd07a4c}{GPIO\_NOPULL}};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00066}00066\ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_ad04b2041f59d32492ec36a891418f3fd}{Speed}}\ =\ \mbox{\hyperlink{group___g_p_i_o__speed__define_gab7916c4265bfa1b26a5205ea9c1caa4e}{GPIO\_SPEED\_FREQ\_LOW}};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00067}00067\ \ \ \mbox{\hyperlink{group___g_p_i_o___exported___functions___group1_ga41bda93b6dd639e4905fdb1454eff98e}{HAL\_GPIO\_Init}}(\mbox{\hyperlink{main_8h_afb2c36be9b7edba4a89031f3ca9a248b}{MotionnCs\_GPIO\_Port}},\ \&GPIO\_InitStruct);}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00069}00069\ \ \ \textcolor{comment}{/*Configure\ GPIO\ pin\ :\ PtPin\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00070}00070\ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_a871d0ab74071724e96b7cc9ae2a7532b}{Pin}}\ =\ \mbox{\hyperlink{main_8h_aeefdf3a2544f271fbda6a908a4ff4cae}{SPI4\_nCS\_Pin}};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00071}00071\ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_a0ffc93ec511ed9cf1663f6939bd3e839}{Mode}}\ =\ \mbox{\hyperlink{group___g_p_i_o__mode__define_ga1013838a64cec2f8c88f079c449d1982}{GPIO\_MODE\_OUTPUT\_PP}};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00072}00072\ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_a6cdde08eb507b710f8179a4326548e26}{Pull}}\ =\ \mbox{\hyperlink{group___g_p_i_o__pull__define_ga5c2862579882c1cc64e36d38fbd07a4c}{GPIO\_NOPULL}};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00073}00073\ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_ad04b2041f59d32492ec36a891418f3fd}{Speed}}\ =\ \mbox{\hyperlink{group___g_p_i_o__speed__define_gab7916c4265bfa1b26a5205ea9c1caa4e}{GPIO\_SPEED\_FREQ\_LOW}};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00074}00074\ \ \ \mbox{\hyperlink{group___g_p_i_o___exported___functions___group1_ga41bda93b6dd639e4905fdb1454eff98e}{HAL\_GPIO\_Init}}(\mbox{\hyperlink{main_8h_ad44915d949123fc9d42d06e6fc55b3a1}{SPI4\_nCS\_GPIO\_Port}},\ \&GPIO\_InitStruct);}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00076}00076\ \ \ \textcolor{comment}{/*Configure\ GPIO\ pin\ :\ PtPin\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00077}00077\ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_a871d0ab74071724e96b7cc9ae2a7532b}{Pin}}\ =\ \mbox{\hyperlink{main_8h_a1d8057e6393720098e190a02468783a6}{SDCardnDet\_Pin}};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00078}00078\ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_a0ffc93ec511ed9cf1663f6939bd3e839}{Mode}}\ =\ \mbox{\hyperlink{group___g_p_i_o__mode__define_gaf40bec3146810028a84b628d37d3b391}{GPIO\_MODE\_INPUT}};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00079}00079\ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_a6cdde08eb507b710f8179a4326548e26}{Pull}}\ =\ \mbox{\hyperlink{group___g_p_i_o__pull__define_ga5c2862579882c1cc64e36d38fbd07a4c}{GPIO\_NOPULL}};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00080}00080\ \ \ \mbox{\hyperlink{group___g_p_i_o___exported___functions___group1_ga41bda93b6dd639e4905fdb1454eff98e}{HAL\_GPIO\_Init}}(\mbox{\hyperlink{main_8h_aba731f09a92f16e66390480cc1d2c8ab}{SDCardnDet\_GPIO\_Port}},\ \&GPIO\_InitStruct);}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00082}00082\ \ \ \textcolor{comment}{/*Configure\ GPIO\ pin\ :\ PtPin\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00083}00083\ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_a871d0ab74071724e96b7cc9ae2a7532b}{Pin}}\ =\ \mbox{\hyperlink{main_8h_a2869868665b3e17749bf845f65ebb051}{TOUCH\_IRQ\_Pin}};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00084}00084\ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_a0ffc93ec511ed9cf1663f6939bd3e839}{Mode}}\ =\ \mbox{\hyperlink{group___g_p_i_o__mode__define_gaa166210a6da3ac7e8d7504702520e522}{GPIO\_MODE\_IT\_FALLING}};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00085}00085\ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_a6cdde08eb507b710f8179a4326548e26}{Pull}}\ =\ \mbox{\hyperlink{group___g_p_i_o__pull__define_ga5c2862579882c1cc64e36d38fbd07a4c}{GPIO\_NOPULL}};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00086}00086\ \ \ \mbox{\hyperlink{group___g_p_i_o___exported___functions___group1_ga41bda93b6dd639e4905fdb1454eff98e}{HAL\_GPIO\_Init}}(\mbox{\hyperlink{main_8h_a0182665add77a2f6948e3998d744019a}{TOUCH\_IRQ\_GPIO\_Port}},\ \&GPIO\_InitStruct);}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00088}00088\ \ \ \textcolor{comment}{/*Configure\ GPIO\ pin\ :\ PtPin\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00089}00089\ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_a871d0ab74071724e96b7cc9ae2a7532b}{Pin}}\ =\ \mbox{\hyperlink{main_8h_ad48f49afb7a6c44f868dba1518d2edfe}{SPI6\_nCS\_Pin}};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00090}00090\ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_a0ffc93ec511ed9cf1663f6939bd3e839}{Mode}}\ =\ \mbox{\hyperlink{group___g_p_i_o__mode__define_ga1013838a64cec2f8c88f079c449d1982}{GPIO\_MODE\_OUTPUT\_PP}};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00091}00091\ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_a6cdde08eb507b710f8179a4326548e26}{Pull}}\ =\ \mbox{\hyperlink{group___g_p_i_o__pull__define_ga5c2862579882c1cc64e36d38fbd07a4c}{GPIO\_NOPULL}};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00092}00092\ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_ad04b2041f59d32492ec36a891418f3fd}{Speed}}\ =\ \mbox{\hyperlink{group___g_p_i_o__speed__define_gab7916c4265bfa1b26a5205ea9c1caa4e}{GPIO\_SPEED\_FREQ\_LOW}};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00093}00093\ \ \ \mbox{\hyperlink{group___g_p_i_o___exported___functions___group1_ga41bda93b6dd639e4905fdb1454eff98e}{HAL\_GPIO\_Init}}(\mbox{\hyperlink{main_8h_a913e7014875112afb2a403402fee0591}{SPI6\_nCS\_GPIO\_Port}},\ \&GPIO\_InitStruct);}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00095}00095\ \}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00097}00097\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ 2\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00099}00099\ \textcolor{comment}{/*\ USER\ CODE\ END\ 2\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2gpio_8c_source_l00101}00101\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

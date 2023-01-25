@@ -1,0 +1,331 @@
+\hypertarget{group___i2_s___private___macros}{}\doxysection{I2S Private Macros}
+\label{group___i2_s___private___macros}\index{I2S Private Macros@{I2S Private Macros}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___i2_s___private___macros_ga3964ad318e0958654fae2ff925456826}{I2\+S\+\_\+\+CHECK\+\_\+\+FLAG}}(\+\_\+\+\_\+\+SR\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((((\+\_\+\+\_\+\+SR\+\_\+\+\_\+) \& ((\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+) \& \mbox{\hyperlink{group___i2_s___flags___definition_gaef433580f12aaa44221f7624c4349852}{I2\+S\+\_\+\+FLAG\+\_\+\+MASK}})) == ((\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+) \& \mbox{\hyperlink{group___i2_s___flags___definition_gaef433580f12aaa44221f7624c4349852}{I2\+S\+\_\+\+FLAG\+\_\+\+MASK}})) ? \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffab44c8101cc294c074709ec1b14211792}{SET}} \+: \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})
+\begin{DoxyCompactList}\small\item\em Check whether the specified SPI flag is set or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_s___private___macros_gac9ad0f7cee726499955dd03588b8eddb}{I2\+S\+\_\+\+CHECK\+\_\+\+IT\+\_\+\+SOURCE}}(\+\_\+\+\_\+\+IER\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((((\+\_\+\+\_\+\+IER\+\_\+\+\_\+) \& (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)) ? \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffab44c8101cc294c074709ec1b14211792}{SET}} \+: \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})
+\begin{DoxyCompactList}\small\item\em Check whether the specified SPI Interrupt is set or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_s___private___macros_gac8d5e0a3d900566959bb21b70d89a844}{IS\+\_\+\+I2\+S\+\_\+\+MODE}}(\+\_\+\+\_\+\+MODE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Checks if I2S Mode parameter is in allowed range. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i2_s___private___macros_ga823948e457c60be8d3b2d1b11a3213fc}{IS\+\_\+\+I2\+S\+\_\+\+MASTER}}(\+\_\+\+\_\+\+MODE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___private___macros_gae779da02848ccbb8e935ea4740d67e3a}{IS\+\_\+\+I2\+S\+\_\+\+SLAVE}}(\+\_\+\+\_\+\+MODE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___private___macros_ga15ed5f76f031aa03ffae20433ad570b3}{IS\+\_\+\+I2\+S\+\_\+\+FULLDUPLEX}}(\+\_\+\+\_\+\+MODE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___private___macros_ga5ce493481e32d4aebc35711ce3675088}{IS\+\_\+\+I2\+S\+\_\+\+STANDARD}}(\+\_\+\+\_\+\+STANDARD\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___private___macros_gaf6ce0f7bc5f635244100c607e1ee61a7}{IS\+\_\+\+I2\+S\+\_\+\+DATA\+\_\+\+FORMAT}}(\+\_\+\+\_\+\+FORMAT\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___private___macros_ga453fe2a0e8ea3f72c329c11da9f8eb08}{IS\+\_\+\+I2\+S\+\_\+\+MCLK\+\_\+\+OUTPUT}}(\+\_\+\+\_\+\+OUTPUT\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___private___macros_gab03caaf3320712797cd49e301027b172}{IS\+\_\+\+I2\+S\+\_\+\+AUDIO\+\_\+\+FREQ}}(\+\_\+\+\_\+\+FREQ\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___private___macros_gae30b8feee20548dd36022155251de35d}{IS\+\_\+\+I2\+S\+\_\+\+CPOL}}(\+\_\+\+\_\+\+CPOL\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___private___macros_gae6db60fdd1b62f86893a3c4d40b76198}{IS\+\_\+\+I2\+S\+\_\+\+FIRST\+\_\+\+BIT}}(\+\_\+\+\_\+\+BIT\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___private___macros_ga8e4022d33f979f7e5710d3377a18525d}{IS\+\_\+\+I2\+S\+\_\+\+WS\+\_\+\+INVERSION}}(\+\_\+\+\_\+\+WSINV\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___private___macros_gac4cac63e81214a71d0f07f97b35213bd}{IS\+\_\+\+I2\+S\+\_\+\+DATA\+\_\+24\+BIT\+\_\+\+ALIGNMENT}}(\+\_\+\+\_\+\+ALIGNMENT\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___i2_s___private___macros_gab51109aa250f728b7367b7f578fa4a4e}{IS\+\_\+\+I2\+S\+\_\+\+MASTER\+\_\+\+KEEP\+\_\+\+IO\+\_\+\+STATE}}(\+\_\+\+\_\+\+AFCNTR\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___i2_s___private___macros_ga3964ad318e0958654fae2ff925456826}\label{group___i2_s___private___macros_ga3964ad318e0958654fae2ff925456826}} 
+\index{I2S Private Macros@{I2S Private Macros}!I2S\_CHECK\_FLAG@{I2S\_CHECK\_FLAG}}
+\index{I2S\_CHECK\_FLAG@{I2S\_CHECK\_FLAG}!I2S Private Macros@{I2S Private Macros}}
+\doxysubsubsection{\texorpdfstring{I2S\_CHECK\_FLAG}{I2S\_CHECK\_FLAG}}
+{\footnotesize\ttfamily \#define I2\+S\+\_\+\+CHECK\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+SR\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+ }\end{DoxyParamCaption})~((((\+\_\+\+\_\+\+SR\+\_\+\+\_\+) \& ((\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+) \& \mbox{\hyperlink{group___i2_s___flags___definition_gaef433580f12aaa44221f7624c4349852}{I2\+S\+\_\+\+FLAG\+\_\+\+MASK}})) == ((\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+) \& \mbox{\hyperlink{group___i2_s___flags___definition_gaef433580f12aaa44221f7624c4349852}{I2\+S\+\_\+\+FLAG\+\_\+\+MASK}})) ? \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffab44c8101cc294c074709ec1b14211792}{SET}} \+: \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})}
+
+
+
+Check whether the specified SPI flag is set or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+SR\+\_\+\+\_\+} & copy of I2S SR register. \\
+\hline
+{\em \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+} & specifies the flag to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item I2\+S\+\_\+\+FLAG\+\_\+\+RXP \+: Rx-\/\+Packet available flag \item I2\+S\+\_\+\+FLAG\+\_\+\+TXP \+: Tx-\/\+Packet space available flag \item I2\+S\+\_\+\+FLAG\+\_\+\+UDR \+: Underrun flag \item I2\+S\+\_\+\+FLAG\+\_\+\+OVR \+: Overrun flag \item I2\+S\+\_\+\+FLAG\+\_\+\+FRE \+: TI mode frame format error flag \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em SET} & or RESET. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source_l00560}{560}} of file \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source}{stm32h7xx\+\_\+hal\+\_\+i2s.\+h}}.
+
+\mbox{\Hypertarget{group___i2_s___private___macros_gac9ad0f7cee726499955dd03588b8eddb}\label{group___i2_s___private___macros_gac9ad0f7cee726499955dd03588b8eddb}} 
+\index{I2S Private Macros@{I2S Private Macros}!I2S\_CHECK\_IT\_SOURCE@{I2S\_CHECK\_IT\_SOURCE}}
+\index{I2S\_CHECK\_IT\_SOURCE@{I2S\_CHECK\_IT\_SOURCE}!I2S Private Macros@{I2S Private Macros}}
+\doxysubsubsection{\texorpdfstring{I2S\_CHECK\_IT\_SOURCE}{I2S\_CHECK\_IT\_SOURCE}}
+{\footnotesize\ttfamily \#define I2\+S\+\_\+\+CHECK\+\_\+\+IT\+\_\+\+SOURCE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+IER\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~((((\+\_\+\+\_\+\+IER\+\_\+\+\_\+) \& (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)) ? \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffab44c8101cc294c074709ec1b14211792}{SET}} \+: \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})}
+
+
+
+Check whether the specified SPI Interrupt is set or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+IER\+\_\+\+\_\+} & copy of I2S IER register. \\
+\hline
+{\em \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+} & specifies the SPI interrupt source to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item I2\+S\+\_\+\+IT\+\_\+\+RXP \+: Rx-\/\+Packet available interrupt \item I2\+S\+\_\+\+IT\+\_\+\+TXP \+: Tx-\/\+Packet space available interrupt \item I2\+S\+\_\+\+IT\+\_\+\+UDR \+: Underrun interrupt \item I2\+S\+\_\+\+IT\+\_\+\+OVR \+: Overrun interrupt \item I2\+S\+\_\+\+IT\+\_\+\+FRE \+: TI mode frame format error interrupt \item I2\+S\+\_\+\+IT\+\_\+\+ERR \+: Error interrupt enable \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em SET} & or RESET. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source_l00574}{574}} of file \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source}{stm32h7xx\+\_\+hal\+\_\+i2s.\+h}}.
+
+\mbox{\Hypertarget{group___i2_s___private___macros_gab03caaf3320712797cd49e301027b172}\label{group___i2_s___private___macros_gab03caaf3320712797cd49e301027b172}} 
+\index{I2S Private Macros@{I2S Private Macros}!IS\_I2S\_AUDIO\_FREQ@{IS\_I2S\_AUDIO\_FREQ}}
+\index{IS\_I2S\_AUDIO\_FREQ@{IS\_I2S\_AUDIO\_FREQ}!I2S Private Macros@{I2S Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_I2S\_AUDIO\_FREQ}{IS\_I2S\_AUDIO\_FREQ}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+S\+\_\+\+AUDIO\+\_\+\+FREQ(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+FREQ\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_FREQ\_\_)\ >=\ \mbox{\hyperlink{group___i2_s___audio___frequency_ga111b7c5be04f5d91fbb2ef2bafe755de}{I2S\_AUDIOFREQ\_8K}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_FREQ\_\_)\ <=\ \mbox{\hyperlink{group___i2_s___audio___frequency_ga835e684fdb326d62c1cfc8d4b8fde944}{I2S\_AUDIOFREQ\_192K}}))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_FREQ\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___audio___frequency_gaed7cf575d5cae24315f18b38ea83310e}{I2S\_AUDIOFREQ\_DEFAULT}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source_l00613}{613}} of file \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source}{stm32h7xx\+\_\+hal\+\_\+i2s.\+h}}.
+
+\mbox{\Hypertarget{group___i2_s___private___macros_gae30b8feee20548dd36022155251de35d}\label{group___i2_s___private___macros_gae30b8feee20548dd36022155251de35d}} 
+\index{I2S Private Macros@{I2S Private Macros}!IS\_I2S\_CPOL@{IS\_I2S\_CPOL}}
+\index{IS\_I2S\_CPOL@{IS\_I2S\_CPOL}!I2S Private Macros@{I2S Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_I2S\_CPOL}{IS\_I2S\_CPOL}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+S\+\_\+\+CPOL(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+CPOL\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CPOL\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___clock___polarity_gad930e30055218df3f34d9ab96d31a3f4}{I2S\_CPOL\_LOW}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_CPOL\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___clock___polarity_gab86bbe2d41b941d9949868ca3578e607}{I2S\_CPOL\_HIGH}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source_l00617}{617}} of file \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source}{stm32h7xx\+\_\+hal\+\_\+i2s.\+h}}.
+
+\mbox{\Hypertarget{group___i2_s___private___macros_gac4cac63e81214a71d0f07f97b35213bd}\label{group___i2_s___private___macros_gac4cac63e81214a71d0f07f97b35213bd}} 
+\index{I2S Private Macros@{I2S Private Macros}!IS\_I2S\_DATA\_24BIT\_ALIGNMENT@{IS\_I2S\_DATA\_24BIT\_ALIGNMENT}}
+\index{IS\_I2S\_DATA\_24BIT\_ALIGNMENT@{IS\_I2S\_DATA\_24BIT\_ALIGNMENT}!I2S Private Macros@{I2S Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_I2S\_DATA\_24BIT\_ALIGNMENT}{IS\_I2S\_DATA\_24BIT\_ALIGNMENT}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+S\+\_\+\+DATA\+\_\+24\+BIT\+\_\+\+ALIGNMENT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+ALIGNMENT\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_ALIGNMENT\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___data__24_bit___alignment_gab058c571d4f18c52a9f587fbe972e134}{I2S\_DATA\_24BIT\_ALIGNMENT\_RIGHT}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_ALIGNMENT\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___data__24_bit___alignment_ga878ae6839eea280b3a97048830aa3db1}{I2S\_DATA\_24BIT\_ALIGNMENT\_LEFT}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source_l00626}{626}} of file \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source}{stm32h7xx\+\_\+hal\+\_\+i2s.\+h}}.
+
+\mbox{\Hypertarget{group___i2_s___private___macros_gaf6ce0f7bc5f635244100c607e1ee61a7}\label{group___i2_s___private___macros_gaf6ce0f7bc5f635244100c607e1ee61a7}} 
+\index{I2S Private Macros@{I2S Private Macros}!IS\_I2S\_DATA\_FORMAT@{IS\_I2S\_DATA\_FORMAT}}
+\index{IS\_I2S\_DATA\_FORMAT@{IS\_I2S\_DATA\_FORMAT}!I2S Private Macros@{I2S Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_I2S\_DATA\_FORMAT}{IS\_I2S\_DATA\_FORMAT}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+S\+\_\+\+DATA\+\_\+\+FORMAT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+FORMAT\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_FORMAT\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___data___format_ga84607e206fe566512a525b9f0e361142}{I2S\_DATAFORMAT\_16B}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_FORMAT\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___data___format_ga7d247401de428096b986a1c88e494d71}{I2S\_DATAFORMAT\_16B\_EXTENDED}})\ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_FORMAT\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___data___format_ga32b56d268efb591d0dfd437c68e21819}{I2S\_DATAFORMAT\_24B}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_FORMAT\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___data___format_gac37d00c83e0bfc6dd21261cf94ff14c6}{I2S\_DATAFORMAT\_32B}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source_l00605}{605}} of file \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source}{stm32h7xx\+\_\+hal\+\_\+i2s.\+h}}.
+
+\mbox{\Hypertarget{group___i2_s___private___macros_gae6db60fdd1b62f86893a3c4d40b76198}\label{group___i2_s___private___macros_gae6db60fdd1b62f86893a3c4d40b76198}} 
+\index{I2S Private Macros@{I2S Private Macros}!IS\_I2S\_FIRST\_BIT@{IS\_I2S\_FIRST\_BIT}}
+\index{IS\_I2S\_FIRST\_BIT@{IS\_I2S\_FIRST\_BIT}!I2S Private Macros@{I2S Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_I2S\_FIRST\_BIT}{IS\_I2S\_FIRST\_BIT}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+S\+\_\+\+FIRST\+\_\+\+BIT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+BIT\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_BIT\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___m_s_b___l_s_b___transmission_gae3af8baf27ff5e483fa2585e38011734}{I2S\_FIRSTBIT\_MSB}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_BIT\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___m_s_b___l_s_b___transmission_gae57de00d860ba3e240bb9734f25329ff}{I2S\_FIRSTBIT\_LSB}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source_l00620}{620}} of file \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source}{stm32h7xx\+\_\+hal\+\_\+i2s.\+h}}.
+
+\mbox{\Hypertarget{group___i2_s___private___macros_ga15ed5f76f031aa03ffae20433ad570b3}\label{group___i2_s___private___macros_ga15ed5f76f031aa03ffae20433ad570b3}} 
+\index{I2S Private Macros@{I2S Private Macros}!IS\_I2S\_FULLDUPLEX@{IS\_I2S\_FULLDUPLEX}}
+\index{IS\_I2S\_FULLDUPLEX@{IS\_I2S\_FULLDUPLEX}!I2S Private Macros@{I2S Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_I2S\_FULLDUPLEX}{IS\_I2S\_FULLDUPLEX}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+S\+\_\+\+FULLDUPLEX(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+MODE\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_MODE\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___mode_gaa6d5ede0ac6456e5b7f7f340a2e46962}{I2S\_MODE\_MASTER\_FULLDUPLEX}})\ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_MODE\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___mode_ga67f4ccb4b0ba001cd2d9e2fa9f244da9}{I2S\_MODE\_SLAVE\_FULLDUPLEX}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source_l00596}{596}} of file \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source}{stm32h7xx\+\_\+hal\+\_\+i2s.\+h}}.
+
+\mbox{\Hypertarget{group___i2_s___private___macros_ga823948e457c60be8d3b2d1b11a3213fc}\label{group___i2_s___private___macros_ga823948e457c60be8d3b2d1b11a3213fc}} 
+\index{I2S Private Macros@{I2S Private Macros}!IS\_I2S\_MASTER@{IS\_I2S\_MASTER}}
+\index{IS\_I2S\_MASTER@{IS\_I2S\_MASTER}!I2S Private Macros@{I2S Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_I2S\_MASTER}{IS\_I2S\_MASTER}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+S\+\_\+\+MASTER(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+MODE\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_MODE\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___mode_ga2d70b3c9f774250186aa08c193f06c0d}{I2S\_MODE\_MASTER\_TX}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_MODE\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___mode_ga368748b1b6170fd660bfee81c83d1e3f}{I2S\_MODE\_MASTER\_RX}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_MODE\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___mode_gaa6d5ede0ac6456e5b7f7f340a2e46962}{I2S\_MODE\_MASTER\_FULLDUPLEX}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source_l00588}{588}} of file \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source}{stm32h7xx\+\_\+hal\+\_\+i2s.\+h}}.
+
+\mbox{\Hypertarget{group___i2_s___private___macros_gab51109aa250f728b7367b7f578fa4a4e}\label{group___i2_s___private___macros_gab51109aa250f728b7367b7f578fa4a4e}} 
+\index{I2S Private Macros@{I2S Private Macros}!IS\_I2S\_MASTER\_KEEP\_IO\_STATE@{IS\_I2S\_MASTER\_KEEP\_IO\_STATE}}
+\index{IS\_I2S\_MASTER\_KEEP\_IO\_STATE@{IS\_I2S\_MASTER\_KEEP\_IO\_STATE}!I2S Private Macros@{I2S Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_I2S\_MASTER\_KEEP\_IO\_STATE}{IS\_I2S\_MASTER\_KEEP\_IO\_STATE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+S\+\_\+\+MASTER\+\_\+\+KEEP\+\_\+\+IO\+\_\+\+STATE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+AFCNTR\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_AFCNTR\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___master___keep___i_o___state_gab193992b24a9cd5ffc14aa9bee5a0b34}{I2S\_MASTER\_KEEP\_IO\_STATE\_DISABLE}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_AFCNTR\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___master___keep___i_o___state_gaa490419a9a131c364e2f040134dc8d22}{I2S\_MASTER\_KEEP\_IO\_STATE\_ENABLE}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source_l00629}{629}} of file \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source}{stm32h7xx\+\_\+hal\+\_\+i2s.\+h}}.
+
+\mbox{\Hypertarget{group___i2_s___private___macros_ga453fe2a0e8ea3f72c329c11da9f8eb08}\label{group___i2_s___private___macros_ga453fe2a0e8ea3f72c329c11da9f8eb08}} 
+\index{I2S Private Macros@{I2S Private Macros}!IS\_I2S\_MCLK\_OUTPUT@{IS\_I2S\_MCLK\_OUTPUT}}
+\index{IS\_I2S\_MCLK\_OUTPUT@{IS\_I2S\_MCLK\_OUTPUT}!I2S Private Macros@{I2S Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_I2S\_MCLK\_OUTPUT}{IS\_I2S\_MCLK\_OUTPUT}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+S\+\_\+\+MCLK\+\_\+\+OUTPUT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+OUTPUT\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_OUTPUT\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___m_c_l_k___output_gad02b0b79e2a7b8786228bbd902db6266}{I2S\_MCLKOUTPUT\_ENABLE}})\ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_OUTPUT\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___m_c_l_k___output_gad751d9da31ef7b7b63b5a4028331f36d}{I2S\_MCLKOUTPUT\_DISABLE}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source_l00610}{610}} of file \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source}{stm32h7xx\+\_\+hal\+\_\+i2s.\+h}}.
+
+\mbox{\Hypertarget{group___i2_s___private___macros_gac8d5e0a3d900566959bb21b70d89a844}\label{group___i2_s___private___macros_gac8d5e0a3d900566959bb21b70d89a844}} 
+\index{I2S Private Macros@{I2S Private Macros}!IS\_I2S\_MODE@{IS\_I2S\_MODE}}
+\index{IS\_I2S\_MODE@{IS\_I2S\_MODE}!I2S Private Macros@{I2S Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_I2S\_MODE}{IS\_I2S\_MODE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+S\+\_\+\+MODE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+MODE\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_MODE\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___mode_ga319dc7c9a746bb69bc8f0a2747b3ee0c}{I2S\_MODE\_SLAVE\_TX}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_MODE\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___mode_ga0016b5776f96b393adf00ebcfec46eb7}{I2S\_MODE\_SLAVE\_RX}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_MODE\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___mode_ga2d70b3c9f774250186aa08c193f06c0d}{I2S\_MODE\_MASTER\_TX}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_MODE\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___mode_ga368748b1b6170fd660bfee81c83d1e3f}{I2S\_MODE\_MASTER\_RX}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_MODE\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___mode_ga67f4ccb4b0ba001cd2d9e2fa9f244da9}{I2S\_MODE\_SLAVE\_FULLDUPLEX}})\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_MODE\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___mode_gaa6d5ede0ac6456e5b7f7f340a2e46962}{I2S\_MODE\_MASTER\_FULLDUPLEX}}))}
+
+\end{DoxyCode}
+
+
+Checks if I2S Mode parameter is in allowed range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+MODE\+\_\+\+\_\+} & specifies the I2S Mode. This parameter can be a value of \mbox{\hyperlink{group___i2_s___mode}{I2S Mode}} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source_l00581}{581}} of file \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source}{stm32h7xx\+\_\+hal\+\_\+i2s.\+h}}.
+
+\mbox{\Hypertarget{group___i2_s___private___macros_gae779da02848ccbb8e935ea4740d67e3a}\label{group___i2_s___private___macros_gae779da02848ccbb8e935ea4740d67e3a}} 
+\index{I2S Private Macros@{I2S Private Macros}!IS\_I2S\_SLAVE@{IS\_I2S\_SLAVE}}
+\index{IS\_I2S\_SLAVE@{IS\_I2S\_SLAVE}!I2S Private Macros@{I2S Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_I2S\_SLAVE}{IS\_I2S\_SLAVE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+S\+\_\+\+SLAVE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+MODE\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_MODE\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___mode_ga319dc7c9a746bb69bc8f0a2747b3ee0c}{I2S\_MODE\_SLAVE\_TX}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_MODE\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___mode_ga0016b5776f96b393adf00ebcfec46eb7}{I2S\_MODE\_SLAVE\_RX}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_MODE\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___mode_ga67f4ccb4b0ba001cd2d9e2fa9f244da9}{I2S\_MODE\_SLAVE\_FULLDUPLEX}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source_l00592}{592}} of file \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source}{stm32h7xx\+\_\+hal\+\_\+i2s.\+h}}.
+
+\mbox{\Hypertarget{group___i2_s___private___macros_ga5ce493481e32d4aebc35711ce3675088}\label{group___i2_s___private___macros_ga5ce493481e32d4aebc35711ce3675088}} 
+\index{I2S Private Macros@{I2S Private Macros}!IS\_I2S\_STANDARD@{IS\_I2S\_STANDARD}}
+\index{IS\_I2S\_STANDARD@{IS\_I2S\_STANDARD}!I2S Private Macros@{I2S Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_I2S\_STANDARD}{IS\_I2S\_STANDARD}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+S\+\_\+\+STANDARD(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+STANDARD\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_STANDARD\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___standard_ga58725c7158549d3852a3acdfe7ac83cc}{I2S\_STANDARD\_PHILIPS}})\ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_STANDARD\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___standard_ga1d7e47055dc23008211ed60d0bd59bc3}{I2S\_STANDARD\_MSB}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_STANDARD\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___standard_gaa71f6368c1113d02da713994fe735f37}{I2S\_STANDARD\_LSB}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_STANDARD\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___standard_ga2d9b2e3bec0a61f345aed2698720facc}{I2S\_STANDARD\_PCM\_SHORT}})\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_STANDARD\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___standard_gae0755adecb5f500d2dfc87f91bd0c9a9}{I2S\_STANDARD\_PCM\_LONG}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source_l00599}{599}} of file \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source}{stm32h7xx\+\_\+hal\+\_\+i2s.\+h}}.
+
+\mbox{\Hypertarget{group___i2_s___private___macros_ga8e4022d33f979f7e5710d3377a18525d}\label{group___i2_s___private___macros_ga8e4022d33f979f7e5710d3377a18525d}} 
+\index{I2S Private Macros@{I2S Private Macros}!IS\_I2S\_WS\_INVERSION@{IS\_I2S\_WS\_INVERSION}}
+\index{IS\_I2S\_WS\_INVERSION@{IS\_I2S\_WS\_INVERSION}!I2S Private Macros@{I2S Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_I2S\_WS\_INVERSION}{IS\_I2S\_WS\_INVERSION}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+S\+\_\+\+WS\+\_\+\+INVERSION(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+WSINV\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_WSINV\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___w_s_inversion_ga5f181ff59d5c6b7eb667f480843901ab}{I2S\_WS\_INVERSION\_DISABLE}})\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\_\_WSINV\_\_)\ ==\ \mbox{\hyperlink{group___i2_s___w_s_inversion_ga40f0f5ca961fbba47d961f1ecce394a0}{I2S\_WS\_INVERSION\_ENABLE}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source_l00623}{623}} of file \mbox{\hyperlink{stm32h7xx__hal__i2s_8h_source}{stm32h7xx\+\_\+hal\+\_\+i2s.\+h}}.
+

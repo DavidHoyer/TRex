@@ -1,22 +1,40 @@
-/*
- * Game.c
- *
- *  Created on: 30.12.2022
- *      Author: lukir
- */
+/**
+  *  @file game.c
+  *  @ingroup source
+  *  @date 30.12.2022
+  *  @author Lukas Roth
+  *  @brief Game control functions
+  */
 
+//*********************************************************************
+//*** Includes     													***
+//*********************************************************************
 #include <stdio.h>
 #include <stdlib.h>
 #include "include/game.h"
 #include "include/resource.h"		//Only include ones! contains all pixel information of BMPs
 #include "include/objects.h"
 
-//--- they can defined in .c as they are only needed here
-#define GROUND_HEIGHT 		50
-#define GROUND_LINE_WIDTH	2
-#define TREX_X_POS			50
-#define OBSTACLES_NUMBER	3
+//*********************************************************************
+//*** Makros    													***
+//*********************************************************************
+#define GROUND_HEIGHT 		50		// y position of the ground line from the bottom
+#define GROUND_LINE_WIDTH	2		// Width of the ground line
+#define TREX_X_POS			50		// X position of the T-Rex
+#define OBSTACLES_NUMBER	3		// number of max obstacles
 
+//*********************************************************************
+//*** Enums      													***
+//*********************************************************************
+typedef enum {
+	MOVE_NONE	= 0,
+	MOVE_UP		= 1,
+	MOVE_DOWN 	= -1,
+}Move_t;
+
+//*********************************************************************
+//*** Variables    													***
+//*********************************************************************
 bmp_t tRexBmp;			//
 bmp_t tRexBmpGoogle 	= {270, 300, 77, 90, tRex_pixelDataGoogle, 0, 1, 0};
 bmp_t tRexBmpGreen		= {400, 300, 122, 90, tRex_pixelDataGreen, 0, 0, 0};
@@ -29,22 +47,15 @@ bmp_t obstacleBmp[3]	= { {200, 10, 59, 80, cactus_pixelData, 0,0},
 							{0, 0, 59, 80, cactus_pixelData, 0,0},
 							{0, 0, 59, 80, cactus_pixelData, 0,0} };
 
-GameState_t gameState = STATE_NONE;
+GameState_t gameState = STATE_NONE;				// Current stat of the game
+Move_t tRexDirection = MOVE_NONE;				// Müessemer no luege wie ds nid global mache
 
 //*********************************************************************
-//*** Enums      													***
+//*** Game Init    													***
 //*********************************************************************
-typedef enum {
-	MOVE_NONE	= 0,
-	MOVE_UP		= 1,
-	MOVE_DOWN 	= -1,
-}Move_t;
-
-Move_t tRexDirection = MOVE_NONE;				//Müessemer no luege wie ds nid global mache
-
-void GameInit(void){
-	//BG Color to White
-	LCD_SetBackgroundColor(ColorWhite);
+void GameInit(void)
+{
+	LCD_SetBackgroundColor(ColorWhite);			//BG Color to White
 
 	//--- Detect Border of BMP files (Must be done before Array conversion)
 	tRexBmpGoogle.head  = GetBoarder(tRexBmpGoogle);
@@ -66,8 +77,9 @@ void GameInit(void){
 	ShowStartMenu();
 }
 
-GameState_t GetGameState(void) { return(gameState); }
-
+//*********************************************************************
+//*** Show the start menu											***
+//*********************************************************************
 void ShowStartMenu(void){
 	LCD_Clear();
 	gameState = STATE_MENU;
@@ -89,12 +101,9 @@ void ShowStartMenu(void){
 		SelectTrexGreen();
 }
 
-void DisplayGameOver(void){
-	DrawBmpWithout_A(&tRexBmp, tRexBmp.x, tRexBmp.y);
-	DeleteBmp(&pauseButtonBmp);
-	HAL_Delay(5000);
-}
-
+//*********************************************************************
+//*** starts the game												***
+//*********************************************************************
 void StartGame(void)
 {
 	LCD_Clear();
@@ -119,6 +128,9 @@ void StartGame(void)
 	}
 }
 
+//*********************************************************************
+//*** Pause Game													***
+//*********************************************************************
 void PauseGame(void)
 {
 	pauseButtonBmp.pixels = playButton_pixelData;
@@ -126,6 +138,9 @@ void PauseGame(void)
 	gameState = STATE_PAUSE;
 }
 
+//*********************************************************************
+//*** Continue Game													***
+//*********************************************************************
 void ContinueGame(void)
 {
 	pauseButtonBmp.pixels = pauseButton_pixelData;
@@ -133,6 +148,18 @@ void ContinueGame(void)
 	gameState = STATE_GAME;
 }
 
+//*********************************************************************
+//*** Display the game over with a delay							***
+//*********************************************************************
+void DisplayGameOver(void){
+	DrawBmpWithout_A(&tRexBmp, tRexBmp.x, tRexBmp.y);	// Draw T-Rex but without background
+	DeleteBmp(&pauseButtonBmp);							// Delete Pause Button
+	HAL_Delay(5000);									// Wait for 5s
+}
+
+//*********************************************************************
+//*** Select Google T-Rex											***
+//*********************************************************************
 void SelectTrexGoogle (void)
 {
 	tRexBmp = tRexBmpGoogle;
@@ -155,6 +182,9 @@ void SelectTrexGoogle (void)
 	DrawBmp(&tRexBmp, tRexBmp.x, tRexBmp.y);
 }
 
+//*********************************************************************
+//*** Select Green T-Rex											***
+//*********************************************************************
 void SelectTrexGreen (void)
 {
 	tRexBmp = tRexBmpGreen;
@@ -179,6 +209,11 @@ void SelectTrexGreen (void)
 	//--- Draw Green T-Rex
 	DrawBmp(&tRexBmp, tRexBmp.x, tRexBmp.y);
 }
+
+//*********************************************************************
+//*** Return game state 											***
+//*********************************************************************
+GameState_t GetGameState(void) { return(gameState); }
 
 //*********************************************************************
 //*** Check Event 													***
@@ -212,31 +247,37 @@ event_T CheckEvent(void)
 }
 
 //*********************************************************************
-//*** Check if event happend to be on teh bmp						***
+//*** Check if event happend to be on the bmp						***
 //*********************************************************************
 static char CheckEventBmp(bmp_t bmp, event_T event){
-	if(bmp.visible == FALSE)
-		return FALSE;
+	if(bmp.visible == false)
+		return false;
 
 	if (!event.eventFlag)
-		return FALSE;
+		return false;
 
 	//--- Check if the event was in the domain of the object
 	if(	event.x >= bmp.x && event.x <= bmp.x + bmp.w &&
 		event.y >= bmp.y && event.y <= bmp.y + bmp.h)
 	{
-		return TRUE;
+		return true;
 	}
 
-	return FALSE;
+	return false;
 }
 
+//*********************************************************************
+//*** Check if event happend a specific bmp							***
+//*********************************************************************
 char OnClickStartButton(event_T event)	{ return(CheckEventBmp(startButtonBmp, event));	}
 char OnClickJumpButton(event_T event)	{ return(CheckEventBmp(jumpButtonBmp, event));	}
 char OnClickPauseButton(event_T event)	{ return(CheckEventBmp(pauseButtonBmp, event));	}
 char OnClickTRexGoogle(event_T event)	{ return(CheckEventBmp(tRexBmpGoogle, event));	}
 char OnClickTRexGreen(event_T event)	{ return(CheckEventBmp(tRexBmpGreen, event));	}
 
+//*********************************************************************
+//*** Move Obstacles on the display									***
+//*********************************************************************
 void MoveObstacles(void){
 	//--- Timer for Obtscales
 	static uint32_t tickOld = 0;
@@ -273,6 +314,10 @@ void MoveObstacles(void){
 		}
 	}
 }
+
+//*********************************************************************
+//*** Move T-Rex on the display										***
+//*********************************************************************
 void MoveTRex(void){
 	static uint32_t tickOld = 0;
 
@@ -299,9 +344,8 @@ void MoveTRex(void){
 				ShiftBmp(&tRexBmp, 0, -3);
 			else if(tRexBmp.y <210)
 				ShiftBmp(&tRexBmp, 0, -4);
-			else {
-					ShiftBmp(&tRexBmp, 0, -5);
-				 }
+			else
+				ShiftBmp(&tRexBmp, 0, -5);
 		}
 	}
 	else if(tRexDirection == MOVE_DOWN){
@@ -310,16 +354,14 @@ void MoveTRex(void){
 			MoveBmp(&tRexBmp, TREX_X_POS, LCD_HEIGHT - GROUND_HEIGHT - tRexBmp.h);
 		}
 		else{
-			if(tRexBmp.y <160)
+			if(tRexBmp.y < 160)
 				ShiftBmp(&tRexBmp, 0, 2);
-			else if(tRexBmp.y <180)
+			else if(tRexBmp.y < 180)
 				ShiftBmp(&tRexBmp, 0, 3);
-			else if(tRexBmp.y <210)
+			else if(tRexBmp.y < 210)
 				ShiftBmp(&tRexBmp, 0, 4);
 			else
-				{
-					ShiftBmp(&tRexBmp, 0, 5);
-				}
+				ShiftBmp(&tRexBmp, 0, 5);
 		}
 	}
 }
@@ -333,44 +375,10 @@ void InitTRexJump(void){
 }
 
 //*********************************************************************
-//*** Game score counting and display on LCD						***
+//*** Given three collinear points p, q, r, the function checks if	***
+//*** point q lies on line segment 'pr'								***
 //*********************************************************************
-void ScoreCount (void) {
-
-	static uint32_t GameScore =0;			//Variable for GameScore counting
-	char score_string [4];					//String for Score to Print on LCD
-
-	//Timing variables
-	static uint32_t tickOld = 0;
-	const uint32_t tickNew = HAL_GetTick();
-
-	if (GetGameState() == STATE_GAME) {
-
-		if(tickNew > tickOld + 100) {					//if 100ms passed
-
-			tickOld = tickNew;
-			GameScore+=1;								//increment score
-
-			//convert score to string and print on LCD
-			itoa(GameScore, score_string, 10);
-			LCD_SetForegroundColor(ColorRed);
-			LCD_String(640, 25, "Your Score is: ");
-			LCD_String(750, 25, score_string);
-		}
-	}
-	else {
-		GameScore =0;
-	}
-}
-
-typedef struct Point {
-    double x;
-    double y;
-} Point;
-
-// Given three collinear points p, q, r, the function checks if
-// point q lies on line segment 'pr'
-static bool onSegment(Point p, Point q, Point r)
+static bool onSegment(pixel_t p, pixel_t q, pixel_t r)
 {
     if (q.x <= fmax(p.x, r.x) && q.x >= fmin(p.x, r.x) &&
         q.y <= fmax(p.y, r.y) && q.y >= fmin(p.y, r.y))
@@ -379,15 +387,16 @@ static bool onSegment(Point p, Point q, Point r)
     return false;
 }
 
-// To find orientation of ordered triplet (p, q, r).
-// The function returns following values
-// 0 --> p, q and r are collinear
-// 1 --> Clockwise
-// 2 --> Counterclockwise
-static int orientation(Point p, Point q, Point r)
+//*****************************************************************************
+//*** To find orientation of ordered triplet (p, q, r)						***
+//*** The function returns following values									***
+//*** 0 --> p, q and r are collinear										***
+//*** 1 --> Clockwise														***
+//*** 2 --> Counterclockwise												***
+//*** See https://www.geeksforgeeks.org/orientation-3-ordered-points/		***
+//*****************************************************************************
+static int orientation(pixel_t p, pixel_t q, pixel_t r)
 {
-    // See https://www.geeksforgeeks.org/orientation-3-ordered-points/
-    // for details of below formula.
     int val = (q.y - p.y) * (r.x - q.x) -
               (q.x - p.x) * (r.y - q.y);
 
@@ -396,17 +405,18 @@ static int orientation(Point p, Point q, Point r)
     return (val > 0)? 1: 2; // clock or counterclock wise
 }
 
-// The main function that returns true if line segment 'p1q1' and 'p2q2' intersect.
-//bool doIntersect(Point p1, Point q1, Point p2, Point q2)
-static int doIntersect(uint16_t A1_x, uint16_t A1_y, 	//Line 1 Pos A
-        		uint16_t A2_x, uint16_t A2_y, 	//Line 1 Pos B
-				uint16_t B1_x, uint16_t B1_y,	//Line 2 Pos A
-				uint16_t B2_x, uint16_t B2_y)	//Line 2 Pos B
+//*********************************************************************
+//*** Checks if two line segments intersect							***
+//*********************************************************************
+static int doIntersect( uint16_t A1_x, uint16_t A1_y, 	//Line 1 Pos A
+						uint16_t A2_x, uint16_t A2_y, 	//Line 1 Pos B
+						uint16_t B1_x, uint16_t B1_y,	//Line 2 Pos A
+						uint16_t B2_x, uint16_t B2_y)	//Line 2 Pos B
 {
-	Point p1 = {A1_x, A1_y};
-	Point q1 = {A2_x, A2_y};
-	Point p2 = {B1_x, B1_y};
-	Point q2 = {B2_x, B2_y};
+	pixel_t p1 = {A1_x, A1_y};
+	pixel_t q1 = {A2_x, A2_y};
+	pixel_t p2 = {B1_x, B1_y};
+	pixel_t q2 = {B2_x, B2_y};
 
     // Find the four orientations needed for general and special cases
     int o1 = orientation(p1, q1, p2);
@@ -458,10 +468,10 @@ char CheckCollision(void){
 			continue;
 		}
 
-		node_t *TRexPixelA = tRexBmp.head;			//Point 1 of T-Rex Border
-		node_t *TRexPixelB = TRexPixelA->next;		//Point 2 of T-Rex Border
-		node_t *ObstPixelA = obstacleBmp[0].head;	//Point 1 of Obstacle Border
-		node_t *ObstPixelB = ObstPixelA->next;		//Point 2 of Obstacle Border
+		pixel_t *TRexPixelA = tRexBmp.head;			//Point 1 of T-Rex Border
+		pixel_t *TRexPixelB = TRexPixelA->next;		//Point 2 of T-Rex Border
+		pixel_t *ObstPixelA = obstacleBmp[0].head;	//Point 1 of Obstacle Border
+		pixel_t *ObstPixelB = ObstPixelA->next;		//Point 2 of Obstacle Border
 
 		while(ObstPixelA != NULL && ObstPixelB != NULL){
 			while(TRexPixelA != NULL && TRexPixelB != NULL){
@@ -490,4 +500,35 @@ char CheckCollision(void){
 		}
 	}
 	return false;
+}
+
+//*********************************************************************
+//*** Game score counting and display on LCD						***
+//*********************************************************************
+void ScoreCount (void) {
+
+	static uint32_t GameScore =0;			//Variable for GameScore counting
+	char score_string [4];					//String for Score to Print on LCD
+
+	//Timing variables
+	static uint32_t tickOld = 0;
+	const uint32_t tickNew = HAL_GetTick();
+
+	if (GetGameState() == STATE_GAME) {
+
+		if(tickNew > tickOld + 100) {					//if 100ms passed
+
+			tickOld = tickNew;
+			GameScore+=1;								//increment score
+
+			//convert score to string and print on LCD
+			itoa(GameScore, score_string, 10);
+			LCD_SetForegroundColor(ColorRed);
+			LCD_String(640, 25, "Your Score is: ");
+			LCD_String(750, 25, score_string);
+		}
+	}
+	else {
+		GameScore =0;
+	}
 }

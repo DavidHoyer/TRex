@@ -1,0 +1,189 @@
+\hypertarget{libleguan_2include_2peripherals_2internal_2adc_8h}{}\doxysection{C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.11.0/\+TRex/lib/libleguan/include/peripherals/internal/adc.h File Reference}
+\label{libleguan_2include_2peripherals_2internal_2adc_8h}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/peripherals/internal/adc.h@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/peripherals/internal/adc.h}}
+
+
+ADC Abstraction.  
+
+
+{\ttfamily \#include \char`\"{}common/types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/attributes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/mmio.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_af557fa4300a3539ea54f1db1773e699f}{ADC\+\_\+\+REFERENCE\+\_\+\+VOLTAGE}}~3.\+3/$\ast$V$\ast$/
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1}{ADC\+\_\+\+Input\+\_\+t}} \{ \newline
+\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1a4a900d7e37286051101fb938aecad961}{ADC1\+\_\+14}}
+, \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1a642cfbfb0848c56d940e6bc9fbff0c95}{ADC1\+\_\+15}}
+, \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1aeddd2232f48bebfc22619a206b72f983}{ADC1\+\_\+16}}
+, \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1a89e8e0300aec0eeb9c03a6e36872a373}{ADC2\+\_\+3}}
+, \newline
+\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1aa30c58a3a3278af2baa0f938e46829dd}{ADC3\+\_\+8}}
+, \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1aec4f8962180904e2ebea00515ebe3cb2}{Potentiometer}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_a451bdea2ef8873d91626ba099a27af1d}{ADC\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the ADC Hardware. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_afabf9fdc80e77e37abf5d9734f4bdb1b}{ADC\+\_\+\+Start\+Measurement}} (\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1}{ADC\+\_\+\+Input\+\_\+t}} input)
+\begin{DoxyCompactList}\small\item\em Starts conversion of one ADC input. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_a0451c4330b8e8f56857d094086ebdc3e}{ADC\+\_\+\+Is\+Ready}} (\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1}{ADC\+\_\+\+Input\+\_\+t}} input)
+\begin{DoxyCompactList}\small\item\em Checks if ADC conversion is done. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_ab3fe95f99b3b81ce4e7754027c1bef01}{ADC\+\_\+\+Get\+Value}} (\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1}{ADC\+\_\+\+Input\+\_\+t}} input, \mbox{\hyperlink{types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} $\ast$result)
+\begin{DoxyCompactList}\small\item\em Gets the current ADC value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ADC Abstraction. 
+
+\begin{DoxyAuthor}{Author}
+Nikolaij Saegesser 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_source}{adc.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{libleguan_2include_2peripherals_2internal_2adc_8h_af557fa4300a3539ea54f1db1773e699f}\label{libleguan_2include_2peripherals_2internal_2adc_8h_af557fa4300a3539ea54f1db1773e699f}} 
+\index{adc.h@{adc.h}!ADC\_REFERENCE\_VOLTAGE@{ADC\_REFERENCE\_VOLTAGE}}
+\index{ADC\_REFERENCE\_VOLTAGE@{ADC\_REFERENCE\_VOLTAGE}!adc.h@{adc.h}}
+\doxysubsubsection{\texorpdfstring{ADC\_REFERENCE\_VOLTAGE}{ADC\_REFERENCE\_VOLTAGE}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+REFERENCE\+\_\+\+VOLTAGE~3.\+3/$\ast$V$\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_source_l00041}{41}} of file \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_source}{adc.\+h}}.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1}\label{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1}} 
+\index{adc.h@{adc.h}!ADC\_Input\_t@{ADC\_Input\_t}}
+\index{ADC\_Input\_t@{ADC\_Input\_t}!adc.h@{adc.h}}
+\doxysubsubsection{\texorpdfstring{ADC\_Input\_t}{ADC\_Input\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1}{ADC\+\_\+\+Input\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC1\_14@{ADC1\_14}!adc.h@{adc.h}}\index{adc.h@{adc.h}!ADC1\_14@{ADC1\_14}}}\mbox{\Hypertarget{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1a4a900d7e37286051101fb938aecad961}\label{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1a4a900d7e37286051101fb938aecad961}} 
+ADC1\+\_\+14&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC1\_15@{ADC1\_15}!adc.h@{adc.h}}\index{adc.h@{adc.h}!ADC1\_15@{ADC1\_15}}}\mbox{\Hypertarget{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1a642cfbfb0848c56d940e6bc9fbff0c95}\label{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1a642cfbfb0848c56d940e6bc9fbff0c95}} 
+ADC1\+\_\+15&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC1\_16@{ADC1\_16}!adc.h@{adc.h}}\index{adc.h@{adc.h}!ADC1\_16@{ADC1\_16}}}\mbox{\Hypertarget{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1aeddd2232f48bebfc22619a206b72f983}\label{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1aeddd2232f48bebfc22619a206b72f983}} 
+ADC1\+\_\+16&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC2\_3@{ADC2\_3}!adc.h@{adc.h}}\index{adc.h@{adc.h}!ADC2\_3@{ADC2\_3}}}\mbox{\Hypertarget{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1a89e8e0300aec0eeb9c03a6e36872a373}\label{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1a89e8e0300aec0eeb9c03a6e36872a373}} 
+ADC2\+\_\+3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC3\_8@{ADC3\_8}!adc.h@{adc.h}}\index{adc.h@{adc.h}!ADC3\_8@{ADC3\_8}}}\mbox{\Hypertarget{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1aa30c58a3a3278af2baa0f938e46829dd}\label{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1aa30c58a3a3278af2baa0f938e46829dd}} 
+ADC3\+\_\+8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Potentiometer@{Potentiometer}!adc.h@{adc.h}}\index{adc.h@{adc.h}!Potentiometer@{Potentiometer}}}\mbox{\Hypertarget{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1aec4f8962180904e2ebea00515ebe3cb2}\label{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1aec4f8962180904e2ebea00515ebe3cb2}} 
+Potentiometer&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_source_l00044}{44}} of file \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_source}{adc.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{libleguan_2include_2peripherals_2internal_2adc_8h_ab3fe95f99b3b81ce4e7754027c1bef01}\label{libleguan_2include_2peripherals_2internal_2adc_8h_ab3fe95f99b3b81ce4e7754027c1bef01}} 
+\index{adc.h@{adc.h}!ADC\_GetValue@{ADC\_GetValue}}
+\index{ADC\_GetValue@{ADC\_GetValue}!adc.h@{adc.h}}
+\doxysubsubsection{\texorpdfstring{ADC\_GetValue()}{ADC\_GetValue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} ADC\+\_\+\+Get\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1}{ADC\+\_\+\+Input\+\_\+t}}}]{input,  }\item[{\mbox{\hyperlink{types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} $\ast$}]{result }\end{DoxyParamCaption})}
+
+
+
+Gets the current ADC value. 
+
+\begin{DoxyNote}{Note}
+Blocks if conversion is not done yet 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em input} & ADC Input \\
+\hline
+{\em result} & Pointer where result in volts is written to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status result 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{libleguan_2source_2peripherals_2internal_2adc_8c_source_l00107}{107}} of file \mbox{\hyperlink{libleguan_2source_2peripherals_2internal_2adc_8c_source}{adc.\+c}}.
+
+\mbox{\Hypertarget{libleguan_2include_2peripherals_2internal_2adc_8h_a451bdea2ef8873d91626ba099a27af1d}\label{libleguan_2include_2peripherals_2internal_2adc_8h_a451bdea2ef8873d91626ba099a27af1d}} 
+\index{adc.h@{adc.h}!ADC\_Init@{ADC\_Init}}
+\index{ADC\_Init@{ADC\_Init}!adc.h@{adc.h}}
+\doxysubsubsection{\texorpdfstring{ADC\_Init()}{ADC\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} ADC\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the ADC Hardware. 
+
+\begin{DoxyReturn}{Returns}
+Status result 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{libleguan_2source_2peripherals_2internal_2adc_8c_source_l00066}{66}} of file \mbox{\hyperlink{libleguan_2source_2peripherals_2internal_2adc_8c_source}{adc.\+c}}.
+
+\mbox{\Hypertarget{libleguan_2include_2peripherals_2internal_2adc_8h_a0451c4330b8e8f56857d094086ebdc3e}\label{libleguan_2include_2peripherals_2internal_2adc_8h_a0451c4330b8e8f56857d094086ebdc3e}} 
+\index{adc.h@{adc.h}!ADC\_IsReady@{ADC\_IsReady}}
+\index{ADC\_IsReady@{ADC\_IsReady}!adc.h@{adc.h}}
+\doxysubsubsection{\texorpdfstring{ADC\_IsReady()}{ADC\_IsReady()}}
+{\footnotesize\ttfamily bool ADC\+\_\+\+Is\+Ready (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1}{ADC\+\_\+\+Input\+\_\+t}}}]{input }\end{DoxyParamCaption})}
+
+
+
+Checks if ADC conversion is done. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & ADC Input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Done 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{libleguan_2source_2peripherals_2internal_2adc_8c_source_l00103}{103}} of file \mbox{\hyperlink{libleguan_2source_2peripherals_2internal_2adc_8c_source}{adc.\+c}}.
+
+\mbox{\Hypertarget{libleguan_2include_2peripherals_2internal_2adc_8h_afabf9fdc80e77e37abf5d9734f4bdb1b}\label{libleguan_2include_2peripherals_2internal_2adc_8h_afabf9fdc80e77e37abf5d9734f4bdb1b}} 
+\index{adc.h@{adc.h}!ADC\_StartMeasurement@{ADC\_StartMeasurement}}
+\index{ADC\_StartMeasurement@{ADC\_StartMeasurement}!adc.h@{adc.h}}
+\doxysubsubsection{\texorpdfstring{ADC\_StartMeasurement()}{ADC\_StartMeasurement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} ADC\+\_\+\+Start\+Measurement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_a61bab45f4b213f650006bf33832105a1}{ADC\+\_\+\+Input\+\_\+t}}}]{input }\end{DoxyParamCaption})}
+
+
+
+Starts conversion of one ADC input. 
+
+input ADC Input \begin{DoxyReturn}{Returns}
+Status result 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{libleguan_2source_2peripherals_2internal_2adc_8c_source_l00072}{72}} of file \mbox{\hyperlink{libleguan_2source_2peripherals_2internal_2adc_8c_source}{adc.\+c}}.
+

@@ -1,0 +1,97 @@
+\hypertarget{stm32h7xx__hal__sdram_8h}{}\doxysection{C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.11.0/\+TRex/lib/hal/\+Drivers/\+STM32\+H7xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/stm32h7xx\+\_\+hal\+\_\+sdram.h File Reference}
+\label{stm32h7xx__hal__sdram_8h}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Drivers/STM32H7xx\_HAL\_Driver/Inc/stm32h7xx\_hal\_sdram.h@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Drivers/STM32H7xx\_HAL\_Driver/Inc/stm32h7xx\_hal\_sdram.h}}
+
+
+Header file of SDRAM HAL module.  
+
+
+{\ttfamily \#include \char`\"{}stm32h7xx\+\_\+ll\+\_\+fmc.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_d_r_a_m___handle_type_def}{SDRAM\+\_\+\+Handle\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em SDRAM handle Structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___s_d_r_a_m___exported___macros_gacfa9530e7b80eb08d5deb08daa214852}{\+\_\+\+\_\+\+HAL\+\_\+\+SDRAM\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bcabf18c1848d59dd697ed30f9b3c000246}{HAL\+\_\+\+SDRAM\+\_\+\+STATE\+\_\+\+RESET}})
+\begin{DoxyCompactList}\small\item\em Reset SDRAM handle state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___s_d_r_a_m___exported___types_ga92ac85154226aa980fe2d37db7d8f7bc}{HAL\+\_\+\+SDRAM\+\_\+\+State\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bcabf18c1848d59dd697ed30f9b3c000246}{HAL\+\_\+\+SDRAM\+\_\+\+STATE\+\_\+\+RESET}} = 0x00U
+, \mbox{\hyperlink{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bca0bb70c1c3b23d2a2a7e22bd9723cdb04}{HAL\+\_\+\+SDRAM\+\_\+\+STATE\+\_\+\+READY}} = 0x01U
+, \mbox{\hyperlink{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bcae2b3f18b2aba6c460a31caec2b330255}{HAL\+\_\+\+SDRAM\+\_\+\+STATE\+\_\+\+BUSY}} = 0x02U
+, \mbox{\hyperlink{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bca07b6f15c5b80007f9c91395b969ea041}{HAL\+\_\+\+SDRAM\+\_\+\+STATE\+\_\+\+ERROR}} = 0x03U
+, \newline
+\mbox{\hyperlink{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bcab9a47e39962fc355d17b5bbc3cd8e00b}{HAL\+\_\+\+SDRAM\+\_\+\+STATE\+\_\+\+WRITE\+\_\+\+PROTECTED}} = 0x04U
+, \mbox{\hyperlink{group___s_d_r_a_m___exported___types_gga92ac85154226aa980fe2d37db7d8f7bcad5d7951e99258494e70cc6284d87c72a}{HAL\+\_\+\+SDRAM\+\_\+\+STATE\+\_\+\+PRECHARGED}} = 0x05U
+ \}
+\begin{DoxyCompactList}\small\item\em HAL SDRAM State structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d_r_a_m___exported___functions___group1_gaa335e9a091994423896c8d5b2a6684f9}{HAL\+\_\+\+SDRAM\+\_\+\+Init}} (\mbox{\hyperlink{struct_s_d_r_a_m___handle_type_def}{SDRAM\+\_\+\+Handle\+Type\+Def}} $\ast$hsdram, \mbox{\hyperlink{struct_f_m_c___s_d_r_a_m___timing_type_def}{FMC\+\_\+\+SDRAM\+\_\+\+Timing\+Type\+Def}} $\ast$Timing)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d_r_a_m___exported___functions___group1_ga5842b6c476bd8864af5cb1813a88127f}{HAL\+\_\+\+SDRAM\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct_s_d_r_a_m___handle_type_def}{SDRAM\+\_\+\+Handle\+Type\+Def}} $\ast$hsdram)
+\item 
+void \mbox{\hyperlink{group___s_d_r_a_m___exported___functions___group1_ga8dc600b9ef6e5b3b1455840b86c25792}{HAL\+\_\+\+SDRAM\+\_\+\+Msp\+Init}} (\mbox{\hyperlink{struct_s_d_r_a_m___handle_type_def}{SDRAM\+\_\+\+Handle\+Type\+Def}} $\ast$hsdram)
+\item 
+void \mbox{\hyperlink{group___s_d_r_a_m___exported___functions___group1_ga8dc783011a4823088d2b8ce43f1c31d8}{HAL\+\_\+\+SDRAM\+\_\+\+Msp\+De\+Init}} (\mbox{\hyperlink{struct_s_d_r_a_m___handle_type_def}{SDRAM\+\_\+\+Handle\+Type\+Def}} $\ast$hsdram)
+\item 
+void \mbox{\hyperlink{group___s_d_r_a_m___exported___functions___group1_gab7f72c812cb534276e6ebb0e27d4a1ec}{HAL\+\_\+\+SDRAM\+\_\+\+IRQHandler}} (\mbox{\hyperlink{struct_s_d_r_a_m___handle_type_def}{SDRAM\+\_\+\+Handle\+Type\+Def}} $\ast$hsdram)
+\item 
+void \mbox{\hyperlink{group___s_d_r_a_m___exported___functions___group1_ga64f19dfae571fabe846ba41cc436963a}{HAL\+\_\+\+SDRAM\+\_\+\+Refresh\+Error\+Callback}} (\mbox{\hyperlink{struct_s_d_r_a_m___handle_type_def}{SDRAM\+\_\+\+Handle\+Type\+Def}} $\ast$hsdram)
+\item 
+void \mbox{\hyperlink{group___s_d_r_a_m___exported___functions___group1_ga4d2eb9eb16f1249acf10f67ce04b63cf}{HAL\+\_\+\+SDRAM\+\_\+\+DMA\+\_\+\+Xfer\+Cplt\+Callback}} (\mbox{\hyperlink{group___m_d_m_a___exported___types_gae8e2befd2f94de51db90261afd6bf701}{MDMA\+\_\+\+Handle\+Type\+Def}} $\ast$hmdma)
+\item 
+void \mbox{\hyperlink{group___s_d_r_a_m___exported___functions___group1_ga775ba77949a831367f9349d40a74cca3}{HAL\+\_\+\+SDRAM\+\_\+\+DMA\+\_\+\+Xfer\+Error\+Callback}} (\mbox{\hyperlink{group___m_d_m_a___exported___types_gae8e2befd2f94de51db90261afd6bf701}{MDMA\+\_\+\+Handle\+Type\+Def}} $\ast$hmdma)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d_r_a_m___exported___functions___group2_ga35cca16e3cdbe71a2c213264c9b9bf81}{HAL\+\_\+\+SDRAM\+\_\+\+Read\+\_\+8b}} (\mbox{\hyperlink{struct_s_d_r_a_m___handle_type_def}{SDRAM\+\_\+\+Handle\+Type\+Def}} $\ast$hsdram, uint32\+\_\+t $\ast$p\+Address, uint8\+\_\+t $\ast$p\+Dst\+Buffer, uint32\+\_\+t Buffer\+Size)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d_r_a_m___exported___functions___group2_ga7f718bd5dc458d80328ffe611b24c602}{HAL\+\_\+\+SDRAM\+\_\+\+Write\+\_\+8b}} (\mbox{\hyperlink{struct_s_d_r_a_m___handle_type_def}{SDRAM\+\_\+\+Handle\+Type\+Def}} $\ast$hsdram, uint32\+\_\+t $\ast$p\+Address, uint8\+\_\+t $\ast$p\+Src\+Buffer, uint32\+\_\+t Buffer\+Size)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d_r_a_m___exported___functions___group2_ga6205dcc8c3d305ce87833d0c47fbb984}{HAL\+\_\+\+SDRAM\+\_\+\+Read\+\_\+16b}} (\mbox{\hyperlink{struct_s_d_r_a_m___handle_type_def}{SDRAM\+\_\+\+Handle\+Type\+Def}} $\ast$hsdram, uint32\+\_\+t $\ast$p\+Address, uint16\+\_\+t $\ast$p\+Dst\+Buffer, uint32\+\_\+t Buffer\+Size)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d_r_a_m___exported___functions___group2_gafbd2eeaeb58bc4960a6f1f46829ce4ea}{HAL\+\_\+\+SDRAM\+\_\+\+Write\+\_\+16b}} (\mbox{\hyperlink{struct_s_d_r_a_m___handle_type_def}{SDRAM\+\_\+\+Handle\+Type\+Def}} $\ast$hsdram, uint32\+\_\+t $\ast$p\+Address, uint16\+\_\+t $\ast$p\+Src\+Buffer, uint32\+\_\+t Buffer\+Size)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d_r_a_m___exported___functions___group2_ga430830834a41dbcaf7cb6491d006d9f0}{HAL\+\_\+\+SDRAM\+\_\+\+Read\+\_\+32b}} (\mbox{\hyperlink{struct_s_d_r_a_m___handle_type_def}{SDRAM\+\_\+\+Handle\+Type\+Def}} $\ast$hsdram, uint32\+\_\+t $\ast$p\+Address, uint32\+\_\+t $\ast$p\+Dst\+Buffer, uint32\+\_\+t Buffer\+Size)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d_r_a_m___exported___functions___group2_ga992bd5aa0550b62551437f433f091d22}{HAL\+\_\+\+SDRAM\+\_\+\+Write\+\_\+32b}} (\mbox{\hyperlink{struct_s_d_r_a_m___handle_type_def}{SDRAM\+\_\+\+Handle\+Type\+Def}} $\ast$hsdram, uint32\+\_\+t $\ast$p\+Address, uint32\+\_\+t $\ast$p\+Src\+Buffer, uint32\+\_\+t Buffer\+Size)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d_r_a_m___exported___functions___group2_ga70e0327de061b9428dfcdb6d28127523}{HAL\+\_\+\+SDRAM\+\_\+\+Read\+\_\+\+DMA}} (\mbox{\hyperlink{struct_s_d_r_a_m___handle_type_def}{SDRAM\+\_\+\+Handle\+Type\+Def}} $\ast$hsdram, uint32\+\_\+t $\ast$p\+Address, uint32\+\_\+t $\ast$p\+Dst\+Buffer, uint32\+\_\+t Buffer\+Size)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d_r_a_m___exported___functions___group2_ga643d9e71b6fadef948dede0d86a9cbc1}{HAL\+\_\+\+SDRAM\+\_\+\+Write\+\_\+\+DMA}} (\mbox{\hyperlink{struct_s_d_r_a_m___handle_type_def}{SDRAM\+\_\+\+Handle\+Type\+Def}} $\ast$hsdram, uint32\+\_\+t $\ast$p\+Address, uint32\+\_\+t $\ast$p\+Src\+Buffer, uint32\+\_\+t Buffer\+Size)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d_r_a_m___exported___functions___group3_ga643cf17db1cc59cb56e83bff055cb7a4}{HAL\+\_\+\+SDRAM\+\_\+\+Write\+Protection\+\_\+\+Enable}} (\mbox{\hyperlink{struct_s_d_r_a_m___handle_type_def}{SDRAM\+\_\+\+Handle\+Type\+Def}} $\ast$hsdram)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d_r_a_m___exported___functions___group3_ga9500f5435e3cd2ad7fc9e0598b0d8ecb}{HAL\+\_\+\+SDRAM\+\_\+\+Write\+Protection\+\_\+\+Disable}} (\mbox{\hyperlink{struct_s_d_r_a_m___handle_type_def}{SDRAM\+\_\+\+Handle\+Type\+Def}} $\ast$hsdram)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d_r_a_m___exported___functions___group3_ga31872ee3c79ca7f47964ed6b6cc6f980}{HAL\+\_\+\+SDRAM\+\_\+\+Send\+Command}} (\mbox{\hyperlink{struct_s_d_r_a_m___handle_type_def}{SDRAM\+\_\+\+Handle\+Type\+Def}} $\ast$hsdram, \mbox{\hyperlink{struct_f_m_c___s_d_r_a_m___command_type_def}{FMC\+\_\+\+SDRAM\+\_\+\+Command\+Type\+Def}} $\ast$Command, uint32\+\_\+t Timeout)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d_r_a_m___exported___functions___group3_gadd81ad682c251372c69e69dd1bdd758a}{HAL\+\_\+\+SDRAM\+\_\+\+Program\+Refresh\+Rate}} (\mbox{\hyperlink{struct_s_d_r_a_m___handle_type_def}{SDRAM\+\_\+\+Handle\+Type\+Def}} $\ast$hsdram, uint32\+\_\+t Refresh\+Rate)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___s_d_r_a_m___exported___functions___group3_gabc6e85bb5113a9da3910292650c9bceb}{HAL\+\_\+\+SDRAM\+\_\+\+Set\+Auto\+Refresh\+Number}} (\mbox{\hyperlink{struct_s_d_r_a_m___handle_type_def}{SDRAM\+\_\+\+Handle\+Type\+Def}} $\ast$hsdram, uint32\+\_\+t Auto\+Refresh\+Number)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group___s_d_r_a_m___exported___functions___group3_gada934dbda1978caa69d7d25418dea979}{HAL\+\_\+\+SDRAM\+\_\+\+Get\+Mode\+Status}} (\mbox{\hyperlink{struct_s_d_r_a_m___handle_type_def}{SDRAM\+\_\+\+Handle\+Type\+Def}} $\ast$hsdram)
+\item 
+\mbox{\hyperlink{group___s_d_r_a_m___exported___types_ga92ac85154226aa980fe2d37db7d8f7bc}{HAL\+\_\+\+SDRAM\+\_\+\+State\+Type\+Def}} \mbox{\hyperlink{group___s_d_r_a_m___exported___functions___group4_gafe3b73d5b755369d0796fd0d36868f7e}{HAL\+\_\+\+SDRAM\+\_\+\+Get\+State}} (\mbox{\hyperlink{struct_s_d_r_a_m___handle_type_def}{SDRAM\+\_\+\+Handle\+Type\+Def}} $\ast$hsdram)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of SDRAM HAL module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2017 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under BSD 3-\/Clause license, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: opensource.\+org/licenses/\+BSD-\/3-\/\+Clause 
+
+Definition in file \mbox{\hyperlink{stm32h7xx__hal__sdram_8h_source}{stm32h7xx\+\_\+hal\+\_\+sdram.\+h}}.
+

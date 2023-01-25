@@ -1,0 +1,101 @@
+\hypertarget{hal_2_core_2_src_2dac_8c_source}{}\doxysection{dac.\+c}
+\label{hal_2_core_2_src_2dac_8c_source}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Core/Src/dac.c@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Core/Src/dac.c}}
+\mbox{\hyperlink{hal_2_core_2_src_2dac_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00020}00020\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}dac.h"{}}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00023}00023\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00025}00025\ \textcolor{comment}{/*\ USER\ CODE\ END\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00027}\mbox{\hyperlink{hal_2_core_2_inc_2dac_8h_aa25a57382819e79fbde3687939c0fd0b}{00027}}\ DAC\_HandleTypeDef\ \mbox{\hyperlink{hal_2_core_2_src_2dac_8c_aa25a57382819e79fbde3687939c0fd0b}{hdac1}};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00029}00029\ \textcolor{comment}{/*\ DAC1\ init\ function\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00030}\mbox{\hyperlink{hal_2_core_2_inc_2dac_8h_a412c7f55d05196232830230c74d702b2}{00030}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{hal_2_core_2_src_2dac_8c_a412c7f55d05196232830230c74d702b2}{MX\_DAC1\_Init}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00031}00031\ \{}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00033}00033\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ DAC1\_Init\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00035}00035\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ DAC1\_Init\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00037}00037\ \ \ DAC\_ChannelConfTypeDef\ sConfig\ =\ \{0\};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00039}00039\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ DAC1\_Init\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00041}00041\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ DAC1\_Init\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00044}00044\ \ \ \mbox{\hyperlink{hal_2_core_2_src_2dac_8c_aa25a57382819e79fbde3687939c0fd0b}{hdac1}}.Instance\ =\ \mbox{\hyperlink{group___peripheral__declaration_gaffb5ff8779fa698f3c7165a617d56e4f}{DAC1}};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00045}00045\ \ \ \textcolor{keywordflow}{if}\ (HAL\_DAC\_Init(\&\mbox{\hyperlink{hal_2_core_2_src_2dac_8c_aa25a57382819e79fbde3687939c0fd0b}{hdac1}})\ !=\ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}})}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00046}00046\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00047}00047\ \ \ \ \ \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\_Handler}}();}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00048}00048\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00051}00051\ \ \ sConfig.DAC\_SampleAndHold\ =\ DAC\_SAMPLEANDHOLD\_DISABLE;}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00052}00052\ \ \ sConfig.DAC\_Trigger\ =\ DAC\_TRIGGER\_NONE;}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00053}00053\ \ \ sConfig.DAC\_OutputBuffer\ =\ DAC\_OUTPUTBUFFER\_ENABLE;}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00054}00054\ \ \ sConfig.DAC\_ConnectOnChipPeripheral\ =\ DAC\_CHIPCONNECT\_DISABLE;}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00055}00055\ \ \ sConfig.DAC\_UserTrimming\ =\ DAC\_TRIMMING\_FACTORY;}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00056}00056\ \ \ \textcolor{keywordflow}{if}\ (HAL\_DAC\_ConfigChannel(\&\mbox{\hyperlink{hal_2_core_2_src_2dac_8c_aa25a57382819e79fbde3687939c0fd0b}{hdac1}},\ \&sConfig,\ DAC\_CHANNEL\_1)\ !=\ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}})}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00057}00057\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00058}00058\ \ \ \ \ \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\_Handler}}();}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00059}00059\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00062}00062\ \ \ \textcolor{keywordflow}{if}\ (HAL\_DAC\_ConfigChannel(\&\mbox{\hyperlink{hal_2_core_2_src_2dac_8c_aa25a57382819e79fbde3687939c0fd0b}{hdac1}},\ \&sConfig,\ DAC\_CHANNEL\_2)\ !=\ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}})}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00063}00063\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00064}00064\ \ \ \ \ \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\_Handler}}();}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00065}00065\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00066}00066\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ DAC1\_Init\ 2\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00068}00068\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ DAC1\_Init\ 2\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00070}00070\ \}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00072}\mbox{\hyperlink{hal_2_core_2_src_2dac_8c_a8e4797900d3cb9171a484f2b955aba87}{00072}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{hal_2_core_2_src_2dac_8c_a8e4797900d3cb9171a484f2b955aba87}{HAL\_DAC\_MspInit}}(DAC\_HandleTypeDef*\ dacHandle)}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00073}00073\ \{}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00075}00075\ \ \ \mbox{\hyperlink{struct_g_p_i_o___init_type_def}{GPIO\_InitTypeDef}}\ GPIO\_InitStruct\ =\ \{0\};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00076}00076\ \ \ \textcolor{keywordflow}{if}(dacHandle-\/>Instance==\mbox{\hyperlink{group___peripheral__declaration_gaffb5ff8779fa698f3c7165a617d56e4f}{DAC1}})}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00077}00077\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00078}00078\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ DAC1\_MspInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00080}00080\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ DAC1\_MspInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00081}00081\ \ \ \ \ \textcolor{comment}{/*\ DAC1\ clock\ enable\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00082}00082\ \ \ \ \ \mbox{\hyperlink{group___r_c_c___exported___macros_ga7b3fd516eb04132930f2ac69b80eef6c}{\_\_HAL\_RCC\_DAC12\_CLK\_ENABLE}}();}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00084}00084\ \ \ \ \ \mbox{\hyperlink{group___r_c_c___exported___macros_ga1fde58d775fd2458002df817a68f486e}{\_\_HAL\_RCC\_GPIOA\_CLK\_ENABLE}}();}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00089}00089\ \ \ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_a871d0ab74071724e96b7cc9ae2a7532b}{Pin}}\ =\ \mbox{\hyperlink{group___g_p_i_o__pins__define_gab3871e35868deecd260e586ad70d4b83}{GPIO\_PIN\_4}}|\mbox{\hyperlink{group___g_p_i_o__pins__define_ga01cc9ed93f6fd12fd3403362779aaa18}{GPIO\_PIN\_5}};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00090}00090\ \ \ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_a0ffc93ec511ed9cf1663f6939bd3e839}{Mode}}\ =\ \mbox{\hyperlink{group___g_p_i_o__mode__define_ga7a04f9ab65ad572ad20791a35009220c}{GPIO\_MODE\_ANALOG}};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00091}00091\ \ \ \ \ GPIO\_InitStruct.\mbox{\hyperlink{struct_g_p_i_o___init_type_def_a6cdde08eb507b710f8179a4326548e26}{Pull}}\ =\ \mbox{\hyperlink{group___g_p_i_o__pull__define_ga5c2862579882c1cc64e36d38fbd07a4c}{GPIO\_NOPULL}};}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00092}00092\ \ \ \ \ \mbox{\hyperlink{group___g_p_i_o___exported___functions___group1_ga41bda93b6dd639e4905fdb1454eff98e}{HAL\_GPIO\_Init}}(\mbox{\hyperlink{group___peripheral__declaration_gac485358099728ddae050db37924dd6b7}{GPIOA}},\ \&GPIO\_InitStruct);}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00094}00094\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ DAC1\_MspInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00096}00096\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ DAC1\_MspInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00097}00097\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00098}00098\ \}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00100}\mbox{\hyperlink{hal_2_core_2_src_2dac_8c_a13b8fa4f908f78040536cc8cfc99231e}{00100}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{hal_2_core_2_src_2dac_8c_a13b8fa4f908f78040536cc8cfc99231e}{HAL\_DAC\_MspDeInit}}(DAC\_HandleTypeDef*\ dacHandle)}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00101}00101\ \{}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00103}00103\ \ \ \textcolor{keywordflow}{if}(dacHandle-\/>Instance==\mbox{\hyperlink{group___peripheral__declaration_gaffb5ff8779fa698f3c7165a617d56e4f}{DAC1}})}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00104}00104\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00105}00105\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ DAC1\_MspDeInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00107}00107\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ DAC1\_MspDeInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00108}00108\ \ \ \ \ \textcolor{comment}{/*\ Peripheral\ clock\ disable\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00109}00109\ \ \ \ \ \mbox{\hyperlink{group___r_c_c___exported___macros_gaa0a717493fc9dac209bc1fcd46ac451d}{\_\_HAL\_RCC\_DAC12\_CLK\_DISABLE}}();}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00115}00115\ \ \ \ \ \mbox{\hyperlink{group___g_p_i_o___exported___functions___group1_gafe9c756b5aa18961032a3f8aa572959b}{HAL\_GPIO\_DeInit}}(\mbox{\hyperlink{group___peripheral__declaration_gac485358099728ddae050db37924dd6b7}{GPIOA}},\ \mbox{\hyperlink{group___g_p_i_o__pins__define_gab3871e35868deecd260e586ad70d4b83}{GPIO\_PIN\_4}}|\mbox{\hyperlink{group___g_p_i_o__pins__define_ga01cc9ed93f6fd12fd3403362779aaa18}{GPIO\_PIN\_5}});}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00117}00117\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ DAC1\_MspDeInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00119}00119\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ DAC1\_MspDeInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00120}00120\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00121}00121\ \}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00123}00123\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00125}00125\ \textcolor{comment}{/*\ USER\ CODE\ END\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{hal_2_core_2_src_2dac_8c_source_l00127}00127\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

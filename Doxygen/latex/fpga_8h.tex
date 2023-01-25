@@ -1,0 +1,628 @@
+\hypertarget{fpga_8h}{}\doxysection{C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.11.0/\+TRex/lib/libleguan/include/peripherals/external/fpga.h File Reference}
+\label{fpga_8h}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/peripherals/external/fpga.h@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/peripherals/external/fpga.h}}
+
+
+FPGA MMIO Registers.  
+
+
+{\ttfamily \#include \char`\"{}common/types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/attributes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/mmio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/color.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_p_a_c_k_e_d}{PACKED}}
+\item 
+struct \mbox{\hyperlink{struct_l_e_g_u_a_n___p_a_c_k_e_d}{LEGUAN\+\_\+\+PACKED}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{fpga_8h_acba2f920ad5d6b06d75e3d000c41f26e}{FPGA\+\_\+\+BASE\+\_\+\+ADDRESS}}~0x\+C8000000
+\item 
+\#define \mbox{\hyperlink{fpga_8h_abace4ae0469107c97405019fb48c4866}{FPGA}}~\mbox{\hyperlink{mmio_8h_a62a7a2312d093edc021ee29a48a6b5b9}{MMIO\+\_\+\+MAP}}(\mbox{\hyperlink{fpga_8h_acba2f920ad5d6b06d75e3d000c41f26e}{FPGA\+\_\+\+BASE\+\_\+\+ADDRESS}}, \mbox{\hyperlink{fpga_8h_a268c1b810ceb126dcc92ea1f8f10e683}{FPGA\+\_\+\+Memory\+Map\+\_\+t}})
+\item 
+\#define \mbox{\hyperlink{fpga_8h_a237d2b477f9af5c33d971a5d1c720033}{FPGA\+\_\+\+RGB\+\_\+\+LED\+\_\+\+MATRIX\+\_\+\+WIDTH}}~11
+\item 
+\#define \mbox{\hyperlink{fpga_8h_a2a49bf4e4301f1b64ff4bbfd4eb6a66e}{FPGA\+\_\+\+RGB\+\_\+\+LED\+\_\+\+MATRIX\+\_\+\+HEIGHT}}~10
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{struct_b_g_r1__t}{BGR1\+\_\+t}} \mbox{\hyperlink{fpga_8h_a97eb69ba466592c0ae94a825ed04ba3a}{FPGA\+\_\+\+Matrix\+Color\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_p_a_c_k_e_d}{PACKED}} \mbox{\hyperlink{fpga_8h_a3d455b2ee342f3cf74dd3a95347769ed}{FPGA\+\_\+\+Packed7\+Segment\+Register\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_l_e_g_u_a_n___p_a_c_k_e_d}{LEGUAN\+\_\+\+PACKED}} \mbox{\hyperlink{fpga_8h_ad0ed9c1099184e8b254ff243a5c4d03a}{FPGA\+\_\+\+Decimal\+Point\+Register\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_l_e_g_u_a_n___p_a_c_k_e_d}{LEGUAN\+\_\+\+PACKED}} \mbox{\hyperlink{fpga_8h_a365db8785663ec52d718ee83d116b773}{FPGA\+\_\+\+DIPSwitch\+Register\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_l_e_g_u_a_n___p_a_c_k_e_d}{LEGUAN\+\_\+\+PACKED}} \mbox{\hyperlink{fpga_8h_a13c0bdf679f391457889c656378549b4}{FPGA\+\_\+\+Buttons\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_l_e_g_u_a_n___p_a_c_k_e_d}{LEGUAN\+\_\+\+PACKED}} \mbox{\hyperlink{fpga_8h_a7a191632e8d2e0ee39d9ae4899f26629}{FPGA\+\_\+\+RGBLine\+Register\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_l_e_g_u_a_n___p_a_c_k_e_d}{LEGUAN\+\_\+\+PACKED}} \mbox{\hyperlink{fpga_8h_a9ac0dcb85415f37a792edce257fe8a4f}{FPGA\+\_\+\+RGPPixel\+Register\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_l_e_g_u_a_n___p_a_c_k_e_d}{LEGUAN\+\_\+\+PACKED}} \mbox{\hyperlink{fpga_8h_a268c1b810ceb126dcc92ea1f8f10e683}{FPGA\+\_\+\+Memory\+Map\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1}{FPGA\+\_\+\+Button\+\_\+t}} \{ \newline
+\mbox{\hyperlink{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1a0ea3eba10a2b3a971a7aff27a6adf511}{Button0}} = 0
+, \mbox{\hyperlink{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1ada3f5f2f2cdc3f0ab1e0a6ad2c361632}{Button1}} = 1
+, \mbox{\hyperlink{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1a9e0a460705b50db7ff0d129061b61d56}{Button2}} = 2
+, \mbox{\hyperlink{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1ab100ff4682bf05e56b66085f3e53d640}{Button3}} = 3
+, \newline
+\mbox{\hyperlink{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1a68738cc2a2742b60ce5f75f8fa0a1674}{Joystick\+North}} = 4
+, \mbox{\hyperlink{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1abf6607d595835d61272267c141cd4fa0}{Joystick\+East}} = 5
+, \mbox{\hyperlink{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1ab861c3e71e00017ed4c853b5b6afa9c6}{Joystick\+South}} = 6
+, \mbox{\hyperlink{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1af63b949b1b55119eee3f1e3dc7d2f380}{Joystick\+West}} = 7
+, \newline
+\mbox{\hyperlink{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1adfa6ee60c1d4af833a02fdd56a32a8b6}{Joystick\+Center}} = 8
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{fpga_8h_acfe196610727ad70fcd0f6a621b65b80}{FPGA\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the FPGA peripheral. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{fpga_8h_aa870e49425cbd96ec9c09b73ea79373a}{FPGA\+\_\+\+Reset}} (void)
+\begin{DoxyCompactList}\small\item\em Resets all FPGA registers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{fpga_8h_a4a2c9b23065889317f2e2f04f00e0e89}{FPGA\+\_\+7\+Seg\+Display\+Decimal}} (uint16\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Displays a decimal value between 0 and 9999 on the 7 Segments. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{fpga_8h_a3e8371e92939fd4e89b4a31dc63df5d2}{FPGA\+\_\+7\+Seg\+Display\+Float}} (\mbox{\hyperlink{types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} value, uint8\+\_\+t precision)
+\begin{DoxyCompactList}\small\item\em Displays a floating point value on the 7 Segments. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{fpga_8h_a20b6e43aef863a1a2aa8573a6f047e5a}{FPGA\+\_\+7\+Seg\+Display\+Hexadecimal}} (uint16\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Displays a hexadecimal value between 0x00 and 0x\+FFFF on the 7 Segments. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{fpga_8h_a08500f77e69acf8b701880048532d8a2}{FPGA\+\_\+\+DIPGet\+Left}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the value of the left DIP switches. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{fpga_8h_a66a47e3e5e03c9ad2543c4c1912793fa}{FPGA\+\_\+\+DIPGet\+Right}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the value of the right DIP switches. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{fpga_8h_adfdb85c4ea74b1722082e3a1d9477b87}{FPGA\+\_\+\+DIPUnmask\+On\+IRQ}} (uint8\+\_\+t switch\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Unmasks (enables) the \char`\"{}switch moved to ON position\char`\"{} interrupt for one switch. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{fpga_8h_a6dd8da73b9f1994ed0aeebb505879bd3}{FPGA\+\_\+\+DIPUnmask\+Off\+IRQ}} (uint8\+\_\+t switch\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Unmasks (enables) the \char`\"{}switch moved to OFF position\char`\"{} interrupt for one switch. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{fpga_8h_adc504d13027044b17a279c864064d436}{FPGA\+\_\+\+DIPMask\+On\+IRQ}} (uint8\+\_\+t switch\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Masks (disables) the \char`\"{}switch moved to ON position\char`\"{} interrupt for one switch. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{fpga_8h_af23bd50e57ede4e18d39ec23934de5ef}{FPGA\+\_\+\+DIPMask\+Off\+IRQ}} (uint8\+\_\+t switch\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Masks (disables) the \char`\"{}switch moved to OFF position\char`\"{} interrupt for one switch. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{fpga_8h_aaa57255f8e98ac0e52ee032d2534bea1}{FPGA\+\_\+\+Get\+Button}} (\mbox{\hyperlink{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1}{FPGA\+\_\+\+Button\+\_\+t}} button)
+\begin{DoxyCompactList}\small\item\em Queries the state of a button or the joystick. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{fpga_8h_a2aeae904599c002457d7c55a2f9d2cca}{FPGA\+\_\+\+Button\+Unmask\+Press\+IRQ}} (\mbox{\hyperlink{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1}{FPGA\+\_\+\+Button\+\_\+t}} button)
+\begin{DoxyCompactList}\small\item\em Unmasks (enables) the \char`\"{}button pressed\char`\"{} interrupt for one button. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{fpga_8h_a2777595ef5a74632e84325297b8728be}{FPGA\+\_\+\+Button\+Unmask\+Release\+IRQ}} (\mbox{\hyperlink{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1}{FPGA\+\_\+\+Button\+\_\+t}} button)
+\begin{DoxyCompactList}\small\item\em Unmasks (enables) the \char`\"{}button released\char`\"{} interrupt for one button. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{fpga_8h_ab39ebbd0a17f7e65efcff98237bc3d65}{FPGA\+\_\+\+Button\+Mask\+Press\+IRQ}} (\mbox{\hyperlink{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1}{FPGA\+\_\+\+Button\+\_\+t}} button)
+\begin{DoxyCompactList}\small\item\em Masks (disables) the \char`\"{}button pressed\char`\"{} interrupt for one switch. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{fpga_8h_a527f28099d51aed3ca6d54622dd380cf}{FPGA\+\_\+\+Button\+Mask\+Release\+IRQ}} (\mbox{\hyperlink{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1}{FPGA\+\_\+\+Button\+\_\+t}} button)
+\begin{DoxyCompactList}\small\item\em Masks (disables) the \char`\"{}button released\char`\"{} interrupt for one switch. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{fpga_8h_a6879a6b628974d01a7d7b817310a4591}{FPGA\+\_\+\+Get\+Scanning\+Divider}} (void)
+\begin{DoxyCompactList}\small\item\em Get the current button scanning divider. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fpga_8h_a5eca0be6328d5d5891e34131f1d745ca}{FPGA\+\_\+\+Set\+Scanning\+Divider}} (uint16\+\_\+t divider)
+\begin{DoxyCompactList}\small\item\em Sets teh button scanning divider. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{fpga_8h_ab524bef8e7a6a6f78a05881bd316c751}{FPGA\+\_\+\+Matrix\+Set\+Pixel}} (uint8\+\_\+t x, uint8\+\_\+t y, \mbox{\hyperlink{color_8h_aea9a7472d9d5ba4e6a83791ad629e047}{color\+\_\+t}} color)
+\begin{DoxyCompactList}\small\item\em Sets the color of one pixel on the RGB LED Matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+FPGA MMIO Registers. 
+
+\begin{DoxyAuthor}{Author}
+Nikolaij Saegesser 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{fpga_8h_source}{fpga.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{fpga_8h_abace4ae0469107c97405019fb48c4866}\label{fpga_8h_abace4ae0469107c97405019fb48c4866}} 
+\index{fpga.h@{fpga.h}!FPGA@{FPGA}}
+\index{FPGA@{FPGA}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA}{FPGA}}
+{\footnotesize\ttfamily \#define FPGA~\mbox{\hyperlink{mmio_8h_a62a7a2312d093edc021ee29a48a6b5b9}{MMIO\+\_\+\+MAP}}(\mbox{\hyperlink{fpga_8h_acba2f920ad5d6b06d75e3d000c41f26e}{FPGA\+\_\+\+BASE\+\_\+\+ADDRESS}}, \mbox{\hyperlink{fpga_8h_a268c1b810ceb126dcc92ea1f8f10e683}{FPGA\+\_\+\+Memory\+Map\+\_\+t}})}
+
+
+
+Definition at line \mbox{\hyperlink{fpga_8h_source_l00045}{45}} of file \mbox{\hyperlink{fpga_8h_source}{fpga.\+h}}.
+
+\mbox{\Hypertarget{fpga_8h_acba2f920ad5d6b06d75e3d000c41f26e}\label{fpga_8h_acba2f920ad5d6b06d75e3d000c41f26e}} 
+\index{fpga.h@{fpga.h}!FPGA\_BASE\_ADDRESS@{FPGA\_BASE\_ADDRESS}}
+\index{FPGA\_BASE\_ADDRESS@{FPGA\_BASE\_ADDRESS}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_BASE\_ADDRESS}{FPGA\_BASE\_ADDRESS}}
+{\footnotesize\ttfamily \#define FPGA\+\_\+\+BASE\+\_\+\+ADDRESS~0x\+C8000000}
+
+
+
+Definition at line \mbox{\hyperlink{fpga_8h_source_l00043}{43}} of file \mbox{\hyperlink{fpga_8h_source}{fpga.\+h}}.
+
+\mbox{\Hypertarget{fpga_8h_a2a49bf4e4301f1b64ff4bbfd4eb6a66e}\label{fpga_8h_a2a49bf4e4301f1b64ff4bbfd4eb6a66e}} 
+\index{fpga.h@{fpga.h}!FPGA\_RGB\_LED\_MATRIX\_HEIGHT@{FPGA\_RGB\_LED\_MATRIX\_HEIGHT}}
+\index{FPGA\_RGB\_LED\_MATRIX\_HEIGHT@{FPGA\_RGB\_LED\_MATRIX\_HEIGHT}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_RGB\_LED\_MATRIX\_HEIGHT}{FPGA\_RGB\_LED\_MATRIX\_HEIGHT}}
+{\footnotesize\ttfamily \#define FPGA\+\_\+\+RGB\+\_\+\+LED\+\_\+\+MATRIX\+\_\+\+HEIGHT~10}
+
+
+
+Definition at line \mbox{\hyperlink{fpga_8h_source_l00049}{49}} of file \mbox{\hyperlink{fpga_8h_source}{fpga.\+h}}.
+
+\mbox{\Hypertarget{fpga_8h_a237d2b477f9af5c33d971a5d1c720033}\label{fpga_8h_a237d2b477f9af5c33d971a5d1c720033}} 
+\index{fpga.h@{fpga.h}!FPGA\_RGB\_LED\_MATRIX\_WIDTH@{FPGA\_RGB\_LED\_MATRIX\_WIDTH}}
+\index{FPGA\_RGB\_LED\_MATRIX\_WIDTH@{FPGA\_RGB\_LED\_MATRIX\_WIDTH}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_RGB\_LED\_MATRIX\_WIDTH}{FPGA\_RGB\_LED\_MATRIX\_WIDTH}}
+{\footnotesize\ttfamily \#define FPGA\+\_\+\+RGB\+\_\+\+LED\+\_\+\+MATRIX\+\_\+\+WIDTH~11}
+
+
+
+Definition at line \mbox{\hyperlink{fpga_8h_source_l00048}{48}} of file \mbox{\hyperlink{fpga_8h_source}{fpga.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{fpga_8h_a13c0bdf679f391457889c656378549b4}\label{fpga_8h_a13c0bdf679f391457889c656378549b4}} 
+\index{fpga.h@{fpga.h}!FPGA\_Buttons\_t@{FPGA\_Buttons\_t}}
+\index{FPGA\_Buttons\_t@{FPGA\_Buttons\_t}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_Buttons\_t}{FPGA\_Buttons\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_l_e_g_u_a_n___p_a_c_k_e_d}{LEGUAN\+\_\+\+PACKED}} \mbox{\hyperlink{fpga_8h_a13c0bdf679f391457889c656378549b4}{FPGA\+\_\+\+Buttons\+\_\+t}}}
+
+\mbox{\Hypertarget{fpga_8h_ad0ed9c1099184e8b254ff243a5c4d03a}\label{fpga_8h_ad0ed9c1099184e8b254ff243a5c4d03a}} 
+\index{fpga.h@{fpga.h}!FPGA\_DecimalPointRegister\_t@{FPGA\_DecimalPointRegister\_t}}
+\index{FPGA\_DecimalPointRegister\_t@{FPGA\_DecimalPointRegister\_t}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_DecimalPointRegister\_t}{FPGA\_DecimalPointRegister\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_l_e_g_u_a_n___p_a_c_k_e_d}{LEGUAN\+\_\+\+PACKED}} \mbox{\hyperlink{fpga_8h_ad0ed9c1099184e8b254ff243a5c4d03a}{FPGA\+\_\+\+Decimal\+Point\+Register\+\_\+t}}}
+
+\mbox{\Hypertarget{fpga_8h_a365db8785663ec52d718ee83d116b773}\label{fpga_8h_a365db8785663ec52d718ee83d116b773}} 
+\index{fpga.h@{fpga.h}!FPGA\_DIPSwitchRegister\_t@{FPGA\_DIPSwitchRegister\_t}}
+\index{FPGA\_DIPSwitchRegister\_t@{FPGA\_DIPSwitchRegister\_t}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_DIPSwitchRegister\_t}{FPGA\_DIPSwitchRegister\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_l_e_g_u_a_n___p_a_c_k_e_d}{LEGUAN\+\_\+\+PACKED}} \mbox{\hyperlink{fpga_8h_a365db8785663ec52d718ee83d116b773}{FPGA\+\_\+\+DIPSwitch\+Register\+\_\+t}}}
+
+\mbox{\Hypertarget{fpga_8h_a97eb69ba466592c0ae94a825ed04ba3a}\label{fpga_8h_a97eb69ba466592c0ae94a825ed04ba3a}} 
+\index{fpga.h@{fpga.h}!FPGA\_MatrixColor\_t@{FPGA\_MatrixColor\_t}}
+\index{FPGA\_MatrixColor\_t@{FPGA\_MatrixColor\_t}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_MatrixColor\_t}{FPGA\_MatrixColor\_t}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{struct_b_g_r1__t}{BGR1\+\_\+t}} \mbox{\hyperlink{fpga_8h_a97eb69ba466592c0ae94a825ed04ba3a}{FPGA\+\_\+\+Matrix\+Color\+\_\+t}}}
+
+
+
+Definition at line \mbox{\hyperlink{fpga_8h_source_l00053}{53}} of file \mbox{\hyperlink{fpga_8h_source}{fpga.\+h}}.
+
+\mbox{\Hypertarget{fpga_8h_a268c1b810ceb126dcc92ea1f8f10e683}\label{fpga_8h_a268c1b810ceb126dcc92ea1f8f10e683}} 
+\index{fpga.h@{fpga.h}!FPGA\_MemoryMap\_t@{FPGA\_MemoryMap\_t}}
+\index{FPGA\_MemoryMap\_t@{FPGA\_MemoryMap\_t}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_MemoryMap\_t}{FPGA\_MemoryMap\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_l_e_g_u_a_n___p_a_c_k_e_d}{LEGUAN\+\_\+\+PACKED}} \mbox{\hyperlink{fpga_8h_a268c1b810ceb126dcc92ea1f8f10e683}{FPGA\+\_\+\+Memory\+Map\+\_\+t}}}
+
+\mbox{\Hypertarget{fpga_8h_a3d455b2ee342f3cf74dd3a95347769ed}\label{fpga_8h_a3d455b2ee342f3cf74dd3a95347769ed}} 
+\index{fpga.h@{fpga.h}!FPGA\_Packed7SegmentRegister\_t@{FPGA\_Packed7SegmentRegister\_t}}
+\index{FPGA\_Packed7SegmentRegister\_t@{FPGA\_Packed7SegmentRegister\_t}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_Packed7SegmentRegister\_t}{FPGA\_Packed7SegmentRegister\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_p_a_c_k_e_d}{PACKED}} \mbox{\hyperlink{fpga_8h_a3d455b2ee342f3cf74dd3a95347769ed}{FPGA\+\_\+\+Packed7\+Segment\+Register\+\_\+t}}}
+
+\mbox{\Hypertarget{fpga_8h_a7a191632e8d2e0ee39d9ae4899f26629}\label{fpga_8h_a7a191632e8d2e0ee39d9ae4899f26629}} 
+\index{fpga.h@{fpga.h}!FPGA\_RGBLineRegister\_t@{FPGA\_RGBLineRegister\_t}}
+\index{FPGA\_RGBLineRegister\_t@{FPGA\_RGBLineRegister\_t}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_RGBLineRegister\_t}{FPGA\_RGBLineRegister\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_l_e_g_u_a_n___p_a_c_k_e_d}{LEGUAN\+\_\+\+PACKED}} \mbox{\hyperlink{fpga_8h_a7a191632e8d2e0ee39d9ae4899f26629}{FPGA\+\_\+\+RGBLine\+Register\+\_\+t}}}
+
+\mbox{\Hypertarget{fpga_8h_a9ac0dcb85415f37a792edce257fe8a4f}\label{fpga_8h_a9ac0dcb85415f37a792edce257fe8a4f}} 
+\index{fpga.h@{fpga.h}!FPGA\_RGPPixelRegister\_t@{FPGA\_RGPPixelRegister\_t}}
+\index{FPGA\_RGPPixelRegister\_t@{FPGA\_RGPPixelRegister\_t}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_RGPPixelRegister\_t}{FPGA\_RGPPixelRegister\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_l_e_g_u_a_n___p_a_c_k_e_d}{LEGUAN\+\_\+\+PACKED}} \mbox{\hyperlink{fpga_8h_a9ac0dcb85415f37a792edce257fe8a4f}{FPGA\+\_\+\+RGPPixel\+Register\+\_\+t}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1}\label{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1}} 
+\index{fpga.h@{fpga.h}!FPGA\_Button\_t@{FPGA\_Button\_t}}
+\index{FPGA\_Button\_t@{FPGA\_Button\_t}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_Button\_t}{FPGA\_Button\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1}{FPGA\+\_\+\+Button\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Button0@{Button0}!fpga.h@{fpga.h}}\index{fpga.h@{fpga.h}!Button0@{Button0}}}\mbox{\Hypertarget{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1a0ea3eba10a2b3a971a7aff27a6adf511}\label{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1a0ea3eba10a2b3a971a7aff27a6adf511}} 
+Button0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Button1@{Button1}!fpga.h@{fpga.h}}\index{fpga.h@{fpga.h}!Button1@{Button1}}}\mbox{\Hypertarget{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1ada3f5f2f2cdc3f0ab1e0a6ad2c361632}\label{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1ada3f5f2f2cdc3f0ab1e0a6ad2c361632}} 
+Button1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Button2@{Button2}!fpga.h@{fpga.h}}\index{fpga.h@{fpga.h}!Button2@{Button2}}}\mbox{\Hypertarget{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1a9e0a460705b50db7ff0d129061b61d56}\label{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1a9e0a460705b50db7ff0d129061b61d56}} 
+Button2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Button3@{Button3}!fpga.h@{fpga.h}}\index{fpga.h@{fpga.h}!Button3@{Button3}}}\mbox{\Hypertarget{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1ab100ff4682bf05e56b66085f3e53d640}\label{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1ab100ff4682bf05e56b66085f3e53d640}} 
+Button3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickNorth@{JoystickNorth}!fpga.h@{fpga.h}}\index{fpga.h@{fpga.h}!JoystickNorth@{JoystickNorth}}}\mbox{\Hypertarget{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1a68738cc2a2742b60ce5f75f8fa0a1674}\label{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1a68738cc2a2742b60ce5f75f8fa0a1674}} 
+Joystick\+North&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickEast@{JoystickEast}!fpga.h@{fpga.h}}\index{fpga.h@{fpga.h}!JoystickEast@{JoystickEast}}}\mbox{\Hypertarget{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1abf6607d595835d61272267c141cd4fa0}\label{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1abf6607d595835d61272267c141cd4fa0}} 
+Joystick\+East&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickSouth@{JoystickSouth}!fpga.h@{fpga.h}}\index{fpga.h@{fpga.h}!JoystickSouth@{JoystickSouth}}}\mbox{\Hypertarget{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1ab861c3e71e00017ed4c853b5b6afa9c6}\label{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1ab861c3e71e00017ed4c853b5b6afa9c6}} 
+Joystick\+South&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickWest@{JoystickWest}!fpga.h@{fpga.h}}\index{fpga.h@{fpga.h}!JoystickWest@{JoystickWest}}}\mbox{\Hypertarget{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1af63b949b1b55119eee3f1e3dc7d2f380}\label{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1af63b949b1b55119eee3f1e3dc7d2f380}} 
+Joystick\+West&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JoystickCenter@{JoystickCenter}!fpga.h@{fpga.h}}\index{fpga.h@{fpga.h}!JoystickCenter@{JoystickCenter}}}\mbox{\Hypertarget{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1adfa6ee60c1d4af833a02fdd56a32a8b6}\label{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1adfa6ee60c1d4af833a02fdd56a32a8b6}} 
+Joystick\+Center&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{fpga_8h_source_l00157}{157}} of file \mbox{\hyperlink{fpga_8h_source}{fpga.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fpga_8h_a4a2c9b23065889317f2e2f04f00e0e89}\label{fpga_8h_a4a2c9b23065889317f2e2f04f00e0e89}} 
+\index{fpga.h@{fpga.h}!FPGA\_7SegDisplayDecimal@{FPGA\_7SegDisplayDecimal}}
+\index{FPGA\_7SegDisplayDecimal@{FPGA\_7SegDisplayDecimal}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_7SegDisplayDecimal()}{FPGA\_7SegDisplayDecimal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} FPGA\+\_\+7\+Seg\+Display\+Decimal (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Displays a decimal value between 0 and 9999 on the 7 Segments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Integer to display \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{fpga_8c_source_l00076}{76}} of file \mbox{\hyperlink{fpga_8c_source}{fpga.\+c}}.
+
+\mbox{\Hypertarget{fpga_8h_a3e8371e92939fd4e89b4a31dc63df5d2}\label{fpga_8h_a3e8371e92939fd4e89b4a31dc63df5d2}} 
+\index{fpga.h@{fpga.h}!FPGA\_7SegDisplayFloat@{FPGA\_7SegDisplayFloat}}
+\index{FPGA\_7SegDisplayFloat@{FPGA\_7SegDisplayFloat}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_7SegDisplayFloat()}{FPGA\_7SegDisplayFloat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} FPGA\+\_\+7\+Seg\+Display\+Float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}}}]{value,  }\item[{uint8\+\_\+t}]{precision }\end{DoxyParamCaption})}
+
+
+
+Displays a floating point value on the 7 Segments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Floating point to display \\
+\hline
+{\em precision} & Number of decimal places to be displayed (maximum 3) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{fpga_8c_source_l00093}{93}} of file \mbox{\hyperlink{fpga_8c_source}{fpga.\+c}}.
+
+\mbox{\Hypertarget{fpga_8h_a20b6e43aef863a1a2aa8573a6f047e5a}\label{fpga_8h_a20b6e43aef863a1a2aa8573a6f047e5a}} 
+\index{fpga.h@{fpga.h}!FPGA\_7SegDisplayHexadecimal@{FPGA\_7SegDisplayHexadecimal}}
+\index{FPGA\_7SegDisplayHexadecimal@{FPGA\_7SegDisplayHexadecimal}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_7SegDisplayHexadecimal()}{FPGA\_7SegDisplayHexadecimal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} FPGA\+\_\+7\+Seg\+Display\+Hexadecimal (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Displays a hexadecimal value between 0x00 and 0x\+FFFF on the 7 Segments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Integer to display \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{fpga_8c_source_l00130}{130}} of file \mbox{\hyperlink{fpga_8c_source}{fpga.\+c}}.
+
+\mbox{\Hypertarget{fpga_8h_ab39ebbd0a17f7e65efcff98237bc3d65}\label{fpga_8h_ab39ebbd0a17f7e65efcff98237bc3d65}} 
+\index{fpga.h@{fpga.h}!FPGA\_ButtonMaskPressIRQ@{FPGA\_ButtonMaskPressIRQ}}
+\index{FPGA\_ButtonMaskPressIRQ@{FPGA\_ButtonMaskPressIRQ}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_ButtonMaskPressIRQ()}{FPGA\_ButtonMaskPressIRQ()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} FPGA\+\_\+\+Button\+Mask\+Press\+IRQ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1}{FPGA\+\_\+\+Button\+\_\+t}}}]{button }\end{DoxyParamCaption})}
+
+
+
+Masks (disables) the \char`\"{}button pressed\char`\"{} interrupt for one switch. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & Button to disable interrupt for \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{fpga_8c_source_l00207}{207}} of file \mbox{\hyperlink{fpga_8c_source}{fpga.\+c}}.
+
+\mbox{\Hypertarget{fpga_8h_a527f28099d51aed3ca6d54622dd380cf}\label{fpga_8h_a527f28099d51aed3ca6d54622dd380cf}} 
+\index{fpga.h@{fpga.h}!FPGA\_ButtonMaskReleaseIRQ@{FPGA\_ButtonMaskReleaseIRQ}}
+\index{FPGA\_ButtonMaskReleaseIRQ@{FPGA\_ButtonMaskReleaseIRQ}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_ButtonMaskReleaseIRQ()}{FPGA\_ButtonMaskReleaseIRQ()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} FPGA\+\_\+\+Button\+Mask\+Release\+IRQ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1}{FPGA\+\_\+\+Button\+\_\+t}}}]{button }\end{DoxyParamCaption})}
+
+
+
+Masks (disables) the \char`\"{}button released\char`\"{} interrupt for one switch. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & Button to disable interrupt for \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{fpga_8c_source_l00213}{213}} of file \mbox{\hyperlink{fpga_8c_source}{fpga.\+c}}.
+
+\mbox{\Hypertarget{fpga_8h_a2aeae904599c002457d7c55a2f9d2cca}\label{fpga_8h_a2aeae904599c002457d7c55a2f9d2cca}} 
+\index{fpga.h@{fpga.h}!FPGA\_ButtonUnmaskPressIRQ@{FPGA\_ButtonUnmaskPressIRQ}}
+\index{FPGA\_ButtonUnmaskPressIRQ@{FPGA\_ButtonUnmaskPressIRQ}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_ButtonUnmaskPressIRQ()}{FPGA\_ButtonUnmaskPressIRQ()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} FPGA\+\_\+\+Button\+Unmask\+Press\+IRQ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1}{FPGA\+\_\+\+Button\+\_\+t}}}]{button }\end{DoxyParamCaption})}
+
+
+
+Unmasks (enables) the \char`\"{}button pressed\char`\"{} interrupt for one button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & Button to enable interrupt for \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{fpga_8c_source_l00195}{195}} of file \mbox{\hyperlink{fpga_8c_source}{fpga.\+c}}.
+
+\mbox{\Hypertarget{fpga_8h_a2777595ef5a74632e84325297b8728be}\label{fpga_8h_a2777595ef5a74632e84325297b8728be}} 
+\index{fpga.h@{fpga.h}!FPGA\_ButtonUnmaskReleaseIRQ@{FPGA\_ButtonUnmaskReleaseIRQ}}
+\index{FPGA\_ButtonUnmaskReleaseIRQ@{FPGA\_ButtonUnmaskReleaseIRQ}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_ButtonUnmaskReleaseIRQ()}{FPGA\_ButtonUnmaskReleaseIRQ()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} FPGA\+\_\+\+Button\+Unmask\+Release\+IRQ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1}{FPGA\+\_\+\+Button\+\_\+t}}}]{button }\end{DoxyParamCaption})}
+
+
+
+Unmasks (enables) the \char`\"{}button released\char`\"{} interrupt for one button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & Button to enable interrupt for \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{fpga_8c_source_l00201}{201}} of file \mbox{\hyperlink{fpga_8c_source}{fpga.\+c}}.
+
+\mbox{\Hypertarget{fpga_8h_a08500f77e69acf8b701880048532d8a2}\label{fpga_8h_a08500f77e69acf8b701880048532d8a2}} 
+\index{fpga.h@{fpga.h}!FPGA\_DIPGetLeft@{FPGA\_DIPGetLeft}}
+\index{FPGA\_DIPGetLeft@{FPGA\_DIPGetLeft}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_DIPGetLeft()}{FPGA\_DIPGetLeft()}}
+{\footnotesize\ttfamily uint8\+\_\+t FPGA\+\_\+\+DIPGet\+Left (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Gets the value of the left DIP switches. 
+
+\begin{DoxyReturn}{Returns}
+Binary representation of enabled switches 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{fpga_8c_source_l00138}{138}} of file \mbox{\hyperlink{fpga_8c_source}{fpga.\+c}}.
+
+\mbox{\Hypertarget{fpga_8h_a66a47e3e5e03c9ad2543c4c1912793fa}\label{fpga_8h_a66a47e3e5e03c9ad2543c4c1912793fa}} 
+\index{fpga.h@{fpga.h}!FPGA\_DIPGetRight@{FPGA\_DIPGetRight}}
+\index{FPGA\_DIPGetRight@{FPGA\_DIPGetRight}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_DIPGetRight()}{FPGA\_DIPGetRight()}}
+{\footnotesize\ttfamily uint8\+\_\+t FPGA\+\_\+\+DIPGet\+Right (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Gets the value of the right DIP switches. 
+
+\begin{DoxyReturn}{Returns}
+Binary representation of enabled switches 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{fpga_8c_source_l00142}{142}} of file \mbox{\hyperlink{fpga_8c_source}{fpga.\+c}}.
+
+\mbox{\Hypertarget{fpga_8h_af23bd50e57ede4e18d39ec23934de5ef}\label{fpga_8h_af23bd50e57ede4e18d39ec23934de5ef}} 
+\index{fpga.h@{fpga.h}!FPGA\_DIPMaskOffIRQ@{FPGA\_DIPMaskOffIRQ}}
+\index{FPGA\_DIPMaskOffIRQ@{FPGA\_DIPMaskOffIRQ}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_DIPMaskOffIRQ()}{FPGA\_DIPMaskOffIRQ()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} FPGA\+\_\+\+DIPMask\+Off\+IRQ (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{switch\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Masks (disables) the \char`\"{}switch moved to OFF position\char`\"{} interrupt for one switch. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em switch\+\_\+id} & Number of the switch between 1 and 8 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{fpga_8c_source_l00179}{179}} of file \mbox{\hyperlink{fpga_8c_source}{fpga.\+c}}.
+
+\mbox{\Hypertarget{fpga_8h_adc504d13027044b17a279c864064d436}\label{fpga_8h_adc504d13027044b17a279c864064d436}} 
+\index{fpga.h@{fpga.h}!FPGA\_DIPMaskOnIRQ@{FPGA\_DIPMaskOnIRQ}}
+\index{FPGA\_DIPMaskOnIRQ@{FPGA\_DIPMaskOnIRQ}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_DIPMaskOnIRQ()}{FPGA\_DIPMaskOnIRQ()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} FPGA\+\_\+\+DIPMask\+On\+IRQ (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{switch\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Masks (disables) the \char`\"{}switch moved to ON position\char`\"{} interrupt for one switch. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em switch\+\_\+id} & Number of the switch between 1 and 8 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{fpga_8c_source_l00168}{168}} of file \mbox{\hyperlink{fpga_8c_source}{fpga.\+c}}.
+
+\mbox{\Hypertarget{fpga_8h_a6dd8da73b9f1994ed0aeebb505879bd3}\label{fpga_8h_a6dd8da73b9f1994ed0aeebb505879bd3}} 
+\index{fpga.h@{fpga.h}!FPGA\_DIPUnmaskOffIRQ@{FPGA\_DIPUnmaskOffIRQ}}
+\index{FPGA\_DIPUnmaskOffIRQ@{FPGA\_DIPUnmaskOffIRQ}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_DIPUnmaskOffIRQ()}{FPGA\_DIPUnmaskOffIRQ()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} FPGA\+\_\+\+DIPUnmask\+Off\+IRQ (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{switch\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Unmasks (enables) the \char`\"{}switch moved to OFF position\char`\"{} interrupt for one switch. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em switch\+\_\+id} & Number of the switch between 1 and 8 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{fpga_8c_source_l00157}{157}} of file \mbox{\hyperlink{fpga_8c_source}{fpga.\+c}}.
+
+\mbox{\Hypertarget{fpga_8h_adfdb85c4ea74b1722082e3a1d9477b87}\label{fpga_8h_adfdb85c4ea74b1722082e3a1d9477b87}} 
+\index{fpga.h@{fpga.h}!FPGA\_DIPUnmaskOnIRQ@{FPGA\_DIPUnmaskOnIRQ}}
+\index{FPGA\_DIPUnmaskOnIRQ@{FPGA\_DIPUnmaskOnIRQ}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_DIPUnmaskOnIRQ()}{FPGA\_DIPUnmaskOnIRQ()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} FPGA\+\_\+\+DIPUnmask\+On\+IRQ (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{switch\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Unmasks (enables) the \char`\"{}switch moved to ON position\char`\"{} interrupt for one switch. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em switch\+\_\+id} & Number of the switch between 1 and 8 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{fpga_8c_source_l00146}{146}} of file \mbox{\hyperlink{fpga_8c_source}{fpga.\+c}}.
+
+\mbox{\Hypertarget{fpga_8h_aaa57255f8e98ac0e52ee032d2534bea1}\label{fpga_8h_aaa57255f8e98ac0e52ee032d2534bea1}} 
+\index{fpga.h@{fpga.h}!FPGA\_GetButton@{FPGA\_GetButton}}
+\index{FPGA\_GetButton@{FPGA\_GetButton}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_GetButton()}{FPGA\_GetButton()}}
+{\footnotesize\ttfamily bool FPGA\+\_\+\+Get\+Button (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{fpga_8h_a9097bd7284da9d12458667e3a19ef0f1}{FPGA\+\_\+\+Button\+\_\+t}}}]{button }\end{DoxyParamCaption})}
+
+
+
+Queries the state of a button or the joystick. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & Button to query \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+State of button 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{fpga_8c_source_l00191}{191}} of file \mbox{\hyperlink{fpga_8c_source}{fpga.\+c}}.
+
+\mbox{\Hypertarget{fpga_8h_a6879a6b628974d01a7d7b817310a4591}\label{fpga_8h_a6879a6b628974d01a7d7b817310a4591}} 
+\index{fpga.h@{fpga.h}!FPGA\_GetScanningDivider@{FPGA\_GetScanningDivider}}
+\index{FPGA\_GetScanningDivider@{FPGA\_GetScanningDivider}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_GetScanningDivider()}{FPGA\_GetScanningDivider()}}
+{\footnotesize\ttfamily uint8\+\_\+t FPGA\+\_\+\+Get\+Scanning\+Divider (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the current button scanning divider. 
+
+\begin{DoxyReturn}{Returns}
+Scanning divider 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{fpga_8c_source_l00219}{219}} of file \mbox{\hyperlink{fpga_8c_source}{fpga.\+c}}.
+
+\mbox{\Hypertarget{fpga_8h_acfe196610727ad70fcd0f6a621b65b80}\label{fpga_8h_acfe196610727ad70fcd0f6a621b65b80}} 
+\index{fpga.h@{fpga.h}!FPGA\_Init@{FPGA\_Init}}
+\index{FPGA\_Init@{FPGA\_Init}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_Init()}{FPGA\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} FPGA\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the FPGA peripheral. 
+
+
+
+Definition at line \mbox{\hyperlink{fpga_8c_source_l00032}{32}} of file \mbox{\hyperlink{fpga_8c_source}{fpga.\+c}}.
+
+\mbox{\Hypertarget{fpga_8h_ab524bef8e7a6a6f78a05881bd316c751}\label{fpga_8h_ab524bef8e7a6a6f78a05881bd316c751}} 
+\index{fpga.h@{fpga.h}!FPGA\_MatrixSetPixel@{FPGA\_MatrixSetPixel}}
+\index{FPGA\_MatrixSetPixel@{FPGA\_MatrixSetPixel}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_MatrixSetPixel()}{FPGA\_MatrixSetPixel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} FPGA\+\_\+\+Matrix\+Set\+Pixel (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{x,  }\item[{uint8\+\_\+t}]{y,  }\item[{\mbox{\hyperlink{color_8h_aea9a7472d9d5ba4e6a83791ad629e047}{color\+\_\+t}}}]{color }\end{DoxyParamCaption})}
+
+
+
+Sets the color of one pixel on the RGB LED Matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of the pixel \\
+\hline
+{\em y} & Y coordinate of the pixel \\
+\hline
+{\em red} & Red LED State \\
+\hline
+{\em green} & Green LED State \\
+\hline
+{\em blue} & Blue LED State \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{fpga_8c_source_l00228}{228}} of file \mbox{\hyperlink{fpga_8c_source}{fpga.\+c}}.
+
+\mbox{\Hypertarget{fpga_8h_aa870e49425cbd96ec9c09b73ea79373a}\label{fpga_8h_aa870e49425cbd96ec9c09b73ea79373a}} 
+\index{fpga.h@{fpga.h}!FPGA\_Reset@{FPGA\_Reset}}
+\index{FPGA\_Reset@{FPGA\_Reset}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_Reset()}{FPGA\_Reset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} FPGA\+\_\+\+Reset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Resets all FPGA registers. 
+
+
+
+Definition at line \mbox{\hyperlink{fpga_8c_source_l00039}{39}} of file \mbox{\hyperlink{fpga_8c_source}{fpga.\+c}}.
+
+\mbox{\Hypertarget{fpga_8h_a5eca0be6328d5d5891e34131f1d745ca}\label{fpga_8h_a5eca0be6328d5d5891e34131f1d745ca}} 
+\index{fpga.h@{fpga.h}!FPGA\_SetScanningDivider@{FPGA\_SetScanningDivider}}
+\index{FPGA\_SetScanningDivider@{FPGA\_SetScanningDivider}!fpga.h@{fpga.h}}
+\doxysubsubsection{\texorpdfstring{FPGA\_SetScanningDivider()}{FPGA\_SetScanningDivider()}}
+{\footnotesize\ttfamily void FPGA\+\_\+\+Set\+Scanning\+Divider (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{divider }\end{DoxyParamCaption})}
+
+
+
+Sets teh button scanning divider. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em divider} & Divider \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{fpga_8c_source_l00223}{223}} of file \mbox{\hyperlink{fpga_8c_source}{fpga.\+c}}.
+

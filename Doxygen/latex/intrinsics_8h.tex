@@ -1,0 +1,93 @@
+\hypertarget{intrinsics_8h}{}\doxysection{C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.11.0/\+TRex/lib/libleguan/include/common/intrinsics.h File Reference}
+\label{intrinsics_8h}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/common/intrinsics.h@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/common/intrinsics.h}}
+
+
+Compiler intrinsics.  
+
+
+{\ttfamily \#include \char`\"{}common/attributes.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{intrinsics_8h_aab1245ebbd1fdba50ebfb098f8df7b8a}{LEGUAN\+\_\+\+DO\+\_\+\+NOT\+\_\+\+OPTIMIZE}}(x)~asm volatile(\char`\"{}\char`\"{} \+: \+: \char`\"{}r,m\char`\"{}(x) \+: \char`\"{}memory\char`\"{});
+\begin{DoxyCompactList}\small\item\em Confuses the compiler to prevent it from optimizing away a variable. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{intrinsics_8h_a54003fca050aa48f1473929214ebcff8}{LEGUAN\+\_\+\+UNUSED}}(x)~(void)(x)
+\begin{DoxyCompactList}\small\item\em Marks a variable as used, even if it wasn\textquotesingle{}t. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{intrinsics_8h_a77f5eda2b1b8ad27a232e1e70de7eee1}{LEGUAN\+\_\+\+BYTE\+\_\+\+SWAP}}(x)
+\begin{DoxyCompactList}\small\item\em Changes endianess of a integer or floating point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Compiler intrinsics. 
+
+\begin{DoxyAuthor}{Author}
+Nikolaij Saegesser 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{intrinsics_8h_source}{intrinsics.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{intrinsics_8h_a77f5eda2b1b8ad27a232e1e70de7eee1}\label{intrinsics_8h_a77f5eda2b1b8ad27a232e1e70de7eee1}} 
+\index{intrinsics.h@{intrinsics.h}!LEGUAN\_BYTE\_SWAP@{LEGUAN\_BYTE\_SWAP}}
+\index{LEGUAN\_BYTE\_SWAP@{LEGUAN\_BYTE\_SWAP}!intrinsics.h@{intrinsics.h}}
+\doxysubsubsection{\texorpdfstring{LEGUAN\_BYTE\_SWAP}{LEGUAN\_BYTE\_SWAP}}
+{\footnotesize\ttfamily \#define LEGUAN\+\_\+\+BYTE\+\_\+\+SWAP(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_Generic((x),\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u16:\ \_\_builtin\_bswap16,\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u32:\ \_\_builtin\_bswap32,\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u64:\ \_\_builtin\_bswap64,\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i16:\ \_\_builtin\_bswap16,\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i32:\ \_\_builtin\_bswap32,\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i64:\ \_\_builtin\_bswap64,\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ f32:\ \_\_builtin\_bswap32,\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ f64:\ \_\_builtin\_bswap64\ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ )(x)}
+
+\end{DoxyCode}
+
+
+Changes endianess of a integer or floating point. 
+
+
+
+Definition at line \mbox{\hyperlink{intrinsics_8h_source_l00053}{53}} of file \mbox{\hyperlink{intrinsics_8h_source}{intrinsics.\+h}}.
+
+\mbox{\Hypertarget{intrinsics_8h_aab1245ebbd1fdba50ebfb098f8df7b8a}\label{intrinsics_8h_aab1245ebbd1fdba50ebfb098f8df7b8a}} 
+\index{intrinsics.h@{intrinsics.h}!LEGUAN\_DO\_NOT\_OPTIMIZE@{LEGUAN\_DO\_NOT\_OPTIMIZE}}
+\index{LEGUAN\_DO\_NOT\_OPTIMIZE@{LEGUAN\_DO\_NOT\_OPTIMIZE}!intrinsics.h@{intrinsics.h}}
+\doxysubsubsection{\texorpdfstring{LEGUAN\_DO\_NOT\_OPTIMIZE}{LEGUAN\_DO\_NOT\_OPTIMIZE}}
+{\footnotesize\ttfamily \#define LEGUAN\+\_\+\+DO\+\_\+\+NOT\+\_\+\+OPTIMIZE(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~asm volatile(\char`\"{}\char`\"{} \+: \+: \char`\"{}r,m\char`\"{}(x) \+: \char`\"{}memory\char`\"{});}
+
+
+
+Confuses the compiler to prevent it from optimizing away a variable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em variable} & to prevent optimization of \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{intrinsics_8h_source_l00043}{43}} of file \mbox{\hyperlink{intrinsics_8h_source}{intrinsics.\+h}}.
+
+\mbox{\Hypertarget{intrinsics_8h_a54003fca050aa48f1473929214ebcff8}\label{intrinsics_8h_a54003fca050aa48f1473929214ebcff8}} 
+\index{intrinsics.h@{intrinsics.h}!LEGUAN\_UNUSED@{LEGUAN\_UNUSED}}
+\index{LEGUAN\_UNUSED@{LEGUAN\_UNUSED}!intrinsics.h@{intrinsics.h}}
+\doxysubsubsection{\texorpdfstring{LEGUAN\_UNUSED}{LEGUAN\_UNUSED}}
+{\footnotesize\ttfamily \#define LEGUAN\+\_\+\+UNUSED(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(void)(x)}
+
+
+
+Marks a variable as used, even if it wasn\textquotesingle{}t. 
+
+
+
+Definition at line \mbox{\hyperlink{intrinsics_8h_source_l00048}{48}} of file \mbox{\hyperlink{intrinsics_8h_source}{intrinsics.\+h}}.
+

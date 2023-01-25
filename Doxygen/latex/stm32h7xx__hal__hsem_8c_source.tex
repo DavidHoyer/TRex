@@ -1,0 +1,223 @@
+\hypertarget{stm32h7xx__hal__hsem_8c_source}{}\doxysection{stm32h7xx\+\_\+hal\+\_\+hsem.\+c}
+\label{stm32h7xx__hal__hsem_8c_source}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Drivers/STM32H7xx\_HAL\_Driver/Src/stm32h7xx\_hal\_hsem.c@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Drivers/STM32H7xx\_HAL\_Driver/Src/stm32h7xx\_hal\_hsem.c}}
+\mbox{\hyperlink{stm32h7xx__hal__hsem_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00087}00087\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00088}00088\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32h7xx__hal_8h}{stm32h7xx\_hal.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00099}00099\ \textcolor{preprocessor}{\#ifdef\ HAL\_HSEM\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00101}00101\ \textcolor{comment}{/*\ Private\ typedef\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00102}00102\ \textcolor{comment}{/*\ Private\ define\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00103}00103\ \textcolor{preprocessor}{\#if\ defined(DUAL\_CORE)}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00108}00108\ \textcolor{preprocessor}{\#ifndef\ HSEM\_R\_MASTERID}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00109}00109\ \textcolor{preprocessor}{\#define\ HSEM\_R\_MASTERID\ HSEM\_R\_COREID}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00110}00110\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00112}00112\ \textcolor{preprocessor}{\#ifndef\ HSEM\_RLR\_MASTERID}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00113}00113\ \textcolor{preprocessor}{\#define\ HSEM\_RLR\_MASTERID\ HSEM\_RLR\_COREID}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00114}00114\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00116}00116\ \textcolor{preprocessor}{\#ifndef\ HSEM\_CR\_MASTERID}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00117}00117\ \textcolor{preprocessor}{\#define\ HSEM\_CR\_MASTERID\ HSEM\_CR\_COREID}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00118}00118\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00123}00123\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ DUAL\_CORE\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00124}00124\ \textcolor{comment}{/*\ Private\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00125}00125\ \textcolor{comment}{/*\ Private\ variables\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00126}00126\ \textcolor{comment}{/*\ Private\ function\ prototypes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00127}00127\ \textcolor{comment}{/*\ Private\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00128}00128\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00159}00159\ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ \mbox{\hyperlink{group___h_s_e_m___exported___functions___group1_ga31f08a710db7f71c4960b4bc49e5d88e}{HAL\_HSEM\_Take}}(uint32\_t\ SemID,\ uint32\_t\ ProcessID)}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00160}00160\ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00161}00161\ \ \ \textcolor{comment}{/*\ Check\ the\ parameters\ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00162}00162\ \ \ \mbox{\hyperlink{stm32h7xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(\mbox{\hyperlink{group___h_s_e_m___private___macros_gaf7003533fe10b73e9ffbd6713a6cd498}{IS\_HSEM\_SEMID}}(SemID));}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00163}00163\ \ \ \mbox{\hyperlink{stm32h7xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(\mbox{\hyperlink{group___h_s_e_m___private___macros_gaa43cd847758a3f1a6bc33137e7461e94}{IS\_HSEM\_PROCESSID}}(ProcessID));}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00165}00165\ \textcolor{preprocessor}{\#if\ \ USE\_MULTI\_CORE\_SHARED\_CODE\ !=\ 0U}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00166}00166\ \ \ \textcolor{comment}{/*\ First\ step\ \ write\ R\ register\ with\ MasterID,\ processID\ and\ take\ bit=1*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00167}00167\ \ \ \mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/>R[SemID]\ =\ ((ProcessID\ \&\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gad6d8547d34dda3bc04bd61dc3a59f3ca}{HSEM\_R\_PROCID}})\ |\ ((\mbox{\hyperlink{group___c_o_r_t_e_x___exported___functions___group2_ga45f6b3911259c42d3bf93d18259b4818}{HAL\_GetCurrentCPUID}}()\ <<\ \mbox{\hyperlink{group___exported__macros_ga47a8870d71d55cefb3df47cd8c815ec8}{POSITION\_VAL}}(HSEM\_R\_MASTERID))\ \&\ HSEM\_R\_MASTERID)\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gacc121e0df98eda63c3060d308b3bee4e}{HSEM\_R\_LOCK}});}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00169}00169\ \ \ \textcolor{comment}{/*\ second\ step\ :\ read\ the\ R\ register\ .\ Take\ achieved\ if\ MasterID\ and\ processID\ match\ and\ take\ bit\ set\ to\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00170}00170\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/>R[SemID]\ ==\ ((ProcessID\ \&\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gad6d8547d34dda3bc04bd61dc3a59f3ca}{HSEM\_R\_PROCID}})\ |\ ((\mbox{\hyperlink{group___c_o_r_t_e_x___exported___functions___group2_ga45f6b3911259c42d3bf93d18259b4818}{HAL\_GetCurrentCPUID}}()\ <<\ \mbox{\hyperlink{group___exported__macros_ga47a8870d71d55cefb3df47cd8c815ec8}{POSITION\_VAL}}(HSEM\_R\_MASTERID))\ \&\ HSEM\_R\_MASTERID)\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gacc121e0df98eda63c3060d308b3bee4e}{HSEM\_R\_LOCK}}))}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00171}00171\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00172}00172\ \ \ \ \ \textcolor{comment}{/*take\ success\ when\ MasterID\ and\ ProcessID\ match\ and\ take\ bit\ set*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00173}00173\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00174}00174\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00175}00175\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00176}00176\ \ \ \textcolor{comment}{/*\ First\ step\ \ write\ R\ register\ with\ MasterID,\ processID\ and\ take\ bit=1*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00177}00177\ \ \ \mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/>R[SemID]\ =\ (ProcessID\ |\ \mbox{\hyperlink{group___exported__macros_ga2a4deb704d1b07abaead7edc3f9c2aaf}{HSEM\_CR\_COREID\_CURRENT}}\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gacc121e0df98eda63c3060d308b3bee4e}{HSEM\_R\_LOCK}});}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00179}00179\ \ \ \textcolor{comment}{/*\ second\ step\ :\ read\ the\ R\ register\ .\ Take\ achieved\ if\ MasterID\ and\ processID\ match\ and\ take\ bit\ set\ to\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00180}00180\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/>R[SemID]\ ==\ (ProcessID\ |\ \mbox{\hyperlink{group___exported__macros_ga2a4deb704d1b07abaead7edc3f9c2aaf}{HSEM\_CR\_COREID\_CURRENT}}\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gacc121e0df98eda63c3060d308b3bee4e}{HSEM\_R\_LOCK}}))}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00181}00181\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00182}00182\ \ \ \ \ \textcolor{comment}{/*take\ success\ when\ MasterID\ and\ ProcessID\ match\ and\ take\ bit\ set*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00183}00183\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00184}00184\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00185}00185\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00187}00187\ \ \ \textcolor{comment}{/*\ Semaphore\ take\ fails*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00188}00188\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa5a04e395e501e4e400172c610478c4a4}{HAL\_ERROR}};}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00189}00189\ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00196}00196\ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___h_s_e_m___exported___functions___group1_gaf29ca9418fdeb85203a370d47e52245e}{HAL\_HSEM\_FastTake}}(uint32\_t\ SemID)}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00197}00197\ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00198}00198\ \ \ \textcolor{comment}{/*\ Check\ the\ parameters\ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00199}00199\ \ \ \mbox{\hyperlink{stm32h7xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(\mbox{\hyperlink{group___h_s_e_m___private___macros_gaf7003533fe10b73e9ffbd6713a6cd498}{IS\_HSEM\_SEMID}}(SemID));}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00201}00201\ \textcolor{preprocessor}{\#if\ \ USE\_MULTI\_CORE\_SHARED\_CODE\ !=\ 0U}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00202}00202\ \ \ \textcolor{comment}{/*\ Read\ the\ RLR\ register\ to\ take\ the\ semaphore\ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00203}00203\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/>RLR[SemID]\ ==\ (((\mbox{\hyperlink{group___c_o_r_t_e_x___exported___functions___group2_ga45f6b3911259c42d3bf93d18259b4818}{HAL\_GetCurrentCPUID}}()\ <<\ \mbox{\hyperlink{group___exported__macros_ga47a8870d71d55cefb3df47cd8c815ec8}{POSITION\_VAL}}(HSEM\_R\_MASTERID))\ \&\ HSEM\_RLR\_MASTERID)\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2f47112c5ceac25e97232be1d235d70b}{HSEM\_RLR\_LOCK}}))}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00204}00204\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00205}00205\ \ \ \ \ \textcolor{comment}{/*take\ success\ when\ MasterID\ match\ and\ take\ bit\ set*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00206}00206\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00207}00207\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00208}00208\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00209}00209\ \ \ \textcolor{comment}{/*\ Read\ the\ RLR\ register\ to\ take\ the\ semaphore\ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00210}00210\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/>RLR[SemID]\ ==\ (\mbox{\hyperlink{group___exported__macros_ga2a4deb704d1b07abaead7edc3f9c2aaf}{HSEM\_CR\_COREID\_CURRENT}}\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2f47112c5ceac25e97232be1d235d70b}{HSEM\_RLR\_LOCK}}))}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00211}00211\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00212}00212\ \ \ \ \ \textcolor{comment}{/*take\ success\ when\ MasterID\ match\ and\ take\ bit\ set*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00213}00213\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00214}00214\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00215}00215\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00217}00217\ \ \ \textcolor{comment}{/*\ Semaphore\ take\ fails\ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00218}00218\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa5a04e395e501e4e400172c610478c4a4}{HAL\_ERROR}};}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00219}00219\ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00225}00225\ uint32\_t\ \mbox{\hyperlink{group___h_s_e_m___exported___functions___group1_gad89a18ed31b969126b13e7934cb7f981}{HAL\_HSEM\_IsSemTaken}}(uint32\_t\ SemID)}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00226}00226\ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00227}00227\ \ \ \textcolor{keywordflow}{return}\ (((\mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/>R[SemID]\ \&\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gacc121e0df98eda63c3060d308b3bee4e}{HSEM\_R\_LOCK}})\ !=\ 0U)\ ?\ 1UL\ :\ 0UL);}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00228}00228\ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00229}00229\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00230}00230\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00237}00237\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{group___h_s_e_m___exported___functions___group1_ga5b79006e358d2205b20d253bb83e0184}{HAL\_HSEM\_Release}}(uint32\_t\ SemID,\ uint32\_t\ ProcessID)}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00238}00238\ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00239}00239\ \ \ \textcolor{comment}{/*\ Check\ the\ parameters\ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00240}00240\ \ \ \mbox{\hyperlink{stm32h7xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(\mbox{\hyperlink{group___h_s_e_m___private___macros_gaf7003533fe10b73e9ffbd6713a6cd498}{IS\_HSEM\_SEMID}}(SemID));}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00241}00241\ \ \ \mbox{\hyperlink{stm32h7xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(\mbox{\hyperlink{group___h_s_e_m___private___macros_gaa43cd847758a3f1a6bc33137e7461e94}{IS\_HSEM\_PROCESSID}}(ProcessID));}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00242}00242\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00243}00243\ \ \ \textcolor{comment}{/*\ Clear\ the\ semaphore\ by\ writing\ to\ the\ R\ register\ :\ the\ MasterID\ ,\ the\ processID\ and\ take\ bit\ =\ 0\ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00244}00244\ \textcolor{preprocessor}{\#if\ \ USE\_MULTI\_CORE\_SHARED\_CODE\ !=\ 0U}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00245}00245\ \ \ \mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/>R[SemID]\ =\ (ProcessID\ |\ ((\mbox{\hyperlink{group___c_o_r_t_e_x___exported___functions___group2_ga45f6b3911259c42d3bf93d18259b4818}{HAL\_GetCurrentCPUID}}()\ <<\ \mbox{\hyperlink{group___exported__macros_ga47a8870d71d55cefb3df47cd8c815ec8}{POSITION\_VAL}}(HSEM\_R\_MASTERID))\ \&\ HSEM\_R\_MASTERID));}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00246}00246\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00247}00247\ \ \ \mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/>R[SemID]\ =\ (ProcessID\ |\ \mbox{\hyperlink{group___exported__macros_ga2a4deb704d1b07abaead7edc3f9c2aaf}{HSEM\_CR\_COREID\_CURRENT}});}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00248}00248\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00250}00250\ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00251}00251\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00258}00258\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___h_s_e_m___exported___functions___group1_ga63474679db0575c2be628cc6bac682e7}{HAL\_HSEM\_ReleaseAll}}(uint32\_t\ Key,\ uint32\_t\ CoreID)}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00259}00259\ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00260}00260\ \ \ \mbox{\hyperlink{stm32h7xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(\mbox{\hyperlink{group___h_s_e_m___private___macros_gaedf0f6b95c261b193b9084799e850f09}{IS\_HSEM\_KEY}}(Key));}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00261}00261\ \ \ \mbox{\hyperlink{stm32h7xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(\mbox{\hyperlink{group___h_s_e_m___private___macros_ga75baea81c38321c1f25d06eddd4f729e}{IS\_HSEM\_COREID}}(CoreID));}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00263}00263\ \ \ \mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/>CR\ =\ ((Key\ <<\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5550f912145ad37eeedf031bff97f75f}{HSEM\_CR\_KEY\_Pos}})\ |\ (CoreID\ <<\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaeac316369855a038148e9f3b72a34ef8}{HSEM\_CR\_COREID\_Pos}}));}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00264}00264\ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00265}00265\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00290}00290\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{group___h_s_e_m___exported___functions___group2_gab0d231b1678502487832e3daf44dab8f}{HAL\_HSEM\_SetClearKey}}(uint32\_t\ Key)}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00291}00291\ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00292}00292\ \ \ \mbox{\hyperlink{stm32h7xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(\mbox{\hyperlink{group___h_s_e_m___private___macros_gaedf0f6b95c261b193b9084799e850f09}{IS\_HSEM\_KEY}}(Key));}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00293}00293\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00294}00294\ \ \ \mbox{\hyperlink{group___exported__macros_ga6553c99f510c3bab8cc0a91602053247}{MODIFY\_REG}}(\mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/>KEYR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gac7c19a443bd3ad1018ae81494eff3d2f}{HSEM\_KEYR\_KEY}},\ (Key\ <<\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa39d0c7e07f24dbfd04f7a9f447cc9e2}{HSEM\_KEYR\_KEY\_Pos}}));}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00295}00295\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00296}00296\ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00297}00297\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00302}00302\ uint32\_t\ \mbox{\hyperlink{group___h_s_e_m___exported___functions___group2_ga16c6f27e91b73844f170139cd51df9ae}{HAL\_HSEM\_GetClearKey}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00303}00303\ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00304}00304\ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/>KEYR\ >>\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa39d0c7e07f24dbfd04f7a9f447cc9e2}{HSEM\_KEYR\_KEY\_Pos}});}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00305}00305\ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00306}00306\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00329}00329\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___h_s_e_m___exported___functions___group3_ga4a0cb7ce45bcecf1ac2d308f7330e9b8}{HAL\_HSEM\_ActivateNotification}}(uint32\_t\ SemMask)}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00330}00330\ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00331}00331\ \textcolor{preprocessor}{\#if\ \ USE\_MULTI\_CORE\_SHARED\_CODE\ !=\ 0U}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00332}00332\ \ \ \textcolor{comment}{/*enable\ the\ semaphore\ mask\ interrupts\ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00333}00333\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{group___c_o_r_t_e_x___exported___functions___group2_ga45f6b3911259c42d3bf93d18259b4818}{HAL\_GetCurrentCPUID}}()\ ==\ \mbox{\hyperlink{group___exported__macros_gaa1c060147d6dc9aafe767c56094644e5}{HSEM\_CPU1\_COREID}})}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00334}00334\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00335}00335\ \ \ \ \ \textcolor{comment}{/*Use\ interrupt\ line\ 0\ for\ CPU1\ Master\ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00336}00336\ \ \ \ \ \mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/>C1IER\ |=\ SemMask;}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00337}00337\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00338}00338\ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{/*\ HSEM\_CPU2\_COREID\ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00339}00339\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00340}00340\ \ \ \ \ \textcolor{comment}{/*Use\ interrupt\ line\ 1\ for\ CPU2\ Master*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00341}00341\ \ \ \ \ \mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/>C2IER\ |=\ SemMask;}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00342}00342\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00343}00343\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00344}00344\ \ \ \mbox{\hyperlink{group___peripheral__declaration_gaed3d1a19416a1229032480d71c32398a}{HSEM\_COMMON}}-\/>IER\ |=\ SemMask;}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00345}00345\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00346}00346\ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00347}00347\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00353}00353\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___h_s_e_m___exported___functions___group3_ga8bd93e3440578ce9b75b507665a4e7b8}{HAL\_HSEM\_DeactivateNotification}}(uint32\_t\ SemMask)}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00354}00354\ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00355}00355\ \textcolor{preprocessor}{\#if\ \ USE\_MULTI\_CORE\_SHARED\_CODE\ !=\ 0U}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00356}00356\ \ \ \textcolor{comment}{/*enable\ the\ semaphore\ mask\ interrupts\ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00357}00357\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{group___c_o_r_t_e_x___exported___functions___group2_ga45f6b3911259c42d3bf93d18259b4818}{HAL\_GetCurrentCPUID}}()\ ==\ \mbox{\hyperlink{group___exported__macros_gaa1c060147d6dc9aafe767c56094644e5}{HSEM\_CPU1\_COREID}})}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00358}00358\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00359}00359\ \ \ \ \ \textcolor{comment}{/*Use\ interrupt\ line\ 0\ for\ CPU1\ Master\ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00360}00360\ \ \ \ \ \mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/>C1IER\ \&=\ \string~SemMask;}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00361}00361\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00362}00362\ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{/*\ HSEM\_CPU2\_COREID\ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00363}00363\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00364}00364\ \ \ \ \ \textcolor{comment}{/*Use\ interrupt\ line\ 1\ for\ CPU2\ Master*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00365}00365\ \ \ \ \ \mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/>C2IER\ \&=\ \string~SemMask;}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00366}00366\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00367}00367\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00368}00368\ \ \ \mbox{\hyperlink{group___peripheral__declaration_gaed3d1a19416a1229032480d71c32398a}{HSEM\_COMMON}}-\/>IER\ \&=\ \string~SemMask;}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00369}00369\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00370}00370\ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00371}00371\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00376}00376\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___h_s_e_m___exported___functions___group3_gafbab4eb282038606847694023de19771}{HAL\_HSEM\_IRQHandler}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00377}00377\ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00378}00378\ \ \ uint32\_t\ statusreg;}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00379}00379\ \textcolor{preprocessor}{\#if\ \ USE\_MULTI\_CORE\_SHARED\_CODE\ !=\ 0U}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00380}00380\ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{group___c_o_r_t_e_x___exported___functions___group2_ga45f6b3911259c42d3bf93d18259b4818}{HAL\_GetCurrentCPUID}}()\ ==\ \mbox{\hyperlink{group___exported__macros_gaa1c060147d6dc9aafe767c56094644e5}{HSEM\_CPU1\_COREID}})}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00381}00381\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00382}00382\ \ \ \ \ \textcolor{comment}{/*\ Get\ the\ list\ of\ masked\ freed\ semaphores*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00383}00383\ \ \ \ \ statusreg\ =\ \mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/>C1MISR;\ \textcolor{comment}{/*Use\ interrupt\ line\ 0\ for\ CPU1\ Master*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00384}00384\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00385}00385\ \ \ \ \ \textcolor{comment}{/*Disable\ Interrupts*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00386}00386\ \ \ \ \ \mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/>C1IER\ \&=\ \string~((uint32\_t)statusreg);}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00387}00387\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00388}00388\ \ \ \ \ \textcolor{comment}{/*Clear\ Flags*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00389}00389\ \ \ \ \ \mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/>C1ICR\ =\ ((uint32\_t)statusreg);}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00390}00390\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00391}00391\ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{/*\ HSEM\_CPU2\_COREID\ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00392}00392\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00393}00393\ \ \ \ \ \textcolor{comment}{/*\ Get\ the\ list\ of\ masked\ freed\ semaphores*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00394}00394\ \ \ \ \ statusreg\ =\ \mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/>C2MISR;\textcolor{comment}{/*Use\ interrupt\ line\ 1\ for\ CPU2\ Master*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00395}00395\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00396}00396\ \ \ \ \ \textcolor{comment}{/*Disable\ Interrupts*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00397}00397\ \ \ \ \ \mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/>C2IER\ \&=\ \string~((uint32\_t)statusreg);}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00398}00398\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00399}00399\ \ \ \ \ \textcolor{comment}{/*Clear\ Flags*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00400}00400\ \ \ \ \ \mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/>C2ICR\ =\ ((uint32\_t)statusreg);}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00401}00401\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00402}00402\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00403}00403\ \ \ \textcolor{comment}{/*\ Get\ the\ list\ of\ masked\ freed\ semaphores*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00404}00404\ \ \ statusreg\ =\ \mbox{\hyperlink{group___peripheral__declaration_gaed3d1a19416a1229032480d71c32398a}{HSEM\_COMMON}}-\/>MISR;}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00405}00405\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00406}00406\ \ \ \textcolor{comment}{/*Disable\ Interrupts*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00407}00407\ \ \ \mbox{\hyperlink{group___peripheral__declaration_gaed3d1a19416a1229032480d71c32398a}{HSEM\_COMMON}}-\/>IER\ \&=\ \string~((uint32\_t)statusreg);}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00408}00408\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00409}00409\ \ \ \textcolor{comment}{/*Clear\ Flags*/}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00410}00410\ \ \ \mbox{\hyperlink{group___peripheral__declaration_gaed3d1a19416a1229032480d71c32398a}{HSEM\_COMMON}}-\/>ICR\ =\ ((uint32\_t)statusreg);}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00411}00411\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00412}00412\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00413}00413\ \ \ \textcolor{comment}{/*\ Call\ FreeCallback\ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00414}00414\ \ \ \mbox{\hyperlink{group___h_s_e_m___exported___functions___group3_ga6dc0ad2cc5c0b50f286c6e1cb2b3fe0f}{HAL\_HSEM\_FreeCallback}}(statusreg);}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00415}00415\ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00416}00416\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00422}00422\ \_\_weak\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___h_s_e_m___exported___functions___group3_ga6dc0ad2cc5c0b50f286c6e1cb2b3fe0f}{HAL\_HSEM\_FreeCallback}}(uint32\_t\ SemMask)}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00423}00423\ \{}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00424}00424\ \ \ \textcolor{comment}{/*\ Prevent\ unused\ argument(s)\ compilation\ warning\ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00425}00425\ \ \ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a86d500a34c624c2cae56bc25a31b12f3}{UNUSED}}(SemMask);}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00426}00426\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00427}00427\ \ \ \textcolor{comment}{/*\ NOTE\ :\ This\ function\ should\ not\ be\ modified,\ when\ the\ callback\ is\ needed,}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00428}00428\ \textcolor{comment}{\ \ the\ HAL\_HSEM\_FreeCallback\ can\ be\ implemented\ in\ the\ user\ file}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00429}00429\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00430}00430\ \}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00431}00431\ }
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00440}00440\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_HSEM\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32h7xx__hal__hsem_8c_source_l00449}00449\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

@@ -1,0 +1,89 @@
+\hypertarget{dma2d_8c_source}{}\doxysection{dma2d.\+c}
+\label{dma2d_8c_source}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Core/Src/dma2d.c@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Core/Src/dma2d.c}}
+\mbox{\hyperlink{dma2d_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00020}00020\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dma2d_8h}{dma2d.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00023}00023\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00025}00025\ \textcolor{comment}{/*\ USER\ CODE\ END\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00027}\mbox{\hyperlink{dma2d_8h_a6d27e904c93cdaca4f39c5a9c3829edf}{00027}}\ DMA2D\_HandleTypeDef\ \mbox{\hyperlink{dma2d_8c_a6d27e904c93cdaca4f39c5a9c3829edf}{hdma2d}};}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00029}00029\ \textcolor{comment}{/*\ DMA2D\ init\ function\ */}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00030}\mbox{\hyperlink{dma2d_8h_ae02e69179afb0942f984575901489c3e}{00030}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{dma2d_8c_ae02e69179afb0942f984575901489c3e}{MX\_DMA2D\_Init}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00031}00031\ \{}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00033}00033\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ DMA2D\_Init\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00035}00035\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ DMA2D\_Init\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00037}00037\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ DMA2D\_Init\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00039}00039\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ DMA2D\_Init\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00040}00040\ \ \ \mbox{\hyperlink{dma2d_8c_a6d27e904c93cdaca4f39c5a9c3829edf}{hdma2d}}.Instance\ =\ \mbox{\hyperlink{group___peripheral__declaration_ga46ffe4de9c874b15e9adb93a448d0778}{DMA2D}};}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00041}00041\ \ \ \mbox{\hyperlink{dma2d_8c_a6d27e904c93cdaca4f39c5a9c3829edf}{hdma2d}}.Init.Mode\ =\ DMA2D\_M2M;}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00042}00042\ \ \ \mbox{\hyperlink{dma2d_8c_a6d27e904c93cdaca4f39c5a9c3829edf}{hdma2d}}.Init.ColorMode\ =\ DMA2D\_OUTPUT\_ARGB8888;}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00043}00043\ \ \ \mbox{\hyperlink{dma2d_8c_a6d27e904c93cdaca4f39c5a9c3829edf}{hdma2d}}.Init.OutputOffset\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00044}00044\ \ \ \mbox{\hyperlink{dma2d_8c_a6d27e904c93cdaca4f39c5a9c3829edf}{hdma2d}}.LayerCfg[1].InputOffset\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00045}00045\ \ \ \mbox{\hyperlink{dma2d_8c_a6d27e904c93cdaca4f39c5a9c3829edf}{hdma2d}}.LayerCfg[1].InputColorMode\ =\ DMA2D\_INPUT\_ARGB8888;}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00046}00046\ \ \ \mbox{\hyperlink{dma2d_8c_a6d27e904c93cdaca4f39c5a9c3829edf}{hdma2d}}.LayerCfg[1].AlphaMode\ =\ DMA2D\_NO\_MODIF\_ALPHA;}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00047}00047\ \ \ \mbox{\hyperlink{dma2d_8c_a6d27e904c93cdaca4f39c5a9c3829edf}{hdma2d}}.LayerCfg[1].InputAlpha\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00048}00048\ \ \ \mbox{\hyperlink{dma2d_8c_a6d27e904c93cdaca4f39c5a9c3829edf}{hdma2d}}.LayerCfg[1].AlphaInverted\ =\ DMA2D\_REGULAR\_ALPHA;}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00049}00049\ \ \ \mbox{\hyperlink{dma2d_8c_a6d27e904c93cdaca4f39c5a9c3829edf}{hdma2d}}.LayerCfg[1].RedBlueSwap\ =\ DMA2D\_RB\_REGULAR;}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00050}00050\ \ \ \mbox{\hyperlink{dma2d_8c_a6d27e904c93cdaca4f39c5a9c3829edf}{hdma2d}}.LayerCfg[1].ChromaSubSampling\ =\ DMA2D\_NO\_CSS;}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00051}00051\ \ \ \textcolor{keywordflow}{if}\ (HAL\_DMA2D\_Init(\&\mbox{\hyperlink{dma2d_8c_a6d27e904c93cdaca4f39c5a9c3829edf}{hdma2d}})\ !=\ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}})}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00052}00052\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00053}00053\ \ \ \ \ \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\_Handler}}();}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00054}00054\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00055}00055\ \ \ \textcolor{keywordflow}{if}\ (HAL\_DMA2D\_ConfigLayer(\&\mbox{\hyperlink{dma2d_8c_a6d27e904c93cdaca4f39c5a9c3829edf}{hdma2d}},\ 1)\ !=\ \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}})}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00056}00056\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\_Handler}}();}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00058}00058\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00059}00059\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ DMA2D\_Init\ 2\ */}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00061}00061\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ DMA2D\_Init\ 2\ */}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00063}00063\ \}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00065}\mbox{\hyperlink{dma2d_8c_aa11ae9b8aa464680175aa88f2aba74bf}{00065}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{dma2d_8c_aa11ae9b8aa464680175aa88f2aba74bf}{HAL\_DMA2D\_MspInit}}(DMA2D\_HandleTypeDef*\ dma2dHandle)}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00066}00066\ \{}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00068}00068\ \ \ \textcolor{keywordflow}{if}(dma2dHandle-\/>Instance==\mbox{\hyperlink{group___peripheral__declaration_ga46ffe4de9c874b15e9adb93a448d0778}{DMA2D}})}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00069}00069\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00070}00070\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ DMA2D\_MspInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00072}00072\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ DMA2D\_MspInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00073}00073\ \ \ \ \ \textcolor{comment}{/*\ DMA2D\ clock\ enable\ */}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00074}00074\ \ \ \ \ \mbox{\hyperlink{group___r_c_c___exported___macros_ga91061f59b5314335cc2ec6f5e0f1ffcb}{\_\_HAL\_RCC\_DMA2D\_CLK\_ENABLE}}();}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00075}00075\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ DMA2D\_MspInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00077}00077\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ DMA2D\_MspInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00078}00078\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00079}00079\ \}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00081}\mbox{\hyperlink{dma2d_8c_a1757b643a54558cf16ef06d1792c0d58}{00081}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{dma2d_8c_a1757b643a54558cf16ef06d1792c0d58}{HAL\_DMA2D\_MspDeInit}}(DMA2D\_HandleTypeDef*\ dma2dHandle)}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00082}00082\ \{}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00084}00084\ \ \ \textcolor{keywordflow}{if}(dma2dHandle-\/>Instance==\mbox{\hyperlink{group___peripheral__declaration_ga46ffe4de9c874b15e9adb93a448d0778}{DMA2D}})}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00085}00085\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00086}00086\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ DMA2D\_MspDeInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00088}00088\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ DMA2D\_MspDeInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00089}00089\ \ \ \ \ \textcolor{comment}{/*\ Peripheral\ clock\ disable\ */}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00090}00090\ \ \ \ \ \mbox{\hyperlink{group___r_c_c___exported___macros_ga8b7119cdac6401e2a886aaf068e939dd}{\_\_HAL\_RCC\_DMA2D\_CLK\_DISABLE}}();}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00091}00091\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ DMA2D\_MspDeInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00093}00093\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ DMA2D\_MspDeInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00094}00094\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00095}00095\ \}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00097}00097\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00099}00099\ \textcolor{comment}{/*\ USER\ CODE\ END\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{dma2d_8c_source_l00101}00101\ \textcolor{comment}{/************************\ (C)\ COPYRIGHT\ STMicroelectronics\ *****END\ OF\ FILE****/}}
+
+\end{DoxyCode}

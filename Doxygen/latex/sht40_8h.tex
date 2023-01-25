@@ -1,0 +1,95 @@
+\hypertarget{sht40_8h}{}\doxysection{C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.11.0/\+TRex/lib/libleguan/include/peripherals/external/sensors/sht40.h File Reference}
+\label{sht40_8h}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/peripherals/external/sensors/sht40.h@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/peripherals/external/sensors/sht40.h}}
+
+
+SHT40 Sensor Abstraction.  
+
+
+{\ttfamily \#include \char`\"{}common/types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/attributes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/mmio.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{sht40_8h_a0e4491f7482af8e71d742ebc9c57e614}{SHT40\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the SHT40 temperature and humidity sensor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{sht40_8h_a6e10900d1645841f55172021e40598c7}{SHT40\+\_\+\+Get\+Temperature}} (\mbox{\hyperlink{types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} $\ast$value)
+\begin{DoxyCompactList}\small\item\em Gets the current temparature. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{sht40_8h_ae963a53821987974a6f194612ebdf206}{SHT40\+\_\+\+Get\+Humidity}} (\mbox{\hyperlink{types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} $\ast$value)
+\begin{DoxyCompactList}\small\item\em Gets the current relative humidity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SHT40 Sensor Abstraction. 
+
+\begin{DoxyAuthor}{Author}
+Nikolaij Saegesser 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{sht40_8h_source}{sht40.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{sht40_8h_ae963a53821987974a6f194612ebdf206}\label{sht40_8h_ae963a53821987974a6f194612ebdf206}} 
+\index{sht40.h@{sht40.h}!SHT40\_GetHumidity@{SHT40\_GetHumidity}}
+\index{SHT40\_GetHumidity@{SHT40\_GetHumidity}!sht40.h@{sht40.h}}
+\doxysubsubsection{\texorpdfstring{SHT40\_GetHumidity()}{SHT40\_GetHumidity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} SHT40\+\_\+\+Get\+Humidity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Gets the current relative humidity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Pointer} & to where humidity in R is stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status result 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{sht40_8c_source_l00097}{97}} of file \mbox{\hyperlink{sht40_8c_source}{sht40.\+c}}.
+
+\mbox{\Hypertarget{sht40_8h_a6e10900d1645841f55172021e40598c7}\label{sht40_8h_a6e10900d1645841f55172021e40598c7}} 
+\index{sht40.h@{sht40.h}!SHT40\_GetTemperature@{SHT40\_GetTemperature}}
+\index{SHT40\_GetTemperature@{SHT40\_GetTemperature}!sht40.h@{sht40.h}}
+\doxysubsubsection{\texorpdfstring{SHT40\_GetTemperature()}{SHT40\_GetTemperature()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} SHT40\+\_\+\+Get\+Temperature (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Gets the current temparature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Pointer} & to where temperature in °C is stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status result 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{sht40_8c_source_l00083}{83}} of file \mbox{\hyperlink{sht40_8c_source}{sht40.\+c}}.
+
+\mbox{\Hypertarget{sht40_8h_a0e4491f7482af8e71d742ebc9c57e614}\label{sht40_8h_a0e4491f7482af8e71d742ebc9c57e614}} 
+\index{sht40.h@{sht40.h}!SHT40\_Init@{SHT40\_Init}}
+\index{SHT40\_Init@{SHT40\_Init}!sht40.h@{sht40.h}}
+\doxysubsubsection{\texorpdfstring{SHT40\_Init()}{SHT40\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} SHT40\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the SHT40 temperature and humidity sensor. 
+
+\begin{DoxyReturn}{Returns}
+Status result 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{sht40_8c_source_l00051}{51}} of file \mbox{\hyperlink{sht40_8c_source}{sht40.\+c}}.
+

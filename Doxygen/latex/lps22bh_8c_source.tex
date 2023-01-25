@@ -1,0 +1,136 @@
+\hypertarget{lps22bh_8c_source}{}\doxysection{lps22bh.\+c}
+\label{lps22bh_8c_source}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/source/peripherals/external/sensors/lps22bh.c@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/source/peripherals/external/sensors/lps22bh.c}}
+\mbox{\hyperlink{lps22bh_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00001}00001\ \ \textcolor{comment}{/*\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00002}00002\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00003}00003\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00004}00004\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\ \ \ \ \ \_\_\_\ \ \_\_\ \_\ \_\ \ \ \_\ \ \_\_\ \_\ \_\ \_\_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00005}00005\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\ \ \ \ /\ \_\ \(\backslash\)/\ \_`\ |\ |\ |\ |/\ \_`\ |\ '\_\ \(\backslash\)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00006}00006\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\_\_\_|\ \ \_\_/\ (\_|\ |\ |\_|\ |\ (\_|\ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00007}00007\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \(\backslash\)\_\_\_\_\_/\(\backslash\)\_\_\_|\(\backslash\)\_\_,\ |\(\backslash\)\_\_,\_|\(\backslash\)\_\_,\_|\_|\ |\_|\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00008}00008\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ =============\ \_\_/\ |\ ==================\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00009}00009\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\_\_\_/\ \ \ \ \ \ \ \ \ \ \ BFH\ 2021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00010}00010\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00011}00011\ \textcolor{comment}{\ \ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00012}00012\ \textcolor{comment}{\ \ *\ This\ software\ can\ be\ used\ by\ students\ and\ other\ personal\ of\ the\ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00013}00013\ \textcolor{comment}{\ \ *\ Bern\ University\ of\ Applied\ Sciences\ under\ the\ terms\ of\ the\ MIT\ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00014}00014\ \textcolor{comment}{\ \ *\ license.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00015}00015\ \textcolor{comment}{\ \ *\ For\ other\ persons\ this\ software\ is\ under\ the\ terms\ of\ the\ GNU\ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00016}00016\ \textcolor{comment}{\ \ *\ General\ Public\ License\ version\ 2.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00017}00017\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00018}00018\ \textcolor{comment}{\ \ *\ Copyright\ \&copy;\ 2021,\ Bern\ University\ of\ Applied\ Sciences.\ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00019}00019\ \textcolor{comment}{\ \ *\ All\ rights\ reserved.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00020}00020\ \textcolor{comment}{\ \ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ */}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{lps22bh_8h}{peripherals/external/sensors/lps22bh.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00029}00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2i2c_8h}{peripherals/internal/i2c.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{core_8h}{common/core.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00032}\mbox{\hyperlink{lps22bh_8c_a457be1c5e5fee67ed7d01f5887c2d656}{00032}}\ \textcolor{preprocessor}{\#define\ DEVICE\_ADDRESS\ \ \ \ \ \ 0x5C}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00033}\mbox{\hyperlink{lps22bh_8c_a0b85963cace75e76ae726bcffb04eb70}{00033}}\ \textcolor{preprocessor}{\#define\ DEVICE\_ID\ \ \ \ \ \ \ \ \ \ \ 0xB1}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00034}\mbox{\hyperlink{lps22bh_8c_aacd28a24a86a63bc03e8b17010aee86e}{00034}}\ \textcolor{preprocessor}{\#define\ REQUEST\_RESPONSE\ \ \ \ 0x80}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00035}\mbox{\hyperlink{lps22bh_8c_a17265d8e37070dd4710b23b7080a440e}{00035}}\ \textcolor{preprocessor}{\#define\ CONVERSION\_DONE\ \ \ \ \ 0x01}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00037}\mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1b}{00037}}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1b}{Register}}\ \{}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00038}\mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba1ce17f1178e93b1aadc91fd5eb9e66fc}{00038}}\ \ \ \ \ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba1ce17f1178e93b1aadc91fd5eb9e66fc}{INTERRUPT\_CFG}}\ \ =\ 0x0B,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00039}\mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1bab4a13828948ba994683658ca81531588}{00039}}\ \ \ \ \ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1bab4a13828948ba994683658ca81531588}{THS\_P\_L}}\ \ \ \ \ \ \ \ \ \ =\ 0x0C,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00040}\mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba28134b28602b2ead0d73a40cb8676b10}{00040}}\ \ \ \ \ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba28134b28602b2ead0d73a40cb8676b10}{THS\_P\_H}}\ \ \ \ \ \ \ \ \ \ =\ 0x0D,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00041}\mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba14f735baeb4ba7d558ac9caf5439fbeb}{00041}}\ \ \ \ \ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba14f735baeb4ba7d558ac9caf5439fbeb}{WHO\_AM\_I}}\ \ \ \ \ \ \ \ =\ 0x0F,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00042}\mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba0e074f79acb56a4a8dcb4d3a373d4564}{00042}}\ \ \ \ \ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba0e074f79acb56a4a8dcb4d3a373d4564}{CTRL\_REG1}}\ \ \ \ \ \ =\ 0x10,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00043}\mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba9e33efc02a920e48ed7c6f7468011cf5}{00043}}\ \ \ \ \ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba9e33efc02a920e48ed7c6f7468011cf5}{CTRL\_REG2}}\ \ \ \ \ \ =\ 0x11,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00044}\mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1baff265c077ea00e64b0dd8b83f4fc816b}{00044}}\ \ \ \ \ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1baff265c077ea00e64b0dd8b83f4fc816b}{CTRL\_REG3}}\ \ \ \ \ \ =\ 0x12,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00045}\mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba992604f7cae5df02145d46a2b342f7ea}{00045}}\ \ \ \ \ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba992604f7cae5df02145d46a2b342f7ea}{FIFO\_CTRL}}\ \ \ \ \ \ =\ 0x14,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00046}\mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1bab9bdf6fac1b6285def655da781042d06}{00046}}\ \ \ \ \ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1bab9bdf6fac1b6285def655da781042d06}{REF\_P\_XL}}\ \ \ \ \ \ \ \ =\ 0x15,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00047}\mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1bab281408e3900f985a544b4348f9e3fba}{00047}}\ \ \ \ \ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1bab281408e3900f985a544b4348f9e3fba}{REF\_P\_L}}\ \ \ \ \ \ \ \ \ \ =\ 0x16,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00048}\mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba11447a206fe8dd3b2dda6c25c0fef161}{00048}}\ \ \ \ \ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba11447a206fe8dd3b2dda6c25c0fef161}{REF\_P\_H}}\ \ \ \ \ \ \ \ \ \ =\ 0x17,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00049}\mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1bae331054e7e08f0105732de4896d604c1}{00049}}\ \ \ \ \ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1bae331054e7e08f0105732de4896d604c1}{RPDS\_L}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0x18,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00050}\mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba696b4c23d07ff3d94584db39272d34a6}{00050}}\ \ \ \ \ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba696b4c23d07ff3d94584db39272d34a6}{RPDS\_H}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0x19,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00051}\mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1bae2a5102426856b060f7af2235e34820f}{00051}}\ \ \ \ \ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1bae2a5102426856b060f7af2235e34820f}{RES\_CONF}}\ \ \ \ \ \ \ \ =\ 0x1A,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00052}\mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1bac59b61a6dad337604d6e49ab76dbdca3}{00052}}\ \ \ \ \ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1bac59b61a6dad337604d6e49ab76dbdca3}{INT\_SOURCE}}\ \ \ \ \ \ \ \ =\ 0x25,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00053}\mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba4164f0acd26c6959c2bb5ecc759dd92e}{00053}}\ \ \ \ \ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba4164f0acd26c6959c2bb5ecc759dd92e}{FIFO\_STATUS}}\ \ =\ 0x26,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00054}\mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1bab15379688176677d49474245a6178d97}{00054}}\ \ \ \ \ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1bab15379688176677d49474245a6178d97}{STATUS}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0x27,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00055}\mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba01ac16c5c55e34ab696fe1140c46a6ab}{00055}}\ \ \ \ \ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba01ac16c5c55e34ab696fe1140c46a6ab}{PRESS\_OUT\_XL}}\ \ \ \ =\ 0x28,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00056}\mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1baeca06399199110d015a53100ca079796}{00056}}\ \ \ \ \ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1baeca06399199110d015a53100ca079796}{PRESS\_OUT\_L}}\ \ =\ 0x29,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00057}\mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1baee57c84c669c4be09e4b13e8326f4693}{00057}}\ \ \ \ \ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1baee57c84c669c4be09e4b13e8326f4693}{PRESS\_OUT\_H}}\ \ =\ 0x2A,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00058}\mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1bada3a5aba31bc2495f1ad1e4e8e48d7cd}{00058}}\ \ \ \ \ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1bada3a5aba31bc2495f1ad1e4e8e48d7cd}{TEMP\_OUT\_L}}\ \ \ \ \ \ \ \ =\ 0x2B,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00059}\mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1bae14102c3ccdc34097a8ac6c5039792d9}{00059}}\ \ \ \ \ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1bae14102c3ccdc34097a8ac6c5039792d9}{TEMP\_OUT\_H}}\ \ \ \ \ \ \ \ =\ 0x2C,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00060}\mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba06e88d7636d3ca5dd2ca90394424473e}{00060}}\ \ \ \ \ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba06e88d7636d3ca5dd2ca90394424473e}{LPFP\_RES}}\ \ \ \ \ \ \ \ =\ 0x33,\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00061}00061\ \};}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00063}\mbox{\hyperlink{struct_control_register2__t}{00063}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00064}\mbox{\hyperlink{struct_control_register2__t_a2afd33cdf4177204aebc70835a780792}{00064}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_control_register2__t_a2afd33cdf4177204aebc70835a780792}{ONE\_SHOT}}\ \ \ \ :\ 1;\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00065}\mbox{\hyperlink{struct_control_register2__t_ada09753b1ff3dcdffa68f2efb935e9a1}{00065}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_control_register2__t_ada09753b1ff3dcdffa68f2efb935e9a1}{Reserved0}}\ \ :\ 1;\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00066}\mbox{\hyperlink{struct_control_register2__t_aef8629b66c9f0790dd3df4cb529f8533}{00066}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_control_register2__t_aef8629b66c9f0790dd3df4cb529f8533}{SWRESET}}\ \ \ \ \ \ :\ 1;\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00067}\mbox{\hyperlink{struct_control_register2__t_a914f202fc573fc7757a25d5320b2bfa6}{00067}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_control_register2__t_a914f202fc573fc7757a25d5320b2bfa6}{I2C\_DIS}}\ \ \ \ \ \ :\ 1;\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00068}\mbox{\hyperlink{struct_control_register2__t_a6dee89fe051bef378864f3344d551f72}{00068}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_control_register2__t_a6dee89fe051bef378864f3344d551f72}{IF\_ADD\_INC}}\ \ \ :\ 1;\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00069}\mbox{\hyperlink{struct_control_register2__t_abab8647b727c8b7465d5d351d65626d1}{00069}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_control_register2__t_abab8647b727c8b7465d5d351d65626d1}{STOP\_ON\_FTH}}\ \ :\ 1;\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00070}\mbox{\hyperlink{struct_control_register2__t_a44c070ac8bd23d796be9a232e2cc8acc}{00070}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_control_register2__t_a44c070ac8bd23d796be9a232e2cc8acc}{FIFO\_EN}}\ \ \ \ \ \ :\ 1;\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00071}\mbox{\hyperlink{struct_control_register2__t_a2eae5f0858e104739e7a4477898fbe05}{00071}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_control_register2__t_a2eae5f0858e104739e7a4477898fbe05}{BOOT}}\ \ \ \ \ \ \ \ \ \ \ \ :\ 1;\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00072}00072\ \}\ \mbox{\hyperlink{struct_control_register2__t}{ControlRegister2\_t}};}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00075}\mbox{\hyperlink{lps22bh_8h_ae671cb50f73e55b21c182689dadbbeaa}{00075}}\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{lps22bh_8c_ae671cb50f73e55b21c182689dadbbeaa}{LPS22BH\_Init}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00076}00076\ \ \ \ \ uint8\_t\ readDeviceId\ =\ 0x00;}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00078}00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2i2c_8h_acc54e3b6682d1f2da159cfb66b53d8b3}{I2C\_ReadRegister}}(\mbox{\hyperlink{lps22bh_8c_a457be1c5e5fee67ed7d01f5887c2d656}{DEVICE\_ADDRESS}},\ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba14f735baeb4ba7d558ac9caf5439fbeb}{WHO\_AM\_I}}\ |\ \mbox{\hyperlink{lps22bh_8c_aacd28a24a86a63bc03e8b17010aee86e}{REQUEST\_RESPONSE}},\ \&readDeviceId));}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (readDeviceId\ ==\ \mbox{\hyperlink{lps22bh_8c_a0b85963cace75e76ae726bcffb04eb70}{DEVICE\_ID}})}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00082}00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{core_8h_a3b63353d623556ce4c0f8822b5e366b2}{CORE\_Delay}}(100);}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00083}00083\ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3af3d0d72febdcc6491554576ed31f686e}{RESULT\_SUCCESS}};}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00086}00086\ \}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00089}00089\ \textcolor{keyword}{static}\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ StartConversion(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00090}00090\ \ \ \ \ \mbox{\hyperlink{struct_control_register2__t}{ControlRegister2\_t}}\ reg\ =\ \{\ .\mbox{\hyperlink{struct_control_register2__t_a2afd33cdf4177204aebc70835a780792}{ONE\_SHOT}}\ =\ 1\ \};}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00092}00092\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2i2c_8h_a66f5ece6c0e00dead166b774d4e3bbf4}{I2C\_WriteRegister}}(\mbox{\hyperlink{lps22bh_8c_a457be1c5e5fee67ed7d01f5887c2d656}{DEVICE\_ADDRESS}},\ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba9e33efc02a920e48ed7c6f7468011cf5}{CTRL\_REG2}},\ *(uint8\_t*)\&reg));}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00094}00094\ \ \ \ \ uint8\_t\ conversionDone\ =\ 0x00;}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00095}00095\ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00096}00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2i2c_8h_acc54e3b6682d1f2da159cfb66b53d8b3}{I2C\_ReadRegister}}(\mbox{\hyperlink{lps22bh_8c_a457be1c5e5fee67ed7d01f5887c2d656}{DEVICE\_ADDRESS}},\ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba9e33efc02a920e48ed7c6f7468011cf5}{CTRL\_REG2}}\ |\ \mbox{\hyperlink{lps22bh_8c_aacd28a24a86a63bc03e8b17010aee86e}{REQUEST\_RESPONSE}},\ \&conversionDone));}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (conversionDone\ ==\ 0x00)}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00100}00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{core_8h_a3b63353d623556ce4c0f8822b5e366b2}{CORE\_Delay}}(10);}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00101}00101\ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00103}00103\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3af3d0d72febdcc6491554576ed31f686e}{RESULT\_SUCCESS}};}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00104}00104\ \}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00107}\mbox{\hyperlink{lps22bh_8h_a1d7988b4e48c0f58f58b5b80a3e80b5f}{00107}}\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{lps22bh_8c_a1d7988b4e48c0f58f58b5b80a3e80b5f}{LPS22BH\_GetTemperature}}(\mbox{\hyperlink{types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\_t}}\ *value)\ \{}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00108}00108\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(StartConversion());}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ ==\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a452818d0c5041b006773bf786538eea2}{RESULT\_INVALID\_ARGUMENTS}};}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00113}00113\ \ \ \ \ uint8\_t\ l,\ h;}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00115}00115\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2i2c_8h_acc54e3b6682d1f2da159cfb66b53d8b3}{I2C\_ReadRegister}}(\mbox{\hyperlink{lps22bh_8c_a457be1c5e5fee67ed7d01f5887c2d656}{DEVICE\_ADDRESS}},\ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1bada3a5aba31bc2495f1ad1e4e8e48d7cd}{TEMP\_OUT\_L}},\ \&l));}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00116}00116\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2i2c_8h_acc54e3b6682d1f2da159cfb66b53d8b3}{I2C\_ReadRegister}}(\mbox{\hyperlink{lps22bh_8c_a457be1c5e5fee67ed7d01f5887c2d656}{DEVICE\_ADDRESS}},\ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1bae14102c3ccdc34097a8ac6c5039792d9}{TEMP\_OUT\_H}},\ \&h));}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00118}00118\ \ \ \ \ *value\ =\ (\mbox{\hyperlink{types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\_t}})(l\ |\ h\ <<\ 8)\ /\ 100.0F;}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00120}00120\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3af3d0d72febdcc6491554576ed31f686e}{RESULT\_SUCCESS}};}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00121}00121\ \}}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00123}\mbox{\hyperlink{lps22bh_8h_af24d5e661b67659b7a309efb65b99606}{00123}}\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{lps22bh_8c_af24d5e661b67659b7a309efb65b99606}{LPS22BH\_GetPressure}}(\mbox{\hyperlink{types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\_t}}\ *value)\ \{}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00124}00124\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(StartConversion());}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00126}00126\ \ \ \ \ \textcolor{keywordflow}{if}\ (value\ ==\ \mbox{\hyperlink{group___u_s_b___d_e_f___exported___defines_ga070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}})}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00127}00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a452818d0c5041b006773bf786538eea2}{RESULT\_INVALID\_ARGUMENTS}};}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00129}00129\ \ \ \ \ uint8\_t\ xl,\ l,\ h;}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00130}00130\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2i2c_8h_acc54e3b6682d1f2da159cfb66b53d8b3}{I2C\_ReadRegister}}(\mbox{\hyperlink{lps22bh_8c_a457be1c5e5fee67ed7d01f5887c2d656}{DEVICE\_ADDRESS}},\ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1ba01ac16c5c55e34ab696fe1140c46a6ab}{PRESS\_OUT\_XL}},\ \&xl));}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00131}00131\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2i2c_8h_acc54e3b6682d1f2da159cfb66b53d8b3}{I2C\_ReadRegister}}(\mbox{\hyperlink{lps22bh_8c_a457be1c5e5fee67ed7d01f5887c2d656}{DEVICE\_ADDRESS}},\ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1baeca06399199110d015a53100ca079796}{PRESS\_OUT\_L}},\ \&l));}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00132}00132\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2i2c_8h_acc54e3b6682d1f2da159cfb66b53d8b3}{I2C\_ReadRegister}}(\mbox{\hyperlink{lps22bh_8c_a457be1c5e5fee67ed7d01f5887c2d656}{DEVICE\_ADDRESS}},\ \mbox{\hyperlink{lps22bh_8c_a8e39d30bce1b2172c347b10e96f05d1baee57c84c669c4be09e4b13e8326f4693}{PRESS\_OUT\_H}},\ \&h));}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00134}00134\ \ \ \ \ *value\ =\ \ (\mbox{\hyperlink{types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\_t}})(xl\ |\ (l\ <<\ 8)\ |\ (h\ <<\ 16))\ /\ 4096.0F;}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00136}00136\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3af3d0d72febdcc6491554576ed31f686e}{RESULT\_SUCCESS}};}
+\DoxyCodeLine{\Hypertarget{lps22bh_8c_source_l00137}00137\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,45 @@
+\hypertarget{leguan_8c_source}{}\doxysection{leguan.\+c}
+\label{leguan_8c_source}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/source/leguan.c@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/source/leguan.c}}
+\mbox{\hyperlink{leguan_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00001}00001\ \ \textcolor{comment}{/*\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00002}00002\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00003}00003\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00004}00004\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\ \ \ \ \ \_\_\_\ \ \_\_\ \_\ \_\ \ \ \_\ \ \_\_\ \_\ \_\ \_\_\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00005}00005\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\ \ \ \ /\ \_\ \(\backslash\)/\ \_`\ |\ |\ |\ |/\ \_`\ |\ '\_\ \(\backslash\)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00006}00006\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ |\ |\_\_\_|\ \ \_\_/\ (\_|\ |\ |\_|\ |\ (\_|\ |\ |\ |\ |\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00007}00007\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \(\backslash\)\_\_\_\_\_/\(\backslash\)\_\_\_|\(\backslash\)\_\_,\ |\(\backslash\)\_\_,\_|\(\backslash\)\_\_,\_|\_|\ |\_|\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00008}00008\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ =============\ \_\_/\ |\ ==================\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00009}00009\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\_\_\_/\ \ \ \ \ \ \ \ \ \ \ BFH\ 2021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00010}00010\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00011}00011\ \textcolor{comment}{\ \ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00012}00012\ \textcolor{comment}{\ \ *\ This\ software\ can\ be\ used\ by\ students\ and\ other\ personal\ of\ the\ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00013}00013\ \textcolor{comment}{\ \ *\ Bern\ University\ of\ Applied\ Sciences\ under\ the\ terms\ of\ the\ MIT\ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00014}00014\ \textcolor{comment}{\ \ *\ license.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00015}00015\ \textcolor{comment}{\ \ *\ For\ other\ persons\ this\ software\ is\ under\ the\ terms\ of\ the\ GNU\ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00016}00016\ \textcolor{comment}{\ \ *\ General\ Public\ License\ version\ 2.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00017}00017\ \textcolor{comment}{\ \ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00018}00018\ \textcolor{comment}{\ \ *\ Copyright\ \&copy;\ 2021,\ Bern\ University\ of\ Applied\ Sciences.\ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00019}00019\ \textcolor{comment}{\ \ *\ All\ rights\ reserved.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00020}00020\ \textcolor{comment}{\ \ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ *\ */}}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{leguan_8h}{leguan.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00030}\mbox{\hyperlink{leguan_8h_a5a4e3429355b1f0c150e5e533efdc918}{00030}}\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \mbox{\hyperlink{leguan_8c_a5a4e3429355b1f0c150e5e533efdc918}{LEGUAN\_Init}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00031}00031\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(\mbox{\hyperlink{fpga_8h_acfe196610727ad70fcd0f6a621b65b80}{FPGA\_Init}}());}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(\mbox{\hyperlink{lcd_8h_a06dc74b5787c925fa78d0227ab9c39a9}{LCD\_Init}}());}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00033}00033\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(\mbox{\hyperlink{lcd_8h_a56bd391e963669e956744993c8c116b6}{LCD\_TouchInit}}());}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(\mbox{\hyperlink{sensors_8h_ac2bbe621f9a431d48282e16b8ac39df5}{SENSOR\_Init}}());}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2gpio_8h_a9cc5ed397862d55d66f76279ba8bd44c}{GPIO\_Init}}());}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(\mbox{\hyperlink{serial_8h_a73ed2812c50696a6159ec6f5dbbca292}{SERIAL\_Init}}());}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2spi_8h_a09fe941b761fa049c7de1943866254fa}{SPI\_Init}}(\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2spi_8h_ab8d129fc0adef97994eb88e6a20d908f}{SPI\_Sensor}}));}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2spi_8h_a09fe941b761fa049c7de1943866254fa}{SPI\_Init}}(\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2spi_8h_a6266b8eebfe0a61c4894367dd00bc720}{SPI\_Touch}}));}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2i2c_8h_a41166b7331ab556fbec77b3e6ae19dc9}{I2C\_Init}}());}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2adc_8h_a451bdea2ef8873d91626ba099a27af1d}{ADC\_Init}}());}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2dac_8h_af915a2084e2d63735fe4b5e23436f52b}{DAC\_Init}}(\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2dac_8h_a23e4c6b94474da7af548f7299690cdef}{DAC1\_CH1}}));}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{errors_8h_af8ae7a4a5f733dc94fc9c3b00bcce3bc}{R\_TRY}}(\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2dac_8h_af915a2084e2d63735fe4b5e23436f52b}{DAC\_Init}}(\mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2dac_8h_a3fa28f7bcaa7c99b04394bd7045cc9b4}{DAC1\_CH2}}));}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3af3d0d72febdcc6491554576ed31f686e}{RESULT\_SUCCESS}};}
+\DoxyCodeLine{\Hypertarget{leguan_8c_source_l00046}00046\ \}}
+
+\end{DoxyCode}

@@ -1,9 +1,10 @@
-/*
- * Objects.c
- *
- *  Created on: 30.12.2022
- *      Author: lukir
- */
+/**
+  *  @file objects.c
+  *  @ingroup source
+  *  @date 30.12.2022
+  *  @author Lukas Roth
+  *  @brief Working with objects on the LCD
+  */
 
 #include <stdlib.h>
 #include "include/objects.h"
@@ -128,10 +129,10 @@ void LcdClearArea(const uint16_t x1, const uint16_t y1, const uint16_t x2, const
 
 //in order that this border function workes, it is important that the border are markes and they are all
 //on the border of the object.
-node_t *GetBoarder (bmp_t bmp) {
+pixel_t *GetBoarder (bmp_t bmp) {
 
-	node_t *head = NULL;
-	node_t *current = NULL;
+	pixel_t *head = NULL;
+	pixel_t *current = NULL;
 
 	uint32_t i;
 	const uint32_t size = bmp.w * bmp.h;
@@ -142,7 +143,7 @@ node_t *GetBoarder (bmp_t bmp) {
 			i = size - yi * bmp.w - bmp.w + xi;
 			if((*(bmp.pixels + i))[3] != 0)
 			{
-				node_t *pixel = malloc(sizeof(node_t));
+				pixel_t *pixel = malloc(sizeof(pixel_t));
 				pixel->x = xi;
 				pixel->y = yi;
 				pixel->next = NULL;
@@ -204,7 +205,7 @@ node_t *GetBoarder (bmp_t bmp) {
 				(*(bmp.pixels + i))[2] == 1	&&
 				(*(bmp.pixels + i))[3] == 255 )
 			{
-				node_t *pixel = malloc(sizeof(node_t));
+				pixel_t *pixel = malloc(sizeof(pixel_t));
 				pixel->x = x_next;
 				pixel->y = y_next;
 				pixel->next = head;
@@ -235,13 +236,13 @@ node_t *GetBoarder (bmp_t bmp) {
 //*** This function will sort the border pixels so that they are in a line and
 //*** each pixel in the list is a neighbour of the next pixel in the list.
 //*********************************************************************
-node_t *SortBoarder(node_t *head)
+pixel_t *SortBoarder(pixel_t *head)
 {
     if (head == NULL)
         return NULL;
 
-    node_t *current = head;
-    node_t *min = current;
+    pixel_t *current = head;
+    pixel_t *min = current;
 
     // find the first pixel in the list that has the smallest distance to the next pixel
     while (current->next != NULL) {
@@ -266,7 +267,7 @@ node_t *SortBoarder(node_t *head)
     current = head;
     while (current->next != NULL) {
         min = current->next;
-        node_t *temp = current;
+        pixel_t *temp = current;
         while (temp->next != NULL) {
             if (abs(temp->next->x - current->x) + abs(temp->next->y - current->y) == 1) {
                 if (min == current->next || abs(temp->next->x - current->x) + abs(temp->next->y - current->y) < abs(min->x - current->x) + abs(min->y - current->y)) {
@@ -291,8 +292,10 @@ node_t *SortBoarder(node_t *head)
 }
 
 // only leaves the edges of the border
-node_t *CreateEdges(node_t *head) {
-    node_t *prev = head, *current = head->next;
+pixel_t *CreateEdges(pixel_t *head) {
+	pixel_t *prev = head;
+	pixel_t *current = head->next;
+
     while (current != NULL) {
         if (current->x == prev->x || current->y == prev->y) {
             prev->next = current->next;
@@ -308,7 +311,7 @@ node_t *CreateEdges(node_t *head) {
 
 void PrintBorder (bmp_t bmp, color_t clr) {
 
-	node_t *ptr = bmp.head;
+	pixel_t *ptr = bmp.head;
 
 	LCD_SetForegroundColor(clr);
 
@@ -319,18 +322,15 @@ void PrintBorder (bmp_t bmp, color_t clr) {
 }
 
 
-void ConvertArray(unsigned char pixelData[][4], const uint16_t w, const uint16_t h){
+void ConvertArray(unsigned char pixelData[][4], const uint16_t w, const uint16_t h)
+{
 	for (uint16_t i = 0; i < h * w; i++) {
-
 		//--- border edges
 		if( pixelData[i][0] == 252 	&&
 			pixelData[i][1] == 2	&&
 			pixelData[i][2] == 1	&&
 			pixelData[i][3] == 255 )
 		{
-			//pixelData[i][0] = 0;
-			//pixelData[i][1] = 0;
-			//pixelData[i][2] = 0;
 			pixelData[i][3] = 0;
 			continue;
 		}
@@ -388,7 +388,6 @@ void LCD_Rect_Gradient(uint16_t x, uint16_t y, uint16_t width, uint16_t height, 
     		LCD_Set(&clr);
     	}
     }
-
 }
 
 

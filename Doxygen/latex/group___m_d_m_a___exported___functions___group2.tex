@@ -1,0 +1,58 @@
+\hypertarget{group___m_d_m_a___exported___functions___group2}{}\doxysection{Linked List operation functions}
+\label{group___m_d_m_a___exported___functions___group2}\index{Linked List operation functions@{Linked List operation functions}}
+
+
+Linked list operation functions.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___m_d_m_a___exported___functions___group2_ga669860bb7d7f669cc5107d7adf1cb630}{HAL\+\_\+\+MDMA\+\_\+\+Linked\+List\+\_\+\+Create\+Node}} (\mbox{\hyperlink{struct_m_d_m_a___link_node_type_def}{MDMA\+\_\+\+Link\+Node\+Type\+Def}} $\ast$p\+Node, \mbox{\hyperlink{struct_m_d_m_a___link_node_conf_type_def}{MDMA\+\_\+\+Link\+Node\+Conf\+Type\+Def}} $\ast$p\+Node\+Config)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___m_d_m_a___exported___functions___group2_ga3380fcf96dd7704882828c0b02953e9e}{HAL\+\_\+\+MDMA\+\_\+\+Linked\+List\+\_\+\+Add\+Node}} (\mbox{\hyperlink{group___m_d_m_a___exported___types_gae8e2befd2f94de51db90261afd6bf701}{MDMA\+\_\+\+Handle\+Type\+Def}} $\ast$hmdma, \mbox{\hyperlink{struct_m_d_m_a___link_node_type_def}{MDMA\+\_\+\+Link\+Node\+Type\+Def}} $\ast$p\+New\+Node, \mbox{\hyperlink{struct_m_d_m_a___link_node_type_def}{MDMA\+\_\+\+Link\+Node\+Type\+Def}} $\ast$p\+Prev\+Node)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___m_d_m_a___exported___functions___group2_gaa490dbbeb36e698ab93be63fd16f5efb}{HAL\+\_\+\+MDMA\+\_\+\+Linked\+List\+\_\+\+Remove\+Node}} (\mbox{\hyperlink{group___m_d_m_a___exported___types_gae8e2befd2f94de51db90261afd6bf701}{MDMA\+\_\+\+Handle\+Type\+Def}} $\ast$hmdma, \mbox{\hyperlink{struct_m_d_m_a___link_node_type_def}{MDMA\+\_\+\+Link\+Node\+Type\+Def}} $\ast$p\+Node)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___m_d_m_a___exported___functions___group2_ga8a549f150c4250b2b284f5a7a5eea272}{HAL\+\_\+\+MDMA\+\_\+\+Linked\+List\+\_\+\+Enable\+Circular\+Mode}} (\mbox{\hyperlink{group___m_d_m_a___exported___types_gae8e2befd2f94de51db90261afd6bf701}{MDMA\+\_\+\+Handle\+Type\+Def}} $\ast$hmdma)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___m_d_m_a___exported___functions___group2_gab3a8eaefab95662d2ee71ffc0a511fcd}{HAL\+\_\+\+MDMA\+\_\+\+Linked\+List\+\_\+\+Disable\+Circular\+Mode}} (\mbox{\hyperlink{group___m_d_m_a___exported___types_gae8e2befd2f94de51db90261afd6bf701}{MDMA\+\_\+\+Handle\+Type\+Def}} $\ast$hmdma)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Linked list operation functions. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___m_d_m_a___exported___functions___group2_ga3380fcf96dd7704882828c0b02953e9e}\label{group___m_d_m_a___exported___functions___group2_ga3380fcf96dd7704882828c0b02953e9e}} 
+\index{Linked List operation functions@{Linked List operation functions}!HAL\_MDMA\_LinkedList\_AddNode@{HAL\_MDMA\_LinkedList\_AddNode}}
+\index{HAL\_MDMA\_LinkedList\_AddNode@{HAL\_MDMA\_LinkedList\_AddNode}!Linked List operation functions@{Linked List operation functions}}
+\doxysubsubsection{\texorpdfstring{HAL\_MDMA\_LinkedList\_AddNode()}{HAL\_MDMA\_LinkedList\_AddNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+MDMA\+\_\+\+Linked\+List\+\_\+\+Add\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___m_d_m_a___exported___types_gae8e2befd2f94de51db90261afd6bf701}{MDMA\+\_\+\+Handle\+Type\+Def}} $\ast$}]{hmdma,  }\item[{\mbox{\hyperlink{struct_m_d_m_a___link_node_type_def}{MDMA\+\_\+\+Link\+Node\+Type\+Def}} $\ast$}]{p\+New\+Node,  }\item[{\mbox{\hyperlink{struct_m_d_m_a___link_node_type_def}{MDMA\+\_\+\+Link\+Node\+Type\+Def}} $\ast$}]{p\+Prev\+Node }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group___m_d_m_a___exported___functions___group2_ga669860bb7d7f669cc5107d7adf1cb630}\label{group___m_d_m_a___exported___functions___group2_ga669860bb7d7f669cc5107d7adf1cb630}} 
+\index{Linked List operation functions@{Linked List operation functions}!HAL\_MDMA\_LinkedList\_CreateNode@{HAL\_MDMA\_LinkedList\_CreateNode}}
+\index{HAL\_MDMA\_LinkedList\_CreateNode@{HAL\_MDMA\_LinkedList\_CreateNode}!Linked List operation functions@{Linked List operation functions}}
+\doxysubsubsection{\texorpdfstring{HAL\_MDMA\_LinkedList\_CreateNode()}{HAL\_MDMA\_LinkedList\_CreateNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+MDMA\+\_\+\+Linked\+List\+\_\+\+Create\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_m_d_m_a___link_node_type_def}{MDMA\+\_\+\+Link\+Node\+Type\+Def}} $\ast$}]{p\+Node,  }\item[{\mbox{\hyperlink{struct_m_d_m_a___link_node_conf_type_def}{MDMA\+\_\+\+Link\+Node\+Conf\+Type\+Def}} $\ast$}]{p\+Node\+Config }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group___m_d_m_a___exported___functions___group2_gab3a8eaefab95662d2ee71ffc0a511fcd}\label{group___m_d_m_a___exported___functions___group2_gab3a8eaefab95662d2ee71ffc0a511fcd}} 
+\index{Linked List operation functions@{Linked List operation functions}!HAL\_MDMA\_LinkedList\_DisableCircularMode@{HAL\_MDMA\_LinkedList\_DisableCircularMode}}
+\index{HAL\_MDMA\_LinkedList\_DisableCircularMode@{HAL\_MDMA\_LinkedList\_DisableCircularMode}!Linked List operation functions@{Linked List operation functions}}
+\doxysubsubsection{\texorpdfstring{HAL\_MDMA\_LinkedList\_DisableCircularMode()}{HAL\_MDMA\_LinkedList\_DisableCircularMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+MDMA\+\_\+\+Linked\+List\+\_\+\+Disable\+Circular\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___m_d_m_a___exported___types_gae8e2befd2f94de51db90261afd6bf701}{MDMA\+\_\+\+Handle\+Type\+Def}} $\ast$}]{hmdma }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group___m_d_m_a___exported___functions___group2_ga8a549f150c4250b2b284f5a7a5eea272}\label{group___m_d_m_a___exported___functions___group2_ga8a549f150c4250b2b284f5a7a5eea272}} 
+\index{Linked List operation functions@{Linked List operation functions}!HAL\_MDMA\_LinkedList\_EnableCircularMode@{HAL\_MDMA\_LinkedList\_EnableCircularMode}}
+\index{HAL\_MDMA\_LinkedList\_EnableCircularMode@{HAL\_MDMA\_LinkedList\_EnableCircularMode}!Linked List operation functions@{Linked List operation functions}}
+\doxysubsubsection{\texorpdfstring{HAL\_MDMA\_LinkedList\_EnableCircularMode()}{HAL\_MDMA\_LinkedList\_EnableCircularMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+MDMA\+\_\+\+Linked\+List\+\_\+\+Enable\+Circular\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___m_d_m_a___exported___types_gae8e2befd2f94de51db90261afd6bf701}{MDMA\+\_\+\+Handle\+Type\+Def}} $\ast$}]{hmdma }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group___m_d_m_a___exported___functions___group2_gaa490dbbeb36e698ab93be63fd16f5efb}\label{group___m_d_m_a___exported___functions___group2_gaa490dbbeb36e698ab93be63fd16f5efb}} 
+\index{Linked List operation functions@{Linked List operation functions}!HAL\_MDMA\_LinkedList\_RemoveNode@{HAL\_MDMA\_LinkedList\_RemoveNode}}
+\index{HAL\_MDMA\_LinkedList\_RemoveNode@{HAL\_MDMA\_LinkedList\_RemoveNode}!Linked List operation functions@{Linked List operation functions}}
+\doxysubsubsection{\texorpdfstring{HAL\_MDMA\_LinkedList\_RemoveNode()}{HAL\_MDMA\_LinkedList\_RemoveNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} HAL\+\_\+\+MDMA\+\_\+\+Linked\+List\+\_\+\+Remove\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___m_d_m_a___exported___types_gae8e2befd2f94de51db90261afd6bf701}{MDMA\+\_\+\+Handle\+Type\+Def}} $\ast$}]{hmdma,  }\item[{\mbox{\hyperlink{struct_m_d_m_a___link_node_type_def}{MDMA\+\_\+\+Link\+Node\+Type\+Def}} $\ast$}]{p\+Node }\end{DoxyParamCaption})}
+

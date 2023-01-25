@@ -1,9 +1,10 @@
-/*
- * Resource.h
- *
- *  Created on: 30.12.2022
- *      Author: lukir
- */
+/**
+  *  @file resource.h
+  *  @ingroup include
+  *  @date 30.12.2022
+  *  @author Lukas Roth
+  *  @brief Pixeldata of bmp files
+  */
 
 #ifndef INCLUDE_RESOURCE_H_
 #define INCLUDE_RESOURCE_H_

@@ -1,0 +1,92 @@
+\hypertarget{lps22bh_8h}{}\doxysection{C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.11.0/\+TRex/lib/libleguan/include/peripherals/external/sensors/lps22bh.h File Reference}
+\label{lps22bh_8h}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/peripherals/external/sensors/lps22bh.h@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/peripherals/external/sensors/lps22bh.h}}
+
+
+LPS22\+BH Sensor Abstraction.  
+
+
+{\ttfamily \#include \char`\"{}common/types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/attributes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/mmio.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{lps22bh_8h_ae671cb50f73e55b21c182689dadbbeaa}{LPS22\+BH\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the LPS22\+BH temperature and pressure sensor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{lps22bh_8h_a1d7988b4e48c0f58f58b5b80a3e80b5f}{LPS22\+BH\+\_\+\+Get\+Temperature}} (\mbox{\hyperlink{types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} $\ast$value)
+\begin{DoxyCompactList}\small\item\em Gets the current temparature. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{lps22bh_8h_af24d5e661b67659b7a309efb65b99606}{LPS22\+BH\+\_\+\+Get\+Pressure}} (\mbox{\hyperlink{types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} $\ast$value)
+\begin{DoxyCompactList}\small\item\em Gets the current atmospheric pressure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+LPS22\+BH Sensor Abstraction. 
+
+\begin{DoxyAuthor}{Author}
+Nikolaij Saegesser 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{lps22bh_8h_source}{lps22bh.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{lps22bh_8h_af24d5e661b67659b7a309efb65b99606}\label{lps22bh_8h_af24d5e661b67659b7a309efb65b99606}} 
+\index{lps22bh.h@{lps22bh.h}!LPS22BH\_GetPressure@{LPS22BH\_GetPressure}}
+\index{LPS22BH\_GetPressure@{LPS22BH\_GetPressure}!lps22bh.h@{lps22bh.h}}
+\doxysubsubsection{\texorpdfstring{LPS22BH\_GetPressure()}{LPS22BH\_GetPressure()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} LPS22\+BH\+\_\+\+Get\+Pressure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Gets the current atmospheric pressure. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to where pressure in h\+Pa is stored 
+
+Status result 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{lps22bh_8c_source_l00123}{123}} of file \mbox{\hyperlink{lps22bh_8c_source}{lps22bh.\+c}}.
+
+\mbox{\Hypertarget{lps22bh_8h_a1d7988b4e48c0f58f58b5b80a3e80b5f}\label{lps22bh_8h_a1d7988b4e48c0f58f58b5b80a3e80b5f}} 
+\index{lps22bh.h@{lps22bh.h}!LPS22BH\_GetTemperature@{LPS22BH\_GetTemperature}}
+\index{LPS22BH\_GetTemperature@{LPS22BH\_GetTemperature}!lps22bh.h@{lps22bh.h}}
+\doxysubsubsection{\texorpdfstring{LPS22BH\_GetTemperature()}{LPS22BH\_GetTemperature()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} LPS22\+BH\+\_\+\+Get\+Temperature (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{types_8h_a4611b605e45ab401f02cab15c5e38715}{float32\+\_\+t}} $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Gets the current temparature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Pointer} & to where temperature in °C is stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status result 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{lps22bh_8c_source_l00107}{107}} of file \mbox{\hyperlink{lps22bh_8c_source}{lps22bh.\+c}}.
+
+\mbox{\Hypertarget{lps22bh_8h_ae671cb50f73e55b21c182689dadbbeaa}\label{lps22bh_8h_ae671cb50f73e55b21c182689dadbbeaa}} 
+\index{lps22bh.h@{lps22bh.h}!LPS22BH\_Init@{LPS22BH\_Init}}
+\index{LPS22BH\_Init@{LPS22BH\_Init}!lps22bh.h@{lps22bh.h}}
+\doxysubsubsection{\texorpdfstring{LPS22BH\_Init()}{LPS22BH\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} LPS22\+BH\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the LPS22\+BH temperature and pressure sensor. 
+
+\begin{DoxyReturn}{Returns}
+Status result 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{lps22bh_8c_source_l00075}{75}} of file \mbox{\hyperlink{lps22bh_8c_source}{lps22bh.\+c}}.
+

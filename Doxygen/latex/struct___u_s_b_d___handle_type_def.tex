@@ -1,0 +1,312 @@
+\hypertarget{struct___u_s_b_d___handle_type_def}{}\doxysection{\+\_\+\+USBD\+\_\+\+Handle\+Type\+Def Struct Reference}
+\label{struct___u_s_b_d___handle_type_def}\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+
+
+{\ttfamily \#include $<$usbd\+\_\+def.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a1e6927fa1486224044e568f9c370519b}{id}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a3fcae06c2c0b8dfdb1db931cf1a4be56}{dev\+\_\+config}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a3610cd01764a1cdf5e16e9216fe73a88}{dev\+\_\+default\+\_\+config}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aa1079773093b2608bac7eaf63bbaf69f}{dev\+\_\+config\+\_\+status}}
+\item 
+\mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaa62cd3d2fb69a537ae7a5a94bdd6ae93}{USBD\+\_\+\+Speed\+Type\+Def}} \mbox{\hyperlink{struct___u_s_b_d___handle_type_def_af05af4e4045fb40caa4ac12d60c04cb2}{dev\+\_\+speed}}
+\item 
+\mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def}{USBD\+\_\+\+Endpoint\+Type\+Def}} \mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a4274d52d9287db59aa87d1e31e0e7e47}{ep\+\_\+in}} \mbox{[}16\mbox{]}
+\item 
+\mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def}{USBD\+\_\+\+Endpoint\+Type\+Def}} \mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a1cdfed3112c9a40bf8e432a1b94fe9ef}{ep\+\_\+out}} \mbox{[}16\mbox{]}
+\item 
+\mbox{\hyperlink{core__armv81mml_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint32\+\_\+t \mbox{\hyperlink{struct___u_s_b_d___handle_type_def_ac6c60ab6ada181a2bca1aea925bd1931}{ep0\+\_\+state}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a970d5cabc332f92d40e77197792794e7}{ep0\+\_\+data\+\_\+len}}
+\item 
+\mbox{\hyperlink{core__armv81mml_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint8\+\_\+t \mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a874b75463e24982ac9ca5c54ed18b32a}{dev\+\_\+state}}
+\item 
+\mbox{\hyperlink{core__armv81mml_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint8\+\_\+t \mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a8c98622835a7728de36b36d9fd1c2f33}{dev\+\_\+old\+\_\+state}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct___u_s_b_d___handle_type_def_ac3d3db8dc0855c423e23107db66343ee}{dev\+\_\+address}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aff7da2b1b8d7ff8200987116e4c282e0}{dev\+\_\+connection\+\_\+status}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct___u_s_b_d___handle_type_def_afac9640f1ff1fd1f8663b5793bb18a32}{dev\+\_\+test\+\_\+mode}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct___u_s_b_d___handle_type_def_abebe8f6cfbce2c35857de1ffc5d3ef84}{dev\+\_\+remote\+\_\+wakeup}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a024981f1d4dc95017dcf81b28cdca8a3}{Conf\+Idx}}
+\item 
+\mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ga665aefb3766e4a2ad3f914d3c36c297c}{USBD\+\_\+\+Setup\+Req\+Typedef}} \mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a09d13105dd91665d0f55c9f71ffc3802}{request}}
+\item 
+\mbox{\hyperlink{struct_u_s_b_d___descriptors_type_def}{USBD\+\_\+\+Descriptors\+Type\+Def}} $\ast$ \mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a7ea3b83f920f5193c33fe62b3db394bd}{p\+Desc}}
+\item 
+\mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaafe543e63a2f424e35793fc28562a370}{USBD\+\_\+\+Class\+Type\+Def}} $\ast$ \mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}{p\+Class}}
+\item 
+void $\ast$ \mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a8e5b83148c3cb343113947c7655dd7df}{p\+Class\+Data}}
+\item 
+void $\ast$ \mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a8d75dbe9027a94780bc2f31670400613}{p\+User\+Data}}
+\item 
+void $\ast$ \mbox{\hyperlink{struct___u_s_b_d___handle_type_def_aa92f08987c51e4eb7b92e84944ca2af3}{p\+Data}}
+\item 
+void $\ast$ \mbox{\hyperlink{struct___u_s_b_d___handle_type_def_a714e5b52b1cf010d2ec72dc6ceeda2d5}{p\+Bos\+Desc}}
+\item 
+void $\ast$ \mbox{\hyperlink{struct___u_s_b_d___handle_type_def_af50e3332f9c930a5dc8bfbc7e603d896}{p\+Conf\+Desc}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00285}{285}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{struct___u_s_b_d___handle_type_def_a024981f1d4dc95017dcf81b28cdca8a3}\label{struct___u_s_b_d___handle_type_def_a024981f1d4dc95017dcf81b28cdca8a3}} 
+\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}!ConfIdx@{ConfIdx}}
+\index{ConfIdx@{ConfIdx}!\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{ConfIdx}{ConfIdx}}
+{\footnotesize\ttfamily uint8\+\_\+t Conf\+Idx}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00302}{302}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{struct___u_s_b_d___handle_type_def_ac3d3db8dc0855c423e23107db66343ee}\label{struct___u_s_b_d___handle_type_def_ac3d3db8dc0855c423e23107db66343ee}} 
+\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}!dev\_address@{dev\_address}}
+\index{dev\_address@{dev\_address}!\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{dev\_address}{dev\_address}}
+{\footnotesize\ttfamily uint8\+\_\+t dev\+\_\+address}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00298}{298}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{struct___u_s_b_d___handle_type_def_a3fcae06c2c0b8dfdb1db931cf1a4be56}\label{struct___u_s_b_d___handle_type_def_a3fcae06c2c0b8dfdb1db931cf1a4be56}} 
+\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}!dev\_config@{dev\_config}}
+\index{dev\_config@{dev\_config}!\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{dev\_config}{dev\_config}}
+{\footnotesize\ttfamily uint32\+\_\+t dev\+\_\+config}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00288}{288}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{struct___u_s_b_d___handle_type_def_aa1079773093b2608bac7eaf63bbaf69f}\label{struct___u_s_b_d___handle_type_def_aa1079773093b2608bac7eaf63bbaf69f}} 
+\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}!dev\_config\_status@{dev\_config\_status}}
+\index{dev\_config\_status@{dev\_config\_status}!\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{dev\_config\_status}{dev\_config\_status}}
+{\footnotesize\ttfamily uint32\+\_\+t dev\+\_\+config\+\_\+status}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00290}{290}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{struct___u_s_b_d___handle_type_def_aff7da2b1b8d7ff8200987116e4c282e0}\label{struct___u_s_b_d___handle_type_def_aff7da2b1b8d7ff8200987116e4c282e0}} 
+\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}!dev\_connection\_status@{dev\_connection\_status}}
+\index{dev\_connection\_status@{dev\_connection\_status}!\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{dev\_connection\_status}{dev\_connection\_status}}
+{\footnotesize\ttfamily uint8\+\_\+t dev\+\_\+connection\+\_\+status}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00299}{299}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{struct___u_s_b_d___handle_type_def_a3610cd01764a1cdf5e16e9216fe73a88}\label{struct___u_s_b_d___handle_type_def_a3610cd01764a1cdf5e16e9216fe73a88}} 
+\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}!dev\_default\_config@{dev\_default\_config}}
+\index{dev\_default\_config@{dev\_default\_config}!\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{dev\_default\_config}{dev\_default\_config}}
+{\footnotesize\ttfamily uint32\+\_\+t dev\+\_\+default\+\_\+config}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00289}{289}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{struct___u_s_b_d___handle_type_def_a8c98622835a7728de36b36d9fd1c2f33}\label{struct___u_s_b_d___handle_type_def_a8c98622835a7728de36b36d9fd1c2f33}} 
+\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}!dev\_old\_state@{dev\_old\_state}}
+\index{dev\_old\_state@{dev\_old\_state}!\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{dev\_old\_state}{dev\_old\_state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{core__armv81mml_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint8\+\_\+t dev\+\_\+old\+\_\+state}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00297}{297}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{struct___u_s_b_d___handle_type_def_abebe8f6cfbce2c35857de1ffc5d3ef84}\label{struct___u_s_b_d___handle_type_def_abebe8f6cfbce2c35857de1ffc5d3ef84}} 
+\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}!dev\_remote\_wakeup@{dev\_remote\_wakeup}}
+\index{dev\_remote\_wakeup@{dev\_remote\_wakeup}!\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{dev\_remote\_wakeup}{dev\_remote\_wakeup}}
+{\footnotesize\ttfamily uint32\+\_\+t dev\+\_\+remote\+\_\+wakeup}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00301}{301}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{struct___u_s_b_d___handle_type_def_af05af4e4045fb40caa4ac12d60c04cb2}\label{struct___u_s_b_d___handle_type_def_af05af4e4045fb40caa4ac12d60c04cb2}} 
+\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}!dev\_speed@{dev\_speed}}
+\index{dev\_speed@{dev\_speed}!\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{dev\_speed}{dev\_speed}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaa62cd3d2fb69a537ae7a5a94bdd6ae93}{USBD\+\_\+\+Speed\+Type\+Def}} dev\+\_\+speed}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00291}{291}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{struct___u_s_b_d___handle_type_def_a874b75463e24982ac9ca5c54ed18b32a}\label{struct___u_s_b_d___handle_type_def_a874b75463e24982ac9ca5c54ed18b32a}} 
+\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}!dev\_state@{dev\_state}}
+\index{dev\_state@{dev\_state}!\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{dev\_state}{dev\_state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{core__armv81mml_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint8\+\_\+t dev\+\_\+state}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00296}{296}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{struct___u_s_b_d___handle_type_def_afac9640f1ff1fd1f8663b5793bb18a32}\label{struct___u_s_b_d___handle_type_def_afac9640f1ff1fd1f8663b5793bb18a32}} 
+\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}!dev\_test\_mode@{dev\_test\_mode}}
+\index{dev\_test\_mode@{dev\_test\_mode}!\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{dev\_test\_mode}{dev\_test\_mode}}
+{\footnotesize\ttfamily uint8\+\_\+t dev\+\_\+test\+\_\+mode}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00300}{300}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{struct___u_s_b_d___handle_type_def_a970d5cabc332f92d40e77197792794e7}\label{struct___u_s_b_d___handle_type_def_a970d5cabc332f92d40e77197792794e7}} 
+\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}!ep0\_data\_len@{ep0\_data\_len}}
+\index{ep0\_data\_len@{ep0\_data\_len}!\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{ep0\_data\_len}{ep0\_data\_len}}
+{\footnotesize\ttfamily uint32\+\_\+t ep0\+\_\+data\+\_\+len}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00295}{295}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{struct___u_s_b_d___handle_type_def_ac6c60ab6ada181a2bca1aea925bd1931}\label{struct___u_s_b_d___handle_type_def_ac6c60ab6ada181a2bca1aea925bd1931}} 
+\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}!ep0\_state@{ep0\_state}}
+\index{ep0\_state@{ep0\_state}!\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{ep0\_state}{ep0\_state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{core__armv81mml_8h_aec43007d9998a0a0e01faede4133d6be}{\+\_\+\+\_\+\+IO}} uint32\+\_\+t ep0\+\_\+state}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00294}{294}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{struct___u_s_b_d___handle_type_def_a4274d52d9287db59aa87d1e31e0e7e47}\label{struct___u_s_b_d___handle_type_def_a4274d52d9287db59aa87d1e31e0e7e47}} 
+\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}!ep\_in@{ep\_in}}
+\index{ep\_in@{ep\_in}!\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{ep\_in}{ep\_in}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def}{USBD\+\_\+\+Endpoint\+Type\+Def}} ep\+\_\+in\mbox{[}16\mbox{]}}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00292}{292}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{struct___u_s_b_d___handle_type_def_a1cdfed3112c9a40bf8e432a1b94fe9ef}\label{struct___u_s_b_d___handle_type_def_a1cdfed3112c9a40bf8e432a1b94fe9ef}} 
+\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}!ep\_out@{ep\_out}}
+\index{ep\_out@{ep\_out}!\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{ep\_out}{ep\_out}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_u_s_b_d___endpoint_type_def}{USBD\+\_\+\+Endpoint\+Type\+Def}} ep\+\_\+out\mbox{[}16\mbox{]}}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00293}{293}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{struct___u_s_b_d___handle_type_def_a1e6927fa1486224044e568f9c370519b}\label{struct___u_s_b_d___handle_type_def_a1e6927fa1486224044e568f9c370519b}} 
+\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}!id@{id}}
+\index{id@{id}!\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily uint8\+\_\+t id}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00287}{287}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{struct___u_s_b_d___handle_type_def_a714e5b52b1cf010d2ec72dc6ceeda2d5}\label{struct___u_s_b_d___handle_type_def_a714e5b52b1cf010d2ec72dc6ceeda2d5}} 
+\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}!pBosDesc@{pBosDesc}}
+\index{pBosDesc@{pBosDesc}!\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{pBosDesc}{pBosDesc}}
+{\footnotesize\ttfamily void$\ast$ p\+Bos\+Desc}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00310}{310}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}\label{struct___u_s_b_d___handle_type_def_aed33ecfac9022b201e55b95a1b7e5341}} 
+\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}!pClass@{pClass}}
+\index{pClass@{pClass}!\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{pClass}{pClass}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_gaafe543e63a2f424e35793fc28562a370}{USBD\+\_\+\+Class\+Type\+Def}}$\ast$ p\+Class}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00306}{306}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{struct___u_s_b_d___handle_type_def_a8e5b83148c3cb343113947c7655dd7df}\label{struct___u_s_b_d___handle_type_def_a8e5b83148c3cb343113947c7655dd7df}} 
+\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}!pClassData@{pClassData}}
+\index{pClassData@{pClassData}!\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{pClassData}{pClassData}}
+{\footnotesize\ttfamily void$\ast$ p\+Class\+Data}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00307}{307}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{struct___u_s_b_d___handle_type_def_af50e3332f9c930a5dc8bfbc7e603d896}\label{struct___u_s_b_d___handle_type_def_af50e3332f9c930a5dc8bfbc7e603d896}} 
+\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}!pConfDesc@{pConfDesc}}
+\index{pConfDesc@{pConfDesc}!\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{pConfDesc}{pConfDesc}}
+{\footnotesize\ttfamily void$\ast$ p\+Conf\+Desc}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00311}{311}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{struct___u_s_b_d___handle_type_def_aa92f08987c51e4eb7b92e84944ca2af3}\label{struct___u_s_b_d___handle_type_def_aa92f08987c51e4eb7b92e84944ca2af3}} 
+\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}!pData@{pData}}
+\index{pData@{pData}!\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{pData}{pData}}
+{\footnotesize\ttfamily void$\ast$ p\+Data}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00309}{309}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{struct___u_s_b_d___handle_type_def_a7ea3b83f920f5193c33fe62b3db394bd}\label{struct___u_s_b_d___handle_type_def_a7ea3b83f920f5193c33fe62b3db394bd}} 
+\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}!pDesc@{pDesc}}
+\index{pDesc@{pDesc}!\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{pDesc}{pDesc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_u_s_b_d___descriptors_type_def}{USBD\+\_\+\+Descriptors\+Type\+Def}}$\ast$ p\+Desc}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00305}{305}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{struct___u_s_b_d___handle_type_def_a8d75dbe9027a94780bc2f31670400613}\label{struct___u_s_b_d___handle_type_def_a8d75dbe9027a94780bc2f31670400613}} 
+\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}!pUserData@{pUserData}}
+\index{pUserData@{pUserData}!\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{pUserData}{pUserData}}
+{\footnotesize\ttfamily void$\ast$ p\+User\+Data}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00308}{308}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+\mbox{\Hypertarget{struct___u_s_b_d___handle_type_def_a09d13105dd91665d0f55c9f71ffc3802}\label{struct___u_s_b_d___handle_type_def_a09d13105dd91665d0f55c9f71ffc3802}} 
+\index{\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}!request@{request}}
+\index{request@{request}!\_USBD\_HandleTypeDef@{\_USBD\_HandleTypeDef}}
+\doxysubsubsection{\texorpdfstring{request}{request}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___u_s_b_d___d_e_f___exported___types_definitions_ga665aefb3766e4a2ad3f914d3c36c297c}{USBD\+\_\+\+Setup\+Req\+Typedef}} request}
+
+
+
+Definition at line \mbox{\hyperlink{usbd__def_8h_source_l00304}{304}} of file \mbox{\hyperlink{usbd__def_8h_source}{usbd\+\_\+def.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.\+11.\+0/\+TRex/lib/hal/\+Middlewares/\+ST/\+STM32\+\_\+\+USB\+\_\+\+Device\+\_\+\+Library/\+Core/\+Inc/\mbox{\hyperlink{usbd__def_8h}{usbd\+\_\+def.\+h}}\end{DoxyCompactItemize}

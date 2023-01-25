@@ -1,0 +1,243 @@
+\hypertarget{group___p_w_r_ex___i_s___p_w_r___definitions}{}\doxysection{PWREx Private macros to check input parameters}
+\label{group___p_w_r_ex___i_s___p_w_r___definitions}\index{PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___p_w_r_ex___i_s___p_w_r___definitions_gabb3c500d4d7ea1dc826f52fc9dec2c9e}{IS\+\_\+\+PWR\+\_\+\+SUPPLY}}(PWR\+\_\+\+SOURCE)
+\item 
+\#define \mbox{\hyperlink{group___p_w_r_ex___i_s___p_w_r___definitions_ga7d24202b56ce1146aa6148634815a9e5}{IS\+\_\+\+PWR\+\_\+\+STOP\+\_\+\+MODE\+\_\+\+REGULATOR\+\_\+\+VOLTAGE}}(VOLTAGE)
+\item 
+\#define \mbox{\hyperlink{group___p_w_r_ex___i_s___p_w_r___definitions_gace9d411313f557c68c1a9520fe4048f4}{IS\+\_\+\+PWR\+\_\+\+DOMAIN}}(DOMAIN)
+\item 
+\#define \mbox{\hyperlink{group___p_w_r_ex___i_s___p_w_r___definitions_ga9ffc3e752d2a6fec00fd7c8df99c860b}{IS\+\_\+\+D3\+\_\+\+STATE}}(STATE)
+\item 
+\#define \mbox{\hyperlink{group___p_w_r_ex___i_s___p_w_r___definitions_gac6fcc59d6ff95b8feda1b228517f9c3f}{IS\+\_\+\+PWR\+\_\+\+WAKEUP\+\_\+\+PIN}}(PIN)
+\item 
+\#define \mbox{\hyperlink{group___p_w_r_ex___i_s___p_w_r___definitions_gaea0b82025f1437d5456ffe51fdde7b8e}{IS\+\_\+\+PWR\+\_\+\+WAKEUP\+\_\+\+PIN\+\_\+\+POLARITY}}(POLARITY)
+\item 
+\#define \mbox{\hyperlink{group___p_w_r_ex___i_s___p_w_r___definitions_ga36daf016d16522fa4b33e8fc164eac9f}{IS\+\_\+\+PWR\+\_\+\+WAKEUP\+\_\+\+PIN\+\_\+\+PULL}}(PULL)
+\item 
+\#define \mbox{\hyperlink{group___p_w_r_ex___i_s___p_w_r___definitions_ga581ad994a953ec09595a5ad75a8152ef}{IS\+\_\+\+PWR\+\_\+\+WAKEUP\+\_\+\+FLAG}}(FLAG)
+\item 
+\#define \mbox{\hyperlink{group___p_w_r_ex___i_s___p_w_r___definitions_ga4ae79058bea178927af19a09fb132bb9}{IS\+\_\+\+PWR\+\_\+\+AVD\+\_\+\+LEVEL}}(LEVEL)
+\item 
+\#define \mbox{\hyperlink{group___p_w_r_ex___i_s___p_w_r___definitions_ga6b9484a79026dd997e6dc5a6f765a479}{IS\+\_\+\+PWR\+\_\+\+AVD\+\_\+\+MODE}}(MODE)
+\item 
+\#define \mbox{\hyperlink{group___p_w_r_ex___i_s___p_w_r___definitions_ga3fa01a4ed0f3f68986664d2b117b3640}{IS\+\_\+\+PWR\+\_\+\+BATTERY\+\_\+\+RESISTOR\+\_\+\+SELECT}}(RESISTOR)
+\item 
+\#define \mbox{\hyperlink{group___p_w_r_ex___i_s___p_w_r___definitions_gaa7440fa024bf8bfe8abf37dc49d5008d}{IS\+\_\+\+PWR\+\_\+\+D1\+\_\+\+CPU}}(CPU)~((CPU) == \mbox{\hyperlink{group___c_o_r_t_e_x___c_p_u___identifier_gaa2b743173fe9c5c1350f8920afca34b8}{CM7\+\_\+\+CPUID}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___p_w_r_ex___i_s___p_w_r___definitions_ga9ffc3e752d2a6fec00fd7c8df99c860b}\label{group___p_w_r_ex___i_s___p_w_r___definitions_ga9ffc3e752d2a6fec00fd7c8df99c860b}} 
+\index{PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}!IS\_D3\_STATE@{IS\_D3\_STATE}}
+\index{IS\_D3\_STATE@{IS\_D3\_STATE}!PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_D3\_STATE}{IS\_D3\_STATE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+D3\+\_\+\+STATE(\begin{DoxyParamCaption}\item[{}]{STATE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((STATE)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___d3___state_ga2aee3c0a34a24fe816e8582390d9233a}{PWR\_D3\_DOMAIN\_STOP}})\ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((STATE)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___d3___state_gacc8dc45846aef0b4a0b581dd990e371c}{PWR\_D3\_DOMAIN\_RUN}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__pwr__ex_8h_source_l00660}{660}} of file \mbox{\hyperlink{stm32h7xx__hal__pwr__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+pwr\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___p_w_r_ex___i_s___p_w_r___definitions_ga4ae79058bea178927af19a09fb132bb9}\label{group___p_w_r_ex___i_s___p_w_r___definitions_ga4ae79058bea178927af19a09fb132bb9}} 
+\index{PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}!IS\_PWR\_AVD\_LEVEL@{IS\_PWR\_AVD\_LEVEL}}
+\index{IS\_PWR\_AVD\_LEVEL@{IS\_PWR\_AVD\_LEVEL}!PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_PWR\_AVD\_LEVEL}{IS\_PWR\_AVD\_LEVEL}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+PWR\+\_\+\+AVD\+\_\+\+LEVEL(\begin{DoxyParamCaption}\item[{}]{LEVEL }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((LEVEL)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___a_v_d__detection__level_ga719beb7812960c2be7e60c054bbe5e7f}{PWR\_AVDLEVEL\_0}})\ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LEVEL)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___a_v_d__detection__level_ga248a7e98fc0c1a169893f3d84b352221}{PWR\_AVDLEVEL\_1}})\ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LEVEL)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___a_v_d__detection__level_ga32e2321ed0fdbf8c46ff968c27ba8833}{PWR\_AVDLEVEL\_2}})\ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LEVEL)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___a_v_d__detection__level_gaf2d0cc6c22cc36cd329d323b63a1e10b}{PWR\_AVDLEVEL\_3}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__pwr__ex_8h_source_l00725}{725}} of file \mbox{\hyperlink{stm32h7xx__hal__pwr__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+pwr\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___p_w_r_ex___i_s___p_w_r___definitions_ga6b9484a79026dd997e6dc5a6f765a479}\label{group___p_w_r_ex___i_s___p_w_r___definitions_ga6b9484a79026dd997e6dc5a6f765a479}} 
+\index{PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}!IS\_PWR\_AVD\_MODE@{IS\_PWR\_AVD\_MODE}}
+\index{IS\_PWR\_AVD\_MODE@{IS\_PWR\_AVD\_MODE}!PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_PWR\_AVD\_MODE}{IS\_PWR\_AVD\_MODE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+PWR\+\_\+\+AVD\+\_\+\+MODE(\begin{DoxyParamCaption}\item[{}]{MODE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((MODE)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___a_v_d___mode_ga93258cef76f6d1660eddc8647bdc951e}{PWR\_AVD\_MODE\_IT\_RISING}})\ \ \ \ \ \ \ \ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___a_v_d___mode_ga6077d6462da91191596eedfc05f5ee4c}{PWR\_AVD\_MODE\_IT\_FALLING}})\ \ \ \ \ \ \ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___a_v_d___mode_gae14b126c8bfa89fefa3d163519097266}{PWR\_AVD\_MODE\_IT\_RISING\_FALLING}})\ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___a_v_d___mode_ga8e374c88d255e66ebf6ab799f596f804}{PWR\_AVD\_MODE\_EVENT\_RISING}})\ \ \ \ \ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___a_v_d___mode_ga3e55c737b9859d16c2cf9f0bb1a9f2d8}{PWR\_AVD\_MODE\_EVENT\_FALLING}})\ \ \ \ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___a_v_d___mode_gaceaab58f23550b548ffe34c649dc3ef1}{PWR\_AVD\_MODE\_NORMAL}})\ \ \ \ \ \ \ \ \ \ \ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((MODE)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___a_v_d___mode_ga0ee35e6f102d9a4b7ad029f701dbdaf0}{PWR\_AVD\_MODE\_EVENT\_RISING\_FALLING}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__pwr__ex_8h_source_l00731}{731}} of file \mbox{\hyperlink{stm32h7xx__hal__pwr__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+pwr\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___p_w_r_ex___i_s___p_w_r___definitions_ga3fa01a4ed0f3f68986664d2b117b3640}\label{group___p_w_r_ex___i_s___p_w_r___definitions_ga3fa01a4ed0f3f68986664d2b117b3640}} 
+\index{PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}!IS\_PWR\_BATTERY\_RESISTOR\_SELECT@{IS\_PWR\_BATTERY\_RESISTOR\_SELECT}}
+\index{IS\_PWR\_BATTERY\_RESISTOR\_SELECT@{IS\_PWR\_BATTERY\_RESISTOR\_SELECT}!PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_PWR\_BATTERY\_RESISTOR\_SELECT}{IS\_PWR\_BATTERY\_RESISTOR\_SELECT}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+PWR\+\_\+\+BATTERY\+\_\+\+RESISTOR\+\_\+\+SELECT(\begin{DoxyParamCaption}\item[{}]{RESISTOR }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((RESISTOR)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___v_b_a_t___battery___charging___resistor_ga27d3d5ee9e0fc78ecac6e41498a37916}{PWR\_BATTERY\_CHARGING\_RESISTOR\_5}})\ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((RESISTOR)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___v_b_a_t___battery___charging___resistor_gacebb57480a111beaf8ca05f014cbd096}{PWR\_BATTERY\_CHARGING\_RESISTOR\_1\_5}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__pwr__ex_8h_source_l00740}{740}} of file \mbox{\hyperlink{stm32h7xx__hal__pwr__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+pwr\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___p_w_r_ex___i_s___p_w_r___definitions_gaa7440fa024bf8bfe8abf37dc49d5008d}\label{group___p_w_r_ex___i_s___p_w_r___definitions_gaa7440fa024bf8bfe8abf37dc49d5008d}} 
+\index{PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}!IS\_PWR\_D1\_CPU@{IS\_PWR\_D1\_CPU}}
+\index{IS\_PWR\_D1\_CPU@{IS\_PWR\_D1\_CPU}!PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_PWR\_D1\_CPU}{IS\_PWR\_D1\_CPU}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+PWR\+\_\+\+D1\+\_\+\+CPU(\begin{DoxyParamCaption}\item[{}]{CPU }\end{DoxyParamCaption})~((CPU) == \mbox{\hyperlink{group___c_o_r_t_e_x___c_p_u___identifier_gaa2b743173fe9c5c1350f8920afca34b8}{CM7\+\_\+\+CPUID}})}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__pwr__ex_8h_source_l00743}{743}} of file \mbox{\hyperlink{stm32h7xx__hal__pwr__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+pwr\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___p_w_r_ex___i_s___p_w_r___definitions_gace9d411313f557c68c1a9520fe4048f4}\label{group___p_w_r_ex___i_s___p_w_r___definitions_gace9d411313f557c68c1a9520fe4048f4}} 
+\index{PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}!IS\_PWR\_DOMAIN@{IS\_PWR\_DOMAIN}}
+\index{IS\_PWR\_DOMAIN@{IS\_PWR\_DOMAIN}!PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_PWR\_DOMAIN}{IS\_PWR\_DOMAIN}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+PWR\+\_\+\+DOMAIN(\begin{DoxyParamCaption}\item[{}]{DOMAIN }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((DOMAIN)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___domains_ga141d074a7d7253638b1f660a51251e4c}{PWR\_D1\_DOMAIN}})\ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((DOMAIN)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___domains_ga696c76546dc8c23d518167cf9a3cf792}{PWR\_D3\_DOMAIN}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__pwr__ex_8h_source_l00655}{655}} of file \mbox{\hyperlink{stm32h7xx__hal__pwr__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+pwr\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___p_w_r_ex___i_s___p_w_r___definitions_ga7d24202b56ce1146aa6148634815a9e5}\label{group___p_w_r_ex___i_s___p_w_r___definitions_ga7d24202b56ce1146aa6148634815a9e5}} 
+\index{PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}!IS\_PWR\_STOP\_MODE\_REGULATOR\_VOLTAGE@{IS\_PWR\_STOP\_MODE\_REGULATOR\_VOLTAGE}}
+\index{IS\_PWR\_STOP\_MODE\_REGULATOR\_VOLTAGE@{IS\_PWR\_STOP\_MODE\_REGULATOR\_VOLTAGE}!PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_PWR\_STOP\_MODE\_REGULATOR\_VOLTAGE}{IS\_PWR\_STOP\_MODE\_REGULATOR\_VOLTAGE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+PWR\+\_\+\+STOP\+\_\+\+MODE\+\_\+\+REGULATOR\+\_\+\+VOLTAGE(\begin{DoxyParamCaption}\item[{}]{VOLTAGE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((VOLTAGE)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___regulator___voltage___scale_ga131bf97584bb0cd56d4c5defb4713b15}{PWR\_REGULATOR\_SVOS\_SCALE3}})\ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VOLTAGE)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___regulator___voltage___scale_ga5fed89a0552661b7ba9a1bb224fcc67a}{PWR\_REGULATOR\_SVOS\_SCALE4}})\ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VOLTAGE)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___regulator___voltage___scale_gaffce5cdee562a8cc87e8f98b0395b717}{PWR\_REGULATOR\_SVOS\_SCALE5}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__pwr__ex_8h_source_l00645}{645}} of file \mbox{\hyperlink{stm32h7xx__hal__pwr__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+pwr\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___p_w_r_ex___i_s___p_w_r___definitions_gabb3c500d4d7ea1dc826f52fc9dec2c9e}\label{group___p_w_r_ex___i_s___p_w_r___definitions_gabb3c500d4d7ea1dc826f52fc9dec2c9e}} 
+\index{PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}!IS\_PWR\_SUPPLY@{IS\_PWR\_SUPPLY}}
+\index{IS\_PWR\_SUPPLY@{IS\_PWR\_SUPPLY}!PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_PWR\_SUPPLY}{IS\_PWR\_SUPPLY}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+PWR\+\_\+\+SUPPLY(\begin{DoxyParamCaption}\item[{}]{PWR\+\_\+\+SOURCE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((PWR\_SOURCE)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___supply__configuration_gaf26cc2eab346d2209674dd59da2f69d6}{PWR\_LDO\_SUPPLY}})\ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PWR\_SOURCE)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___supply__configuration_ga4c9f87494abc9b79e5e029b7984ea722}{PWR\_EXTERNAL\_SOURCE\_SUPPLY}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__pwr__ex_8h_source_l00640}{640}} of file \mbox{\hyperlink{stm32h7xx__hal__pwr__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+pwr\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___p_w_r_ex___i_s___p_w_r___definitions_ga581ad994a953ec09595a5ad75a8152ef}\label{group___p_w_r_ex___i_s___p_w_r___definitions_ga581ad994a953ec09595a5ad75a8152ef}} 
+\index{PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}!IS\_PWR\_WAKEUP\_FLAG@{IS\_PWR\_WAKEUP\_FLAG}}
+\index{IS\_PWR\_WAKEUP\_FLAG@{IS\_PWR\_WAKEUP\_FLAG}!PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_PWR\_WAKEUP\_FLAG}{IS\_PWR\_WAKEUP\_FLAG}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+PWR\+\_\+\+WAKEUP\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{FLAG }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((FLAG)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___wakeup___pins___flags_ga04563c5953e8540c253b1fe63788c607}{PWR\_WAKEUP\_FLAG1}})\ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___wakeup___pins___flags_ga1e76ebc117adb945bd16509b772c2c36}{PWR\_WAKEUP\_FLAG2}})\ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___wakeup___pins___flags_ga1982eb8a141ef8eedcdefdb3d40c9647}{PWR\_WAKEUP\_FLAG4}})\ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___wakeup___pins___flags_gaa22106c19aa0b124cdac5d062671f6c7}{PWR\_WAKEUP\_FLAG6}})\ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___wakeup___pins___flags_ga53a37c207eaf3119c899d31e0e146979}{PWR\_WAKEUP\_FLAG\_ALL}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__pwr__ex_8h_source_l00717}{717}} of file \mbox{\hyperlink{stm32h7xx__hal__pwr__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+pwr\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___p_w_r_ex___i_s___p_w_r___definitions_gac6fcc59d6ff95b8feda1b228517f9c3f}\label{group___p_w_r_ex___i_s___p_w_r___definitions_gac6fcc59d6ff95b8feda1b228517f9c3f}} 
+\index{PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}!IS\_PWR\_WAKEUP\_PIN@{IS\_PWR\_WAKEUP\_PIN}}
+\index{IS\_PWR\_WAKEUP\_PIN@{IS\_PWR\_WAKEUP\_PIN}!PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_PWR\_WAKEUP\_PIN}{IS\_PWR\_WAKEUP\_PIN}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+PWR\+\_\+\+WAKEUP\+\_\+\+PIN(\begin{DoxyParamCaption}\item[{}]{PIN }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((PIN)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___wake_up___pins_ga0da8e7cbe0826e93b777ae4419a1cd05}{PWR\_WAKEUP\_PIN1}})\ \ \ \ \ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PIN)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___wake_up___pins_ga0c718de5967a8d2cec63d0b5fe0b2ada}{PWR\_WAKEUP\_PIN2}})\ \ \ \ \ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PIN)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___wake_up___pins_ga043f15e42e900b9609b0558f68ba4bb9}{PWR\_WAKEUP\_PIN4}})\ \ \ \ \ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PIN)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___wake_up___pins_gabe5bf6bf78f3beecf4eb7180e7e31671}{PWR\_WAKEUP\_PIN6}})\ \ \ \ \ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PIN)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___wake_up___pins_gaeb626f09f1270e2a23729dac3fd269d1}{PWR\_WAKEUP\_PIN1\_HIGH}})\ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PIN)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___wake_up___pins_ga1216218e63be4edd833ba66170266903}{PWR\_WAKEUP\_PIN2\_HIGH}})\ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PIN)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___wake_up___pins_gaa53d4e6305c7d8aa72c851c8d2749fa9}{PWR\_WAKEUP\_PIN4\_HIGH}})\ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PIN)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___wake_up___pins_ga1c391eb7544741b9d981d0d38bfcf52e}{PWR\_WAKEUP\_PIN6\_HIGH}})\ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PIN)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___wake_up___pins_ga71106c9ef5fe0ce824983011cf5812db}{PWR\_WAKEUP\_PIN1\_LOW}})\ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PIN)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___wake_up___pins_ga2fa3e2360a56cd447dd49de0b075313f}{PWR\_WAKEUP\_PIN2\_LOW}})\ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PIN)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___wake_up___pins_ga5345ca56a0983765d0d6a97c5a53d910}{PWR\_WAKEUP\_PIN4\_LOW}})\ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PIN)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___wake_up___pins_ga46e1b210a3805f27c4ae46a4cdc22f82}{PWR\_WAKEUP\_PIN6\_LOW}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__pwr__ex_8h_source_l00684}{684}} of file \mbox{\hyperlink{stm32h7xx__hal__pwr__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+pwr\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___p_w_r_ex___i_s___p_w_r___definitions_gaea0b82025f1437d5456ffe51fdde7b8e}\label{group___p_w_r_ex___i_s___p_w_r___definitions_gaea0b82025f1437d5456ffe51fdde7b8e}} 
+\index{PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}!IS\_PWR\_WAKEUP\_PIN\_POLARITY@{IS\_PWR\_WAKEUP\_PIN\_POLARITY}}
+\index{IS\_PWR\_WAKEUP\_PIN\_POLARITY@{IS\_PWR\_WAKEUP\_PIN\_POLARITY}!PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_PWR\_WAKEUP\_PIN\_POLARITY}{IS\_PWR\_WAKEUP\_PIN\_POLARITY}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+PWR\+\_\+\+WAKEUP\+\_\+\+PIN\+\_\+\+POLARITY(\begin{DoxyParamCaption}\item[{}]{POLARITY }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((POLARITY)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___p_i_n___polarity_gab00dbe2500ebd28db4ac5e32ff478999}{PWR\_PIN\_POLARITY\_HIGH}})\ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((POLARITY)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___p_i_n___polarity_gae9ed0414776e1beceb657441e6017e91}{PWR\_PIN\_POLARITY\_LOW}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__pwr__ex_8h_source_l00699}{699}} of file \mbox{\hyperlink{stm32h7xx__hal__pwr__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+pwr\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___p_w_r_ex___i_s___p_w_r___definitions_ga36daf016d16522fa4b33e8fc164eac9f}\label{group___p_w_r_ex___i_s___p_w_r___definitions_ga36daf016d16522fa4b33e8fc164eac9f}} 
+\index{PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}!IS\_PWR\_WAKEUP\_PIN\_PULL@{IS\_PWR\_WAKEUP\_PIN\_PULL}}
+\index{IS\_PWR\_WAKEUP\_PIN\_PULL@{IS\_PWR\_WAKEUP\_PIN\_PULL}!PWREx Private macros to check input parameters@{PWREx Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_PWR\_WAKEUP\_PIN\_PULL}{IS\_PWR\_WAKEUP\_PIN\_PULL}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+PWR\+\_\+\+WAKEUP\+\_\+\+PIN\+\_\+\+PULL(\begin{DoxyParamCaption}\item[{}]{PULL }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((PULL)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___p_i_n___pull_ga5e86fb018f9fb655ea928c6b591582c0}{PWR\_PIN\_NO\_PULL}})\ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PULL)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___p_i_n___pull_gafb41ff912d3cd9a2c4fd5117b21e72b8}{PWR\_PIN\_PULL\_UP}})\ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PULL)\ ==\ \mbox{\hyperlink{group___p_w_r_ex___p_i_n___pull_gac3ce611479c02dfb2c0694bb8fe2728e}{PWR\_PIN\_PULL\_DOWN}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__pwr__ex_8h_source_l00703}{703}} of file \mbox{\hyperlink{stm32h7xx__hal__pwr__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+pwr\+\_\+ex.\+h}}.
+

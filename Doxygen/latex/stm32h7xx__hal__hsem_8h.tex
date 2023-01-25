@@ -1,0 +1,73 @@
+\hypertarget{stm32h7xx__hal__hsem_8h}{}\doxysection{C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.11.0/\+TRex/lib/hal/\+Drivers/\+STM32\+H7xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/stm32h7xx\+\_\+hal\+\_\+hsem.h File Reference}
+\label{stm32h7xx__hal__hsem_8h}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Drivers/STM32H7xx\_HAL\_Driver/Inc/stm32h7xx\_hal\_hsem.h@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/Drivers/STM32H7xx\_HAL\_Driver/Inc/stm32h7xx\_hal\_hsem.h}}
+
+
+Header file of HSEM HAL module.  
+
+
+{\ttfamily \#include \char`\"{}stm32h7xx\+\_\+hal\+\_\+def.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___h_s_e_m___exported___macros_gabadef2e6fddb0bb11e9e9c6930b12ffa}{\+\_\+\+\_\+\+HAL\+\_\+\+HSEM\+\_\+\+SEMID\+\_\+\+TO\+\_\+\+MASK}}(\+\_\+\+\_\+\+SEMID\+\_\+\+\_\+)~(1 $<$$<$ (\+\_\+\+\_\+\+SEMID\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Sem\+ID to mask helper Macro. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___h_s_e_m___exported___macros_gaa21d53e6c4d6d35e9047b5c74fb78c8f}{\+\_\+\+\_\+\+HAL\+\_\+\+HSEM\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+SEM\+\_\+\+MASK\+\_\+\+\_\+)~(\mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/$>$IER $\vert$= (\+\_\+\+\_\+\+SEM\+\_\+\+MASK\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Enables the specified HSEM interrupts. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___h_s_e_m___exported___macros_ga36496851508be9cace265482a7d18e53}{\+\_\+\+\_\+\+HAL\+\_\+\+HSEM\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+SEM\+\_\+\+MASK\+\_\+\+\_\+)~(\mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/$>$IER \&= $\sim$(\+\_\+\+\_\+\+SEM\+\_\+\+MASK\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Disables the specified HSEM interrupts. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___h_s_e_m___exported___macros_gacba979398283173d1ee412b5edbdd108}{\+\_\+\+\_\+\+HAL\+\_\+\+HSEM\+\_\+\+GET\+\_\+\+IT}}(\+\_\+\+\_\+\+SEM\+\_\+\+MASK\+\_\+\+\_\+)~((\+\_\+\+\_\+\+SEM\+\_\+\+MASK\+\_\+\+\_\+) \& \mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/$>$MISR)
+\begin{DoxyCompactList}\small\item\em Checks whether interrupt has occurred or not for semaphores specified by a mask. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___h_s_e_m___exported___macros_gadb48c4b1d695a3dc4f3b72fdfc11d807}{\+\_\+\+\_\+\+HAL\+\_\+\+HSEM\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+SEM\+\_\+\+MASK\+\_\+\+\_\+)~((\+\_\+\+\_\+\+SEM\+\_\+\+MASK\+\_\+\+\_\+) \& \mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/$>$ISR)
+\begin{DoxyCompactList}\small\item\em Get the semaphores release status flags. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___h_s_e_m___exported___macros_ga0b123be50de8a360f3eb103b56cf3c39}{\+\_\+\+\_\+\+HAL\+\_\+\+HSEM\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+SEM\+\_\+\+MASK\+\_\+\+\_\+)~(\mbox{\hyperlink{group___peripheral__declaration_gaede09ab1497537af0a0ec19da6d5e5be}{HSEM}}-\/$>$ICR $\vert$= (\+\_\+\+\_\+\+SEM\+\_\+\+MASK\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Clears the HSEM Interrupt flags. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___h_s_e_m___private___macros_gaf7003533fe10b73e9ffbd6713a6cd498}{IS\+\_\+\+HSEM\+\_\+\+SEMID}}(\+\_\+\+\_\+\+SEMID\+\_\+\+\_\+)~((\+\_\+\+\_\+\+SEMID\+\_\+\+\_\+) $<$= \mbox{\hyperlink{group___exported__macros_ga02b1236b9941da615d30c8d313ccb89c}{HSEM\+\_\+\+SEMID\+\_\+\+MAX}} )
+\item 
+\#define \mbox{\hyperlink{group___h_s_e_m___private___macros_gaa43cd847758a3f1a6bc33137e7461e94}{IS\+\_\+\+HSEM\+\_\+\+PROCESSID}}(\+\_\+\+\_\+\+PROCESSID\+\_\+\+\_\+)~((\+\_\+\+\_\+\+PROCESSID\+\_\+\+\_\+) $<$= \mbox{\hyperlink{group___exported__macros_ga0fe932da5e5c69dd762ae65380fadcbf}{HSEM\+\_\+\+PROCESSID\+\_\+\+MAX}} )
+\item 
+\#define \mbox{\hyperlink{group___h_s_e_m___private___macros_gaedf0f6b95c261b193b9084799e850f09}{IS\+\_\+\+HSEM\+\_\+\+KEY}}(\+\_\+\+\_\+\+KEY\+\_\+\+\_\+)~((\+\_\+\+\_\+\+KEY\+\_\+\+\_\+) $<$= \mbox{\hyperlink{group___exported__macros_ga9fbe31f7c20be9c9cd5b29dd16b4d93a}{HSEM\+\_\+\+CLEAR\+\_\+\+KEY\+\_\+\+MAX}} )
+\item 
+\#define \mbox{\hyperlink{group___h_s_e_m___private___macros_ga75baea81c38321c1f25d06eddd4f729e}{IS\+\_\+\+HSEM\+\_\+\+COREID}}(\+\_\+\+\_\+\+COREID\+\_\+\+\_\+)~((\+\_\+\+\_\+\+COREID\+\_\+\+\_\+) == \mbox{\hyperlink{group___exported__macros_gaa1c060147d6dc9aafe767c56094644e5}{HSEM\+\_\+\+CPU1\+\_\+\+COREID}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___h_s_e_m___exported___functions___group1_ga31f08a710db7f71c4960b4bc49e5d88e}{HAL\+\_\+\+HSEM\+\_\+\+Take}} (uint32\+\_\+t Sem\+ID, uint32\+\_\+t Process\+ID)
+\item 
+\mbox{\hyperlink{stm32h7xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___h_s_e_m___exported___functions___group1_gaf29ca9418fdeb85203a370d47e52245e}{HAL\+\_\+\+HSEM\+\_\+\+Fast\+Take}} (uint32\+\_\+t Sem\+ID)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group___h_s_e_m___exported___functions___group1_gad89a18ed31b969126b13e7934cb7f981}{HAL\+\_\+\+HSEM\+\_\+\+Is\+Sem\+Taken}} (uint32\+\_\+t Sem\+ID)
+\item 
+void \mbox{\hyperlink{group___h_s_e_m___exported___functions___group1_ga5b79006e358d2205b20d253bb83e0184}{HAL\+\_\+\+HSEM\+\_\+\+Release}} (uint32\+\_\+t Sem\+ID, uint32\+\_\+t Process\+ID)
+\item 
+void \mbox{\hyperlink{group___h_s_e_m___exported___functions___group1_ga63474679db0575c2be628cc6bac682e7}{HAL\+\_\+\+HSEM\+\_\+\+Release\+All}} (uint32\+\_\+t Key, uint32\+\_\+t Core\+ID)
+\item 
+void \mbox{\hyperlink{group___h_s_e_m___exported___functions___group2_gab0d231b1678502487832e3daf44dab8f}{HAL\+\_\+\+HSEM\+\_\+\+Set\+Clear\+Key}} (uint32\+\_\+t Key)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group___h_s_e_m___exported___functions___group2_ga16c6f27e91b73844f170139cd51df9ae}{HAL\+\_\+\+HSEM\+\_\+\+Get\+Clear\+Key}} (void)
+\item 
+void \mbox{\hyperlink{group___h_s_e_m___exported___functions___group3_ga4a0cb7ce45bcecf1ac2d308f7330e9b8}{HAL\+\_\+\+HSEM\+\_\+\+Activate\+Notification}} (uint32\+\_\+t Sem\+Mask)
+\item 
+void \mbox{\hyperlink{group___h_s_e_m___exported___functions___group3_ga8bd93e3440578ce9b75b507665a4e7b8}{HAL\+\_\+\+HSEM\+\_\+\+Deactivate\+Notification}} (uint32\+\_\+t Sem\+Mask)
+\item 
+void \mbox{\hyperlink{group___h_s_e_m___exported___functions___group3_ga6dc0ad2cc5c0b50f286c6e1cb2b3fe0f}{HAL\+\_\+\+HSEM\+\_\+\+Free\+Callback}} (uint32\+\_\+t Sem\+Mask)
+\item 
+void \mbox{\hyperlink{group___h_s_e_m___exported___functions___group3_gafbab4eb282038606847694023de19771}{HAL\+\_\+\+HSEM\+\_\+\+IRQHandler}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of HSEM HAL module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2017 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under BSD 3-\/Clause license, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: opensource.\+org/licenses/\+BSD-\/3-\/\+Clause 
+
+Definition in file \mbox{\hyperlink{stm32h7xx__hal__hsem_8h_source}{stm32h7xx\+\_\+hal\+\_\+hsem.\+h}}.
+

@@ -1,0 +1,633 @@
+\hypertarget{group___r_c_c___i_s___r_c_c___definitions}{}\doxysection{RCC Private macros to check input parameters}
+\label{group___r_c_c___i_s___r_c_c___definitions}\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga3da0bb3923503cb8e84e5bd75912fbb8}{IS\+\_\+\+RCC\+\_\+\+OSCILLATORTYPE}}(OSCILLATOR)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga287bbcafd73d07ec915c2f793301908a}{IS\+\_\+\+RCC\+\_\+\+HSE}}(HSE)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga95d2678bf8f46e932e7cba75619a4d2c}{IS\+\_\+\+RCC\+\_\+\+LSE}}(LSE)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga9d2bad5b4ad9ba8fb224ddbd949c27d6}{IS\+\_\+\+RCC\+\_\+\+HSI}}(HSI)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga87cb017c40c63651af966309b70bf88a}{IS\+\_\+\+RCC\+\_\+\+HSI48}}(HSI48)~(((HSI48) == \mbox{\hyperlink{group___r_c_c___h_s_i48___config_ga5a653d6f271d56c96b63e02468ed3b65}{RCC\+\_\+\+HSI48\+\_\+\+OFF}}) $\vert$$\vert$ ((HSI48) == \mbox{\hyperlink{group___r_c_c___h_s_i48___config_gabfc9b19a84e1ac8bee6ff607afc10b0d}{RCC\+\_\+\+HSI48\+\_\+\+ON}}))
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_gaaa7381dd9821c69346ce64453863b786}{IS\+\_\+\+RCC\+\_\+\+LSI}}(LSI)~(((LSI) == \mbox{\hyperlink{group___r_c_c___l_s_i___config_gaa1710927d79a2032f87f039c4a27356a}{RCC\+\_\+\+LSI\+\_\+\+OFF}}) $\vert$$\vert$ ((LSI) == \mbox{\hyperlink{group___r_c_c___l_s_i___config_ga6b364ac3500e60b6bff695ee518c87d6}{RCC\+\_\+\+LSI\+\_\+\+ON}}))
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_gaf62b4757433d3aeb751491cf6ddc189f}{IS\+\_\+\+RCC\+\_\+\+CSI}}(CSI)~(((CSI) == \mbox{\hyperlink{group___r_c_c___c_s_i___config_ga484f6b4b798edd46671980a25ae00e72}{RCC\+\_\+\+CSI\+\_\+\+OFF}}) $\vert$$\vert$ ((CSI) == \mbox{\hyperlink{group___r_c_c___c_s_i___config_gacd0c6e9d10d8d059ab7915a45176e423}{RCC\+\_\+\+CSI\+\_\+\+ON}}))
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga373b85039eb8036373fe80948c153ee0}{IS\+\_\+\+RCC\+\_\+\+PLL}}(PLL)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_gae1aef66aae2c0374be3c7c62d389282f}{IS\+\_\+\+RCC\+\_\+\+PLLSOURCE}}(SOURCE)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga99e364438d03030e80e9ddcc2f964509}{IS\+\_\+\+RCC\+\_\+\+PLLRGE\+\_\+\+VALUE}}(VALUE)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga839a2381e5e15dabdbd859c14a0fe3d2}{IS\+\_\+\+RCC\+\_\+\+PLLVCO\+\_\+\+VALUE}}(VALUE)~(((VALUE) == \mbox{\hyperlink{group___r_c_c___p_l_l1___v_c_o___range_gab9f42e0ea12b12be4d96087227da031c}{RCC\+\_\+\+PLL1\+VCOWIDE}}) $\vert$$\vert$ ((VALUE) == \mbox{\hyperlink{group___r_c_c___p_l_l1___v_c_o___range_ga9ffd241a51b2f20bf7275a014e536477}{RCC\+\_\+\+PLL1\+VCOMEDIUM}}))
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga5206be7b66589b81309ee462699c6b11}{IS\+\_\+\+RCC\+\_\+\+PLLFRACN\+\_\+\+VALUE}}(VALUE)~((VALUE) $<$= 8191U)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga8db327c085e20aeb673a9784f8508597}{IS\+\_\+\+RCC\+\_\+\+PLLM\+\_\+\+VALUE}}(VALUE)~((1U $<$= (VALUE)) \&\& ((VALUE) $<$= 63U))
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga12835741fbedd278ad1e91abebe00837}{IS\+\_\+\+RCC\+\_\+\+PLLN\+\_\+\+VALUE}}(VALUE)~((4U $<$= (VALUE)) \&\& ((VALUE) $<$= 512U))
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_gad808f83505f4e802e5bafab7831f0235}{IS\+\_\+\+RCC\+\_\+\+PLLP\+\_\+\+VALUE}}(VALUE)~((1U $<$= (VALUE)) \&\& ((VALUE) $<$= 128U))
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_gad66dbe75bf8ab2b64b200e796281a851}{IS\+\_\+\+RCC\+\_\+\+PLLQ\+\_\+\+VALUE}}(VALUE)~((1U $<$= (VALUE)) \&\& ((VALUE) $<$= 128U))
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga73abbfc3c2f9e5e3621a6d8321c88c3b}{IS\+\_\+\+RCC\+\_\+\+PLLR\+\_\+\+VALUE}}(VALUE)~((1U $<$= (VALUE)) \&\& ((VALUE) $<$= 128U))
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga07b364b5bfc3e347da9b5dbb84f81809}{IS\+\_\+\+RCC\+\_\+\+PLLCLOCKOUT\+\_\+\+VALUE}}(VALUE)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_gaedf7abbab300ed340b88d5f665910707}{IS\+\_\+\+RCC\+\_\+\+CLOCKTYPE}}(CLK)~((1U $<$= (CLK)) \&\& ((CLK) $<$= 0x3\+FU))
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga0797bfc445903525324cbd06a6cebbd2}{IS\+\_\+\+RCC\+\_\+\+SYSCLKSOURCE}}(SOURCE)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga7c7dfc41a7f7f051286393bb468dabe0}{IS\+\_\+\+RCC\+\_\+\+SYSCLK}}(SYSCLK)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga6e9f1c193a2f41bcb3c2f7fa8459b5b3}{IS\+\_\+\+RCC\+\_\+\+HCLK}}(HCLK)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga94982534527278010cd63b036d38557c}{IS\+\_\+\+RCC\+\_\+\+CDPCLK1}}(CDPCLK1)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga4fac8fd59f31b2e9a55e49bf3664efd9}{IS\+\_\+\+RCC\+\_\+\+D1\+PCLK1}}~\mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga94982534527278010cd63b036d38557c}{IS\+\_\+\+RCC\+\_\+\+CDPCLK1}}  /$\ast$ for legacy compatibility between H7 lines $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga996af6fee7a02b51ed472e9819e9c2b8}{IS\+\_\+\+RCC\+\_\+\+PCLK1}}(PCLK1)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_gae3cd45124620ae28e71fbdb91afd0c02}{IS\+\_\+\+RCC\+\_\+\+PCLK2}}(PCLK2)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga1842759b9678d7a014294edd5a9813fa}{IS\+\_\+\+RCC\+\_\+\+SRDPCLK1}}(SRDPCLK1)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga1f858833fa3728e6e823d666c3d42ee4}{IS\+\_\+\+RCC\+\_\+\+D3\+PCLK1}}~\mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga1842759b9678d7a014294edd5a9813fa}{IS\+\_\+\+RCC\+\_\+\+SRDPCLK1}} /$\ast$ for legacy compatibility between H7 lines$\ast$/
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_gad15919da708f31ad296809804307df1d}{IS\+\_\+\+RCC\+\_\+\+RTCCLKSOURCE}}(SOURCE)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_gaac2d2f9b0c3e2f4fbe2131d779080964}{IS\+\_\+\+RCC\+\_\+\+MCO}}(MCOx)~(((MCOx) == \mbox{\hyperlink{group___r_c_c___m_c_o___index_ga152dd1ae9455e528526c4e23a817937b}{RCC\+\_\+\+MCO1}}) $\vert$$\vert$ ((MCOx) == \mbox{\hyperlink{group___r_c_c___m_c_o___index_ga248f59fc2868f83bea4f2d182edcdf4c}{RCC\+\_\+\+MCO2}}))
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga073031d9c90c555f7874912b7e4905f6}{IS\+\_\+\+RCC\+\_\+\+MCO1\+SOURCE}}(SOURCE)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga99f4a9acbacb5e4d2b27bb9f4f2c0a2f}{IS\+\_\+\+RCC\+\_\+\+MCO2\+SOURCE}}(SOURCE)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga152403e1f22fd14bb9a5d86406fe593f}{IS\+\_\+\+RCC\+\_\+\+MCODIV}}(DIV)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_gaa27dea5bb62b26d0881e649770252158}{IS\+\_\+\+RCC\+\_\+\+FLAG}}(FLAG)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga30ac800deb0d24eb3e2f929571e7efe8}{IS\+\_\+\+RCC\+\_\+\+HSICALIBRATION\+\_\+\+VALUE}}(VALUE)~((VALUE) $<$= 0x7\+FU)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga059fb6f33fe25d512289cc5151962c24}{IS\+\_\+\+RCC\+\_\+\+CSICALIBRATION\+\_\+\+VALUE}}(VALUE)~((VALUE) $<$= 0x3\+FU)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga861e69393015a4ea785b7ddd5c6e3f0c}{IS\+\_\+\+RCC\+\_\+\+STOP\+\_\+\+WAKEUPCLOCK}}(SOURCE)
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_gad0dc34f195b3b9fdbf30843e3ddceee4}{IS\+\_\+\+RCC\+\_\+\+STOP\+\_\+\+KERWAKEUPCLOCK}}(SOURCE)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga94982534527278010cd63b036d38557c}\label{group___r_c_c___i_s___r_c_c___definitions_ga94982534527278010cd63b036d38557c}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_CDPCLK1@{IS\_RCC\_CDPCLK1}}
+\index{IS\_RCC\_CDPCLK1@{IS\_RCC\_CDPCLK1}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_CDPCLK1}{IS\_RCC\_CDPCLK1}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+CDPCLK1(\begin{DoxyParamCaption}\item[{}]{CDPCLK1 }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((CDPCLK1)\ ==\ \mbox{\hyperlink{group___r_c_c___a_p_b3___clock___source_gac222b4e80811b1844492ae51cdcd897c}{RCC\_APB3\_DIV1}})\ ||\ ((CDPCLK1)\ ==\ \mbox{\hyperlink{group___r_c_c___a_p_b3___clock___source_ga1d21019abd17377b9b76dfc24c90e390}{RCC\_APB3\_DIV2}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CDPCLK1)\ ==\ \mbox{\hyperlink{group___r_c_c___a_p_b3___clock___source_gada8585309d66a0f8433798ee159a6dc6}{RCC\_APB3\_DIV4}})\ ||\ ((CDPCLK1)\ ==\ \mbox{\hyperlink{group___r_c_c___a_p_b3___clock___source_gadb66155cc067e9a3c3aa0baf937edf75}{RCC\_APB3\_DIV8}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CDPCLK1)\ ==\ \mbox{\hyperlink{group___r_c_c___a_p_b3___clock___source_ga5e9156ed25d3c58e7ceb6a41a20a0b21}{RCC\_APB3\_DIV16}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08120}{8120}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_gaedf7abbab300ed340b88d5f665910707}\label{group___r_c_c___i_s___r_c_c___definitions_gaedf7abbab300ed340b88d5f665910707}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_CLOCKTYPE@{IS\_RCC\_CLOCKTYPE}}
+\index{IS\_RCC\_CLOCKTYPE@{IS\_RCC\_CLOCKTYPE}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_CLOCKTYPE}{IS\_RCC\_CLOCKTYPE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+CLOCKTYPE(\begin{DoxyParamCaption}\item[{}]{CLK }\end{DoxyParamCaption})~((1U $<$= (CLK)) \&\& ((CLK) $<$= 0x3\+FU))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08100}{8100}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_gaf62b4757433d3aeb751491cf6ddc189f}\label{group___r_c_c___i_s___r_c_c___definitions_gaf62b4757433d3aeb751491cf6ddc189f}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_CSI@{IS\_RCC\_CSI}}
+\index{IS\_RCC\_CSI@{IS\_RCC\_CSI}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_CSI}{IS\_RCC\_CSI}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+CSI(\begin{DoxyParamCaption}\item[{}]{CSI }\end{DoxyParamCaption})~(((CSI) == \mbox{\hyperlink{group___r_c_c___c_s_i___config_ga484f6b4b798edd46671980a25ae00e72}{RCC\+\_\+\+CSI\+\_\+\+OFF}}) $\vert$$\vert$ ((CSI) == \mbox{\hyperlink{group___r_c_c___c_s_i___config_gacd0c6e9d10d8d059ab7915a45176e423}{RCC\+\_\+\+CSI\+\_\+\+ON}}))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08067}{8067}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga059fb6f33fe25d512289cc5151962c24}\label{group___r_c_c___i_s___r_c_c___definitions_ga059fb6f33fe25d512289cc5151962c24}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_CSICALIBRATION\_VALUE@{IS\_RCC\_CSICALIBRATION\_VALUE}}
+\index{IS\_RCC\_CSICALIBRATION\_VALUE@{IS\_RCC\_CSICALIBRATION\_VALUE}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_CSICALIBRATION\_VALUE}{IS\_RCC\_CSICALIBRATION\_VALUE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+CSICALIBRATION\+\_\+\+VALUE(\begin{DoxyParamCaption}\item[{}]{VALUE }\end{DoxyParamCaption})~((VALUE) $<$= 0x3\+FU)}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08240}{8240}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga4fac8fd59f31b2e9a55e49bf3664efd9}\label{group___r_c_c___i_s___r_c_c___definitions_ga4fac8fd59f31b2e9a55e49bf3664efd9}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_D1PCLK1@{IS\_RCC\_D1PCLK1}}
+\index{IS\_RCC\_D1PCLK1@{IS\_RCC\_D1PCLK1}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_D1PCLK1}{IS\_RCC\_D1PCLK1}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+D1\+PCLK1~\mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga94982534527278010cd63b036d38557c}{IS\+\_\+\+RCC\+\_\+\+CDPCLK1}}  /$\ast$ for legacy compatibility between H7 lines $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08124}{8124}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga1f858833fa3728e6e823d666c3d42ee4}\label{group___r_c_c___i_s___r_c_c___definitions_ga1f858833fa3728e6e823d666c3d42ee4}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_D3PCLK1@{IS\_RCC\_D3PCLK1}}
+\index{IS\_RCC\_D3PCLK1@{IS\_RCC\_D3PCLK1}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_D3PCLK1}{IS\_RCC\_D3PCLK1}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+D3\+PCLK1~\mbox{\hyperlink{group___r_c_c___i_s___r_c_c___definitions_ga1842759b9678d7a014294edd5a9813fa}{IS\+\_\+\+RCC\+\_\+\+SRDPCLK1}} /$\ast$ for legacy compatibility between H7 lines$\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08138}{8138}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_gaa27dea5bb62b26d0881e649770252158}\label{group___r_c_c___i_s___r_c_c___definitions_gaa27dea5bb62b26d0881e649770252158}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_FLAG@{IS\_RCC\_FLAG}}
+\index{IS\_RCC\_FLAG@{IS\_RCC\_FLAG}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_FLAG}{IS\_RCC\_FLAG}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{FLAG }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((FLAG)\ ==\ \mbox{\hyperlink{group___r_c_c___flag_ga827d986723e7ce652fa733bb8184d216}{RCC\_FLAG\_HSIRDY}})\ \ \ \ ||\ ((FLAG)\ ==\ \mbox{\hyperlink{group___r_c_c___flag_ga6b84dcd98a71967f9b7db70bd1d4fbf5}{RCC\_FLAG\_CSIRDY}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___r_c_c___flag_gaac8daab93988feb4b8b4d9dfe4f72f40}{RCC\_FLAG\_HSI48RDY}})\ \ ||\ ((FLAG)\ ==\ \mbox{\hyperlink{group___r_c_c___flag_ga173edf47bec93cf269a0e8d0fec9997c}{RCC\_FLAG\_HSERDY}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___r_c_c___flag_ga7c4a8740b71d839fcacff17cca1aee82}{RCC\_FLAG\_CPUCKRDY}})\ \ ||\ ((FLAG)\ ==\ \mbox{\hyperlink{group___r_c_c___flag_gae2a283ac6f5fd64c3e9ccd86c9308fb1}{RCC\_FLAG\_CDCKRDY}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___r_c_c___flag_gaf82d8afb18d9df75db1d6c08b9c50046}{RCC\_FLAG\_PLLRDY}})\ \ \ \ ||\ ((FLAG)\ ==\ \mbox{\hyperlink{group___r_c_c___flag_ga1a766526379aac32d5c74d4a0f1d4dbd}{RCC\_FLAG\_PLL2RDY}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___r_c_c___flag_ga006798ddfe13f33bc0192f169eaf1bd3}{RCC\_FLAG\_PLL3RDY}})\ \ \ ||\ ((FLAG)\ ==\ \mbox{\hyperlink{group___r_c_c___flag_gac9fb963db446c16e46a18908f7fe1927}{RCC\_FLAG\_LSERDY}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___r_c_c___flag_ga8c5e4992314d347597621bfe7ab10d72}{RCC\_FLAG\_LSIRDY}})\ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___r_c_c___flag_gaa338b1deb78861a240ff8d4350e9f246}{RCC\_FLAG\_CDRST}})\ \ \ \ \ ||\ ((FLAG)\ ==\ \mbox{\hyperlink{group___r_c_c___flag_ga23d5211abcdf0e397442ca534ca04bb4}{RCC\_FLAG\_BORRST}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___r_c_c___flag_gabfc3ab5d4a8a94ec1c9f38794ce37ad6}{RCC\_FLAG\_PINRST}})\ \ \ \ ||\ ((FLAG)\ ==\ \mbox{\hyperlink{group___r_c_c___flag_ga39ad309070f416720207eece5da7dc2c}{RCC\_FLAG\_PORRST}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___r_c_c___flag_gaf7852615e9b19f0b2dbc8d08c7594b52}{RCC\_FLAG\_SFTRST}})\ \ \ \ ||\ ((FLAG)\ ==\ \mbox{\hyperlink{group___r_c_c___flag_ga692a6725560c48315085ee50a4b7c275}{RCC\_FLAG\_IWDG1RST}})||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___r_c_c___flag_ga548e45e1679fdc57532fffd11bbcf87d}{RCC\_FLAG\_WWDG1RST}})\ \ ||\ ((FLAG)\ ==\ \mbox{\hyperlink{group___r_c_c___flag_gac7ebb11cac5c9f0b2a43c7d0e2eebfec}{RCC\_FLAG\_LPWR1RST}})||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FLAG)\ ==\ \mbox{\hyperlink{group___r_c_c___flag_ga6b17c4ec3d7f9a8d5db51133cbcc8502}{RCC\_FLAG\_LPWR2RST}})\ \ ||\ ((FLAG)\ ==\ \mbox{\hyperlink{group___r_c_c___flag_ga6e292483906a4b87c6edefa8c53366ea}{RCC\_FLAG\_HSIDIV}}\ ))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08224}{8224}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga6e9f1c193a2f41bcb3c2f7fa8459b5b3}\label{group___r_c_c___i_s___r_c_c___definitions_ga6e9f1c193a2f41bcb3c2f7fa8459b5b3}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_HCLK@{IS\_RCC\_HCLK}}
+\index{IS\_RCC\_HCLK@{IS\_RCC\_HCLK}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_HCLK}{IS\_RCC\_HCLK}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+HCLK(\begin{DoxyParamCaption}\item[{}]{HCLK }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((HCLK)\ ==\ \mbox{\hyperlink{group___r_c_c___h_c_l_k___clock___source_ga8e3fcdef0e5d77bb61a52420fe1e9fbc}{RCC\_HCLK\_DIV1}})\ \ \ ||\ ((HCLK)\ ==\ \mbox{\hyperlink{group___r_c_c___h_c_l_k___clock___source_ga4d2ebcf280d85e8449a5fb7b994b5169}{RCC\_HCLK\_DIV2}})\ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((HCLK)\ ==\ \mbox{\hyperlink{group___r_c_c___h_c_l_k___clock___source_ga85b5f4fd936e22a3f4df5ed756f6e083}{RCC\_HCLK\_DIV4}})\ \ \ ||\ ((HCLK)\ ==\ \mbox{\hyperlink{group___r_c_c___h_c_l_k___clock___source_gadb18bc60e2c639cb59244bedb54f7bb3}{RCC\_HCLK\_DIV8}})\ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((HCLK)\ ==\ \mbox{\hyperlink{group___r_c_c___h_c_l_k___clock___source_ga27ac27d48360121bc2dc68b99dc8845d}{RCC\_HCLK\_DIV16}})\ \ ||\ ((HCLK)\ ==\ \mbox{\hyperlink{group___r_c_c___h_c_l_k___clock___source_gaaa2fcd95978080d8b8d44cf2b7f5a25c}{RCC\_HCLK\_DIV64}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((HCLK)\ ==\ \mbox{\hyperlink{group___r_c_c___h_c_l_k___clock___source_ga731da7d179e88445769165c7015780e4}{RCC\_HCLK\_DIV128}})\ ||\ ((HCLK)\ ==\ \mbox{\hyperlink{group___r_c_c___h_c_l_k___clock___source_ga2169cdac18adec089b443c3cacdb8db7}{RCC\_HCLK\_DIV256}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((HCLK)\ ==\ \mbox{\hyperlink{group___r_c_c___h_c_l_k___clock___source_ga6f22513c27b05c67bb205fb4f445c126}{RCC\_HCLK\_DIV512}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08114}{8114}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga287bbcafd73d07ec915c2f793301908a}\label{group___r_c_c___i_s___r_c_c___definitions_ga287bbcafd73d07ec915c2f793301908a}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_HSE@{IS\_RCC\_HSE}}
+\index{IS\_RCC\_HSE@{IS\_RCC\_HSE}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_HSE}{IS\_RCC\_HSE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+HSE(\begin{DoxyParamCaption}\item[{}]{HSE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((HSE)\ ==\ \mbox{\hyperlink{group___r_c_c___h_s_e___config_ga1616626d23fbce440398578855df6f97}{RCC\_HSE\_OFF}})\ ||\ ((HSE)\ ==\ \mbox{\hyperlink{group___r_c_c___h_s_e___config_gabc4f70a44776c557af20496b04d9a9db}{RCC\_HSE\_ON}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((HSE)\ ==\ \mbox{\hyperlink{group___r_c_c___h_s_e___config_ga5ca515db2d5c4d5bdb9ee3d154df2704}{RCC\_HSE\_BYPASS}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08047}{8047}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga9d2bad5b4ad9ba8fb224ddbd949c27d6}\label{group___r_c_c___i_s___r_c_c___definitions_ga9d2bad5b4ad9ba8fb224ddbd949c27d6}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_HSI@{IS\_RCC\_HSI}}
+\index{IS\_RCC\_HSI@{IS\_RCC\_HSI}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_HSI}{IS\_RCC\_HSI}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+HSI(\begin{DoxyParamCaption}\item[{}]{HSI }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((HSI)\ ==\ \mbox{\hyperlink{group___r_c_c___h_s_i___config_ga1b34d37d3b51afec0758b3ddc7a7e665}{RCC\_HSI\_OFF}})\ ||\ ((HSI)\ ==\ \mbox{\hyperlink{group___r_c_c___h_s_i___config_ga0bf09ef9e46d5da25cced7b3122f92f5}{RCC\_HSI\_ON}})\ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((HSI)\ ==\ \mbox{\hyperlink{group___r_c_c___h_s_i___config_ga47ea1a7697d9e3f7eda06b45bc7f4db6}{RCC\_HSI\_DIV1}})\ ||\ ((HSI)\ ==\ \mbox{\hyperlink{group___r_c_c___h_s_i___config_ga38a54d39b6808f476a0a81b47a4f50f8}{RCC\_HSI\_DIV2}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((HSI)\ ==\ \mbox{\hyperlink{group___r_c_c___h_s_i___config_ga3280982afa72662f07301844a8272d1e}{RCC\_HSI\_DIV4}})\ ||\ ((HSI)\ ==\ \mbox{\hyperlink{group___r_c_c___h_s_i___config_ga06315b229d36c98402286f0b48f85d99}{RCC\_HSI\_DIV8}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08059}{8059}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga87cb017c40c63651af966309b70bf88a}\label{group___r_c_c___i_s___r_c_c___definitions_ga87cb017c40c63651af966309b70bf88a}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_HSI48@{IS\_RCC\_HSI48}}
+\index{IS\_RCC\_HSI48@{IS\_RCC\_HSI48}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_HSI48}{IS\_RCC\_HSI48}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+HSI48(\begin{DoxyParamCaption}\item[{}]{HSI48 }\end{DoxyParamCaption})~(((HSI48) == \mbox{\hyperlink{group___r_c_c___h_s_i48___config_ga5a653d6f271d56c96b63e02468ed3b65}{RCC\+\_\+\+HSI48\+\_\+\+OFF}}) $\vert$$\vert$ ((HSI48) == \mbox{\hyperlink{group___r_c_c___h_s_i48___config_gabfc9b19a84e1ac8bee6ff607afc10b0d}{RCC\+\_\+\+HSI48\+\_\+\+ON}}))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08063}{8063}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga30ac800deb0d24eb3e2f929571e7efe8}\label{group___r_c_c___i_s___r_c_c___definitions_ga30ac800deb0d24eb3e2f929571e7efe8}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_HSICALIBRATION\_VALUE@{IS\_RCC\_HSICALIBRATION\_VALUE}}
+\index{IS\_RCC\_HSICALIBRATION\_VALUE@{IS\_RCC\_HSICALIBRATION\_VALUE}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_HSICALIBRATION\_VALUE}{IS\_RCC\_HSICALIBRATION\_VALUE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+HSICALIBRATION\+\_\+\+VALUE(\begin{DoxyParamCaption}\item[{}]{VALUE }\end{DoxyParamCaption})~((VALUE) $<$= 0x7\+FU)}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08239}{8239}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga95d2678bf8f46e932e7cba75619a4d2c}\label{group___r_c_c___i_s___r_c_c___definitions_ga95d2678bf8f46e932e7cba75619a4d2c}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_LSE@{IS\_RCC\_LSE}}
+\index{IS\_RCC\_LSE@{IS\_RCC\_LSE}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_LSE}{IS\_RCC\_LSE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+LSE(\begin{DoxyParamCaption}\item[{}]{LSE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((LSE)\ ==\ \mbox{\hyperlink{group___r_c_c___l_s_e___config_ga6645c27708d0cad1a4ab61d2abb24c77}{RCC\_LSE\_OFF}})\ ||\ ((LSE)\ ==\ \mbox{\hyperlink{group___r_c_c___l_s_e___config_gac981ea636c2f215e4473901e0912f55a}{RCC\_LSE\_ON}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LSE)\ ==\ \mbox{\hyperlink{group___r_c_c___l_s_e___config_gaad580157edbae878edbcc83c5a68e767}{RCC\_LSE\_BYPASS}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08055}{8055}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_gaaa7381dd9821c69346ce64453863b786}\label{group___r_c_c___i_s___r_c_c___definitions_gaaa7381dd9821c69346ce64453863b786}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_LSI@{IS\_RCC\_LSI}}
+\index{IS\_RCC\_LSI@{IS\_RCC\_LSI}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_LSI}{IS\_RCC\_LSI}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+LSI(\begin{DoxyParamCaption}\item[{}]{LSI }\end{DoxyParamCaption})~(((LSI) == \mbox{\hyperlink{group___r_c_c___l_s_i___config_gaa1710927d79a2032f87f039c4a27356a}{RCC\+\_\+\+LSI\+\_\+\+OFF}}) $\vert$$\vert$ ((LSI) == \mbox{\hyperlink{group___r_c_c___l_s_i___config_ga6b364ac3500e60b6bff695ee518c87d6}{RCC\+\_\+\+LSI\+\_\+\+ON}}))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08065}{8065}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_gaac2d2f9b0c3e2f4fbe2131d779080964}\label{group___r_c_c___i_s___r_c_c___definitions_gaac2d2f9b0c3e2f4fbe2131d779080964}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_MCO@{IS\_RCC\_MCO}}
+\index{IS\_RCC\_MCO@{IS\_RCC\_MCO}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_MCO}{IS\_RCC\_MCO}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+MCO(\begin{DoxyParamCaption}\item[{}]{MCOx }\end{DoxyParamCaption})~(((MCOx) == \mbox{\hyperlink{group___r_c_c___m_c_o___index_ga152dd1ae9455e528526c4e23a817937b}{RCC\+\_\+\+MCO1}}) $\vert$$\vert$ ((MCOx) == \mbox{\hyperlink{group___r_c_c___m_c_o___index_ga248f59fc2868f83bea4f2d182edcdf4c}{RCC\+\_\+\+MCO2}}))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08173}{8173}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga073031d9c90c555f7874912b7e4905f6}\label{group___r_c_c___i_s___r_c_c___definitions_ga073031d9c90c555f7874912b7e4905f6}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_MCO1SOURCE@{IS\_RCC\_MCO1SOURCE}}
+\index{IS\_RCC\_MCO1SOURCE@{IS\_RCC\_MCO1SOURCE}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_MCO1SOURCE}{IS\_RCC\_MCO1SOURCE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+MCO1\+SOURCE(\begin{DoxyParamCaption}\item[{}]{SOURCE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((SOURCE)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_o1___clock___source_gad99c388c455852143220397db3730635}{RCC\_MCO1SOURCE\_HSI}})\ ||\ ((SOURCE)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_o1___clock___source_gaa01b6cb196df3a4ad690f8bcaa4d0621}{RCC\_MCO1SOURCE\_LSE}})\ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SOURCE)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_o1___clock___source_ga5582d2ab152eb440a6cc3ae4833b043f}{RCC\_MCO1SOURCE\_HSE}})\ ||\ ((SOURCE)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_o1___clock___source_gab693e677f8367a3b50763ef9eade025a}{RCC\_MCO1SOURCE\_PLL1QCLK}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SOURCE)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_o1___clock___source_ga488078873284a8d9cbb85bd867b83b75}{RCC\_MCO1SOURCE\_HSI48}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08175}{8175}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga99f4a9acbacb5e4d2b27bb9f4f2c0a2f}\label{group___r_c_c___i_s___r_c_c___definitions_ga99f4a9acbacb5e4d2b27bb9f4f2c0a2f}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_MCO2SOURCE@{IS\_RCC\_MCO2SOURCE}}
+\index{IS\_RCC\_MCO2SOURCE@{IS\_RCC\_MCO2SOURCE}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_MCO2SOURCE}{IS\_RCC\_MCO2SOURCE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+MCO2\+SOURCE(\begin{DoxyParamCaption}\item[{}]{SOURCE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((SOURCE)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_o2___clock___source_ga54de4030872bb1307c7d7c8a3bd33131}{RCC\_MCO2SOURCE\_SYSCLK}})\ \ \ \ ||\ ((SOURCE)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_o2___clock___source_gafe89b9f68a2bf23953bd85302405faef}{RCC\_MCO2SOURCE\_PLL2PCLK}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SOURCE)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_o2___clock___source_gade7c384e5e76c52d76b589297a8a6934}{RCC\_MCO2SOURCE\_HSE}})\ \ \ \ \ \ \ ||\ ((SOURCE)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_o2___clock___source_ga706e33338111d8ef82b00a54eba0215c}{RCC\_MCO2SOURCE\_PLLCLK}})\ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SOURCE)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_o2___clock___source_ga20bb167ab946ae911722e1e7110c5bf7}{RCC\_MCO2SOURCE\_CSICLK}})\ \ \ \ ||\ ((SOURCE)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_o2___clock___source_gaff568705fce7a513d96635223fbe1f06}{RCC\_MCO2SOURCE\_LSICLK}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08179}{8179}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga152403e1f22fd14bb9a5d86406fe593f}\label{group___r_c_c___i_s___r_c_c___definitions_ga152403e1f22fd14bb9a5d86406fe593f}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_MCODIV@{IS\_RCC\_MCODIV}}
+\index{IS\_RCC\_MCODIV@{IS\_RCC\_MCODIV}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_MCODIV}{IS\_RCC\_MCODIV}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+MCODIV(\begin{DoxyParamCaption}\item[{}]{DIV }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((DIV)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_ox___clock___prescaler_ga438d8c3bead4e1ec5dd5757cb0313d53}{RCC\_MCODIV\_1}})\ \ ||\ ((DIV)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_ox___clock___prescaler_ga6198330847077f4da351915518140bfc}{RCC\_MCODIV\_2}})\ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((DIV)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_ox___clock___prescaler_gab9dac03733c3c5bd8877ef43bff3d5f4}{RCC\_MCODIV\_3}})\ \ ||\ ((DIV)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_ox___clock___prescaler_ga1bdc2eb56aaeb53dc3ca5cd72f22d4c8}{RCC\_MCODIV\_4}})\ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((DIV)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_ox___clock___prescaler_ga67292dd05ceb8189ec439d4ac4d58b88}{RCC\_MCODIV\_5}})\ \ ||\ ((DIV)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_ox___clock___prescaler_ga0229b0d7e7444342b5966d4096d61b1b}{RCC\_MCODIV\_6}})\ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((DIV)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_ox___clock___prescaler_gad32c07babb81067c9243e81cc02d6f5d}{RCC\_MCODIV\_7}})\ \ ||\ ((DIV)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_ox___clock___prescaler_gadb84d9a10db2c49376be8fada619fe08}{RCC\_MCODIV\_8}})\ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((DIV)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_ox___clock___prescaler_ga0e12a28a4762fd6d7826a8349b44f0f6}{RCC\_MCODIV\_9}})\ \ ||\ ((DIV)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_ox___clock___prescaler_ga160aca969815d45c15c0aaa3e84f7a53}{RCC\_MCODIV\_10}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((DIV)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_ox___clock___prescaler_ga18c9fea34a100746a2ad7fc117bc2036}{RCC\_MCODIV\_11}})\ ||\ ((DIV)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_ox___clock___prescaler_ga0e15b47a23cc0f7b31a737736d64bb3f}{RCC\_MCODIV\_12}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((DIV)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_ox___clock___prescaler_ga7b99a9858094aa608be6bfefed3b701e}{RCC\_MCODIV\_13}})\ ||\ ((DIV)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_ox___clock___prescaler_ga539f249e2ac961eb38327b74fceea5d7}{RCC\_MCODIV\_14}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((DIV)\ ==\ \mbox{\hyperlink{group___r_c_c___m_c_ox___clock___prescaler_gaecc7121d3dffe60e59e490c809dd8ad0}{RCC\_MCODIV\_15}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08183}{8183}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga3da0bb3923503cb8e84e5bd75912fbb8}\label{group___r_c_c___i_s___r_c_c___definitions_ga3da0bb3923503cb8e84e5bd75912fbb8}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_OSCILLATORTYPE@{IS\_RCC\_OSCILLATORTYPE}}
+\index{IS\_RCC\_OSCILLATORTYPE@{IS\_RCC\_OSCILLATORTYPE}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_OSCILLATORTYPE}{IS\_RCC\_OSCILLATORTYPE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+OSCILLATORTYPE(\begin{DoxyParamCaption}\item[{}]{OSCILLATOR }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((OSCILLATOR)\ ==\ \mbox{\hyperlink{group___r_c_c___oscillator___type_ga5a790362c5d7c4263f0f75a7367dd6b9}{RCC\_OSCILLATORTYPE\_NONE}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((OSCILLATOR)\ \&\ \mbox{\hyperlink{group___r_c_c___oscillator___type_ga28cacd402dec84e548c9e4ba86d4603f}{RCC\_OSCILLATORTYPE\_HSE}})\ ==\ \mbox{\hyperlink{group___r_c_c___oscillator___type_ga28cacd402dec84e548c9e4ba86d4603f}{RCC\_OSCILLATORTYPE\_HSE}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((OSCILLATOR)\ \&\ \mbox{\hyperlink{group___r_c_c___oscillator___type_gaa7ff7cbe9b0c2c511b0d0555e2a32a23}{RCC\_OSCILLATORTYPE\_HSI}})\ ==\ \mbox{\hyperlink{group___r_c_c___oscillator___type_gaa7ff7cbe9b0c2c511b0d0555e2a32a23}{RCC\_OSCILLATORTYPE\_HSI}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((OSCILLATOR)\ \&\ \mbox{\hyperlink{group___r_c_c___oscillator___type_ga6c622a0350a09009f47653935364a911}{RCC\_OSCILLATORTYPE\_CSI}})\ ==\ \mbox{\hyperlink{group___r_c_c___oscillator___type_ga6c622a0350a09009f47653935364a911}{RCC\_OSCILLATORTYPE\_CSI}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((OSCILLATOR)\ \&\ \mbox{\hyperlink{group___r_c_c___oscillator___type_ga3b7abb8ce0544cca0aa4550540194ce2}{RCC\_OSCILLATORTYPE\_LSI}})\ ==\ \mbox{\hyperlink{group___r_c_c___oscillator___type_ga3b7abb8ce0544cca0aa4550540194ce2}{RCC\_OSCILLATORTYPE\_LSI}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((OSCILLATOR)\ \&\ \mbox{\hyperlink{group___r_c_c___oscillator___type_ga7036aec5659343c695d795e04d9152ba}{RCC\_OSCILLATORTYPE\_LSE}})\ ==\ \mbox{\hyperlink{group___r_c_c___oscillator___type_ga7036aec5659343c695d795e04d9152ba}{RCC\_OSCILLATORTYPE\_LSE}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((OSCILLATOR)\ \&\ \mbox{\hyperlink{group___r_c_c___oscillator___type_ga0dd3e581c81f5044ff0865a5e20eb77b}{RCC\_OSCILLATORTYPE\_HSI48}})\ ==\ \mbox{\hyperlink{group___r_c_c___oscillator___type_ga0dd3e581c81f5044ff0865a5e20eb77b}{RCC\_OSCILLATORTYPE\_HSI48}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08035}{8035}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga996af6fee7a02b51ed472e9819e9c2b8}\label{group___r_c_c___i_s___r_c_c___definitions_ga996af6fee7a02b51ed472e9819e9c2b8}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_PCLK1@{IS\_RCC\_PCLK1}}
+\index{IS\_RCC\_PCLK1@{IS\_RCC\_PCLK1}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_PCLK1}{IS\_RCC\_PCLK1}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+PCLK1(\begin{DoxyParamCaption}\item[{}]{PCLK1 }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((PCLK1)\ ==\ \mbox{\hyperlink{group___r_c_c___a_p_b1___clock___source_gab036b34d201ca351c8ca295d84e5ec48}{RCC\_APB1\_DIV1}})\ ||\ ((PCLK1)\ ==\ \mbox{\hyperlink{group___r_c_c___a_p_b1___clock___source_ga23e324f024960b9c5cd9166fa9172474}{RCC\_APB1\_DIV2}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PCLK1)\ ==\ \mbox{\hyperlink{group___r_c_c___a_p_b1___clock___source_ga7f4da4cc6c5c280bfb2d9cdc8877d4fd}{RCC\_APB1\_DIV4}})\ ||\ ((PCLK1)\ ==\ \mbox{\hyperlink{group___r_c_c___a_p_b1___clock___source_ga86446f2c9d06055272023687194b63df}{RCC\_APB1\_DIV8}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PCLK1)\ ==\ \mbox{\hyperlink{group___r_c_c___a_p_b1___clock___source_gac231da25e9caba6ace645f79ce5aa67b}{RCC\_APB1\_DIV16}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08126}{8126}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_gae3cd45124620ae28e71fbdb91afd0c02}\label{group___r_c_c___i_s___r_c_c___definitions_gae3cd45124620ae28e71fbdb91afd0c02}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_PCLK2@{IS\_RCC\_PCLK2}}
+\index{IS\_RCC\_PCLK2@{IS\_RCC\_PCLK2}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_PCLK2}{IS\_RCC\_PCLK2}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+PCLK2(\begin{DoxyParamCaption}\item[{}]{PCLK2 }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((PCLK2)\ ==\ \mbox{\hyperlink{group___r_c_c___a_p_b2___clock___source_ga0b005b3ca1f2b3e134858a712975f32d}{RCC\_APB2\_DIV1}})\ ||\ ((PCLK2)\ ==\ \mbox{\hyperlink{group___r_c_c___a_p_b2___clock___source_ga1a64835996426fdf7ed3541eea1587a4}{RCC\_APB2\_DIV2}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PCLK2)\ ==\ \mbox{\hyperlink{group___r_c_c___a_p_b2___clock___source_gad4815953b241f7ec86b2327ab3e29980}{RCC\_APB2\_DIV4}})\ ||\ ((PCLK2)\ ==\ \mbox{\hyperlink{group___r_c_c___a_p_b2___clock___source_ga54099ca838dbe4b0725347d1ac771e5d}{RCC\_APB2\_DIV8}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PCLK2)\ ==\ \mbox{\hyperlink{group___r_c_c___a_p_b2___clock___source_ga06e4bc08d2d32187acb3c4c7c6329993}{RCC\_APB2\_DIV16}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08130}{8130}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga373b85039eb8036373fe80948c153ee0}\label{group___r_c_c___i_s___r_c_c___definitions_ga373b85039eb8036373fe80948c153ee0}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_PLL@{IS\_RCC\_PLL}}
+\index{IS\_RCC\_PLL@{IS\_RCC\_PLL}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_PLL}{IS\_RCC\_PLL}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+PLL(\begin{DoxyParamCaption}\item[{}]{PLL }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((PLL)\ ==\ \mbox{\hyperlink{group___r_c_c___p_l_l___config_gae47a612f8e15c32917ee2181362d88f3}{RCC\_PLL\_NONE}})\ ||((PLL)\ ==\ \mbox{\hyperlink{group___r_c_c___p_l_l___config_ga3a8d5c8bcb101c6ca1a574729acfa903}{RCC\_PLL\_OFF}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((PLL)\ ==\ \mbox{\hyperlink{group___r_c_c___p_l_l___config_gaf86dbee130304ba5760818f56d34ec91}{RCC\_PLL\_ON}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08069}{8069}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga07b364b5bfc3e347da9b5dbb84f81809}\label{group___r_c_c___i_s___r_c_c___definitions_ga07b364b5bfc3e347da9b5dbb84f81809}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_PLLCLOCKOUT\_VALUE@{IS\_RCC\_PLLCLOCKOUT\_VALUE}}
+\index{IS\_RCC\_PLLCLOCKOUT\_VALUE@{IS\_RCC\_PLLCLOCKOUT\_VALUE}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_PLLCLOCKOUT\_VALUE}{IS\_RCC\_PLLCLOCKOUT\_VALUE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+PLLCLOCKOUT\+\_\+\+VALUE(\begin{DoxyParamCaption}\item[{}]{VALUE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((VALUE)\ ==\ \mbox{\hyperlink{group___r_c_c___p_l_l___clock___output_gaf14f5e060d1cd0eefbdea80b8701819c}{RCC\_PLL1\_DIVP}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ \mbox{\hyperlink{group___r_c_c___p_l_l___clock___output_ga17b76fed00a13293497b825af7863d99}{RCC\_PLL1\_DIVQ}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ \mbox{\hyperlink{group___r_c_c___p_l_l___clock___output_ga2832fd9d69e723c0f667fe8f08863e0d}{RCC\_PLL1\_DIVR}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08096}{8096}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga5206be7b66589b81309ee462699c6b11}\label{group___r_c_c___i_s___r_c_c___definitions_ga5206be7b66589b81309ee462699c6b11}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_PLLFRACN\_VALUE@{IS\_RCC\_PLLFRACN\_VALUE}}
+\index{IS\_RCC\_PLLFRACN\_VALUE@{IS\_RCC\_PLLFRACN\_VALUE}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_PLLFRACN\_VALUE}{IS\_RCC\_PLLFRACN\_VALUE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+PLLFRACN\+\_\+\+VALUE(\begin{DoxyParamCaption}\item[{}]{VALUE }\end{DoxyParamCaption})~((VALUE) $<$= 8191U)}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08084}{8084}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga8db327c085e20aeb673a9784f8508597}\label{group___r_c_c___i_s___r_c_c___definitions_ga8db327c085e20aeb673a9784f8508597}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_PLLM\_VALUE@{IS\_RCC\_PLLM\_VALUE}}
+\index{IS\_RCC\_PLLM\_VALUE@{IS\_RCC\_PLLM\_VALUE}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_PLLM\_VALUE}{IS\_RCC\_PLLM\_VALUE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+PLLM\+\_\+\+VALUE(\begin{DoxyParamCaption}\item[{}]{VALUE }\end{DoxyParamCaption})~((1U $<$= (VALUE)) \&\& ((VALUE) $<$= 63U))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08086}{8086}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga12835741fbedd278ad1e91abebe00837}\label{group___r_c_c___i_s___r_c_c___definitions_ga12835741fbedd278ad1e91abebe00837}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_PLLN\_VALUE@{IS\_RCC\_PLLN\_VALUE}}
+\index{IS\_RCC\_PLLN\_VALUE@{IS\_RCC\_PLLN\_VALUE}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_PLLN\_VALUE}{IS\_RCC\_PLLN\_VALUE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+PLLN\+\_\+\+VALUE(\begin{DoxyParamCaption}\item[{}]{VALUE }\end{DoxyParamCaption})~((4U $<$= (VALUE)) \&\& ((VALUE) $<$= 512U))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08088}{8088}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_gad808f83505f4e802e5bafab7831f0235}\label{group___r_c_c___i_s___r_c_c___definitions_gad808f83505f4e802e5bafab7831f0235}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_PLLP\_VALUE@{IS\_RCC\_PLLP\_VALUE}}
+\index{IS\_RCC\_PLLP\_VALUE@{IS\_RCC\_PLLP\_VALUE}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_PLLP\_VALUE}{IS\_RCC\_PLLP\_VALUE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+PLLP\+\_\+\+VALUE(\begin{DoxyParamCaption}\item[{}]{VALUE }\end{DoxyParamCaption})~((1U $<$= (VALUE)) \&\& ((VALUE) $<$= 128U))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08092}{8092}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_gad66dbe75bf8ab2b64b200e796281a851}\label{group___r_c_c___i_s___r_c_c___definitions_gad66dbe75bf8ab2b64b200e796281a851}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_PLLQ\_VALUE@{IS\_RCC\_PLLQ\_VALUE}}
+\index{IS\_RCC\_PLLQ\_VALUE@{IS\_RCC\_PLLQ\_VALUE}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_PLLQ\_VALUE}{IS\_RCC\_PLLQ\_VALUE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+PLLQ\+\_\+\+VALUE(\begin{DoxyParamCaption}\item[{}]{VALUE }\end{DoxyParamCaption})~((1U $<$= (VALUE)) \&\& ((VALUE) $<$= 128U))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08093}{8093}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga73abbfc3c2f9e5e3621a6d8321c88c3b}\label{group___r_c_c___i_s___r_c_c___definitions_ga73abbfc3c2f9e5e3621a6d8321c88c3b}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_PLLR\_VALUE@{IS\_RCC\_PLLR\_VALUE}}
+\index{IS\_RCC\_PLLR\_VALUE@{IS\_RCC\_PLLR\_VALUE}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_PLLR\_VALUE}{IS\_RCC\_PLLR\_VALUE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+PLLR\+\_\+\+VALUE(\begin{DoxyParamCaption}\item[{}]{VALUE }\end{DoxyParamCaption})~((1U $<$= (VALUE)) \&\& ((VALUE) $<$= 128U))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08094}{8094}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga99e364438d03030e80e9ddcc2f964509}\label{group___r_c_c___i_s___r_c_c___definitions_ga99e364438d03030e80e9ddcc2f964509}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_PLLRGE\_VALUE@{IS\_RCC\_PLLRGE\_VALUE}}
+\index{IS\_RCC\_PLLRGE\_VALUE@{IS\_RCC\_PLLRGE\_VALUE}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_PLLRGE\_VALUE}{IS\_RCC\_PLLRGE\_VALUE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+PLLRGE\+\_\+\+VALUE(\begin{DoxyParamCaption}\item[{}]{VALUE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((VALUE)\ ==\ \mbox{\hyperlink{group___r_c_c___p_l_l1___v_c_i___range_ga649e07af1f144bdba350bf66eae3f632}{RCC\_PLL1VCIRANGE\_0}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ \mbox{\hyperlink{group___r_c_c___p_l_l1___v_c_i___range_ga057ea6f97d147b8e3addb99a38787fc9}{RCC\_PLL1VCIRANGE\_1}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ \mbox{\hyperlink{group___r_c_c___p_l_l1___v_c_i___range_ga4ca1adbbfac5598d3225a53b9fbebad7}{RCC\_PLL1VCIRANGE\_2}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ \mbox{\hyperlink{group___r_c_c___p_l_l1___v_c_i___range_ga60ae9f766f7d9b9b24edf031d02e3927}{RCC\_PLL1VCIRANGE\_3}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08077}{8077}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_gae1aef66aae2c0374be3c7c62d389282f}\label{group___r_c_c___i_s___r_c_c___definitions_gae1aef66aae2c0374be3c7c62d389282f}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_PLLSOURCE@{IS\_RCC\_PLLSOURCE}}
+\index{IS\_RCC\_PLLSOURCE@{IS\_RCC\_PLLSOURCE}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_PLLSOURCE}{IS\_RCC\_PLLSOURCE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+PLLSOURCE(\begin{DoxyParamCaption}\item[{}]{SOURCE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((SOURCE)\ ==\ \mbox{\hyperlink{group___r_c_c___p_l_l___clock___source_gaa89dc859b01ab8b7d925976e684c9057}{RCC\_PLLSOURCE\_CSI}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SOURCE)\ ==\ \mbox{\hyperlink{group___r_c_c___p_l_l___clock___source_ga0e07703f1ccb3d60f8a47a2dc631c218}{RCC\_PLLSOURCE\_HSI}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SOURCE)\ ==\ \mbox{\hyperlink{group___r_c_c___p_l_l___clock___source_ga2a440b01eaeb8f3a6282598fc748ef1f}{RCC\_PLLSOURCE\_NONE}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SOURCE)\ ==\ \mbox{\hyperlink{group___r_c_c___p_l_l___clock___source_ga197cea7fe5c2db26fe7fcdb0f99dd4d7}{RCC\_PLLSOURCE\_HSE}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08072}{8072}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga839a2381e5e15dabdbd859c14a0fe3d2}\label{group___r_c_c___i_s___r_c_c___definitions_ga839a2381e5e15dabdbd859c14a0fe3d2}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_PLLVCO\_VALUE@{IS\_RCC\_PLLVCO\_VALUE}}
+\index{IS\_RCC\_PLLVCO\_VALUE@{IS\_RCC\_PLLVCO\_VALUE}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_PLLVCO\_VALUE}{IS\_RCC\_PLLVCO\_VALUE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+PLLVCO\+\_\+\+VALUE(\begin{DoxyParamCaption}\item[{}]{VALUE }\end{DoxyParamCaption})~(((VALUE) == \mbox{\hyperlink{group___r_c_c___p_l_l1___v_c_o___range_gab9f42e0ea12b12be4d96087227da031c}{RCC\+\_\+\+PLL1\+VCOWIDE}}) $\vert$$\vert$ ((VALUE) == \mbox{\hyperlink{group___r_c_c___p_l_l1___v_c_o___range_ga9ffd241a51b2f20bf7275a014e536477}{RCC\+\_\+\+PLL1\+VCOMEDIUM}}))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08082}{8082}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_gad15919da708f31ad296809804307df1d}\label{group___r_c_c___i_s___r_c_c___definitions_gad15919da708f31ad296809804307df1d}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_RTCCLKSOURCE@{IS\_RCC\_RTCCLKSOURCE}}
+\index{IS\_RCC\_RTCCLKSOURCE@{IS\_RCC\_RTCCLKSOURCE}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_RTCCLKSOURCE}{IS\_RCC\_RTCCLKSOURCE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+RTCCLKSOURCE(\begin{DoxyParamCaption}\item[{}]{SOURCE }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08140}{8140}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga1842759b9678d7a014294edd5a9813fa}\label{group___r_c_c___i_s___r_c_c___definitions_ga1842759b9678d7a014294edd5a9813fa}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_SRDPCLK1@{IS\_RCC\_SRDPCLK1}}
+\index{IS\_RCC\_SRDPCLK1@{IS\_RCC\_SRDPCLK1}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_SRDPCLK1}{IS\_RCC\_SRDPCLK1}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+SRDPCLK1(\begin{DoxyParamCaption}\item[{}]{SRDPCLK1 }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((SRDPCLK1)\ ==\ \mbox{\hyperlink{group___r_c_c___a_p_b4___clock___source_ga23fb6a2549953039b302f6940b41bbe5}{RCC\_APB4\_DIV1}})\ ||\ ((SRDPCLK1)\ ==\ \mbox{\hyperlink{group___r_c_c___a_p_b4___clock___source_ga61a50c864e20d047dcb23a48a9e2b4fb}{RCC\_APB4\_DIV2}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SRDPCLK1)\ ==\ \mbox{\hyperlink{group___r_c_c___a_p_b4___clock___source_ga626446a64e45aead026ad4961dc6a455}{RCC\_APB4\_DIV4}})\ \ ||\ ((SRDPCLK1)\ ==\ \mbox{\hyperlink{group___r_c_c___a_p_b4___clock___source_ga545b3bd707ecbdf7819c110b1ce20ad4}{RCC\_APB4\_DIV8}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SRDPCLK1)\ ==\ \mbox{\hyperlink{group___r_c_c___a_p_b4___clock___source_gaf994b23f77b2faa95e741f97b200d660}{RCC\_APB4\_DIV16}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08134}{8134}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_gad0dc34f195b3b9fdbf30843e3ddceee4}\label{group___r_c_c___i_s___r_c_c___definitions_gad0dc34f195b3b9fdbf30843e3ddceee4}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_STOP\_KERWAKEUPCLOCK@{IS\_RCC\_STOP\_KERWAKEUPCLOCK}}
+\index{IS\_RCC\_STOP\_KERWAKEUPCLOCK@{IS\_RCC\_STOP\_KERWAKEUPCLOCK}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_STOP\_KERWAKEUPCLOCK}{IS\_RCC\_STOP\_KERWAKEUPCLOCK}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+STOP\+\_\+\+KERWAKEUPCLOCK(\begin{DoxyParamCaption}\item[{}]{SOURCE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((SOURCE)\ ==\ \mbox{\hyperlink{group___r_c_c___stop___kernel_wake_up_clock_gae878b49770abde7e491f3c9605a5fddb}{RCC\_STOP\_KERWAKEUPCLOCK\_CSI}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SOURCE)\ ==\ \mbox{\hyperlink{group___r_c_c___stop___kernel_wake_up_clock_gaf791b991a6823814fa88756f4e2a4753}{RCC\_STOP\_KERWAKEUPCLOCK\_HSI}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08245}{8245}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga861e69393015a4ea785b7ddd5c6e3f0c}\label{group___r_c_c___i_s___r_c_c___definitions_ga861e69393015a4ea785b7ddd5c6e3f0c}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_STOP\_WAKEUPCLOCK@{IS\_RCC\_STOP\_WAKEUPCLOCK}}
+\index{IS\_RCC\_STOP\_WAKEUPCLOCK@{IS\_RCC\_STOP\_WAKEUPCLOCK}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_STOP\_WAKEUPCLOCK}{IS\_RCC\_STOP\_WAKEUPCLOCK}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+STOP\+\_\+\+WAKEUPCLOCK(\begin{DoxyParamCaption}\item[{}]{SOURCE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((SOURCE)\ ==\ \mbox{\hyperlink{group___r_c_c___stop___wake_up_clock_ga54baa4a0d92868148772c6d54d9bc19f}{RCC\_STOP\_WAKEUPCLOCK\_CSI}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SOURCE)\ ==\ \mbox{\hyperlink{group___r_c_c___stop___wake_up_clock_ga7230033023839d06ad8cad89ea60a6c9}{RCC\_STOP\_WAKEUPCLOCK\_HSI}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08242}{8242}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga7c7dfc41a7f7f051286393bb468dabe0}\label{group___r_c_c___i_s___r_c_c___definitions_ga7c7dfc41a7f7f051286393bb468dabe0}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_SYSCLK@{IS\_RCC\_SYSCLK}}
+\index{IS\_RCC\_SYSCLK@{IS\_RCC\_SYSCLK}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_SYSCLK}{IS\_RCC\_SYSCLK}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+SYSCLK(\begin{DoxyParamCaption}\item[{}]{SYSCLK }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((SYSCLK)\ ==\ \mbox{\hyperlink{group___r_c_c___s_y_s___clock___source_ga226f5bf675015ea677868132b6b83494}{RCC\_SYSCLK\_DIV1}})\ \ \ ||\ ((SYSCLK)\ ==\ \mbox{\hyperlink{group___r_c_c___s_y_s___clock___source_gac37c0610458a92e3cb32ec81014625c3}{RCC\_SYSCLK\_DIV2}})\ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SYSCLK)\ ==\ \mbox{\hyperlink{group___r_c_c___s_y_s___clock___source_ga6fd3652d6853563cdf388a4386b9d22f}{RCC\_SYSCLK\_DIV4}})\ \ \ ||\ ((SYSCLK)\ ==\ \mbox{\hyperlink{group___r_c_c___s_y_s___clock___source_ga7def31373854ba9c72bb76b1d13e3aad}{RCC\_SYSCLK\_DIV8}})\ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SYSCLK)\ ==\ \mbox{\hyperlink{group___r_c_c___s_y_s___clock___source_ga895462b261e03eade3d0139cc1327a51}{RCC\_SYSCLK\_DIV16}})\ \ ||\ ((SYSCLK)\ ==\ \mbox{\hyperlink{group___r_c_c___s_y_s___clock___source_ga73814b5a7ee000687ec8334637ca5b14}{RCC\_SYSCLK\_DIV64}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SYSCLK)\ ==\ \mbox{\hyperlink{group___r_c_c___s_y_s___clock___source_ga43eddf4d4160df30548a714dce102ad8}{RCC\_SYSCLK\_DIV128}})\ ||\ ((SYSCLK)\ ==\ \mbox{\hyperlink{group___r_c_c___s_y_s___clock___source_ga94956d6e9c3a78230bf660b838f987e2}{RCC\_SYSCLK\_DIV256}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SYSCLK)\ ==\ \mbox{\hyperlink{group___r_c_c___s_y_s___clock___source_gabe18a9d55c0858bbfe3db657fb64c76d}{RCC\_SYSCLK\_DIV512}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08107}{8107}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___i_s___r_c_c___definitions_ga0797bfc445903525324cbd06a6cebbd2}\label{group___r_c_c___i_s___r_c_c___definitions_ga0797bfc445903525324cbd06a6cebbd2}} 
+\index{RCC Private macros to check input parameters@{RCC Private macros to check input parameters}!IS\_RCC\_SYSCLKSOURCE@{IS\_RCC\_SYSCLKSOURCE}}
+\index{IS\_RCC\_SYSCLKSOURCE@{IS\_RCC\_SYSCLKSOURCE}!RCC Private macros to check input parameters@{RCC Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RCC\_SYSCLKSOURCE}{IS\_RCC\_SYSCLKSOURCE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RCC\+\_\+\+SYSCLKSOURCE(\begin{DoxyParamCaption}\item[{}]{SOURCE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((SOURCE)\ ==\ \mbox{\hyperlink{group___r_c_c___system___clock___source_ga89be13498e06c34be6cde9c9b8ff88be}{RCC\_SYSCLKSOURCE\_CSI}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SOURCE)\ ==\ \mbox{\hyperlink{group___r_c_c___system___clock___source_gaaeeb699502e7d7a9f1b5d57fcf1f5095}{RCC\_SYSCLKSOURCE\_HSI}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SOURCE)\ ==\ \mbox{\hyperlink{group___r_c_c___system___clock___source_ga9116d0627e1e7f33c48e1357b9a35a1c}{RCC\_SYSCLKSOURCE\_HSE}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SOURCE)\ ==\ \mbox{\hyperlink{group___r_c_c___system___clock___source_ga5caf08ac71d7dd7e7b2e3e421606aca7}{RCC\_SYSCLKSOURCE\_PLLCLK}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source_l08102}{8102}} of file \mbox{\hyperlink{stm32h7xx__hal__rcc_8h_source}{stm32h7xx\+\_\+hal\+\_\+rcc.\+h}}.
+

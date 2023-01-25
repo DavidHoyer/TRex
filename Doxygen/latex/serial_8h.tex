@@ -1,0 +1,120 @@
+\hypertarget{serial_8h}{}\doxysection{C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.11.0/\+TRex/lib/libleguan/include/peripherals/internal/serial.h File Reference}
+\label{serial_8h}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/peripherals/internal/serial.h@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/libleguan/include/peripherals/internal/serial.h}}
+
+
+Serial UART Abstraction.  
+
+
+{\ttfamily \#include \char`\"{}common/types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/attributes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common/mmio.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{serial_8h_a73ed2812c50696a6159ec6f5dbbca292}{SERIAL\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the UART interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{serial_8h_a50585546aff206c1234796fec8af8ffb}{SERIAL\+\_\+\+Stream}} (const char $\ast$string, bool new\+\_\+line)
+\begin{DoxyCompactList}\small\item\em Serial Stream function for use with the logger. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{serial_8h_a78a3234b0445c432bc30bab561bd9268}{SERIAL\+\_\+\+Read}} (char $\ast$buffer, size\+\_\+t size, uint32\+\_\+t timeout)
+\begin{DoxyCompactList}\small\item\em Receives a string from the UART interface. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \mbox{\hyperlink{serial_8h_a29d2730b0084e6acb4c4b9cdf48e5f63}{SERIAL\+\_\+\+Write}} (const char $\ast$string, uint32\+\_\+t timeout)
+\begin{DoxyCompactList}\small\item\em Writes a string to the UART interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Serial UART Abstraction. 
+
+\begin{DoxyAuthor}{Author}
+Nikolaij Saegesser 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{serial_8h_source}{serial.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{serial_8h_a73ed2812c50696a6159ec6f5dbbca292}\label{serial_8h_a73ed2812c50696a6159ec6f5dbbca292}} 
+\index{serial.h@{serial.h}!SERIAL\_Init@{SERIAL\_Init}}
+\index{SERIAL\_Init@{SERIAL\_Init}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{SERIAL\_Init()}{SERIAL\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} SERIAL\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the UART interface. 
+
+\begin{DoxyReturn}{Returns}
+Status result 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{serial_8c_source_l00036}{36}} of file \mbox{\hyperlink{serial_8c_source}{serial.\+c}}.
+
+\mbox{\Hypertarget{serial_8h_a78a3234b0445c432bc30bab561bd9268}\label{serial_8h_a78a3234b0445c432bc30bab561bd9268}} 
+\index{serial.h@{serial.h}!SERIAL\_Read@{SERIAL\_Read}}
+\index{SERIAL\_Read@{SERIAL\_Read}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{SERIAL\_Read()}{SERIAL\_Read()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} SERIAL\+\_\+\+Read (\begin{DoxyParamCaption}\item[{char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{size,  }\item[{uint32\+\_\+t}]{timeout }\end{DoxyParamCaption})}
+
+
+
+Receives a string from the UART interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & Buffer to write data to \\
+\hline
+{\em size} & Size of buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status result 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{serial_8c_source_l00050}{50}} of file \mbox{\hyperlink{serial_8c_source}{serial.\+c}}.
+
+\mbox{\Hypertarget{serial_8h_a50585546aff206c1234796fec8af8ffb}\label{serial_8h_a50585546aff206c1234796fec8af8ffb}} 
+\index{serial.h@{serial.h}!SERIAL\_Stream@{SERIAL\_Stream}}
+\index{SERIAL\_Stream@{SERIAL\_Stream}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{SERIAL\_Stream()}{SERIAL\_Stream()}}
+{\footnotesize\ttfamily void SERIAL\+\_\+\+Stream (\begin{DoxyParamCaption}\item[{const char $\ast$}]{string,  }\item[{bool}]{new\+\_\+line }\end{DoxyParamCaption})}
+
+
+
+Serial Stream function for use with the logger. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & String to print \\
+\hline
+{\em new\+\_\+line} & Advance a line after printing \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{serial_8c_source_l00043}{43}} of file \mbox{\hyperlink{serial_8c_source}{serial.\+c}}.
+
+\mbox{\Hypertarget{serial_8h_a29d2730b0084e6acb4c4b9cdf48e5f63}\label{serial_8h_a29d2730b0084e6acb4c4b9cdf48e5f63}} 
+\index{serial.h@{serial.h}!SERIAL\_Write@{SERIAL\_Write}}
+\index{SERIAL\_Write@{SERIAL\_Write}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{SERIAL\_Write()}{SERIAL\_Write()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{errors_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} SERIAL\+\_\+\+Write (\begin{DoxyParamCaption}\item[{const char $\ast$}]{string,  }\item[{uint32\+\_\+t}]{timeout }\end{DoxyParamCaption})}
+
+
+
+Writes a string to the UART interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & String to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status result 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{serial_8c_source_l00063}{63}} of file \mbox{\hyperlink{serial_8c_source}{serial.\+c}}.
+

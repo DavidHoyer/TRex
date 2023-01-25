@@ -1,0 +1,296 @@
+\hypertarget{struct_s_p_i___init_type_def}{}\doxysection{SPI\+\_\+\+Init\+Type\+Def Struct Reference}
+\label{struct_s_p_i___init_type_def}\index{SPI\_InitTypeDef@{SPI\_InitTypeDef}}
+
+
+SPI Configuration Structure definition.  
+
+
+
+
+{\ttfamily \#include $<$stm32h7xx\+\_\+hal\+\_\+spi.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___init_type_def_a0ffc93ec511ed9cf1663f6939bd3e839}{Mode}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___init_type_def_ab94410c1333b512e271b1c135fe50916}{Direction}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___init_type_def_a98999b0cd6e4c94f05b61b2554ee0371}{Data\+Size}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___init_type_def_a83f278c9d173d3cd021644692bf3c435}{CLKPolarity}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___init_type_def_aba7183911cbc41063270dab182de768f}{CLKPhase}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___init_type_def_ae4a064e48fd5945eda7210d515fed69c}{NSS}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___init_type_def_a2fa72ad4f27606fffa2ec9456bcb0a56}{Baud\+Rate\+Prescaler}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___init_type_def_a9740c535f073c87bb06668385ce96002}{First\+Bit}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___init_type_def_a3db685adbdc6f7bfc7ad0191ba5ab277}{TIMode}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___init_type_def_a9d334a47c34b01cbfa55ff66cfc1e0ce}{CRCCalculation}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___init_type_def_a48aef59cfd7bf0262b1ad993fef2fc7b}{CRCPolynomial}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___init_type_def_aba709d1ebebac9b3385fb61d6eeb79a2}{CRCLength}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___init_type_def_a537f238782f2847191f7d221ffaa6c9b}{NSSPMode}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___init_type_def_aa8e3f58db7dd246a35c624bf2889e5fb}{NSSPolarity}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___init_type_def_a998bf6383c574e8964ae608b741a1bf0}{Fifo\+Threshold}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___init_type_def_a0fb6f6c891c37a906b6364b888f15313}{Tx\+CRCInitialization\+Pattern}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___init_type_def_acce233720675b5aea6da9caf09f2703f}{Rx\+CRCInitialization\+Pattern}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___init_type_def_a1596efb84a1b08860629919949831205}{Master\+SSIdleness}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___init_type_def_ac5d9366f4bea8f57265f2ab7a8da9b18}{Master\+Inter\+Data\+Idleness}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___init_type_def_a8b890580c16ff94eeccc851271dd1633}{Master\+Receiver\+Auto\+Susp}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___init_type_def_ac47840749c1db5ecb3c561dc517b1ce3}{Master\+Keep\+IOState}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_s_p_i___init_type_def_ad3626e3ec97a3ecfcf205e3164b6b159}{IOSwap}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SPI Configuration Structure definition. 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source_l00047}{47}} of file \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}.
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{struct_s_p_i___init_type_def_a2fa72ad4f27606fffa2ec9456bcb0a56}\label{struct_s_p_i___init_type_def_a2fa72ad4f27606fffa2ec9456bcb0a56}} 
+\index{SPI\_InitTypeDef@{SPI\_InitTypeDef}!BaudRatePrescaler@{BaudRatePrescaler}}
+\index{BaudRatePrescaler@{BaudRatePrescaler}!SPI\_InitTypeDef@{SPI\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{BaudRatePrescaler}{BaudRatePrescaler}}
+{\footnotesize\ttfamily uint32\+\_\+t Baud\+Rate\+Prescaler}
+
+Specifies the Baud Rate prescaler value which will be used to configure the transmit and receive SCK clock. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___baud_rate___prescaler}{SPI Baud\+Rate Prescaler}} \begin{DoxyNote}{Note}
+The communication clock is derived from the master clock. The slave clock does not need to be set. 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source_l00068}{68}} of file \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}.
+
+\mbox{\Hypertarget{struct_s_p_i___init_type_def_aba7183911cbc41063270dab182de768f}\label{struct_s_p_i___init_type_def_aba7183911cbc41063270dab182de768f}} 
+\index{SPI\_InitTypeDef@{SPI\_InitTypeDef}!CLKPhase@{CLKPhase}}
+\index{CLKPhase@{CLKPhase}!SPI\_InitTypeDef@{SPI\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{CLKPhase}{CLKPhase}}
+{\footnotesize\ttfamily uint32\+\_\+t CLKPhase}
+
+Specifies the clock active edge for the bit capture. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___clock___phase}{SPI Clock Phase}} 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source_l00061}{61}} of file \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}.
+
+\mbox{\Hypertarget{struct_s_p_i___init_type_def_a83f278c9d173d3cd021644692bf3c435}\label{struct_s_p_i___init_type_def_a83f278c9d173d3cd021644692bf3c435}} 
+\index{SPI\_InitTypeDef@{SPI\_InitTypeDef}!CLKPolarity@{CLKPolarity}}
+\index{CLKPolarity@{CLKPolarity}!SPI\_InitTypeDef@{SPI\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{CLKPolarity}{CLKPolarity}}
+{\footnotesize\ttfamily uint32\+\_\+t CLKPolarity}
+
+Specifies the serial clock steady state. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___clock___polarity}{SPI Clock Polarity}} 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source_l00058}{58}} of file \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}.
+
+\mbox{\Hypertarget{struct_s_p_i___init_type_def_a9d334a47c34b01cbfa55ff66cfc1e0ce}\label{struct_s_p_i___init_type_def_a9d334a47c34b01cbfa55ff66cfc1e0ce}} 
+\index{SPI\_InitTypeDef@{SPI\_InitTypeDef}!CRCCalculation@{CRCCalculation}}
+\index{CRCCalculation@{CRCCalculation}!SPI\_InitTypeDef@{SPI\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{CRCCalculation}{CRCCalculation}}
+{\footnotesize\ttfamily uint32\+\_\+t CRCCalculation}
+
+Specifies if the CRC calculation is enabled or not. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___c_r_c___calculation}{SPI CRC Calculation}} 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source_l00080}{80}} of file \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}.
+
+\mbox{\Hypertarget{struct_s_p_i___init_type_def_aba709d1ebebac9b3385fb61d6eeb79a2}\label{struct_s_p_i___init_type_def_aba709d1ebebac9b3385fb61d6eeb79a2}} 
+\index{SPI\_InitTypeDef@{SPI\_InitTypeDef}!CRCLength@{CRCLength}}
+\index{CRCLength@{CRCLength}!SPI\_InitTypeDef@{SPI\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{CRCLength}{CRCLength}}
+{\footnotesize\ttfamily uint32\+\_\+t CRCLength}
+
+Specifies the CRC Length used for the CRC calculation. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___c_r_c__length}{SPI CRC Length}} 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source_l00086}{86}} of file \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}.
+
+\mbox{\Hypertarget{struct_s_p_i___init_type_def_a48aef59cfd7bf0262b1ad993fef2fc7b}\label{struct_s_p_i___init_type_def_a48aef59cfd7bf0262b1ad993fef2fc7b}} 
+\index{SPI\_InitTypeDef@{SPI\_InitTypeDef}!CRCPolynomial@{CRCPolynomial}}
+\index{CRCPolynomial@{CRCPolynomial}!SPI\_InitTypeDef@{SPI\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{CRCPolynomial}{CRCPolynomial}}
+{\footnotesize\ttfamily uint32\+\_\+t CRCPolynomial}
+
+Specifies the polynomial used for the CRC calculation. This parameter must be an odd number between Min\+\_\+\+Data = 0 and Max\+\_\+\+Data = 65535 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source_l00083}{83}} of file \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}.
+
+\mbox{\Hypertarget{struct_s_p_i___init_type_def_a98999b0cd6e4c94f05b61b2554ee0371}\label{struct_s_p_i___init_type_def_a98999b0cd6e4c94f05b61b2554ee0371}} 
+\index{SPI\_InitTypeDef@{SPI\_InitTypeDef}!DataSize@{DataSize}}
+\index{DataSize@{DataSize}!SPI\_InitTypeDef@{SPI\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{DataSize}{DataSize}}
+{\footnotesize\ttfamily uint32\+\_\+t Data\+Size}
+
+Specifies the SPI data size. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___data___size}{SPI Data Size}} 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source_l00055}{55}} of file \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}.
+
+\mbox{\Hypertarget{struct_s_p_i___init_type_def_ab94410c1333b512e271b1c135fe50916}\label{struct_s_p_i___init_type_def_ab94410c1333b512e271b1c135fe50916}} 
+\index{SPI\_InitTypeDef@{SPI\_InitTypeDef}!Direction@{Direction}}
+\index{Direction@{Direction}!SPI\_InitTypeDef@{SPI\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{Direction}{Direction}}
+{\footnotesize\ttfamily uint32\+\_\+t Direction}
+
+Specifies the SPI bidirectional mode state. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___direction}{SPI Direction Mode}} 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source_l00052}{52}} of file \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}.
+
+\mbox{\Hypertarget{struct_s_p_i___init_type_def_a998bf6383c574e8964ae608b741a1bf0}\label{struct_s_p_i___init_type_def_a998bf6383c574e8964ae608b741a1bf0}} 
+\index{SPI\_InitTypeDef@{SPI\_InitTypeDef}!FifoThreshold@{FifoThreshold}}
+\index{FifoThreshold@{FifoThreshold}!SPI\_InitTypeDef@{SPI\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{FifoThreshold}{FifoThreshold}}
+{\footnotesize\ttfamily uint32\+\_\+t Fifo\+Threshold}
+
+Specifies the FIFO threshold level. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___fifo___threshold}{SPI Fifo Threshold}} 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source_l00099}{99}} of file \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}.
+
+\mbox{\Hypertarget{struct_s_p_i___init_type_def_a9740c535f073c87bb06668385ce96002}\label{struct_s_p_i___init_type_def_a9740c535f073c87bb06668385ce96002}} 
+\index{SPI\_InitTypeDef@{SPI\_InitTypeDef}!FirstBit@{FirstBit}}
+\index{FirstBit@{FirstBit}!SPI\_InitTypeDef@{SPI\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{FirstBit}{FirstBit}}
+{\footnotesize\ttfamily uint32\+\_\+t First\+Bit}
+
+Specifies whether data transfers start from MSB or LSB bit. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___m_s_b___l_s_b___transmission}{SPI MSB LSB Transmission}} 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source_l00074}{74}} of file \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}.
+
+\mbox{\Hypertarget{struct_s_p_i___init_type_def_ad3626e3ec97a3ecfcf205e3164b6b159}\label{struct_s_p_i___init_type_def_ad3626e3ec97a3ecfcf205e3164b6b159}} 
+\index{SPI\_InitTypeDef@{SPI\_InitTypeDef}!IOSwap@{IOSwap}}
+\index{IOSwap@{IOSwap}!SPI\_InitTypeDef@{SPI\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{IOSwap}{IOSwap}}
+{\footnotesize\ttfamily uint32\+\_\+t IOSwap}
+
+Invert MISO/\+MOSI alternate functions This parameter can be a value of \mbox{\hyperlink{group___s_p_i___i_o___swap}{Control SPI IO Swap}} 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source_l00123}{123}} of file \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}.
+
+\mbox{\Hypertarget{struct_s_p_i___init_type_def_ac5d9366f4bea8f57265f2ab7a8da9b18}\label{struct_s_p_i___init_type_def_ac5d9366f4bea8f57265f2ab7a8da9b18}} 
+\index{SPI\_InitTypeDef@{SPI\_InitTypeDef}!MasterInterDataIdleness@{MasterInterDataIdleness}}
+\index{MasterInterDataIdleness@{MasterInterDataIdleness}!SPI\_InitTypeDef@{SPI\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{MasterInterDataIdleness}{MasterInterDataIdleness}}
+{\footnotesize\ttfamily uint32\+\_\+t Master\+Inter\+Data\+Idleness}
+
+Specifies minimum time delay (expressed in SPI clock cycles periods) inserted between two consecutive data frames in master mode This parameter can be a value of \mbox{\hyperlink{group___s_p_i___master___inter_data___idleness}{SPI Master Inter-\/\+Data Idleness}} 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source_l00112}{112}} of file \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}.
+
+\mbox{\Hypertarget{struct_s_p_i___init_type_def_ac47840749c1db5ecb3c561dc517b1ce3}\label{struct_s_p_i___init_type_def_ac47840749c1db5ecb3c561dc517b1ce3}} 
+\index{SPI\_InitTypeDef@{SPI\_InitTypeDef}!MasterKeepIOState@{MasterKeepIOState}}
+\index{MasterKeepIOState@{MasterKeepIOState}!SPI\_InitTypeDef@{SPI\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{MasterKeepIOState}{MasterKeepIOState}}
+{\footnotesize\ttfamily uint32\+\_\+t Master\+Keep\+IOState}
+
+Control of Alternate function GPIOs state This parameter can be a value of \mbox{\hyperlink{group___s_p_i___master___keep___i_o___state}{Keep IO State}} 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source_l00120}{120}} of file \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}.
+
+\mbox{\Hypertarget{struct_s_p_i___init_type_def_a8b890580c16ff94eeccc851271dd1633}\label{struct_s_p_i___init_type_def_a8b890580c16ff94eeccc851271dd1633}} 
+\index{SPI\_InitTypeDef@{SPI\_InitTypeDef}!MasterReceiverAutoSusp@{MasterReceiverAutoSusp}}
+\index{MasterReceiverAutoSusp@{MasterReceiverAutoSusp}!SPI\_InitTypeDef@{SPI\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{MasterReceiverAutoSusp}{MasterReceiverAutoSusp}}
+{\footnotesize\ttfamily uint32\+\_\+t Master\+Receiver\+Auto\+Susp}
+
+Control continuous SPI transfer in master receiver mode and automatic management in order to avoid overrun condition. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___master___r_x___auto_suspend}{SPI Master Receiver Auto\+Suspend}} 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source_l00116}{116}} of file \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}.
+
+\mbox{\Hypertarget{struct_s_p_i___init_type_def_a1596efb84a1b08860629919949831205}\label{struct_s_p_i___init_type_def_a1596efb84a1b08860629919949831205}} 
+\index{SPI\_InitTypeDef@{SPI\_InitTypeDef}!MasterSSIdleness@{MasterSSIdleness}}
+\index{MasterSSIdleness@{MasterSSIdleness}!SPI\_InitTypeDef@{SPI\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{MasterSSIdleness}{MasterSSIdleness}}
+{\footnotesize\ttfamily uint32\+\_\+t Master\+SSIdleness}
+
+Specifies an extra delay, expressed in number of SPI clock cycle periods, inserted additionally between active edge of SS and first data transaction start in master mode. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___master___s_s___idleness}{SPI Master SS Idleness}} 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source_l00108}{108}} of file \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}.
+
+\mbox{\Hypertarget{struct_s_p_i___init_type_def_a0ffc93ec511ed9cf1663f6939bd3e839}\label{struct_s_p_i___init_type_def_a0ffc93ec511ed9cf1663f6939bd3e839}} 
+\index{SPI\_InitTypeDef@{SPI\_InitTypeDef}!Mode@{Mode}}
+\index{Mode@{Mode}!SPI\_InitTypeDef@{SPI\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{Mode}{Mode}}
+{\footnotesize\ttfamily uint32\+\_\+t Mode}
+
+Specifies the SPI operating mode. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___mode}{SPI Mode}} 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source_l00049}{49}} of file \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}.
+
+\mbox{\Hypertarget{struct_s_p_i___init_type_def_ae4a064e48fd5945eda7210d515fed69c}\label{struct_s_p_i___init_type_def_ae4a064e48fd5945eda7210d515fed69c}} 
+\index{SPI\_InitTypeDef@{SPI\_InitTypeDef}!NSS@{NSS}}
+\index{NSS@{NSS}!SPI\_InitTypeDef@{SPI\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{NSS}{NSS}}
+{\footnotesize\ttfamily uint32\+\_\+t NSS}
+
+Specifies whether the NSS signal is managed by hardware (NSS pin) or by software using the SSI bit. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___slave___select___management}{SPI Slave Select Management}} 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source_l00064}{64}} of file \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}.
+
+\mbox{\Hypertarget{struct_s_p_i___init_type_def_a537f238782f2847191f7d221ffaa6c9b}\label{struct_s_p_i___init_type_def_a537f238782f2847191f7d221ffaa6c9b}} 
+\index{SPI\_InitTypeDef@{SPI\_InitTypeDef}!NSSPMode@{NSSPMode}}
+\index{NSSPMode@{NSSPMode}!SPI\_InitTypeDef@{SPI\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{NSSPMode}{NSSPMode}}
+{\footnotesize\ttfamily uint32\+\_\+t NSSPMode}
+
+Specifies whether the NSSP signal is enabled or not . This parameter can be a value of \mbox{\hyperlink{group___s_p_i___n_s_s_p___mode}{SPI NSS Pulse Mode}} This mode is activated by the SSOM bit in the SPIx\+\_\+\+CR2 register and it takes effect only if the SPI interface is configured as Motorola SPI master (FRF=0). 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source_l00089}{89}} of file \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}.
+
+\mbox{\Hypertarget{struct_s_p_i___init_type_def_aa8e3f58db7dd246a35c624bf2889e5fb}\label{struct_s_p_i___init_type_def_aa8e3f58db7dd246a35c624bf2889e5fb}} 
+\index{SPI\_InitTypeDef@{SPI\_InitTypeDef}!NSSPolarity@{NSSPolarity}}
+\index{NSSPolarity@{NSSPolarity}!SPI\_InitTypeDef@{SPI\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{NSSPolarity}{NSSPolarity}}
+{\footnotesize\ttfamily uint32\+\_\+t NSSPolarity}
+
+Specifies which level of SS input/output external signal (present on SS pin) is considered as active one. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___n_s_s___polarity}{SPI NSS Polarity}} 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source_l00095}{95}} of file \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}.
+
+\mbox{\Hypertarget{struct_s_p_i___init_type_def_acce233720675b5aea6da9caf09f2703f}\label{struct_s_p_i___init_type_def_acce233720675b5aea6da9caf09f2703f}} 
+\index{SPI\_InitTypeDef@{SPI\_InitTypeDef}!RxCRCInitializationPattern@{RxCRCInitializationPattern}}
+\index{RxCRCInitializationPattern@{RxCRCInitializationPattern}!SPI\_InitTypeDef@{SPI\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{RxCRCInitializationPattern}{RxCRCInitializationPattern}}
+{\footnotesize\ttfamily uint32\+\_\+t Rx\+CRCInitialization\+Pattern}
+
+Specifies the receiver CRC initialization Pattern used for the CRC calculation. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___c_r_c___calculation___initialization___pattern}{SPI CRC Calculation Initialization Pattern}} 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source_l00105}{105}} of file \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}.
+
+\mbox{\Hypertarget{struct_s_p_i___init_type_def_a3db685adbdc6f7bfc7ad0191ba5ab277}\label{struct_s_p_i___init_type_def_a3db685adbdc6f7bfc7ad0191ba5ab277}} 
+\index{SPI\_InitTypeDef@{SPI\_InitTypeDef}!TIMode@{TIMode}}
+\index{TIMode@{TIMode}!SPI\_InitTypeDef@{SPI\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{TIMode}{TIMode}}
+{\footnotesize\ttfamily uint32\+\_\+t TIMode}
+
+Specifies if the TI mode is enabled or not. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___t_i___mode}{SPI TI Mode}} 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source_l00077}{77}} of file \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}.
+
+\mbox{\Hypertarget{struct_s_p_i___init_type_def_a0fb6f6c891c37a906b6364b888f15313}\label{struct_s_p_i___init_type_def_a0fb6f6c891c37a906b6364b888f15313}} 
+\index{SPI\_InitTypeDef@{SPI\_InitTypeDef}!TxCRCInitializationPattern@{TxCRCInitializationPattern}}
+\index{TxCRCInitializationPattern@{TxCRCInitializationPattern}!SPI\_InitTypeDef@{SPI\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{TxCRCInitializationPattern}{TxCRCInitializationPattern}}
+{\footnotesize\ttfamily uint32\+\_\+t Tx\+CRCInitialization\+Pattern}
+
+Specifies the transmitter CRC initialization Pattern used for the CRC calculation. This parameter can be a value of \mbox{\hyperlink{group___s_p_i___c_r_c___calculation___initialization___pattern}{SPI CRC Calculation Initialization Pattern}} 
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source_l00102}{102}} of file \mbox{\hyperlink{stm32h7xx__hal__spi_8h_source}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.\+11.\+0/\+TRex/lib/hal/\+Drivers/\+STM32\+H7xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/\mbox{\hyperlink{stm32h7xx__hal__spi_8h}{stm32h7xx\+\_\+hal\+\_\+spi.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,94 @@
+\hypertarget{fatfs__platform_8h}{}\doxysection{C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.11.0/\+TRex/lib/hal/\+FATFS/\+Target/fatfs\+\_\+platform.h File Reference}
+\label{fatfs__platform_8h}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/FATFS/Target/fatfs\_platform.h@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/lib/hal/FATFS/Target/fatfs\_platform.h}}
+
+
+\+: fatfs\+\_\+platform header file  
+
+
+{\ttfamily \#include \char`\"{}stm32h7xx\+\_\+hal.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{fatfs__platform_8h_a44beec2a536fb750d2401d7bb7c227b6}{SD\+\_\+\+PRESENT}}~((uint8\+\_\+t)0x01)  /$\ast$ also in bsp\+\_\+driver\+\_\+sd.\+h $\ast$/
+\item 
+\#define \mbox{\hyperlink{fatfs__platform_8h_a342b72a630b1c5c90e2fd95c93dd686b}{SD\+\_\+\+NOT\+\_\+\+PRESENT}}~((uint8\+\_\+t)0x00)  /$\ast$ also in bsp\+\_\+driver\+\_\+sd.\+h $\ast$/
+\item 
+\#define \mbox{\hyperlink{fatfs__platform_8h_a11c087819e50383ac825b9234dcde76c}{SD\+\_\+\+DETECT\+\_\+\+PIN}}~\mbox{\hyperlink{group___g_p_i_o__pins__define_gaf5eb6a42a4428e236bd4fd08ade71e7a}{GPIO\+\_\+\+PIN\+\_\+8}}
+\item 
+\#define \mbox{\hyperlink{fatfs__platform_8h_aba1b417a85b8cd191c6ba44251a84f53}{SD\+\_\+\+DETECT\+\_\+\+GPIO\+\_\+\+PORT}}~\mbox{\hyperlink{group___peripheral__declaration_gac485358099728ddae050db37924dd6b7}{GPIOA}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{fatfs__platform_8h_aa64443bad1703927b76af9ab0ddd443d}{BSP\+\_\+\+Platform\+Is\+Detected}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: fatfs\+\_\+platform header file 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2021 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under Ultimate Liberty license SLA0044, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: www.\+st.\+com/\+SLA0044 
+
+Definition in file \mbox{\hyperlink{fatfs__platform_8h_source}{fatfs\+\_\+platform.\+h}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{fatfs__platform_8h_aba1b417a85b8cd191c6ba44251a84f53}\label{fatfs__platform_8h_aba1b417a85b8cd191c6ba44251a84f53}} 
+\index{fatfs\_platform.h@{fatfs\_platform.h}!SD\_DETECT\_GPIO\_PORT@{SD\_DETECT\_GPIO\_PORT}}
+\index{SD\_DETECT\_GPIO\_PORT@{SD\_DETECT\_GPIO\_PORT}!fatfs\_platform.h@{fatfs\_platform.h}}
+\doxysubsubsection{\texorpdfstring{SD\_DETECT\_GPIO\_PORT}{SD\_DETECT\_GPIO\_PORT}}
+{\footnotesize\ttfamily \#define SD\+\_\+\+DETECT\+\_\+\+GPIO\+\_\+\+PORT~\mbox{\hyperlink{group___peripheral__declaration_gac485358099728ddae050db37924dd6b7}{GPIOA}}}
+
+
+
+Definition at line \mbox{\hyperlink{fatfs__platform_8h_source_l00024}{24}} of file \mbox{\hyperlink{fatfs__platform_8h_source}{fatfs\+\_\+platform.\+h}}.
+
+\mbox{\Hypertarget{fatfs__platform_8h_a11c087819e50383ac825b9234dcde76c}\label{fatfs__platform_8h_a11c087819e50383ac825b9234dcde76c}} 
+\index{fatfs\_platform.h@{fatfs\_platform.h}!SD\_DETECT\_PIN@{SD\_DETECT\_PIN}}
+\index{SD\_DETECT\_PIN@{SD\_DETECT\_PIN}!fatfs\_platform.h@{fatfs\_platform.h}}
+\doxysubsubsection{\texorpdfstring{SD\_DETECT\_PIN}{SD\_DETECT\_PIN}}
+{\footnotesize\ttfamily \#define SD\+\_\+\+DETECT\+\_\+\+PIN~\mbox{\hyperlink{group___g_p_i_o__pins__define_gaf5eb6a42a4428e236bd4fd08ade71e7a}{GPIO\+\_\+\+PIN\+\_\+8}}}
+
+
+
+Definition at line \mbox{\hyperlink{fatfs__platform_8h_source_l00023}{23}} of file \mbox{\hyperlink{fatfs__platform_8h_source}{fatfs\+\_\+platform.\+h}}.
+
+\mbox{\Hypertarget{fatfs__platform_8h_a342b72a630b1c5c90e2fd95c93dd686b}\label{fatfs__platform_8h_a342b72a630b1c5c90e2fd95c93dd686b}} 
+\index{fatfs\_platform.h@{fatfs\_platform.h}!SD\_NOT\_PRESENT@{SD\_NOT\_PRESENT}}
+\index{SD\_NOT\_PRESENT@{SD\_NOT\_PRESENT}!fatfs\_platform.h@{fatfs\_platform.h}}
+\doxysubsubsection{\texorpdfstring{SD\_NOT\_PRESENT}{SD\_NOT\_PRESENT}}
+{\footnotesize\ttfamily \#define SD\+\_\+\+NOT\+\_\+\+PRESENT~((uint8\+\_\+t)0x00)  /$\ast$ also in bsp\+\_\+driver\+\_\+sd.\+h $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{fatfs__platform_8h_source_l00022}{22}} of file \mbox{\hyperlink{fatfs__platform_8h_source}{fatfs\+\_\+platform.\+h}}.
+
+\mbox{\Hypertarget{fatfs__platform_8h_a44beec2a536fb750d2401d7bb7c227b6}\label{fatfs__platform_8h_a44beec2a536fb750d2401d7bb7c227b6}} 
+\index{fatfs\_platform.h@{fatfs\_platform.h}!SD\_PRESENT@{SD\_PRESENT}}
+\index{SD\_PRESENT@{SD\_PRESENT}!fatfs\_platform.h@{fatfs\_platform.h}}
+\doxysubsubsection{\texorpdfstring{SD\_PRESENT}{SD\_PRESENT}}
+{\footnotesize\ttfamily \#define SD\+\_\+\+PRESENT~((uint8\+\_\+t)0x01)  /$\ast$ also in bsp\+\_\+driver\+\_\+sd.\+h $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{fatfs__platform_8h_source_l00021}{21}} of file \mbox{\hyperlink{fatfs__platform_8h_source}{fatfs\+\_\+platform.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fatfs__platform_8h_aa64443bad1703927b76af9ab0ddd443d}\label{fatfs__platform_8h_aa64443bad1703927b76af9ab0ddd443d}} 
+\index{fatfs\_platform.h@{fatfs\_platform.h}!BSP\_PlatformIsDetected@{BSP\_PlatformIsDetected}}
+\index{BSP\_PlatformIsDetected@{BSP\_PlatformIsDetected}!fatfs\_platform.h@{fatfs\_platform.h}}
+\doxysubsubsection{\texorpdfstring{BSP\_PlatformIsDetected()}{BSP\_PlatformIsDetected()}}
+{\footnotesize\ttfamily uint8\+\_\+t BSP\+\_\+\+Platform\+Is\+Detected (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{fatfs__platform_8c_source_l00020}{20}} of file \mbox{\hyperlink{fatfs__platform_8c_source}{fatfs\+\_\+platform.\+c}}.
+

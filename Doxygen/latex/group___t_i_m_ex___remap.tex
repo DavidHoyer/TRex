@@ -1,0 +1,479 @@
+\hypertarget{group___t_i_m_ex___remap}{}\doxysection{TIM Extended Remapping}
+\label{group___t_i_m_ex___remap}\index{TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_ga5156e463b51b1a7d92e6d87c2be4563a}{TIM\+\_\+\+TIM1\+\_\+\+ETR\+\_\+\+GPIO}}~0x00000000U                                                 /$\ast$ !$<$ TIM1\+\_\+\+ETR is connected to \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2gpio_8h_af065b9160b968f60a562bdc5c4454a5a}{GPIO}} $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_ga2e3eb3f4f99db6c14b3ce91bebfe8d07}{TIM\+\_\+\+TIM1\+\_\+\+ETR\+\_\+\+COMP1}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1e5c447a1de2571985f74ca5ee201c56}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}}                                           /$\ast$ !$<$ TIM1\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gaf5713f83009027d48805b049d55bb01b}{COMP1}} OUT $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_ga734d16e8c8e368bedc159f97422e26b9}{TIM\+\_\+\+TIM1\+\_\+\+ETR\+\_\+\+COMP2}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga269809ebc603562522c733f7b518bcc3}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}}                                           /$\ast$ !$<$ TIM1\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_ga6985fa7e9bb3c2edf15b29b7af210a2b}{COMP2}} OUT $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_gaa5a7accd83b70cbaf790bd26fd8e4538}{TIM\+\_\+\+TIM1\+\_\+\+ETR\+\_\+\+ADC1\+\_\+\+AWD1}}~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga269809ebc603562522c733f7b518bcc3}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1e5c447a1de2571985f74ca5ee201c56}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}})                     /$\ast$ !$<$ TIM1\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_ga90d2d5c526ce5c0a551f533eccbee71a}{ADC1}} AWD1 $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_ga4ee5007933efeaae07c745062ffc2776}{TIM\+\_\+\+TIM1\+\_\+\+ETR\+\_\+\+ADC1\+\_\+\+AWD2}}~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga891aa4abfb026ec12d7e78366c57861c}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+2}})                                         /$\ast$ !$<$ TIM1\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_ga90d2d5c526ce5c0a551f533eccbee71a}{ADC1}} AWD2 $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_ga6a448a71300d1f8f81e6eb0dcc31f15a}{TIM\+\_\+\+TIM1\+\_\+\+ETR\+\_\+\+ADC1\+\_\+\+AWD3}}~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga891aa4abfb026ec12d7e78366c57861c}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+2}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1e5c447a1de2571985f74ca5ee201c56}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}})                     /$\ast$ !$<$ TIM1\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_ga90d2d5c526ce5c0a551f533eccbee71a}{ADC1}} AWD3 $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_ga95a93aa08f9c8b8d58dd6e30e30f41c1}{TIM\+\_\+\+TIM1\+\_\+\+ETR\+\_\+\+ADC3\+\_\+\+AWD1}}~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga891aa4abfb026ec12d7e78366c57861c}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+2}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga269809ebc603562522c733f7b518bcc3}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}})                     /$\ast$ !$<$ TIM1\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gae917784606daf6b04c9b7b96b40c2f74}{ADC3}} AWD1 $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_gad3cbe27b5e94414e39b52843054a4cee}{TIM\+\_\+\+TIM1\+\_\+\+ETR\+\_\+\+ADC3\+\_\+\+AWD2}}~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga891aa4abfb026ec12d7e78366c57861c}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+2}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga269809ebc603562522c733f7b518bcc3}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1e5c447a1de2571985f74ca5ee201c56}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}}) /$\ast$ !$<$ TIM1\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gae917784606daf6b04c9b7b96b40c2f74}{ADC3}} AWD2 $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_gaf0be1d196c76f0d45c4f41d61d4af0f6}{TIM\+\_\+\+TIM1\+\_\+\+ETR\+\_\+\+ADC3\+\_\+\+AWD3}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4b00c39efe4c62ef0c7391da38f4d93e}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+3}}                                           /$\ast$ !$<$ TIM1\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gae917784606daf6b04c9b7b96b40c2f74}{ADC3}} AWD3 $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_gabcec3c5e9dad306b68d34e5b9257a281}{TIM\+\_\+\+TIM8\+\_\+\+ETR\+\_\+\+GPIO}}~0x00000000U                                                 /$\ast$ !$<$ TIM8\+\_\+\+ETR is connected to \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2gpio_8h_af065b9160b968f60a562bdc5c4454a5a}{GPIO}} $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_gadcbcb76d19c2ccb5ae46fdc7e7d88f8b}{TIM\+\_\+\+TIM8\+\_\+\+ETR\+\_\+\+COMP1}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga0ff3eda56bcb98d020fa1b1573c4f912}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}}                                           /$\ast$ !$<$ TIM8\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gaf5713f83009027d48805b049d55bb01b}{COMP1}} OUT $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_gae93f8a76facb81f8d962bb7c88dc25f0}{TIM\+\_\+\+TIM8\+\_\+\+ETR\+\_\+\+COMP2}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8115191f924a8817c45e04078725f242}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}}                                           /$\ast$ !$<$ TIM8\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_ga6985fa7e9bb3c2edf15b29b7af210a2b}{COMP2}} OUT $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_ga7a832c5903108f2a06208c58585f7579}{TIM\+\_\+\+TIM8\+\_\+\+ETR\+\_\+\+ADC2\+\_\+\+AWD1}}~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8115191f924a8817c45e04078725f242}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga0ff3eda56bcb98d020fa1b1573c4f912}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}})                     /$\ast$ !$<$ TIM8\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gac5503ae96c26b4475226f96715a1bf1e}{ADC2}} AWD1 $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_gae0c7be84fda65b37b00a8896b98775c3}{TIM\+\_\+\+TIM8\+\_\+\+ETR\+\_\+\+ADC2\+\_\+\+AWD2}}~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7dc91956b73a05f0ab3465a124e27e97}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+2}})                                         /$\ast$ !$<$ TIM8\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gac5503ae96c26b4475226f96715a1bf1e}{ADC2}} AWD2 $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_ga02c57d201dbc0416eed0e333a6347b5b}{TIM\+\_\+\+TIM8\+\_\+\+ETR\+\_\+\+ADC2\+\_\+\+AWD3}}~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7dc91956b73a05f0ab3465a124e27e97}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+2}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga0ff3eda56bcb98d020fa1b1573c4f912}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}})                     /$\ast$ !$<$ TIM8\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gac5503ae96c26b4475226f96715a1bf1e}{ADC2}} AWD3 $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_ga7cb16632bf98d6961d21172aa42373e3}{TIM\+\_\+\+TIM8\+\_\+\+ETR\+\_\+\+ADC3\+\_\+\+AWD1}}~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7dc91956b73a05f0ab3465a124e27e97}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+2}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8115191f924a8817c45e04078725f242}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}})                     /$\ast$ !$<$ TIM8\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gae917784606daf6b04c9b7b96b40c2f74}{ADC3}} AWD1 $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_ga84b90475edbe94a4cdbef6f5f602ac9b}{TIM\+\_\+\+TIM8\+\_\+\+ETR\+\_\+\+ADC3\+\_\+\+AWD2}}~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7dc91956b73a05f0ab3465a124e27e97}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+2}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8115191f924a8817c45e04078725f242}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga0ff3eda56bcb98d020fa1b1573c4f912}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}}) /$\ast$ !$<$ TIM8\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gae917784606daf6b04c9b7b96b40c2f74}{ADC3}} AWD2 $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_ga8f39897f883d4efa8357d1ba28bc100b}{TIM\+\_\+\+TIM8\+\_\+\+ETR\+\_\+\+ADC3\+\_\+\+AWD3}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga97fe71b195c1bbc5175e3db42d09c062}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+3}}                                           /$\ast$ !$<$ TIM8\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gae917784606daf6b04c9b7b96b40c2f74}{ADC3}} AWD3 $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_ga05e1c800a3f8e7eb60b50f446cf321f7}{TIM\+\_\+\+TIM2\+\_\+\+ETR\+\_\+\+GPIO}}~0x00000000U                             /$\ast$ !$<$ TIM2\+\_\+\+ETR is connected to \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2gpio_8h_af065b9160b968f60a562bdc5c4454a5a}{GPIO}} $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_ga79a125bc7559dc01f8de056e19f11972}{TIM\+\_\+\+TIM2\+\_\+\+ETR\+\_\+\+COMP1}}~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaaa7a4ed17a8432d8c81e31e32dd87e20}{TIM2\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}})                     /$\ast$ !$<$ TIM2\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gaf5713f83009027d48805b049d55bb01b}{COMP1}} OUT $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_ga76dfe019f143b4bff5ba2c2e1a38a387}{TIM\+\_\+\+TIM2\+\_\+\+ETR\+\_\+\+COMP2}}~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga6a1413b9834ebc2b96c8eb27b74b0fdc}{TIM2\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}})                     /$\ast$ !$<$ TIM2\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_ga6985fa7e9bb3c2edf15b29b7af210a2b}{COMP2}} OUT $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_gae69141882323f8b603da7a0343995dca}{TIM\+\_\+\+TIM2\+\_\+\+ETR\+\_\+\+RCC\+\_\+\+LSE}}~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga6a1413b9834ebc2b96c8eb27b74b0fdc}{TIM2\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga0ff3eda56bcb98d020fa1b1573c4f912}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}}) /$\ast$ !$<$ TIM2\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}} LSE $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_ga901919d24f481b3ca744ff06cd98bdb8}{TIM\+\_\+\+TIM2\+\_\+\+ETR\+\_\+\+SAI1\+\_\+\+FSA}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga38cf3fbfe20afba58f315ace95c88016}{TIM2\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+2}}                       /$\ast$ !$<$ TIM2\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gaa878b214698fcf74a3268d07562abbb2}{SAI1}} FS\+\_\+A $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_gab369084ac6b74b818f48995770cf2221}{TIM\+\_\+\+TIM2\+\_\+\+ETR\+\_\+\+SAI1\+\_\+\+FSB}}~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga38cf3fbfe20afba58f315ace95c88016}{TIM2\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+2}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga0ff3eda56bcb98d020fa1b1573c4f912}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}}) /$\ast$ !$<$ TIM2\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gaa878b214698fcf74a3268d07562abbb2}{SAI1}} FS\+\_\+B $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_gad86579b249d2c04a99c8412a8c72af97}{TIM\+\_\+\+TIM3\+\_\+\+ETR\+\_\+\+GPIO}}~0x00000000U          /$\ast$ !$<$ TIM3\+\_\+\+ETR is connected to \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2gpio_8h_af065b9160b968f60a562bdc5c4454a5a}{GPIO}} $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_gaea6cbaddf4da816fd4afd13ad7953079}{TIM\+\_\+\+TIM3\+\_\+\+ETR\+\_\+\+COMP1}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaaf25073af3e775f18278b711d3719957}{TIM3\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}}    /$\ast$ !$<$ TIM3\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gaf5713f83009027d48805b049d55bb01b}{COMP1}} OUT $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_ga5df745d19761f4c212140c70d4271692}{TIM\+\_\+\+TIM5\+\_\+\+ETR\+\_\+\+GPIO}}~0x00000000U          /$\ast$ !$<$ TIM5\+\_\+\+ETR is connected to \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2gpio_8h_af065b9160b968f60a562bdc5c4454a5a}{GPIO}} $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_gaca05dbe7ce7bc979d5e30f355285a51c}{TIM\+\_\+\+TIM5\+\_\+\+ETR\+\_\+\+SAI2\+\_\+\+FSA}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gabaeb0ecb379e37e51722902144404520}{TIM5\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}}    /$\ast$ !$<$ TIM5\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gac248a1f09e97346a66175a54ca7f9062}{SAI2}} FS\+\_\+A $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_ga11e3c0b2d38048d8d15e8623ff61a408}{TIM\+\_\+\+TIM5\+\_\+\+ETR\+\_\+\+SAI2\+\_\+\+FSB}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga92b38d638ecda48a0da085cfd8ce86bf}{TIM5\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}}    /$\ast$ !$<$ TIM5\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gac248a1f09e97346a66175a54ca7f9062}{SAI2}} FS\+\_\+B $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_gac6ad331bf73260161a6e9c3b2ee412f3}{TIM\+\_\+\+TIM5\+\_\+\+ETR\+\_\+\+SAI4\+\_\+\+FSA}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gabaeb0ecb379e37e51722902144404520}{TIM5\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}}    /$\ast$ !$<$ TIM5\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_ga71002fa701ad9979a90e8c381a9cf183}{SAI4}} FS\+\_\+A $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_ga5dd267b5ce57d4c9d0736f3da988d9d9}{TIM\+\_\+\+TIM5\+\_\+\+ETR\+\_\+\+SAI4\+\_\+\+FSB}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga92b38d638ecda48a0da085cfd8ce86bf}{TIM5\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}}    /$\ast$ !$<$ TIM5\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_ga71002fa701ad9979a90e8c381a9cf183}{SAI4}} FS\+\_\+B $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_gae50809628b49070fd6720a5a28e5e175}{TIM\+\_\+\+TIM23\+\_\+\+ETR\+\_\+\+GPIO}}~0x00000000U          /$\ast$ !$<$ TIM23\+\_\+\+ETR is connected to \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2gpio_8h_af065b9160b968f60a562bdc5c4454a5a}{GPIO}} $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_ga818b9fe379711929c05c8cd61dcd45f2}{TIM\+\_\+\+TIM23\+\_\+\+ETR\+\_\+\+COMP1}}~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaaa7a4ed17a8432d8c81e31e32dd87e20}{TIM2\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}})  /$\ast$ !$<$ TIM23\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gaf5713f83009027d48805b049d55bb01b}{COMP1}} OUT $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_ga7365daffa2ee6ff2680a2cce2251499b}{TIM\+\_\+\+TIM23\+\_\+\+ETR\+\_\+\+COMP2}}~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga6a1413b9834ebc2b96c8eb27b74b0fdc}{TIM2\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}})  /$\ast$ !$<$ TIM23\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_ga6985fa7e9bb3c2edf15b29b7af210a2b}{COMP2}} OUT $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_ga7baa5fe8462ef94cae713e4367d9d3e8}{TIM\+\_\+\+TIM24\+\_\+\+ETR\+\_\+\+GPIO}}~0x00000000U                                /$\ast$ !$<$ TIM24\+\_\+\+ETR is connected to \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2gpio_8h_af065b9160b968f60a562bdc5c4454a5a}{GPIO}} $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_ga02942441fbd3f26678ff95395a09b89c}{TIM\+\_\+\+TIM24\+\_\+\+ETR\+\_\+\+SAI4\+\_\+\+FSA}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gabaeb0ecb379e37e51722902144404520}{TIM5\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}}                          /$\ast$ !$<$ TIM24\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_ga71002fa701ad9979a90e8c381a9cf183}{SAI4}} FS\+\_\+A $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_gade1f234256056c4a8739abb2c6e35f26}{TIM\+\_\+\+TIM24\+\_\+\+ETR\+\_\+\+SAI4\+\_\+\+FSB}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga92b38d638ecda48a0da085cfd8ce86bf}{TIM5\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}}                          /$\ast$ !$<$ TIM24\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_ga71002fa701ad9979a90e8c381a9cf183}{SAI4}} FS\+\_\+B $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_gab59f38eafd161977848d82893351f552}{TIM\+\_\+\+TIM24\+\_\+\+ETR\+\_\+\+SAI1\+\_\+\+FSA}}~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga6a1413b9834ebc2b96c8eb27b74b0fdc}{TIM2\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga0ff3eda56bcb98d020fa1b1573c4f912}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}})    /$\ast$ !$<$ TIM24\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gaa878b214698fcf74a3268d07562abbb2}{SAI1}} FS\+\_\+A $\ast$/
+\item 
+\#define \mbox{\hyperlink{group___t_i_m_ex___remap_ga0bf08e73da65956929e36e05e4873c42}{TIM\+\_\+\+TIM24\+\_\+\+ETR\+\_\+\+SAI1\+\_\+\+FSB}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga38cf3fbfe20afba58f315ace95c88016}{TIM2\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+2}}                          /$\ast$ !$<$ TIM24\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gaa878b214698fcf74a3268d07562abbb2}{SAI1}} FS\+\_\+B $\ast$/
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___t_i_m_ex___remap_gaa5a7accd83b70cbaf790bd26fd8e4538}\label{group___t_i_m_ex___remap_gaa5a7accd83b70cbaf790bd26fd8e4538}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM1\_ETR\_ADC1\_AWD1@{TIM\_TIM1\_ETR\_ADC1\_AWD1}}
+\index{TIM\_TIM1\_ETR\_ADC1\_AWD1@{TIM\_TIM1\_ETR\_ADC1\_AWD1}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM1\_ETR\_ADC1\_AWD1}{TIM\_TIM1\_ETR\_ADC1\_AWD1}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM1\+\_\+\+ETR\+\_\+\+ADC1\+\_\+\+AWD1~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga269809ebc603562522c733f7b518bcc3}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1e5c447a1de2571985f74ca5ee201c56}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}})                     /$\ast$ !$<$ TIM1\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_ga90d2d5c526ce5c0a551f533eccbee71a}{ADC1}} AWD1 $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00096}{96}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_ga4ee5007933efeaae07c745062ffc2776}\label{group___t_i_m_ex___remap_ga4ee5007933efeaae07c745062ffc2776}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM1\_ETR\_ADC1\_AWD2@{TIM\_TIM1\_ETR\_ADC1\_AWD2}}
+\index{TIM\_TIM1\_ETR\_ADC1\_AWD2@{TIM\_TIM1\_ETR\_ADC1\_AWD2}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM1\_ETR\_ADC1\_AWD2}{TIM\_TIM1\_ETR\_ADC1\_AWD2}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM1\+\_\+\+ETR\+\_\+\+ADC1\+\_\+\+AWD2~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga891aa4abfb026ec12d7e78366c57861c}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+2}})                                         /$\ast$ !$<$ TIM1\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_ga90d2d5c526ce5c0a551f533eccbee71a}{ADC1}} AWD2 $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00097}{97}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_ga6a448a71300d1f8f81e6eb0dcc31f15a}\label{group___t_i_m_ex___remap_ga6a448a71300d1f8f81e6eb0dcc31f15a}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM1\_ETR\_ADC1\_AWD3@{TIM\_TIM1\_ETR\_ADC1\_AWD3}}
+\index{TIM\_TIM1\_ETR\_ADC1\_AWD3@{TIM\_TIM1\_ETR\_ADC1\_AWD3}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM1\_ETR\_ADC1\_AWD3}{TIM\_TIM1\_ETR\_ADC1\_AWD3}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM1\+\_\+\+ETR\+\_\+\+ADC1\+\_\+\+AWD3~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga891aa4abfb026ec12d7e78366c57861c}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+2}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1e5c447a1de2571985f74ca5ee201c56}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}})                     /$\ast$ !$<$ TIM1\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_ga90d2d5c526ce5c0a551f533eccbee71a}{ADC1}} AWD3 $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00098}{98}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_ga95a93aa08f9c8b8d58dd6e30e30f41c1}\label{group___t_i_m_ex___remap_ga95a93aa08f9c8b8d58dd6e30e30f41c1}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM1\_ETR\_ADC3\_AWD1@{TIM\_TIM1\_ETR\_ADC3\_AWD1}}
+\index{TIM\_TIM1\_ETR\_ADC3\_AWD1@{TIM\_TIM1\_ETR\_ADC3\_AWD1}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM1\_ETR\_ADC3\_AWD1}{TIM\_TIM1\_ETR\_ADC3\_AWD1}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM1\+\_\+\+ETR\+\_\+\+ADC3\+\_\+\+AWD1~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga891aa4abfb026ec12d7e78366c57861c}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+2}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga269809ebc603562522c733f7b518bcc3}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}})                     /$\ast$ !$<$ TIM1\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gae917784606daf6b04c9b7b96b40c2f74}{ADC3}} AWD1 $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00099}{99}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_gad3cbe27b5e94414e39b52843054a4cee}\label{group___t_i_m_ex___remap_gad3cbe27b5e94414e39b52843054a4cee}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM1\_ETR\_ADC3\_AWD2@{TIM\_TIM1\_ETR\_ADC3\_AWD2}}
+\index{TIM\_TIM1\_ETR\_ADC3\_AWD2@{TIM\_TIM1\_ETR\_ADC3\_AWD2}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM1\_ETR\_ADC3\_AWD2}{TIM\_TIM1\_ETR\_ADC3\_AWD2}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM1\+\_\+\+ETR\+\_\+\+ADC3\+\_\+\+AWD2~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga891aa4abfb026ec12d7e78366c57861c}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+2}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga269809ebc603562522c733f7b518bcc3}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1e5c447a1de2571985f74ca5ee201c56}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}}) /$\ast$ !$<$ TIM1\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gae917784606daf6b04c9b7b96b40c2f74}{ADC3}} AWD2 $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00100}{100}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_gaf0be1d196c76f0d45c4f41d61d4af0f6}\label{group___t_i_m_ex___remap_gaf0be1d196c76f0d45c4f41d61d4af0f6}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM1\_ETR\_ADC3\_AWD3@{TIM\_TIM1\_ETR\_ADC3\_AWD3}}
+\index{TIM\_TIM1\_ETR\_ADC3\_AWD3@{TIM\_TIM1\_ETR\_ADC3\_AWD3}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM1\_ETR\_ADC3\_AWD3}{TIM\_TIM1\_ETR\_ADC3\_AWD3}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM1\+\_\+\+ETR\+\_\+\+ADC3\+\_\+\+AWD3~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4b00c39efe4c62ef0c7391da38f4d93e}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+3}}                                           /$\ast$ !$<$ TIM1\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gae917784606daf6b04c9b7b96b40c2f74}{ADC3}} AWD3 $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00101}{101}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_ga2e3eb3f4f99db6c14b3ce91bebfe8d07}\label{group___t_i_m_ex___remap_ga2e3eb3f4f99db6c14b3ce91bebfe8d07}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM1\_ETR\_COMP1@{TIM\_TIM1\_ETR\_COMP1}}
+\index{TIM\_TIM1\_ETR\_COMP1@{TIM\_TIM1\_ETR\_COMP1}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM1\_ETR\_COMP1}{TIM\_TIM1\_ETR\_COMP1}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM1\+\_\+\+ETR\+\_\+\+COMP1~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga1e5c447a1de2571985f74ca5ee201c56}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}}                                           /$\ast$ !$<$ TIM1\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gaf5713f83009027d48805b049d55bb01b}{COMP1}} OUT $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00094}{94}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_ga734d16e8c8e368bedc159f97422e26b9}\label{group___t_i_m_ex___remap_ga734d16e8c8e368bedc159f97422e26b9}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM1\_ETR\_COMP2@{TIM\_TIM1\_ETR\_COMP2}}
+\index{TIM\_TIM1\_ETR\_COMP2@{TIM\_TIM1\_ETR\_COMP2}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM1\_ETR\_COMP2}{TIM\_TIM1\_ETR\_COMP2}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM1\+\_\+\+ETR\+\_\+\+COMP2~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga269809ebc603562522c733f7b518bcc3}{TIM1\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}}                                           /$\ast$ !$<$ TIM1\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_ga6985fa7e9bb3c2edf15b29b7af210a2b}{COMP2}} OUT $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00095}{95}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_ga5156e463b51b1a7d92e6d87c2be4563a}\label{group___t_i_m_ex___remap_ga5156e463b51b1a7d92e6d87c2be4563a}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM1\_ETR\_GPIO@{TIM\_TIM1\_ETR\_GPIO}}
+\index{TIM\_TIM1\_ETR\_GPIO@{TIM\_TIM1\_ETR\_GPIO}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM1\_ETR\_GPIO}{TIM\_TIM1\_ETR\_GPIO}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM1\+\_\+\+ETR\+\_\+\+GPIO~0x00000000U                                                 /$\ast$ !$<$ TIM1\+\_\+\+ETR is connected to \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2gpio_8h_af065b9160b968f60a562bdc5c4454a5a}{GPIO}} $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00093}{93}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_ga818b9fe379711929c05c8cd61dcd45f2}\label{group___t_i_m_ex___remap_ga818b9fe379711929c05c8cd61dcd45f2}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM23\_ETR\_COMP1@{TIM\_TIM23\_ETR\_COMP1}}
+\index{TIM\_TIM23\_ETR\_COMP1@{TIM\_TIM23\_ETR\_COMP1}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM23\_ETR\_COMP1}{TIM\_TIM23\_ETR\_COMP1}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM23\+\_\+\+ETR\+\_\+\+COMP1~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaaa7a4ed17a8432d8c81e31e32dd87e20}{TIM2\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}})  /$\ast$ !$<$ TIM23\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gaf5713f83009027d48805b049d55bb01b}{COMP1}} OUT $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00130}{130}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_ga7365daffa2ee6ff2680a2cce2251499b}\label{group___t_i_m_ex___remap_ga7365daffa2ee6ff2680a2cce2251499b}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM23\_ETR\_COMP2@{TIM\_TIM23\_ETR\_COMP2}}
+\index{TIM\_TIM23\_ETR\_COMP2@{TIM\_TIM23\_ETR\_COMP2}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM23\_ETR\_COMP2}{TIM\_TIM23\_ETR\_COMP2}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM23\+\_\+\+ETR\+\_\+\+COMP2~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga6a1413b9834ebc2b96c8eb27b74b0fdc}{TIM2\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}})  /$\ast$ !$<$ TIM23\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_ga6985fa7e9bb3c2edf15b29b7af210a2b}{COMP2}} OUT $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00131}{131}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_gae50809628b49070fd6720a5a28e5e175}\label{group___t_i_m_ex___remap_gae50809628b49070fd6720a5a28e5e175}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM23\_ETR\_GPIO@{TIM\_TIM23\_ETR\_GPIO}}
+\index{TIM\_TIM23\_ETR\_GPIO@{TIM\_TIM23\_ETR\_GPIO}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM23\_ETR\_GPIO}{TIM\_TIM23\_ETR\_GPIO}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM23\+\_\+\+ETR\+\_\+\+GPIO~0x00000000U          /$\ast$ !$<$ TIM23\+\_\+\+ETR is connected to \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2gpio_8h_af065b9160b968f60a562bdc5c4454a5a}{GPIO}} $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00129}{129}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_ga7baa5fe8462ef94cae713e4367d9d3e8}\label{group___t_i_m_ex___remap_ga7baa5fe8462ef94cae713e4367d9d3e8}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM24\_ETR\_GPIO@{TIM\_TIM24\_ETR\_GPIO}}
+\index{TIM\_TIM24\_ETR\_GPIO@{TIM\_TIM24\_ETR\_GPIO}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM24\_ETR\_GPIO}{TIM\_TIM24\_ETR\_GPIO}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM24\+\_\+\+ETR\+\_\+\+GPIO~0x00000000U                                /$\ast$ !$<$ TIM24\+\_\+\+ETR is connected to \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2gpio_8h_af065b9160b968f60a562bdc5c4454a5a}{GPIO}} $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00133}{133}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_gab59f38eafd161977848d82893351f552}\label{group___t_i_m_ex___remap_gab59f38eafd161977848d82893351f552}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM24\_ETR\_SAI1\_FSA@{TIM\_TIM24\_ETR\_SAI1\_FSA}}
+\index{TIM\_TIM24\_ETR\_SAI1\_FSA@{TIM\_TIM24\_ETR\_SAI1\_FSA}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM24\_ETR\_SAI1\_FSA}{TIM\_TIM24\_ETR\_SAI1\_FSA}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM24\+\_\+\+ETR\+\_\+\+SAI1\+\_\+\+FSA~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga6a1413b9834ebc2b96c8eb27b74b0fdc}{TIM2\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga0ff3eda56bcb98d020fa1b1573c4f912}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}})    /$\ast$ !$<$ TIM24\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gaa878b214698fcf74a3268d07562abbb2}{SAI1}} FS\+\_\+A $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00136}{136}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_ga0bf08e73da65956929e36e05e4873c42}\label{group___t_i_m_ex___remap_ga0bf08e73da65956929e36e05e4873c42}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM24\_ETR\_SAI1\_FSB@{TIM\_TIM24\_ETR\_SAI1\_FSB}}
+\index{TIM\_TIM24\_ETR\_SAI1\_FSB@{TIM\_TIM24\_ETR\_SAI1\_FSB}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM24\_ETR\_SAI1\_FSB}{TIM\_TIM24\_ETR\_SAI1\_FSB}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM24\+\_\+\+ETR\+\_\+\+SAI1\+\_\+\+FSB~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga38cf3fbfe20afba58f315ace95c88016}{TIM2\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+2}}                          /$\ast$ !$<$ TIM24\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gaa878b214698fcf74a3268d07562abbb2}{SAI1}} FS\+\_\+B $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00137}{137}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_ga02942441fbd3f26678ff95395a09b89c}\label{group___t_i_m_ex___remap_ga02942441fbd3f26678ff95395a09b89c}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM24\_ETR\_SAI4\_FSA@{TIM\_TIM24\_ETR\_SAI4\_FSA}}
+\index{TIM\_TIM24\_ETR\_SAI4\_FSA@{TIM\_TIM24\_ETR\_SAI4\_FSA}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM24\_ETR\_SAI4\_FSA}{TIM\_TIM24\_ETR\_SAI4\_FSA}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM24\+\_\+\+ETR\+\_\+\+SAI4\+\_\+\+FSA~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gabaeb0ecb379e37e51722902144404520}{TIM5\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}}                          /$\ast$ !$<$ TIM24\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_ga71002fa701ad9979a90e8c381a9cf183}{SAI4}} FS\+\_\+A $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00134}{134}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_gade1f234256056c4a8739abb2c6e35f26}\label{group___t_i_m_ex___remap_gade1f234256056c4a8739abb2c6e35f26}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM24\_ETR\_SAI4\_FSB@{TIM\_TIM24\_ETR\_SAI4\_FSB}}
+\index{TIM\_TIM24\_ETR\_SAI4\_FSB@{TIM\_TIM24\_ETR\_SAI4\_FSB}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM24\_ETR\_SAI4\_FSB}{TIM\_TIM24\_ETR\_SAI4\_FSB}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM24\+\_\+\+ETR\+\_\+\+SAI4\+\_\+\+FSB~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga92b38d638ecda48a0da085cfd8ce86bf}{TIM5\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}}                          /$\ast$ !$<$ TIM24\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_ga71002fa701ad9979a90e8c381a9cf183}{SAI4}} FS\+\_\+B $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00135}{135}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_ga79a125bc7559dc01f8de056e19f11972}\label{group___t_i_m_ex___remap_ga79a125bc7559dc01f8de056e19f11972}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM2\_ETR\_COMP1@{TIM\_TIM2\_ETR\_COMP1}}
+\index{TIM\_TIM2\_ETR\_COMP1@{TIM\_TIM2\_ETR\_COMP1}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM2\_ETR\_COMP1}{TIM\_TIM2\_ETR\_COMP1}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM2\+\_\+\+ETR\+\_\+\+COMP1~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaaa7a4ed17a8432d8c81e31e32dd87e20}{TIM2\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}})                     /$\ast$ !$<$ TIM2\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gaf5713f83009027d48805b049d55bb01b}{COMP1}} OUT $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00114}{114}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_ga76dfe019f143b4bff5ba2c2e1a38a387}\label{group___t_i_m_ex___remap_ga76dfe019f143b4bff5ba2c2e1a38a387}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM2\_ETR\_COMP2@{TIM\_TIM2\_ETR\_COMP2}}
+\index{TIM\_TIM2\_ETR\_COMP2@{TIM\_TIM2\_ETR\_COMP2}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM2\_ETR\_COMP2}{TIM\_TIM2\_ETR\_COMP2}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM2\+\_\+\+ETR\+\_\+\+COMP2~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga6a1413b9834ebc2b96c8eb27b74b0fdc}{TIM2\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}})                     /$\ast$ !$<$ TIM2\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_ga6985fa7e9bb3c2edf15b29b7af210a2b}{COMP2}} OUT $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00115}{115}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_ga05e1c800a3f8e7eb60b50f446cf321f7}\label{group___t_i_m_ex___remap_ga05e1c800a3f8e7eb60b50f446cf321f7}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM2\_ETR\_GPIO@{TIM\_TIM2\_ETR\_GPIO}}
+\index{TIM\_TIM2\_ETR\_GPIO@{TIM\_TIM2\_ETR\_GPIO}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM2\_ETR\_GPIO}{TIM\_TIM2\_ETR\_GPIO}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM2\+\_\+\+ETR\+\_\+\+GPIO~0x00000000U                             /$\ast$ !$<$ TIM2\+\_\+\+ETR is connected to \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2gpio_8h_af065b9160b968f60a562bdc5c4454a5a}{GPIO}} $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00113}{113}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_gae69141882323f8b603da7a0343995dca}\label{group___t_i_m_ex___remap_gae69141882323f8b603da7a0343995dca}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM2\_ETR\_RCC\_LSE@{TIM\_TIM2\_ETR\_RCC\_LSE}}
+\index{TIM\_TIM2\_ETR\_RCC\_LSE@{TIM\_TIM2\_ETR\_RCC\_LSE}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM2\_ETR\_RCC\_LSE}{TIM\_TIM2\_ETR\_RCC\_LSE}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM2\+\_\+\+ETR\+\_\+\+RCC\+\_\+\+LSE~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga6a1413b9834ebc2b96c8eb27b74b0fdc}{TIM2\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga0ff3eda56bcb98d020fa1b1573c4f912}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}}) /$\ast$ !$<$ TIM2\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}} LSE $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00116}{116}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_ga901919d24f481b3ca744ff06cd98bdb8}\label{group___t_i_m_ex___remap_ga901919d24f481b3ca744ff06cd98bdb8}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM2\_ETR\_SAI1\_FSA@{TIM\_TIM2\_ETR\_SAI1\_FSA}}
+\index{TIM\_TIM2\_ETR\_SAI1\_FSA@{TIM\_TIM2\_ETR\_SAI1\_FSA}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM2\_ETR\_SAI1\_FSA}{TIM\_TIM2\_ETR\_SAI1\_FSA}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM2\+\_\+\+ETR\+\_\+\+SAI1\+\_\+\+FSA~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga38cf3fbfe20afba58f315ace95c88016}{TIM2\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+2}}                       /$\ast$ !$<$ TIM2\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gaa878b214698fcf74a3268d07562abbb2}{SAI1}} FS\+\_\+A $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00117}{117}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_gab369084ac6b74b818f48995770cf2221}\label{group___t_i_m_ex___remap_gab369084ac6b74b818f48995770cf2221}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM2\_ETR\_SAI1\_FSB@{TIM\_TIM2\_ETR\_SAI1\_FSB}}
+\index{TIM\_TIM2\_ETR\_SAI1\_FSB@{TIM\_TIM2\_ETR\_SAI1\_FSB}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM2\_ETR\_SAI1\_FSB}{TIM\_TIM2\_ETR\_SAI1\_FSB}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM2\+\_\+\+ETR\+\_\+\+SAI1\+\_\+\+FSB~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga38cf3fbfe20afba58f315ace95c88016}{TIM2\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+2}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga0ff3eda56bcb98d020fa1b1573c4f912}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}}) /$\ast$ !$<$ TIM2\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gaa878b214698fcf74a3268d07562abbb2}{SAI1}} FS\+\_\+B $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00118}{118}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_gaea6cbaddf4da816fd4afd13ad7953079}\label{group___t_i_m_ex___remap_gaea6cbaddf4da816fd4afd13ad7953079}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM3\_ETR\_COMP1@{TIM\_TIM3\_ETR\_COMP1}}
+\index{TIM\_TIM3\_ETR\_COMP1@{TIM\_TIM3\_ETR\_COMP1}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM3\_ETR\_COMP1}{TIM\_TIM3\_ETR\_COMP1}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM3\+\_\+\+ETR\+\_\+\+COMP1~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaaf25073af3e775f18278b711d3719957}{TIM3\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}}    /$\ast$ !$<$ TIM3\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gaf5713f83009027d48805b049d55bb01b}{COMP1}} OUT $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00121}{121}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_gad86579b249d2c04a99c8412a8c72af97}\label{group___t_i_m_ex___remap_gad86579b249d2c04a99c8412a8c72af97}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM3\_ETR\_GPIO@{TIM\_TIM3\_ETR\_GPIO}}
+\index{TIM\_TIM3\_ETR\_GPIO@{TIM\_TIM3\_ETR\_GPIO}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM3\_ETR\_GPIO}{TIM\_TIM3\_ETR\_GPIO}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM3\+\_\+\+ETR\+\_\+\+GPIO~0x00000000U          /$\ast$ !$<$ TIM3\+\_\+\+ETR is connected to \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2gpio_8h_af065b9160b968f60a562bdc5c4454a5a}{GPIO}} $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00120}{120}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_ga5df745d19761f4c212140c70d4271692}\label{group___t_i_m_ex___remap_ga5df745d19761f4c212140c70d4271692}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM5\_ETR\_GPIO@{TIM\_TIM5\_ETR\_GPIO}}
+\index{TIM\_TIM5\_ETR\_GPIO@{TIM\_TIM5\_ETR\_GPIO}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM5\_ETR\_GPIO}{TIM\_TIM5\_ETR\_GPIO}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM5\+\_\+\+ETR\+\_\+\+GPIO~0x00000000U          /$\ast$ !$<$ TIM5\+\_\+\+ETR is connected to \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2gpio_8h_af065b9160b968f60a562bdc5c4454a5a}{GPIO}} $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00123}{123}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_gaca05dbe7ce7bc979d5e30f355285a51c}\label{group___t_i_m_ex___remap_gaca05dbe7ce7bc979d5e30f355285a51c}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM5\_ETR\_SAI2\_FSA@{TIM\_TIM5\_ETR\_SAI2\_FSA}}
+\index{TIM\_TIM5\_ETR\_SAI2\_FSA@{TIM\_TIM5\_ETR\_SAI2\_FSA}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM5\_ETR\_SAI2\_FSA}{TIM\_TIM5\_ETR\_SAI2\_FSA}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM5\+\_\+\+ETR\+\_\+\+SAI2\+\_\+\+FSA~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gabaeb0ecb379e37e51722902144404520}{TIM5\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}}    /$\ast$ !$<$ TIM5\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gac248a1f09e97346a66175a54ca7f9062}{SAI2}} FS\+\_\+A $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00124}{124}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_ga11e3c0b2d38048d8d15e8623ff61a408}\label{group___t_i_m_ex___remap_ga11e3c0b2d38048d8d15e8623ff61a408}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM5\_ETR\_SAI2\_FSB@{TIM\_TIM5\_ETR\_SAI2\_FSB}}
+\index{TIM\_TIM5\_ETR\_SAI2\_FSB@{TIM\_TIM5\_ETR\_SAI2\_FSB}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM5\_ETR\_SAI2\_FSB}{TIM\_TIM5\_ETR\_SAI2\_FSB}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM5\+\_\+\+ETR\+\_\+\+SAI2\+\_\+\+FSB~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga92b38d638ecda48a0da085cfd8ce86bf}{TIM5\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}}    /$\ast$ !$<$ TIM5\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gac248a1f09e97346a66175a54ca7f9062}{SAI2}} FS\+\_\+B $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00125}{125}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_gac6ad331bf73260161a6e9c3b2ee412f3}\label{group___t_i_m_ex___remap_gac6ad331bf73260161a6e9c3b2ee412f3}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM5\_ETR\_SAI4\_FSA@{TIM\_TIM5\_ETR\_SAI4\_FSA}}
+\index{TIM\_TIM5\_ETR\_SAI4\_FSA@{TIM\_TIM5\_ETR\_SAI4\_FSA}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM5\_ETR\_SAI4\_FSA}{TIM\_TIM5\_ETR\_SAI4\_FSA}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM5\+\_\+\+ETR\+\_\+\+SAI4\+\_\+\+FSA~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gabaeb0ecb379e37e51722902144404520}{TIM5\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}}    /$\ast$ !$<$ TIM5\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_ga71002fa701ad9979a90e8c381a9cf183}{SAI4}} FS\+\_\+A $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00126}{126}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_ga5dd267b5ce57d4c9d0736f3da988d9d9}\label{group___t_i_m_ex___remap_ga5dd267b5ce57d4c9d0736f3da988d9d9}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM5\_ETR\_SAI4\_FSB@{TIM\_TIM5\_ETR\_SAI4\_FSB}}
+\index{TIM\_TIM5\_ETR\_SAI4\_FSB@{TIM\_TIM5\_ETR\_SAI4\_FSB}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM5\_ETR\_SAI4\_FSB}{TIM\_TIM5\_ETR\_SAI4\_FSB}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM5\+\_\+\+ETR\+\_\+\+SAI4\+\_\+\+FSB~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga92b38d638ecda48a0da085cfd8ce86bf}{TIM5\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}}    /$\ast$ !$<$ TIM5\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_ga71002fa701ad9979a90e8c381a9cf183}{SAI4}} FS\+\_\+B $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00127}{127}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_ga7a832c5903108f2a06208c58585f7579}\label{group___t_i_m_ex___remap_ga7a832c5903108f2a06208c58585f7579}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM8\_ETR\_ADC2\_AWD1@{TIM\_TIM8\_ETR\_ADC2\_AWD1}}
+\index{TIM\_TIM8\_ETR\_ADC2\_AWD1@{TIM\_TIM8\_ETR\_ADC2\_AWD1}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM8\_ETR\_ADC2\_AWD1}{TIM\_TIM8\_ETR\_ADC2\_AWD1}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM8\+\_\+\+ETR\+\_\+\+ADC2\+\_\+\+AWD1~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8115191f924a8817c45e04078725f242}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga0ff3eda56bcb98d020fa1b1573c4f912}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}})                     /$\ast$ !$<$ TIM8\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gac5503ae96c26b4475226f96715a1bf1e}{ADC2}} AWD1 $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00106}{106}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_gae0c7be84fda65b37b00a8896b98775c3}\label{group___t_i_m_ex___remap_gae0c7be84fda65b37b00a8896b98775c3}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM8\_ETR\_ADC2\_AWD2@{TIM\_TIM8\_ETR\_ADC2\_AWD2}}
+\index{TIM\_TIM8\_ETR\_ADC2\_AWD2@{TIM\_TIM8\_ETR\_ADC2\_AWD2}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM8\_ETR\_ADC2\_AWD2}{TIM\_TIM8\_ETR\_ADC2\_AWD2}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM8\+\_\+\+ETR\+\_\+\+ADC2\+\_\+\+AWD2~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7dc91956b73a05f0ab3465a124e27e97}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+2}})                                         /$\ast$ !$<$ TIM8\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gac5503ae96c26b4475226f96715a1bf1e}{ADC2}} AWD2 $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00107}{107}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_ga02c57d201dbc0416eed0e333a6347b5b}\label{group___t_i_m_ex___remap_ga02c57d201dbc0416eed0e333a6347b5b}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM8\_ETR\_ADC2\_AWD3@{TIM\_TIM8\_ETR\_ADC2\_AWD3}}
+\index{TIM\_TIM8\_ETR\_ADC2\_AWD3@{TIM\_TIM8\_ETR\_ADC2\_AWD3}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM8\_ETR\_ADC2\_AWD3}{TIM\_TIM8\_ETR\_ADC2\_AWD3}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM8\+\_\+\+ETR\+\_\+\+ADC2\+\_\+\+AWD3~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7dc91956b73a05f0ab3465a124e27e97}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+2}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga0ff3eda56bcb98d020fa1b1573c4f912}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}})                     /$\ast$ !$<$ TIM8\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gac5503ae96c26b4475226f96715a1bf1e}{ADC2}} AWD3 $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00108}{108}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_ga7cb16632bf98d6961d21172aa42373e3}\label{group___t_i_m_ex___remap_ga7cb16632bf98d6961d21172aa42373e3}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM8\_ETR\_ADC3\_AWD1@{TIM\_TIM8\_ETR\_ADC3\_AWD1}}
+\index{TIM\_TIM8\_ETR\_ADC3\_AWD1@{TIM\_TIM8\_ETR\_ADC3\_AWD1}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM8\_ETR\_ADC3\_AWD1}{TIM\_TIM8\_ETR\_ADC3\_AWD1}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM8\+\_\+\+ETR\+\_\+\+ADC3\+\_\+\+AWD1~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7dc91956b73a05f0ab3465a124e27e97}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+2}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8115191f924a8817c45e04078725f242}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}})                     /$\ast$ !$<$ TIM8\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gae917784606daf6b04c9b7b96b40c2f74}{ADC3}} AWD1 $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00109}{109}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_ga84b90475edbe94a4cdbef6f5f602ac9b}\label{group___t_i_m_ex___remap_ga84b90475edbe94a4cdbef6f5f602ac9b}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM8\_ETR\_ADC3\_AWD2@{TIM\_TIM8\_ETR\_ADC3\_AWD2}}
+\index{TIM\_TIM8\_ETR\_ADC3\_AWD2@{TIM\_TIM8\_ETR\_ADC3\_AWD2}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM8\_ETR\_ADC3\_AWD2}{TIM\_TIM8\_ETR\_ADC3\_AWD2}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM8\+\_\+\+ETR\+\_\+\+ADC3\+\_\+\+AWD2~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7dc91956b73a05f0ab3465a124e27e97}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+2}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8115191f924a8817c45e04078725f242}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga0ff3eda56bcb98d020fa1b1573c4f912}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}}) /$\ast$ !$<$ TIM8\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gae917784606daf6b04c9b7b96b40c2f74}{ADC3}} AWD2 $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00110}{110}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_ga8f39897f883d4efa8357d1ba28bc100b}\label{group___t_i_m_ex___remap_ga8f39897f883d4efa8357d1ba28bc100b}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM8\_ETR\_ADC3\_AWD3@{TIM\_TIM8\_ETR\_ADC3\_AWD3}}
+\index{TIM\_TIM8\_ETR\_ADC3\_AWD3@{TIM\_TIM8\_ETR\_ADC3\_AWD3}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM8\_ETR\_ADC3\_AWD3}{TIM\_TIM8\_ETR\_ADC3\_AWD3}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM8\+\_\+\+ETR\+\_\+\+ADC3\+\_\+\+AWD3~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga97fe71b195c1bbc5175e3db42d09c062}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+3}}                                           /$\ast$ !$<$ TIM8\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gae917784606daf6b04c9b7b96b40c2f74}{ADC3}} AWD3 $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00111}{111}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_gadcbcb76d19c2ccb5ae46fdc7e7d88f8b}\label{group___t_i_m_ex___remap_gadcbcb76d19c2ccb5ae46fdc7e7d88f8b}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM8\_ETR\_COMP1@{TIM\_TIM8\_ETR\_COMP1}}
+\index{TIM\_TIM8\_ETR\_COMP1@{TIM\_TIM8\_ETR\_COMP1}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM8\_ETR\_COMP1}{TIM\_TIM8\_ETR\_COMP1}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM8\+\_\+\+ETR\+\_\+\+COMP1~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga0ff3eda56bcb98d020fa1b1573c4f912}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+0}}                                           /$\ast$ !$<$ TIM8\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_gaf5713f83009027d48805b049d55bb01b}{COMP1}} OUT $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00104}{104}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_gae93f8a76facb81f8d962bb7c88dc25f0}\label{group___t_i_m_ex___remap_gae93f8a76facb81f8d962bb7c88dc25f0}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM8\_ETR\_COMP2@{TIM\_TIM8\_ETR\_COMP2}}
+\index{TIM\_TIM8\_ETR\_COMP2@{TIM\_TIM8\_ETR\_COMP2}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM8\_ETR\_COMP2}{TIM\_TIM8\_ETR\_COMP2}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM8\+\_\+\+ETR\+\_\+\+COMP2~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8115191f924a8817c45e04078725f242}{TIM8\+\_\+\+AF1\+\_\+\+ETRSEL\+\_\+1}}                                           /$\ast$ !$<$ TIM8\+\_\+\+ETR is connected to \mbox{\hyperlink{group___peripheral__declaration_ga6985fa7e9bb3c2edf15b29b7af210a2b}{COMP2}} OUT $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00105}{105}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___t_i_m_ex___remap_gabcec3c5e9dad306b68d34e5b9257a281}\label{group___t_i_m_ex___remap_gabcec3c5e9dad306b68d34e5b9257a281}} 
+\index{TIM Extended Remapping@{TIM Extended Remapping}!TIM\_TIM8\_ETR\_GPIO@{TIM\_TIM8\_ETR\_GPIO}}
+\index{TIM\_TIM8\_ETR\_GPIO@{TIM\_TIM8\_ETR\_GPIO}!TIM Extended Remapping@{TIM Extended Remapping}}
+\doxysubsubsection{\texorpdfstring{TIM\_TIM8\_ETR\_GPIO}{TIM\_TIM8\_ETR\_GPIO}}
+{\footnotesize\ttfamily \#define TIM\+\_\+\+TIM8\+\_\+\+ETR\+\_\+\+GPIO~0x00000000U                                                 /$\ast$ !$<$ TIM8\+\_\+\+ETR is connected to \mbox{\hyperlink{libleguan_2include_2peripherals_2internal_2gpio_8h_af065b9160b968f60a562bdc5c4454a5a}{GPIO}} $\ast$/}
+
+
+
+Definition at line \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source_l00103}{103}} of file \mbox{\hyperlink{stm32h7xx__hal__tim__ex_8h_source}{stm32h7xx\+\_\+hal\+\_\+tim\+\_\+ex.\+h}}.
+

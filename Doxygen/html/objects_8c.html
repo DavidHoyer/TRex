@@ -80,6 +80,9 @@ $(function() {
   <div class="headertitle"><div class="title">objects.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Working with objects on the LCD.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="objects_8h_source.html">include/objects.h</a>&quot;</code><br />
 </div>
@@ -99,12 +102,12 @@ Functions</h2></td></tr>
 <tr class="separator:a6c1449df6f92a8d35b7d15cbc99d4084"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab66f6d9162af4deedcacd5197026e61d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objects_8c.html#ab66f6d9162af4deedcacd5197026e61d">LcdClearArea</a> (const uint16_t x1, const uint16_t y1, const uint16_t x2, const uint16_t y2)</td></tr>
 <tr class="separator:ab66f6d9162af4deedcacd5197026e61d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a84842ec55ac42009be9061784a5a42"><td class="memItemLeft" align="right" valign="top"><a class="el" href="objects_8h.html#a7c02633e18d6aa5f58539b75f08753d9">node_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objects_8c.html#a5a84842ec55ac42009be9061784a5a42">GetBoarder</a> (<a class="el" href="structbmp__t.html">bmp_t</a> bmp)</td></tr>
-<tr class="separator:a5a84842ec55ac42009be9061784a5a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a543a8f085ebb943d665db811f66590a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="objects_8h.html#a7c02633e18d6aa5f58539b75f08753d9">node_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objects_8c.html#a543a8f085ebb943d665db811f66590a9">SortBoarder</a> (<a class="el" href="objects_8h.html#a7c02633e18d6aa5f58539b75f08753d9">node_t</a> *head)</td></tr>
-<tr class="separator:a543a8f085ebb943d665db811f66590a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a63b507e18f476ccf5d2d4a4052a106"><td class="memItemLeft" align="right" valign="top"><a class="el" href="objects_8h.html#a7c02633e18d6aa5f58539b75f08753d9">node_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objects_8c.html#a4a63b507e18f476ccf5d2d4a4052a106">CreateEdges</a> (<a class="el" href="objects_8h.html#a7c02633e18d6aa5f58539b75f08753d9">node_t</a> *head)</td></tr>
-<tr class="separator:a4a63b507e18f476ccf5d2d4a4052a106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad239208f4f9a6cc2a638e48e0645dd10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="objects_8h.html#a2dda454dfd99aacce45902fa05fecf03">pixel_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objects_8c.html#ad239208f4f9a6cc2a638e48e0645dd10">GetBoarder</a> (<a class="el" href="structbmp__t.html">bmp_t</a> bmp)</td></tr>
+<tr class="separator:ad239208f4f9a6cc2a638e48e0645dd10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a391bb0403481a8dc57ec0427722f00d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="objects_8h.html#a2dda454dfd99aacce45902fa05fecf03">pixel_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objects_8c.html#a391bb0403481a8dc57ec0427722f00d8">SortBoarder</a> (<a class="el" href="objects_8h.html#a2dda454dfd99aacce45902fa05fecf03">pixel_t</a> *head)</td></tr>
+<tr class="separator:a391bb0403481a8dc57ec0427722f00d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a891b42c97947a47ff0eb8e5fe4f2f12d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="objects_8h.html#a2dda454dfd99aacce45902fa05fecf03">pixel_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objects_8c.html#a891b42c97947a47ff0eb8e5fe4f2f12d">CreateEdges</a> (<a class="el" href="objects_8h.html#a2dda454dfd99aacce45902fa05fecf03">pixel_t</a> *head)</td></tr>
+<tr class="separator:a891b42c97947a47ff0eb8e5fe4f2f12d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abef95ae0d5429750d0a26a2e676baa7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objects_8c.html#abef95ae0d5429750d0a26a2e676baa7c">PrintBorder</a> (<a class="el" href="structbmp__t.html">bmp_t</a> bmp, color_t clr)</td></tr>
 <tr class="separator:abef95ae0d5429750d0a26a2e676baa7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51f4d7975a46122a4b7074b194fbe3fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objects_8c.html#a51f4d7975a46122a4b7074b194fbe3fc">ConvertArray</a> (unsigned char pixelData[][4], const uint16_t w, const uint16_t h)</td></tr>
@@ -117,7 +120,13 @@ Variables</h2></td></tr>
 <tr class="memitem:ade2205d6d566d96f18004d1d36256e44"><td class="memItemLeft" align="right" valign="top">const LCD_Color_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="objects_8c.html#ade2205d6d566d96f18004d1d36256e44">bgColor</a> = {31, 63, 31}</td></tr>
 <tr class="separator:ade2205d6d566d96f18004d1d36256e44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Working with objects on the LCD. </p>
+<dl class="section date"><dt>Date</dt><dd>30.12.2022 </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Lukas Roth </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a51f4d7975a46122a4b7074b194fbe3fc" name="a51f4d7975a46122a4b7074b194fbe3fc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a51f4d7975a46122a4b7074b194fbe3fc">&#9670;&#160;</a></span>ConvertArray()</h2>
 
@@ -150,27 +159,27 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8c_source.html#l00322">322</a> of file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objects_8c_source.html#l00325">325</a> of file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
 
 </div>
 </div>
-<a id="a4a63b507e18f476ccf5d2d4a4052a106" name="a4a63b507e18f476ccf5d2d4a4052a106"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a63b507e18f476ccf5d2d4a4052a106">&#9670;&#160;</a></span>CreateEdges()</h2>
+<a id="a891b42c97947a47ff0eb8e5fe4f2f12d" name="a891b42c97947a47ff0eb8e5fe4f2f12d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a891b42c97947a47ff0eb8e5fe4f2f12d">&#9670;&#160;</a></span>CreateEdges()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="objects_8h.html#a7c02633e18d6aa5f58539b75f08753d9">node_t</a> * CreateEdges </td>
+          <td class="memname"><a class="el" href="objects_8h.html#a2dda454dfd99aacce45902fa05fecf03">pixel_t</a> * CreateEdges </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="objects_8h.html#a7c02633e18d6aa5f58539b75f08753d9">node_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="objects_8h.html#a2dda454dfd99aacce45902fa05fecf03">pixel_t</a> *&#160;</td>
           <td class="paramname"><em>head</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8c_source.html#l00294">294</a> of file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objects_8c_source.html#l00295">295</a> of file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
 
 </div>
 </div>
@@ -190,7 +199,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8c_source.html#l00111">111</a> of file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objects_8c_source.html#l00112">112</a> of file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
 
 </div>
 </div>
@@ -226,7 +235,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8c_source.html#l00013">13</a> of file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objects_8c_source.html#l00014">14</a> of file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
 
 </div>
 </div>
@@ -262,18 +271,18 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8c_source.html#l00047">47</a> of file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objects_8c_source.html#l00048">48</a> of file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
 
 </div>
 </div>
-<a id="a5a84842ec55ac42009be9061784a5a42" name="a5a84842ec55ac42009be9061784a5a42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a84842ec55ac42009be9061784a5a42">&#9670;&#160;</a></span>GetBoarder()</h2>
+<a id="ad239208f4f9a6cc2a638e48e0645dd10" name="ad239208f4f9a6cc2a638e48e0645dd10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad239208f4f9a6cc2a638e48e0645dd10">&#9670;&#160;</a></span>GetBoarder()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="objects_8h.html#a7c02633e18d6aa5f58539b75f08753d9">node_t</a> * GetBoarder </td>
+          <td class="memname"><a class="el" href="objects_8h.html#a2dda454dfd99aacce45902fa05fecf03">pixel_t</a> * GetBoarder </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structbmp__t.html">bmp_t</a>&#160;</td>
           <td class="paramname"><em>bmp</em></td><td>)</td>
@@ -282,7 +291,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8c_source.html#l00131">131</a> of file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objects_8c_source.html#l00132">132</a> of file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
 
 </div>
 </div>
@@ -378,7 +387,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8c_source.html#l00116">116</a> of file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objects_8c_source.html#l00117">117</a> of file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
 
 </div>
 </div>
@@ -414,7 +423,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8c_source.html#l00077">77</a> of file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objects_8c_source.html#l00078">78</a> of file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
 
 </div>
 </div>
@@ -444,7 +453,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8c_source.html#l00309">309</a> of file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objects_8c_source.html#l00312">312</a> of file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
 
 </div>
 </div>
@@ -480,27 +489,27 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8c_source.html#l00107">107</a> of file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objects_8c_source.html#l00108">108</a> of file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
 
 </div>
 </div>
-<a id="a543a8f085ebb943d665db811f66590a9" name="a543a8f085ebb943d665db811f66590a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a543a8f085ebb943d665db811f66590a9">&#9670;&#160;</a></span>SortBoarder()</h2>
+<a id="a391bb0403481a8dc57ec0427722f00d8" name="a391bb0403481a8dc57ec0427722f00d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a391bb0403481a8dc57ec0427722f00d8">&#9670;&#160;</a></span>SortBoarder()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="objects_8h.html#a7c02633e18d6aa5f58539b75f08753d9">node_t</a> * SortBoarder </td>
+          <td class="memname"><a class="el" href="objects_8h.html#a2dda454dfd99aacce45902fa05fecf03">pixel_t</a> * SortBoarder </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="objects_8h.html#a7c02633e18d6aa5f58539b75f08753d9">node_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="objects_8h.html#a2dda454dfd99aacce45902fa05fecf03">pixel_t</a> *&#160;</td>
           <td class="paramname"><em>head</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8c_source.html#l00238">238</a> of file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objects_8c_source.html#l00239">239</a> of file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
 
 </div>
 </div>
@@ -517,7 +526,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8c_source.html#l00011">11</a> of file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objects_8c_source.html#l00012">12</a> of file <a class="el" href="objects_8c_source.html">objects.c</a>.</p>
 
 </div>
 </div>
