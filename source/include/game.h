@@ -64,35 +64,91 @@ void PauseGame(void);
 void ContinueGame(void);
 
 /**
- * @brief Resumes the movement
+ * @brief displays the GameOver state and inits a delay
  */
 void DisplayGameOver(void);
 
+/**
+ * @brief Selects the Google T-Rex as player character
+ */
 void SelectTrexGoogle (void);
+
+/**
+ * @brief Selects the green T-Rex as player character
+ */
 void SelectTrexGreen (void);
 
-
-
+/**
+ * @brief Returns the current game state.
+ * @return Game state
+ */
 GameState_t GetGameState(void);
 
+/**
+ * @brief Checks if an event on teh LCD display occured
+ * @return event
+ */
 event_T CheckEvent(void);
-//char 	CheckEventBmp(bmp_t bmp, event_T event);
-char 	OnClickStartButton(event_T event);
-char 	OnClickJumpButton(event_T event);
-char 	OnClickPauseButton(event_T event);
-char 	OnClickTRexGoogle(event_T event);
-char 	OnClickTRexGreen(event_T event);
 
-void	MoveObstacles(void);
-void	MoveTRex(void);
-void	InitTRexJump(void);
+/**
+ * @brief Checks if the event happend on the start button
+ * @param event
+ * @return flag
+ */
+char OnClickStartButton(event_T event);
 
-char 	CheckCollision(void);
-int CheckLineCollision(uint16_t A1_x, uint16_t A1_y, uint16_t A2_x, uint16_t A2_y,
-					   uint16_t B1_x, uint16_t B1_y, uint16_t B2_x, uint16_t B2_y);
-int doIntersect(uint16_t A1_x, uint16_t A1_y, uint16_t B1_x, uint16_t B1_y,
-        		uint16_t A2_x, uint16_t A2_y, uint16_t B2_x, uint16_t B2_y);
+/**
+ * @brief Checks if the event happend on the jump button
+ * @param event
+ * @return flag
+ */
+char OnClickJumpButton(event_T event);
 
+/**
+ * @brief Checks if the event happend on the pause button
+ * @param event
+ * @return flag
+ */
+char OnClickPauseButton(event_T event);
+
+/**
+ * @brief Checks if the event happend on the Google TRex
+ * @param event
+ * @return flag
+ */
+char OnClickTRexGoogle(event_T event);
+
+/**
+ * @brief Checks if the event happend on the Green TRex
+ * @param event
+ * @return flag
+ */
+char OnClickTRexGreen(event_T event);
+
+/**
+ * @brief Moves the obstacles on the LCD
+ */
+void MoveObstacles(void);
+
+/**
+ * @brief Moves the T-Rex on the LCD
+ */
+void MoveTRex(void);
+
+/**
+ * @brief Initializes the jump of the T-Rex
+ */
+void InitTRexJump(void);
+
+/**
+ * @brief Checks for a collision between the T-Rex and the obstacles
+ * @return flag
+ */
+char CheckCollision(void);
+
+/**
+ * @brief Counts the current score for the player
+ */
 void ScoreCount (void);
 
 #endif /* INCLUDE_GAME_H_ */

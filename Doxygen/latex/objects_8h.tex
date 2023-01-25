@@ -1,0 +1,216 @@
+\hypertarget{objects_8h}{}\doxysection{C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.11.0/\+TRex/source/include/objects.h File Reference}
+\label{objects_8h}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/source/include/objects.h@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/source/include/objects.h}}
+{\ttfamily \#include $<$leguan.\+h$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structnode}{node}}
+\item 
+struct \mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{objects_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}~1
+\item 
+\#define \mbox{\hyperlink{objects_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}~0
+\item 
+\#define \mbox{\hyperlink{objects_8h_a233b95e49f1419b52922a0b4364b3c73}{BGRA565\+\_\+\+COLOR}}(r,  g,  b,  a)~\{ ((uint8\+\_\+t)(b)) $>$$>$ 3, ((uint8\+\_\+t)(g)) $>$$>$ 2, ((uint8\+\_\+t)(r)) $>$$>$ 3, ((uint8\+\_\+t)(a)) \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structnode}{node}} \mbox{\hyperlink{objects_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{objects_8h_a1bfc0921cde12f53426cd7b393776668}{Draw\+Bmp}} (\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} $\ast$bmp, const uint16\+\_\+t x, const uint16\+\_\+t y)
+\item 
+void \mbox{\hyperlink{objects_8h_a57451f74eca71a9eefd5f5a9e97ae467}{Draw\+Bmp\+Without\+\_\+A}} (\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} $\ast$bmp, const uint16\+\_\+t x, const uint16\+\_\+t y)
+\item 
+void \mbox{\hyperlink{objects_8h_ab979e3c656d76b111007bfe0b70398d3}{Move\+Bmp}} (\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} $\ast$bmp, const uint16\+\_\+t x, const uint16\+\_\+t y)
+\item 
+void \mbox{\hyperlink{objects_8h_a952c22a6dda726ce1a517cb8d5cde5a4}{Shift\+Bmp}} (\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} $\ast$bmp, const uint16\+\_\+t ix, const uint16\+\_\+t iy)
+\item 
+void \mbox{\hyperlink{objects_8h_a6c1449df6f92a8d35b7d15cbc99d4084}{Delete\+Bmp}} (\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} $\ast$bmp)
+\item 
+void \mbox{\hyperlink{objects_8h_ab66f6d9162af4deedcacd5197026e61d}{Lcd\+Clear\+Area}} (const uint16\+\_\+t x1, const uint16\+\_\+t y1, const uint16\+\_\+t x2, const uint16\+\_\+t y2)
+\item 
+\mbox{\hyperlink{objects_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$ \mbox{\hyperlink{objects_8h_a5a84842ec55ac42009be9061784a5a42}{Get\+Boarder}} (\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} bmp)
+\item 
+void \mbox{\hyperlink{objects_8h_abef95ae0d5429750d0a26a2e676baa7c}{Print\+Border}} (\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} bmp, color\+\_\+t clr)
+\item 
+\mbox{\hyperlink{objects_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$ \mbox{\hyperlink{objects_8h_a543a8f085ebb943d665db811f66590a9}{Sort\+Boarder}} (\mbox{\hyperlink{objects_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$head)
+\item 
+\mbox{\hyperlink{objects_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$ \mbox{\hyperlink{objects_8h_a4a63b507e18f476ccf5d2d4a4052a106}{Create\+Edges}} (\mbox{\hyperlink{objects_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$head)
+\item 
+void \mbox{\hyperlink{objects_8h_a51f4d7975a46122a4b7074b194fbe3fc}{Convert\+Array}} (unsigned char pixel\+Data\mbox{[}$\,$\mbox{]}\mbox{[}4\mbox{]}, const uint16\+\_\+t w, const uint16\+\_\+t h)
+\item 
+void \mbox{\hyperlink{objects_8h_a87ae89e93f293253031ef38e653c8cb2}{LCD\+\_\+\+Rect\+\_\+\+Gradient}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t width, uint16\+\_\+t height, LCD\+\_\+\+Color\+\_\+t clr1, LCD\+\_\+\+Color\+\_\+t clr2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{objects_8h_a233b95e49f1419b52922a0b4364b3c73}\label{objects_8h_a233b95e49f1419b52922a0b4364b3c73}} 
+\index{objects.h@{objects.h}!BGRA565\_COLOR@{BGRA565\_COLOR}}
+\index{BGRA565\_COLOR@{BGRA565\_COLOR}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{BGRA565\_COLOR}{BGRA565\_COLOR}}
+{\footnotesize\ttfamily \#define BGRA565\+\_\+\+COLOR(\begin{DoxyParamCaption}\item[{}]{r,  }\item[{}]{g,  }\item[{}]{b,  }\item[{}]{a }\end{DoxyParamCaption})~\{ ((uint8\+\_\+t)(b)) $>$$>$ 3, ((uint8\+\_\+t)(g)) $>$$>$ 2, ((uint8\+\_\+t)(r)) $>$$>$ 3, ((uint8\+\_\+t)(a)) \}}
+
+
+
+Definition at line \mbox{\hyperlink{objects_8h_source_l00016}{16}} of file \mbox{\hyperlink{objects_8h_source}{objects.\+h}}.
+
+\mbox{\Hypertarget{objects_8h_aa93f0eb578d23995850d61f7d61c55c1}\label{objects_8h_aa93f0eb578d23995850d61f7d61c55c1}} 
+\index{objects.h@{objects.h}!FALSE@{FALSE}}
+\index{FALSE@{FALSE}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{FALSE}{FALSE}}
+{\footnotesize\ttfamily \#define FALSE~0}
+
+
+
+Definition at line \mbox{\hyperlink{objects_8h_source_l00015}{15}} of file \mbox{\hyperlink{objects_8h_source}{objects.\+h}}.
+
+\mbox{\Hypertarget{objects_8h_aa8cecfc5c5c054d2875c03e77b7be15d}\label{objects_8h_aa8cecfc5c5c054d2875c03e77b7be15d}} 
+\index{objects.h@{objects.h}!TRUE@{TRUE}}
+\index{TRUE@{TRUE}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{TRUE}{TRUE}}
+{\footnotesize\ttfamily \#define TRUE~1}
+
+
+
+Definition at line \mbox{\hyperlink{objects_8h_source_l00014}{14}} of file \mbox{\hyperlink{objects_8h_source}{objects.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{objects_8h_a7c02633e18d6aa5f58539b75f08753d9}\label{objects_8h_a7c02633e18d6aa5f58539b75f08753d9}} 
+\index{objects.h@{objects.h}!node\_t@{node\_t}}
+\index{node\_t@{node\_t}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{node\_t}{node\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structnode}{node}} \mbox{\hyperlink{objects_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{objects_8h_a51f4d7975a46122a4b7074b194fbe3fc}\label{objects_8h_a51f4d7975a46122a4b7074b194fbe3fc}} 
+\index{objects.h@{objects.h}!ConvertArray@{ConvertArray}}
+\index{ConvertArray@{ConvertArray}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{ConvertArray()}{ConvertArray()}}
+{\footnotesize\ttfamily void Convert\+Array (\begin{DoxyParamCaption}\item[{unsigned char}]{pixel\+Data\mbox{[}$\,$\mbox{]}\mbox{[}4\mbox{]},  }\item[{const uint16\+\_\+t}]{w,  }\item[{const uint16\+\_\+t}]{h }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{objects_8c_source_l00322}{322}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+
+\mbox{\Hypertarget{objects_8h_a4a63b507e18f476ccf5d2d4a4052a106}\label{objects_8h_a4a63b507e18f476ccf5d2d4a4052a106}} 
+\index{objects.h@{objects.h}!CreateEdges@{CreateEdges}}
+\index{CreateEdges@{CreateEdges}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{CreateEdges()}{CreateEdges()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{objects_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$ Create\+Edges (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{objects_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$}]{head }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{objects_8c_source_l00294}{294}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+
+\mbox{\Hypertarget{objects_8h_a6c1449df6f92a8d35b7d15cbc99d4084}\label{objects_8h_a6c1449df6f92a8d35b7d15cbc99d4084}} 
+\index{objects.h@{objects.h}!DeleteBmp@{DeleteBmp}}
+\index{DeleteBmp@{DeleteBmp}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{DeleteBmp()}{DeleteBmp()}}
+{\footnotesize\ttfamily void Delete\+Bmp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} $\ast$}]{bmp }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{objects_8c_source_l00111}{111}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+
+\mbox{\Hypertarget{objects_8h_a1bfc0921cde12f53426cd7b393776668}\label{objects_8h_a1bfc0921cde12f53426cd7b393776668}} 
+\index{objects.h@{objects.h}!DrawBmp@{DrawBmp}}
+\index{DrawBmp@{DrawBmp}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{DrawBmp()}{DrawBmp()}}
+{\footnotesize\ttfamily void Draw\+Bmp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} $\ast$}]{bmp,  }\item[{const uint16\+\_\+t}]{x,  }\item[{const uint16\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{objects_8c_source_l00013}{13}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+
+\mbox{\Hypertarget{objects_8h_a57451f74eca71a9eefd5f5a9e97ae467}\label{objects_8h_a57451f74eca71a9eefd5f5a9e97ae467}} 
+\index{objects.h@{objects.h}!DrawBmpWithout\_A@{DrawBmpWithout\_A}}
+\index{DrawBmpWithout\_A@{DrawBmpWithout\_A}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{DrawBmpWithout\_A()}{DrawBmpWithout\_A()}}
+{\footnotesize\ttfamily void Draw\+Bmp\+Without\+\_\+A (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} $\ast$}]{bmp,  }\item[{const uint16\+\_\+t}]{x,  }\item[{const uint16\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{objects_8c_source_l00047}{47}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+
+\mbox{\Hypertarget{objects_8h_a5a84842ec55ac42009be9061784a5a42}\label{objects_8h_a5a84842ec55ac42009be9061784a5a42}} 
+\index{objects.h@{objects.h}!GetBoarder@{GetBoarder}}
+\index{GetBoarder@{GetBoarder}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{GetBoarder()}{GetBoarder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{objects_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$ Get\+Boarder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}}}]{bmp }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{objects_8c_source_l00131}{131}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+
+\mbox{\Hypertarget{objects_8h_a87ae89e93f293253031ef38e653c8cb2}\label{objects_8h_a87ae89e93f293253031ef38e653c8cb2}} 
+\index{objects.h@{objects.h}!LCD\_Rect\_Gradient@{LCD\_Rect\_Gradient}}
+\index{LCD\_Rect\_Gradient@{LCD\_Rect\_Gradient}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_Rect\_Gradient()}{LCD\_Rect\_Gradient()}}
+{\footnotesize\ttfamily void LCD\+\_\+\+Rect\+\_\+\+Gradient (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height,  }\item[{LCD\+\_\+\+Color\+\_\+t}]{clr1,  }\item[{LCD\+\_\+\+Color\+\_\+t}]{clr2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{objects_8c_source_l00345}{345}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+
+\mbox{\Hypertarget{objects_8h_ab66f6d9162af4deedcacd5197026e61d}\label{objects_8h_ab66f6d9162af4deedcacd5197026e61d}} 
+\index{objects.h@{objects.h}!LcdClearArea@{LcdClearArea}}
+\index{LcdClearArea@{LcdClearArea}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{LcdClearArea()}{LcdClearArea()}}
+{\footnotesize\ttfamily void Lcd\+Clear\+Area (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{x1,  }\item[{const uint16\+\_\+t}]{y1,  }\item[{const uint16\+\_\+t}]{x2,  }\item[{const uint16\+\_\+t}]{y2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{objects_8c_source_l00116}{116}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+
+\mbox{\Hypertarget{objects_8h_ab979e3c656d76b111007bfe0b70398d3}\label{objects_8h_ab979e3c656d76b111007bfe0b70398d3}} 
+\index{objects.h@{objects.h}!MoveBmp@{MoveBmp}}
+\index{MoveBmp@{MoveBmp}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{MoveBmp()}{MoveBmp()}}
+{\footnotesize\ttfamily void Move\+Bmp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} $\ast$}]{bmp,  }\item[{const uint16\+\_\+t}]{x,  }\item[{const uint16\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{objects_8c_source_l00077}{77}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+
+\mbox{\Hypertarget{objects_8h_abef95ae0d5429750d0a26a2e676baa7c}\label{objects_8h_abef95ae0d5429750d0a26a2e676baa7c}} 
+\index{objects.h@{objects.h}!PrintBorder@{PrintBorder}}
+\index{PrintBorder@{PrintBorder}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{PrintBorder()}{PrintBorder()}}
+{\footnotesize\ttfamily void Print\+Border (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}}}]{bmp,  }\item[{color\+\_\+t}]{clr }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{objects_8c_source_l00309}{309}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+
+\mbox{\Hypertarget{objects_8h_a952c22a6dda726ce1a517cb8d5cde5a4}\label{objects_8h_a952c22a6dda726ce1a517cb8d5cde5a4}} 
+\index{objects.h@{objects.h}!ShiftBmp@{ShiftBmp}}
+\index{ShiftBmp@{ShiftBmp}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{ShiftBmp()}{ShiftBmp()}}
+{\footnotesize\ttfamily void Shift\+Bmp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} $\ast$}]{bmp,  }\item[{const uint16\+\_\+t}]{ix,  }\item[{const uint16\+\_\+t}]{iy }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{objects_8c_source_l00107}{107}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+
+\mbox{\Hypertarget{objects_8h_a543a8f085ebb943d665db811f66590a9}\label{objects_8h_a543a8f085ebb943d665db811f66590a9}} 
+\index{objects.h@{objects.h}!SortBoarder@{SortBoarder}}
+\index{SortBoarder@{SortBoarder}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{SortBoarder()}{SortBoarder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{objects_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$ Sort\+Boarder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{objects_8h_a7c02633e18d6aa5f58539b75f08753d9}{node\+\_\+t}} $\ast$}]{head }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{objects_8c_source_l00238}{238}} of file \mbox{\hyperlink{objects_8c_source}{objects.\+c}}.
+

@@ -153,12 +153,8 @@ void LCD_SetBackgroundColor(color_t color) {
 	m_background_color.b = color.b;
 }
 
-
 //static LEGUAN_ALWAYS_INLINE void LCD_Set(const LCD_Color_t *color) {
- //   LCD_Data16(*(const uint16_t*)color);
-//}
 //can not be static as I need it in objects.c
-
 void LCD_Set(const LCD_Color_t *color) {
     LCD_Data16(*(const uint16_t*)color);
 }

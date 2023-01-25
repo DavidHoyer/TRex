@@ -1,0 +1,430 @@
+\hypertarget{game_8h}{}\doxysection{C\+:/\+Users/\+Roth/\+STM32\+Cube\+IDE/workspace\+\_\+1.11.0/\+TRex/source/include/game.h File Reference}
+\label{game_8h}\index{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/source/include/game.h@{C:/Users/Roth/STM32CubeIDE/workspace\_1.11.0/TRex/source/include/game.h}}
+{\ttfamily \#include \char`\"{}objects.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structevent___t}{event\+\_\+T}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2}{Game\+State\+\_\+t}} \{ \newline
+\mbox{\hyperlink{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2ac36e5c9ac597253191be83acf0b51d25}{STATE\+\_\+\+NONE}}
+, \mbox{\hyperlink{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2a8211ee7ceda72b3c0e9b4a547acb471b}{STATE\+\_\+\+MENU}}
+, \mbox{\hyperlink{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2add58fbaa83b0bc3973bc4adad84a5d88}{STATE\+\_\+\+GAME}}
+, \mbox{\hyperlink{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2aea8a8da15a2fe0f9364de2fea14bf947}{STATE\+\_\+\+PAUSE}}
+, \newline
+\mbox{\hyperlink{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2a0f76ed984e8b06e62cddac03843a9544}{STATE\+\_\+\+GAME\+\_\+\+OVER}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{game_8h_a9b4ca96e33c7f10e1074079d05fae8e7}{Game\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_a955012c003f998dbe37f8b7a282fa478}{Show\+Start\+Menu}} (void)
+\begin{DoxyCompactList}\small\item\em displays the start menu \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_ae419198eb7bcb4f54ab9aa17ea20e61d}{Start\+Game}} (void)
+\begin{DoxyCompactList}\small\item\em Starts the game, draw T-\/\+Rex etc. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_a5d9284d1778839fc536b4e99330b47f8}{Pause\+Game}} (void)
+\begin{DoxyCompactList}\small\item\em Stops the movement of the T-\/\+Rex aswell as the obstacles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_af832dcef9efdbe954d6e1098ffa6ad71}{Continue\+Game}} (void)
+\begin{DoxyCompactList}\small\item\em Resumes the movement. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_a90f4e8637434246478a35dcd91e97d5d}{Display\+Game\+Over}} (void)
+\begin{DoxyCompactList}\small\item\em displays the Game\+Over state and inits a delay \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_abd3285ce77dcb58203e8f15c7bdbc9a4}{Select\+Trex\+Google}} (void)
+\begin{DoxyCompactList}\small\item\em Selects the Google T-\/\+Rex as player character. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_a0507e5338e4a45f29c15c549d5c2db0a}{Select\+Trex\+Green}} (void)
+\begin{DoxyCompactList}\small\item\em Selects the green T-\/\+Rex as player character. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2}{Game\+State\+\_\+t}} \mbox{\hyperlink{game_8h_a0855a5c16d1b49871f145a29263e9dfe}{Get\+Game\+State}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the current game state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structevent___t}{event\+\_\+T}} \mbox{\hyperlink{game_8h_a42dce4ec0f1c11a18f0249d8e6bba48e}{Check\+Event}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if an event on teh LCD display occured. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{game_8h_a6bdefb70939e3039e84d738c419156df}{On\+Click\+Start\+Button}} (\mbox{\hyperlink{structevent___t}{event\+\_\+T}} event)
+\begin{DoxyCompactList}\small\item\em Checks if the event happend on the start button. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{game_8h_a0ef9cdc318d902025d8c326997a32b26}{On\+Click\+Jump\+Button}} (\mbox{\hyperlink{structevent___t}{event\+\_\+T}} event)
+\begin{DoxyCompactList}\small\item\em Checks if the event happend on the jump button. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{game_8h_a61154fd764f31f79dfeb7b41e4223fb1}{On\+Click\+Pause\+Button}} (\mbox{\hyperlink{structevent___t}{event\+\_\+T}} event)
+\begin{DoxyCompactList}\small\item\em Checks if the event happend on the pause button. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{game_8h_af370fa573c0d5b981a1e01fd9b733074}{On\+Click\+TRex\+Google}} (\mbox{\hyperlink{structevent___t}{event\+\_\+T}} event)
+\begin{DoxyCompactList}\small\item\em Checks if the event happend on the Google TRex. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{game_8h_a2b6d7f26e13d8b7a056d77777d5e42ef}{On\+Click\+TRex\+Green}} (\mbox{\hyperlink{structevent___t}{event\+\_\+T}} event)
+\begin{DoxyCompactList}\small\item\em Checks if the event happend on the Green TRex. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_ad761fedc3ba80e348131adc7e4e0d1c6}{Move\+Obstacles}} (void)
+\begin{DoxyCompactList}\small\item\em Moves the obstacles on the LCD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_afaa3d3ff2e690233acd9da2cfc27784d}{Move\+TRex}} (void)
+\begin{DoxyCompactList}\small\item\em Moves the T-\/\+Rex on the LCD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_ada08cfa73c6178ec83feb054879ff720}{Init\+TRex\+Jump}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the jump of the T-\/\+Rex. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{game_8h_a300fbcb34a17fb955ddca9225e98c73c}{Check\+Collision}} (void)
+\begin{DoxyCompactList}\small\item\em Checks for a collision between the T-\/\+Rex and the obstacles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_a6eb508a46eef9a8fc063e4c81b854d1a}{Score\+Count}} (void)
+\begin{DoxyCompactList}\small\item\em Counts the current score for the player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2}\label{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2}} 
+\index{game.h@{game.h}!GameState\_t@{GameState\_t}}
+\index{GameState\_t@{GameState\_t}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{GameState\_t}{GameState\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2}{Game\+State\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_NONE@{STATE\_NONE}!game.h@{game.h}}\index{game.h@{game.h}!STATE\_NONE@{STATE\_NONE}}}\mbox{\Hypertarget{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2ac36e5c9ac597253191be83acf0b51d25}\label{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2ac36e5c9ac597253191be83acf0b51d25}} 
+STATE\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_MENU@{STATE\_MENU}!game.h@{game.h}}\index{game.h@{game.h}!STATE\_MENU@{STATE\_MENU}}}\mbox{\Hypertarget{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2a8211ee7ceda72b3c0e9b4a547acb471b}\label{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2a8211ee7ceda72b3c0e9b4a547acb471b}} 
+STATE\+\_\+\+MENU&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_GAME@{STATE\_GAME}!game.h@{game.h}}\index{game.h@{game.h}!STATE\_GAME@{STATE\_GAME}}}\mbox{\Hypertarget{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2add58fbaa83b0bc3973bc4adad84a5d88}\label{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2add58fbaa83b0bc3973bc4adad84a5d88}} 
+STATE\+\_\+\+GAME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_PAUSE@{STATE\_PAUSE}!game.h@{game.h}}\index{game.h@{game.h}!STATE\_PAUSE@{STATE\_PAUSE}}}\mbox{\Hypertarget{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2aea8a8da15a2fe0f9364de2fea14bf947}\label{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2aea8a8da15a2fe0f9364de2fea14bf947}} 
+STATE\+\_\+\+PAUSE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_GAME\_OVER@{STATE\_GAME\_OVER}!game.h@{game.h}}\index{game.h@{game.h}!STATE\_GAME\_OVER@{STATE\_GAME\_OVER}}}\mbox{\Hypertarget{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2a0f76ed984e8b06e62cddac03843a9544}\label{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2a0f76ed984e8b06e62cddac03843a9544}} 
+STATE\+\_\+\+GAME\+\_\+\+OVER&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{game_8h_source_l00018}{18}} of file \mbox{\hyperlink{game_8h_source}{game.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{game_8h_a300fbcb34a17fb955ddca9225e98c73c}\label{game_8h_a300fbcb34a17fb955ddca9225e98c73c}} 
+\index{game.h@{game.h}!CheckCollision@{CheckCollision}}
+\index{CheckCollision@{CheckCollision}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{CheckCollision()}{CheckCollision()}}
+{\footnotesize\ttfamily char Check\+Collision (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks for a collision between the T-\/\+Rex and the obstacles. 
+
+\begin{DoxyReturn}{Returns}
+flag 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{game_8c_source_l00444}{444}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+
+\mbox{\Hypertarget{game_8h_a42dce4ec0f1c11a18f0249d8e6bba48e}\label{game_8h_a42dce4ec0f1c11a18f0249d8e6bba48e}} 
+\index{game.h@{game.h}!CheckEvent@{CheckEvent}}
+\index{CheckEvent@{CheckEvent}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{CheckEvent()}{CheckEvent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structevent___t}{event\+\_\+T}} Check\+Event (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks if an event on teh LCD display occured. 
+
+\begin{DoxyReturn}{Returns}
+event 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{game_8c_source_l00186}{186}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+
+\mbox{\Hypertarget{game_8h_af832dcef9efdbe954d6e1098ffa6ad71}\label{game_8h_af832dcef9efdbe954d6e1098ffa6ad71}} 
+\index{game.h@{game.h}!ContinueGame@{ContinueGame}}
+\index{ContinueGame@{ContinueGame}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{ContinueGame()}{ContinueGame()}}
+{\footnotesize\ttfamily void Continue\+Game (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Resumes the movement. 
+
+
+
+Definition at line \mbox{\hyperlink{game_8c_source_l00129}{129}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+
+\mbox{\Hypertarget{game_8h_a90f4e8637434246478a35dcd91e97d5d}\label{game_8h_a90f4e8637434246478a35dcd91e97d5d}} 
+\index{game.h@{game.h}!DisplayGameOver@{DisplayGameOver}}
+\index{DisplayGameOver@{DisplayGameOver}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{DisplayGameOver()}{DisplayGameOver()}}
+{\footnotesize\ttfamily void Display\+Game\+Over (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+displays the Game\+Over state and inits a delay 
+
+
+
+Definition at line \mbox{\hyperlink{game_8c_source_l00092}{92}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+
+\mbox{\Hypertarget{game_8h_a9b4ca96e33c7f10e1074079d05fae8e7}\label{game_8h_a9b4ca96e33c7f10e1074079d05fae8e7}} 
+\index{game.h@{game.h}!GameInit@{GameInit}}
+\index{GameInit@{GameInit}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{GameInit()}{GameInit()}}
+{\footnotesize\ttfamily void Game\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the game. 
+
+
+
+Definition at line \mbox{\hyperlink{game_8c_source_l00045}{45}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+
+\mbox{\Hypertarget{game_8h_a0855a5c16d1b49871f145a29263e9dfe}\label{game_8h_a0855a5c16d1b49871f145a29263e9dfe}} 
+\index{game.h@{game.h}!GetGameState@{GetGameState}}
+\index{GetGameState@{GetGameState}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{GetGameState()}{GetGameState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2}{Game\+State\+\_\+t}} Get\+Game\+State (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returns the current game state. 
+
+\begin{DoxyReturn}{Returns}
+Game state 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{game_8c_source_l00069}{69}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+
+\mbox{\Hypertarget{game_8h_ada08cfa73c6178ec83feb054879ff720}\label{game_8h_ada08cfa73c6178ec83feb054879ff720}} 
+\index{game.h@{game.h}!InitTRexJump@{InitTRexJump}}
+\index{InitTRexJump@{InitTRexJump}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{InitTRexJump()}{InitTRexJump()}}
+{\footnotesize\ttfamily void Init\+TRex\+Jump (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the jump of the T-\/\+Rex. 
+
+
+
+Definition at line \mbox{\hyperlink{game_8c_source_l00330}{330}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+
+\mbox{\Hypertarget{game_8h_ad761fedc3ba80e348131adc7e4e0d1c6}\label{game_8h_ad761fedc3ba80e348131adc7e4e0d1c6}} 
+\index{game.h@{game.h}!MoveObstacles@{MoveObstacles}}
+\index{MoveObstacles@{MoveObstacles}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{MoveObstacles()}{MoveObstacles()}}
+{\footnotesize\ttfamily void Move\+Obstacles (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Moves the obstacles on the LCD. 
+
+
+
+Definition at line \mbox{\hyperlink{game_8c_source_l00240}{240}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+
+\mbox{\Hypertarget{game_8h_afaa3d3ff2e690233acd9da2cfc27784d}\label{game_8h_afaa3d3ff2e690233acd9da2cfc27784d}} 
+\index{game.h@{game.h}!MoveTRex@{MoveTRex}}
+\index{MoveTRex@{MoveTRex}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{MoveTRex()}{MoveTRex()}}
+{\footnotesize\ttfamily void Move\+TRex (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Moves the T-\/\+Rex on the LCD. 
+
+
+
+Definition at line \mbox{\hyperlink{game_8c_source_l00276}{276}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+
+\mbox{\Hypertarget{game_8h_a0ef9cdc318d902025d8c326997a32b26}\label{game_8h_a0ef9cdc318d902025d8c326997a32b26}} 
+\index{game.h@{game.h}!OnClickJumpButton@{OnClickJumpButton}}
+\index{OnClickJumpButton@{OnClickJumpButton}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{OnClickJumpButton()}{OnClickJumpButton()}}
+{\footnotesize\ttfamily char On\+Click\+Jump\+Button (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevent___t}{event\+\_\+T}}}]{event }\end{DoxyParamCaption})}
+
+
+
+Checks if the event happend on the jump button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+flag 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{game_8c_source_l00235}{235}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+
+\mbox{\Hypertarget{game_8h_a61154fd764f31f79dfeb7b41e4223fb1}\label{game_8h_a61154fd764f31f79dfeb7b41e4223fb1}} 
+\index{game.h@{game.h}!OnClickPauseButton@{OnClickPauseButton}}
+\index{OnClickPauseButton@{OnClickPauseButton}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{OnClickPauseButton()}{OnClickPauseButton()}}
+{\footnotesize\ttfamily char On\+Click\+Pause\+Button (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevent___t}{event\+\_\+T}}}]{event }\end{DoxyParamCaption})}
+
+
+
+Checks if the event happend on the pause button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+flag 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{game_8c_source_l00236}{236}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+
+\mbox{\Hypertarget{game_8h_a6bdefb70939e3039e84d738c419156df}\label{game_8h_a6bdefb70939e3039e84d738c419156df}} 
+\index{game.h@{game.h}!OnClickStartButton@{OnClickStartButton}}
+\index{OnClickStartButton@{OnClickStartButton}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{OnClickStartButton()}{OnClickStartButton()}}
+{\footnotesize\ttfamily char On\+Click\+Start\+Button (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevent___t}{event\+\_\+T}}}]{event }\end{DoxyParamCaption})}
+
+
+
+Checks if the event happend on the start button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+flag 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{game_8c_source_l00234}{234}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+
+\mbox{\Hypertarget{game_8h_af370fa573c0d5b981a1e01fd9b733074}\label{game_8h_af370fa573c0d5b981a1e01fd9b733074}} 
+\index{game.h@{game.h}!OnClickTRexGoogle@{OnClickTRexGoogle}}
+\index{OnClickTRexGoogle@{OnClickTRexGoogle}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{OnClickTRexGoogle()}{OnClickTRexGoogle()}}
+{\footnotesize\ttfamily char On\+Click\+TRex\+Google (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevent___t}{event\+\_\+T}}}]{event }\end{DoxyParamCaption})}
+
+
+
+Checks if the event happend on the Google TRex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+flag 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{game_8c_source_l00237}{237}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+
+\mbox{\Hypertarget{game_8h_a2b6d7f26e13d8b7a056d77777d5e42ef}\label{game_8h_a2b6d7f26e13d8b7a056d77777d5e42ef}} 
+\index{game.h@{game.h}!OnClickTRexGreen@{OnClickTRexGreen}}
+\index{OnClickTRexGreen@{OnClickTRexGreen}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{OnClickTRexGreen()}{OnClickTRexGreen()}}
+{\footnotesize\ttfamily char On\+Click\+TRex\+Green (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structevent___t}{event\+\_\+T}}}]{event }\end{DoxyParamCaption})}
+
+
+
+Checks if the event happend on the Green TRex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+flag 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{game_8c_source_l00238}{238}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+
+\mbox{\Hypertarget{game_8h_a5d9284d1778839fc536b4e99330b47f8}\label{game_8h_a5d9284d1778839fc536b4e99330b47f8}} 
+\index{game.h@{game.h}!PauseGame@{PauseGame}}
+\index{PauseGame@{PauseGame}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{PauseGame()}{PauseGame()}}
+{\footnotesize\ttfamily void Pause\+Game (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Stops the movement of the T-\/\+Rex aswell as the obstacles. 
+
+
+
+Definition at line \mbox{\hyperlink{game_8c_source_l00122}{122}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+
+\mbox{\Hypertarget{game_8h_a6eb508a46eef9a8fc063e4c81b854d1a}\label{game_8h_a6eb508a46eef9a8fc063e4c81b854d1a}} 
+\index{game.h@{game.h}!ScoreCount@{ScoreCount}}
+\index{ScoreCount@{ScoreCount}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{ScoreCount()}{ScoreCount()}}
+{\footnotesize\ttfamily void Score\+Count (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Counts the current score for the player. 
+
+
+
+Definition at line \mbox{\hyperlink{game_8c_source_l00338}{338}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+
+\mbox{\Hypertarget{game_8h_abd3285ce77dcb58203e8f15c7bdbc9a4}\label{game_8h_abd3285ce77dcb58203e8f15c7bdbc9a4}} 
+\index{game.h@{game.h}!SelectTrexGoogle@{SelectTrexGoogle}}
+\index{SelectTrexGoogle@{SelectTrexGoogle}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{SelectTrexGoogle()}{SelectTrexGoogle()}}
+{\footnotesize\ttfamily void Select\+Trex\+Google (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Selects the Google T-\/\+Rex as player character. 
+
+
+
+Definition at line \mbox{\hyperlink{game_8c_source_l00136}{136}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+
+\mbox{\Hypertarget{game_8h_a0507e5338e4a45f29c15c549d5c2db0a}\label{game_8h_a0507e5338e4a45f29c15c549d5c2db0a}} 
+\index{game.h@{game.h}!SelectTrexGreen@{SelectTrexGreen}}
+\index{SelectTrexGreen@{SelectTrexGreen}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{SelectTrexGreen()}{SelectTrexGreen()}}
+{\footnotesize\ttfamily void Select\+Trex\+Green (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Selects the green T-\/\+Rex as player character. 
+
+
+
+Definition at line \mbox{\hyperlink{game_8c_source_l00158}{158}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+
+\mbox{\Hypertarget{game_8h_a955012c003f998dbe37f8b7a282fa478}\label{game_8h_a955012c003f998dbe37f8b7a282fa478}} 
+\index{game.h@{game.h}!ShowStartMenu@{ShowStartMenu}}
+\index{ShowStartMenu@{ShowStartMenu}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{ShowStartMenu()}{ShowStartMenu()}}
+{\footnotesize\ttfamily void Show\+Start\+Menu (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+displays the start menu 
+
+
+
+Definition at line \mbox{\hyperlink{game_8c_source_l00071}{71}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+
+\mbox{\Hypertarget{game_8h_ae419198eb7bcb4f54ab9aa17ea20e61d}\label{game_8h_ae419198eb7bcb4f54ab9aa17ea20e61d}} 
+\index{game.h@{game.h}!StartGame@{StartGame}}
+\index{StartGame@{StartGame}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{StartGame()}{StartGame()}}
+{\footnotesize\ttfamily void Start\+Game (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Starts the game, draw T-\/\+Rex etc. 
+
+
+
+Definition at line \mbox{\hyperlink{game_8c_source_l00098}{98}} of file \mbox{\hyperlink{game_8c_source}{game.\+c}}.
+
