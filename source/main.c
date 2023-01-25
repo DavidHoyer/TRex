@@ -19,15 +19,13 @@ int main()
 	GameInit();								// Initialize Game
 
 	// Main loop
-	while(TRUE){
+	while(true){
 
 		ScoreCount();						//Counting GameScore when running
-		event = CheckEvent();				//Check for incomming Touch event
-
+		event = CheckEvent();				//Check for incoming Touch event
 
 		//--- Handle Touch Events on the LCD Screen
 		if(event.eventFlag){
-
 			switch(GetGameState())
 			{
 				case STATE_PAUSE:
@@ -63,15 +61,15 @@ int main()
 		}
 
 		if(GetGameState() == STATE_GAME){
-			MoveObstacles();
-			MoveTRex();
+			MoveObstacles();				//--- Move obstacles to the left
+			MoveTRex();						//--- If T-Rex jump is initialized, move T-Rex up or down
 
 			//check if the T-Rex collided with one of the obstacles
 			if(CheckCollision()){
-				DisplayGameOver();
-				ShowStartMenu();
+				DisplayGameOver();			//--- Game Over with a delay
+				ShowStartMenu();			//--- Restart Game
 			}
 		}
 
 	}//-- End while
-};
+};//-- End main

@@ -4,6 +4,7 @@
  *  Created on: 30.12.2022
  *      Author: lukir
  */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "include/game.h"

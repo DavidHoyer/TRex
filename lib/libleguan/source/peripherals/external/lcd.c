@@ -177,7 +177,7 @@ result_t LCD_Pixel(uint16_t x, uint16_t y) {
 
 result_t LCD_Rect(uint16_t x, uint16_t y, uint16_t width, uint16_t height) {
     /* Set working region */
-    R_TRY(LCD_SetDrawArea(x, y, x + width -1, y + height-1));
+    R_TRY(LCD_SetDrawArea(x, y, x + width - 1, y + height - 1));
     LCD_EnableDrawMode();
 
     /* Fill working region with color */
@@ -262,7 +262,7 @@ result_t LCD_Circle(uint16_t center_x, uint16_t center_y, uint16_t radius) {
 
 result_t LCD_Character(uint16_t x, uint16_t y, char c) {
 	/* Set working region same size as character bitmap */
-    R_TRY(LCD_SetDrawArea(x, y, x + CONSOLE_FONT_CHAR_WIDTH, y + CONSOLE_FONT_CHAR_HEIGHT));
+    R_TRY(LCD_SetDrawArea(x, y, x + CONSOLE_FONT_CHAR_WIDTH - 1, y + CONSOLE_FONT_CHAR_HEIGHT - 1));
     LCD_EnableDrawMode();
 
     /* Draw all 1s in bitmap with foreground color, all 0s with background color */
