@@ -339,8 +339,8 @@ void MoveObstacles(void){
 			//--- if previous obstacle is visible
 			if(obstacleBmp[j].visible == TRUE){
 				//--- give random funktion a seed
-				srand(j*18398/(HAL_GetTick()%1000));
-				//--- if last obstacle moved 300 - 450 pixels (random distance)
+				srand(j*20000/(HAL_GetTick()%1000+ 1));
+				//--- if last obstacle moved 300, 375 or 450 pixels (random distance)
 				if(obstacleBmp[j].x < LCD_WIDTH - (400 + ((rand()%3-1) *75))){
 					//--- create new obstacle
 					DrawBmp(&obstacleBmp[i], LCD_WIDTH - obstacleBmp[i].w, LCD_HEIGHT - GROUND_HEIGHT - obstacleBmp[i].h);
