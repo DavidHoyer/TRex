@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['pausegame_0',['PauseGame',['../game_8h.html#a5d9284d1778839fc536b4e99330b47f8',1,'game.h']]],
-  ['pixel_1',['pixel',['../structpixel.html',1,'']]],
-  ['pixels_2',['pixels',['../structbmp__t.html#ac2fbbc7d13f3e49c45e8dd230b4f302c',1,'bmp_t']]]
+  ['next_0',['next',['../structpixel.html#aa25911c1611c0535f58a8d4a8084ce39',1,'pixel']]]
 ];

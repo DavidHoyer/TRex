@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['x_0',['x',['../structevent___t.html#a4dde988b1b2adba65ae3efa69f65d960',1,'event_T::x()'],['../structpixel.html#a4dde988b1b2adba65ae3efa69f65d960',1,'pixel::x()'],['../structbmp__t.html#a4dde988b1b2adba65ae3efa69f65d960',1,'bmp_t::x()']]]
+  ['trex_5fpixeldatagoogle_0',['tRex_pixelDataGoogle',['../resource_8h.html#a80649fed93ffd54db0b367a9cb3a6a64',1,'resource.h']]],
+  ['trex_5fpixeldatagreen_1',['tRex_pixelDataGreen',['../resource_8h.html#a73df7fe803eeff5237dcdbe875cb29b3',1,'resource.h']]]
 ];

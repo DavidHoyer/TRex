@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>T-Rex_Game: C:/Users/Dave/Desktop/TRex/source/include/objects.h Source File</title>
+<title>T-Rex Game: C:/Users/Dave/Desktop/T_Rex_Game/source/include/objects.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -20,8 +24,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="Dino_Google.png"/></td>
   <td id="projectalign">
-   <div id="projectname">T-Rex_Game<span id="projectnumber">&#160;V1.0</span>
+   <div id="projectname">T-Rex Game
    </div>
   </td>
  </tr>
@@ -46,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('objects_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,11 +89,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d522931ffa1371640980b621734a4381.html">Users</a></li><li class="navelem"><a class="el" href="dir_aa8fd42f76cdf382b2329e41e1267459.html">Dave</a></li><li class="navelem"><a class="el" href="dir_4e0322d9fd8988d07ae9a2c6285e14c0.html">Desktop</a></li><li class="navelem"><a class="el" href="dir_9919fb49ea127868f25f226832139e01.html">TRex</a></li><li class="navelem"><a class="el" href="dir_13e51a912bd0d3d349ae125a1491783a.html">source</a></li><li class="navelem"><a class="el" href="dir_fff8ad36a1be43404688f8b3e5476a71.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">objects.h</div></div>
 </div><!--header-->
@@ -90,9 +107,9 @@ $(function() {
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">//*** Defines                                                       ***</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">//*********************************************************************</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#define TRUE        1</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#define FALSE       0</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define BGRA565_COLOR(r, g, b, a)   { ((uint8_t)(b)) &gt;&gt; 3, ((uint8_t)(g)) &gt;&gt; 2, ((uint8_t)(r)) &gt;&gt; 3, ((uint8_t)(a)) }</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="objects_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">   22</a></span><span class="preprocessor">#define TRUE        1</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="objects_8h.html#aa93f0eb578d23995850d61f7d61c55c1">   23</a></span><span class="preprocessor">#define FALSE       0</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="objects_8h.html#a233b95e49f1419b52922a0b4364b3c73">   24</a></span><span class="preprocessor">#define BGRA565_COLOR(r, g, b, a)   { ((uint8_t)(b)) &gt;&gt; 3, ((uint8_t)(g)) &gt;&gt; 2, ((uint8_t)(r)) &gt;&gt; 3, ((uint8_t)(a)) }</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">//*********************************************************************</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">//*** Structs                                                       ***</span></div>
@@ -103,7 +120,7 @@ $(function() {
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structpixel.html#a4dde988b1b2adba65ae3efa69f65d960">   36</a></span>    uint16_t        <a class="code hl_variable" href="structpixel.html#a4dde988b1b2adba65ae3efa69f65d960">x</a>;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structpixel.html#ab0580f504a7428539be299fa71565f30">   38</a></span>    uint16_t        <a class="code hl_variable" href="structpixel.html#ab0580f504a7428539be299fa71565f30">y</a>;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structpixel.html#aa25911c1611c0535f58a8d4a8084ce39">   40</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structpixel.html">pixel</a>    *<a class="code hl_variable" href="structpixel.html#aa25911c1611c0535f58a8d4a8084ce39">next</a>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}<a class="code hl_struct" href="structpixel.html">pixel_t</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="objects_8h.html#a2dda454dfd99aacce45902fa05fecf03">   41</a></span>}<a class="code hl_typedef" href="objects_8h.html#a2dda454dfd99aacce45902fa05fecf03">pixel_t</a>;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
@@ -141,38 +158,41 @@ $(function() {
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="objects_8h.html#a51f4d7975a46122a4b7074b194fbe3fc">  137</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="objects_8h.html#a51f4d7975a46122a4b7074b194fbe3fc">ConvertArray</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> pixelData[][4], <span class="keyword">const</span> uint16_t w, <span class="keyword">const</span> uint16_t h);</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="objects_8h.html#a87ae89e93f293253031ef38e653c8cb2">  146</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="objects_8h.html#a87ae89e93f293253031ef38e653c8cb2">LCD_Rect_Gradient</a>(uint16_t <a class="code hl_variable" href="structpixel.html#a4dde988b1b2adba65ae3efa69f65d960">x</a>, uint16_t <a class="code hl_variable" href="structpixel.html#ab0580f504a7428539be299fa71565f30">y</a>, uint16_t width, uint16_t height, LCD_Color_t clr1, LCD_Color_t clr2);</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="preprocessor">#endif </span><span class="comment">/* INCLUDE_OBJECTS_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="objects_8h.html#a87ae89e93f293253031ef38e653c8cb2">  145</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="objects_8h.html#a87ae89e93f293253031ef38e653c8cb2">LCD_Rect_Gradient</a>(uint16_t <a class="code hl_variable" href="structpixel.html#a4dde988b1b2adba65ae3efa69f65d960">x</a>, uint16_t <a class="code hl_variable" href="structpixel.html#ab0580f504a7428539be299fa71565f30">y</a>, uint16_t width, uint16_t height, LCD_Color_t clr1, LCD_Color_t clr2);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="preprocessor">#endif </span><span class="comment">/* INCLUDE_OBJECTS_H_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aobjects_8h_html_a1bfc0921cde12f53426cd7b393776668"><div class="ttname"><a href="objects_8h.html#a1bfc0921cde12f53426cd7b393776668">DrawBmp</a></div><div class="ttdeci">void DrawBmp(bmp_t *bmp, const uint16_t x, const uint16_t y)</div><div class="ttdoc">Draw funktion for BMP on LCD without transparent pixels.</div></div>
+<div class="ttc" id="aobjects_8h_html_a2dda454dfd99aacce45902fa05fecf03"><div class="ttname"><a href="objects_8h.html#a2dda454dfd99aacce45902fa05fecf03">pixel_t</a></div><div class="ttdeci">struct pixel pixel_t</div></div>
 <div class="ttc" id="aobjects_8h_html_a391bb0403481a8dc57ec0427722f00d8"><div class="ttname"><a href="objects_8h.html#a391bb0403481a8dc57ec0427722f00d8">SortBoarder</a></div><div class="ttdeci">pixel_t * SortBoarder(pixel_t *head)</div><div class="ttdoc">sorts the list of boarder pixel, so they go along the boarder in one direction</div></div>
 <div class="ttc" id="aobjects_8h_html_a51f4d7975a46122a4b7074b194fbe3fc"><div class="ttname"><a href="objects_8h.html#a51f4d7975a46122a4b7074b194fbe3fc">ConvertArray</a></div><div class="ttdeci">void ConvertArray(unsigned char pixelData[][4], const uint16_t w, const uint16_t h)</div><div class="ttdoc">converts BGRA_8888 to BGRA_5658 color code</div></div>
 <div class="ttc" id="aobjects_8h_html_a57451f74eca71a9eefd5f5a9e97ae467"><div class="ttname"><a href="objects_8h.html#a57451f74eca71a9eefd5f5a9e97ae467">DrawBmpWithout_A</a></div><div class="ttdeci">void DrawBmpWithout_A(bmp_t *bmp, const uint16_t x, const uint16_t y)</div><div class="ttdoc">Draw funktion for BMP on LCD with transparent pixels.</div></div>
 <div class="ttc" id="aobjects_8h_html_a6c1449df6f92a8d35b7d15cbc99d4084"><div class="ttname"><a href="objects_8h.html#a6c1449df6f92a8d35b7d15cbc99d4084">DeleteBmp</a></div><div class="ttdeci">void DeleteBmp(bmp_t *bmp)</div><div class="ttdoc">Deletes bmp from LCD, means clear the are of the bmp.</div></div>
-<div class="ttc" id="aobjects_8h_html_a87ae89e93f293253031ef38e653c8cb2"><div class="ttname"><a href="objects_8h.html#a87ae89e93f293253031ef38e653c8cb2">LCD_Rect_Gradient</a></div><div class="ttdeci">void LCD_Rect_Gradient(uint16_t x, uint16_t y, uint16_t width, uint16_t height, LCD_Color_t clr1, LCD_Color_t clr2)</div><div class="ttdoc">creates gradient boarder for T-Rex selection</div></div>
+<div class="ttc" id="aobjects_8h_html_a87ae89e93f293253031ef38e653c8cb2"><div class="ttname"><a href="objects_8h.html#a87ae89e93f293253031ef38e653c8cb2">LCD_Rect_Gradient</a></div><div class="ttdeci">void LCD_Rect_Gradient(uint16_t x, uint16_t y, uint16_t width, uint16_t height, LCD_Color_t clr1, LCD_Color_t clr2)</div><div class="ttdoc">creates gradient boarder on the horizontal axis</div></div>
 <div class="ttc" id="aobjects_8h_html_a891b42c97947a47ff0eb8e5fe4f2f12d"><div class="ttname"><a href="objects_8h.html#a891b42c97947a47ff0eb8e5fe4f2f12d">CreateEdges</a></div><div class="ttdeci">pixel_t * CreateEdges(pixel_t *head)</div><div class="ttdoc">go's along the boarder and checks for edge pixels</div></div>
 <div class="ttc" id="aobjects_8h_html_a952c22a6dda726ce1a517cb8d5cde5a4"><div class="ttname"><a href="objects_8h.html#a952c22a6dda726ce1a517cb8d5cde5a4">ShiftBmp</a></div><div class="ttdeci">void ShiftBmp(bmp_t *bmp, const uint16_t ix, const uint16_t iy)</div><div class="ttdoc">shifts bmp for a given amount of pixels</div></div>
 <div class="ttc" id="aobjects_8h_html_ab66f6d9162af4deedcacd5197026e61d"><div class="ttname"><a href="objects_8h.html#ab66f6d9162af4deedcacd5197026e61d">LcdClearArea</a></div><div class="ttdeci">void LcdClearArea(const uint16_t x1, const uint16_t y1, const uint16_t x2, const uint16_t y2)</div><div class="ttdoc">clears given area on LCD</div></div>
 <div class="ttc" id="aobjects_8h_html_ab979e3c656d76b111007bfe0b70398d3"><div class="ttname"><a href="objects_8h.html#ab979e3c656d76b111007bfe0b70398d3">MoveBmp</a></div><div class="ttdeci">void MoveBmp(bmp_t *bmp, const uint16_t x, const uint16_t y)</div><div class="ttdoc">moves an object to a given position</div></div>
 <div class="ttc" id="aobjects_8h_html_ad239208f4f9a6cc2a638e48e0645dd10"><div class="ttname"><a href="objects_8h.html#ad239208f4f9a6cc2a638e48e0645dd10">GetBoarder</a></div><div class="ttdeci">pixel_t * GetBoarder(bmp_t bmp)</div><div class="ttdoc">creates a list of boarder pixels, using the moore-edgefinding algorithm</div></div>
-<div class="ttc" id="astructbmp__t_html"><div class="ttname"><a href="structbmp__t.html">bmp_t</a></div><div class="ttdoc">This struct is used to save all the important data of a game object.</div><div class="ttdef"><b>Definition:</b> objects.h:49</div></div>
-<div class="ttc" id="astructbmp__t_html_a4c0237fdbba78af703ee275cc492a8b1"><div class="ttname"><a href="structbmp__t.html#a4c0237fdbba78af703ee275cc492a8b1">bmp_t::selected</a></div><div class="ttdeci">unsigned char selected</div><div class="ttdef"><b>Definition:</b> objects.h:63</div></div>
-<div class="ttc" id="astructbmp__t_html_a4dde988b1b2adba65ae3efa69f65d960"><div class="ttname"><a href="structbmp__t.html#a4dde988b1b2adba65ae3efa69f65d960">bmp_t::x</a></div><div class="ttdeci">uint16_t x</div><div class="ttdef"><b>Definition:</b> objects.h:51</div></div>
-<div class="ttc" id="astructbmp__t_html_a63226973f6a9cd40c51a604af2e1a9a5"><div class="ttname"><a href="structbmp__t.html#a63226973f6a9cd40c51a604af2e1a9a5">bmp_t::visible</a></div><div class="ttdeci">unsigned char visible</div><div class="ttdef"><b>Definition:</b> objects.h:61</div></div>
-<div class="ttc" id="astructbmp__t_html_a69e28057d97f59f81862a467cc6299fc"><div class="ttname"><a href="structbmp__t.html#a69e28057d97f59f81862a467cc6299fc">bmp_t::w</a></div><div class="ttdeci">uint16_t w</div><div class="ttdef"><b>Definition:</b> objects.h:55</div></div>
-<div class="ttc" id="astructbmp__t_html_a7acb96f921fe521cc156e7d9eaa3d22d"><div class="ttname"><a href="structbmp__t.html#a7acb96f921fe521cc156e7d9eaa3d22d">bmp_t::head</a></div><div class="ttdeci">pixel_t * head</div><div class="ttdef"><b>Definition:</b> objects.h:65</div></div>
-<div class="ttc" id="astructbmp__t_html_a8bf5747847b23fa2d39ef956e10bfbd3"><div class="ttname"><a href="structbmp__t.html#a8bf5747847b23fa2d39ef956e10bfbd3">bmp_t::h</a></div><div class="ttdeci">uint16_t h</div><div class="ttdef"><b>Definition:</b> objects.h:57</div></div>
-<div class="ttc" id="astructbmp__t_html_ab0580f504a7428539be299fa71565f30"><div class="ttname"><a href="structbmp__t.html#ab0580f504a7428539be299fa71565f30">bmp_t::y</a></div><div class="ttdeci">uint16_t y</div><div class="ttdef"><b>Definition:</b> objects.h:53</div></div>
-<div class="ttc" id="astructpixel_html"><div class="ttname"><a href="structpixel.html">pixel</a></div><div class="ttdoc">This struct is used to creat a linked list of boarder pixel.</div><div class="ttdef"><b>Definition:</b> objects.h:34</div></div>
-<div class="ttc" id="astructpixel_html_a4dde988b1b2adba65ae3efa69f65d960"><div class="ttname"><a href="structpixel.html#a4dde988b1b2adba65ae3efa69f65d960">pixel::x</a></div><div class="ttdeci">uint16_t x</div><div class="ttdef"><b>Definition:</b> objects.h:36</div></div>
-<div class="ttc" id="astructpixel_html_aa25911c1611c0535f58a8d4a8084ce39"><div class="ttname"><a href="structpixel.html#aa25911c1611c0535f58a8d4a8084ce39">pixel::next</a></div><div class="ttdeci">struct pixel * next</div><div class="ttdef"><b>Definition:</b> objects.h:40</div></div>
-<div class="ttc" id="astructpixel_html_ab0580f504a7428539be299fa71565f30"><div class="ttname"><a href="structpixel.html#ab0580f504a7428539be299fa71565f30">pixel::y</a></div><div class="ttdeci">uint16_t y</div><div class="ttdef"><b>Definition:</b> objects.h:38</div></div>
+<div class="ttc" id="astructbmp__t_html"><div class="ttname"><a href="structbmp__t.html">bmp_t</a></div><div class="ttdoc">This struct is used to save all the important data of a game object.</div><div class="ttdef"><b>Definition:</b> <a href="objects_8h_source.html#l00048">objects.h:49</a></div></div>
+<div class="ttc" id="astructbmp__t_html_a4c0237fdbba78af703ee275cc492a8b1"><div class="ttname"><a href="structbmp__t.html#a4c0237fdbba78af703ee275cc492a8b1">bmp_t::selected</a></div><div class="ttdeci">unsigned char selected</div><div class="ttdef"><b>Definition:</b> <a href="objects_8h_source.html#l00063">objects.h:63</a></div></div>
+<div class="ttc" id="astructbmp__t_html_a4dde988b1b2adba65ae3efa69f65d960"><div class="ttname"><a href="structbmp__t.html#a4dde988b1b2adba65ae3efa69f65d960">bmp_t::x</a></div><div class="ttdeci">uint16_t x</div><div class="ttdef"><b>Definition:</b> <a href="objects_8h_source.html#l00051">objects.h:51</a></div></div>
+<div class="ttc" id="astructbmp__t_html_a63226973f6a9cd40c51a604af2e1a9a5"><div class="ttname"><a href="structbmp__t.html#a63226973f6a9cd40c51a604af2e1a9a5">bmp_t::visible</a></div><div class="ttdeci">unsigned char visible</div><div class="ttdef"><b>Definition:</b> <a href="objects_8h_source.html#l00061">objects.h:61</a></div></div>
+<div class="ttc" id="astructbmp__t_html_a69e28057d97f59f81862a467cc6299fc"><div class="ttname"><a href="structbmp__t.html#a69e28057d97f59f81862a467cc6299fc">bmp_t::w</a></div><div class="ttdeci">uint16_t w</div><div class="ttdef"><b>Definition:</b> <a href="objects_8h_source.html#l00055">objects.h:55</a></div></div>
+<div class="ttc" id="astructbmp__t_html_a7acb96f921fe521cc156e7d9eaa3d22d"><div class="ttname"><a href="structbmp__t.html#a7acb96f921fe521cc156e7d9eaa3d22d">bmp_t::head</a></div><div class="ttdeci">pixel_t * head</div><div class="ttdef"><b>Definition:</b> <a href="objects_8h_source.html#l00065">objects.h:65</a></div></div>
+<div class="ttc" id="astructbmp__t_html_a8bf5747847b23fa2d39ef956e10bfbd3"><div class="ttname"><a href="structbmp__t.html#a8bf5747847b23fa2d39ef956e10bfbd3">bmp_t::h</a></div><div class="ttdeci">uint16_t h</div><div class="ttdef"><b>Definition:</b> <a href="objects_8h_source.html#l00057">objects.h:57</a></div></div>
+<div class="ttc" id="astructbmp__t_html_ab0580f504a7428539be299fa71565f30"><div class="ttname"><a href="structbmp__t.html#ab0580f504a7428539be299fa71565f30">bmp_t::y</a></div><div class="ttdeci">uint16_t y</div><div class="ttdef"><b>Definition:</b> <a href="objects_8h_source.html#l00053">objects.h:53</a></div></div>
+<div class="ttc" id="astructpixel_html"><div class="ttname"><a href="structpixel.html">pixel</a></div><div class="ttdoc">This struct is used to creat a linked list of boarder pixel.</div><div class="ttdef"><b>Definition:</b> <a href="objects_8h_source.html#l00033">objects.h:34</a></div></div>
+<div class="ttc" id="astructpixel_html_a4dde988b1b2adba65ae3efa69f65d960"><div class="ttname"><a href="structpixel.html#a4dde988b1b2adba65ae3efa69f65d960">pixel::x</a></div><div class="ttdeci">uint16_t x</div><div class="ttdef"><b>Definition:</b> <a href="objects_8h_source.html#l00036">objects.h:36</a></div></div>
+<div class="ttc" id="astructpixel_html_aa25911c1611c0535f58a8d4a8084ce39"><div class="ttname"><a href="structpixel.html#aa25911c1611c0535f58a8d4a8084ce39">pixel::next</a></div><div class="ttdeci">struct pixel * next</div><div class="ttdef"><b>Definition:</b> <a href="objects_8h_source.html#l00040">objects.h:40</a></div></div>
+<div class="ttc" id="astructpixel_html_ab0580f504a7428539be299fa71565f30"><div class="ttname"><a href="structpixel.html#ab0580f504a7428539be299fa71565f30">pixel::y</a></div><div class="ttdeci">uint16_t y</div><div class="ttdef"><b>Definition:</b> <a href="objects_8h_source.html#l00038">objects.h:38</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d522931ffa1371640980b621734a4381.html">Users</a></li><li class="navelem"><a class="el" href="dir_aa8fd42f76cdf382b2329e41e1267459.html">Dave</a></li><li class="navelem"><a class="el" href="dir_4e0322d9fd8988d07ae9a2c6285e14c0.html">Desktop</a></li><li class="navelem"><a class="el" href="dir_f4030a940d25ba45015d29412ef9a0e7.html">T_Rex_Game</a></li><li class="navelem"><a class="el" href="dir_34cd87edfbcacfc84ed959cf770b8cdf.html">source</a></li><li class="navelem"><a class="el" href="dir_9efc4266eb61444cc906d99fb3b2317d.html">include</a></li><li class="navelem"><a class="el" href="objects_8h.html">objects.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
 </body>
 </html>
