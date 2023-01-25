@@ -117,8 +117,8 @@ pixel_t *GetBoarder (bmp_t bmp);
 
 /**
  * @brief sorts the list of boarder pixel, so they go along the boarder in one direction
- * @param head : head of boarder pixel list
- * @return head of sorted boarder pixel list
+ * @param head : head of border pixel list
+ * @return head of sorted border pixel list
  */
 pixel_t *SortBoarder(pixel_t *head);
 
@@ -132,19 +132,16 @@ pixel_t *CreateEdges(pixel_t *head);
 /**
  * @brief converts BGRA_8888 to BGRA_5658 color code
  * @param pixelData :  pixel array with color values
- * @param w, h : with and hight of bmp
+ * @param w, h : width and height of bmp
  */
 void ConvertArray(unsigned char pixelData[][4], const uint16_t w, const uint16_t h);
 
 /**
- * @brief creates gradient boarder for T-Rex selection
+ * @brief creates gradient boarder on the horizontal axis
  * @param x, y :  x and y coordinates of rectangle
- * @param width, height : with and hight of rectangle
+ * @param width, height : width and height of rectangle
  * @param clr1, clr 2: start and end color of gradient color
- *
  */
 void LCD_Rect_Gradient(uint16_t x, uint16_t y, uint16_t width, uint16_t height, LCD_Color_t clr1, LCD_Color_t clr2);
-
-
 
 #endif /* INCLUDE_OBJECTS_H_ */

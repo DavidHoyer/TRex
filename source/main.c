@@ -19,7 +19,7 @@
 int main()
 
 {
-	event_T event;							//Event struct for Touch input
+	event_T event;							// Event struct for Touch input
 
 	CUBEMX_Init();							// Initialize Hardware
 	LEGUAN_Init();							// Initialize Leguan board
@@ -29,8 +29,8 @@ int main()
 	// Main loop
 	while(true){
 
-		ScoreCount();						//Counting GameScore when running
-		event = CheckEvent();				//Check for incoming Touch event
+		ScoreCount();						// Counting GameScore when running
+		event = CheckEvent();				// Check for incoming Touch event
 
 		//--- Handle Touch Events on the LCD Screen
 		if(event.eventFlag){
@@ -69,13 +69,13 @@ int main()
 		}
 
 		if(GetGameState() == STATE_GAME){
-			MoveObstacles();				//--- Move obstacles to the left
-			MoveTRex();						//--- If T-Rex jump is initialized, move T-Rex up or down
+			MoveObstacles();				// Move obstacles to the left
+			MoveTRex();						// If T-Rex jump is initialized, move T-Rex up or down
 
 			//check if the T-Rex collided with one of the obstacles
 			if(CheckCollision()){
-				DisplayGameOver();			//--- Game Over with a delay
-				ShowStartMenu();			//--- Restart Game
+				DisplayGameOver();			// Game Over with a delay
+				ShowStartMenu();			// Restart Game
 			}
 		}
 

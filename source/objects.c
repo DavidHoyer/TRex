@@ -115,7 +115,6 @@ void DrawBmpWithout_A(bmp_t *bmp, const uint16_t x, const uint16_t y)
 //*** 	-bmp struct													***
 //*** 	-x and y position											***
 //*********************************************************************
-
 void MoveBmp(bmp_t *bmp, const uint16_t x, const uint16_t y){
 
 	//--- if bmp is not visible, don't move
