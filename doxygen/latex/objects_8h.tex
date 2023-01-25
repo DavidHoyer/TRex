@@ -1,0 +1,262 @@
+\hypertarget{objects_8h}{}\doxysection{C\+:/\+Users/\+Dave/\+Desktop/\+TRex/source/include/objects.h File Reference}
+\label{objects_8h}\index{C:/Users/Dave/Desktop/TRex/source/include/objects.h@{C:/Users/Dave/Desktop/TRex/source/include/objects.h}}
+
+
+Working with objects on the LCD.  
+
+
+{\ttfamily \#include $<$leguan.\+h$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpixel}{pixel}}
+\begin{DoxyCompactList}\small\item\em This struct is used to creat a linked list of boarder pixel. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em This struct is used to save all the important data of a game object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{objects_8h_aa8cecfc5c5c054d2875c03e77b7be15d}\label{objects_8h_aa8cecfc5c5c054d2875c03e77b7be15d}} 
+\#define {\bfseries TRUE}~1
+\item 
+\mbox{\Hypertarget{objects_8h_aa93f0eb578d23995850d61f7d61c55c1}\label{objects_8h_aa93f0eb578d23995850d61f7d61c55c1}} 
+\#define {\bfseries FALSE}~0
+\item 
+\mbox{\Hypertarget{objects_8h_a233b95e49f1419b52922a0b4364b3c73}\label{objects_8h_a233b95e49f1419b52922a0b4364b3c73}} 
+\#define {\bfseries BGRA565\+\_\+\+COLOR}(r,  g,  b,  a)~\{ ((uint8\+\_\+t)(b)) $>$$>$ 3, ((uint8\+\_\+t)(g)) $>$$>$ 2, ((uint8\+\_\+t)(r)) $>$$>$ 3, ((uint8\+\_\+t)(a)) \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{objects_8h_a2dda454dfd99aacce45902fa05fecf03}\label{objects_8h_a2dda454dfd99aacce45902fa05fecf03}} 
+typedef struct \mbox{\hyperlink{structpixel}{pixel}} {\bfseries pixel\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{objects_8h_a1bfc0921cde12f53426cd7b393776668}{Draw\+Bmp}} (\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} $\ast$bmp, const uint16\+\_\+t x, const uint16\+\_\+t y)
+\begin{DoxyCompactList}\small\item\em Draw funktion for BMP on LCD without transparent pixels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{objects_8h_a57451f74eca71a9eefd5f5a9e97ae467}{Draw\+Bmp\+Without\+\_\+A}} (\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} $\ast$bmp, const uint16\+\_\+t x, const uint16\+\_\+t y)
+\begin{DoxyCompactList}\small\item\em Draw funktion for BMP on LCD with transparent pixels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{objects_8h_ab979e3c656d76b111007bfe0b70398d3}{Move\+Bmp}} (\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} $\ast$bmp, const uint16\+\_\+t x, const uint16\+\_\+t y)
+\begin{DoxyCompactList}\small\item\em moves an object to a given position \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{objects_8h_a952c22a6dda726ce1a517cb8d5cde5a4}{Shift\+Bmp}} (\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} $\ast$bmp, const uint16\+\_\+t ix, const uint16\+\_\+t iy)
+\begin{DoxyCompactList}\small\item\em shifts bmp for a given amount of pixels \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{objects_8h_a6c1449df6f92a8d35b7d15cbc99d4084}{Delete\+Bmp}} (\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} $\ast$bmp)
+\begin{DoxyCompactList}\small\item\em Deletes bmp from LCD, means clear the are of the bmp. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{objects_8h_ab66f6d9162af4deedcacd5197026e61d}{Lcd\+Clear\+Area}} (const uint16\+\_\+t x1, const uint16\+\_\+t y1, const uint16\+\_\+t x2, const uint16\+\_\+t y2)
+\begin{DoxyCompactList}\small\item\em clears given area on LCD \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structpixel}{pixel\+\_\+t}} $\ast$ \mbox{\hyperlink{objects_8h_ad239208f4f9a6cc2a638e48e0645dd10}{Get\+Boarder}} (\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} bmp)
+\begin{DoxyCompactList}\small\item\em creates a list of boarder pixels, using the moore-\/edgefinding algorithm \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structpixel}{pixel\+\_\+t}} $\ast$ \mbox{\hyperlink{objects_8h_a391bb0403481a8dc57ec0427722f00d8}{Sort\+Boarder}} (\mbox{\hyperlink{structpixel}{pixel\+\_\+t}} $\ast$head)
+\begin{DoxyCompactList}\small\item\em sorts the list of boarder pixel, so they go along the boarder in one direction \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structpixel}{pixel\+\_\+t}} $\ast$ \mbox{\hyperlink{objects_8h_a891b42c97947a47ff0eb8e5fe4f2f12d}{Create\+Edges}} (\mbox{\hyperlink{structpixel}{pixel\+\_\+t}} $\ast$head)
+\begin{DoxyCompactList}\small\item\em go\textquotesingle{}s along the boarder and checks for edge pixels \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{objects_8h_a51f4d7975a46122a4b7074b194fbe3fc}{Convert\+Array}} (unsigned char pixel\+Data\mbox{[}$\,$\mbox{]}\mbox{[}4\mbox{]}, const uint16\+\_\+t w, const uint16\+\_\+t h)
+\begin{DoxyCompactList}\small\item\em converts BGRA\+\_\+8888 to BGRA\+\_\+5658 color code \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{objects_8h_a87ae89e93f293253031ef38e653c8cb2}{LCD\+\_\+\+Rect\+\_\+\+Gradient}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t width, uint16\+\_\+t height, LCD\+\_\+\+Color\+\_\+t clr1, LCD\+\_\+\+Color\+\_\+t clr2)
+\begin{DoxyCompactList}\small\item\em creates gradient boarder for T-\/\+Rex selection \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Working with objects on the LCD. 
+
+\begin{DoxyDate}{Date}
+30.\+12.\+2022 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Lukas Roth 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{objects_8h_a51f4d7975a46122a4b7074b194fbe3fc}\label{objects_8h_a51f4d7975a46122a4b7074b194fbe3fc}} 
+\index{objects.h@{objects.h}!ConvertArray@{ConvertArray}}
+\index{ConvertArray@{ConvertArray}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{ConvertArray()}{ConvertArray()}}
+{\footnotesize\ttfamily void Convert\+Array (\begin{DoxyParamCaption}\item[{unsigned char}]{pixel\+Data\mbox{[}$\,$\mbox{]}\mbox{[}4\mbox{]},  }\item[{const uint16\+\_\+t}]{w,  }\item[{const uint16\+\_\+t}]{h }\end{DoxyParamCaption})}
+
+
+
+converts BGRA\+\_\+8888 to BGRA\+\_\+5658 color code 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pixel\+Data} & \+: pixel array with color values \\
+\hline
+{\em w,h} & \+: with and hight of bmp \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{objects_8h_a891b42c97947a47ff0eb8e5fe4f2f12d}\label{objects_8h_a891b42c97947a47ff0eb8e5fe4f2f12d}} 
+\index{objects.h@{objects.h}!CreateEdges@{CreateEdges}}
+\index{CreateEdges@{CreateEdges}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{CreateEdges()}{CreateEdges()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structpixel}{pixel\+\_\+t}} $\ast$ Create\+Edges (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpixel}{pixel\+\_\+t}} $\ast$}]{head }\end{DoxyParamCaption})}
+
+
+
+go\textquotesingle{}s along the boarder and checks for edge pixels 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & \+: head of sorted boarder pixel list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+head of edge pixel list 
+\end{DoxyReturn}
+\mbox{\Hypertarget{objects_8h_a6c1449df6f92a8d35b7d15cbc99d4084}\label{objects_8h_a6c1449df6f92a8d35b7d15cbc99d4084}} 
+\index{objects.h@{objects.h}!DeleteBmp@{DeleteBmp}}
+\index{DeleteBmp@{DeleteBmp}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{DeleteBmp()}{DeleteBmp()}}
+{\footnotesize\ttfamily void Delete\+Bmp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} $\ast$}]{bmp }\end{DoxyParamCaption})}
+
+
+
+Deletes bmp from LCD, means clear the are of the bmp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bmp} & \+: Struct with all information about the bmp \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{objects_8h_a1bfc0921cde12f53426cd7b393776668}\label{objects_8h_a1bfc0921cde12f53426cd7b393776668}} 
+\index{objects.h@{objects.h}!DrawBmp@{DrawBmp}}
+\index{DrawBmp@{DrawBmp}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{DrawBmp()}{DrawBmp()}}
+{\footnotesize\ttfamily void Draw\+Bmp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} $\ast$}]{bmp,  }\item[{const uint16\+\_\+t}]{x,  }\item[{const uint16\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+
+
+Draw funktion for BMP on LCD without transparent pixels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bmp} & \+: Struct with all information about the bmp \\
+\hline
+{\em x,y} & \+: coordinates where to draw the bmp \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{objects_8h_a57451f74eca71a9eefd5f5a9e97ae467}\label{objects_8h_a57451f74eca71a9eefd5f5a9e97ae467}} 
+\index{objects.h@{objects.h}!DrawBmpWithout\_A@{DrawBmpWithout\_A}}
+\index{DrawBmpWithout\_A@{DrawBmpWithout\_A}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{DrawBmpWithout\_A()}{DrawBmpWithout\_A()}}
+{\footnotesize\ttfamily void Draw\+Bmp\+Without\+\_\+A (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} $\ast$}]{bmp,  }\item[{const uint16\+\_\+t}]{x,  }\item[{const uint16\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+
+
+Draw funktion for BMP on LCD with transparent pixels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bmp} & \+: Struct with all information about the bmp \\
+\hline
+{\em x,y} & \+: coordinates where to draw the bmp \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{objects_8h_ad239208f4f9a6cc2a638e48e0645dd10}\label{objects_8h_ad239208f4f9a6cc2a638e48e0645dd10}} 
+\index{objects.h@{objects.h}!GetBoarder@{GetBoarder}}
+\index{GetBoarder@{GetBoarder}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{GetBoarder()}{GetBoarder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structpixel}{pixel\+\_\+t}} $\ast$ Get\+Boarder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}}}]{bmp }\end{DoxyParamCaption})}
+
+
+
+creates a list of boarder pixels, using the moore-\/edgefinding algorithm 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bmp} & \+: Struct with all information about the bmp \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+head of boarder pixel list 
+\end{DoxyReturn}
+\mbox{\Hypertarget{objects_8h_a87ae89e93f293253031ef38e653c8cb2}\label{objects_8h_a87ae89e93f293253031ef38e653c8cb2}} 
+\index{objects.h@{objects.h}!LCD\_Rect\_Gradient@{LCD\_Rect\_Gradient}}
+\index{LCD\_Rect\_Gradient@{LCD\_Rect\_Gradient}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{LCD\_Rect\_Gradient()}{LCD\_Rect\_Gradient()}}
+{\footnotesize\ttfamily void LCD\+\_\+\+Rect\+\_\+\+Gradient (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height,  }\item[{LCD\+\_\+\+Color\+\_\+t}]{clr1,  }\item[{LCD\+\_\+\+Color\+\_\+t}]{clr2 }\end{DoxyParamCaption})}
+
+
+
+creates gradient boarder for T-\/\+Rex selection 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x,y} & \+: x and y coordinates of rectangle \\
+\hline
+{\em width,height} & \+: with and hight of rectangle \\
+\hline
+{\em clr1,clr} & 2\+: start and end color of gradient color \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{objects_8h_ab66f6d9162af4deedcacd5197026e61d}\label{objects_8h_ab66f6d9162af4deedcacd5197026e61d}} 
+\index{objects.h@{objects.h}!LcdClearArea@{LcdClearArea}}
+\index{LcdClearArea@{LcdClearArea}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{LcdClearArea()}{LcdClearArea()}}
+{\footnotesize\ttfamily void Lcd\+Clear\+Area (\begin{DoxyParamCaption}\item[{const uint16\+\_\+t}]{x1,  }\item[{const uint16\+\_\+t}]{y1,  }\item[{const uint16\+\_\+t}]{x2,  }\item[{const uint16\+\_\+t}]{y2 }\end{DoxyParamCaption})}
+
+
+
+clears given area on LCD 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1,y1} & \+: start coordinates of area \\
+\hline
+{\em x2,y2} & \+: end coordinates of area \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{objects_8h_ab979e3c656d76b111007bfe0b70398d3}\label{objects_8h_ab979e3c656d76b111007bfe0b70398d3}} 
+\index{objects.h@{objects.h}!MoveBmp@{MoveBmp}}
+\index{MoveBmp@{MoveBmp}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{MoveBmp()}{MoveBmp()}}
+{\footnotesize\ttfamily void Move\+Bmp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} $\ast$}]{bmp,  }\item[{const uint16\+\_\+t}]{x,  }\item[{const uint16\+\_\+t}]{y }\end{DoxyParamCaption})}
+
+
+
+moves an object to a given position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bmp} & \+: Struct with all information about the bmp \\
+\hline
+{\em x,y} & \+: coordinates where to move the bmp to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{objects_8h_a952c22a6dda726ce1a517cb8d5cde5a4}\label{objects_8h_a952c22a6dda726ce1a517cb8d5cde5a4}} 
+\index{objects.h@{objects.h}!ShiftBmp@{ShiftBmp}}
+\index{ShiftBmp@{ShiftBmp}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{ShiftBmp()}{ShiftBmp()}}
+{\footnotesize\ttfamily void Shift\+Bmp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structbmp__t}{bmp\+\_\+t}} $\ast$}]{bmp,  }\item[{const uint16\+\_\+t}]{ix,  }\item[{const uint16\+\_\+t}]{iy }\end{DoxyParamCaption})}
+
+
+
+shifts bmp for a given amount of pixels 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bmp} & \+: Struct with all information about the bmp \\
+\hline
+{\em x,y} & \+: amounts of pixels to be moved \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{objects_8h_a391bb0403481a8dc57ec0427722f00d8}\label{objects_8h_a391bb0403481a8dc57ec0427722f00d8}} 
+\index{objects.h@{objects.h}!SortBoarder@{SortBoarder}}
+\index{SortBoarder@{SortBoarder}!objects.h@{objects.h}}
+\doxysubsubsection{\texorpdfstring{SortBoarder()}{SortBoarder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structpixel}{pixel\+\_\+t}} $\ast$ Sort\+Boarder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpixel}{pixel\+\_\+t}} $\ast$}]{head }\end{DoxyParamCaption})}
+
+
+
+sorts the list of boarder pixel, so they go along the boarder in one direction 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head} & \+: head of boarder pixel list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+head of sorted boarder pixel list 
+\end{DoxyReturn}

@@ -1,0 +1,82 @@
+\hypertarget{game_8h_source}{}\doxysection{game.\+h}
+\label{game_8h_source}\index{C:/Users/Dave/Desktop/TRex/source/include/game.h@{C:/Users/Dave/Desktop/TRex/source/include/game.h}}
+\mbox{\hyperlink{game_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ INCLUDE\_GAME\_H\_}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ INCLUDE\_GAME\_H\_}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{//*********************************************************************}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//***\ Includes\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ***}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//*********************************************************************}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{objects_8h}{objects.h}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{//*********************************************************************}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//***\ Enums\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ***}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//*********************************************************************}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2ac36e5c9ac597253191be83acf0b51d25}{STATE\_NONE}},}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2a8211ee7ceda72b3c0e9b4a547acb471b}{STATE\_MENU}},}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2add58fbaa83b0bc3973bc4adad84a5d88}{STATE\_GAME}},}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2aea8a8da15a2fe0f9364de2fea14bf947}{STATE\_PAUSE}},}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2a0f76ed984e8b06e62cddac03843a9544}{STATE\_GAME\_OVER}},}
+\DoxyCodeLine{00035\ \}\mbox{\hyperlink{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2}{GameState\_t}};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{//*********************************************************************}}
+\DoxyCodeLine{00038\ \textcolor{comment}{//***\ Structs\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ***}}
+\DoxyCodeLine{00039\ \textcolor{comment}{//*********************************************************************}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00046\ \ \ \ \ uint8\_t\ \ \ \ \ \mbox{\hyperlink{structevent___t_a3e26be6f6623139810a55c43cec22e06}{eventFlag}};}
+\DoxyCodeLine{00048\ \ \ \ \ uint16\_t\ \ \ \ \mbox{\hyperlink{structevent___t_a4dde988b1b2adba65ae3efa69f65d960}{x}};}
+\DoxyCodeLine{00050\ \ \ \ \ uint16\_t\ \ \ \ \mbox{\hyperlink{structevent___t_ab0580f504a7428539be299fa71565f30}{y}};}
+\DoxyCodeLine{00051\ \}\mbox{\hyperlink{structevent___t}{event\_T}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{//*********************************************************************}}
+\DoxyCodeLine{00054\ \textcolor{comment}{//***\ Functions\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ***}}
+\DoxyCodeLine{00055\ \textcolor{comment}{//*********************************************************************}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_a9b4ca96e33c7f10e1074079d05fae8e7}{GameInit}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_a955012c003f998dbe37f8b7a282fa478}{ShowStartMenu}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00070\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_ae419198eb7bcb4f54ab9aa17ea20e61d}{StartGame}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00075\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_a5d9284d1778839fc536b4e99330b47f8}{PauseGame}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00080\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_af832dcef9efdbe954d6e1098ffa6ad71}{ContinueGame}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00085\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_a90f4e8637434246478a35dcd91e97d5d}{DisplayGameOver}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00090\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_abd3285ce77dcb58203e8f15c7bdbc9a4}{SelectTrexGoogle}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00095\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_a0507e5338e4a45f29c15c549d5c2db0a}{SelectTrexGreen}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00101\ \mbox{\hyperlink{game_8h_a6678e2a28b2bccb9f0563b3d59e15aa2}{GameState\_t}}\ \mbox{\hyperlink{game_8h_a0855a5c16d1b49871f145a29263e9dfe}{GetGameState}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00107\ \mbox{\hyperlink{structevent___t}{event\_T}}\ \mbox{\hyperlink{game_8h_a42dce4ec0f1c11a18f0249d8e6bba48e}{CheckEvent}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00114\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{game_8h_a6bdefb70939e3039e84d738c419156df}{OnClickStartButton}}(\mbox{\hyperlink{structevent___t}{event\_T}}\ event);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00121\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{game_8h_a0ef9cdc318d902025d8c326997a32b26}{OnClickJumpButton}}(\mbox{\hyperlink{structevent___t}{event\_T}}\ event);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00128\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{game_8h_a61154fd764f31f79dfeb7b41e4223fb1}{OnClickPauseButton}}(\mbox{\hyperlink{structevent___t}{event\_T}}\ event);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00135\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{game_8h_af370fa573c0d5b981a1e01fd9b733074}{OnClickTRexGoogle}}(\mbox{\hyperlink{structevent___t}{event\_T}}\ event);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00142\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{game_8h_a2b6d7f26e13d8b7a056d77777d5e42ef}{OnClickTRexGreen}}(\mbox{\hyperlink{structevent___t}{event\_T}}\ event);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00147\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_ad761fedc3ba80e348131adc7e4e0d1c6}{MoveObstacles}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00152\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_afaa3d3ff2e690233acd9da2cfc27784d}{MoveTRex}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00157\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_ada08cfa73c6178ec83feb054879ff720}{InitTRexJump}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00163\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{game_8h_a300fbcb34a17fb955ddca9225e98c73c}{CheckCollision}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00168\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_a6eb508a46eef9a8fc063e4c81b854d1a}{ScoreCount}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INCLUDE\_GAME\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

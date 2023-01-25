@@ -1,0 +1,76 @@
+\hypertarget{objects_8h_source}{}\doxysection{objects.\+h}
+\label{objects_8h_source}\index{C:/Users/Dave/Desktop/TRex/source/include/objects.h@{C:/Users/Dave/Desktop/TRex/source/include/objects.h}}
+\mbox{\hyperlink{objects_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ INCLUDE\_OBJECTS\_H\_}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ INCLUDE\_OBJECTS\_H\_}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{//*********************************************************************}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//***\ Includes\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ***}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//*********************************************************************}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <leguan.h>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//*********************************************************************}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//***\ Defines\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ***}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//*********************************************************************}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ TRUE\ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ FALSE\ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ BGRA565\_COLOR(r,\ g,\ b,\ a)\ \ \ \{\ ((uint8\_t)(b))\ >>\ 3,\ ((uint8\_t)(g))\ >>\ 2,\ ((uint8\_t)(r))\ >>\ 3,\ ((uint8\_t)(a))\ \}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{//*********************************************************************}}
+\DoxyCodeLine{00027\ \textcolor{comment}{//***\ Structs\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ***}}
+\DoxyCodeLine{00028\ \textcolor{comment}{//*********************************************************************}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structpixel}{pixel}}}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ uint16\_t\ \ \ \ \ \ \ \ \mbox{\hyperlink{structpixel_a4dde988b1b2adba65ae3efa69f65d960}{x}};}
+\DoxyCodeLine{00038\ \ \ \ \ uint16\_t\ \ \ \ \ \ \ \ \mbox{\hyperlink{structpixel_ab0580f504a7428539be299fa71565f30}{y}};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structpixel}{pixel}}\ \ \ \ *\mbox{\hyperlink{structpixel_aa25911c1611c0535f58a8d4a8084ce39}{next}};}
+\DoxyCodeLine{00041\ \}\mbox{\hyperlink{structpixel}{pixel\_t}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ uint16\_t\ \ \ \ \ \ \ \ \mbox{\hyperlink{structbmp__t_a4dde988b1b2adba65ae3efa69f65d960}{x}};}
+\DoxyCodeLine{00053\ \ \ \ \ uint16\_t\ \ \ \ \ \ \ \ \mbox{\hyperlink{structbmp__t_ab0580f504a7428539be299fa71565f30}{y}};}
+\DoxyCodeLine{00055\ \ \ \ \ uint16\_t\ \ \ \ \ \ \ \ \mbox{\hyperlink{structbmp__t_a69e28057d97f59f81862a467cc6299fc}{w}};}
+\DoxyCodeLine{00057\ \ \ \ \ uint16\_t\ \ \ \ \ \ \ \ \mbox{\hyperlink{structbmp__t_a8bf5747847b23fa2d39ef956e10bfbd3}{h}};}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ char\ \ \ (*pixels)[4];}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \ \ \mbox{\hyperlink{structbmp__t_a63226973f6a9cd40c51a604af2e1a9a5}{visible}};}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \ \ \mbox{\hyperlink{structbmp__t_a4c0237fdbba78af703ee275cc492a8b1}{selected}};}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{structpixel}{pixel\_t}}\ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{structbmp__t_a7acb96f921fe521cc156e7d9eaa3d22d}{head}};}
+\DoxyCodeLine{00066\ \}\mbox{\hyperlink{structbmp__t}{bmp\_t}};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00075\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{objects_8h_a1bfc0921cde12f53426cd7b393776668}{DrawBmp}}(\mbox{\hyperlink{structbmp__t}{bmp\_t}}\ *bmp,\ \textcolor{keyword}{const}\ uint16\_t\ \mbox{\hyperlink{structpixel_a4dde988b1b2adba65ae3efa69f65d960}{x}},\ \textcolor{keyword}{const}\ uint16\_t\ \mbox{\hyperlink{structpixel_ab0580f504a7428539be299fa71565f30}{y}});}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00082\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{objects_8h_a57451f74eca71a9eefd5f5a9e97ae467}{DrawBmpWithout\_A}}(\mbox{\hyperlink{structbmp__t}{bmp\_t}}\ *bmp,\ \textcolor{keyword}{const}\ uint16\_t\ \mbox{\hyperlink{structpixel_a4dde988b1b2adba65ae3efa69f65d960}{x}},\ \textcolor{keyword}{const}\ uint16\_t\ \mbox{\hyperlink{structpixel_ab0580f504a7428539be299fa71565f30}{y}});}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00089\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{objects_8h_ab979e3c656d76b111007bfe0b70398d3}{MoveBmp}}(\mbox{\hyperlink{structbmp__t}{bmp\_t}}\ *bmp,\ \textcolor{keyword}{const}\ uint16\_t\ \mbox{\hyperlink{structpixel_a4dde988b1b2adba65ae3efa69f65d960}{x}},\ \textcolor{keyword}{const}\ uint16\_t\ \mbox{\hyperlink{structpixel_ab0580f504a7428539be299fa71565f30}{y}});}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00096\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{objects_8h_a952c22a6dda726ce1a517cb8d5cde5a4}{ShiftBmp}}(\mbox{\hyperlink{structbmp__t}{bmp\_t}}\ *bmp,\ \textcolor{keyword}{const}\ uint16\_t\ ix,\ \textcolor{keyword}{const}\ uint16\_t\ iy);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00102\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{objects_8h_a6c1449df6f92a8d35b7d15cbc99d4084}{DeleteBmp}}(\mbox{\hyperlink{structbmp__t}{bmp\_t}}\ *bmp);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00109\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{objects_8h_ab66f6d9162af4deedcacd5197026e61d}{LcdClearArea}}(\textcolor{keyword}{const}\ uint16\_t\ x1,\ \textcolor{keyword}{const}\ uint16\_t\ y1,\ \textcolor{keyword}{const}\ uint16\_t\ x2,\ \textcolor{keyword}{const}\ uint16\_t\ y2);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00116\ \mbox{\hyperlink{structpixel}{pixel\_t}}\ *\mbox{\hyperlink{objects_8h_ad239208f4f9a6cc2a638e48e0645dd10}{GetBoarder}}\ (\mbox{\hyperlink{structbmp__t}{bmp\_t}}\ bmp);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00123\ \mbox{\hyperlink{structpixel}{pixel\_t}}\ *\mbox{\hyperlink{objects_8h_a391bb0403481a8dc57ec0427722f00d8}{SortBoarder}}(\mbox{\hyperlink{structpixel}{pixel\_t}}\ *head);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00130\ \mbox{\hyperlink{structpixel}{pixel\_t}}\ *\mbox{\hyperlink{objects_8h_a891b42c97947a47ff0eb8e5fe4f2f12d}{CreateEdges}}(\mbox{\hyperlink{structpixel}{pixel\_t}}\ *head);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00137\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{objects_8h_a51f4d7975a46122a4b7074b194fbe3fc}{ConvertArray}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ pixelData[][4],\ \textcolor{keyword}{const}\ uint16\_t\ w,\ \textcolor{keyword}{const}\ uint16\_t\ h);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00146\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{objects_8h_a87ae89e93f293253031ef38e653c8cb2}{LCD\_Rect\_Gradient}}(uint16\_t\ \mbox{\hyperlink{structpixel_a4dde988b1b2adba65ae3efa69f65d960}{x}},\ uint16\_t\ \mbox{\hyperlink{structpixel_ab0580f504a7428539be299fa71565f30}{y}},\ uint16\_t\ width,\ uint16\_t\ height,\ LCD\_Color\_t\ clr1,\ LCD\_Color\_t\ clr2);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ INCLUDE\_OBJECTS\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
